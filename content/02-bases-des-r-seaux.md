@@ -1,15 +1,13 @@
 ---
-title: "Bases des réseaux"
-category: "02 — Bases des réseaux"
+title: Bases des réseaux
+category: 02 — Bases des réseaux
 order: 2
 ---
-
 # Bases des réseaux
 
 > À compléter avec tes notes personnelles, schémas et captures.
 
-## Cours
-
-## À retenir
+## Coursdlkncvù<sdknvùoisdvnhsidvnhÀ retenir
 
 ## Exercices
+
