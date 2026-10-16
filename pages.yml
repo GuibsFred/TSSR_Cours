@@ -1,0 +1,80 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+content:
+  - name: cours
+    label: Cours ENI
+    type: collection
+    path: content
+    exclude: [index.json]
+    view:
+      fields: [title, category, order]
+    fields: &pagefields
+      - name: title
+        label: Titre de la page
+        type: string
+        required: true
+      - name: category
+        label: Module / catégorie (ex. 02 — Bases des réseaux / Cisco)
+        type: string
+        required: true
+      - name: order
+        label: Ordre d'affichage
+        type: number
+      - name: body
+        label: Texte, images et captures
+        type: rich-text
+  - name: fiches
+    label: Fiches de révision
+    type: collection
+    path: fiches
+    view:
+      fields: [title, category, order]
+    fields: *pagefields
+  - name: tp
+    label: Travaux pratiques
+    type: collection
+    path: tp
+    view:
+      fields: [title, category, order]
+    fields: *pagefields
+  - name: commandes
+    label: Commandes et mémos
+    type: collection
+    path: commandes
+    view:
+      fields: [title, category, order]
+    fields: *pagefields
+  - name: glossaire
+    label: Glossaire
+    type: collection
+    path: glossaire
+    view:
+      fields: [title, category, order]
+    fields: *pagefields
+  - name: quiz
+    label: QCM
+    type: collection
+    path: quiz
+    format: json
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        label: Titre du QCM
+        type: string
+      - name: questions
+        label: Questions
+        type: object
+        list: true
+        fields:
+          - name: question
+            label: Question
+            type: string
+          - name: options
+            label: Réponses proposées
+            type: string
+            list: true
+          - name: answer
+            label: Index de la bonne réponse (0 pour la première)
+            type: number

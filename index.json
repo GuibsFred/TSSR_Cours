@@ -1,0 +1,234 @@
+[
+  {
+    "title": "Commandes réseau Windows",
+    "file": "commandes/exemple-commandes.md",
+    "category": "Windows / Réseau",
+    "order": 1,
+    "kind": "commandes",
+    "search": "\n  Commandes réseau Windows\n\n   powershell\nipconfig /all\nping 192.168.1.1\ntracert 8.8.8.8\n   \n"
+  },
+  {
+    "title": "Microsoft 365 — Outils collaboratifs",
+    "file": "content/01-microsoft-365--outils-collaboratifs.md",
+    "category": "01 — Microsoft 365 — Outils collaboratifs",
+    "order": 1,
+    "kind": "cours",
+    "search": "\n\n  Microsoft 365 — Outils collaboratifs\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Bases des réseaux",
+    "file": "content/02-bases-des-r-seaux.md",
+    "category": "02 — Bases des réseaux",
+    "order": 2,
+    "kind": "cours",
+    "search": "\n\n  Bases des réseaux\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Systèmes clients Microsoft (1/2)",
+    "file": "content/03-syst-mes-clients-microsoft-1-2.md",
+    "category": "03 — Systèmes clients Microsoft (1/2)",
+    "order": 3,
+    "kind": "cours",
+    "search": "\n\n  Systèmes clients Microsoft (1/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Systèmes clients Microsoft (2/2)",
+    "file": "content/04-syst-mes-clients-microsoft-2-2.md",
+    "category": "04 — Systèmes clients Microsoft (2/2)",
+    "order": 4,
+    "kind": "cours",
+    "search": "\n\n  Systèmes clients Microsoft (2/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Utilisation d’une distribution GNU/Linux",
+    "file": "content/05-utilisation-d-une-distribution-gnu-linux.md",
+    "category": "05 — Utilisation d’une distribution GNU/Linux",
+    "order": 5,
+    "kind": "cours",
+    "search": "\n\n  Utilisation d’une distribution GNU/Linux\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Administration GNU/Linux (1/2)",
+    "file": "content/06-administration-gnu-linux-1-2.md",
+    "category": "06 — Administration GNU/Linux (1/2)",
+    "order": 6,
+    "kind": "cours",
+    "search": "\n\n  Administration GNU/Linux (1/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Administration GNU/Linux (2/2)",
+    "file": "content/07-administration-gnu-linux-2-2.md",
+    "category": "07 — Administration GNU/Linux (2/2)",
+    "order": 7,
+    "kind": "cours",
+    "search": "\n\n  Administration GNU/Linux (2/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Mise en situation — Systèmes clients",
+    "file": "content/08-mise-en-situation--syst-mes-clients.md",
+    "category": "08 — Mise en situation — Systèmes clients",
+    "order": 8,
+    "kind": "cours",
+    "search": "\n\n  Mise en situation — Systèmes clients\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "ITIL et gestion de parc (1/2)",
+    "file": "content/09-itil-et-gestion-de-parc-1-2.md",
+    "category": "09 — ITIL et gestion de parc (1/2)",
+    "order": 9,
+    "kind": "cours",
+    "search": "\n\n  ITIL et gestion de parc (1/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "ITIL et gestion de parc (2/2)",
+    "file": "content/10-itil-et-gestion-de-parc-2-2.md",
+    "category": "10 — ITIL et gestion de parc (2/2)",
+    "order": 10,
+    "kind": "cours",
+    "search": "\n\n  ITIL et gestion de parc (2/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Infrastructures réseaux (1/2)",
+    "file": "content/11-infrastructures-r-seaux-1-2.md",
+    "category": "11 — Infrastructures réseaux (1/2)",
+    "order": 11,
+    "kind": "cours",
+    "search": "\n\n  Infrastructures réseaux (1/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Infrastructures réseaux (2/2)",
+    "file": "content/12-infrastructures-r-seaux-2-2.md",
+    "category": "12 — Infrastructures réseaux (2/2)",
+    "order": 12,
+    "kind": "cours",
+    "search": "\n\n  Infrastructures réseaux (2/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Services réseau Microsoft (1/2)",
+    "file": "content/13-services-r-seau-microsoft-1-2.md",
+    "category": "13 — Services réseau Microsoft (1/2)",
+    "order": 13,
+    "kind": "cours",
+    "search": "\n\n  Services réseau Microsoft (1/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Services réseau Microsoft (2/2)",
+    "file": "content/14-services-r-seau-microsoft-2-2.md",
+    "category": "14 — Services réseau Microsoft (2/2)",
+    "order": 14,
+    "kind": "cours",
+    "search": "\n\n  Services réseau Microsoft (2/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Services réseau Linux",
+    "file": "content/15-services-r-seau-linux.md",
+    "category": "15 — Services réseau Linux",
+    "order": 15,
+    "kind": "cours",
+    "search": "\n\n  Services réseau Linux\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Mise en situation — Services réseau",
+    "file": "content/16-mise-en-situation--services-r-seau.md",
+    "category": "16 — Mise en situation — Services réseau",
+    "order": 16,
+    "kind": "cours",
+    "search": "\n\n  Mise en situation — Services réseau\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Initiation au scripting Bash",
+    "file": "content/17-initiation-au-scripting-bash.md",
+    "category": "17 — Initiation au scripting Bash",
+    "order": 17,
+    "kind": "cours",
+    "search": "\n\n  Initiation au scripting Bash\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Initiation à PowerShell",
+    "file": "content/18-initiation--powershell.md",
+    "category": "18 — Initiation à PowerShell",
+    "order": 18,
+    "kind": "cours",
+    "search": "\n\n  Initiation à PowerShell\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Virtualisation de serveurs",
+    "file": "content/19-virtualisation-de-serveurs.md",
+    "category": "19 — Virtualisation de serveurs",
+    "order": 19,
+    "kind": "cours",
+    "search": "\n\n  Virtualisation de serveurs\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Messagerie Cloud",
+    "file": "content/20-messagerie-cloud.md",
+    "category": "20 — Messagerie Cloud",
+    "order": 20,
+    "kind": "cours",
+    "search": "\n\n  Messagerie Cloud\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Sauvegarde et restauration",
+    "file": "content/21-sauvegarde-et-restauration.md",
+    "category": "21 — Sauvegarde et restauration",
+    "order": 21,
+    "kind": "cours",
+    "search": "\n\n  Sauvegarde et restauration\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Réseau et sécurité (1/2)",
+    "file": "content/22-r-seau-et-s-curit--1-2.md",
+    "category": "22 — Réseau et sécurité (1/2)",
+    "order": 22,
+    "kind": "cours",
+    "search": "\n\n  Réseau et sécurité (1/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Réseau et sécurité (2/2)",
+    "file": "content/23-r-seau-et-s-curit--2-2.md",
+    "category": "23 — Réseau et sécurité (2/2)",
+    "order": 23,
+    "kind": "cours",
+    "search": "\n\n  Réseau et sécurité (2/2)\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Services transverses Microsoft — RDS/WDS",
+    "file": "content/24-services-transverses-microsoft--rds-wds.md",
+    "category": "24 — Services transverses Microsoft — RDS/WDS",
+    "order": 24,
+    "kind": "cours",
+    "search": "\n\n  Services transverses Microsoft — RDS/WDS\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Stage en entreprise",
+    "file": "content/25-stage-en-entreprise.md",
+    "category": "25 — Stage en entreprise",
+    "order": 25,
+    "kind": "cours",
+    "search": "\n\n  Stage en entreprise\n\n  À compléter avec tes notes personnelles, schémas et captures.\n\n   Cours\n\n   À retenir\n\n   Exercices\n"
+  },
+  {
+    "title": "Exemple — Fiche de révision",
+    "file": "fiches/exemple-fiche.md",
+    "category": "01 — Microsoft 365 / Word",
+    "order": 1,
+    "kind": "fiches",
+    "search": "\n  Fiche de révision : Word\n\n   À retenir\n\n- Les   styles   permettent de structurer un document.\n- Le   volet de navigation   permet de retrouver les titres.\n\n  Remplace ce contenu par tes propres notes depuis Pages CMS.\n"
+  },
+  {
+    "title": "Vocabulaire réseau",
+    "file": "glossaire/exemple-glossaire.md",
+    "category": "Réseaux",
+    "order": 1,
+    "kind": "glossaire",
+    "search": "\n  Glossaire réseau\n\n  DNS   : service de résolution des noms de domaine.\n\n  DHCP   : service d'attribution automatique des paramètres IP.\n"
+  },
+  {
+    "title": "Exemple — TP Packet Tracer",
+    "file": "tp/exemple-tp.md",
+    "category": "02 — Bases des réseaux / Cisco Packet Tracer",
+    "order": 1,
+    "kind": "tp",
+    "search": "\n  TP : connecter deux machines\n\n   Objectif\n\nCréer un réseau local simple, puis vérifier la communication avec  ping .\n\n   Captures et observations\n\nAjoute ici tes captures d'écran et tes notes personnelles.\n"
+  }
+]
