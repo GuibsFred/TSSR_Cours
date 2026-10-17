@@ -33,3 +33,8 @@ body{background:var(--bg)}.top{background:linear-gradient(100deg,#043749,#0b536b
 
 /* V6.4 : contrôles images toujours visibles dans l’éditeur */
 .image-controls.inactive{opacity:.8}.image-controls.inactive input[type=range]{opacity:.65}.editor img.course-image-selected{outline:3px solid #18a999!important;outline-offset:3px}
+
+/* V6.5 : sélection d'images et édition de largeur accessibles */
+.editor img { cursor:pointer; }
+.editor img.course-image-selected { outline:3px solid #18a999!important;outline-offset:3px; }
+#imageWidthNumber {background:white;color:#173646;border:1px solid #a9c6d0;border-radius:5px;}
