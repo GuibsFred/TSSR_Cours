@@ -54,22 +54,46 @@ function isBlueColor(value){
  const [r,g,b]=nums, max=Math.max(r,g,b),min=Math.min(r,g,b);
  return b>r*1.16&&b>g*1.07&&b-r>=24&&max-min>=35;
 }
-function extractBlue(html){
- const root=document.createElement('div');root.innerHTML=DOMPurify.sanitize(html||'');
- const found=[],seen=new Set();
- for(const el of root.querySelectorAll('[data-revision-blue]')){const t=(el.textContent||'').replace(/\s+/g,' ').trim();if(t&&!seen.has(t)){seen.add(t);found.push(t)}}
- function walk(el,insideBlue=false){
-  if(el.nodeType===Node.TEXT_NODE){const t=el.textContent.replace(/\s+/g,' ').trim();if(insideBlue&&t&&!seen.has(t)){seen.add(t);found.push(t)}return}
-  if(el.nodeType!==Node.ELEMENT_NODE||['SCRIPT','STYLE','IMG','SVG'].includes(el.tagName))return;
-  if(el.hasAttribute('data-revision-blue'))return;
-  const style=el.getAttribute('style')||'';
-  const declared=style.match(/(?:^|;)\s*color\s*:\s*([^;]+)/i)?.[1];
-  const blue=el.hasAttribute('data-revision-blue') || (declared?isBlueColor(declared):insideBlue) || (el.getAttribute('color')?isBlueColor(el.getAttribute('color')):false);
-  // Un lien bleu par défaut n'est pas un passage marqué pour les révisions.
-  for(const child of el.childNodes)walk(child,blue);
+// Construire la fiche à partir du HTML du cours, pas d'une liste de chaînes aplaties.
+function extractRevisionHtml(html){
+ const root=document.createElement('div');root.innerHTML=DOMPurify.sanitize(html||'',{ADD_ATTR:['data-revision-blue']});
+ const output=document.createElement('div');
+ const blockTags=new Set(['P','DIV','H1','H2','H3','H4','H5','H6','LI','BLOCKQUOTE','PRE','TD','TH']);
+ const selected=node=>{
+  if(node.nodeType!==Node.ELEMENT_NODE)return false;
+  if(node.hasAttribute('data-revision-blue'))return true;
+  const style=node.getAttribute('style')||'';
+  const color=style.match(/(?:^|;)\s*color\s*:\s*([^;]+)/i)?.[1];
+  return !!(color&&isBlueColor(color))||!!(node.getAttribute('color')&&isBlueColor(node.getAttribute('color')));
+ };
+ const containsSelected=node=>node.nodeType===Node.ELEMENT_NODE&&(selected(node)||[...node.children].some(containsSelected));
+ const clean=node=>{
+  if(node.nodeType!==Node.ELEMENT_NODE)return;
+  node.removeAttribute('data-revision-blue');node.removeAttribute('color');
+  if(node.style){node.style.removeProperty('color');node.style.removeProperty('background-color');if(!node.getAttribute('style')?.trim())node.removeAttribute('style')}
+  [...node.children].forEach(clean);
+ };
+ function pick(node,active=false){
+  if(node.nodeType===Node.TEXT_NODE)return active?node.cloneNode(true):null;
+  if(node.nodeType!==Node.ELEMENT_NODE||['SCRIPT','STYLE','SVG','BUTTON'].includes(node.tagName))return null;
+  const isActive=active||selected(node);
+  if(isActive){const clone=node.cloneNode(true);clean(clone);return clone}
+  const clone=node.cloneNode(false);
+  for(const child of node.childNodes){const part=pick(child,false);if(part)clone.appendChild(part)}
+  return clone.childNodes.length?clone:null;
  }
- for(const child of root.childNodes)walk(child,false);
- return found;
+ // Préserver les conteneurs, les listes, les titres et les sauts de ligne.
+ for(const child of root.childNodes){
+  if(child.nodeType===Node.ELEMENT_NODE&&containsSelected(child)){
+   const part=pick(child);if(part)output.appendChild(part);
+  }
+ }
+ // Les passages peuvent se trouver dans des nœuds imbriqués : la structure reste intacte.
+ return DOMPurify.sanitize(output.innerHTML,{ADD_ATTR:['data-revision-blue']});
+}
+function extractBlue(html){
+ const div=document.createElement('div');div.innerHTML=extractRevisionHtml(html);
+ return [...div.children].map(el=>el.textContent.trim()).filter(Boolean);
 }
 async function revisionSourceHtml(course){
  if(!course)return '';
@@ -81,7 +105,7 @@ async function showRevision(id){
  if(!course){v.innerHTML=header('Fiche introuvable','Le cours associé n’existe plus.');return}
  v.innerHTML=header('Fiche de révision — '+course.title,course.category,`<div class="actions"><button class="btn" data-id="${esc(id)}">📘 Voir le cours</button><button class="btn primary" data-revision-edit="${esc(id)}">✎ Mes notes</button></div>`)+`<article class="article"><h2>🔵 À retenir dans ce cours</h2><p class="muted">Les passages écrits en bleu dans le cours apparaissent ici après son enregistrement.</p><div id="revisionExtract" class="revision-extract">Chargement…</div><h2>📝 Mes notes personnelles</h2><div class="content">${DOMPurify.sanitize(notes?.html||'<p class="muted">Aucune note pour le moment. Clique sur « Mes notes » pour compléter cette fiche.</p>')}</div></article>`;
  const html=await revisionSourceHtml(course);const dest=$('#revisionExtract');if(!dest)return;
- const extracts=Array.isArray(course.revisionExtracts)?course.revisionExtracts:extractBlue(html);dest.innerHTML=extracts.length?`<ul>${extracts.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:'<p class="muted">Aucun passage bleu pour le moment. Ouvre le cours, colore une phrase en bleu et enregistre.</p>';
+ const formatted=extractRevisionHtml(html);dest.innerHTML=formatted.trim()?formatted:'<p class="muted">Aucun passage bleu pour le moment. Ouvre le cours, colore une phrase en bleu et enregistre.</p>';
 }
 function editRevisionNotes(id){
  const course=revisionCourses().find(x=>x.id===id),old=revisionNotes(id);if(!course)return;

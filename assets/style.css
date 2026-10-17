@@ -61,3 +61,14 @@ body.home-network .dashpanel,body.home-network .dashstat{position:relative;}
 .module-card{min-height:185px;text-align:left;display:flex;flex-direction:column;align-items:flex-start}
 .module-card h3{font-size:1.06rem;line-height:1.35}
 .module-card .arrow{margin-top:auto}
+
+/* V7.7 : fiche de révision en noir, respect des blocs du cours */
+.revision-extract{background:#fff;color:#182c38;border-color:#d7e2e8;border-left-color:#287bd7;line-height:1.7}
+.revision-extract *{color:inherit!important;text-align:inherit}
+.revision-extract h1,.revision-extract h2,.revision-extract h3,.revision-extract h4{color:#182c38!important;margin:1.1em 0 .45em;font-weight:700}
+.revision-extract p{margin:.55em 0}
+.revision-extract ul,.revision-extract ol{padding-left:1.7em;margin:.7em 0}
+.revision-extract li{margin:.3em 0}
+.revision-extract table{border-collapse:collapse;width:100%;margin:1em 0}
+.revision-extract td,.revision-extract th{border:1px solid #d5dfe5;padding:8px 10px}
+.revision-extract img{max-width:100%;height:auto}
