@@ -1,4 +1,26 @@
 {
-  "pages": [],
+  "pages": [
+    {
+      "id": "base:content/01-microsoft-365--outils-collaboratifs.md",
+      "title": "Microsoft 365 — Outils collaboratifs",
+      "kind": "cours",
+      "category": "01 — Microsoft 365 — Outils collaboratifs",
+      "html": "test2"
+    },
+    {
+      "id": "base:content/02-bases-des-r-seaux.md",
+      "title": "Bases des réseaux",
+      "kind": "cours",
+      "category": "02 — Bases des réseaux",
+      "html": "test"
+    },
+    {
+      "id": "base:commandes/exemple-commandes.md",
+      "title": "Commandes réseau Windows",
+      "kind": "cours",
+      "category": "Windows / Réseau",
+      "html": "ipconfig / all i,nfo ip"
+    }
+  ],
   "quizzes": []
 }
