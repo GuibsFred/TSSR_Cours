@@ -1,4 +1,19 @@
 {
-  "pages": [],
+  "pages": [
+    {
+      "id": "doc-1792265828029",
+      "title": "Microsoft 365 — Outils collaboratifs",
+      "kind": "cours",
+      "category": "01 — Microsoft 365 — Outils collaboratifs",
+      "html": "<div>---</div><div>title: \"Bases des réseaux\"</div><div>category: \"02 — Bases des réseaux\"</div><div>order: 2</div><div>---</div><div><br></div><div># Bases des réseaux</div><div><br></div><div>## Cours</div><div><br></div><div>![image.png](/TSSR_Cours/assets/uploads/image-1.png)</div><div><br></div><div>## À retenir</div><div><br></div><div>## Exercices</div>"
+    },
+    {
+      "id": "doc-1792266276732",
+      "title": "Microsoft 365 — Outils collaboratifs",
+      "kind": "cours",
+      "category": "",
+      "html": "vqgrgerhqerthqethqarjh"
+    }
+  ],
   "quizzes": []
 }
