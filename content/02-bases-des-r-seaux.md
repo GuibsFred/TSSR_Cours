@@ -5,9 +5,15 @@ order: 2
 ---
 # Bases des réseaux
 
-> À compléter avec tes notes personnelles, schémas et captures.
+> oifhazfgoi^hazrù^goihazerg
 
-## Coursdlkncvù<sdknvùoisdvnhsidvnhÀ retenir
+> ![image.png](/assets/uploads/image-1.png)
+>
+> ## Coursdlkncvù<sdknvùoisdvnhsidvnhÀ retenir
+
+
+
+&nbsp;
 
 ## Exercices
 
