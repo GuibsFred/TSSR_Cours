@@ -1,4 +1,4 @@
-# ⚔ Viking TSSR — Site de révision ENI
+# ⚔ TSSR — Site de révision ENI
 
 Site gratuit et public hébergé sur GitHub Pages. Les visiteurs lisent les cours et font les QCM. Le propriétaire modifie les contenus via Pages CMS avec son compte GitHub.
 
@@ -7,7 +7,7 @@ Site gratuit et public hébergé sur GitHub Pages. Les visiteurs lisent les cour
 1. Créer un dépôt **public** vide sur GitHub (par exemple `viking-tssr`).
 2. Extraire ce ZIP puis envoyer **le contenu** du dossier dans la racine du dépôt (pas le ZIP lui-même). Pour éviter l'import un par un, utiliser GitHub Desktop : **File > Add local repository** ou initialiser le dossier local, puis **Publish repository**.
 3. Dans **Settings > Pages > Build and deployment**, sélectionner **GitHub Actions**.
-4. Dans l'onglet **Actions**, attendre la fin de « Publier Viking TSSR ». Le lien public apparaît dans **Settings > Pages**.
+4. Dans l'onglet **Actions**, attendre la fin de « Publier TSSR ». Le lien public apparaît dans **Settings > Pages**.
 5. Ouvrir https://app.pagescms.org/ et autoriser l'accès GitHub au dépôt. Pages CMS lit le fichier `.pages.yml` présent à la racine.
 
 ## Utilisation quotidienne

@@ -1,4 +1,4 @@
-# Viking TSSR V3 — Mode d’emploi
+# TSSR V3 — Mode d’emploi
 
 Site GitHub Pages : `https://guibsfred.github.io/TSSR_Cours/`
 
