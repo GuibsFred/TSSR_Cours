@@ -43,3 +43,21 @@ body{background:var(--bg)}.top{background:linear-gradient(100deg,#043749,#0b536b
 .chaptermodule{display:block;width:calc(100% - 24px);margin-left:24px;text-align:left;padding:7px 8px;border:0;border-left:2px solid rgba(255,255,255,.17);background:transparent;color:#d8edf2;font-size:12px;line-height:1.4;cursor:pointer}.chaptermodule:hover{background:rgba(255,255,255,.12);color:#fff}.chapter-hero{display:flex;align-items:center;gap:18px;margin:18px 0 25px;padding:20px 24px;border:1px solid #b9d8e2;border-radius:15px;background:linear-gradient(110deg,#eaf7fb,#fff4e4)}.chapter-hero>span{font-size:36px}.chapter-hero p{margin:5px 0 0;color:#526579}.chapter-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.chapter-card{position:relative;border-top:4px solid #27a3b4}.chapter-card:nth-child(3n){border-top-color:#d99a44}.chapter-card:nth-child(3n + 1){border-top-color:#5b8bdc}.chapter-count{display:inline-flex;align-items:center;justify-content:center;border-radius:100px;background:#e9f4fa;color:#17485b;width:35px;height:35px;font-weight:800}.chapter-overview{border-top:4px solid #d99a44}.chapter-quiz{border-top:4px solid #7b67bd}
 
 .foldergroup>summary{cursor:pointer;list-style:none}.foldergroup>summary::-webkit-details-marker{display:none}.foldergroup>summary::after{content:'▸';margin-left:auto;color:#f5b65a}.foldergroup[open]>summary::after{content:'▾'}.foldergroup:not([open]) .chaptermodule{display:none}
+
+/* V7.1 : fond Réseau technologique — uniquement sur l'accueil */
+body.home-network{background:#071d2d url('network-bg.svg') center top / cover fixed no-repeat;}
+body.home-network #main{background:transparent;}
+body.home-network .dashhero{background:linear-gradient(105deg,rgba(6,36,54,.92),rgba(10,69,88,.76)),url('network-bg.svg') center 40% / cover no-repeat;border:1px solid rgba(113,217,235,.27);border-radius:0 0 16px 16px;box-shadow:0 12px 32px rgba(0,0,0,.19);}
+body.home-network .dashhero h1{color:#f5fdff;}
+body.home-network .dashhero p{color:#c8e9ef;}
+body.home-network .dashquote{background:rgba(7,27,43,.75);border:1px solid rgba(112,215,229,.27);}
+body.home-network .dashpanel{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);}
+body.home-network .dashstat{box-shadow:0 6px 22px rgba(0,0,0,.17);}
+body.home-network .dashpanel,body.home-network .dashstat{position:relative;}
+@media(max-width:800px){body.home-network{background-attachment:scroll;}body.home-network .dashhero{border-radius:0 0 12px 12px;}}
+
+/* V7.2 — catalogue des modules, sans exposer tous les chapitres d'un coup */
+.module-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.module-card{min-height:185px;text-align:left;display:flex;flex-direction:column;align-items:flex-start}
+.module-card h3{font-size:1.06rem;line-height:1.35}
+.module-card .arrow{margin-top:auto}
