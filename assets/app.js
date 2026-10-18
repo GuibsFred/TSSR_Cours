@@ -304,8 +304,20 @@ for(let attempt=0;attempt<2;attempt++){let old=await fetch(url+'?t='+Date.now(),
  let j;try{j=JSON.parse(raw)}catch(e){throw Error('Réponse GitHub illisible lors de la lecture : '+e.message)}
  if(!j.sha||typeof j.content!=='string')throw Error('Réponse GitHub incomplète : SHA ou contenu manquant. Aucune donnée écrasée.');
  remoteSha=j.sha;
- const decoded=fromB64(j.content);
- if(!decoded.trim())throw Error('Le fichier data/custom.json sur GitHub est vide. Publication interrompue pour protéger les cours.');
+ // GitHub Contents API omet le contenu base64 des fichiers > 1 Mo.
+ // Lire alors le blob par son SHA, sans modifier le fichier distant.
+ let encoded=j.content;
+ if(!encoded.trim() && Number(j.size)>0){
+   const blobUrl=`https://api.github.com/repos/${REPO}/git/blobs/${encodeURIComponent(j.sha)}`;
+   const blobResponse=await fetch(blobUrl,{headers:head,cache:'no-store'});
+   const blobText=await blobResponse.text();
+   if(!blobResponse.ok)throw Error('Lecture du gros fichier GitHub impossible : HTTP '+blobResponse.status);
+   let blob;try{blob=JSON.parse(blobText)}catch(e){throw Error('Réponse GitHub invalide lors de la lecture du gros fichier : '+e.message)}
+   if(blob.encoding!=='base64'||typeof blob.content!=='string'||!blob.content.trim())throw Error('GitHub ne fournit pas le contenu du gros fichier. Publication annulée sans écrasement.');
+   encoded=blob.content;
+ }
+ const decoded=fromB64(encoded);
+ if(!decoded.trim())throw Error('Le contenu distant est vide ou inaccessible. Publication interrompue pour protéger les cours.');
  try{live=JSON.parse(decoded)}catch(e){throw Error('Le fichier data/custom.json sur GitHub contient un JSON invalide : '+e.message+'. Aucune donnée écrasée.')}
  if(!live||typeof live!=='object'||Array.isArray(live))throw Error('Format de data/custom.json invalide. Publication interrompue.');
 }else if(old.status!==404){const detail=(await old.text()).slice(0,200);throw Error('Lecture GitHub impossible : HTTP '+old.status+(detail?' — '+detail:''))}if(!Array.isArray(live.pages))live.pages=[];if(!Array.isArray(live.quizzes))live.quizzes=[];if(!Array.isArray(live.cheats))live.cheats=[];if(!Array.isArray(live.commands))live.commands=[];
