@@ -55,25 +55,340 @@
   ],
   "quizzes": [
     {
-      "id": "quiz-1792330512861",
-      "title": "QCM Module Microsoft >365",
+      "id": "quiz-1792330878491",
+      "title": "QCM Microsoft 365",
       "category": "01 — Microsoft 365 — Outils collaboratifs",
-      "chapterId": "chapter:01:01",
+      "chapterId": "",
       "questions": [
         {
-          "question": "Question 1 — Quel outil Microsoft 365 permet de communiquer et d'organiser des réunions ?",
+          "question": "Quel est l'objectif principal d'une plateforme collaborative ?",
+          "answers": [
+            "Remplacer le système d'exploitation d'un ordinateur",
+            "Permettre à plusieurs utilisateurs de communiquer et de travailler ensemble",
+            "Configurer automatiquement les routeurs",
+            "Installer des logiciels sans autorisation"
+          ],
+          "correct": 1,
+          "explanation": "Une plateforme collaborative facilite les échanges, le partage de documents et le travail collectif."
+        },
+        {
+          "question": "Que signifie le terme cloud computing ?",
+          "answers": [
+            "Le stockage exclusivement sur une clé USB",
+            "Une technologie de refroidissement des serveurs",
+            "L'utilisation de ressources informatiques accessibles à distance via un réseau",
+            "Un système de connexion sans mot de passe"
+          ],
+          "correct": 2,
+          "explanation": "Le cloud permet d'utiliser des services, des applications et des espaces de stockage hébergés à distance."
+        },
+        {
+          "question": "Quel outil Microsoft 365 est principalement destiné à la communication et aux réunions ?",
           "answers": [
             "SharePoint",
             "OneDrive",
             "Teams",
-            "Excel",
+            "Excel"
+          ],
+          "correct": 2,
+          "explanation": "Microsoft Teams regroupe la messagerie, les réunions et les fonctions de collaboration."
+        },
+        {
+          "question": "Quel outil est principalement utilisé pour centraliser les documents collectifs d'une entreprise ?",
+          "answers": [
             "Outlook",
             "SharePoint",
             "OneDrive",
             "Windows Defender"
           ],
           "correct": 1,
-          "explanation": "SharePoint permet de gérer les bibliothèques documentaires collectives."
+          "explanation": "SharePoint permet de créer des bibliothèques documentaires et des espaces de travail collectifs."
+        },
+        {
+          "question": "Que signifie on-premises ?",
+          "answers": [
+            "Un service hébergé uniquement dans le cloud",
+            "Un logiciel accessible exclusivement sur smartphone",
+            "Une infrastructure hébergée localement dans l'organisation",
+            "Un système de partage public de fichiers"
+          ],
+          "correct": 2,
+          "explanation": "On-premises désigne une infrastructure installée et exploitée localement."
+        },
+        {
+          "question": "Qu'est-ce que SharePoint Online ?",
+          "answers": [
+            "Un logiciel de traitement de texte",
+            "Un service SharePoint hébergé dans le cloud Microsoft",
+            "Un antivirus professionnel",
+            "Un système d'exploitation serveur"
+          ],
+          "correct": 1,
+          "explanation": "SharePoint Online est la version cloud de SharePoint."
+        },
+        {
+          "question": "Quelle est la fonction principale d'une bibliothèque documentaire SharePoint ?",
+          "answers": [
+            "Stocker et organiser des documents",
+            "Héberger des machines virtuelles",
+            "Configurer les adresses IP",
+            "Surveiller la température des serveurs"
+          ],
+          "correct": 0,
+          "explanation": "Une bibliothèque documentaire sert à centraliser et organiser des fichiers."
+        },
+        {
+          "question": "À quoi sert l'historique des versions dans SharePoint ?",
+          "answers": [
+            "Supprimer automatiquement les documents anciens",
+            "Modifier les autorisations des utilisateurs",
+            "Consulter et éventuellement restaurer des versions précédentes d'un document",
+            "Convertir les documents en PDF"
+          ],
+          "correct": 2,
+          "explanation": "Le versioning permet de retrouver les états antérieurs d'un fichier."
+        },
+        {
+          "question": "Quel principe de sécurité doit être appliqué aux autorisations SharePoint ?",
+          "answers": [
+            "Donner le contrôle total à tous les utilisateurs",
+            "Supprimer les restrictions de partage",
+            "Utiliser systématiquement des liens publics",
+            "Appliquer le principe du moindre privilège"
+          ],
+          "correct": 3,
+          "explanation": "Chaque utilisateur doit disposer uniquement des droits nécessaires à son travail."
+        },
+        {
+          "question": "Quel outil moderne peut être associé à SharePoint pour automatiser des processus ?",
+          "answers": [
+            "Power Automate",
+            "Paint",
+            "Bloc-notes Windows",
+            "Gestionnaire de périphériques"
+          ],
+          "correct": 0,
+          "explanation": "Power Automate permet d'automatiser certains flux de travail."
+        },
+        {
+          "question": "Quelle est la fonction principale de OneDrive ?",
+          "answers": [
+            "Gérer les commutateurs réseau",
+            "Stocker et synchroniser des fichiers dans le cloud",
+            "Héberger les contrôleurs de domaine Active Directory",
+            "Remplacer le pare-feu Windows"
+          ],
+          "correct": 1,
+          "explanation": "OneDrive est un service de stockage et de synchronisation de fichiers."
+        },
+        {
+          "question": "Que signifie la synchronisation OneDrive ?",
+          "answers": [
+            "Copier définitivement tous les fichiers sur une clé USB",
+            "Supprimer les fichiers présents dans le cloud",
+            "Maintenir une correspondance entre les fichiers locaux et ceux du cloud",
+            "Désactiver automatiquement les connexions réseau"
+          ],
+          "correct": 2,
+          "explanation": "La synchronisation répercute les modifications entre l'ordinateur et le cloud."
+        },
+        {
+          "question": "Dans OneDrive, que signifie généralement l'icône de nuage à côté d'un fichier ?",
+          "answers": [
+            "Le fichier est corrompu",
+            "Le fichier est disponible uniquement en ligne",
+            "Le fichier a été supprimé",
+            "Le fichier est infecté"
+          ],
+          "correct": 1,
+          "explanation": "Un fichier disponible uniquement en ligne doit être téléchargé pour être utilisé localement."
+        },
+        {
+          "question": "Que signifie généralement une croix rouge sur un fichier OneDrive ?",
+          "answers": [
+            "Une erreur de synchronisation",
+            "Une synchronisation terminée",
+            "Un fichier disponible hors connexion",
+            "Un document partagé avec tous les utilisateurs"
+          ],
+          "correct": 0,
+          "explanation": "La croix rouge indique généralement qu'un fichier ne peut pas être synchronisé correctement."
+        },
+        {
+          "question": "À quoi sert l'option Toujours conserver sur cet appareil ?",
+          "answers": [
+            "Interdire toute modification du document",
+            "Supprimer la version enregistrée dans le cloud",
+            "Demander la conservation d'une copie locale du fichier",
+            "Partager automatiquement le fichier"
+          ],
+          "correct": 2,
+          "explanation": "Cette option permet de garder une copie locale accessible hors connexion."
+        },
+        {
+          "question": "Pourquoi la synchronisation OneDrive ne remplace-t-elle pas une sauvegarde indépendante ?",
+          "answers": [
+            "OneDrive ne prend pas en charge les fichiers Word",
+            "Les suppressions et modifications indésirables peuvent également être synchronisées",
+            "OneDrive fonctionne uniquement sur smartphone",
+            "OneDrive ne permet jamais de restaurer des fichiers"
+          ],
+          "correct": 1,
+          "explanation": "La synchronisation peut propager une suppression ou une modification accidentelle."
+        },
+        {
+          "question": "Quelle fonctionnalité permet de récupérer un fichier supprimé dans OneDrive, s'il est encore conservé ?",
+          "answers": [
+            "Le calendrier Teams",
+            "Le gestionnaire de tâches",
+            "La corbeille OneDrive",
+            "Le panneau de configuration Windows"
+          ],
+          "correct": 2,
+          "explanation": "La corbeille OneDrive permet de restaurer certains fichiers supprimés."
+        },
+        {
+          "question": "Qu'est-ce que la coédition ?",
+          "answers": [
+            "La modification simultanée d'un document par plusieurs utilisateurs",
+            "Le chiffrement automatique d'un disque dur",
+            "La création de plusieurs comptes Microsoft",
+            "La suppression des anciennes versions d'un fichier"
+          ],
+          "correct": 0,
+          "explanation": "La coédition permet à plusieurs personnes de travailler ensemble sur un même document."
+        },
+        {
+          "question": "Quels formats de fichiers sont notamment compatibles avec la coédition Microsoft 365 ?",
+          "answers": [
+            ".exe, .dll, .sys",
+            ".iso, .img, .vhd",
+            ".bat, .cmd, .ps1",
+            ".docx, .xlsx, .pptx"
+          ],
+          "correct": 3,
+          "explanation": "Les documents Word, Excel et PowerPoint compatibles peuvent être modifiés simultanément."
+        },
+        {
+          "question": "Avant de partager un document OneDrive, que faut-il vérifier en priorité ?",
+          "answers": [
+            "La résolution de l'écran du destinataire",
+            "Les destinataires et les autorisations de partage",
+            "Le modèle du processeur",
+            "La version du BIOS"
+          ],
+          "correct": 1,
+          "explanation": "Les droits accordés doivent correspondre aux besoins des destinataires."
+        },
+        {
+          "question": "Qu'est-ce qu'une équipe dans Microsoft Teams ?",
+          "answers": [
+            "Un ensemble de serveurs physiques",
+            "Un logiciel de sauvegarde",
+            "Un espace regroupant des utilisateurs, des conversations et des outils",
+            "Un réseau Wi-Fi indépendant"
+          ],
+          "correct": 2,
+          "explanation": "Une équipe Teams réunit des membres et des ressources autour d'une activité commune."
+        },
+        {
+          "question": "Quel est le rôle principal d'un propriétaire d'équipe Teams ?",
+          "answers": [
+            "Gérer l'équipe, ses membres et certains paramètres",
+            "Installer automatiquement Windows sur tous les ordinateurs",
+            "Administrer les routeurs de l'entreprise",
+            "Supprimer les comptes Microsoft 365"
+          ],
+          "correct": 0,
+          "explanation": "Le propriétaire dispose de droits de gestion sur son équipe."
+        },
+        {
+          "question": "À quoi sert un canal Teams ?",
+          "answers": [
+            "Attribuer une adresse IP à un ordinateur",
+            "Organiser les conversations et les fichiers autour d'un sujet",
+            "Remplacer le serveur DNS",
+            "Créer une partition de disque"
+          ],
+          "correct": 1,
+          "explanation": "Un canal regroupe les échanges et les contenus d'un projet ou d'un thème."
+        },
+        {
+          "question": "Quelle est la particularité d'un canal privé Teams ?",
+          "answers": [
+            "Il est automatiquement accessible à toute l'entreprise",
+            "Il ne peut contenir aucun document",
+            "Il est accessible uniquement aux personnes autorisées",
+            "Il supprime les conversations après chaque réunion"
+          ],
+          "correct": 2,
+          "explanation": "Un canal privé limite l'accès à ses membres autorisés."
+        },
+        {
+          "question": "Lors de la création d'une équipe Teams standard, quel service est généralement associé pour le stockage des documents collectifs ?",
+          "answers": [
+            "SharePoint",
+            "Windows Update",
+            "Microsoft Defender Firewall",
+            "Hyper-V"
+          ],
+          "correct": 0,
+          "explanation": "Teams utilise notamment SharePoint pour le stockage des documents d'équipe."
+        },
+        {
+          "question": "Où sont généralement stockés les fichiers partagés dans un canal Teams standard ?",
+          "answers": [
+            "Sur le disque dur de chaque membre uniquement",
+            "Dans une bibliothèque documentaire SharePoint",
+            "Dans la corbeille Outlook",
+            "Dans le BIOS de l'ordinateur"
+          ],
+          "correct": 1,
+          "explanation": "Les fichiers des canaux standard sont généralement enregistrés dans SharePoint."
+        },
+        {
+          "question": "Où sont généralement stockés les fichiers envoyés dans une conversation privée Teams ?",
+          "answers": [
+            "Dans le serveur DHCP",
+            "Dans la mémoire vive du destinataire",
+            "Dans OneDrive, avec des autorisations de partage adaptées",
+            "Dans le journal des événements Windows"
+          ],
+          "correct": 2,
+          "explanation": "Les fichiers partagés dans les conversations privées Teams sont généralement stockés dans OneDrive."
+        },
+        {
+          "question": "À quoi servent les onglets dans un canal Teams ?",
+          "answers": [
+            "Modifier les paramètres du routeur",
+            "Installer les pilotes graphiques",
+            "Remplacer les comptes utilisateurs",
+            "Accéder rapidement à des fichiers, contenus ou applications"
+          ],
+          "correct": 3,
+          "explanation": "Les onglets permettent d'accéder rapidement aux ressources utiles du canal."
+        },
+        {
+          "question": "Quel rôle peut généralement présenter du contenu pendant une réunion Teams ?",
+          "answers": [
+            "Le présentateur",
+            "Uniquement l'administrateur réseau",
+            "Uniquement un utilisateur invité",
+            "Uniquement le propriétaire du site SharePoint"
+          ],
+          "correct": 0,
+          "explanation": "Le présentateur peut partager du contenu selon les autorisations de la réunion."
+        },
+        {
+          "question": "Un utilisateur ne retrouve plus un fichier partagé dans Teams. Quelle est la première démarche pertinente ?",
+          "answers": [
+            "Réinstaller immédiatement Windows",
+            "Supprimer puis recréer son compte Microsoft",
+            "Identifier si le fichier provenait d'un canal ou d'une conversation",
+            "Formater son disque dur"
+          ],
+          "correct": 2,
+          "explanation": "L'origine du fichier permet de déterminer s'il faut le rechercher dans SharePoint ou OneDrive."
         }
       ]
     }
