@@ -53,7 +53,31 @@
       "updatedAt": "2026-10-18T13:31:48.314Z"
     }
   ],
-  "quizzes": [],
+  "quizzes": [
+    {
+      "id": "quiz-1792330512861",
+      "title": "QCM Module Microsoft >365",
+      "category": "01 — Microsoft 365 — Outils collaboratifs",
+      "chapterId": "chapter:01:01",
+      "questions": [
+        {
+          "question": "Question 1 — Quel outil Microsoft 365 permet de communiquer et d'organiser des réunions ?",
+          "answers": [
+            "SharePoint",
+            "OneDrive",
+            "Teams",
+            "Excel",
+            "Outlook",
+            "SharePoint",
+            "OneDrive",
+            "Windows Defender"
+          ],
+          "correct": 1,
+          "explanation": "SharePoint permet de gérer les bibliothèques documentaires collectives."
+        }
+      ]
+    }
+  ],
   "cheats": [
     {
       "id": "cheat-1792280316073",
