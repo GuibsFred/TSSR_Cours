@@ -261,3 +261,12 @@ body.home-network #main{background:#f2f8fc!important}
 @media(max-width:1100px){.v84-topgrid{grid-template-columns:1fr}.v84-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:750px){.v84-resume-grid,.v84-cheatgrid{grid-template-columns:1fr 1fr}.v84-modulegrid{grid-template-columns:repeat(2,minmax(0,1fr))}.v84-progress{gap:14px}}
 @media(max-width:520px){.v84-shortcuts,.v84-resume-grid,.v84-cheatgrid,.v84-modulegrid{grid-template-columns:1fr}.v84-progress{flex-direction:column;align-items:stretch}.v84-panel{padding:15px}.v84-shortcut{min-height:125px}}
+
+/* Statistiques Supabase TSSR */
+.tssr-stats-bar{display:flex;align-items:center;justify-content:center;gap:clamp(20px,5vw,64px);margin:12px 0 18px;padding:11px 16px;border:1px solid rgba(30,130,145,.2);border-radius:13px;background:rgba(26,133,151,.07);color:inherit;font-size:14px;flex-wrap:wrap}
+.tssr-stats-bar strong{font-weight:800;font-variant-numeric:tabular-nums}
+.tssr-course-like{display:flex;align-items:center;gap:15px;flex-wrap:wrap;padding:18px 22px;margin:20px 0 4px;border-top:1px solid rgba(128,128,128,.2)}
+.tssr-course-like button{border:1px solid #16899b;border-radius:12px;padding:10px 18px;background:#147f91;color:white;font-weight:750;cursor:pointer}
+.tssr-course-like button[aria-pressed="true"]{background:#ad3b66;border-color:#ad3b66}
+.tssr-course-like button:disabled{opacity:.55;cursor:wait}
+.tssr-course-like span{opacity:.7;font-size:13px}
