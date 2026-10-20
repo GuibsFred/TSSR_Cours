@@ -6,11 +6,9 @@
       "kind": "cours",
       "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
       "chapter": true,
-      "html": "<p><span data-revision-blue=\"true\" style=\"color: rgb(23, 105, 210);\">jE T AIME</span></p><p><br></p><p><br></p>",
-      "revisionExtracts": [
-        "jE T AIME"
-      ],
-      "updatedAt": "2026-10-17T23:37:36.706Z"
+      "html": "<p><br></p><p><br></p>",
+      "revisionExtracts": [],
+      "updatedAt": "2026-10-20T21:38:58.954Z"
     },
     {
       "id": "chapter:01:03",
