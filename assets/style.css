@@ -369,3 +369,16 @@ body.home-network #main{background:#f2f8fc!important}
 @media(max-width:950px){.tssr-studio-home .studio-hero{height:430px!important}.tssr-studio-home .studio-overlay{width:55%!important;padding:28px!important}.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#061725 0%,#071a29f5 25%,#071a29bc 48%,#071a2922 75%,transparent)!important}}
 @media(max-width:640px){.tssr-studio-home .studio-hero{height:490px!important;min-height:490px!important;display:block!important}.tssr-studio-home .studio-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;background-position:58% center!important}.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#061725eb,#071a29b5 55%,#071a2966),linear-gradient(0deg,#061725bb,transparent 55%)!important}.tssr-studio-home .studio-overlay{height:100%!important;width:100%!important;min-height:0!important;padding:26px!important;justify-content:flex-start!important;padding-top:52px!important}.tssr-studio-home .studio-overlay h1{font-size:36px!important}.tssr-studio-home .studio-overlay p{max-width:330px!important}.tssr-studio-home .studio-caption{bottom:10px!important;right:10px!important}}
 @media(prefers-reduced-motion:reduce){.tssr-studio-home .studio-screen-glow,.tssr-studio-home .studio-screen-lines,.tssr-studio-home .studio-steam-v11 i{animation:none!important}}
+
+/* V13 : animation image par image réelle des moniteurs et de la vapeur. */
+.tssr-studio-home .studio-scene {
+  background-image:url('studio-live-v13.webp') !important;
+  background-size:cover !important;
+  background-position:center center !important;
+}
+/* Les anciens effets génériques masquaient la scène et n'étaient pas convaincants. */
+.tssr-studio-home .studio-screen-glow,
+.tssr-studio-home .studio-screen-lines,
+.tssr-studio-home .studio-steam-v11,
+.tssr-studio-home .studio-coffee {display:none !important;}
+.tssr-studio-home .studio-caption{font-size:11px !important;}
