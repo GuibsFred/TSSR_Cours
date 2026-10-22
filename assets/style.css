@@ -483,3 +483,15 @@ body.home-network #main{background:#f2f8fc!important}
 .tssr-studio-home .studio-overlay{z-index:2!important;position:relative!important}
 .tssr-studio-home .studio-caption{display:none!important}
 @media(max-width:700px){.tssr-studio-home .studio-scene.v19-scene .v19-cinema{width:auto!important;min-width:100%!important;left:50%!important;transform:translateX(-50%);object-fit:cover!important}.tssr-studio-home .studio-overlay{width:100%!important;min-width:0!important}}
+
+/* V19.1 : cache complet du texte incrusté dans l'illustration de fond. */
+.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#041723 0%,#041723 21%,#041723fa 24%,#041723f1 28%,#041723bb 34%,#04172366 40%,transparent 48%)!important}
+
+/* V20 - cinematic realistic artwork + accurately clipped canvas animation */
+.tssr-studio-home .studio-scene.v19-scene .v19-cinema{object-fit:fill!important}
+.tssr-studio-home .studio-scene.v19-scene .v20-effects{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#041723 0%,#041723f5 12%,#041723df 19%,#041723b0 28%,#04172355 37%,transparent 48%)!important}
+
+/* V20.2 — respect photographic proportions */
+.tssr-studio-home .studio-scene.v19-scene .v19-cinema{object-fit:cover!important;object-position:center 53%!important}
+.tssr-studio-home .studio-scene.v19-scene .v20-effects{z-index:2!important}
