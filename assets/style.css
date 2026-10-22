@@ -452,3 +452,25 @@ body.home-network #main{background:#f2f8fc!important}
 @media(max-width:850px){.tssr-studio-home .studio-scene .tssr-svg-scene{object-position:65% center}.tssr-studio-home .studio-overlay{width:64%!important}}
 @media(max-width:600px){.tssr-studio-home .studio-hero{height:470px!important}.tssr-studio-home .studio-scene .tssr-svg-scene{object-position:68% center;opacity:.66}.tssr-studio-home .studio-overlay{width:100%!important;background:linear-gradient(90deg,#051725eb,#051725aa 75%,transparent)!important}}
 @media(prefers-reduced-motion:reduce){.tssr-studio-home .tssr-svg-scene{opacity:1}}
+
+/* V18 : photographie cinématique cadrée sur la maquette, animations clipées dans les écrans */
+.tssr-studio-home .studio-hero{height:clamp(370px,27vw,480px)!important;min-height:370px!important;background:#061b29!important;isolation:isolate}
+.tssr-studio-home .studio-scene{position:absolute!important;inset:0!important;z-index:0!important;overflow:hidden!important}
+.tssr-studio-home .studio-scene .tssr-svg-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:fill!important;object-position:center!important;opacity:1!important}
+.tssr-studio-home .studio-v18-animation{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.tssr-studio-home .studio-hero:before{content:''!important;position:absolute!important;inset:0!important;z-index:1!important;background:linear-gradient(90deg,#041723 0%,#041723 15%,#041723f5 21%,#041723dd 26%,#04172388 33%,transparent 46%)!important;pointer-events:none}
+.tssr-studio-home .studio-overlay{position:relative!important;z-index:2!important;width:min(37%,540px)!important;min-width:340px!important;padding:clamp(24px,2.6vw,45px)!important;justify-content:center!important}
+.tssr-studio-home .studio-overlay h1{font-size:clamp(32px,2.8vw,49px)!important}
+.tssr-studio-home .studio-overlay p{max-width:280px!important}
+.tssr-studio-home .v18-scan{animation:v18scan 5s linear infinite}
+.tssr-studio-home .v18-chart{stroke-dasharray:180;stroke-dashoffset:180;animation:v18chart 4s ease-in-out infinite}
+.tssr-studio-home .v18-cmd{animation:v18cmd 6s steps(1,end) infinite}
+.tssr-studio-home .v18-delay{animation-delay:1.3s}.tssr-studio-home .v18-delay2{animation-delay:2.7s}
+.tssr-studio-home .v18-steam{animation:v18steam 4s ease-in-out infinite}
+@keyframes v18scan{0%{transform:translateY(0);opacity:0}15%{opacity:.65}85%{opacity:.65}100%{transform:translateY(140px);opacity:0}}
+@keyframes v18chart{0%{stroke-dashoffset:180}55%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:-180}}
+@keyframes v18cmd{0%,12%{opacity:0}14%,83%{opacity:1}95%,100%{opacity:0}}
+@keyframes v18steam{0%,100%{opacity:.06;transform:translateY(6px)}50%{opacity:.35;transform:translateY(-9px)}}
+@media(max-width:800px){.tssr-studio-home .studio-overlay{width:65%!important;min-width:0!important}.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#041723f9 0%,#041723e8 45%,#04172333 100%)!important}}
+@media(max-width:540px){.tssr-studio-home .studio-hero{height:430px!important}.tssr-studio-home .studio-overlay{width:100%!important}.tssr-studio-home .studio-scene .tssr-svg-scene{object-fit:cover!important}}
+@media(prefers-reduced-motion:reduce){.tssr-studio-home .studio-v18-animation{display:none}}

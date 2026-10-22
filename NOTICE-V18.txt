@@ -1,0 +1,1 @@
+V18 : décor basé sur la maquette retenue, animation SVG limitée aux zones des moniteurs, vapeur discrète. Les autres rubriques et données sont conservées. Les animations sont des simulations graphiques et non des logiciels réels.
