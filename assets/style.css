@@ -409,3 +409,9 @@ body.home-network #main{background:#f2f8fc!important}
 @media(max-width:950px){.tssr-studio-home .studio-scene{background-size:auto 100%!important;background-position:70% center!important}.tssr-studio-home .studio-live-screens{display:none}.tssr-studio-home .studio-overlay{width:65%!important}}
 @media(max-width:640px){.tssr-studio-home .studio-hero{height:480px!important;min-height:480px!important}.tssr-studio-home .studio-overlay{width:100%!important;justify-content:flex-start!important;padding-top:50px!important}.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#061725ef,#061725ae 65%,#06172544)!important}}
 @media(prefers-reduced-motion:reduce){.tssr-studio-home .term-row,.tssr-studio-home .term-cursor,.tssr-studio-home .net-path,.tssr-studio-home .net-nodes circle,.tssr-studio-home .studio-metrics i{animation:none!important}.tssr-studio-home .term-row{max-width:100%}}
+
+/* V15 — animations rendered into the actual monitor pixels, not floating DOM elements. */
+.tssr-studio-home .studio-scene{background-image:url('studio-v15-embedded.webp')!important;}
+.tssr-studio-home .studio-live-screens,.tssr-studio-home .studio-screen-glow,.tssr-studio-home .studio-screen-lines,.tssr-studio-home .studio-steam-v11,.tssr-studio-home .studio-coffee{display:none!important;}
+.tssr-studio-home .studio-caption{display:none!important;}
+@media(prefers-reduced-motion:reduce){.tssr-studio-home .studio-scene{background-image:url('studio-v14-scene.webp')!important}}
