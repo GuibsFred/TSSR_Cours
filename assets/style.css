@@ -441,3 +441,14 @@ body.home-network #main{background:#f2f8fc!important}
 @media(max-width:900px){.tssr-studio-home .studio-scene{background-position:55% center!important}.tssr-studio-home .studio-overlay{width:60%!important}}
 @media(max-width:600px){.tssr-studio-home .studio-hero{height:460px!important}.tssr-studio-home .studio-overlay{width:100%!important;padding:30px!important}.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#061725f5 0%,#061725c0 65%,#06172566 100%)!important}}
 @media(prefers-reduced-motion:reduce){.tssr-studio-home .studio-scene{background-image:url('studio-v14-scene.webp')!important}}
+
+/* V17 — scene dessinee en SVG, sans image generee ni animation flottante */
+.tssr-studio-home .studio-hero{height:clamp(390px,29vw,510px)!important;min-height:390px!important;overflow:hidden!important;background:#081c2c!important}
+.tssr-studio-home .studio-scene{position:absolute!important;inset:0!important;background:none!important;animation:none!important;overflow:hidden!important}
+.tssr-studio-home .studio-scene .tssr-svg-scene{display:block;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
+.tssr-studio-home .studio-hero:before{background:none!important;pointer-events:none!important}
+.tssr-studio-home .studio-overlay{position:relative!important;z-index:2!important;width:42%!important;padding:clamp(30px,3vw,55px)!important}
+.tssr-studio-home .studio-caption,.tssr-studio-home .studio-coffee,.tssr-studio-home .studio-live-screens{display:none!important}
+@media(max-width:850px){.tssr-studio-home .studio-scene .tssr-svg-scene{object-position:65% center}.tssr-studio-home .studio-overlay{width:64%!important}}
+@media(max-width:600px){.tssr-studio-home .studio-hero{height:470px!important}.tssr-studio-home .studio-scene .tssr-svg-scene{object-position:68% center;opacity:.66}.tssr-studio-home .studio-overlay{width:100%!important;background:linear-gradient(90deg,#051725eb,#051725aa 75%,transparent)!important}}
+@media(prefers-reduced-motion:reduce){.tssr-studio-home .tssr-svg-scene{opacity:1}}
