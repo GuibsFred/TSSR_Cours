@@ -382,3 +382,30 @@ body.home-network #main{background:#f2f8fc!important}
 .tssr-studio-home .studio-steam-v11,
 .tssr-studio-home .studio-coffee {display:none !important;}
 .tssr-studio-home .studio-caption{font-size:11px !important;}
+
+/* V14 : illustration de bureau détaillée et animations contenues dans les moniteurs. */
+.tssr-studio-home .studio-hero{height:clamp(410px,31vw,490px)!important;min-height:410px!important;background:#061725!important}
+.tssr-studio-home .studio-scene{background-image:url('studio-v14-scene.webp')!important;background-size:78% 100%!important;background-position:right center!important;background-color:#061725!important}
+.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#061725 0%,#061725 18%,#061725f5 28%,#061725bf 36%,#06172544 49%,transparent 63%)!important}
+.tssr-studio-home .studio-overlay{width:41%!important;padding:clamp(25px,2.6vw,48px)!important;justify-content:center!important}
+.tssr-studio-home .studio-overlay p{max-width:345px!important}
+.tssr-studio-home .studio-live-screens{position:absolute;right:0;top:0;width:78%;height:100%;pointer-events:none;overflow:hidden}
+.tssr-studio-home .studio-terminal{position:absolute;left:3.6%;top:42.5%;width:17%;height:33%;transform:skewY(-1deg);overflow:hidden;display:flex;flex-direction:column;gap:5%;padding:1.2%;background:#031522c9;color:#69e7ba;font:clamp(5px,.47vw,9px)/1.4 monospace;box-shadow:inset 0 0 16px #0af3f01a;opacity:.87}
+.tssr-studio-home .term-row{white-space:nowrap;overflow:hidden;max-width:0;animation:studioType 18s steps(38,end) infinite}
+.tssr-studio-home .term-row:nth-child(2){animation-delay:1.5s}.tssr-studio-home .term-row:nth-child(3){animation-delay:3s}.tssr-studio-home .term-row:nth-child(4){animation-delay:4.5s}.tssr-studio-home .term-row:nth-child(5){animation-delay:6s}.tssr-studio-home .term-row:nth-child(6){animation-delay:7.5s}.tssr-studio-home .term-row:nth-child(7){animation-delay:9s}
+@keyframes studioType{0%,5%{max-width:0}15%,85%{max-width:100%}95%,100%{max-width:0}}
+.tssr-studio-home .term-cursor{animation:studioCursor 1s step-end infinite}@keyframes studioCursor{50%{opacity:0}}
+.tssr-studio-home .studio-network{position:absolute;left:35%;top:43%;width:19%;height:31%;opacity:.68;filter:drop-shadow(0 0 3px #13d3f7);mix-blend-mode:screen}
+.tssr-studio-home .net-path{fill:none;stroke:#38c8f0;stroke-width:1.6;stroke-dasharray:7 12;animation:studioFlow 6s linear infinite}
+.tssr-studio-home .net-nodes circle{fill:#0ff5d2;animation:studioNode 3s ease-in-out infinite alternate}.tssr-studio-home .net-nodes circle:nth-child(even){animation-delay:1.2s}
+@keyframes studioFlow{to{stroke-dashoffset:-114}}@keyframes studioNode{to{fill:#f7a84b;opacity:.55}}
+.tssr-studio-home .studio-metrics{position:absolute;left:59.5%;top:61%;width:13%;height:13%;display:flex;gap:3%;align-items:end;opacity:.65}
+.tssr-studio-home .studio-metrics i{flex:1;height:40%;background:linear-gradient(#35e8dc,#1266ae);animation:studioBar 2.8s ease-in-out infinite alternate}
+.tssr-studio-home .studio-metrics i:nth-child(3n){animation-delay:.8s}.tssr-studio-home .studio-metrics i:nth-child(3n + 1){animation-delay:1.6s}
+@keyframes studioBar{to{height:95%}}
+.tssr-studio-home .studio-steam-v11{display:block!important;left:75.7%!important;top:53%!important;opacity:.75!important}
+.tssr-studio-home .studio-steam-v11 i{animation:v11Steam 4.8s ease-out infinite!important}
+.tssr-studio-home .studio-caption{font-size:10px!important}
+@media(max-width:950px){.tssr-studio-home .studio-scene{background-size:auto 100%!important;background-position:70% center!important}.tssr-studio-home .studio-live-screens{display:none}.tssr-studio-home .studio-overlay{width:65%!important}}
+@media(max-width:640px){.tssr-studio-home .studio-hero{height:480px!important;min-height:480px!important}.tssr-studio-home .studio-overlay{width:100%!important;justify-content:flex-start!important;padding-top:50px!important}.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#061725ef,#061725ae 65%,#06172544)!important}}
+@media(prefers-reduced-motion:reduce){.tssr-studio-home .term-row,.tssr-studio-home .term-cursor,.tssr-studio-home .net-path,.tssr-studio-home .net-nodes circle,.tssr-studio-home .studio-metrics i{animation:none!important}.tssr-studio-home .term-row{max-width:100%}}
