@@ -474,3 +474,12 @@ body.home-network #main{background:#f2f8fc!important}
 @media(max-width:800px){.tssr-studio-home .studio-overlay{width:65%!important;min-width:0!important}.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#041723f9 0%,#041723e8 45%,#04172333 100%)!important}}
 @media(max-width:540px){.tssr-studio-home .studio-hero{height:430px!important}.tssr-studio-home .studio-overlay{width:100%!important}.tssr-studio-home .studio-scene .tssr-svg-scene{object-fit:cover!important}}
 @media(prefers-reduced-motion:reduce){.tssr-studio-home .studio-v18-animation{display:none}}
+
+/* V19: remplacer réellement le SVG par la scène cinématique animée. */
+.tssr-studio-home .studio-hero{height:clamp(370px,27vw,480px)!important;min-height:370px!important;background:#071b28!important}
+.tssr-studio-home .studio-scene.v19-scene{position:absolute!important;inset:0!important;overflow:hidden!important;z-index:0!important;background:none!important}
+.tssr-studio-home .studio-scene.v19-scene .v19-cinema{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:fill!important;max-width:none!important}
+.tssr-studio-home .studio-hero:before{background:linear-gradient(90deg,#051826 0%,#051826f6 15%,#051826da 24%,#05182683 34%,transparent 48%)!important;z-index:1!important}
+.tssr-studio-home .studio-overlay{z-index:2!important;position:relative!important}
+.tssr-studio-home .studio-caption{display:none!important}
+@media(max-width:700px){.tssr-studio-home .studio-scene.v19-scene .v19-cinema{width:auto!important;min-width:100%!important;left:50%!important;transform:translateX(-50%);object-fit:cover!important}.tssr-studio-home .studio-overlay{width:100%!important;min-width:0!important}}
