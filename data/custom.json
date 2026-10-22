@@ -62,6 +62,19 @@
         "Les 7 couches, de la plus haute à la plus basse           7. Application — Services réseau (HTTP, DNS, SMTP).          6. Présentation — Encodage, chiffrement, compression.           5. Session — Ouverture, gestion et fermeture des sessions.           4. Transport — TCP, UDP, port           3. Réseau — Adresses IP, paquets, routeurss           2. Liaison de données — Adresses MAC, trames, switches.            1. Physique — Bits, signaux, câbles, fibre, ondes radio.SDU : données reçues de la couche supérieure.PCI : informations de contrôle ajoutées par une couche.PDU : unité de données produite après traitement.Encapsulation : ajout progressif des informations de protocole.Désencapsulation : traitement inverse à la réception.TCP : transport fiable et ordonné.UDP : transport sans garantie intégrée de livraison ou d'ordre.MAC : adressage sur un lien local.IP : adressage et acheminement entre réseaux."
       ],
       "updatedAt": "2026-10-18T14:40:47.311Z"
+    },
+    {
+      "id": "chapter:02:05",
+      "title": "Les premières commandes",
+      "kind": "cours",
+      "category": "02 — Bases des réseaux / Cours",
+      "chapter": true,
+      "html": "<h2>1. Qu'est-ce que l'ARP ?</h2><p>ARP (Address Resolution Protocol) est un protocole qui permet de retrouver une adresse MAC à partir d'une adresse IPv4 sur un réseau local.</p><p>Chaque ordinateur possède notamment deux adresses :</p><ul><li><p>Adresse IP : elle permet d'identifier un appareil sur le réseau.</p></li><li><p>Adresse MAC : elle permet d'identifier une interface réseau lors des communications locales.</p></li></ul><p>Exemple : un ordinateur connaît l'adresse IP <code>192.168.1.100</code>, mais pas son adresse MAC. ARP lui permet de retrouver cette adresse MAC pour communiquer avec lui.</p><p>À retenir : ARP fait le lien entre les adresses IP et MAC sur un réseau local.</p><h2>2. À quoi sert la commande ARP ?</h2><p>La commande <code>arp</code> permet de consulter et de modifier la table ARP, également appelée cache ARP.</p><p>Cette table conserve les correspondances entre les adresses IP et MAC déjà connues.</p><p>Elle évite à l'ordinateur de rechercher à nouveau une adresse MAC à chaque communication.</p><p>Il existe deux types d'entrées :</p><ul><li><p>Dynamique : association découverte automatiquement.</p></li><li><p>Statique : association ajoutée manuellement.</p></li></ul><h2>3. Les commandes ARP</h2><h3></h3><span data-revision-blue=\"true\" style=\"color: rgb(23, 105, 210);\"><h3>3.1. Sous Windows</h3><div><table><tbody><tr><th><p>Action</p></th><th><p>Commande Windows</p></th></tr><tr><td><p>Afficher le cache ARP</p></td><td><p><code>arp -a</code></p></td></tr><tr><td><p>Afficher la table d'une interface</p></td><td><p><code>arp -a -n @ipiface</code></p></td></tr><tr><td><p>Ajouter un enregistrement statique</p></td><td><p><code>arp -s @ip @mac</code></p></td></tr><tr><td><p>Ajouter un enregistrement statique dans la table ARP d'une interface</p></td><td><p><code>arp -s @ip @mac @ipiface</code></p></td></tr><tr><td><p>Vider le cache</p></td><td><p><code>arp -d</code></p></td></tr><tr><td><p>Vider le cache d'une interface</p></td><td><p><code>arp -d @ipiface</code></p></td></tr></tbody></table></div><h3>3.2. Sous Debian</h3><div><table><tbody><tr><th><p>Action</p></th><th><p>Commande Debian</p></th></tr><tr><td><p>Afficher le cache (nom d'hôte ↔ adresse MAC)</p></td><td><p><code>arp -a</code></p></td></tr><tr><td><p>Afficher le cache (adresse IP ↔ adresse MAC)</p></td><td><p><code>arp -n</code></p></td></tr><tr><td><p>Afficher le cache pour une interface</p></td><td><p><code>arp -a -i interface</code> ou <code>arp -n -i interface</code></p></td></tr><tr><td><p>Ajouter un enregistrement statique</p></td><td><p><code>arp -s hôte @mac</code></p></td></tr><tr><td><p>Supprimer un enregistrement</p></td><td><p><code>arp -d hôte</code></p></td></tr></tbody></table></div></span><div><table><tbody><tr><td><p><code></code></p></td></tr></tbody></table></div><p>Les commandes ci-dessus sont reprises des deux tableaux de ton école, sans ajout de commandes supplémentaires.</p><h3>3.3. Exemple : afficher la table ARP</h3><p>Sous Windows, ouvrir l'invite de commandes et saisir :</p><div><pre dir=\"ltr\"><code>arp -a</code></pre></div><p>Exemple de résultat :</p><div><pre dir=\"ltr\"><code>Adresse Internet    Adresse physique       Type\n192.168.1.100       00-14-22-01-23-45      dynamique\n192.168.1.101       00-15-5d-8b-12-34      dynamique</code></pre></div><p>Explication des colonnes :</p><ul><li><p>Adresse Internet : adresse IP de l'appareil.</p></li><li><p>Adresse physique : adresse MAC correspondante.</p></li><li><p>Type : indique si l'association est dynamique ou statique.</p></li></ul><h3>3.4. Ajouter une entrée ARP</h3><p>Pour enregistrer manuellement une correspondance entre une IP et une MAC :</p><div><pre dir=\"ltr\"><code>arp -s 192.168.1.200 00-14-22-01-23-45</code></pre></div><p>Cette commande associe l'adresse IP <code>192.168.1.200</code> à l'adresse MAC <code>00-14-22-01-23-45</code>.</p><h3>3.5. Supprimer des entrées ARP</h3><p>Sous Windows, pour vider les entrées supprimables du cache ARP :</p><div><pre dir=\"ltr\"><code>arp -d *</code></pre></div><p>Sous Debian, pour supprimer une association :</p><div><pre dir=\"ltr\"><code>arp -d hôte</code></pre></div><h2>4. Comment fonctionne ARP ?</h2><p>Lorsqu'un ordinateur veut communiquer avec un autre appareil sur son réseau local :</p><ol><li><p>Il regarde dans sa table ARP s'il connaît déjà l'adresse MAC correspondant à l'IP recherchée.</p></li><li><p>Si l'adresse MAC est inconnue, il envoie une requête ARP en broadcast, c'est-à-dire une demande diffusée sur le réseau local.</p></li><li><p>L'appareil concerné répond en donnant son adresse MAC.</p></li><li><p>L'ordinateur enregistre cette correspondance dans sa table ARP pour ses prochaines communications.</p></li></ol><p>Exemple :</p><p>L'ordinateur demande : « Qui possède l'adresse IP <code>192.168.1.100</code> ? »</p><p>L'appareil concerné répond : « C'est moi, mon adresse MAC est <code>00-14-22-01-23-45</code>. »</p><p>L'ordinateur peut maintenant utiliser cette adresse MAC pour envoyer ses données.</p><h2>5. Les problèmes fréquents liés à ARP</h2><h3>Mauvaise association IP/MAC</h3><p>Une adresse IP associée à une mauvaise adresse MAC peut empêcher les appareils de communiquer correctement.</p><h3>Cache ARP obsolète</h3><p>Une ancienne association peut devenir incorrecte, notamment après un changement d'équipement.</p><h3>ARP Spoofing</h3><p>L'ARP Spoofing est une attaque qui consiste à envoyer de fausses informations ARP.</p><p>Un attaquant peut ainsi essayer de rediriger ou d'intercepter des communications réseau.</p><h2>6. Dans quels cas utiliser ARP ?</h2><h3>Diagnostiquer un problème réseau</h3><p>Si un appareil ne répond pas, on peut consulter la table ARP :</p><div><pre dir=\"ltr\"><code>arp -a</code></pre></div><p>Cela permet de vérifier si une association IP/MAC est enregistrée.</p><h3>Repérer une anomalie</h3><p>Une association IP/MAC inhabituelle peut signaler une erreur ou une tentative d'attaque.</p><p>Par exemple, une même adresse MAC associée à plusieurs IP peut nécessiter une vérification, mais ce n'est pas automatiquement une attaque.</p><h3>Configurer une association manuelle</h3><p>Dans certains environnements, il est possible d'ajouter une association IP/MAC statique pour éviter qu'elle soit découverte automatiquement.</p><h2>7. Les limites d'ARP</h2><ul><li><p>ARP fonctionne avec IPv4 sur les réseaux locaux compatibles.</p></li><li><p>Les requêtes ARP ne traversent normalement pas les routeurs.</p></li><li><p>ARP ne sert pas à rechercher directement l'adresse MAC d'un appareil situé sur un réseau distant.</p></li><li><p>En IPv6, ARP est remplacé par NDP (Neighbor Discovery Protocol).</p></li></ul><div></div><h3></h3><span data-revision-blue=\"true\" style=\"color: rgb(23, 105, 210);\"><h3>L'essentiel à retenir</h3><div><table><tbody><tr><th><p>Terme</p></th><th><p>Signification</p></th></tr><tr><td><p>ARP</p></td><td><p>Retrouve une adresse MAC à partir d'une adresse IPv4</p></td></tr><tr><td><p>Table ARP</p></td><td><p>Liste des associations IP/MAC connues</p></td></tr><tr><td><p>ARP Request</p></td><td><p>Demande permettant de rechercher une adresse MAC</p></td></tr><tr><td><p>ARP Reply</p></td><td><p>Réponse contenant l'adresse MAC</p></td></tr><tr><td><p>Entrée dynamique</p></td><td><p>Association découverte automatiquement</p></td></tr><tr><td><p>Entrée statique</p></td><td><p>Association ajoutée manuellement</p></td></tr><tr><td><p>ARP Spoofing</p></td><td><p>Falsification des informations ARP</p></td></tr></tbody></table></div><p>Commande principale à retenir : <code>arp -a</code> pour consulter la table ARP.</p></span><p></p>",
+      "revisionExtracts": [
+        "3.1. Sous WindowsActionCommande WindowsAfficher le cache ARParp -aAfficher la table d'une interfacearp -a -n @ipifaceAjouter un enregistrement statiquearp -s @ip @macAjouter un enregistrement statique dans la table ARP d'une interfacearp -s @ip @mac @ipifaceVider le cachearp -dVider le cache d'une interfacearp -d @ipiface3.2. Sous DebianActionCommande DebianAfficher le cache (nom d'hôte ↔ adresse MAC)arp -aAfficher le cache (adresse IP ↔ adresse MAC)arp -nAfficher le cache pour une interfacearp -a -i interface ou arp -n -i interfaceAjouter un enregistrement statiquearp -s hôte @macSupprimer un enregistrementarp -d hôte",
+        "L'essentiel à retenirTermeSignificationARPRetrouve une adresse MAC à partir d'une adresse IPv4Table ARPListe des associations IP/MAC connuesARP RequestDemande permettant de rechercher une adresse MACARP ReplyRéponse contenant l'adresse MACEntrée dynamiqueAssociation découverte automatiquementEntrée statiqueAssociation ajoutée manuellementARP SpoofingFalsification des informations ARPCommande principale à retenir : arp -a pour consulter la table ARP."
+      ],
+      "updatedAt": "2026-10-22T12:08:37.730Z"
     }
   ],
   "quizzes": [
@@ -422,5 +435,37 @@
       "fileName": "Infographie pédagogique du modèle OSI.png"
     }
   ],
-  "commands": []
+  "commands": [],
+  "library": [
+    {
+      "id": "ipv4",
+      "title": "Calculateur IPv4 interactif",
+      "category": "Réseaux",
+      "icon": "🌐",
+      "desc": "Calcul IPv4 compact, bits modifiables, réseau, diffusion et comparaison de deux IP.",
+      "url": "outils/01_Calculateur_IPv4.html",
+      "download": "outils/01_Calculateur_IPv4.html",
+      "tags": "IPv4 binaire masque CIDR"
+    },
+    {
+      "id": "bases",
+      "title": "Convertisseur de bases",
+      "category": "Calcul & conversion",
+      "icon": "🔢",
+      "desc": "Convertir les nombres en binaire, décimal, octal et hexadécimal.",
+      "url": "outils/02_Convertisseur_Bases.html",
+      "download": "outils/02_Convertisseur_Bases.html",
+      "tags": "binaire décimal octal hexadécimal"
+    },
+    {
+      "id": "grille",
+      "title": "Grille IPv4 binaire — A4",
+      "category": "Documents imprimables",
+      "icon": "📄",
+      "desc": "Grille de 4 octets avec les puissances de 2 et des cases pour écrire les bits à la main.",
+      "url": "outils/Grille_IP_binaire_A4.pdf",
+      "download": "outils/Grille_IP_binaire_A4.pdf",
+      "tags": "pdf grille imprimer octets puissances de 2"
+    }
+  ]
 }
