@@ -655,3 +655,14 @@ body.home-network #main{background:#f2f8fc!important}
 .v81-qmodules.tssr-qmodules-clean .v81-qtrack span{background:#58bbb4!important}
 .v81-qmodules.tssr-qmodules-clean .v81-qarrow{color:#80dad2!important;font-weight:600}
 @media(max-width:650px){.v81-qmodules.tssr-qmodules-clean{grid-template-columns:1fr}}
+
+/* V23 — listes QCM compactes et lisibles, cohérentes avec les cours */
+.v81-qitems.tssr-qitems-v23{margin-top:18px;gap:11px}
+.v81-qitems.tssr-qitems-v23 .v81-qitem{background:#173441!important;border:1px solid #315662!important;color:#edf5f7!important;border-radius:11px!important;padding:12px 14px!important}
+.v81-qitems.tssr-qitems-v23 .v81-qitem button:first-child{color:#edf5f7!important;min-width:0}
+.v81-qitems.tssr-qitems-v23 .v81-qitem button:first-child b{font-size:14px;line-height:1.4}
+.v81-qitems.tssr-qitems-v23 .v81-qitem small{color:#b3cdd2!important;font-size:12px;margin-top:5px}
+.v81-qitems.tssr-qitems-v23 .v81-qitem button:not(:first-child){background:#234954!important;color:#d2efee!important;border:1px solid #39616c!important}
+.v81-qitems.tssr-qitems-v23 .v81-qitem button:hover{outline:1px solid #65c9c2}
+.v81-quiztabs button.selected{background:#176b73!important;border-color:#419b9b!important;color:#fff!important}
+@media(max-width:650px){.v81-qitems.tssr-qitems-v23 .v81-qitem{flex-wrap:wrap}.v81-qitems.tssr-qitems-v23 .v81-qitem button:first-child{flex-basis:100%}}
