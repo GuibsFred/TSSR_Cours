@@ -1,0 +1,29 @@
+/* V22.11 — Option 1 : chapitres 3D, portée strictement limitée à la page des chapitres */
+.v83-module-intro{background:linear-gradient(110deg,#0b2b43,#123c56);border:1px solid #236785;color:#fff;box-shadow:0 12px 30px #00273d16;min-height:105px}
+.v83-module-intro b{color:#fff}.v83-module-intro p{color:#b9d0df}
+.v83-intro-icon{background:transparent!important;width:95px!important;height:85px!important;display:grid;place-items:center}
+.v83-intro-icon img{width:95px;height:85px;object-fit:contain;filter:drop-shadow(0 8px 10px #0007)}
+.v83-chapters{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.v83-chapter,.v83-chapter[data-color],.v83-overview,.v83-quiz{--cc:#2ac5f5;--bg1:#0b263c;--bg2:#10374f;background:linear-gradient(145deg,#0c263d,#0a3048 75%,#07354c);border:1px solid #235875;color:#fff;min-height:285px;padding:15px 17px 17px;border-radius:15px;overflow:hidden;box-shadow:0 8px 22px #00263d22}
+.v83-chapter:hover,.v83-chapter:focus-visible{transform:translateY(-4px);box-shadow:0 16px 35px #003d5b44;border-color:#48d5fa;outline:none}
+.v83-chapter-top{margin-bottom:0;align-items:center;min-height:33px}
+.v83-chapter-number{background:#071b30;color:#e8f8ff;border:1px solid #1c5271;border-radius:9px;font-size:16px;width:36px;height:32px}
+.v83-chapter-tag{background:#123c58;color:#89e4ff;border:1px solid #236282;font-size:10px}
+.v231-chapter-art{height:132px;display:grid;place-items:center;margin:1px 0 10px;background:radial-gradient(ellipse at center,#15496577 0%,transparent 72%)}
+.v231-chapter-art img{max-height:130px;max-width:95%;object-fit:contain;filter:drop-shadow(0 11px 12px #0008)}
+.v83-chapter strong{color:#fff;font-size:16px;line-height:1.32;min-height:42px}
+.v83-chapter small{color:#a9c6d9;margin-top:5px}
+.v83-chapter-bottom{color:#63d7fb;padding-top:10px;margin-top:auto}
+.v83-chapter-bottom span{background:#147fb5;color:white}
+.v231-hidden-top{display:none}
+@media(max-width:1200px){.v83-chapters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.v83-chapters{grid-template-columns:1fr}.v83-chapter{min-height:245px}.v231-chapter-art{height:105px}}
+
+/* V22.12 — chapter-specific illustrations and tighter cards */
+.v83-chapters{gap:14px}
+.v83-chapter,.v83-chapter[data-color],.v83-overview,.v83-quiz{min-height:238px;padding:13px 16px 14px}
+.v231-chapter-art{height:102px;margin:0 0 7px}
+.v231-chapter-art img{max-height:103px;max-width:94%;width:auto;object-fit:contain}
+.v83-chapter strong{min-height:38px;font-size:16px}
+.v83-chapter-bottom{padding-top:7px}
+@media(max-width:680px){.v83-chapter{min-height:215px}.v231-chapter-art{height:90px}}

@@ -1,0 +1,1 @@
+V22.17 : page Cours, 4 cartes par ligne sur grand écran, style premium bleu nuit, visuels 3D existants conservés. Les 25 modules et leurs liens restent générés depuis les données existantes. Aucun changement sur Accueil, chapitres, révisions ou QCM.

@@ -1,0 +1,1 @@
+V22.16 — Cartes de chapitres compactes (150-170px), 3 colonnes, visuels à gauche, titres à droite. Accueil, données, scripts et catalogue inchangés. Les illustrations existantes ne sont pas remplacées par de nouveaux rendus 3D.

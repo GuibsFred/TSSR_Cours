@@ -1,0 +1,1 @@
+V22.14 : restauration date/heure dans le bandeau, cartes de chapitres plus compactes avec intitulé visible dans les illustrations. Aucun changement de photographie, données, catalogue ou navigation.
