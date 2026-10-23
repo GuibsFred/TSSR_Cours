@@ -1,0 +1,4 @@
+TSSR V10 — Accueil deux colonnes : informations à gauche, scène de bureau à droite.
+Image recadrée pour supprimer les textes intégrés à la maquette, sans zoom animé.
+Écrans : éclairage et balayage subtils (pas de vidéo réelle). Café : vapeur CSS discrète.
+Cours, compteurs, navigation et autres pages conservés.

@@ -1,0 +1,1 @@
+V22: bandeau recadre sans deformation, animation neige/ecrans/vapeur/feu. Les fichiers sont places dans assets (pas assets/assets). Copier le CONTENU du ZIP a la racine du depot GitHub. Conserver une sauvegarde des donnees.

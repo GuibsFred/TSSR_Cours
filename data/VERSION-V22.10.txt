@@ -1,0 +1,3 @@
+V22.10 : panorama de la maquette validee (livres sur les etageres, Cisco sur ecran droit, montagnes, lampe et cheminee). Aucun changement du catalogue, des cours, des cartes ou de la navigation.
+Installer : extraire le ZIP a la racine du depot GitHub Desktop, remplacer les fichiers, puis commit et push.
+Attention : les effets d animation precedents restent des superpositions et leur alignement peut varier.

@@ -1,0 +1,2 @@
+V22.12 — Illustrations spécifiques par chapitre et cartes plus compactes.
+Base : V22.11. Accueil, données des cours et navigation conservés.

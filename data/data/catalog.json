@@ -1,0 +1,176 @@
+[
+  {
+    "title": "Commandes réseau Windows",
+    "kind": "commandes",
+    "file": "commandes/exemple-commandes.md",
+    "category": "Windows / Réseau"
+  },
+  {
+    "title": "Microsoft 365 — Outils collaboratifs",
+    "kind": "cours",
+    "file": "content/01-microsoft-365--outils-collaboratifs.md",
+    "category": "01 — Microsoft 365 — Outils collaboratifs"
+  },
+  {
+    "title": "Bases des réseaux",
+    "kind": "cours",
+    "file": "content/02-bases-des-r-seaux.md",
+    "category": "02 — Bases des réseaux"
+  },
+  {
+    "title": "Systèmes clients Microsoft (1/2)",
+    "kind": "cours",
+    "file": "content/03-syst-mes-clients-microsoft-1-2.md",
+    "category": "03 — Systèmes clients Microsoft (1/2)"
+  },
+  {
+    "title": "Systèmes clients Microsoft (2/2)",
+    "kind": "cours",
+    "file": "content/04-syst-mes-clients-microsoft-2-2.md",
+    "category": "04 — Systèmes clients Microsoft (2/2)"
+  },
+  {
+    "title": "Utilisation d’une distribution GNU/Linux",
+    "kind": "cours",
+    "file": "content/05-utilisation-d-une-distribution-gnu-linux.md",
+    "category": "05 — Utilisation d’une distribution GNU/Linux"
+  },
+  {
+    "title": "Administration GNU/Linux (1/2)",
+    "kind": "cours",
+    "file": "content/06-administration-gnu-linux-1-2.md",
+    "category": "06 — Administration GNU/Linux (1/2)"
+  },
+  {
+    "title": "Administration GNU/Linux (2/2)",
+    "kind": "cours",
+    "file": "content/07-administration-gnu-linux-2-2.md",
+    "category": "07 — Administration GNU/Linux (2/2)"
+  },
+  {
+    "title": "Mise en situation — Systèmes clients",
+    "kind": "cours",
+    "file": "content/08-mise-en-situation--syst-mes-clients.md",
+    "category": "08 — Mise en situation — Systèmes clients"
+  },
+  {
+    "title": "ITIL et gestion de parc (1/2)",
+    "kind": "cours",
+    "file": "content/09-itil-et-gestion-de-parc-1-2.md",
+    "category": "09 — ITIL et gestion de parc (1/2)"
+  },
+  {
+    "title": "ITIL et gestion de parc (2/2)",
+    "kind": "cours",
+    "file": "content/10-itil-et-gestion-de-parc-2-2.md",
+    "category": "10 — ITIL et gestion de parc (2/2)"
+  },
+  {
+    "title": "Infrastructures réseaux (1/2)",
+    "kind": "cours",
+    "file": "content/11-infrastructures-r-seaux-1-2.md",
+    "category": "11 — Infrastructures réseaux (1/2)"
+  },
+  {
+    "title": "Infrastructures réseaux (2/2)",
+    "kind": "cours",
+    "file": "content/12-infrastructures-r-seaux-2-2.md",
+    "category": "12 — Infrastructures réseaux (2/2)"
+  },
+  {
+    "title": "Services réseau Microsoft (1/2)",
+    "kind": "cours",
+    "file": "content/13-services-r-seau-microsoft-1-2.md",
+    "category": "13 — Services réseau Microsoft (1/2)"
+  },
+  {
+    "title": "Services réseau Microsoft (2/2)",
+    "kind": "cours",
+    "file": "content/14-services-r-seau-microsoft-2-2.md",
+    "category": "14 — Services réseau Microsoft (2/2)"
+  },
+  {
+    "title": "Services réseau Linux",
+    "kind": "cours",
+    "file": "content/15-services-r-seau-linux.md",
+    "category": "15 — Services réseau Linux"
+  },
+  {
+    "title": "Mise en situation — Services réseau",
+    "kind": "cours",
+    "file": "content/16-mise-en-situation--services-r-seau.md",
+    "category": "16 — Mise en situation — Services réseau"
+  },
+  {
+    "title": "Initiation au scripting Bash",
+    "kind": "cours",
+    "file": "content/17-initiation-au-scripting-bash.md",
+    "category": "17 — Initiation au scripting Bash"
+  },
+  {
+    "title": "Initiation à PowerShell",
+    "kind": "cours",
+    "file": "content/18-initiation--powershell.md",
+    "category": "18 — Initiation à PowerShell"
+  },
+  {
+    "title": "Virtualisation de serveurs",
+    "kind": "cours",
+    "file": "content/19-virtualisation-de-serveurs.md",
+    "category": "19 — Virtualisation de serveurs"
+  },
+  {
+    "title": "Messagerie Cloud",
+    "kind": "cours",
+    "file": "content/20-messagerie-cloud.md",
+    "category": "20 — Messagerie Cloud"
+  },
+  {
+    "title": "Sauvegarde et restauration",
+    "kind": "cours",
+    "file": "content/21-sauvegarde-et-restauration.md",
+    "category": "21 — Sauvegarde et restauration"
+  },
+  {
+    "title": "Réseau et sécurité (1/2)",
+    "kind": "cours",
+    "file": "content/22-r-seau-et-s-curit--1-2.md",
+    "category": "22 — Réseau et sécurité (1/2)"
+  },
+  {
+    "title": "Réseau et sécurité (2/2)",
+    "kind": "cours",
+    "file": "content/23-r-seau-et-s-curit--2-2.md",
+    "category": "23 — Réseau et sécurité (2/2)"
+  },
+  {
+    "title": "Services transverses Microsoft — RDS/WDS",
+    "kind": "cours",
+    "file": "content/24-services-transverses-microsoft--rds-wds.md",
+    "category": "24 — Services transverses Microsoft — RDS/WDS"
+  },
+  {
+    "title": "Stage en entreprise",
+    "kind": "cours",
+    "file": "content/25-stage-en-entreprise.md",
+    "category": "25 — Stage en entreprise"
+  },
+  {
+    "title": "Exemple — Fiche de révision",
+    "kind": "fiches",
+    "file": "fiches/exemple-fiche.md",
+    "category": "01 — Microsoft 365 / Word"
+  },
+  {
+    "title": "Vocabulaire réseau",
+    "kind": "glossaire",
+    "file": "glossaire/exemple-glossaire.md",
+    "category": "Réseaux"
+  },
+  {
+    "title": "Exemple — TP Packet Tracer",
+    "kind": "tp",
+    "file": "tp/exemple-tp.md",
+    "category": "02 — Bases des réseaux / Cisco Packet Tracer"
+  }
+]
