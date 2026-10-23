@@ -608,103 +608,55 @@ body.home-network #main{background:#f2f8fc!important}
 @media(max-width:950px){.course-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:600px){.course-library-grid{grid-template-columns:1fr!important}.course-library-grid .module-card{min-height:235px!important}}
 @media(prefers-reduced-motion:reduce){.course-library-grid .module-card,.course-library-grid .module-art img{transition:none!important}}
-
-/* V22.23 — Lecture des cours plus compacte, sans modifier les autres pages. */
-.article .content{font-size:14px!important;line-height:1.6!important}
-.article .content p,.article .content li{font-size:inherit!important;line-height:1.6!important}
-.article .content h1{font-size:27px!important;line-height:1.25!important;margin:21px 0 12px!important}
-.article .content h2{font-size:21px!important;line-height:1.35!important;margin:23px 0 10px!important}
-.article .content h3{font-size:17px!important;line-height:1.4!important;margin:18px 0 8px!important}
-.article .content h4{font-size:15px!important}
-.article .content table{font-size:13px!important;line-height:1.45!important}
-.article .content th,.article .content td{padding:9px 11px!important}
-.article .content p{margin:9px 0 13px!important}
-.article .content img{max-width:100%;height:auto}
-.tssr-linked-quizzes{margin-top:30px;padding:22px;border:1px solid #37616b;border-radius:12px;background:rgba(14,101,107,.08)}
-.tssr-linked-eyebrow{font-size:10px;font-weight:850;letter-spacing:1.5px;color:#e7a647}
-.tssr-linked-head h2{font-size:21px;margin:7px 0 5px;color:var(--ink)}
-.tssr-linked-head p,.tssr-linked-empty{font-size:13px;color:var(--muted);margin:0 0 15px}
-.tssr-linked-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line)}
-.tssr-linked-item strong,.tssr-linked-item small{display:block}.tssr-linked-item strong{font-size:14px}.tssr-linked-item small{font-size:12px;color:var(--muted);margin-top:4px}
-.tssr-linked-action{background:#0f7779;color:#fff;border:0;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:750}
-.tssr-linked-create{border:1px solid #248b89;border-radius:8px;padding:9px 13px;background:transparent;color:var(--ink);font-size:13px;font-weight:700;margin-top:8px}
-.tssr-linked-action:hover{background:#095c5d}.tssr-linked-create:hover{background:rgba(14,101,107,.14)}
-@media(max-width:600px){.tssr-linked-item{align-items:flex-start;flex-direction:column}.tssr-linked-quizzes{padding:15px}}
-
-/* V22.24 — Repères pédagogiques sobres, sans marquage bleu révision. */
-.article .content h2{color:#71dfd1!important;border-left:4px solid #27b7a9;padding:5px 0 5px 13px!important;background:linear-gradient(90deg,#1b62603d,transparent 75%);border-radius:3px}
-.article .content h3{color:#f3b05d!important}
-.article .content strong{color:#e9c58d}
-.article .content blockquote{border-left:4px solid #e9a64b;background:#e9a64b13;border-radius:6px;padding:12px 16px;margin:16px 0}
-.article .content th{background:#175363!important;color:#f6fbff!important}
-.article .content tbody tr:nth-child(even){background:#6bc5c609}
-.article .content code{color:#7de3d6;background:#0b313e;padding:2px 5px;border-radius:4px}
-.tssr-editor-qcm{margin:16px 0;padding:16px;border:1px solid #2a6e72;border-radius:12px;background:#0c3e481a}
-.tssr-editor-qcm h3{margin:0 0 7px;color:#eaa54d}.tssr-editor-qcm p{font-size:13px;line-height:1.5}
-.tssr-editor-qcm textarea{width:100%;min-height:150px;font-family:ui-monospace,monospace;font-size:12px;line-height:1.5}
-
-/* V22.25 — QCM : modules uniquement actifs, présentation sobre */
-.v81-qmodules.tssr-qmodules-clean{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:18px}
-.v81-qmodules.tssr-qmodules-clean .v81-qmodule{background:#173441!important;color:#e9f5f6!important;border:1px solid #315662!important;border-radius:12px!important;padding:19px!important;min-height:185px!important;box-shadow:none!important;text-align:left;transition:border-color .15s,transform .15s}
-.v81-qmodules.tssr-qmodules-clean .v81-qmodule:hover{border-color:#55bcb7!important;transform:translateY(-2px)}
-.v81-qmodules.tssr-qmodules-clean .v81-qmodule b{color:#f3f8fa!important;font-size:15px!important;line-height:1.35}
-.v81-qmodules.tssr-qmodules-clean .v81-qnumber{color:#e9a54c!important;font-size:12px!important}
-.v81-qmodules.tssr-qmodules-clean .v81-qicon{color:#68c9c4!important}
-.v81-qmodules.tssr-qmodules-clean .v81-qcount,.v81-qmodules.tssr-qmodules-clean .v81-qmodule small{color:#b3cdd2!important;font-size:12px!important}
-.v81-qmodules.tssr-qmodules-clean .v81-qtrack{background:#2b4d59!important;height:5px!important}
-.v81-qmodules.tssr-qmodules-clean .v81-qtrack span{background:#58bbb4!important}
-.v81-qmodules.tssr-qmodules-clean .v81-qarrow{color:#80dad2!important;font-weight:600}
-@media(max-width:650px){.v81-qmodules.tssr-qmodules-clean{grid-template-columns:1fr}}
-
-/* V23 — listes QCM compactes et lisibles, cohérentes avec les cours */
-.v81-qitems.tssr-qitems-v23{margin-top:18px;gap:11px}
-.v81-qitems.tssr-qitems-v23 .v81-qitem{background:#173441!important;border:1px solid #315662!important;color:#edf5f7!important;border-radius:11px!important;padding:12px 14px!important}
-.v81-qitems.tssr-qitems-v23 .v81-qitem button:first-child{color:#edf5f7!important;min-width:0}
-.v81-qitems.tssr-qitems-v23 .v81-qitem button:first-child b{font-size:14px;line-height:1.4}
-.v81-qitems.tssr-qitems-v23 .v81-qitem small{color:#b3cdd2!important;font-size:12px;margin-top:5px}
-.v81-qitems.tssr-qitems-v23 .v81-qitem button:not(:first-child){background:#234954!important;color:#d2efee!important;border:1px solid #39616c!important}
-.v81-qitems.tssr-qitems-v23 .v81-qitem button:hover{outline:1px solid #65c9c2}
-.v81-quiztabs button.selected{background:#176b73!important;border-color:#419b9b!important;color:#fff!important}
-@media(max-width:650px){.v81-qitems.tssr-qitems-v23 .v81-qitem{flex-wrap:wrap}.v81-qitems.tssr-qitems-v23 .v81-qitem button:first-child{flex-basis:100%}}
-
-/* V23.2 : accès téléchargements sur l'accueil */
-.tssr-home-downloads{margin-top:20px;margin-bottom:20px}.tssr-home-download-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.tssr-home-download-item{display:flex;align-items:center;gap:12px;padding:15px;border:1px solid rgba(110,139,157,.24);border-radius:12px;text-decoration:none;color:inherit;background:rgba(125,163,181,.055)}.tssr-home-download-item:hover{border-color:#087da5}.tssr-home-download-item span{font-size:25px}.tssr-home-download-item b{font-size:13px;flex:1}.tssr-home-download-item small{font-size:11px;color:#087da5;font-weight:700}
-
-/* V23.3 — Lisibilite pedagogique, palettes jour/nuit independantes. */
-body:not(.dark) .article .content{color:#263b49!important}
-body:not(.dark) .article .content h1{color:#123c52!important}
-body:not(.dark) .article .content h2{color:#087c82!important;background:linear-gradient(90deg,#dff5f1,transparent 85%)!important;border-left-color:#0c9a98!important}
-body:not(.dark) .article .content h3{color:#a65a14!important}
-body:not(.dark) .article .content h4{color:#275e77!important}
-body:not(.dark) .article .content strong{color:#135b75!important}
-body:not(.dark) .article .content a{color:#086caa!important;text-decoration:underline}
-body:not(.dark) .article .content th{background:#126075!important;color:#fff!important;border-color:#b9d5d9!important}
-body:not(.dark) .article .content td{color:#263b49!important;border-color:#cbdfe1!important}
-body:not(.dark) .article .content tbody tr:nth-child(even){background:#edf7f6!important}
-body:not(.dark) .article .content code:not(pre code){background:#e4f2f1!important;color:#075c68!important;border:1px solid #c3e0df}
-body:not(.dark) .article .content pre{background:#152c3b!important;color:#f0f7fb!important;border:1px solid #2c566a}
-body:not(.dark) .article .content pre code{background:transparent!important;color:inherit!important;border:0!important;padding:0!important}
-body:not(.dark) .article .content blockquote{background:#fff3e2!important;border-left-color:#c47a28!important;color:#593e23!important}
-body:not(.dark) .article .content li::marker{color:#0b858a}
-body.dark .article .content{color:#e0ebf0!important}
-body.dark .article .content h1{color:#f2f8fc!important}
-body.dark .article .content h2{color:#6ee1d4!important;background:linear-gradient(90deg,#14665d60,transparent 85%)!important;border-left-color:#34c5b7!important}
-body.dark .article .content h3{color:#ffbd73!important}
-body.dark .article .content h4{color:#b0d5f3!important}
-body.dark .article .content strong{color:#f5cf8e!important}
-body.dark .article .content a{color:#7bd5ff!important;text-decoration:underline}
-body.dark .article .content th{background:#145668!important;color:#fff!important}
-body.dark .article .content td{color:#e0ebf0!important;border-color:#436171!important}
-body.dark .article .content tbody tr:nth-child(even){background:#254956!important}
-body.dark .article .content code:not(pre code){color:#8aeee1!important;background:#103947!important}
-body.dark .article .content pre{background:#0d2231!important;color:#e7f7ff!important;border:1px solid #3d6475}
-body.dark .article .content pre code{background:transparent!important;color:inherit!important;border:0!important;padding:0!important}
-body.dark .article .content blockquote{background:#493a284d!important;border-left-color:#edaa52!important;color:#f5e8d5!important}
-body.dark .article .content li::marker{color:#5ed8ca}
+/* TSSR 22.27 — Accueil et fiches : surcharge ciblée, sans modifier les cours */
+.tssr-construction{max-width:790px;margin:35px auto 50px;padding:44px 30px 50px;text-align:center;border:1px solid rgba(69,210,196,.28);border-radius:24px;background:radial-gradient(ellipse at top,rgba(27,114,130,.24),transparent 65%),linear-gradient(140deg,#102a3e,#091c2d);box-shadow:0 24px 60px rgba(0,0,0,.18);color:#e9fbff}
+.tssr-construction-art{max-width:340px;margin:0 auto 6px}.tssr-construction-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 15px 20px rgba(0,0,0,.3))}
+.tssr-construction-kicker{display:inline-block;font-size:11px;letter-spacing:.2em;font-weight:800;color:#6be2d3}
+.tssr-construction h2{color:#fff;font-size:clamp(26px,4vw,40px);margin:12px 0}.tssr-construction p{color:#c5dce5;font-size:16px;line-height:1.7;max-width:530px;margin:0 auto 25px}
+.tssr-studio-home .v23-quickcard{border:1px solid rgba(83,204,206,.22)!important;background:linear-gradient(135deg,#0f3044,#11273c)!important;box-shadow:0 12px 30px rgba(0,0,0,.15)!important;transition:transform .2s,box-shadow .2s!important}
+.tssr-studio-home .v23-quickcard:hover{transform:translateY(-4px)!important;box-shadow:0 18px 35px rgba(0,0,0,.27)!important}
+.tssr-studio-home .v23-quickcard .tssr-crisp-icon{display:grid;place-items:center;flex:0 0 70px;width:70px;height:70px;border-radius:18px;background:linear-gradient(145deg,#1a6371,#0c3b52);box-shadow:inset 0 1px rgba(255,255,255,.2),0 10px 22px rgba(0,0,0,.22)}
+.tssr-studio-home .v23-quickcard .tssr-crisp-icon svg{width:43px;height:43px;fill:none;stroke:#9cf8e8;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+.tssr-studio-home .v23-sectiontitle h2{color:#eafcff!important;text-shadow:none!important}
+.tssr-studio-home .studio-hero{position:relative!important;aspect-ratio:1559/420!important;min-height:330px!important}
+.tssr-studio-home .studio-hero .tssr-hero-info{position:absolute;z-index:7;left:4%;top:50%;transform:translateY(-50%);width:min(52%,650px);color:#fff;text-align:left;pointer-events:auto}
+.tssr-studio-home .studio-hero:after{content:'';position:absolute;inset:0;z-index:5;background:linear-gradient(90deg,rgba(3,15,27,.88),rgba(3,15,27,.57) 44%,transparent 75%);pointer-events:none}
+.tssr-hero-tag{font-size:11px;letter-spacing:.18em;font-weight:800;color:#81e8d9}
+.tssr-hero-info h1{font-size:clamp(24px,2.65vw,42px);line-height:1.12;margin:11px 0;color:white;font-weight:850;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.tssr-hero-info h1 em{font-style:normal;color:#84f1df}.tssr-hero-info p{font-size:clamp(12px,1.12vw,16px);line-height:1.55;color:#d6e7ee;max-width:450px;margin:0 0 15px}
+.tssr-hero-info button{background:#43cdbf;border:0;border-radius:10px;padding:12px 18px;font-weight:800;color:#08283a;cursor:pointer}.tssr-hero-info button span{margin-left:10px}
+@media(max-width:700px){.tssr-studio-home .studio-hero{min-height:380px!important;aspect-ratio:auto!important}.tssr-studio-home .studio-hero .tssr-hero-info{left:6%;width:88%;top:57%}.tssr-studio-home .studio-hero:after{background:linear-gradient(90deg,rgba(3,15,27,.89),rgba(3,15,27,.5))}.tssr-hero-info h1{font-size:29px}.tssr-construction{padding:28px 18px}}
+/* V22.29 — finitions ciblées, sans toucher aux données des cours */
+.top{background:linear-gradient(105deg,#062e40,#06485b 60%,#073448)!important;border-bottom:1px solid #4ed0d02c!important;box-shadow:0 4px 20px #00172330!important}
+.top .logo{display:inline-flex;align-items:baseline;gap:7px;letter-spacing:-.4px!important;font-size:19px!important}
+.top .logo strong{font-size:24px!important;letter-spacing:-1.2px!important;color:#fff!important}
+.top .logo span{font-size:11px!important;letter-spacing:.1px!important;color:#f1b65f!important}
+.top .searchbox{border:1px solid #80e3e440!important;border-radius:12px!important;background:#ffffff0d!important;box-shadow:inset 0 1px #ffffff10!important}
+.top .topbtn{border-radius:11px!important;transition:transform .18s,background .18s!important}.top .topbtn:hover{transform:translateY(-2px)!important}
+.side{background:linear-gradient(175deg,#07384b,#06465b 70%,#062e43)!important;border-right:1px solid #69d7d725!important}
+.side .navlink{border:1px solid transparent!important;border-radius:12px!important;margin:3px 0!important;min-height:44px!important;font-weight:700!important;transition:background .18s,transform .18s,border-color .18s!important}
+.side .navlink:hover{transform:translateX(3px)!important;background:#ffffff12!important;border-color:#64d3d32b!important}
+.side .navlink.active{background:linear-gradient(90deg,#2c778a85,#22677a40)!important;border-color:#7be4e43a!important;box-shadow:inset 3px 0 #41d8cf!important}
+.side .sidecap{color:#f6b85b!important}
+.tssr-studio-home .studio-hero{aspect-ratio:1559/327!important;min-height:250px!important;max-height:390px!important}
+.tssr-studio-home .studio-hero .tssr-hero-info{left:2.5%!important;top:auto!important;bottom:7%!important;transform:none!important;width:min(34%,380px)!important;background:#061725d9!important;border:1px solid #80e9df38!important;border-radius:14px!important;padding:13px 16px!important;backdrop-filter:blur(9px)!important}
+.tssr-studio-home .studio-hero:after{background:linear-gradient(0deg,#04172345,transparent 45%)!important}
+.tssr-hero-info h1{font-size:clamp(16px,1.6vw,23px)!important;margin:5px 0!important;line-height:1.18!important}
+.tssr-hero-info p{font-size:11px!important;margin:5px 0 0!important;line-height:1.35!important}
+.tssr-hero-tag{font-size:9px!important;letter-spacing:.12em!important}
+.tssr-hero-info button{display:none!important}
+.v81-qmodules{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important}
+.v81-qmodule{min-height:205px!important;aspect-ratio:1.08!important;justify-content:space-between!important;border-radius:19px!important;border:1px solid #4ccbd44d!important;background:radial-gradient(circle at 90% 0%,#17536c 0%,#0d354a 46%,#092536 100%)!important;box-shadow:0 12px 30px #0003,inset 0 1px #ffffff17!important;color:#effbff!important;padding:20px!important;transition:transform .18s,border-color .18s,box-shadow .18s!important}
+.v81-qmodule:hover{transform:translateY(-5px)!important;border-color:#4be0d3!important;box-shadow:0 20px 40px #0005!important}
+.v81-qmodule b{font-size:15px!important;color:#fff!important}.v81-qnumber,.v81-qarrow{color:#5be6df!important}.v81-qcount,.v81-qmodule small{color:#bbd6e3!important}.v81-qtrack{background:#ffffff1d!important}.v81-qtrack span{background:#41d7c9!important}.v81-qicon svg{color:#74e6e6!important}
+.v81-quiztabs button{background:#10374c!important;color:#e9f9ff!important;border:1px solid #4fcad044!important;border-radius:11px!important}.v81-quiztabs button.selected{background:#087f95!important;border-color:#69e2e1!important}
+@media(max-width:1150px){.v81-qmodules{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:750px){.v81-qmodules{grid-template-columns:repeat(2,minmax(0,1fr))!important}.tssr-studio-home .studio-hero .tssr-hero-info{width:65%!important}.tssr-studio-home .studio-hero{min-height:280px!important}}
+@media(max-width:460px){.v81-qmodules{grid-template-columns:1fr!important}.v81-qmodule{aspect-ratio:auto!important}.tssr-studio-home .studio-hero .tssr-hero-info{width:92%!important;left:4%!important}}
 
 /* V23.4 - Rich course typography, day/night contrast */
 body{--edu-title:#194b60;--edu-h2:#087b7b;--edu-h3:#a95c15;--edu-bold:#096e7c;--edu-text:#253b49;--edu-head-bg:#e5f5f2;--edu-row:#f0f8f8;--edu-table-head:#12667a;--edu-inline-bg:#e2f1f1;--edu-inline:#07606c;--edu-pre-bg:#142d3a;--edu-pre-text:#f0f8fc;--edu-quote:#fff2dd}
-body.dark{--edu-title:#f4f9ff;--edu-h2:#69e1d0;--edu-h3:#ffc17d;--edu-bold:#f6cf8d;--edu-text:#e1eef5;--edu-head-bg:#194e50;--edu-row:#254250;--edu-table-head:#12667a;--edu-inline-bg:#153c4c;--edu-inline:#8be8df;--edu-pre-bg:#0e2330;--edu-pre-text:#f0f8fc;--edu-quote:#3d3931}
+body.dark,body[data-theme="dark"],html[data-theme="dark"] body{--edu-title:#f4f9ff;--edu-h2:#69e1d0;--edu-h3:#ffc17d;--edu-bold:#f6cf8d;--edu-text:#e1eef5;--edu-head-bg:#194e50;--edu-row:#254250;--edu-table-head:#12667a;--edu-inline-bg:#153c4c;--edu-inline:#8be8df;--edu-pre-bg:#0e2330;--edu-pre-text:#f0f8fc;--edu-quote:#3d3931}
 #articleContent{color:var(--edu-text)!important;line-height:1.75}
 #articleContent h1{color:var(--edu-title)!important;font-weight:850!important}
 #articleContent h2{color:var(--edu-h2)!important;font-weight:800!important;background:var(--edu-head-bg)!important;border-left:5px solid #17a99d!important;border-radius:7px!important;padding:11px 15px!important;margin-top:31px!important}
@@ -722,3 +674,4 @@ body.dark{--edu-title:#f4f9ff;--edu-h2:#69e1d0;--edu-h3:#ffc17d;--edu-bold:#f6cf
 #articleContent blockquote{background:var(--edu-quote)!important;border-left:4px solid #df9a48!important;padding:13px 18px!important;border-radius:6px!important}
 #articleContent a{color:var(--edu-h2)!important;text-decoration:underline}
 #articleContent hr{border:0!important;border-top:1px solid #599d9c66!important;margin:25px 0!important}
+
