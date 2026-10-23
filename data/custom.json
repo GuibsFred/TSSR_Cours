@@ -59,6 +59,16 @@
       "html": "<h1>Modèle OSI — Les 7 couches et l'encapsulation</h1>\n<p>Le modèle <strong>OSI (Open Systems Interconnection)</strong> décrit comment deux systèmes communiquent sur un réseau. Il est organisé en <strong>7 couches</strong>, chacune ayant un rôle précis.</p>\n<p>Un <strong>protocole</strong> est un ensemble de règles permettant aux équipements d'échanger des informations.</p>\n<h2>1. Vue d'ensemble du modèle OSI</h2>\n<table>\n<thead>\n<tr>\n<th>N°</th>\n<th>Couche</th>\n<th>Rôle principal</th>\n<th>Unité de données</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>7</strong></td>\n<td>Application</td>\n<td>Services réseau pour les applications</td>\n<td>Données (APDU)</td>\n</tr>\n<tr>\n<td><strong>6</strong></td>\n<td>Présentation</td>\n<td>Formatage, chiffrement et compression</td>\n<td>Données (PPDU)</td>\n</tr>\n<tr>\n<td><strong>5</strong></td>\n<td>Session</td>\n<td>Ouverture, gestion et fermeture des sessions</td>\n<td>Données (SPDU)</td>\n</tr>\n<tr>\n<td><strong>4</strong></td>\n<td>Transport</td>\n<td>Segmentation, ports et fiabilité</td>\n<td>Segment TCP / datagramme UDP</td>\n</tr>\n<tr>\n<td><strong>3</strong></td>\n<td>Réseau</td>\n<td>Adressage IP et routage</td>\n<td>Paquet</td>\n</tr>\n<tr>\n<td><strong>2</strong></td>\n<td>Liaison de données</td>\n<td>Adressage MAC et contrôle des trames</td>\n<td>Trame</td>\n</tr>\n<tr>\n<td><strong>1</strong></td>\n<td>Physique</td>\n<td>Transmission des signaux</td>\n<td>Bits</td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> à l'envoi, les données descendent de la couche <strong>7 vers la couche 1</strong>. À la réception, elles remontent de la couche <strong>1 vers la couche 7</strong>.</p>\n<h2>2. SDU, PCI et PDU</h2>\n<p>Ces trois notions expliquent comment les données sont préparées pour traverser les couches du modèle OSI.</p>\n<table>\n<thead>\n<tr>\n<th>Terme</th>\n<th>Signification</th>\n<th>Rôle</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>SDU</strong></td>\n<td>Service Data Unit</td>\n<td>Données reçues de la couche supérieure</td>\n</tr>\n<tr>\n<td><strong>PCI</strong></td>\n<td>Protocol Control Information</td>\n<td>Informations de contrôle ajoutées par la couche</td>\n</tr>\n<tr>\n<td><strong>PDU</strong></td>\n<td>Protocol Data Unit</td>\n<td>Unité obtenue après ajout du PCI au SDU</td>\n</tr>\n</tbody></table>\n<h3>Composition du PDU</h3>\n<p><strong>SDU + PCI = PDU</strong></p>\n<p>Lorsqu'une couche reçoit des données de la couche supérieure, elle les considère comme son <strong>SDU</strong>. Elle ajoute ses propres informations de contrôle (<strong>PCI</strong>) pour former son <strong>PDU</strong>.</p>\n<p>Le PDU est ensuite transmis à la couche inférieure, où le même mécanisme recommence.</p>\n<h3>Encapsulation et désencapsulation</h3>\n<ul>\n<li><strong>Encapsulation :</strong> chaque couche ajoute les informations nécessaires à la transmission.</li>\n<li><strong>Désencapsulation :</strong> à la réception, chaque couche traite et retire les informations qui la concernent.</li>\n</ul>\n<p><strong>À retenir :</strong> le PDU d'une couche devient le SDU de la couche inférieure.</p>\n<hr>\n<h2>3. Les sept couches du modèle OSI</h2>\n<h3>Couche 7 — Application</h3>\n<p><strong>Rôle :</strong> fournir des services réseau aux applications utilisées par l'utilisateur.</p>\n<p>Elle permet notamment de naviguer sur Internet, d'envoyer des emails et de transférer des fichiers.</p>\n<table>\n<thead>\n<tr>\n<th>Protocole</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>HTTP / HTTPS</td>\n<td>Navigation Web</td>\n</tr>\n<tr>\n<td>FTP</td>\n<td>Transfert de fichiers</td>\n</tr>\n<tr>\n<td>SMTP</td>\n<td>Envoi d'emails</td>\n</tr>\n<tr>\n<td>DNS</td>\n<td>Résolution des noms de domaine</td>\n</tr>\n</tbody></table>\n<p><strong>Exemple :</strong> lorsque tu envoies un email, l'application de messagerie utilise notamment le protocole SMTP.</p>\n<p><strong>À retenir :</strong> couche 7 = services réseau utilisés par les applications.</p>\n<h3>Couche 6 — Présentation</h3>\n<p><strong>Rôle :</strong> préparer les données dans un format compréhensible par les applications.</p>\n<p>Ses fonctions principales sont :</p>\n<ul>\n<li>La conversion des formats.</li>\n<li>Le chiffrement et le déchiffrement.</li>\n<li>La compression et la décompression.</li>\n</ul>\n<p><strong>Exemples :</strong> SSL/TLS pour la sécurité des communications, JPEG et MPEG pour les formats multimédias.</p>\n<p><strong>À retenir :</strong> couche 6 = formatage, chiffrement et compression.</p>\n<h3>Couche 5 — Session</h3>\n<p><strong>Rôle :</strong> établir, maintenir et terminer les sessions de communication entre applications.</p>\n<p>Elle intervient également dans la synchronisation des échanges et leur reprise après une interruption.</p>\n<table>\n<thead>\n<tr>\n<th>Protocole</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>RPC</td>\n<td>Exécuter une procédure sur un autre ordinateur</td>\n</tr>\n<tr>\n<td>NetBIOS</td>\n<td>Gérer certains échanges entre ordinateurs d'un réseau local</td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> couche 5 = ouverture, gestion et fermeture des sessions.</p>\n<h3>Couche 4 — Transport</h3>\n<p><strong>Rôle :</strong> transporter les données entre les applications de deux équipements.</p>\n<p>Elle intervient dans :</p>\n<ul>\n<li>La segmentation et le réassemblage des données.</li>\n<li>L'utilisation des numéros de port.</li>\n<li>Le contrôle de flux.</li>\n<li>La gestion des erreurs et de la fiabilité selon le protocole.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Protocole</th>\n<th>Fonctionnement</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>TCP</strong></td>\n<td>Orienté connexion, transmission fiable et ordonnée</td>\n</tr>\n<tr>\n<td><strong>UDP</strong></td>\n<td>Sans connexion, plus léger, sans garantie de livraison</td>\n</tr>\n</tbody></table>\n<p><strong>Exemple :</strong> avec TCP, un fichier est découpé en segments, transmis puis réassemblé dans le bon ordre.</p>\n<h4>Ports importants</h4>\n<table>\n<thead>\n<tr>\n<th>Port</th>\n<th>Service</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>22</strong></td>\n<td>SSH</td>\n<td>Administration distante sécurisée</td>\n</tr>\n<tr>\n<td><strong>25</strong></td>\n<td>SMTP</td>\n<td>Envoi d'emails</td>\n</tr>\n<tr>\n<td><strong>53</strong></td>\n<td>DNS</td>\n<td>Résolution des noms de domaine</td>\n</tr>\n<tr>\n<td><strong>67 / 68</strong></td>\n<td>DHCP</td>\n<td>Attribution automatique d'adresses IP</td>\n</tr>\n<tr>\n<td><strong>80</strong></td>\n<td>HTTP</td>\n<td>Navigation Web</td>\n</tr>\n<tr>\n<td><strong>143</strong></td>\n<td>IMAP</td>\n<td>Consultation et gestion des emails</td>\n</tr>\n<tr>\n<td><strong>161 / 162</strong></td>\n<td>SNMP</td>\n<td>Surveillance des équipements</td>\n</tr>\n<tr>\n<td><strong>389</strong></td>\n<td>LDAP</td>\n<td>Services d'annuaire</td>\n</tr>\n<tr>\n<td><strong>443</strong></td>\n<td>HTTPS</td>\n<td>Navigation Web sécurisée</td>\n</tr>\n<tr>\n<td><strong>3389</strong></td>\n<td>RDP</td>\n<td>Bureau à distance Windows</td>\n</tr>\n</tbody></table>\n<p>Un <strong>port</strong> permet d'identifier le service ou l'application concerné par une communication.</p>\n<p><strong>À retenir :</strong> couche 4 = TCP, UDP, segments et numéros de port.</p>\n<h3>Couche 3 — Réseau</h3>\n<p><strong>Rôle :</strong> acheminer les paquets entre différents réseaux grâce aux adresses IP.</p>\n<p>Ses fonctions principales sont :</p>\n<ul>\n<li>L'<strong>adressage logique</strong> avec les adresses IP.</li>\n<li>Le <strong>routage</strong> des paquets.</li>\n<li>La fragmentation lorsque cela est nécessaire.</li>\n<li>Le signalement de certaines erreurs réseau.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Protocole</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>IPv4</td>\n<td>Adressage IP sur 32 bits</td>\n</tr>\n<tr>\n<td>IPv6</td>\n<td>Adressage IP sur 128 bits</td>\n</tr>\n<tr>\n<td>ICMP</td>\n<td>Diagnostic et messages de contrôle, notamment le ping</td>\n</tr>\n<tr>\n<td>RIP / OSPF</td>\n<td>Échange d'informations de routage</td>\n</tr>\n</tbody></table>\n<p>Le cours présente également <strong>ARP</strong>, utilisé pour associer une adresse IPv4 à une adresse MAC sur le réseau local.</p>\n<p><strong>Équipement principal :</strong> le routeur.</p>\n<p><strong>Exemple :</strong> lorsqu'un ordinateur communique avec un serveur situé sur un autre réseau, le routage permet d'acheminer les paquets vers leur destination.</p>\n<p><strong>À retenir :</strong> couche 3 = adresse IP, paquet et routeur.</p>\n<h3>Couche 2 — Liaison de données</h3>\n<p><strong>Rôle :</strong> organiser les échanges entre équipements sur un même réseau local.</p>\n<p>Elle transforme les paquets en <strong>trames</strong> et utilise les <strong>adresses MAC</strong>.</p>\n<p>Ses principales fonctions sont :</p>\n<ul>\n<li>L'encapsulation des paquets en trames.</li>\n<li>Le contrôle des erreurs de transmission.</li>\n<li>L'adressage MAC source et destination.</li>\n<li>Le contrôle d'accès au support.</li>\n<li>Le contrôle de flux selon les technologies utilisées.</li>\n</ul>\n<h4>Les deux sous-couches</h4>\n<table>\n<thead>\n<tr>\n<th>Sous-couche</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>LLC</strong> (Logical Link Control)</td>\n<td>Gestion logique des échanges et identification des protocoles</td>\n</tr>\n<tr>\n<td><strong>MAC</strong> (Media Access Control)</td>\n<td>Accès au support et adressage MAC</td>\n</tr>\n</tbody></table>\n<p><strong>Protocoles et technologies :</strong> Ethernet, Wi-Fi, PPP et HDLC.</p>\n<p><strong>Équipements principaux :</strong> switch (commutateur) et bridge (pont).</p>\n<p><strong>Exemple :</strong> un switch utilise les adresses MAC pour transmettre une trame vers le bon équipement.</p>\n<p><strong>À retenir :</strong> couche 2 = adresse MAC, trame et switch.</p>\n<h3>Couche 1 — Physique</h3>\n<p><strong>Rôle :</strong> transmettre les bits (0 et 1) sous forme de signaux électriques, lumineux ou radio.</p>\n<p>Elle concerne :</p>\n<ul>\n<li>Les supports de transmission : cuivre, fibre optique et ondes radio.</li>\n<li>L'encodage et la synchronisation des bits.</li>\n<li>Le débit de transmission, en bits par seconde.</li>\n<li>La topologie physique du réseau.</li>\n<li>Les caractéristiques des connexions physiques.</li>\n</ul>\n<p><strong>Matériels :</strong> câbles, connecteurs RJ45, hubs, répéteurs, modems et équipements radio.</p>\n<h4>Câbles à paires torsadées</h4>\n<table>\n<thead>\n<tr>\n<th>Type</th>\n<th>Particularité</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>UTP</strong></td>\n<td>Sans blindage, plus sensible aux interférences</td>\n</tr>\n<tr>\n<td><strong>STP</strong></td>\n<td>Avec blindage, meilleure protection contre les interférences</td>\n</tr>\n<tr>\n<td><strong>CAT5e / CAT6 / CAT6a</strong></td>\n<td>Catégories offrant des performances différentes</td>\n</tr>\n</tbody></table>\n<h4>Câble droit et câble croisé</h4>\n<table>\n<thead>\n<tr>\n<th>Câble</th>\n<th>Principe</th>\n<th>Utilisation classique</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>Droit</strong></td>\n<td>Même ordre des fils aux deux extrémités</td>\n<td>PC ↔ switch, switch ↔ routeur</td>\n</tr>\n<tr>\n<td><strong>Croisé</strong></td>\n<td>Une extrémité T568A et l'autre T568B</td>\n<td>PC ↔ PC, switch ↔ switch, routeur ↔ routeur</td>\n</tr>\n</tbody></table>\n<p>Les équipements modernes dotés de la fonction <strong>Auto MDI-X</strong> peuvent détecter automatiquement le type de connexion.</p>\n<h4>Ordre des fils RJ45</h4>\n<table>\n<thead>\n<tr>\n<th>Broche</th>\n<th>T568A</th>\n<th>T568B</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td>Blanc/vert</td>\n<td>Blanc/orange</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Vert</td>\n<td>Orange</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Blanc/orange</td>\n<td>Blanc/vert</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Bleu</td>\n<td>Bleu</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Blanc/bleu</td>\n<td>Blanc/bleu</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Orange</td>\n<td>Vert</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Blanc/marron</td>\n<td>Blanc/marron</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Marron</td>\n<td>Marron</td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> couche 1 = bits, câbles et signaux.</p>\n<hr>\n<h2>4. Exemple d'encapsulation : l'envoi d'un email</h2>\n<p>Lorsqu'un utilisateur envoie un email, les données traversent les sept couches du modèle OSI.</p>\n<table>\n<thead>\n<tr>\n<th>Couche</th>\n<th>Opération lors de l'envoi</th>\n<th>PDU</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>7 — Application</strong></td>\n<td>Préparation de l'email via SMTP</td>\n<td>APDU</td>\n</tr>\n<tr>\n<td><strong>6 — Présentation</strong></td>\n<td>Mise en forme, chiffrement ou compression éventuels</td>\n<td>PPDU</td>\n</tr>\n<tr>\n<td><strong>5 — Session</strong></td>\n<td>Gestion de la session</td>\n<td>SPDU</td>\n</tr>\n<tr>\n<td><strong>4 — Transport</strong></td>\n<td>Segmentation et ajout des ports TCP</td>\n<td>Segment / TPDU</td>\n</tr>\n<tr>\n<td><strong>3 — Réseau</strong></td>\n<td>Ajout des adresses IP source et destination</td>\n<td>Paquet / RPDU</td>\n</tr>\n<tr>\n<td><strong>2 — Liaison</strong></td>\n<td>Ajout des adresses MAC et informations de contrôle</td>\n<td>Trame / LPDU</td>\n</tr>\n<tr>\n<td><strong>1 — Physique</strong></td>\n<td>Transmission des signaux</td>\n<td>Bits</td>\n</tr>\n</tbody></table>\n<p>À la réception, le serveur effectue l'opération inverse : les bits sont reconstitués en trames, puis les informations de chaque couche sont traitées jusqu'à retrouver les données de l'email.</p>\n<p><strong>Encapsulation : 7 → 1</strong></p>\n<p><strong>Désencapsulation : 1 → 7</strong></p>\n<hr>\n<h2>5. Fiche de révision — L'essentiel</h2>\n<table>\n<thead>\n<tr>\n<th>Couche</th>\n<th>Mot-clé</th>\n<th>À mémoriser</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>7 — Application</strong></td>\n<td>Services</td>\n<td>HTTP, FTP, SMTP, DNS</td>\n</tr>\n<tr>\n<td><strong>6 — Présentation</strong></td>\n<td>Format</td>\n<td>Chiffrement, compression</td>\n</tr>\n<tr>\n<td><strong>5 — Session</strong></td>\n<td>Dialogue</td>\n<td>Ouverture et fermeture des sessions</td>\n</tr>\n<tr>\n<td><strong>4 — Transport</strong></td>\n<td>Segments</td>\n<td>TCP, UDP, ports</td>\n</tr>\n<tr>\n<td><strong>3 — Réseau</strong></td>\n<td>Paquets</td>\n<td>Adresses IP, routeurs</td>\n</tr>\n<tr>\n<td><strong>2 — Liaison</strong></td>\n<td>Trames</td>\n<td>Adresses MAC, switches</td>\n</tr>\n<tr>\n<td><strong>1 — Physique</strong></td>\n<td>Bits</td>\n<td>Câbles, fibre, signaux radio</td>\n</tr>\n</tbody></table>\n<h3>Les trois associations essentielles</h3>\n<ul>\n<li><strong>Adresse MAC → couche 2</strong></li>\n<li><strong>Adresse IP → couche 3</strong></li>\n<li><strong>Numéro de port → couche 4</strong></li>\n</ul>\n<p><strong>Formule : PDU = SDU + PCI</strong></p>\n<hr>\n",
       "revisionExtracts": [],
       "updatedAt": "2026-10-23T08:54:36.584Z"
+    },
+    {
+      "id": "chapter:02:02",
+      "title": "Les unités informatiques",
+      "kind": "cours",
+      "category": "02 — Bases des réseaux / Cours",
+      "chapter": true,
+      "html": "<h1>Les bases de numération</h1>\n<p>En informatique, la <strong>numération</strong> permet de représenter les nombres à l'aide de différents systèmes appelés <em>bases</em>.</p>\n<p>Les quatre bases principales sont le <strong>binaire (2)</strong>, l'<strong>octal (8)</strong>, le <strong>décimal (10)</strong> et l'<strong>hexadécimal (16)</strong>.</p>\n<h2>1. Les quatre systèmes de numération</h2>\n<table>\n<thead>\n<tr>\n<th>Base</th>\n<th>Nom</th>\n<th>Symboles utilisés</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>2</strong></td>\n<td>Binaire</td>\n<td>0 et 1</td>\n<td>Fonctionnement des ordinateurs</td>\n</tr>\n<tr>\n<td><strong>8</strong></td>\n<td>Octal</td>\n<td>0 à 7</td>\n<td>Représentation compacte du binaire</td>\n</tr>\n<tr>\n<td><strong>10</strong></td>\n<td>Décimal</td>\n<td>0 à 9</td>\n<td>Nombres utilisés au quotidien</td>\n</tr>\n<tr>\n<td><strong>16</strong></td>\n<td>Hexadécimal</td>\n<td>0 à 9 et A à F</td>\n<td>Adresses mémoire, IPv6, codes de couleurs</td>\n</tr>\n</tbody></table>\n<p>En hexadécimal, les lettres remplacent les valeurs supérieures à 9 :</p>\n<table>\n<thead>\n<tr>\n<th>A</th>\n<th>B</th>\n<th>C</th>\n<th>D</th>\n<th>E</th>\n<th>F</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>10</td>\n<td>11</td>\n<td>12</td>\n<td>13</td>\n<td>14</td>\n<td>15</td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> une base indique le nombre de symboles disponibles pour écrire un nombre.</p>\n<h2>2. Le principe des valeurs de position</h2>\n<p>Dans chaque base, la valeur d'un chiffre dépend de sa position.</p>\n<p>En partant de la droite, les positions commencent à <strong>0</strong>, puis 1, 2, 3, etc.</p>\n<h3>Exemple en décimal : 325</h3>\n<table>\n<thead>\n<tr>\n<th>Chiffre</th>\n<th>3</th>\n<th>2</th>\n<th>5</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Position</td>\n<td>2</td>\n<td>1</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Puissance</td>\n<td>10²</td>\n<td>10¹</td>\n<td>10⁰</td>\n</tr>\n<tr>\n<td>Valeur</td>\n<td>300</td>\n<td>20</td>\n<td>5</td>\n</tr>\n</tbody></table>\n<p><strong>325 = 3 × 100 + 2 × 10 + 5 × 1 = 325</strong></p>\n<p>Ce même principe s'applique à toutes les bases : seule la puissance utilisée change.</p>\n<h2>3. Le système binaire — Base 2</h2>\n<p>Le binaire utilise uniquement <strong>0 et 1</strong>.</p>\n<p>Chaque chiffre binaire est appelé un <strong>bit</strong> (<em>Binary Digit</em>).</p>\n<p>Il correspond aux deux états logiques utilisés par les circuits électroniques.</p>\n<h3>Les valeurs des bits sur un octet</h3>\n<table>\n<thead>\n<tr>\n<th>Bit</th>\n<th>7</th>\n<th>6</th>\n<th>5</th>\n<th>4</th>\n<th>3</th>\n<th>2</th>\n<th>1</th>\n<th>0</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Puissance</td>\n<td>2⁷</td>\n<td>2⁶</td>\n<td>2⁵</td>\n<td>2⁴</td>\n<td>2³</td>\n<td>2²</td>\n<td>2¹</td>\n<td>2⁰</td>\n</tr>\n<tr>\n<td>Valeur</td>\n<td><strong>128</strong></td>\n<td><strong>64</strong></td>\n<td><strong>32</strong></td>\n<td><strong>16</strong></td>\n<td><strong>8</strong></td>\n<td><strong>4</strong></td>\n<td><strong>2</strong></td>\n<td><strong>1</strong></td>\n</tr>\n</tbody></table>\n<h3>Exemple : convertir 1011 en décimal</h3>\n<table>\n<thead>\n<tr>\n<th>Bit</th>\n<th>1</th>\n<th>0</th>\n<th>1</th>\n<th>1</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Valeur</td>\n<td>8</td>\n<td>4</td>\n<td>2</td>\n<td>1</td>\n</tr>\n<tr>\n<td>À additionner</td>\n<td>8</td>\n<td>0</td>\n<td>2</td>\n<td>1</td>\n</tr>\n</tbody></table>\n<p><strong>1011₂ = 8 + 2 + 1 = 11₁₀</strong></p>\n<p>On additionne uniquement les valeurs correspondant aux bits à <strong>1</strong>.</p>\n<p><strong>À retenir :</strong> sur 8 bits, la valeur maximale est <strong>255</strong>, car 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255.</p>\n<h2>4. Convertir du décimal vers le binaire</h2>\n<p>La méthode consiste à effectuer des <strong>divisions successives par 2</strong>.</p>\n<h3>Exemple : convertir 25 en binaire</h3>\n<table>\n<thead>\n<tr>\n<th>Division</th>\n<th>Quotient</th>\n<th>Reste</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>25 ÷ 2</td>\n<td>12</td>\n<td><strong>1</strong></td>\n</tr>\n<tr>\n<td>12 ÷ 2</td>\n<td>6</td>\n<td><strong>0</strong></td>\n</tr>\n<tr>\n<td>6 ÷ 2</td>\n<td>3</td>\n<td><strong>0</strong></td>\n</tr>\n<tr>\n<td>3 ÷ 2</td>\n<td>1</td>\n<td><strong>1</strong></td>\n</tr>\n<tr>\n<td>1 ÷ 2</td>\n<td>0</td>\n<td><strong>1</strong></td>\n</tr>\n</tbody></table>\n<p>On lit les restes <strong>de bas en haut</strong> :</p>\n<p><strong>25₁₀ = 11001₂</strong></p>\n<p>Vérification : 16 + 8 + 1 = 25.</p>\n<h3>Méthode à retenir</h3>\n<ol>\n<li>Diviser le nombre par 2.</li>\n<li>Noter le reste (0 ou 1).</li>\n<li>Recommencer avec le quotient jusqu'à obtenir 0.</li>\n<li>Lire les restes de bas en haut.</li>\n</ol>\n<h2>5. Convertir du binaire vers le décimal</h2>\n<p>Il faut multiplier chaque bit par sa puissance de 2, puis additionner les résultats.</p>\n<h3>Exemple : 10110 en décimal</h3>\n<table>\n<thead>\n<tr>\n<th>Bit</th>\n<th>1</th>\n<th>0</th>\n<th>1</th>\n<th>1</th>\n<th>0</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Valeur</td>\n<td>16</td>\n<td>8</td>\n<td>4</td>\n<td>2</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Résultat</td>\n<td>16</td>\n<td>0</td>\n<td>4</td>\n<td>2</td>\n<td>0</td>\n</tr>\n</tbody></table>\n<p><strong>10110₂ = 16 + 4 + 2 = 22₁₀</strong></p>\n<p><strong>À retenir :</strong> binaire → décimal = addition des puissances de 2 dont le bit vaut 1.</p>\n<hr>\n<h2>6. Le système octal — Base 8</h2>\n<p>L'octal utilise <strong>8 chiffres : de 0 à 7</strong>.</p>\n<p>Chaque position représente une puissance de 8.</p>\n<table>\n<thead>\n<tr>\n<th>Position</th>\n<th>3</th>\n<th>2</th>\n<th>1</th>\n<th>0</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Puissance</td>\n<td>8³</td>\n<td>8²</td>\n<td>8¹</td>\n<td>8⁰</td>\n</tr>\n<tr>\n<td>Valeur</td>\n<td>512</td>\n<td>64</td>\n<td>8</td>\n<td>1</td>\n</tr>\n</tbody></table>\n<h3>Convertir du binaire vers l'octal</h3>\n<p>On regroupe les bits <strong>par paquets de 3</strong>, en partant de la droite.</p>\n<p>Exemple :</p>\n<p><strong>110110₂ → 110 | 110</strong></p>\n<ul>\n<li>110₂ = 6</li>\n<li>110₂ = 6</li>\n</ul>\n<p><strong>110110₂ = 66₈</strong></p>\n<h3>Convertir du décimal vers l'octal</h3>\n<p>Exemple : 156 en base 8.</p>\n<table>\n<thead>\n<tr>\n<th>Division</th>\n<th>Quotient</th>\n<th>Reste</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>156 ÷ 8</td>\n<td>19</td>\n<td><strong>4</strong></td>\n</tr>\n<tr>\n<td>19 ÷ 8</td>\n<td>2</td>\n<td><strong>3</strong></td>\n</tr>\n<tr>\n<td>2 ÷ 8</td>\n<td>0</td>\n<td><strong>2</strong></td>\n</tr>\n</tbody></table>\n<p>Lecture des restes de bas en haut :</p>\n<p><strong>156₁₀ = 234₈</strong></p>\n<h3>Convertir de l'octal vers le décimal</h3>\n<p>Exemple : 234₈.</p>\n<p><strong>2 × 8² + 3 × 8¹ + 4 × 8⁰</strong></p>\n<p>= 128 + 24 + 4</p>\n<p><strong>234₈ = 156₁₀</strong></p>\n<p><strong>À retenir :</strong> 1 chiffre octal correspond à <strong>3 bits</strong>, car 2³ = 8.</p>\n<hr>\n<h2>7. Le système hexadécimal — Base 16</h2>\n<p>L'hexadécimal utilise <strong>16 symboles</strong>, de 0 à 9 et de A à F.</p>\n<p>Il permet de représenter de longues suites binaires de façon plus compacte.</p>\n<p>Chaque chiffre hexadécimal correspond à <strong>4 bits</strong>.</p>\n<h3>Tableau de correspondance</h3>\n<table>\n<thead>\n<tr>\n<th>Décimal</th>\n<th>Binaire</th>\n<th>Hexa</th>\n<th>Décimal</th>\n<th>Binaire</th>\n<th>Hexa</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>0</td>\n<td>0000</td>\n<td>0</td>\n<td>8</td>\n<td>1000</td>\n<td>8</td>\n</tr>\n<tr>\n<td>1</td>\n<td>0001</td>\n<td>1</td>\n<td>9</td>\n<td>1001</td>\n<td>9</td>\n</tr>\n<tr>\n<td>2</td>\n<td>0010</td>\n<td>2</td>\n<td>10</td>\n<td>1010</td>\n<td>A</td>\n</tr>\n<tr>\n<td>3</td>\n<td>0011</td>\n<td>3</td>\n<td>11</td>\n<td>1011</td>\n<td>B</td>\n</tr>\n<tr>\n<td>4</td>\n<td>0100</td>\n<td>4</td>\n<td>12</td>\n<td>1100</td>\n<td>C</td>\n</tr>\n<tr>\n<td>5</td>\n<td>0101</td>\n<td>5</td>\n<td>13</td>\n<td>1101</td>\n<td>D</td>\n</tr>\n<tr>\n<td>6</td>\n<td>0110</td>\n<td>6</td>\n<td>14</td>\n<td>1110</td>\n<td>E</td>\n</tr>\n<tr>\n<td>7</td>\n<td>0111</td>\n<td>7</td>\n<td>15</td>\n<td>1111</td>\n<td>F</td>\n</tr>\n</tbody></table>\n<h3>Convertir du binaire vers l'hexadécimal</h3>\n<p>On regroupe les bits <strong>par paquets de 4</strong>, en partant de la droite.</p>\n<p>Exemple :</p>\n<p><strong>10101111₂ → 1010 | 1111</strong></p>\n<ul>\n<li>1010₂ = 10 = A</li>\n<li>1111₂ = 15 = F</li>\n</ul>\n<p><strong>10101111₂ = AF₁₆</strong></p>\n<h3>Convertir du décimal vers l'hexadécimal</h3>\n<p>Exemple : 254 en base 16.</p>\n<table>\n<thead>\n<tr>\n<th>Division</th>\n<th>Quotient</th>\n<th>Reste</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>254 ÷ 16</td>\n<td>15</td>\n<td><strong>14 = E</strong></td>\n</tr>\n<tr>\n<td>15 ÷ 16</td>\n<td>0</td>\n<td><strong>15 = F</strong></td>\n</tr>\n</tbody></table>\n<p>Lecture des restes de bas en haut :</p>\n<p><strong>254₁₀ = FE₁₆</strong></p>\n<h3>Convertir de l'hexadécimal vers le décimal</h3>\n<p>Exemple : 3F₁₆.</p>\n<ul>\n<li>3 × 16¹ = 48</li>\n<li>F = 15, donc 15 × 16⁰ = 15</li>\n</ul>\n<p><strong>3F₁₆ = 48 + 15 = 63₁₀</strong></p>\n<h3>Exemple supplémentaire : 2AF₁₆</h3>\n<p><strong>2 × 16² + 10 × 16¹ + 15 × 16⁰</strong></p>\n<p>= 512 + 160 + 15</p>\n<p><strong>2AF₁₆ = 687₁₀</strong></p>\n<p><strong>À retenir :</strong> 1 chiffre hexadécimal = <strong>4 bits</strong>. C'est particulièrement utile pour lire les adresses IPv6 et les adresses mémoire.</p>\n<hr>\n<h2>8. Tableau récapitulatif des conversions</h2>\n<table>\n<thead>\n<tr>\n<th>Conversion</th>\n<th>Méthode</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Décimal → Binaire</td>\n<td>Divisions successives par <strong>2</strong></td>\n</tr>\n<tr>\n<td>Binaire → Décimal</td>\n<td>Addition des puissances de <strong>2</strong></td>\n</tr>\n<tr>\n<td>Décimal → Octal</td>\n<td>Divisions successives par <strong>8</strong></td>\n</tr>\n<tr>\n<td>Octal → Décimal</td>\n<td>Somme des chiffres × puissances de <strong>8</strong></td>\n</tr>\n<tr>\n<td>Décimal → Hexadécimal</td>\n<td>Divisions successives par <strong>16</strong></td>\n</tr>\n<tr>\n<td>Hexadécimal → Décimal</td>\n<td>Somme des chiffres × puissances de <strong>16</strong></td>\n</tr>\n<tr>\n<td>Binaire → Octal</td>\n<td>Regrouper par <strong>3 bits</strong></td>\n</tr>\n<tr>\n<td>Binaire → Hexadécimal</td>\n<td>Regrouper par <strong>4 bits</strong></td>\n</tr>\n</tbody></table>\n<h3>Même nombre dans les quatre bases</h3>\n<table>\n<thead>\n<tr>\n<th>Décimal</th>\n<th>Binaire</th>\n<th>Octal</th>\n<th>Hexadécimal</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>10</td>\n<td>1010</td>\n<td>12</td>\n<td>A</td>\n</tr>\n<tr>\n<td>15</td>\n<td>1111</td>\n<td>17</td>\n<td>F</td>\n</tr>\n<tr>\n<td>25</td>\n<td>11001</td>\n<td>31</td>\n<td>19</td>\n</tr>\n<tr>\n<td>63</td>\n<td>111111</td>\n<td>77</td>\n<td>3F</td>\n</tr>\n<tr>\n<td>255</td>\n<td>11111111</td>\n<td>377</td>\n<td>FF</td>\n</tr>\n</tbody></table>\n<hr>\n<h2>9. Les bits et les octets</h2>\n<p>Le <strong>bit (b)</strong> est la plus petite unité d'information numérique. Il peut valoir 0 ou 1.</p>\n<p>Un <strong>octet (B)</strong> contient <strong>8 bits</strong>.</p>\n<table>\n<thead>\n<tr>\n<th>Unité</th>\n<th>Correspondance</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1 bit</td>\n<td>0 ou 1</td>\n</tr>\n<tr>\n<td>1 octet</td>\n<td>8 bits</td>\n</tr>\n<tr>\n<td>1 demi-octet</td>\n<td>4 bits</td>\n</tr>\n<tr>\n<td>1 octet</td>\n<td>2 chiffres hexadécimaux</td>\n</tr>\n</tbody></table>\n<p>Attention à ne pas confondre <strong>b</strong> (bit) et <strong>B</strong> (octet).</p>\n<h2>10. Les multiples de l'octet</h2>\n<p>Il existe deux systèmes de mesure : <strong>décimal</strong> et <strong>binaire</strong>.</p>\n<h3>Système décimal — Multiples de 1 000</h3>\n<table>\n<thead>\n<tr>\n<th>Unité</th>\n<th>Symbole</th>\n<th>Valeur</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Kilooctet</td>\n<td>Ko</td>\n<td>1 000 octets</td>\n</tr>\n<tr>\n<td>Mégaoctet</td>\n<td>Mo</td>\n<td>1 000 000 octets</td>\n</tr>\n<tr>\n<td>Gigaoctet</td>\n<td>Go</td>\n<td>1 000 000 000 octets</td>\n</tr>\n<tr>\n<td>Téraoctet</td>\n<td>To</td>\n<td>1 000 000 000 000 octets</td>\n</tr>\n</tbody></table>\n<h3>Système binaire — Multiples de 1 024</h3>\n<table>\n<thead>\n<tr>\n<th>Unité</th>\n<th>Symbole</th>\n<th>Valeur</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Kibioctet</td>\n<td>Kio</td>\n<td>1 024 octets</td>\n</tr>\n<tr>\n<td>Mébioctet</td>\n<td>Mio</td>\n<td>1 048 576 octets</td>\n</tr>\n<tr>\n<td>Gibioctet</td>\n<td>Gio</td>\n<td>1 073 741 824 octets</td>\n</tr>\n<tr>\n<td>Tébioctet</td>\n<td>Tio</td>\n<td>1 099 511 627 776 octets</td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> Ko, Mo, Go utilisent des multiples de <strong>1 000</strong>, tandis que Kio, Mio, Gio utilisent des multiples de <strong>1 024</strong>.</p>\n<hr>\n<h2>11. Fiche de révision — L'essentiel</h2>\n<table>\n<thead>\n<tr>\n<th>Notion</th>\n<th>À mémoriser</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Binaire</td>\n<td>Base 2 — chiffres 0 et 1</td>\n</tr>\n<tr>\n<td>Octal</td>\n<td>Base 8 — chiffres 0 à 7</td>\n</tr>\n<tr>\n<td>Décimal</td>\n<td>Base 10 — chiffres 0 à 9</td>\n</tr>\n<tr>\n<td>Hexadécimal</td>\n<td>Base 16 — chiffres 0 à 9 et A à F</td>\n</tr>\n<tr>\n<td>Bit</td>\n<td>Valeur binaire 0 ou 1</td>\n</tr>\n<tr>\n<td>Octet</td>\n<td>8 bits</td>\n</tr>\n<tr>\n<td>1 chiffre octal</td>\n<td>3 bits</td>\n</tr>\n<tr>\n<td>1 chiffre hexadécimal</td>\n<td>4 bits</td>\n</tr>\n<tr>\n<td>Décimal vers une autre base</td>\n<td>Divisions successives</td>\n</tr>\n<tr>\n<td>Autre base vers décimal</td>\n<td>Addition des puissances</td>\n</tr>\n<tr>\n<td>Ko / Mo / Go</td>\n<td>Multiples de 1 000</td>\n</tr>\n<tr>\n<td>Kio / Mio / Gio</td>\n<td>Multiples de 1 024</td>\n</tr>\n</tbody></table>\n<h3>Les valeurs binaires à connaître par cœur</h3>\n<p><strong>128 — 64 — 32 — 16 — 8 — 4 — 2 — 1</strong></p>\n<p>Ce sont les valeurs des 8 bits d'un octet. Elles sont indispensables pour les calculs d'adresses IP et de masques de sous-réseau.</p>\n<hr>\n",
+      "revisionExtracts": [],
+      "updatedAt": "2026-10-23T11:06:54.799Z"
     }
   ],
   "quizzes": [
@@ -625,6 +635,179 @@
           ],
           "correct": 1,
           "explanation": "Un switch exploite les adresses MAC pour transmettre les trames vers les équipements concernés."
+        }
+      ]
+    },
+    {
+      "id": "quiz-e7074da8-9a74-4eac-b547-68234e91005d",
+      "title": "QCM — Les unités informatiques",
+      "category": "02 — Bases des réseaux",
+      "chapterId": "chapter:02:02",
+      "questions": [
+        {
+          "question": "Quelle base utilise uniquement les chiffres 0 et 1 ?",
+          "answers": [
+            "La base 8",
+            "La base 2",
+            "La base 10",
+            "La base 16"
+          ],
+          "correct": 1,
+          "explanation": "Le système binaire utilise deux symboles, 0 et 1."
+        },
+        {
+          "question": "Quelle est la valeur décimale de 1011 en binaire ?",
+          "answers": [
+            "9",
+            "10",
+            "11",
+            "13"
+          ],
+          "correct": 2,
+          "explanation": "1011₂ = 8 + 0 + 2 + 1 = 11."
+        },
+        {
+          "question": "Combien de bits contient un octet ?",
+          "answers": [
+            "4",
+            "8",
+            "16",
+            "32"
+          ],
+          "correct": 1,
+          "explanation": "Un octet est composé de 8 bits."
+        },
+        {
+          "question": "Quelle est la valeur du bit le plus à gauche dans un octet de 8 bits ?",
+          "answers": [
+            "64",
+            "32",
+            "255",
+            "128"
+          ],
+          "correct": 3,
+          "explanation": "Le bit le plus à gauche correspond à 2⁷, soit 128."
+        },
+        {
+          "question": "Quel est le résultat de la conversion de 25 en binaire ?",
+          "answers": [
+            "11001",
+            "10101",
+            "11100",
+            "10011"
+          ],
+          "correct": 0,
+          "explanation": "25 = 16 + 8 + 1, donc 11001₂."
+        },
+        {
+          "question": "Quelle méthode utilise-t-on pour convertir un nombre décimal en binaire ?",
+          "answers": [
+            "Multiplier successivement par 2",
+            "Diviser successivement par 10",
+            "Diviser successivement par 2 et lire les restes de bas en haut",
+            "Additionner les chiffres"
+          ],
+          "correct": 2,
+          "explanation": "Les divisions successives par 2 permettent d'obtenir les bits à partir des restes."
+        },
+        {
+          "question": "Quelle est la valeur décimale de 10110 en binaire ?",
+          "answers": [
+            "20",
+            "22",
+            "24",
+            "26"
+          ],
+          "correct": 1,
+          "explanation": "10110₂ = 16 + 4 + 2 = 22."
+        },
+        {
+          "question": "Combien de bits correspondent à un chiffre octal ?",
+          "answers": [
+            "2",
+            "4",
+            "8",
+            "3"
+          ],
+          "correct": 3,
+          "explanation": "Un chiffre octal représente 3 bits, car 2³ = 8."
+        },
+        {
+          "question": "Quel est le résultat de 110110 en binaire converti en octal ?",
+          "answers": [
+            "66",
+            "54",
+            "77",
+            "36"
+          ],
+          "correct": 0,
+          "explanation": "On regroupe 110 110. Chaque groupe vaut 6, donc 66₈."
+        },
+        {
+          "question": "Quelle est la valeur décimale du nombre octal 234 ?",
+          "answers": [
+            "134",
+            "148",
+            "156",
+            "234"
+          ],
+          "correct": 2,
+          "explanation": "2 × 64 + 3 × 8 + 4 = 156."
+        },
+        {
+          "question": "Quelle valeur représente la lettre F en hexadécimal ?",
+          "answers": [
+            "10",
+            "15",
+            "16",
+            "14"
+          ],
+          "correct": 1,
+          "explanation": "En hexadécimal, A vaut 10 et F vaut 15."
+        },
+        {
+          "question": "Quel est l'équivalent hexadécimal de 10101111 en binaire ?",
+          "answers": [
+            "A9",
+            "FA",
+            "BF",
+            "AF"
+          ],
+          "correct": 3,
+          "explanation": "1010 vaut A et 1111 vaut F, donc AF₁₆."
+        },
+        {
+          "question": "Quelle est la valeur décimale de 3F en hexadécimal ?",
+          "answers": [
+            "63",
+            "48",
+            "315",
+            "60"
+          ],
+          "correct": 0,
+          "explanation": "3 × 16 + 15 = 63."
+        },
+        {
+          "question": "Quel est l'équivalent hexadécimal de 254 en décimal ?",
+          "answers": [
+            "EF",
+            "FF",
+            "FE",
+            "FC"
+          ],
+          "correct": 2,
+          "explanation": "254 ÷ 16 donne 15 reste 14. On lit F puis E, soit FE."
+        },
+        {
+          "question": "Quelle affirmation est correcte concernant les unités de stockage ?",
+          "answers": [
+            "1 Ko = 1 024 octets et 1 Kio = 1 000 octets",
+            "1 Ko = 1 000 octets et 1 Kio = 1 024 octets",
+            "1 Ko = 8 bits",
+            "1 Kio = 100 octets"
+          ],
+          "correct": 1,
+          "explanation": "Le kilooctet utilise la base décimale (1 000), tandis que le kibioctet utilise la base binaire (1 024)."
         }
       ]
     }
