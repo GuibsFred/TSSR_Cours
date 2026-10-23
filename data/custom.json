@@ -56,9 +56,9 @@
       "kind": "cours",
       "category": "02 — Bases des réseaux / Cours",
       "chapter": true,
-      "html": "<h1>Modèle OSI — Les 7 couches et l'encapsulation</h1><h2><p>Le modèle OSI (Open Systems Interconnection) décrit comment deux systèmes communiquent sur un réseau. Il est organisé en 7 couches, chacune ayant un rôle précis.</p><p>Un protocole est un ensemble de règles permettant aux équipements d'échanger des informations.</p></h2><h2>Le modèle OSI en un tableau</h2><h2><div><table><tbody><tr><th><p>N°</p></th><th><p>Couche</p></th><th><p>Rôle principal</p></th><th><p>Unité de données</p></th></tr><tr><td><p>7</p></td><td><p>Application</p></td><td><p>Services réseau pour les applications</p></td><td><p>Données (APDU)</p></td></tr><tr><td><p>6</p></td><td><p>Présentation</p></td><td><p>Formatage, chiffrement, compression</p></td><td><p>Données (PPDU)</p></td></tr><tr><td><p>5</p></td><td><p>Session</p></td><td><p>Ouverture, gestion et fermeture des sessions</p></td><td><p>Données (SPDU)</p></td></tr><tr><td><p>4</p></td><td><p>Transport</p></td><td><p>Segmentation, ports et fiabilité</p></td><td><p>Segment TCP / datagramme UDP</p></td></tr><tr><td><p>3</p></td><td><p>Réseau</p></td><td><p>Adressage IP et routage</p></td><td><p>Paquet</p></td></tr><tr><td><p>2</p></td><td><p>Liaison de données</p></td><td><p>Adressage MAC et contrôle des trames</p></td><td><p>Trame</p></td></tr><tr><td><p>1</p></td><td><p>Physique</p></td><td><p>Transmission des signaux</p></td><td><p>Bits</p></td></tr></tbody></table></div><p>Lors d'un envoi, les données descendent de la couche 7 vers la couche 1. À la réception, elles remontent de la couche 1 vers la couche 7.</p></h2><h2>PDU, SDU et PCI : les trois notions essentielles</h2><h2><div><table><tbody><tr><th><p>Terme</p></th><th><p>Signification</p></th><th><p>Rôle</p></th></tr><tr><td><p>SDU</p></td><td><p>Service Data Unit</p></td><td><p>Données reçues de la couche supérieure</p></td></tr><tr><td><p>PCI</p></td><td><p>Protocol Control Information</p></td><td><p>Informations de contrôle ajoutées par la couche</p></td></tr><tr><td><p>PDU</p></td><td><p>Protocol Data Unit</p></td><td><p>Unité obtenue après ajout du PCI au SDU</p></td></tr></tbody></table></div><p>Formule à retenir :</p><div><div><div><p>PCI</p><p>Contrôle</p></div><div><p>SDU</p><p>Données</p></div></div><div></div><div><p>PDU = PCI + SDU</p></div></div><p>Le PDU d'une couche devient le SDU de la couche inférieure. Celle-ci ajoute ses propres informations de contrôle pour former un nouveau PDU. Ce mécanisme s'appelle l'encapsulation.</p><p>À la réception, l'opération inverse s'appelle la désencapsulation : chaque couche traite et retire les informations qui la concernent.</p><div></div></h2><h2>Les 7 couches du modèle OSI</h2><h3>7. Couche Application</h3><h2><p>Rôle : fournir des services réseau aux applications utilisées par l'utilisateur.</p><p>C'est à ce niveau que se trouvent les protocoles permettant de naviguer sur Internet, d'envoyer des emails ou de transférer des fichiers.</p><div><table><tbody><tr><th><p>Protocole</p></th><th><p>Utilisation</p></th></tr><tr><td><p>HTTP / HTTPS</p></td><td><p>Navigation Web</p></td></tr><tr><td><p>FTP</p></td><td><p>Transfert de fichiers</p></td></tr><tr><td><p>SMTP</p></td><td><p>Envoi d'emails</p></td></tr><tr><td><p>DNS</p></td><td><p>Traduction des noms de domaine en adresses IP</p></td></tr></tbody></table></div><p>Exemple : lorsque tu envoies un email, l'application de messagerie utilise notamment SMTP.</p></h2><h3>6. Couche Présentation</h3><h2><p>Rôle : préparer les données dans un format utilisable par les applications.</p><p>Elle assure notamment :</p><ul><li><p>La conversion des formats.</p></li><li><p>Le chiffrement et le déchiffrement.</p></li><li><p>La compression et la décompression.</p></li></ul><p>Exemples du cours : SSL/TLS pour la sécurité des communications ; JPEG et MPEG pour le codage multimédia.</p></h2><h3>5. Couche Session</h3><h2><p>Rôle : établir, maintenir et terminer les sessions de communication entre applications.</p><p>Elle intervient dans la synchronisation des échanges et leur reprise en cas d'interruption.</p><div><table><tbody><tr><th><p>Protocole</p></th><th><p>Utilisation</p></th></tr><tr><td><p>RPC</p></td><td><p>Exécuter une procédure sur un autre ordinateur</p></td></tr><tr><td><p>NetBIOS</p></td><td><p>Gérer des échanges entre ordinateurs sur un réseau local</p></td></tr></tbody></table></div></h2><h3>4. Couche Transport</h3><h2><p>Rôle : assurer le transport des données entre les applications de deux équipements.</p><p>Ses fonctions essentielles sont la segmentation, le réassemblage, le contrôle de flux, la gestion des erreurs et l'utilisation des numéros de port.</p><div><table><tbody><tr><th><p>Protocole</p></th><th><p>Fonctionnement</p></th></tr><tr><td><p>TCP</p></td><td><p>Orienté connexion, assure une transmission fiable et ordonnée</p></td></tr><tr><td><p>UDP</p></td><td><p>Sans connexion, plus léger, sans garantie de livraison</p></td></tr></tbody></table></div><p>Exemple : lors du transfert d'un fichier avec TCP, les données sont découpées en segments, numérotées puis réassemblées dans le bon ordre à l'arrivée.</p></h2><h4>Les ports importants à connaître</h4><h2><div><table><tbody><tr><th><p>Port</p></th><th><p>Protocole / service</p></th><th><p>Utilisation</p></th></tr><tr><td><p>22</p></td><td><p>SSH</p></td><td><p>Administration distante sécurisée</p></td></tr><tr><td><p>25</p></td><td><p>SMTP</p></td><td><p>Envoi d'emails</p></td></tr><tr><td><p>53</p></td><td><p>DNS</p></td><td><p>Résolution des noms de domaine</p></td></tr><tr><td><p>67 / 68</p></td><td><p>DHCP</p></td><td><p>Attribution automatique d'adresses IP</p></td></tr><tr><td><p>80</p></td><td><p>HTTP</p></td><td><p>Navigation Web</p></td></tr><tr><td><p>143</p></td><td><p>IMAP</p></td><td><p>Consultation et gestion des emails</p></td></tr><tr><td><p>161 / 162</p></td><td><p>SNMP</p></td><td><p>Gestion et surveillance des équipements</p></td></tr><tr><td><p>389</p></td><td><p>LDAP</p></td><td><p>Services d'annuaire</p></td></tr><tr><td><p>443</p></td><td><p>HTTPS</p></td><td><p>Navigation Web sécurisée</p></td></tr><tr><td><p>3389</p></td><td><p>RDP</p></td><td><p>Bureau à distance Windows</p></td></tr></tbody></table></div><p>Un port permet d'identifier le service ou l'application concernée par une communication.</p></h2><h3>3. Couche Réseau</h3><h2><p>Rôle : acheminer les paquets entre différents réseaux grâce aux adresses IP.</p><p>Elle assure principalement :</p><ul><li><p>L'adressage logique : identification des équipements avec leurs adresses IP.</p></li><li><p>Le routage : choix du chemin emprunté par les paquets.</p></li><li><p>La fragmentation, lorsque cela est nécessaire.</p></li><li><p>Le signalement de certaines erreurs réseau.</p></li></ul><div><table><tbody><tr><th><p>Protocole</p></th><th><p>Utilisation</p></th></tr><tr><td><p>IPv4</p></td><td><p>Adressage IP sur 32 bits</p></td></tr><tr><td><p>IPv6</p></td><td><p>Adressage IP sur 128 bits</p></td></tr><tr><td><p>ICMP</p></td><td><p>Diagnostic et messages de contrôle, notamment le ping</p></td></tr><tr><td><p>RIP / OSPF</p></td><td><p>Échange d'informations de routage entre routeurs</p></td></tr></tbody></table></div><p>Le support présente également ARP, qui permet d'associer une adresse IPv4 à une adresse MAC sur un réseau local.</p><p>Équipement principal : le routeur.</p><p>Exemple : lorsqu'un ordinateur communique avec un appareil situé sur un autre réseau, la couche Réseau intervient pour acheminer les paquets vers leur destination.</p></h2><h3>2. Couche Liaison de données</h3><h2><p>Rôle : organiser la communication entre équipements sur un même réseau local.</p><p>Elle transforme les paquets en trames et utilise les adresses MAC.</p><p>Ses principales fonctions sont :</p><ul><li><p>L'encapsulation des paquets en trames.</p></li><li><p>Le contrôle des erreurs de transmission.</p></li><li><p>L'adressage MAC source et destination.</p></li><li><p>Le contrôle d'accès au support de transmission.</p></li><li><p>Le contrôle de flux selon les technologies utilisées.</p></li></ul></h2><h4>Les deux sous-couches</h4><h2><div><table><tbody><tr><th><p>Sous-couche</p></th><th><p>Fonction</p></th></tr><tr><td><p>LLC (Logical Link Control)</p></td><td><p>Gère les échanges logiques et l'identification des protocoles</p></td></tr><tr><td><p>MAC (Media Access Control)</p></td><td><p>Gère l'accès au support et l'adressage MAC</p></td></tr></tbody></table></div><p>Protocoles du cours : Ethernet, Wi-Fi, PPP et HDLC.</p><p>Équipements principaux : switch (commutateur) et bridge (pont).</p><p>Exemple : un switch utilise les adresses MAC pour transmettre une trame vers le bon équipement du réseau local.</p></h2><h3>1. Couche Physique</h3><h2><p>Rôle : transmettre les bits (0 et 1) sous forme de signaux électriques, lumineux ou radio.</p><p>Elle concerne :</p><ul><li><p>Les supports de transmission : cuivre, fibre optique, ondes radio.</p></li><li><p>L'encodage et la synchronisation des bits.</p></li><li><p>Le débit de transmission, mesuré en bits par seconde.</p></li><li><p>La topologie physique du réseau.</p></li><li><p>Les caractéristiques des connexions physiques.</p></li></ul><p>Équipements et matériels : câbles, connecteurs RJ45, hubs, répéteurs, modems et équipements radio.</p></h2><h4>Les câbles à paires torsadées</h4><h2><p>Les câbles Ethernet à paires torsadées utilisent des fils de cuivre torsadés pour limiter les interférences.</p><div><table><tbody><tr><th><p>Type</p></th><th><p>Particularité</p></th></tr><tr><td><p>UTP</p></td><td><p>Sans blindage, moins coûteux mais plus sensible aux interférences</p></td></tr><tr><td><p>STP</p></td><td><p>Avec blindage, meilleure protection contre les interférences</p></td></tr><tr><td><p>CAT5e / CAT6 / CAT6a</p></td><td><p>Catégories de câbles aux performances différentes</p></td></tr></tbody></table></div></h2><h4>Câble droit et câble croisé</h4><h2><div><table><tbody><tr><th><p>Câble</p></th><th><p>Principe</p></th><th><p>Utilisation présentée dans le cours</p></th></tr><tr><td><p>Droit</p></td><td><p>Même ordre des fils aux deux extrémités</p></td><td><p>PC ↔ switch, switch ↔ routeur</p></td></tr><tr><td><p>Croisé</p></td><td><p>Une extrémité T568A et l'autre T568B</p></td><td><p>PC ↔ PC, switch ↔ switch, routeur ↔ routeur</p></td></tr></tbody></table></div><p>Les équipements modernes équipés de la fonction Auto MDI-X peuvent détecter automatiquement le type de connexion, ce qui réduit la nécessité d'utiliser des câbles croisés.</p></h2><h4>Ordre des fils RJ45</h4><h2><div><table><tbody><tr><th><p>Broche</p></th><th><p>T568A</p></th><th><p>T568B</p></th></tr><tr><td><p>1</p></td><td><p>Blanc/vert</p></td><td><p>Blanc/orange</p></td></tr><tr><td><p>2</p></td><td><p>Vert</p></td><td><p>Orange</p></td></tr><tr><td><p>3</p></td><td><p>Blanc/orange</p></td><td><p>Blanc/vert</p></td></tr><tr><td><p>4</p></td><td><p>Bleu</p></td><td><p>Bleu</p></td></tr><tr><td><p>5</p></td><td><p>Blanc/bleu</p></td><td><p>Blanc/bleu</p></td></tr><tr><td><p>6</p></td><td><p>Orange</p></td><td><p>Vert</p></td></tr><tr><td><p>7</p></td><td><p>Blanc/marron</p></td><td><p>Blanc/marron</p></td></tr><tr><td><p>8</p></td><td><p>Marron</p></td><td><p>Marron</p></td></tr></tbody></table></div><div></div></h2><h2>Encapsulation et désencapsulation : exemple de l'envoi d'un email</h2><h2><p>Le document ENI illustre ces mécanismes avec un email envoyé d'un utilisateur à un serveur de messagerie.</p><div><table><tbody><tr><th><p>Couche</p></th><th><p>Lors de l'envoi : encapsulation</p></th><th><p>PDU</p></th></tr><tr><td><p>7 — Application</p></td><td><p>Préparation de l'email via SMTP</p></td><td><p>APDU</p></td></tr><tr><td><p>6 — Présentation</p></td><td><p>Mise en forme, chiffrement ou compression éventuels</p></td><td><p>PPDU</p></td></tr><tr><td><p>5 — Session</p></td><td><p>Gestion de la session de communication</p></td><td><p>SPDU</p></td></tr><tr><td><p>4 — Transport</p></td><td><p>Segmentation, ajout des ports et informations TCP</p></td><td><p>TPDU / segment</p></td></tr><tr><td><p>3 — Réseau</p></td><td><p>Ajout des adresses IP source et destination</p></td><td><p>RPDU / paquet</p></td></tr><tr><td><p>2 — Liaison</p></td><td><p>Ajout des adresses MAC et informations de contrôle</p></td><td><p>LPDU / trame</p></td></tr><tr><td><p>1 — Physique</p></td><td><p>Conversion et transmission des signaux</p></td><td><p>Bits</p></td></tr></tbody></table></div><p>À la réception, le serveur effectue l'opération inverse : les bits sont reconstitués en trames, puis les informations propres à chaque couche sont traitées et retirées jusqu'à retrouver les données de l'email.</p><p>Encapsulation : 7 → 1. Désencapsulation : 1 → 7.</p></h2><h2>Fiche de révision — L'essentiel à mémoriser</h2><h2><div><table><tbody><tr><th><p>Couche</p></th><th><p>Mot-clé</p></th><th><p>Adresse ou information importante</p></th></tr><tr><td><p>7 — Application</p></td><td><p>Services</p></td><td><p>HTTP, FTP, SMTP, DNS</p></td></tr><tr><td><p>6 — Présentation</p></td><td><p>Format</p></td><td><p>Chiffrement, compression</p></td></tr><tr><td><p>5 — Session</p></td><td><p>Dialogue</p></td><td><p>Ouverture et fermeture des sessions</p></td></tr><tr><td><p>4 — Transport</p></td><td><p>Segments</p></td><td><p>TCP, UDP, ports</p></td></tr><tr><td><p>3 — Réseau</p></td><td><p>Paquets</p></td><td><p>Adresses IP, routeurs</p></td></tr><tr><td><p>2 — Liaison</p></td><td><p>Trames</p></td><td><p>Adresses MAC, switches</p></td></tr><tr><td><p>1 — Physique</p></td><td><p>Bits</p></td><td><p>Câbles, fibre, signaux radio</p></td></tr></tbody></table></div><p>Les trois associations à ne pas confondre :</p><ul><li><p>Adresse MAC → couche 2</p></li><li><p>Adresse IP → couche 3</p></li><li><p>Numéro de port → couche 4</p></li></ul><p>Et la formule : PDU = SDU + PCI.</p></h2><p></p>",
+      "html": "<h1>Modèle OSI — Les 7 couches et l'encapsulation</h1>\n<p>Le modèle <strong>OSI (Open Systems Interconnection)</strong> décrit comment deux systèmes communiquent sur un réseau. Il est organisé en <strong>7 couches</strong>, chacune ayant un rôle précis.</p>\n<p>Un <strong>protocole</strong> est un ensemble de règles permettant aux équipements d'échanger des informations.</p>\n<h2>1. Vue d'ensemble du modèle OSI</h2>\n<table>\n<thead>\n<tr>\n<th>N°</th>\n<th>Couche</th>\n<th>Rôle principal</th>\n<th>Unité de données</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>7</strong></td>\n<td>Application</td>\n<td>Services réseau pour les applications</td>\n<td>Données (APDU)</td>\n</tr>\n<tr>\n<td><strong>6</strong></td>\n<td>Présentation</td>\n<td>Formatage, chiffrement et compression</td>\n<td>Données (PPDU)</td>\n</tr>\n<tr>\n<td><strong>5</strong></td>\n<td>Session</td>\n<td>Ouverture, gestion et fermeture des sessions</td>\n<td>Données (SPDU)</td>\n</tr>\n<tr>\n<td><strong>4</strong></td>\n<td>Transport</td>\n<td>Segmentation, ports et fiabilité</td>\n<td>Segment TCP / datagramme UDP</td>\n</tr>\n<tr>\n<td><strong>3</strong></td>\n<td>Réseau</td>\n<td>Adressage IP et routage</td>\n<td>Paquet</td>\n</tr>\n<tr>\n<td><strong>2</strong></td>\n<td>Liaison de données</td>\n<td>Adressage MAC et contrôle des trames</td>\n<td>Trame</td>\n</tr>\n<tr>\n<td><strong>1</strong></td>\n<td>Physique</td>\n<td>Transmission des signaux</td>\n<td>Bits</td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> à l'envoi, les données descendent de la couche <strong>7 vers la couche 1</strong>. À la réception, elles remontent de la couche <strong>1 vers la couche 7</strong>.</p>\n<h2>2. SDU, PCI et PDU</h2>\n<p>Ces trois notions expliquent comment les données sont préparées pour traverser les couches du modèle OSI.</p>\n<table>\n<thead>\n<tr>\n<th>Terme</th>\n<th>Signification</th>\n<th>Rôle</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>SDU</strong></td>\n<td>Service Data Unit</td>\n<td>Données reçues de la couche supérieure</td>\n</tr>\n<tr>\n<td><strong>PCI</strong></td>\n<td>Protocol Control Information</td>\n<td>Informations de contrôle ajoutées par la couche</td>\n</tr>\n<tr>\n<td><strong>PDU</strong></td>\n<td>Protocol Data Unit</td>\n<td>Unité obtenue après ajout du PCI au SDU</td>\n</tr>\n</tbody></table>\n<h3>Composition du PDU</h3>\n<p><strong>SDU + PCI = PDU</strong></p>\n<p>Lorsqu'une couche reçoit des données de la couche supérieure, elle les considère comme son <strong>SDU</strong>. Elle ajoute ses propres informations de contrôle (<strong>PCI</strong>) pour former son <strong>PDU</strong>.</p>\n<p>Le PDU est ensuite transmis à la couche inférieure, où le même mécanisme recommence.</p>\n<h3>Encapsulation et désencapsulation</h3>\n<ul>\n<li><strong>Encapsulation :</strong> chaque couche ajoute les informations nécessaires à la transmission.</li>\n<li><strong>Désencapsulation :</strong> à la réception, chaque couche traite et retire les informations qui la concernent.</li>\n</ul>\n<p><strong>À retenir :</strong> le PDU d'une couche devient le SDU de la couche inférieure.</p>\n<hr>\n<h2>3. Les sept couches du modèle OSI</h2>\n<h3>Couche 7 — Application</h3>\n<p><strong>Rôle :</strong> fournir des services réseau aux applications utilisées par l'utilisateur.</p>\n<p>Elle permet notamment de naviguer sur Internet, d'envoyer des emails et de transférer des fichiers.</p>\n<table>\n<thead>\n<tr>\n<th>Protocole</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>HTTP / HTTPS</td>\n<td>Navigation Web</td>\n</tr>\n<tr>\n<td>FTP</td>\n<td>Transfert de fichiers</td>\n</tr>\n<tr>\n<td>SMTP</td>\n<td>Envoi d'emails</td>\n</tr>\n<tr>\n<td>DNS</td>\n<td>Résolution des noms de domaine</td>\n</tr>\n</tbody></table>\n<p><strong>Exemple :</strong> lorsque tu envoies un email, l'application de messagerie utilise notamment le protocole SMTP.</p>\n<p><strong>À retenir :</strong> couche 7 = services réseau utilisés par les applications.</p>\n<h3>Couche 6 — Présentation</h3>\n<p><strong>Rôle :</strong> préparer les données dans un format compréhensible par les applications.</p>\n<p>Ses fonctions principales sont :</p>\n<ul>\n<li>La conversion des formats.</li>\n<li>Le chiffrement et le déchiffrement.</li>\n<li>La compression et la décompression.</li>\n</ul>\n<p><strong>Exemples :</strong> SSL/TLS pour la sécurité des communications, JPEG et MPEG pour les formats multimédias.</p>\n<p><strong>À retenir :</strong> couche 6 = formatage, chiffrement et compression.</p>\n<h3>Couche 5 — Session</h3>\n<p><strong>Rôle :</strong> établir, maintenir et terminer les sessions de communication entre applications.</p>\n<p>Elle intervient également dans la synchronisation des échanges et leur reprise après une interruption.</p>\n<table>\n<thead>\n<tr>\n<th>Protocole</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>RPC</td>\n<td>Exécuter une procédure sur un autre ordinateur</td>\n</tr>\n<tr>\n<td>NetBIOS</td>\n<td>Gérer certains échanges entre ordinateurs d'un réseau local</td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> couche 5 = ouverture, gestion et fermeture des sessions.</p>\n<h3>Couche 4 — Transport</h3>\n<p><strong>Rôle :</strong> transporter les données entre les applications de deux équipements.</p>\n<p>Elle intervient dans :</p>\n<ul>\n<li>La segmentation et le réassemblage des données.</li>\n<li>L'utilisation des numéros de port.</li>\n<li>Le contrôle de flux.</li>\n<li>La gestion des erreurs et de la fiabilité selon le protocole.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Protocole</th>\n<th>Fonctionnement</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>TCP</strong></td>\n<td>Orienté connexion, transmission fiable et ordonnée</td>\n</tr>\n<tr>\n<td><strong>UDP</strong></td>\n<td>Sans connexion, plus léger, sans garantie de livraison</td>\n</tr>\n</tbody></table>\n<p><strong>Exemple :</strong> avec TCP, un fichier est découpé en segments, transmis puis réassemblé dans le bon ordre.</p>\n<h4>Ports importants</h4>\n<table>\n<thead>\n<tr>\n<th>Port</th>\n<th>Service</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>22</strong></td>\n<td>SSH</td>\n<td>Administration distante sécurisée</td>\n</tr>\n<tr>\n<td><strong>25</strong></td>\n<td>SMTP</td>\n<td>Envoi d'emails</td>\n</tr>\n<tr>\n<td><strong>53</strong></td>\n<td>DNS</td>\n<td>Résolution des noms de domaine</td>\n</tr>\n<tr>\n<td><strong>67 / 68</strong></td>\n<td>DHCP</td>\n<td>Attribution automatique d'adresses IP</td>\n</tr>\n<tr>\n<td><strong>80</strong></td>\n<td>HTTP</td>\n<td>Navigation Web</td>\n</tr>\n<tr>\n<td><strong>143</strong></td>\n<td>IMAP</td>\n<td>Consultation et gestion des emails</td>\n</tr>\n<tr>\n<td><strong>161 / 162</strong></td>\n<td>SNMP</td>\n<td>Surveillance des équipements</td>\n</tr>\n<tr>\n<td><strong>389</strong></td>\n<td>LDAP</td>\n<td>Services d'annuaire</td>\n</tr>\n<tr>\n<td><strong>443</strong></td>\n<td>HTTPS</td>\n<td>Navigation Web sécurisée</td>\n</tr>\n<tr>\n<td><strong>3389</strong></td>\n<td>RDP</td>\n<td>Bureau à distance Windows</td>\n</tr>\n</tbody></table>\n<p>Un <strong>port</strong> permet d'identifier le service ou l'application concerné par une communication.</p>\n<p><strong>À retenir :</strong> couche 4 = TCP, UDP, segments et numéros de port.</p>\n<h3>Couche 3 — Réseau</h3>\n<p><strong>Rôle :</strong> acheminer les paquets entre différents réseaux grâce aux adresses IP.</p>\n<p>Ses fonctions principales sont :</p>\n<ul>\n<li>L'<strong>adressage logique</strong> avec les adresses IP.</li>\n<li>Le <strong>routage</strong> des paquets.</li>\n<li>La fragmentation lorsque cela est nécessaire.</li>\n<li>Le signalement de certaines erreurs réseau.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Protocole</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>IPv4</td>\n<td>Adressage IP sur 32 bits</td>\n</tr>\n<tr>\n<td>IPv6</td>\n<td>Adressage IP sur 128 bits</td>\n</tr>\n<tr>\n<td>ICMP</td>\n<td>Diagnostic et messages de contrôle, notamment le ping</td>\n</tr>\n<tr>\n<td>RIP / OSPF</td>\n<td>Échange d'informations de routage</td>\n</tr>\n</tbody></table>\n<p>Le cours présente également <strong>ARP</strong>, utilisé pour associer une adresse IPv4 à une adresse MAC sur le réseau local.</p>\n<p><strong>Équipement principal :</strong> le routeur.</p>\n<p><strong>Exemple :</strong> lorsqu'un ordinateur communique avec un serveur situé sur un autre réseau, le routage permet d'acheminer les paquets vers leur destination.</p>\n<p><strong>À retenir :</strong> couche 3 = adresse IP, paquet et routeur.</p>\n<h3>Couche 2 — Liaison de données</h3>\n<p><strong>Rôle :</strong> organiser les échanges entre équipements sur un même réseau local.</p>\n<p>Elle transforme les paquets en <strong>trames</strong> et utilise les <strong>adresses MAC</strong>.</p>\n<p>Ses principales fonctions sont :</p>\n<ul>\n<li>L'encapsulation des paquets en trames.</li>\n<li>Le contrôle des erreurs de transmission.</li>\n<li>L'adressage MAC source et destination.</li>\n<li>Le contrôle d'accès au support.</li>\n<li>Le contrôle de flux selon les technologies utilisées.</li>\n</ul>\n<h4>Les deux sous-couches</h4>\n<table>\n<thead>\n<tr>\n<th>Sous-couche</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>LLC</strong> (Logical Link Control)</td>\n<td>Gestion logique des échanges et identification des protocoles</td>\n</tr>\n<tr>\n<td><strong>MAC</strong> (Media Access Control)</td>\n<td>Accès au support et adressage MAC</td>\n</tr>\n</tbody></table>\n<p><strong>Protocoles et technologies :</strong> Ethernet, Wi-Fi, PPP et HDLC.</p>\n<p><strong>Équipements principaux :</strong> switch (commutateur) et bridge (pont).</p>\n<p><strong>Exemple :</strong> un switch utilise les adresses MAC pour transmettre une trame vers le bon équipement.</p>\n<p><strong>À retenir :</strong> couche 2 = adresse MAC, trame et switch.</p>\n<h3>Couche 1 — Physique</h3>\n<p><strong>Rôle :</strong> transmettre les bits (0 et 1) sous forme de signaux électriques, lumineux ou radio.</p>\n<p>Elle concerne :</p>\n<ul>\n<li>Les supports de transmission : cuivre, fibre optique et ondes radio.</li>\n<li>L'encodage et la synchronisation des bits.</li>\n<li>Le débit de transmission, en bits par seconde.</li>\n<li>La topologie physique du réseau.</li>\n<li>Les caractéristiques des connexions physiques.</li>\n</ul>\n<p><strong>Matériels :</strong> câbles, connecteurs RJ45, hubs, répéteurs, modems et équipements radio.</p>\n<h4>Câbles à paires torsadées</h4>\n<table>\n<thead>\n<tr>\n<th>Type</th>\n<th>Particularité</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>UTP</strong></td>\n<td>Sans blindage, plus sensible aux interférences</td>\n</tr>\n<tr>\n<td><strong>STP</strong></td>\n<td>Avec blindage, meilleure protection contre les interférences</td>\n</tr>\n<tr>\n<td><strong>CAT5e / CAT6 / CAT6a</strong></td>\n<td>Catégories offrant des performances différentes</td>\n</tr>\n</tbody></table>\n<h4>Câble droit et câble croisé</h4>\n<table>\n<thead>\n<tr>\n<th>Câble</th>\n<th>Principe</th>\n<th>Utilisation classique</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>Droit</strong></td>\n<td>Même ordre des fils aux deux extrémités</td>\n<td>PC ↔ switch, switch ↔ routeur</td>\n</tr>\n<tr>\n<td><strong>Croisé</strong></td>\n<td>Une extrémité T568A et l'autre T568B</td>\n<td>PC ↔ PC, switch ↔ switch, routeur ↔ routeur</td>\n</tr>\n</tbody></table>\n<p>Les équipements modernes dotés de la fonction <strong>Auto MDI-X</strong> peuvent détecter automatiquement le type de connexion.</p>\n<h4>Ordre des fils RJ45</h4>\n<table>\n<thead>\n<tr>\n<th>Broche</th>\n<th>T568A</th>\n<th>T568B</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td>Blanc/vert</td>\n<td>Blanc/orange</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Vert</td>\n<td>Orange</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Blanc/orange</td>\n<td>Blanc/vert</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Bleu</td>\n<td>Bleu</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Blanc/bleu</td>\n<td>Blanc/bleu</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Orange</td>\n<td>Vert</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Blanc/marron</td>\n<td>Blanc/marron</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Marron</td>\n<td>Marron</td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> couche 1 = bits, câbles et signaux.</p>\n<hr>\n<h2>4. Exemple d'encapsulation : l'envoi d'un email</h2>\n<p>Lorsqu'un utilisateur envoie un email, les données traversent les sept couches du modèle OSI.</p>\n<table>\n<thead>\n<tr>\n<th>Couche</th>\n<th>Opération lors de l'envoi</th>\n<th>PDU</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>7 — Application</strong></td>\n<td>Préparation de l'email via SMTP</td>\n<td>APDU</td>\n</tr>\n<tr>\n<td><strong>6 — Présentation</strong></td>\n<td>Mise en forme, chiffrement ou compression éventuels</td>\n<td>PPDU</td>\n</tr>\n<tr>\n<td><strong>5 — Session</strong></td>\n<td>Gestion de la session</td>\n<td>SPDU</td>\n</tr>\n<tr>\n<td><strong>4 — Transport</strong></td>\n<td>Segmentation et ajout des ports TCP</td>\n<td>Segment / TPDU</td>\n</tr>\n<tr>\n<td><strong>3 — Réseau</strong></td>\n<td>Ajout des adresses IP source et destination</td>\n<td>Paquet / RPDU</td>\n</tr>\n<tr>\n<td><strong>2 — Liaison</strong></td>\n<td>Ajout des adresses MAC et informations de contrôle</td>\n<td>Trame / LPDU</td>\n</tr>\n<tr>\n<td><strong>1 — Physique</strong></td>\n<td>Transmission des signaux</td>\n<td>Bits</td>\n</tr>\n</tbody></table>\n<p>À la réception, le serveur effectue l'opération inverse : les bits sont reconstitués en trames, puis les informations de chaque couche sont traitées jusqu'à retrouver les données de l'email.</p>\n<p><strong>Encapsulation : 7 → 1</strong></p>\n<p><strong>Désencapsulation : 1 → 7</strong></p>\n<hr>\n<h2>5. Fiche de révision — L'essentiel</h2>\n<table>\n<thead>\n<tr>\n<th>Couche</th>\n<th>Mot-clé</th>\n<th>À mémoriser</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>7 — Application</strong></td>\n<td>Services</td>\n<td>HTTP, FTP, SMTP, DNS</td>\n</tr>\n<tr>\n<td><strong>6 — Présentation</strong></td>\n<td>Format</td>\n<td>Chiffrement, compression</td>\n</tr>\n<tr>\n<td><strong>5 — Session</strong></td>\n<td>Dialogue</td>\n<td>Ouverture et fermeture des sessions</td>\n</tr>\n<tr>\n<td><strong>4 — Transport</strong></td>\n<td>Segments</td>\n<td>TCP, UDP, ports</td>\n</tr>\n<tr>\n<td><strong>3 — Réseau</strong></td>\n<td>Paquets</td>\n<td>Adresses IP, routeurs</td>\n</tr>\n<tr>\n<td><strong>2 — Liaison</strong></td>\n<td>Trames</td>\n<td>Adresses MAC, switches</td>\n</tr>\n<tr>\n<td><strong>1 — Physique</strong></td>\n<td>Bits</td>\n<td>Câbles, fibre, signaux radio</td>\n</tr>\n</tbody></table>\n<h3>Les trois associations essentielles</h3>\n<ul>\n<li><strong>Adresse MAC → couche 2</strong></li>\n<li><strong>Adresse IP → couche 3</strong></li>\n<li><strong>Numéro de port → couche 4</strong></li>\n</ul>\n<p><strong>Formule : PDU = SDU + PCI</strong></p>\n<hr>\n",
       "revisionExtracts": [],
-      "updatedAt": "2026-10-23T08:40:52.103Z"
+      "updatedAt": "2026-10-23T08:54:36.584Z"
     }
   ],
   "quizzes": [
@@ -397,6 +397,234 @@
           ],
           "correct": 2,
           "explanation": "L'origine du fichier permet de déterminer s'il faut le rechercher dans SharePoint ou OneDrive."
+        }
+      ]
+    },
+    {
+      "id": "quiz-cf1908ff-bb2b-4bfc-80b2-0bab86a7f5af",
+      "title": "QCM — Le modèle OSI",
+      "category": "02 — Bases des réseaux",
+      "chapterId": "chapter:02:01",
+      "questions": [
+        {
+          "question": "Combien de couches comporte le modèle OSI ?",
+          "answers": [
+            "4 couches",
+            "5 couches",
+            "7 couches",
+            "8 couches"
+          ],
+          "correct": 2,
+          "explanation": "Le modèle OSI est composé de sept couches, de la couche Physique à la couche Application."
+        },
+        {
+          "question": "Quelle couche du modèle OSI utilise les adresses IP ?",
+          "answers": [
+            "Couche 2 — Liaison",
+            "Couche 3 — Réseau",
+            "Couche 4 — Transport",
+            "Couche 7 — Application"
+          ],
+          "correct": 1,
+          "explanation": "La couche Réseau utilise les adresses IP pour identifier les équipements et acheminer les paquets."
+        },
+        {
+          "question": "Quelle couche utilise les adresses MAC ?",
+          "answers": [
+            "Couche 1 — Physique",
+            "Couche 3 — Réseau",
+            "Couche 4 — Transport",
+            "Couche 2 — Liaison"
+          ],
+          "correct": 3,
+          "explanation": "La couche Liaison de données utilise les adresses MAC pour les communications sur un réseau local."
+        },
+        {
+          "question": "Quel équipement fonctionne principalement à la couche 3 ?",
+          "answers": [
+            "Routeur",
+            "Switch",
+            "Hub",
+            "Répéteur"
+          ],
+          "correct": 0,
+          "explanation": "Le routeur achemine les paquets entre réseaux en utilisant les adresses IP."
+        },
+        {
+          "question": "Quelle est l'unité de données de la couche 2 ?",
+          "answers": [
+            "Segment",
+            "Paquet",
+            "Trame",
+            "Bit"
+          ],
+          "correct": 2,
+          "explanation": "La couche Liaison de données utilise des trames pour transmettre les informations sur le réseau local."
+        },
+        {
+          "question": "Quelle est l'unité de données de la couche 1 ?",
+          "answers": [
+            "Bits",
+            "Paquets",
+            "Trames",
+            "Segments"
+          ],
+          "correct": 0,
+          "explanation": "La couche Physique transmet les bits sous forme de signaux électriques, lumineux ou radio."
+        },
+        {
+          "question": "Quel protocole assure une transmission fiable et ordonnée ?",
+          "answers": [
+            "UDP",
+            "ICMP",
+            "ARP",
+            "TCP"
+          ],
+          "correct": 3,
+          "explanation": "TCP est orienté connexion et assure notamment la livraison ordonnée des données."
+        },
+        {
+          "question": "Quelle est la principale différence entre TCP et UDP ?",
+          "answers": [
+            "UDP utilise uniquement les adresses MAC",
+            "TCP assure une transmission fiable, contrairement à UDP",
+            "TCP fonctionne uniquement sur les réseaux locaux",
+            "UDP appartient à la couche Physique"
+          ],
+          "correct": 1,
+          "explanation": "TCP prévoit des mécanismes de fiabilité et d'ordre, alors qu'UDP ne garantit pas la livraison."
+        },
+        {
+          "question": "Quel est le port habituel du protocole HTTP ?",
+          "answers": [
+            "22",
+            "53",
+            "80",
+            "443"
+          ],
+          "correct": 2,
+          "explanation": "Le port 80 est utilisé habituellement par HTTP pour les communications Web non chiffrées."
+        },
+        {
+          "question": "Quel est le port habituel du protocole HTTPS ?",
+          "answers": [
+            "443",
+            "25",
+            "110",
+            "3389"
+          ],
+          "correct": 0,
+          "explanation": "HTTPS utilise habituellement le port 443 pour les communications Web sécurisées."
+        },
+        {
+          "question": "Quel protocole est utilisé pour envoyer des emails ?",
+          "answers": [
+            "FTP",
+            "DNS",
+            "ICMP",
+            "SMTP"
+          ],
+          "correct": 3,
+          "explanation": "SMTP est le protocole utilisé pour l'envoi des emails."
+        },
+        {
+          "question": "Quel est le rôle de la couche Présentation ?",
+          "answers": [
+            "Acheminer les paquets entre réseaux",
+            "Formater, chiffrer ou compresser les données",
+            "Transmettre les signaux électriques",
+            "Utiliser les adresses MAC"
+          ],
+          "correct": 1,
+          "explanation": "La couche 6 prépare les données dans un format exploitable, notamment par conversion, chiffrement ou compression."
+        },
+        {
+          "question": "Quel est le rôle principal de la couche Session ?",
+          "answers": [
+            "Choisir les routes IP",
+            "Contrôler les câbles Ethernet",
+            "Établir, maintenir et terminer les sessions",
+            "Identifier les ports TCP"
+          ],
+          "correct": 2,
+          "explanation": "La couche 5 organise les sessions de communication entre applications."
+        },
+        {
+          "question": "Que signifie SDU ?",
+          "answers": [
+            "Service Data Unit",
+            "System Data Usage",
+            "Session Delivery Unit",
+            "Signal Data Utility"
+          ],
+          "correct": 0,
+          "explanation": "SDU signifie Service Data Unit et désigne les données fournies à une couche par la couche supérieure."
+        },
+        {
+          "question": "Que signifie PCI dans le contexte de l'encapsulation ?",
+          "answers": [
+            "Packet Connection Interface",
+            "Physical Communication Internet",
+            "Protocol Connection Identifier",
+            "Protocol Control Information"
+          ],
+          "correct": 3,
+          "explanation": "PCI signifie Protocol Control Information et désigne les informations de contrôle ajoutées par une couche."
+        },
+        {
+          "question": "Comment obtient-on le PDU d'une couche dans le modèle simplifié du cours ?",
+          "answers": [
+            "PDU = SDU − PCI",
+            "PDU = SDU + PCI",
+            "PDU = PCI − SDU",
+            "PDU = SDU ÷ PCI"
+          ],
+          "correct": 1,
+          "explanation": "Une couche ajoute ses informations de contrôle PCI au SDU reçu pour constituer son PDU."
+        },
+        {
+          "question": "Dans quel sens s'effectue l'encapsulation lors de l'envoi ?",
+          "answers": [
+            "De la couche 1 vers la couche 7",
+            "De la couche 3 vers la couche 7",
+            "De la couche 7 vers la couche 1",
+            "Uniquement entre les couches 2 et 3"
+          ],
+          "correct": 2,
+          "explanation": "À l'envoi, les données descendent de la couche Application vers la couche Physique."
+        },
+        {
+          "question": "Quel est le rôle d'ARP sur un réseau IPv4 local ?",
+          "answers": [
+            "Associer une adresse IPv4 à une adresse MAC",
+            "Attribuer automatiquement les ports TCP",
+            "Chiffrer les communications Web",
+            "Choisir les routes entre réseaux"
+          ],
+          "correct": 0,
+          "explanation": "ARP permet de connaître l'adresse MAC associée à une adresse IPv4 sur le réseau local."
+        },
+        {
+          "question": "Quelle différence caractérise un câble Ethernet croisé ?",
+          "answers": [
+            "Il utilise uniquement de la fibre optique",
+            "Il possède un connecteur RJ45 différent",
+            "Il transmet uniquement des données UDP",
+            "Il utilise T568A à une extrémité et T568B à l'autre"
+          ],
+          "correct": 3,
+          "explanation": "Un câble croisé classique utilise les deux ordres de câblage T568A et T568B."
+        },
+        {
+          "question": "Quel est le rôle principal d'un switch sur un réseau local ?",
+          "answers": [
+            "Attribuer les adresses IP publiques",
+            "Transmettre les trames en fonction des adresses MAC",
+            "Compresser les données des applications",
+            "Convertir les noms de domaine en adresses IP"
+          ],
+          "correct": 1,
+          "explanation": "Un switch exploite les adresses MAC pour transmettre les trames vers les équipements concernés."
         }
       ]
     }
