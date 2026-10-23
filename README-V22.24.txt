@@ -1,0 +1,1 @@
+V22.24 — Collage unique cours + QCM. Séparer les deux blocs par === QCM ===. Une publication GitHub sauvegarde cours et QCM lié, visibles dans les deux rubriques. Les cours disposent de repères visuels sobres.

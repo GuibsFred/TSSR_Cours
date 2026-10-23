@@ -608,3 +608,37 @@ body.home-network #main{background:#f2f8fc!important}
 @media(max-width:950px){.course-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:600px){.course-library-grid{grid-template-columns:1fr!important}.course-library-grid .module-card{min-height:235px!important}}
 @media(prefers-reduced-motion:reduce){.course-library-grid .module-card,.course-library-grid .module-art img{transition:none!important}}
+
+/* V22.23 — Lecture des cours plus compacte, sans modifier les autres pages. */
+.article .content{font-size:14px!important;line-height:1.6!important}
+.article .content p,.article .content li{font-size:inherit!important;line-height:1.6!important}
+.article .content h1{font-size:27px!important;line-height:1.25!important;margin:21px 0 12px!important}
+.article .content h2{font-size:21px!important;line-height:1.35!important;margin:23px 0 10px!important}
+.article .content h3{font-size:17px!important;line-height:1.4!important;margin:18px 0 8px!important}
+.article .content h4{font-size:15px!important}
+.article .content table{font-size:13px!important;line-height:1.45!important}
+.article .content th,.article .content td{padding:9px 11px!important}
+.article .content p{margin:9px 0 13px!important}
+.article .content img{max-width:100%;height:auto}
+.tssr-linked-quizzes{margin-top:30px;padding:22px;border:1px solid #37616b;border-radius:12px;background:rgba(14,101,107,.08)}
+.tssr-linked-eyebrow{font-size:10px;font-weight:850;letter-spacing:1.5px;color:#e7a647}
+.tssr-linked-head h2{font-size:21px;margin:7px 0 5px;color:var(--ink)}
+.tssr-linked-head p,.tssr-linked-empty{font-size:13px;color:var(--muted);margin:0 0 15px}
+.tssr-linked-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line)}
+.tssr-linked-item strong,.tssr-linked-item small{display:block}.tssr-linked-item strong{font-size:14px}.tssr-linked-item small{font-size:12px;color:var(--muted);margin-top:4px}
+.tssr-linked-action{background:#0f7779;color:#fff;border:0;border-radius:8px;padding:10px 14px;font-size:13px;font-weight:750}
+.tssr-linked-create{border:1px solid #248b89;border-radius:8px;padding:9px 13px;background:transparent;color:var(--ink);font-size:13px;font-weight:700;margin-top:8px}
+.tssr-linked-action:hover{background:#095c5d}.tssr-linked-create:hover{background:rgba(14,101,107,.14)}
+@media(max-width:600px){.tssr-linked-item{align-items:flex-start;flex-direction:column}.tssr-linked-quizzes{padding:15px}}
+
+/* V22.24 — Repères pédagogiques sobres, sans marquage bleu révision. */
+.article .content h2{color:#71dfd1!important;border-left:4px solid #27b7a9;padding:5px 0 5px 13px!important;background:linear-gradient(90deg,#1b62603d,transparent 75%);border-radius:3px}
+.article .content h3{color:#f3b05d!important}
+.article .content strong{color:#e9c58d}
+.article .content blockquote{border-left:4px solid #e9a64b;background:#e9a64b13;border-radius:6px;padding:12px 16px;margin:16px 0}
+.article .content th{background:#175363!important;color:#f6fbff!important}
+.article .content tbody tr:nth-child(even){background:#6bc5c609}
+.article .content code{color:#7de3d6;background:#0b313e;padding:2px 5px;border-radius:4px}
+.tssr-editor-qcm{margin:16px 0;padding:16px;border:1px solid #2a6e72;border-radius:12px;background:#0c3e481a}
+.tssr-editor-qcm h3{margin:0 0 7px;color:#eaa54d}.tssr-editor-qcm p{font-size:13px;line-height:1.5}
+.tssr-editor-qcm textarea{width:100%;min-height:150px;font-family:ui-monospace,monospace;font-size:12px;line-height:1.5}
