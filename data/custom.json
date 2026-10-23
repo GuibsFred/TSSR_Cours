@@ -16,9 +16,9 @@
       "kind": "cours",
       "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
       "chapter": true,
-      "html": "<h1>MODULE 02 — CONNAISSANCES DES NOTIONS DE BASE WORD</h1><p>Outils collaboratifs — Formation TSSR</p><h2>Objectifs</h2><ul><li><p>Découvrir les fonctionnalités de Microsoft Word.</p></li><li><p>Mettre en forme un document.</p></li><li><p>Utiliser les fonctionnalités de Word permettant d'automatiser la mise en forme.</p></li></ul><div></div><h2>1. L'interface de Word</h2><h3>1.1 Démarrage de Word</h3><p>Au démarrage, trois possibilités :</p><ul><li><p>Nouveau document.</p></li><li><p>Un modèle.</p></li><li><p>Document récent.</p></li></ul><h3>1.2 Présentation de l'interface</h3><div><img src=\"https://images.openai.com/static-rsc-4/ArtVz0500wh4SZmUwbN9M46zYihRdKmY8IvnosShKckBTY_DbJBe0nJZisrl1PmcEoFBEYPuu_BpRYLaHJySW2m-97yMea9j9ok5SybXmGafd4XRTqVG1Ph5_y3bF7c-v9-P-_MPEg6L5II61nlelGexfdHQBC1Mciygx1IWRW8?purpose=inline\" alt=\"barre d'état Archives - Médiaforma\"><div><div></div></div><div></div><div><div></div></div><br></div><div><table><tbody><tr><th><p>Élément</p></th><th><p>Fonction</p></th></tr><tr><td><p>Barre de titre</p></td><td><p>Affiche le nom du fichier et du logiciel.</p></td></tr><tr><td><p>Ruban</p></td><td><p>Onglets regroupant les commandes par thème : Accueil, Mise en page, Affichage…</p></td></tr><tr><td><p>Barre d'accès rapide</p></td><td><p>Personnalisable, contient les commandes les plus utilisées.</p></td></tr><tr><td><p>Zone utilisateur</p></td><td><p>Affiche le nom de l'utilisateur de la licence.</p></td></tr><tr><td><p>Barres de défilement</p></td><td><p>Permettent de naviguer dans le document.</p></td></tr><tr><td><p>Barre d'état</p></td><td><p>Contient des informations sur le document.</p></td></tr><tr><td><p>Règles</p></td><td><p>Permettent de positionner les éléments et les taquets de tabulation. Elles ne sont pas affichées par défaut.</p></td></tr><tr><td><p>Zone de rédaction</p></td><td><p>Contient le texte du document.</p></td></tr></tbody></table></div><div></div><h2>2. Création d'un document</h2><h3>2.1 Écriture d'un document</h3><ul><li><p>Afficher les caractères non imprimables depuis le menu Accueil.</p></li><li><p>Écrire plusieurs pages en tapant au kilomètre, sans mise en forme.</p></li><li><p>Identifier les titres, paragraphes et listes à puces ou numérotées.</p></li></ul><h3>2.2 Mise en forme</h3><ul><li><p>Positionner et utiliser les taquets de tabulation pour l'alignement.</p></li><li><p>Éviter les paragraphes vides pour l'espacement.</p></li><li><p>Créer et appliquer des styles de paragraphes, sans conserver de paragraphes en style Normal.</p></li><li><p>Lier les styles pour l'enchaînement des paragraphes.</p></li><li><p>Utiliser les sauts pour fixer le contenu de chaque page.</p></li><li><p>Créer automatiquement le sommaire.</p></li><li><p>Terminer l'écriture du document.</p></li></ul><h3>2.3 Page de garde et sommaire</h3><p>Prévoir, si nécessaire, des pages vides pour la page de garde et le sommaire.</p><p>Insertion → Saut de page</p><div></div><h2>3. Gestion des titres</h2><h3>3.1 Mise en forme</h3><p>Choisir la numérotation, la police, la casse (majuscules/minuscules), la taille, le gras, l'italique et le souligné.</p><h3>3.2 Retraits des listes</h3><p>Effectuer un clic droit sur la puce ou la numérotation pour ajuster :</p><ul><li><p>L'espacement par rapport à la marge.</p></li><li><p>L'espacement entre le numéro et le texte.</p></li><li><p>Le caractère entre le numéro et le texte : tabulation ou espace.</p></li></ul><h3>3.3 Modifier un style Titre</h3><div><img src=\"https://images.openai.com/static-rsc-4/aCR0HZ1OLyXwfKCv4VBkgMOm-0ghc-rbDm8BJMb44bkZoimurcnpJ0bOTtgHOSXSvJq-ccy2Im0jxHK2jOuPl4sf7APA7mSSi4LUkrs5r4uu94KUuTl5lLLJ4K4EPalFbn7tF-rdLOKZbO5aXoYWk8ESf5CzC3AfOQ8zqIRzcs4?purpose=inline\" alt=\"Formater un document Word\"><div><div></div></div><div></div><div><div></div></div><br></div><ol><li><p>Mettre en forme le titre.</p></li><li><p>Ouvrir Accueil → Styles.</p></li><li><p>Mettre à jour le style Titre 1 avec le titre créé.</p></li><li><p>Recommencer pour les autres niveaux de titres.</p></li></ol><h3>3.4 Numérotation hiérarchique</h3><div><img src=\"https://images.openai.com/static-rsc-4/m1psk1melPx2RLk8uead2uL3xtjTbH4HTbTCXJN7y9Pmr8-QJRrDXdVFWPRW1kvTFYaYan-3KvrRHecjPTAoxRfqVcWtSDIrEpc4k0xgma0_eSHAFBQC2crOKEWssvqnIEKz6u-EBp0fUYFnALFsJPN4zxeFneWsCk4rOXnvOEQ?purpose=inline\" alt=\"Comment personnaliser une liste à plusieurs niveaux - Microsoft Word 365\"><div><div></div></div><div></div><div><div></div></div><div><br></div></div><ol><li><p>Créer les différents titres.</p></li><li><p>Définir une liste à plusieurs niveaux.</p></li><li><p>Cliquer sur Plus en bas à gauche.</p></li><li><p>Choisir le style pour chaque niveau.</p></li><li><p>Choisir la mise en forme si nécessaire.</p></li><li><p>Définir la position du texte.</p></li><li><p>Refaire la gestion des retraits si elle a été modifiée.</p></li></ol><div></div><h2>4. Gestion des paragraphes</h2><h3>4.1 Mise en forme</h3><p>Aligner les paragraphes par rapport aux titres en ajustant les retraits et les taquets de la règle.</p><p>Choisir la police, sa taille et sa casse.</p><p>Les quatre alignements :</p><ul><li><p>Gauche.</p></li><li><p>Centré.</p></li><li><p>Droite.</p></li><li><p>Justifié : alignement sur les marges gauche et droite.</p></li></ul><h3>4.2 Création d'un style</h3><div><img src=\"https://images.openai.com/static-rsc-4/4Aqxf3Oecm6apzscQyrT9QH8bohaZk9aFyhOhXiqAkU2r039VxNUJPy6R81eoyXwZ-UHVFDj1vmulaMiut_0eBMhwWAKalv6mAPJ4CXCSSPLm5wSeG27e83oahQ1Opz7TRGTvZ9bFbdF_4lUGv3APCZ06qetcKmUrlfH_MiFVAM?purpose=inline\" alt=\"- \n  Créer Un Style Sous Word\"><div><div></div></div><div></div><div><div></div></div><br></div><ol><li><p>Sauvegarder la structure du paragraphe.</p></li><li><p>Créer un nouveau style.</p></li><li><p>Nommer le style.</p></li><li><p>Modifier ses paramètres si nécessaire.</p></li></ol><p>Le style apparaît dans l'accès rapide des styles.</p><h3>4.3 Lier les styles</h3><p>La liaison des styles permet d'automatiser leur application pendant la frappe.</p><p>Dans la modification d'un style :</p><ul><li><p>Choisir le style du paragraphe.</p></li><li><p>Choisir la mise en forme liée.</p></li><li><p>Définir le style du paragraphe suivant.</p></li></ul><div></div><h2>5. Gestion de l'espacement</h2><h3>5.1 Espacement des titres et paragraphes</h3><p>Ne pas utiliser de paragraphes vides pour créer des espaces.</p><p>Utiliser Interligne et espacement de paragraphe pour :</p><ul><li><p>Choisir l'interligne.</p></li><li><p>Ajouter ou supprimer de l'espace.</p></li><li><p>Paramétrer l'alignement, les retraits, l'espacement avant et après, ainsi que l'interlignage.</p></li></ul><div><img src=\"https://images.openai.com/static-rsc-4/hboRWGEKGHbswfRJqvxOob69HJypgkHPAsXK1Lpbq1dwTRNEKSLd_Jgk68LPTX0LJ9VZnKNHqmq9QN7RvGb_2rPEr6auzYdaYlyXzw_YUX2hTsAx7hl8LGxjWn5U3-d9oCq_fdtEavjW6IV5y_Xbys6AJ4jnzW-n2YqhxdWDlIc?purpose=inline\" alt=\"Comment changer l’espace entre les lignes sur Word ?\"><div><div></div></div><div></div><div><div></div></div><br></div><h3>5.2 Espacement à partir des styles</h3><ol><li><p>Clic droit sur un style.</p></li><li><p>Modifier le style.</p></li><li><p>Bouton Format.</p></li><li><p>Options d'espacement.</p></li></ol><p>La modification s'applique à tous les paragraphes liés au style.</p><div></div><h2>6. Gestion de l'alignement</h2><p>L'alignement des titres et des paragraphes se règle à l'aide :</p><ul><li><p>Des taquets de retrait de la règle.</p></li><li><p>Des options des paragraphes.</p></li></ul><div></div><h2>7. Gestion des tabulations</h2><h3>7.1 Types de taquets</h3><div><img src=\"https://images.openai.com/static-rsc-4/Dveey9xkvpjnsjNWCSY9GQ1jRNWhZ9J-qCT1iiZA5vLGrs7GtjZ3LoTOSEYaFwciNxiu1jLYvnEXR7Tp3UXadR6XVRqS3WSGlsBKXpnq2qO6NENY7nQ-Hl6D_rSwBp4wirwIKRKFb2j1YH3taBM2IDNQQ6ybZ8g-flNbO2HWXfQ?purpose=inline\" alt=\"How to Indent in Word and Use Tabs and Rulers\"><div><div></div></div><div></div><div><div></div></div><br></div><div><table><tbody><tr><th><p>Taquet</p></th><th><p>Type</p></th></tr><tr><td><p>Gauche</p></td><td><p>Tabulation gauche</p></td></tr><tr><td><p>Centré</p></td><td><p>Tabulation centrée</p></td></tr><tr><td><p>Droit</p></td><td><p>Tabulation droite</p></td></tr><tr><td><p>Décimal</p></td><td><p>Tabulation décimale</p></td></tr></tbody></table></div><p>Un caractère non imprimable « tabulation » correspond à chaque tabulation utilisée pour atteindre un taquet sur la règle.</p><h3>7.2 Utilisation</h3><ul><li><p>Positionner les tabulations pendant la frappe.</p></li><li><p>Sélectionner le texte à aligner.</p></li><li><p>Positionner les taquets sur la règle.</p></li><li><p>Créer un style pour les réutiliser.</p></li></ul><div></div><h2>8. Gestion des sauts</h2><h3>8.1 Saut de page</h3><p>Permet de fixer le contenu d'une page tout en poursuivant la mise en forme : en-tête, pied de page, orientation et numérotation.</p><h3>8.2 Saut de colonne</h3><p>Permet de terminer le contenu d'une colonne et de placer la suite du texte dans une autre colonne.</p><h3>8.3 Saut de section — Page suivante</h3><p>Permet de fixer le contenu d'une page, de terminer une section et d'en commencer une nouvelle.</p><p>Il permet de modifier :</p><ul><li><p>En-tête.</p></li><li><p>Pied de page.</p></li><li><p>Orientation.</p></li><li><p>Numérotation des pages.</p></li></ul><h3>8.4 Saut de section — Continu</h3><p>Permet de terminer une section et d'en commencer une autre sur la même page, notamment pour appliquer des marges différentes.</p><div></div><h2>9. Gestion de la table des matières</h2><h3>9.1 Insérer une table</h3><div><img src=\"https://images.openai.com/static-rsc-4/OQuXnh3ZWAsPgkrPlCD6U9sftoyhT-uLclYVPfMc3g6DCsvpQu82RGIQk0mK5UU2vbfYXAC0Ubt1Y8occGr97u__CajA2eso3lmHwBIWVBpCoVNR3CavDG8MjlN3udeeL7F7o4CrwXweapTsSuR3RFkrmYPC9-IrHm_O2vpLlXM?purpose=inline\" alt=\"Table des matières Word : insérer, personnaliser et mettre à jour\"><div><div></div></div><div></div><div><div></div></div><br></div><ol><li><p>Ouvrir Références.</p></li><li><p>Choisir une table des matières ou créer une table personnalisée.</p></li></ol><h3>9.2 Personnaliser</h3><div><img src=\"https://images.openai.com/static-rsc-4/5Ie5l3TfkgUfPjtaNxwCvwzMy1YkyRuJ-Ry2w-b0od0ljqYS6VutQ4gShUEzMPDQk0t2YP8EtSngqDG7XRkQI4rI53ou7hC7n4c0gFv6pXS1TA21wtogXSFiajdm47KucvCCmWAPavZGBnlFeJd2xaiECCbpEfg39IOvb4j0yf8?purpose=inline\" alt=\"La table des matières dans Office Word | Pumbo\"><div><div></div></div><div></div><div><div></div></div><br></div><ul><li><p>Choisir le format.</p></li><li><p>Choisir les niveaux de titres à afficher.</p></li><li><p>Regarder les aperçus.</p></li><li><p>Choisir les caractères de suite.</p></li></ul><h3>9.3 Styles de la table</h3><p>La présentation de la table des matières dépend des styles TM X, qui apparaissent au fur et à mesure de leur utilisation.</p><p>Il faut distinguer les styles Titre X du document et les styles TM X de la table des matières.</p><div></div><h2>10. Démonstrations et TP</h2><p>Le support se termine par :</p><ul><li><p>Une démonstration de prise en main et de création d'un document.</p></li><li><p>Une démonstration de mise en forme d'un document.</p></li><li><p>Une démonstration et un TP d'utilisation de Word.</p></li></ul><p>Ces démonstrations sont annoncées dans le PDF, mais leur déroulement détaillé n'y figure pas.</p>",
+      "html": "<h1>Les premières commandes réseau</h1>\n<p>Les commandes réseau permettent de consulter la configuration d'un ordinateur, de tester sa connectivité et de diagnostiquer les problèmes de communication.</p>\n<p>Elles font partie des outils indispensables du technicien systèmes et réseaux.</p>\n<h2>1. Les commandes essentielles</h2>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Système</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>arp</strong></td>\n<td>Windows / Linux</td>\n<td>Consulter les correspondances IP/MAC</td>\n</tr>\n<tr>\n<td><strong>ipconfig</strong></td>\n<td>Windows</td>\n<td>Afficher la configuration réseau</td>\n</tr>\n<tr>\n<td><strong>ip</strong></td>\n<td>Linux</td>\n<td>Gérer les interfaces, adresses et routes</td>\n</tr>\n<tr>\n<td><strong>ping</strong></td>\n<td>Windows / Linux</td>\n<td>Tester la connectivité</td>\n</tr>\n<tr>\n<td><strong>netstat</strong></td>\n<td>Windows / Linux</td>\n<td>Afficher les connexions et ports</td>\n</tr>\n<tr>\n<td><strong>tracert</strong></td>\n<td>Windows</td>\n<td>Suivre le chemin réseau</td>\n</tr>\n<tr>\n<td><strong>traceroute</strong></td>\n<td>Linux</td>\n<td>Suivre le chemin réseau</td>\n</tr>\n</tbody></table>\n<hr>\n<h2>2. ARP — Address Resolution Protocol</h2>\n<h3>Principe</h3>\n<p>Le protocole <strong>ARP</strong> permet de retrouver l'adresse MAC correspondant à une adresse IPv4 sur un réseau local.</p>\n<ul>\n<li><strong>Adresse IP</strong> : identifie logiquement un équipement.</li>\n<li><strong>Adresse MAC</strong> : identifie une interface réseau au niveau liaison.</li>\n<li><strong>Table ARP</strong> : conserve les correspondances IP/MAC connues.</li>\n</ul>\n<h3>Fonctionnement</h3>\n<ol>\n<li>Un ordinateur souhaite communiquer avec un équipement du réseau local.</li>\n<li>Il recherche son adresse MAC dans sa table ARP.</li>\n<li>Si elle est inconnue, il envoie une requête ARP en broadcast.</li>\n<li>L'équipement concerné répond avec son adresse MAC.</li>\n<li>La correspondance est enregistrée dans le cache ARP.</li>\n</ol>\n<h3>Commandes principales</h3>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>arp -a</code></td>\n<td>Afficher la table ARP</td>\n</tr>\n<tr>\n<td><code>arp -s 192.168.1.200 00-14-22-01-23-45</code></td>\n<td>Ajouter une entrée statique sous Windows</td>\n</tr>\n<tr>\n<td><code>arp -d *</code></td>\n<td>Supprimer les entrées ARP sous Windows</td>\n</tr>\n<tr>\n<td><code>ip neigh</code></td>\n<td>Afficher les voisins sous Linux</td>\n</tr>\n<tr>\n<td><code>sudo ip neigh flush all</code></td>\n<td>Vider le cache de voisinage sous Linux</td>\n</tr>\n</tbody></table>\n<h3>Exemple de table ARP</h3>\n<pre><code class=\"language-text\">Adresse Internet    Adresse physique       Type\n192.168.1.100       00-14-22-01-23-45      dynamique\n192.168.1.101       00-15-5D-8B-12-34      dynamique\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Information</th>\n<th>Signification</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Adresse Internet</td>\n<td>Adresse IPv4</td>\n</tr>\n<tr>\n<td>Adresse physique</td>\n<td>Adresse MAC</td>\n</tr>\n<tr>\n<td>Type</td>\n<td>Entrée dynamique ou statique</td>\n</tr>\n</tbody></table>\n<h3>Sécurité</h3>\n<p>L'<strong>ARP spoofing</strong> consiste à diffuser de fausses informations ARP pour tromper les équipements d'un réseau local et éventuellement détourner le trafic.</p>\n<p><strong>À retenir :</strong> ARP associe une adresse IPv4 à une adresse MAC. Pour IPv6, la découverte des voisins utilise NDP.</p>\n<hr>\n<h2>3. IPCONFIG — Configuration réseau Windows</h2>\n<p>La commande <code>ipconfig</code> permet de consulter les paramètres réseau d'un ordinateur Windows.</p>\n<h3>Commandes principales</h3>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>ipconfig</code></td>\n<td>Afficher la configuration IP</td>\n</tr>\n<tr>\n<td><code>ipconfig /all</code></td>\n<td>Afficher les informations détaillées</td>\n</tr>\n<tr>\n<td><code>ipconfig /release</code></td>\n<td>Libérer une configuration DHCP</td>\n</tr>\n<tr>\n<td><code>ipconfig /renew</code></td>\n<td>Renouveler une configuration DHCP</td>\n</tr>\n<tr>\n<td><code>ipconfig /flushdns</code></td>\n<td>Vider le cache DNS</td>\n</tr>\n<tr>\n<td><code>ipconfig /displaydns</code></td>\n<td>Afficher le cache DNS</td>\n</tr>\n<tr>\n<td><code>ipconfig /registerdns</code></td>\n<td>Demander un enregistrement DNS dynamique</td>\n</tr>\n</tbody></table>\n<h3>Exemple</h3>\n<pre><code class=\"language-text\">Carte Ethernet :\n\nAdresse IPv4   : 192.168.1.100\nMasque         : 255.255.255.0\nPasserelle     : 192.168.1.1\n</code></pre>\n<p>Avec <code>ipconfig /all</code>, on obtient également des informations telles que l'adresse MAC, les serveurs DNS et les paramètres DHCP.</p>\n<h3>Exemple de dépannage DHCP</h3>\n<p>Un ordinateur ne reçoit pas d'adresse IP de son serveur DHCP.</p>\n<p>On vérifie d'abord sa configuration :</p>\n<pre><code class=\"language-cmd\">ipconfig /all\n</code></pre>\n<p>Une adresse <code>169.254.x.x</code> peut indiquer l'utilisation d'APIPA.</p>\n<p>Pour renouveler la configuration :</p>\n<pre><code class=\"language-cmd\">ipconfig /release\nipconfig /renew\n</code></pre>\n<h3>Exemple de dépannage DNS</h3>\n<pre><code class=\"language-cmd\">ipconfig /flushdns\n</code></pre>\n<p>Cette commande efface le cache DNS local.</p>\n<p><strong>À retenir :</strong> <code>ipconfig /all</code> est l'une des premières commandes à utiliser lorsqu'un ordinateur Windows rencontre un problème réseau.</p>\n<hr>\n<h2>4. IP — Gestion réseau sous Linux</h2>\n<p>Sous Linux, la commande <code>ip</code> permet d'afficher et de modifier les interfaces réseau, les adresses IP et les routes.</p>\n<p>Elle appartient à la suite <strong>iproute2</strong> et remplace de nombreux usages de l'ancienne commande <code>ifconfig</code>.</p>\n<h3>Syntaxe</h3>\n<pre><code class=\"language-bash\">ip [options] [objet] [action]\n</code></pre>\n<h3>Principaux objets</h3>\n<table>\n<thead>\n<tr>\n<th>Objet</th>\n<th>Utilité</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>link</code></td>\n<td>Interfaces réseau</td>\n</tr>\n<tr>\n<td><code>addr</code></td>\n<td>Adresses IP</td>\n</tr>\n<tr>\n<td><code>route</code></td>\n<td>Routage</td>\n</tr>\n<tr>\n<td><code>neigh</code></td>\n<td>Voisins ARP / NDP</td>\n</tr>\n</tbody></table>\n<h3>Afficher les interfaces et adresses</h3>\n<pre><code class=\"language-bash\">ip link\nip addr\nip -4 addr\n</code></pre>\n<ul>\n<li><code>ip link</code> : affiche les interfaces et leur état.</li>\n<li><code>ip addr</code> : affiche leurs adresses.</li>\n<li><code>ip -4 addr</code> : affiche uniquement les adresses IPv4.</li>\n</ul>\n<h3>Activer ou désactiver une interface</h3>\n<pre><code class=\"language-bash\">sudo ip link set dev eth0 up\nsudo ip link set dev eth0 down\n</code></pre>\n<h3>Ajouter ou supprimer une adresse IP</h3>\n<pre><code class=\"language-bash\">sudo ip addr add 192.168.1.200/24 dev eth0\nsudo ip addr del 192.168.1.200/24 dev eth0\n</code></pre>\n<h3>Afficher les routes</h3>\n<pre><code class=\"language-bash\">ip route\n</code></pre>\n<p>Exemple :</p>\n<pre><code class=\"language-text\">default via 192.168.1.1 dev eth0\n192.168.1.0/24 dev eth0\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Élément</th>\n<th>Signification</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>default</code></td>\n<td>Route par défaut</td>\n</tr>\n<tr>\n<td><code>via 192.168.1.1</code></td>\n<td>Passerelle</td>\n</tr>\n<tr>\n<td><code>dev eth0</code></td>\n<td>Interface utilisée</td>\n</tr>\n</tbody></table>\n<h3>Ajouter ou supprimer une route</h3>\n<pre><code class=\"language-bash\">sudo ip route add 192.168.2.0/24 via 192.168.1.1 dev eth0\nsudo ip route del 192.168.2.0/24\n</code></pre>\n<h3>Afficher les voisins</h3>\n<pre><code class=\"language-bash\">ip neigh\n</code></pre>\n<p><strong>À retenir :</strong> les trois commandes Linux à maîtriser en priorité sont <code>ip addr</code>, <code>ip link</code> et <code>ip route</code>.</p>\n<p>Le nom <code>eth0</code> est un exemple : il faut utiliser le véritable nom de l'interface.</p>\n<hr>\n<h2>5. PING — Tester la connectivité</h2>\n<p>La commande <code>ping</code> permet de vérifier si une destination répond sur le réseau.</p>\n<p>Elle utilise les messages <strong>ICMP Echo Request</strong> et <strong>ICMP Echo Reply</strong>.</p>\n<h3>Fonctionnement</h3>\n<ol>\n<li>L'ordinateur envoie une requête ICMP.</li>\n<li>La destination peut renvoyer une réponse.</li>\n<li>La commande mesure le délai aller-retour et indique les pertes éventuelles.</li>\n</ol>\n<h3>Exemples</h3>\n<pre><code class=\"language-bash\">ping 192.168.1.1\nping 8.8.8.8\nping www.google.com\n</code></pre>\n<h3>Options Windows et Linux</h3>\n<table>\n<thead>\n<tr>\n<th>Action</th>\n<th>Windows</th>\n<th>Linux</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Envoyer 4 requêtes</td>\n<td><code>ping -n 4 8.8.8.8</code></td>\n<td><code>ping -c 4 8.8.8.8</code></td>\n</tr>\n<tr>\n<td>Ping continu</td>\n<td><code>ping -t 8.8.8.8</code></td>\n<td><code>ping 8.8.8.8</code></td>\n</tr>\n<tr>\n<td>Définir une taille</td>\n<td><code>ping -l 1000 8.8.8.8</code></td>\n<td><code>ping -s 1000 8.8.8.8</code></td>\n</tr>\n<tr>\n<td>Arrêter</td>\n<td><code>Ctrl + C</code></td>\n<td><code>Ctrl + C</code></td>\n</tr>\n</tbody></table>\n<h3>Interpréter les résultats</h3>\n<table>\n<thead>\n<tr>\n<th>Information</th>\n<th>Signification</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>time</code></td>\n<td>Temps aller-retour en millisecondes</td>\n</tr>\n<tr>\n<td><code>ttl</code></td>\n<td>Durée de vie restante du paquet, exprimée en sauts</td>\n</tr>\n<tr>\n<td>Paquets perdus</td>\n<td>Requêtes sans réponse reçue</td>\n</tr>\n<tr>\n<td>Délai dépassé</td>\n<td>Aucune réponse dans le délai imparti</td>\n</tr>\n</tbody></table>\n<h3>En dépannage</h3>\n<ul>\n<li><strong>Aucune réponse</strong> : destination indisponible, problème réseau ou filtrage ICMP possible.</li>\n<li><strong>Latence élevée</strong> : temps de communication important.</li>\n<li><strong>Pertes de paquets</strong> : problème possible de liaison, de congestion ou de filtrage.</li>\n</ul>\n<p><strong>Attention :</strong> un ping sans réponse ne signifie pas obligatoirement que la machine est éteinte. Un pare-feu peut bloquer ICMP.</p>\n<hr>\n<h2>6. NETSTAT — Connexions et ports</h2>\n<p>La commande <code>netstat</code> permet de consulter les connexions réseau, les ports d'écoute et certaines statistiques.</p>\n<h3>Commandes principales</h3>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>netstat -a</code></td>\n<td>Afficher connexions et ports d'écoute</td>\n</tr>\n<tr>\n<td><code>netstat -n</code></td>\n<td>Afficher les adresses et ports en numérique</td>\n</tr>\n<tr>\n<td><code>netstat -an</code></td>\n<td>Combiner les deux options</td>\n</tr>\n<tr>\n<td><code>netstat -r</code></td>\n<td>Afficher la table de routage</td>\n</tr>\n<tr>\n<td><code>netstat -e</code></td>\n<td>Afficher des statistiques sous Windows</td>\n</tr>\n<tr>\n<td><code>netstat -t</code></td>\n<td>Afficher les connexions TCP sous Linux</td>\n</tr>\n<tr>\n<td><code>netstat -u</code></td>\n<td>Afficher les connexions UDP sous Linux</td>\n</tr>\n<tr>\n<td><code>netstat -l</code></td>\n<td>Afficher les sockets en écoute sous Linux</td>\n</tr>\n<tr>\n<td><code>netstat -p</code></td>\n<td>Afficher les processus associés sous Linux</td>\n</tr>\n</tbody></table>\n<h3>Exemple</h3>\n<pre><code class=\"language-text\">Proto  Adresse locale       Adresse distante     État\nTCP    192.168.1.10:50500   93.184.216.34:443   ESTABLISHED\nTCP    0.0.0.0:80           0.0.0.0:0           LISTENING\n</code></pre>\n<h3>États TCP à connaître</h3>\n<table>\n<thead>\n<tr>\n<th>État</th>\n<th>Signification</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>LISTEN</code> / <code>LISTENING</code></td>\n<td>Service en attente de connexions</td>\n</tr>\n<tr>\n<td><code>ESTABLISHED</code></td>\n<td>Connexion établie</td>\n</tr>\n<tr>\n<td><code>SYN_SENT</code></td>\n<td>Demande de connexion envoyée</td>\n</tr>\n<tr>\n<td><code>CLOSE_WAIT</code></td>\n<td>Fermeture distante reçue</td>\n</tr>\n<tr>\n<td><code>TIME_WAIT</code></td>\n<td>Attente temporaire après fermeture</td>\n</tr>\n</tbody></table>\n<h3>Diagnostic</h3>\n<p>Sous Windows :</p>\n<pre><code class=\"language-cmd\">netstat -ano\n</code></pre>\n<p>Affiche notamment les connexions et les identifiants de processus (PID).</p>\n<p>Sous Linux :</p>\n<pre><code class=\"language-bash\">netstat -an | grep :80\n</code></pre>\n<p>Recherche les lignes contenant le port 80.</p>\n<h3>Alternatives modernes</h3>\n<table>\n<thead>\n<tr>\n<th>Système</th>\n<th>Outil</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Linux</td>\n<td><code>ss</code></td>\n</tr>\n<tr>\n<td>Windows PowerShell</td>\n<td><code>Get-NetTCPConnection</code></td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> <code>netstat</code> permet de vérifier les connexions et les ports utilisés par les services.</p>\n<hr>\n<h2>7. TRACERT et TRACEROUTE — Suivre le chemin réseau</h2>\n<p>Ces commandes permettent de découvrir les routeurs traversés pour atteindre une destination.</p>\n<ul>\n<li><strong>Windows</strong> : <code>tracert</code></li>\n<li><strong>Linux</strong> : <code>traceroute</code></li>\n</ul>\n<h3>Fonctionnement</h3>\n<p>Le mécanisme utilise le <strong>TTL (Time To Live)</strong>.</p>\n<ol>\n<li>Un paquet est envoyé avec un TTL de 1.</li>\n<li>Le premier routeur décrémente le TTL et peut répondre.</li>\n<li>Un nouveau paquet est envoyé avec un TTL de 2.</li>\n<li>Le processus continue pour identifier les sauts suivants.</li>\n</ol>\n<h3>Exemple Windows</h3>\n<pre><code class=\"language-cmd\">tracert www.google.com\n</code></pre>\n<p>Exemple de résultat :</p>\n<pre><code class=\"language-text\">1     &lt;1 ms    &lt;1 ms    &lt;1 ms    192.168.1.1\n2      12 ms    10 ms    11 ms    10.0.0.1\n3      25 ms    23 ms    22 ms    203.0.113.1\n4      50 ms    48 ms    49 ms    destination\n</code></pre>\n<p>Chaque ligne représente un saut.</p>\n<h3>Options Windows</h3>\n<table>\n<thead>\n<tr>\n<th>Option</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>/d</code></td>\n<td>Ne pas résoudre les noms DNS</td>\n</tr>\n<tr>\n<td><code>/h 15</code></td>\n<td>Limiter à 15 sauts</td>\n</tr>\n<tr>\n<td><code>/w 1000</code></td>\n<td>Attendre au maximum 1 000 ms par réponse</td>\n</tr>\n<tr>\n<td><code>/4</code></td>\n<td>Utiliser IPv4</td>\n</tr>\n<tr>\n<td><code>/6</code></td>\n<td>Utiliser IPv6</td>\n</tr>\n</tbody></table>\n<p>Exemple :</p>\n<pre><code class=\"language-cmd\">tracert /d /h 15 /w 1000 www.google.com\n</code></pre>\n<h3>Sous Linux</h3>\n<pre><code class=\"language-bash\">traceroute www.google.com\n</code></pre>\n<p>Installation éventuelle sur Debian ou Ubuntu :</p>\n<pre><code class=\"language-bash\">sudo apt install traceroute\n</code></pre>\n<h3>Signification des astérisques</h3>\n<pre><code class=\"language-text\">3     *     *     *\n</code></pre>\n<p>Cela signifie qu'aucune réponse n'a été reçue pour les sondes concernées.</p>\n<p>Les causes possibles sont notamment un filtrage, un délai dépassé ou un routeur qui ne répond pas.</p>\n<p><strong>Attention :</strong> un saut sans réponse ne prouve pas que le trafic est bloqué. Les routeurs suivants peuvent répondre normalement.</p>\n<hr>\n<h2>8. Choisir la bonne commande en dépannage</h2>\n<table>\n<thead>\n<tr>\n<th>Situation</th>\n<th>Commande</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Vérifier l'adresse IP sous Windows</td>\n<td><code>ipconfig</code></td>\n</tr>\n<tr>\n<td>Voir la configuration Windows complète</td>\n<td><code>ipconfig /all</code></td>\n</tr>\n<tr>\n<td>Voir les adresses sous Linux</td>\n<td><code>ip addr</code></td>\n</tr>\n<tr>\n<td>Vérifier les routes sous Linux</td>\n<td><code>ip route</code></td>\n</tr>\n<tr>\n<td>Tester la passerelle</td>\n<td><code>ping 192.168.1.1</code></td>\n</tr>\n<tr>\n<td>Tester une adresse Internet</td>\n<td><code>ping 8.8.8.8</code></td>\n</tr>\n<tr>\n<td>Voir les correspondances IP/MAC</td>\n<td><code>arp -a</code> ou <code>ip neigh</code></td>\n</tr>\n<tr>\n<td>Vider le cache DNS Windows</td>\n<td><code>ipconfig /flushdns</code></td>\n</tr>\n<tr>\n<td>Examiner les ports et connexions</td>\n<td><code>netstat -an</code></td>\n</tr>\n<tr>\n<td>Suivre les routeurs traversés</td>\n<td><code>tracert</code> ou <code>traceroute</code></td>\n</tr>\n</tbody></table>\n<h3>Exemple : un ordinateur Windows n'accède plus à Internet</h3>\n<p><strong>Étape 1 — Vérifier sa configuration</strong></p>\n<pre><code class=\"language-cmd\">ipconfig /all\n</code></pre>\n<p>Contrôler l'adresse IP, le masque, la passerelle et les DNS.</p>\n<p><strong>Étape 2 — Tester la passerelle</strong></p>\n<pre><code class=\"language-cmd\">ping 192.168.1.1\n</code></pre>\n<p><strong>Étape 3 — Tester une adresse extérieure</strong></p>\n<pre><code class=\"language-cmd\">ping 8.8.8.8\n</code></pre>\n<p><strong>Étape 4 — Tester la résolution DNS</strong></p>\n<pre><code class=\"language-cmd\">ping www.google.com\n</code></pre>\n<p><strong>Étape 5 — Examiner le chemin</strong></p>\n<pre><code class=\"language-cmd\">tracert 8.8.8.8\n</code></pre>\n<p>Cette méthode permet de localiser progressivement l'origine du problème.</p>\n<hr>\n<h2>9. Fiche de révision — L'essentiel</h2>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>À mémoriser</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>ARP</strong></td>\n<td>IP ↔ MAC</td>\n</tr>\n<tr>\n<td><strong>IPCONFIG</strong></td>\n<td>Configuration Windows</td>\n</tr>\n<tr>\n<td><strong>IP</strong></td>\n<td>Configuration Linux</td>\n</tr>\n<tr>\n<td><strong>PING</strong></td>\n<td>Connectivité / ICMP</td>\n</tr>\n<tr>\n<td><strong>NETSTAT</strong></td>\n<td>Connexions / ports</td>\n</tr>\n<tr>\n<td><strong>TRACERT</strong></td>\n<td>Chemin réseau Windows</td>\n</tr>\n<tr>\n<td><strong>TRACEROUTE</strong></td>\n<td>Chemin réseau Linux</td>\n</tr>\n</tbody></table>\n<h3>Commandes indispensables</h3>\n<p><strong>Windows</strong></p>\n<pre><code class=\"language-cmd\">ipconfig /all\narp -a\nping 192.168.1.1\nnetstat -ano\ntracert 8.8.8.8\n</code></pre>\n<p><strong>Linux</strong></p>\n<pre><code class=\"language-bash\">ip addr\nip link\nip route\nip neigh\nping -c 4 8.8.8.8\ntraceroute 8.8.8.8\n</code></pre>\n<hr>\n",
       "revisionExtracts": [],
-      "updatedAt": "2026-10-18T12:29:48.167Z"
+      "updatedAt": "2026-10-23T13:26:07.073Z"
     },
     {
       "id": "chapter:01:04",
@@ -1380,6 +1380,179 @@
           ],
           "correct": 0,
           "explanation": "L'historique des versions permet de retrouver les états précédents d'un document partagé."
+        }
+      ]
+    },
+    {
+      "id": "quiz-8d9df283-d2fc-4e21-80f8-eff4e69be60a",
+      "title": "QCM — Bases de Word",
+      "category": "01 — Microsoft 365 — Outils collaboratifs",
+      "chapterId": "chapter:01:03",
+      "questions": [
+        {
+          "question": "À quoi sert le protocole ARP ?",
+          "answers": [
+            "À attribuer automatiquement une adresse IP",
+            "À retrouver l'adresse MAC correspondant à une IPv4",
+            "À calculer le masque de sous-réseau",
+            "À mesurer le débit Internet"
+          ],
+          "correct": 1,
+          "explanation": "ARP associe une adresse IPv4 à une adresse MAC sur le réseau local."
+        },
+        {
+          "question": "Quelle commande Windows affiche la table ARP ?",
+          "answers": [
+            "arp -a",
+            "ipconfig /all",
+            "ping -a",
+            "netstat -r"
+          ],
+          "correct": 0,
+          "explanation": "arp -a affiche les correspondances IP/MAC connues."
+        },
+        {
+          "question": "Quelle commande Windows affiche les informations détaillées des interfaces réseau ?",
+          "answers": [
+            "ipconfig /renew",
+            "netstat -a",
+            "ipconfig /all",
+            "tracert /d"
+          ],
+          "correct": 2,
+          "explanation": "ipconfig /all fournit notamment l'adresse IP, le masque, la passerelle, les DNS et l'adresse MAC."
+        },
+        {
+          "question": "Quelle commande permet de renouveler une configuration DHCP sous Windows ?",
+          "answers": [
+            "ipconfig /flushdns",
+            "ipconfig /renew",
+            "ipconfig /displaydns",
+            "arp -d"
+          ],
+          "correct": 1,
+          "explanation": "ipconfig /renew demande le renouvellement de la configuration DHCP."
+        },
+        {
+          "question": "Quelle commande vide le cache DNS local sous Windows ?",
+          "answers": [
+            "ipconfig /flushdns",
+            "ipconfig /release",
+            "ip route",
+            "netstat -n"
+          ],
+          "correct": 0,
+          "explanation": "ipconfig /flushdns efface les entrées du cache DNS local."
+        },
+        {
+          "question": "Quelle commande Linux affiche les adresses IP des interfaces ?",
+          "answers": [
+            "ip neigh",
+            "ip route",
+            "ip addr",
+            "ip link set down"
+          ],
+          "correct": 2,
+          "explanation": "ip addr affiche les adresses associées aux interfaces réseau."
+        },
+        {
+          "question": "Quelle commande Linux affiche la table de routage ?",
+          "answers": [
+            "ip route",
+            "ip link",
+            "arp -s",
+            "ping -c"
+          ],
+          "correct": 0,
+          "explanation": "ip route affiche les routes et la route par défaut."
+        },
+        {
+          "question": "Quel protocole est utilisé par ping ?",
+          "answers": [
+            "HTTP",
+            "DNS",
+            "ARP",
+            "ICMP"
+          ],
+          "correct": 3,
+          "explanation": "Ping utilise des messages ICMP Echo Request et Echo Reply."
+        },
+        {
+          "question": "Quelle commande envoie quatre requêtes ping sous Linux ?",
+          "answers": [
+            "ping -t 4 8.8.8.8",
+            "ping -c 4 8.8.8.8",
+            "ping /4 8.8.8.8",
+            "ping -n 4 8.8.8.8"
+          ],
+          "correct": 1,
+          "explanation": "Sous Linux, l'option -c permet de fixer le nombre de requêtes."
+        },
+        {
+          "question": "Un ping vers un serveur ne reçoit aucune réponse. Que peut-on conclure ?",
+          "answers": [
+            "Le serveur est forcément éteint",
+            "Le câble Ethernet est forcément débranché",
+            "La cible peut être indisponible ou ICMP peut être filtré",
+            "Le DNS est forcément défectueux"
+          ],
+          "correct": 2,
+          "explanation": "L'absence de réponse peut avoir plusieurs causes, notamment le filtrage ICMP."
+        },
+        {
+          "question": "À quoi sert principalement netstat ?",
+          "answers": [
+            "À modifier les adresses MAC",
+            "À afficher les connexions réseau et les ports",
+            "À renouveler les baux DHCP",
+            "À afficher les couches OSI"
+          ],
+          "correct": 1,
+          "explanation": "Netstat permet de consulter les connexions et les ports d'écoute."
+        },
+        {
+          "question": "Que signifie l'état TCP ESTABLISHED ?",
+          "answers": [
+            "La connexion est établie",
+            "Le port est fermé",
+            "Le serveur attend une connexion",
+            "Une erreur DNS est survenue"
+          ],
+          "correct": 0,
+          "explanation": "ESTABLISHED indique qu'une connexion TCP est établie."
+        },
+        {
+          "question": "Quelle commande Windows affiche les routeurs traversés jusqu'à une destination ?",
+          "answers": [
+            "arp -a",
+            "ipconfig",
+            "tracert",
+            "netstat -e"
+          ],
+          "correct": 2,
+          "explanation": "Tracert affiche les sauts intermédiaires sur le chemin réseau."
+        },
+        {
+          "question": "Dans tracert, que peut signifier une ligne contenant trois astérisques ?",
+          "answers": [
+            "Le réseau est nécessairement coupé",
+            "Le routeur ne répond pas aux sondes dans le délai imparti",
+            "L'adresse IP est privée",
+            "Le TTL est désactivé"
+          ],
+          "correct": 1,
+          "explanation": "Les astérisques indiquent l'absence de réponse aux sondes, sans prouver une coupure du trafic."
+        },
+        {
+          "question": "Un poste répond au ping vers 8.8.8.8 mais ne parvient pas à résoudre www.google.com. Quelle piste faut-il vérifier en priorité ?",
+          "answers": [
+            "L'adresse MAC de la souris",
+            "Le masque du serveur distant",
+            "La résolution DNS",
+            "Le protocole ARP du routeur distant"
+          ],
+          "correct": 2,
+          "explanation": "Si une adresse IP extérieure répond mais qu'un nom de domaine échoue, la résolution DNS est une piste prioritaire."
         }
       ]
     }
