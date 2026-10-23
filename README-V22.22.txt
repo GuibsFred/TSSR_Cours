@@ -1,0 +1,1 @@
+V22.22 : correction du contraste de la Logithèque et versionnage des ressources CSS/JS. Vérification de nouvelle version à l’ouverture / retour sur l’onglet. Note : le cache HTML est aussi contrôlé par les en-têtes GitHub Pages, et une première actualisation forcée peut être nécessaire pour les visiteurs ayant déjà un ancien HTML en cache.
