@@ -22,3 +22,24 @@
 .tssr-game-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px}.tssr-game-actions button,.tssr-game-next{border:1px solid #3b8d98;border-radius:8px;background:#12495d;color:#f5ffff;padding:9px 4px;font-weight:750;font-size:11px;cursor:pointer}.tssr-game-actions button.primary{background:#168f8e;border-color:#27bcb0}.tssr-game-next{width:100%;margin-top:7px;background:transparent}
 body:not(.dark) .tssr-module-submenu summary,body:not(.dark) .tssr-submenu-links button{color:#174a58}body:not(.dark) .tssr-submenu-links button.selected{color:#007c78}
 @media(max-width:850px){#menuBtn{display:inline-flex!important}}
+
+/* V23.7 : jeux discrets et compacts, pour conserver le café visible plus bas */
+.tssr-mini-games{position:relative;margin:5px 0 8px;border-radius:13px}
+.tssr-game-head{padding:9px 75px 7px 10px;gap:7px}
+.tssr-game-emblem{width:28px;height:28px;border-radius:8px;font-size:17px}
+.tssr-game-head b{font-size:11px;letter-spacing:.65px}
+.tssr-game-head small{font-size:9px;margin-top:0}
+.tssr-game-toggle{position:absolute;right:8px;top:10px;border:1px solid #2d8992;border-radius:7px;background:#0e5667;color:#d9fff9;font-size:10px;font-weight:700;padding:6px;cursor:pointer}
+.tssr-game-tabs{padding:0 9px 8px;gap:5px}
+.tssr-game-tabs button{padding:6px 3px;font-size:10px;border-radius:7px}
+.tssr-game-body[hidden]{display:none!important}
+.tssr-game-body{padding:9px 10px 11px}
+.tssr-game-question{font-size:12px;margin:7px 0}
+.tssr-game-answers{gap:4px}
+.tssr-game-answers button{padding:6px;font-size:11px}
+.tssr-binary-target{padding:7px;margin:7px 0}
+.tssr-binary-target strong{font-size:26px}
+.tssr-bits button{padding:5px 0}
+.tssr-game-actions{margin-top:7px}
+.tssr-game-foot{margin-top:7px}
+.v23-sideextras{gap:5px!important}
