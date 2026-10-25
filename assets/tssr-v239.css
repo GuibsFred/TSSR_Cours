@@ -1,0 +1,49 @@
+
+/* V23.9 — accueil responsive et deux défis, sans toucher aux cours */
+.tssr-challenges-home{margin:22px 0 32px;min-width:0}
+.tssr-challenges-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;padding:0 3px}
+.tssr-challenges-eyebrow{font-size:10px;font-weight:800;letter-spacing:1.7px;color:#087d87}
+.tssr-challenges-heading h2{font-size:23px;line-height:1.2;color:#08344b;margin:5px 0}
+.tssr-challenges-heading p{margin:0;color:#526a7a;font-size:13px}
+.tssr-challenges-spark{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:linear-gradient(140deg,#08b2a8,#0a6e86);box-shadow:0 7px 18px #0a82924d;color:#fff;font-size:27px}
+.tssr-challenges-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.tssr-challenge-card{min-width:0;display:flex;flex-direction:column;gap:13px;padding:20px;border-radius:16px;color:#e9faff;background:linear-gradient(135deg,#083d56,#04263b 80%);border:1px solid #167e96;box-shadow:0 8px 22px #06344b30;overflow:hidden}
+.tc-head{display:flex;align-items:center;gap:11px;min-width:0}
+.tc-head>div:nth-child(2){min-width:0;flex:1}
+.tc-head h3{margin:0 0 3px;color:#fff;font-size:17px;line-height:1.2}
+.tc-head span:not(.tc-chip){color:#a7d1dd;font-size:11px}
+.tc-icon{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:13px;box-shadow:inset 0 1px 2px #ffffff75,0 5px 12px #0004;font-size:25px}
+.tc-icon-quiz{background:linear-gradient(135deg,#9d4fe8,#5b2f9c)}
+.tc-icon-binary{background:linear-gradient(135deg,#0ac7d0,#086a8b);font-size:16px;font-weight:900;letter-spacing:-2px}
+.tc-chip{font-size:10px;color:#86e9d8;background:#07586a;border:1px solid #188d94;border-radius:8px;padding:6px 8px;font-weight:800;white-space:nowrap}
+.tc-question{margin:0;color:#e8faff;font-size:15px;line-height:1.55;font-weight:700;min-height:47px}
+.tc-answers{display:grid;gap:7px}
+.tc-answers button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;color:#effbff;background:#0d4962;border:1px solid #1a738d;border-radius:9px;padding:9px 12px;font-size:13px;cursor:pointer;transition:background .16s,border-color .16s}
+.tc-answers button span{display:grid;place-items:center;flex:none;width:25px;height:25px;border-radius:50%;border:1px solid #2799b4;background:#0d5d78;color:#c8f8ff;font-weight:800}
+.tc-answers button:hover,.tc-answers button.correct{background:#0a776f;border-color:#42d4bf}
+.tc-answers button.incorrect{background:#763f49;border-color:#df8290}
+.tc-feedback{min-height:51px;border:1px solid #276b80;background:#073347;border-radius:10px;padding:10px 12px;color:#a9d1dc;font-size:12px;display:flex;flex-direction:column;gap:4px;line-height:1.45}
+.tc-feedback b{color:#76efd2;font-size:13px}
+.tc-feedback.error b{color:#ffb2a5}
+.tc-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;color:#a2c6d3;border-top:1px solid #1e657c;padding-top:11px}
+.tc-small-mark{font-weight:900;letter-spacing:1px;color:#6acdc9}
+.tc-target{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:1px solid #1a667b;background:#073349;border-radius:11px;padding:12px}
+.tc-target span{font-size:12px;color:#b3d9e2}
+.tc-target strong{font-size:36px;line-height:1.2;color:#64f0d8;letter-spacing:1px}
+.tc-bits{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}
+.tc-bits button{min-width:0;display:flex;flex-direction:column;align-items:center;gap:7px;padding:8px 0;background:#0b3e56;border:1px solid #276d82;border-radius:8px;color:#e8faff;cursor:pointer}
+.tc-bits button.active{background:linear-gradient(180deg,#0ca4a9,#096e86);border-color:#4ce4d8;box-shadow:0 0 0 1px #39c7cb33}
+.tc-bits button small{font-size:10px;color:#b3d8e4}
+.tc-bits button b{font-size:19px}
+.tc-current{text-align:center;color:#b7d6e0;font-size:12px}.tc-current strong{color:#fff;font-size:18px}
+.tc-hint{font-size:12px;color:#ffd08c;background:#56462a;border-radius:8px;padding:9px}
+.tc-actions{display:flex;gap:7px;margin-top:auto}
+.tc-actions button{flex:1;min-width:0;border-radius:9px;padding:11px 6px;background:#0d5068;border:1px solid #2689a1;color:#e9fbff;font-size:12px;font-weight:800;cursor:pointer}
+.tc-actions button.tc-primary{background:linear-gradient(120deg,#079c9b,#08788d);border-color:#36c8c4}
+.tc-actions button:hover{filter:brightness(1.13)}
+/* Bannière : préserver l'image et ses icônes 3D, éviter les étirements */
+.tssr-studio-home .studio-hero{width:100%;overflow:hidden;border-radius:14px;aspect-ratio:1511/285!important;min-height:170px;max-height:300px}
+.tssr-studio-home .studio-scene .v19-cinema{width:100%;height:100%;object-fit:cover!important;object-position:center 48%!important}
+@media(min-width:1600px){.tssr-studio-home .studio-hero{max-height:300px}}
+@media(max-width:1050px){.tssr-challenges-grid{grid-template-columns:1fr}.tssr-challenge-card{padding:16px}.tssr-studio-home .studio-hero{min-height:145px}}
+@media(max-width:700px){.tssr-challenges-heading h2{font-size:19px}.tssr-challenges-grid{gap:12px}.tc-chip{font-size:9px}.tc-head h3{font-size:15px}.tc-bits{gap:3px}.tc-bits button small{font-size:9px}.tc-actions{flex-wrap:wrap}.tc-actions button{min-width:100px}.tssr-studio-home .studio-hero{min-height:130px}}
