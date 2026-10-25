@@ -1,0 +1,22 @@
+/* V24.5 — animation géométriquement calée sur l'image d'origine 1511 x 309.
+   Les flocons sont découpés fenêtre par fenêtre : aucun sur les montants. */
+.tssr-studio-home .studio-scene{position:relative!important;overflow:hidden!important;isolation:isolate}
+.tssr-studio-home .studio-scene .tssr-hero-live{position:absolute!important;inset:0!important;z-index:5!important;pointer-events:none!important;overflow:hidden!important}
+.tssr-hero-live .tssr-snow-window{position:absolute;top:2%;height:33%;overflow:hidden;opacity:.88;background-image:radial-gradient(circle at 12px 9px,#ffffffdd 0 1.25px,transparent 1.9px),radial-gradient(circle at 42px 38px,#c9efffcc 0 1px,transparent 1.6px),radial-gradient(circle at 76px 17px,#ffffffc9 0 1.4px,transparent 2px),radial-gradient(circle at 98px 62px,#ffffffbb 0 1px,transparent 1.6px);background-size:119px 91px,137px 109px,157px 123px,181px 131px;animation:tssr245-snow 9s linear infinite;}
+/* x-coordinates are fractions of the unchanged hero image; leave 1-2% around each frame. */
+.tssr-snow-window-one{left:32.3%;width:12.4%;clip-path:inset(0 0 0 0)}
+.tssr-snow-window-two{left:47.0%;width:13.0%;animation-delay:-3s!important}
+.tssr-snow-window-three{left:61.2%;width:16.0%;animation-delay:-5s!important}
+.tssr-snow-window-four{left:78.6%;width:11.3%;animation-delay:-7s!important}
+@keyframes tssr245-snow{from{background-position:0 -150px,0 -80px,0 -100px,0 -70px}to{background-position:18px 123px,-12px 180px,15px 210px,-20px 192px}}
+/* Monitor activity: four pinpoint network status LEDs, not a glow across the artwork. */
+.tssr-screen-activity{position:absolute;left:78.7%;top:59%;width:9%;height:22%;opacity:.9}
+.tssr-screen-activity i{position:absolute;width:4px;height:4px;background:#56f4e0;border-radius:50%;box-shadow:0 0 6px 2px #00d6d680;animation:tssr245-led 2.1s steps(1,end) infinite}
+.tssr-screen-activity i:nth-child(1){left:12%;top:22%}.tssr-screen-activity i:nth-child(2){left:39%;top:55%;animation-delay:-.7s}.tssr-screen-activity i:nth-child(3){left:70%;top:31%;animation-delay:-1.4s}.tssr-screen-activity i:nth-child(4){left:89%;top:76%;animation-delay:-.3s}
+@keyframes tssr245-led{0%,40%,100%{opacity:.18}45%,80%{opacity:1}}
+/* Cup near x=66.5%, y=82%; steam starts at rim, rises visibly and disperses. */
+.tssr-hero-live .tssr-steam{position:absolute;left:64.7%;top:42%;width:4.5%;height:37%;opacity:1;filter:none!important;overflow:visible}
+.tssr-hero-live .tssr-steam i{position:absolute;bottom:0;width:16%;height:60%;left:42%;border:0!important;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,#eaf8ffb0 0%,#d8f4ff69 28%,#c1e8ff24 52%,transparent 76%);filter:blur(3px);transform-origin:bottom center;animation:tssr245-steam 4.4s ease-out infinite}
+.tssr-hero-live .tssr-steam i:nth-child(2){left:27%;height:48%;animation-delay:-1.5s}.tssr-hero-live .tssr-steam i:nth-child(3){left:54%;height:55%;animation-delay:-3s}
+@keyframes tssr245-steam{0%{opacity:0;transform:translate(0,7px) scale(.55,.65)}20%{opacity:.8}50%{opacity:.7;transform:translate(5px,-13px) scale(.9,1.2)}100%{opacity:0;transform:translate(-5px,-35px) scale(1.9,1.7)}}
+@media(prefers-reduced-motion:reduce){.tssr-hero-live .tssr-snow-window,.tssr-hero-live .tssr-steam i,.tssr-screen-activity i{animation:none!important}.tssr-hero-live .tssr-snow-window,.tssr-hero-live .tssr-steam{display:none!important}}
