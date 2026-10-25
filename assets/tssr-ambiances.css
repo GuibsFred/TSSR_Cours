@@ -21,3 +21,15 @@ html[data-tssr-ambiance="studio"] .tssr-studio-home .studio-hero::after{backgrou
 #tssr-amb-menu p{font-size:11px;line-height:1.4;color:#a7c4d1;margin:10px 4px 2px}
 @media(max-width:800px){#tssr-amb-btn{font-size:0;padding:10px}#tssr-amb-btn::before{content:'💡';font-size:17px}#tssr-amb-menu{right:12px;top:66px}}
 @media(prefers-reduced-motion:reduce){.tssr-studio-home .studio-hero .studio-scene{transition:none!important}}
+
+/* V24.7 : quatre véritables images du même poste, au lieu de filtres quasi invisibles. */
+.tssr-studio-home .studio-hero .studio-scene{filter:none!important;transition:none!important}
+.tssr-studio-home .studio-hero .studio-scene .v19-cinema{object-fit:fill!important;filter:none!important}
+html[data-tssr-ambiance="chalet"] .tssr-studio-home .studio-scene .v19-cinema{content:url('tssr-ambiance-1.webp')!important}
+html[data-tssr-ambiance="cyber"] .tssr-studio-home .studio-scene .v19-cinema{content:url('tssr-ambiance-2.webp')!important}
+html[data-tssr-ambiance="gaming"] .tssr-studio-home .studio-scene .v19-cinema{content:url('tssr-ambiance-3.webp')!important}
+html[data-tssr-ambiance="studio"] .tssr-studio-home .studio-scene .v19-cinema{content:url('tssr-ambiance-4.webp')!important}
+.tssr-studio-home .studio-hero::after{display:none!important}
+.tssr-studio-home .tssr-hero-live{display:none!important}
+html[data-tssr-ambiance="gaming"]{--amb-accent:#ff3434;--amb-glow:255,52,52}
+html[data-tssr-ambiance="studio"]{--amb-accent:#d5e1ef;--amb-glow:213,225,239}
