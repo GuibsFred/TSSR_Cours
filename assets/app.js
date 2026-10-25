@@ -128,7 +128,7 @@ function nav(){
  const courses=all().filter(x=>x.kind==='cours'&&(!q||(x.title+' '+x.category).toLowerCase().includes(q)));
  const roots=[...new Set(courses.map(x=>rootCategory(x.category)))].sort((a,b)=>moduleNumber(a)-moduleNumber(b)||a.localeCompare(b,'fr',{numeric:true}));
  const panel=$('#modules');
- panel.hidden=section!=='cours';
+ panel.hidden=true;
  if(section==='cours'){
    panel.innerHTML='<div class="tssr-subnav-heading">CHAPITRES PAR MODULE</div>'+roots.map(root=>{
      const group=courses.filter(x=>rootCategory(x.category)===root);
