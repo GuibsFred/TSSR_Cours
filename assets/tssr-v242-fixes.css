@@ -1,0 +1,6 @@
+/* V24.2 — icônes 3D uniques, sans mosaïque */
+.course-library-grid .module-art{background-repeat:no-repeat!important;background-position:center center!important;background-size:contain!important;background-color:transparent!important;filter:drop-shadow(0 7px 10px #001b3080)!important;overflow:hidden!important}
+.course-library-grid .module-art svg{display:none!important}
+.course-library-grid .module-card-top{overflow:visible!important}
+/* ne jamais répéter les visuels de fond des modules */
+.course-library-grid .module-card[data-topic] .module-art{background-repeat:no-repeat!important;background-size:contain!important;background-position:center!important}

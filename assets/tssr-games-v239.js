@@ -1,5 +1,6 @@
 (()=>{'use strict';
-const quiz=document.getElementById('tssr-quiz-home'),binary=document.getElementById('tssr-binary-home');if(!quiz||!binary)return;
+let lastQuiz=null,lastBinary=null;function init(){
+const quiz=document.getElementById('tssr-quiz-home'),binary=document.getElementById('tssr-binary-home');if(!quiz||!binary||quiz===lastQuiz&&binary===lastBinary)return;lastQuiz=quiz;lastBinary=binary;
 const bank=[['Quel protocole associe une IPv4 à une adresse MAC ?',['DNS','ARP','DHCP'],1,'ARP résout les adresses IPv4 vers les adresses MAC sur le réseau local.'],['Quel port utilise HTTPS ?',['80','443','53'],1,'HTTPS utilise généralement le port TCP 443.'],['Combien de bits contient une adresse IPv4 ?',['16','32','128'],1,'IPv4 utilise 32 bits répartis en quatre octets.'],['Que signifie une adresse 169.254.x.x ?',['Configuration APIPA','Serveur DNS','Adresse multicast'],0,'Une adresse APIPA peut apparaître si DHCP ne fournit pas de configuration.'],['Quelle commande Windows affiche les paramètres réseau détaillés ?',['arp -a','ipconfig /all','tracert'],1,'ipconfig /all affiche notamment IP, masque, passerelle et DNS.'],['Quel équipement relie des réseaux IP différents ?',['Switch','Routeur','Répéteur'],1,'Le routeur achemine les paquets entre réseaux.'],['Quel masque correspond à /24 ?',['255.255.255.0','255.255.0.0','255.255.255.192'],0,'/24 signifie 24 bits réseau à 1.'],['Quelle commande teste la connectivité ICMP ?',['ping','netstat','ipconfig'],0,'ping envoie des requêtes ICMP Echo.'],['Quel protocole attribue automatiquement les adresses IP ?',['DNS','DHCP','ARP'],1,'DHCP attribue les paramètres réseau aux clients.'],['Quel service traduit un nom de domaine en adresse IP ?',['DNS','NTP','SMB'],0,'DNS permet notamment la résolution des noms de domaine.']];
 const day=Math.floor(Date.now()/86400000),today=bank[day%bank.length];
 let answer=-1,bits=Array(8).fill(0),target=192,checked=false,hint=false,solved=false;
@@ -11,4 +12,6 @@ function drawBinary(){binary.innerHTML=`<div class="tc-head"><div class="tc-icon
 quiz.addEventListener('click',e=>{let b=e.target.closest('[data-answer]');if(!b)return;answer=Number(b.dataset.answer);drawQuiz()});
 binary.addEventListener('click',e=>{let b=e.target.closest('button');if(!b)return;if(b.dataset.bit!==undefined){bits[Number(b.dataset.bit)]^=1;checked=false}else if(b.dataset.action==='hint')hint=!hint;else if(b.dataset.action==='next'){target=1+Math.floor(Math.random()*254);bits=Array(8).fill(0);checked=false;hint=false;solved=false}else if(b.dataset.action==='check'){checked=true;if(val()===target&&!solved){solved=true;wins++;try{localStorage.setItem(key,String(wins))}catch(e){}}}drawBinary()});
 drawQuiz();drawBinary();
+}
+const observer=new MutationObserver(()=>init());observer.observe(document.getElementById('view')||document.body,{childList:true,subtree:false});init();
 })();
