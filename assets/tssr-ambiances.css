@@ -53,3 +53,24 @@ html[data-tssr-ambiance="studio"]{--amb-accent:#d5e1ef;--amb-glow:213,225,239}
 /* Supprimer toutes les anciennes animations de fumee, scintillement et lumiere gauche. */
 .tssr-studio-home .tssr-hero-live,.tssr-studio-home .tssr-steam,.tssr-studio-home .v20-effects,.tssr-studio-home .v22-effects,.tssr-studio-home .v19-steam,.tssr-studio-home .studio-steam,.tssr-studio-home .studio-sparks,.tssr-studio-home .studio-glow{display:none!important;animation:none!important}
 .tssr-studio-home .studio-hero::before,.tssr-studio-home .studio-hero::after{display:none!important}
+
+/* V25.2 — no animated overlay in hero, regardless of legacy scripts. */
+.tssr-studio-home .studio-hero canvas,
+.tssr-studio-home .studio-hero .tssr-hero-live,
+.tssr-studio-home .studio-hero .studio-steam,
+.tssr-studio-home .studio-hero .studio-sparks,
+.tssr-studio-home .studio-hero .studio-glow,
+.tssr-studio-home .studio-hero .studio-scan,
+.tssr-studio-home .studio-hero .studio-coffee-steam,
+.tssr-studio-home .studio-hero .studio-steam-v11,
+.tssr-studio-home .studio-hero .v19-steam,
+.tssr-studio-home .studio-hero .v20-effects,
+.tssr-studio-home .studio-hero .v22-effects,
+.tssr-studio-home .studio-hero .tssr-screen-glow,
+.tssr-studio-home .studio-hero .tssr-snow,
+.tssr-studio-home .studio-hero .tssr-steam {display:none!important;visibility:hidden!important;animation:none!important;}
+.tssr-studio-home .studio-hero::before,
+.tssr-studio-home .studio-hero::after,
+.tssr-studio-home .studio-scene::before,
+.tssr-studio-home .studio-scene::after {content:none!important;display:none!important;animation:none!important;}
+.tssr-studio-home .studio-hero .v19-cinema{animation:none!important;transition:none!important;}
