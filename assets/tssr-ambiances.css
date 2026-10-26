@@ -44,3 +44,12 @@ html[data-tssr-ambiance="studio"]{--amb-accent:#d5e1ef;--amb-glow:213,225,239}
 .tssr-studio-home .tssr-hero-live,
 .tssr-studio-home .v20-effects,
 .tssr-studio-home .v22-effects{display:none!important}
+
+/* V25.1 — cadrage complet des images originales 1535x358 : aucune deformation, aucun zoom. */
+.tssr-studio-home .studio-hero{overflow:hidden!important}
+.tssr-studio-home .studio-scene{inset:0!important;transform:none!important;animation:none!important;background:none!important;overflow:hidden!important}
+.tssr-studio-home .studio-scene .v19-cinema{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;transform:none!important;animation:none!important;filter:none!important}
+.tssr-studio-home .studio-hero,.tssr-studio-home .studio-scene{background-color:#071725!important}
+/* Supprimer toutes les anciennes animations de fumee, scintillement et lumiere gauche. */
+.tssr-studio-home .tssr-hero-live,.tssr-studio-home .tssr-steam,.tssr-studio-home .v20-effects,.tssr-studio-home .v22-effects,.tssr-studio-home .v19-steam,.tssr-studio-home .studio-steam,.tssr-studio-home .studio-sparks,.tssr-studio-home .studio-glow{display:none!important;animation:none!important}
+.tssr-studio-home .studio-hero::before,.tssr-studio-home .studio-hero::after{display:none!important}
