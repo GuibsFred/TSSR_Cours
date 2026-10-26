@@ -24,7 +24,7 @@ html[data-tssr-ambiance="studio"] .tssr-studio-home .studio-hero::after{backgrou
 
 /* V24.7 : quatre véritables images du même poste, au lieu de filtres quasi invisibles. */
 .tssr-studio-home .studio-hero .studio-scene{filter:none!important;transition:none!important}
-.tssr-studio-home .studio-hero .studio-scene .v19-cinema{object-fit:fill!important;filter:none!important}
+.tssr-studio-home .studio-hero .studio-scene .v19-cinema{object-fit:cover!important;filter:none!important}
 html[data-tssr-ambiance="chalet"] .tssr-studio-home .studio-scene .v19-cinema{content:url('tssr-ambiance-1.webp')!important}
 html[data-tssr-ambiance="cyber"] .tssr-studio-home .studio-scene .v19-cinema{content:url('tssr-ambiance-2.webp')!important}
 html[data-tssr-ambiance="gaming"] .tssr-studio-home .studio-scene .v19-cinema{content:url('tssr-ambiance-3.webp')!important}
@@ -33,3 +33,14 @@ html[data-tssr-ambiance="studio"] .tssr-studio-home .studio-scene .v19-cinema{co
 .tssr-studio-home .tssr-hero-live{display:none!important}
 html[data-tssr-ambiance="gaming"]{--amb-accent:#ff3434;--amb-glow:255,52,52}
 html[data-tssr-ambiance="studio"]{--amb-accent:#d5e1ef;--amb-glow:213,225,239}
+
+
+/* V25 — approved original banner, aspect preserved, no stretched pixels. */
+.tssr-studio-home .studio-scene .v19-cinema{
+ width:100%!important;height:100%!important;object-fit:cover!important;
+ object-position:50% 50%!important;filter:none!important;
+}
+.tssr-studio-home .studio-hero{overflow:hidden!important}
+.tssr-studio-home .tssr-hero-live,
+.tssr-studio-home .v20-effects,
+.tssr-studio-home .v22-effects{display:none!important}
