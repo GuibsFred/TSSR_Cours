@@ -312,6 +312,26 @@ $('#imageFile').onchange=e=>{if(e.target.files[0])insertImageFile(e.target.files
 function persist(closeEditor=true){let t=$('#docTitle').value.trim();if(!t){toast('Ajoute un titre.');return false}let category=$('#docCat').value.trim(),kind=$('#docKind').value;
 let stableId=p?.id||'doc-'+crypto.randomUUID();if(!p){let existing=all().find(x=>cleanKey(x)===cleanKey({kind,category,title:t}));if(existing){toast('Ce titre existe déjà dans cette catégorie. Ouvre le chapitre existant pour le modifier.');return false}}if(p?.chapter){t=p.title;category=p.category;kind='cours'}
 if(selectedCourseImage)selectedCourseImage.classList.remove('course-image-selected');let html=DOMPurify.sanitize($('#docEditor').innerHTML,{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
+// V25.3 : sépare le bloc === QCM === collé dans l’éditeur de cours.
+if(kind==='cours'){
+ const temp=document.createElement('div');temp.innerHTML=html;
+ const marker=[...temp.querySelectorAll('p,div,h1,h2,h3,h4,li')].find(el=>/^={3}\s*QCM\s*={3}$/i.test((el.textContent||'').trim())&&!([...el.children].some(ch=>/^={3}\s*QCM\s*={3}$/i.test((ch.textContent||'').trim()))));
+ if(marker){
+  const textNode=document.createElement('div');textNode.innerHTML=temp.innerHTML.replace(/<br\s*\/?>/gi,'\n').replace(/<\/(?:p|div|li|h[1-6]|tr)>/gi,'\n\n');const allText=textNode.textContent||'';
+  const qcmText=allText.slice(allText.search(/={3}\s*QCM\s*={3}/i)).replace(/^={3}\s*QCM\s*={3}/i,'').trim();
+  const normalized=qcmText.replace(/\s+(?=\d+[.)]\s+[^\n])/g,'\n\n');
+  const questions=parseQuizBulk(normalized);
+  if(!questions.length){toast('Séparateur QCM trouvé, mais aucune question valide : vérifie les réponses A), B), C), D) et Réponse : B.');return false}
+  const range=document.createRange();range.setStartBefore(marker);range.setEnd(temp,temp.childNodes.length);range.deleteContents();
+  html=DOMPurify.sanitize(temp.innerHTML,{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
+  const previous=custom.quizzes.find(q=>q.chapterId===stableId);
+  const quizId=previous?.id||'quiz-auto-'+stableId;
+  const quiz={id:quizId,title:'QCM — '+t,category:rootCategory(category),chapterId:stableId,questions};
+  custom.quizzes=custom.quizzes.filter(q=>q.id!==quizId);custom.quizzes.push(quiz);
+  saveLocal('quiz:'+quizId);
+  toast(questions.length+' questions reconnues : QCM interactif créé.');
+ }
+}
 let obj={id:stableId,title:t,kind,category,...(p?.chapter?{chapter:true}:{}),html,revisionExtracts:kind==='cours'?extractBlue(html):[],updatedAt:new Date().toISOString()};
 let idx=custom.pages.findIndex(x=>x.id===stableId);if(idx>=0)custom.pages[idx]=obj;else custom.pages.push(obj);
 lastSavedCourseId=stableId;saveLocal(stableId);if(closeEditor){$('#modal').close();goto(obj.kind,obj.id)}return true}
