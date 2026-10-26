@@ -484,82 +484,149 @@
         {
           "question": "Quel est le rôle principal d'un système d'exploitation ?",
           "answers": [
-            "Remplacer le processeur",
             "Gérer les ressources matérielles et permettre l'exécution des applications",
-            "Fournir uniquement une connexion Internet",
-            "Stocker exclusivement les fichiers de l'utilisateur",
-            "Le navigateur Internet",
-            "Le pilote d'impression",
-            "Le noyau ou kernel",
-            "Le gestionnaire de fichiers",
+            "Assurer uniquement le stockage et l'organisation des fichiers",
+            "Gérer uniquement les échanges entre les périphériques"
+          ],
+          "correct": 0,
+          "explanation": "Le système d'exploitation gère notamment le processeur, la mémoire, les périphériques et l'exécution des applications."
+        },
+        {
+          "question": "Quelle est la différence entre le kernel et le shell ?",
+          "answers": [
+            "Le kernel gère l'interface utilisateur et le shell gère les pilotes",
+            "Le kernel gère les fonctions centrales du système et le shell permet d'interagir avec lui",
+            "Le kernel et le shell désignent deux systèmes de fichiers"
+          ],
+          "correct": 1,
+          "explanation": "Le kernel est le noyau du système d'exploitation. Le shell permet à l'utilisateur d'interagir avec le système, notamment par des commandes."
+        },
+        {
+          "question": "Que signifie CLI ?",
+          "answers": [
+            "Client Login Interface",
             "Computer Local Installation",
-            "Command Line Interface",
-            "Central Login Interface",
-            "Client Linux Installation",
-            "Elle est obligatoire sur tous les systèmes d'exploitation",
-            "Elle remplace entièrement le noyau",
-            "Elle est facultative sur certains systèmes",
-            "Elle fonctionne uniquement avec Windows",
-            "À augmenter automatiquement la capacité du disque",
-            "À permettre au système d'exploitation de communiquer avec un périphérique",
-            "À remplacer le système d'exploitation",
-            "À créer des comptes utilisateurs",
-            "Windows XP",
+            "Command Line Interface"
+          ],
+          "correct": 2,
+          "explanation": "CLI signifie Command Line Interface, soit interface en ligne de commande."
+        },
+        {
+          "question": "Une interface graphique est-elle indispensable au fonctionnement d'un système d'exploitation ?",
+          "answers": [
+            "Oui, elle est nécessaire pour exécuter les applications",
+            "Non, certains systèmes fonctionnent sans interface graphique"
+          ],
+          "correct": 1,
+          "explanation": "Un système d'exploitation peut fonctionner uniquement avec une interface en ligne de commande, notamment sur certains serveurs."
+        },
+        {
+          "question": "Un périphérique est détecté par Windows mais fonctionne mal. Quel élément faut-il vérifier en priorité ?",
+          "answers": [
+            "Le pilote du périphérique",
+            "La licence Windows",
+            "Le système de fichiers"
+          ],
+          "correct": 0,
+          "explanation": "Le pilote permet au système d'exploitation de communiquer correctement avec le matériel."
+        },
+        {
+          "question": "Quel système Microsoft, commercialisé en 1981, utilisait principalement des commandes textuelles ?",
+          "answers": [
             "Windows NT",
             "MS-DOS",
             "Windows 95"
           ],
-          "correct": 2,
-          "explanation": "MS-DOS apparaît en août"
+          "correct": 1,
+          "explanation": "MS-DOS est apparu en août 1981. Il utilisait principalement une interface en ligne de commande."
         },
         {
-          "question": "Il fonctionne principalement à l'aide de commandes textuelles.",
+          "question": "En quelle année Windows NT a-t-il été lancé ?",
           "answers": [
-            "Windows 98",
-            "Windows NT",
-            "Windows Vista",
-            "Windows 8",
+            "1993",
+            "1995",
+            "2000"
+          ],
+          "correct": 0,
+          "explanation": "Windows NT a été lancé en juillet 1993 et visait notamment les environnements professionnels."
+        },
+        {
+          "question": "À quelle date le support étendu standard de Windows 7 s'est-il terminé ?",
+          "answers": [
             "Janvier 2015",
-            "Octobre 2013",
-            "Janvier 2020",
-            "Avril 2014"
+            "Avril 2014",
+            "Janvier 2020"
           ],
           "correct": 2,
-          "explanation": "Le support étendu ordinaire de Windows 7 s'est terminé en janvier"
+          "explanation": "Le support étendu standard de Windows 7 s'est terminé le 14 janvier 2020."
         },
         {
-          "question": "Certains dispositifs particuliers ont pu prolonger des mises à jour pour des environnements éligibles.",
+          "question": "Que signifie KB dans la documentation Microsoft ?",
           "answers": [
             "Kernel Backup",
             "Knowledge Base",
-            "Key Binary",
-            "Kernel Boot",
-            "Remplacer obligatoirement le matériel",
-            "Installer uniquement une nouvelle interface graphique",
-            "Fournir des correctifs de sécurité et de fonctionnement",
-            "Supprimer les comptes utilisateurs",
-            "Tous les premiers lundis du mois",
-            "Tous les deuxièmes mardis du mois",
-            "Tous les derniers vendredis du mois",
-            "Une seule fois par an",
-            "Windows 10 Famille uniquement",
-            "Windows 10 Professionnel",
-            "Windows 10 Famille sans configuration supplémentaire",
-            "Aucune édition de Windows 10",
+            "Key Binary"
+          ],
+          "correct": 1,
+          "explanation": "KB signifie Knowledge Base. Les numéros KB permettent d'identifier des articles et des mises à jour Microsoft."
+        },
+        {
+          "question": "Dans le modèle Windows as a Service présenté dans le cours, quelle est la différence entre une Feature Update et une Quality Update ?",
+          "answers": [
+            "Une Feature Update apporte des évolutions fonctionnelles, une Quality Update apporte principalement des correctifs",
+            "Une Feature Update corrige uniquement les failles de sécurité, une Quality Update change l'édition de Windows",
+            "Les deux désignent exclusivement des mises à jour de pilotes"
+          ],
+          "correct": 0,
+          "explanation": "Les Feature Updates introduisaient des évolutions du système, tandis que les Quality Updates apportaient principalement des correctifs de sécurité et de fiabilité."
+        },
+        {
+          "question": "À quoi correspond le Patch Tuesday de Microsoft ?",
+          "answers": [
+            "À la publication annuelle d'une nouvelle version de Windows",
+            "À la publication habituelle de mises à jour le deuxième mardi du mois",
+            "À une opération de renouvellement des licences Windows"
+          ],
+          "correct": 1,
+          "explanation": "Microsoft publie habituellement ses mises à jour de sécurité mensuelles le deuxième mardi du mois."
+        },
+        {
+          "question": "Quelle édition de Windows 10 permet de rejoindre un domaine Active Directory classique ?",
+          "answers": [
+            "Windows 10 Famille",
+            "Windows 10 Professionnel"
+          ],
+          "correct": 1,
+          "explanation": "Windows 10 Professionnel prend en charge l'intégration à un domaine Active Directory classique, contrairement à l'édition Famille."
+        },
+        {
+          "question": "Quelle fonctionnalité permet de chiffrer un volume de stockage sous Windows ?",
+          "answers": [
             "AppLocker",
-            "BranchCache",
-            "BitLocker",
-            "Windows Insider",
-            "MAK",
-            "GUI",
             "EFS",
-            "CAL",
-            "À installer gratuitement Windows sur tous les postes",
-            "À augmenter les performances du serveur",
-            "À disposer des droits d'accès nécessaires à certains services serveur",
-            "À remplacer le service KMS"
+            "BitLocker"
           ],
           "correct": 2,
+          "explanation": "BitLocker permet de chiffrer des volumes. EFS sert au chiffrement de fichiers et dossiers, tandis qu'AppLocker contrôle l'exécution d'applications."
+        },
+        {
+          "question": "Quelle est la différence entre les méthodes d'activation MAK et KMS ?",
+          "answers": [
+            "MAK utilise une clé à activations multiples, tandis que KMS permet une activation centralisée",
+            "MAK est réservé aux pilotes, tandis que KMS sert au chiffrement des disques",
+            "MAK nécessite un domaine Active Directory, tandis que KMS fonctionne uniquement avec Windows Famille"
+          ],
+          "correct": 0,
+          "explanation": "MAK permet un nombre défini d'activations avec une clé. KMS repose sur un service d'activation centralisé dans l'organisation."
+        },
+        {
+          "question": "À quoi sert une CAL dans un environnement Microsoft Server ?",
+          "answers": [
+            "À activer automatiquement les postes Windows",
+            "À disposer des droits d'accès nécessaires à certains services serveur",
+            "À remplacer les comptes utilisateurs du domaine"
+          ],
+          "correct": 1,
           "explanation": "CAL signifie Client Access License. Elle correspond à un droit d'accès client requis pour certains services Microsoft Server, selon les conditions de licence applicables."
         }
       ]
