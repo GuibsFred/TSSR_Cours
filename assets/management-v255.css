@@ -59,3 +59,9 @@
 @media(max-width:1500px){.cmdstudio-v256 .cmd-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 @media(max-width:950px){.cmdstudio-v256 .cmd-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:650px){.cmdstudio-v256 .cmd-card-grid{grid-template-columns:1fr!important}}
+
+/* V25.8 — boutons compacts sans anciens libellés superposés */
+.v83-chapters>.mg-course-tile>.mg-card-actions button{font-size:0!important;line-height:1!important;overflow:hidden!important;text-indent:0!important;white-space:nowrap!important}
+.v83-chapters>.mg-course-tile>.mg-card-actions button::after{content:none!important;display:none!important}
+.v83-chapters>.mg-course-tile>.mg-card-actions button::before{content:"✎"!important;display:block!important;font-size:15px!important;line-height:1!important}
+.v83-chapters>.mg-course-tile>.mg-card-actions button[data-hide-course]::before{content:"×"!important;font-size:19px!important}

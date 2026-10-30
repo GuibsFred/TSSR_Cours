@@ -916,5 +916,158 @@
       "linux (terminal)",
       "nc"
     ]
+  },
+  {
+    "id": "cmd-tssr-ps-20261030-01",
+    "name": "Get-Help",
+    "environment": "PowerShell",
+    "category": "Aide PowerShell",
+    "theme": "Administration Windows / PowerShell",
+    "description": "Consulter l’aide d’une commande PowerShell.",
+    "syntax": "Get-Help Get-LocalGroup",
+    "example": "Get-Help Get-Help -Examples\nGet-Help Get-Alias -Full",
+    "notes": "-Examples affiche les exemples ; -Full affiche l’aide complète. Les noms des commandes ne sont pas sensibles à la casse.",
+    "tags": [
+      "TSSR",
+      "PowerShell",
+      "TP 30 octobre 2026",
+      "Aide PowerShell"
+    ]
+  },
+  {
+    "id": "cmd-tssr-ps-20261030-02",
+    "name": "Update-Help",
+    "environment": "PowerShell",
+    "category": "Aide PowerShell",
+    "theme": "Administration Windows / PowerShell",
+    "description": "Télécharger et actualiser les fichiers d’aide PowerShell.",
+    "syntax": "Update-Help -UICulture en-US",
+    "example": "Update-Help -UICulture en-US -ErrorAction Continue",
+    "notes": "Pour les modules Windows protégés, lancer Windows PowerShell en administrateur. Des modules peuvent ne pas proposer d’aide téléchargeable.",
+    "tags": [
+      "TSSR",
+      "PowerShell",
+      "TP 30 octobre 2026",
+      "Aide PowerShell"
+    ]
+  },
+  {
+    "id": "cmd-tssr-ps-20261030-03",
+    "name": "Get-Help about_*",
+    "environment": "PowerShell",
+    "category": "Concepts PowerShell",
+    "theme": "Administration Windows / PowerShell",
+    "description": "Lister les rubriques d’aide conceptuelle disponibles (about_...).",
+    "syntax": "Get-Help about_*",
+    "example": "Get-Help about_*\nGet-Help about_Aliases",
+    "notes": "L’astérisque (*) est un caractère générique. « about_concepts » n’est pas une rubrique générique existante. La liste dépend de l’aide installée.",
+    "tags": [
+      "TSSR",
+      "PowerShell",
+      "TP 30 octobre 2026",
+      "Concepts PowerShell"
+    ]
+  },
+  {
+    "id": "cmd-tssr-ps-20261030-04",
+    "name": "Get-Help about_Aliases",
+    "environment": "PowerShell",
+    "category": "Concepts PowerShell",
+    "theme": "Administration Windows / PowerShell",
+    "description": "Comprendre le fonctionnement des alias PowerShell.",
+    "syntax": "Get-Help about_Aliases",
+    "example": "Get-Help about_Aliases -ShowWindow",
+    "notes": "-ShowWindow ouvre une fenêtre d’aide distincte dans Windows PowerShell 5.1. La rubrique peut manquer si l’aide n’est pas installée.",
+    "tags": [
+      "TSSR",
+      "PowerShell",
+      "TP 30 octobre 2026",
+      "Concepts PowerShell"
+    ]
+  },
+  {
+    "id": "cmd-tssr-ps-20261030-05",
+    "name": "Get-Alias",
+    "environment": "PowerShell",
+    "category": "Alias PowerShell",
+    "theme": "Administration Windows / PowerShell",
+    "description": "Lister les alias et découvrir les commandes auxquelles ils correspondent.",
+    "syntax": "Get-Alias",
+    "example": "Get-Alias\nGet-Alias -Name select",
+    "notes": "« select » est un alias de Select-Object. Un alias abrège un nom de commande, sans changer son fonctionnement.",
+    "tags": [
+      "TSSR",
+      "PowerShell",
+      "TP 30 octobre 2026",
+      "Alias PowerShell"
+    ]
+  },
+  {
+    "id": "cmd-tssr-ps-20261030-06",
+    "name": "Get-LocalGroup",
+    "environment": "PowerShell",
+    "category": "Groupes locaux",
+    "theme": "Administration Windows / PowerShell",
+    "description": "Afficher les groupes locaux du poste Windows.",
+    "syntax": "Get-LocalGroup",
+    "example": "Get-LocalGroup\nGet-LocalGroup | Select-Object *",
+    "notes": "Fonctionne sous Windows avec le module Microsoft.PowerShell.LocalAccounts. Le caractère | transmet les objets à la commande suivante.",
+    "tags": [
+      "TSSR",
+      "PowerShell",
+      "TP 30 octobre 2026",
+      "Groupes locaux"
+    ]
+  },
+  {
+    "id": "cmd-tssr-ps-20261030-07",
+    "name": "Select-Object",
+    "environment": "PowerShell",
+    "category": "Manipulation des objets",
+    "theme": "Administration Windows / PowerShell",
+    "description": "Choisir les propriétés à afficher dans un résultat PowerShell.",
+    "syntax": "Get-LocalGroup | Select-Object *",
+    "example": "Get-LocalGroup | select *\nGet-LocalGroup | Select-Object Name, Description",
+    "notes": "Il faut un espace entre « select » et « * » : « select* » n’est pas une commande. L’astérisque signifie toutes les propriétés.",
+    "tags": [
+      "TSSR",
+      "PowerShell",
+      "TP 30 octobre 2026",
+      "Manipulation des objets"
+    ]
+  },
+  {
+    "id": "cmd-tssr-ps-20261030-08",
+    "name": "Format-List",
+    "environment": "PowerShell",
+    "category": "Mise en forme",
+    "theme": "Administration Windows / PowerShell",
+    "description": "Afficher les propriétés des objets en liste verticale.",
+    "syntax": "Get-LocalGroup | Format-List *",
+    "example": "Get-LocalGroup | Format-List *",
+    "notes": "À utiliser pour lire toutes les propriétés ; Format-List met en forme l’affichage et ne doit pas précéder une commande qui attend les objets originaux.",
+    "tags": [
+      "TSSR",
+      "PowerShell",
+      "TP 30 octobre 2026",
+      "Mise en forme"
+    ]
+  },
+  {
+    "id": "cmd-tssr-ps-20261030-09",
+    "name": "Get-Service",
+    "environment": "PowerShell",
+    "category": "Services Windows",
+    "theme": "Administration Windows / PowerShell",
+    "description": "Afficher les services Windows et leur état.",
+    "syntax": "Get-Service",
+    "example": "Get-Help Get-Service -Examples\nGet-Service -Name Spooler",
+    "notes": "Exemple cité pour illustrer Get-Help -Examples : la commande Get-Service liste les services.",
+    "tags": [
+      "TSSR",
+      "PowerShell",
+      "TP 30 octobre 2026",
+      "Services Windows"
+    ]
   }
 ]
