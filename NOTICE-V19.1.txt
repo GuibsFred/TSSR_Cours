@@ -1,1 +1,0 @@
-V19.1 : animation des 5 écrans, points de topologie contenus dans les écrans, correction du texte incrusté à gauche par un masque opaque. Les autres fonctions du site sont conservées.

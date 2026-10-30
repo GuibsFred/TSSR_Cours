@@ -1,1 +1,0 @@
-V21 : image et animations integrees dans index.html pour contourner les nouveaux fichiers absents du depot. Verifier la publication et les donnees personnelles.

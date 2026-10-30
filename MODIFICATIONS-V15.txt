@@ -1,1 +1,0 @@
-V15 : animation intégrée aux pixels des trois écrans et masquée selon leurs limites réelles. Suppression des éléments flottants, effets superposés et vapeur mal placée. La vapeur déjà illustrée dans le décor reste statique. Navigation et données inchangées.

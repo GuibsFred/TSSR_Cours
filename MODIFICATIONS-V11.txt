@@ -1,1 +1,0 @@
-TSSR V11 — accueil studio. Nouvelle image dédiée au décor, bandeau 43/57, horloge et date, animations discrètes des écrans et vapeur, rétablissement du bandeau de statistiques (sélecteur de la nouvelle page), conservation des autres pages. Les écrans utilisent un effet lumineux et de balayage, pas une vidéo de code réelle.

@@ -1,1 +1,0 @@
-V19 : suppression du SVG V17 qui restait affiché, remplacement par une scène cinématique WebP animée. Ecrans, données et navigation conservés.\n

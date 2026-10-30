@@ -1,4 +1,0 @@
-TSSR Studio V17 — Bandeau 100 % code SVG.
-Les moniteurs, montagnes, bureau, personnage, lampe et vapeur sont des formes SVG et animations natives.
-Aucune image générée dans le nouveau bandeau. Les cours, données et outils restent inchangés.
-Ouvrir index.html via le serveur du site comme auparavant.

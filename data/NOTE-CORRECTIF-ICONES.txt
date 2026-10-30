@@ -1,4 +1,0 @@
-TSSR - Correctif d'enregistrement + icones contextuelles.
-Installer les fichiers assets/app.js et assets/style.css dans le depot TSSR_Cours, puis Commit et Push.
-Les icones sont attribuees automatiquement selon le titre du cours; elles ne modifient pas les donnees.
-Le correctif des doublons doit encore etre valide sur le site en ligne.

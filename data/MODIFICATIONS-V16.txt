@@ -1,1 +1,0 @@
-V16 : terminal, topologie réseau et supervision animés image par image directement à l’intérieur des dalles des moniteurs ; vapeur discrète au niveau de la tasse ; nouvelle composition du bandeau. Aucun changement aux données de cours, QCM ou outils.
