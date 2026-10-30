@@ -1,3 +1,31 @@
 
 /* Gestion TSSR 25.5 — uniquement les zones d'administration et commandes */
 .mg-art-picker{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px;max-height:310px;overflow:auto;padding:10px;border:1px solid #58748755;border-radius:14px}.mg-art-choice{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px;border:1px solid #7797a355;border-radius:12px;cursor:pointer}.mg-art-choice:has(input:checked){outline:3px solid #26b9b5}.mg-art-choice img{width:70px;height:65px;object-fit:contain}.mg-art-choice input{position:absolute;top:4px;left:4px}.mg-art-choice span{font-size:11px}.mg-module-edit{margin:-9px 12px 15px;border:1px solid #66aeb344;background:#11394916;border-radius:9px;padding:7px 13px;cursor:pointer;color:inherit}.mg-card-actions{display:flex;gap:8px;justify-content:center;padding:5px 5px 14px}.mg-card-actions button{border:1px solid #66aeb344;background:#11394918;color:inherit;border-radius:9px;padding:7px 12px;cursor:pointer}.mg-restore{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:10px 0;padding:8px;border-bottom:1px solid #8884}.course-library-grid .mg-module-edit{align-self:center}.cmdstudio .cmd-explorer{display:none!important}.cmdstudio .cmd-manual{grid-template-columns:minmax(0,1fr)!important}.cmdstudio .cmd-chips button:nth-child(n+6){display:none}.cmdstudio .cmd-card-grid{grid-template-columns:repeat(auto-fill,minmax(245px,1fr))!important;gap:15px!important}.cmdstudio .cmd-card{box-shadow:none!important;transition:transform .15s,border-color .15s}.cmdstudio .cmd-card:hover{transform:translateY(-2px)}.cmdstudio .cmd-card-art{display:none!important}.cmdstudio .cmd-document{max-width:900px;margin:auto;width:100%}@media(max-width:680px){.mg-art-picker{grid-template-columns:repeat(3,1fr)}}
+
+/* V25.6 : actions intégrées à chaque carte, sans cellule de grille supplémentaire */
+.v83-chapters .mg-course-tile{position:relative;min-width:0;display:flex;align-items:stretch}
+.v83-chapters .mg-course-tile>.v83-chapter{width:100%;height:100%;min-width:0;padding-bottom:53px}
+.v83-chapters .mg-course-tile .mg-card-actions{position:absolute;right:11px;bottom:10px;z-index:2;display:flex;gap:6px;padding:0;justify-content:flex-end}
+.v83-chapters .mg-course-tile .mg-card-actions button{padding:5px 9px;border:1px solid #3a91a7;border-radius:8px;background:#082b40;color:#b5edf5;font-size:11px;font-weight:700;min-width:0;cursor:pointer}
+.v83-chapters .mg-course-tile .mg-card-actions button:hover{background:#087b94;color:white}
+.v83-chapters .mg-course-tile .v83-chapter-bottom{margin-right:145px}
+/* Bibliothèque : plus de respiration, trois cartes maximum et accents par système */
+.cmdstudio-v256 .cmd-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}
+.cmdstudio-v256 .cmd-card{min-height:210px!important;padding:19px 20px!important;border:1px solid #1b6685!important;border-left:4px solid #19bfe2!important;border-radius:15px!important;background:linear-gradient(125deg,#103f5b,#08253b 75%)!important;box-shadow:0 8px 24px #00152255!important}
+.cmdstudio-v256 .cmd-card.linux{border-left-color:#34d9a0!important;background:linear-gradient(125deg,#103d49,#092a37 75%)!important}
+.cmdstudio-v256 .cmd-card.cisco{border-left-color:#ffb04d!important;background:linear-gradient(125deg,#423245,#14273d 75%)!important}
+.cmdstudio-v256 .cmd-card-art{display:flex!important;height:39px!important;align-items:center!important;justify-content:space-between!important}
+.cmdstudio-v256 .cmd-os{font-size:25px!important}.cmdstudio-v256 .cmd-art-symbol{font-size:25px!important;opacity:.7}
+.cmdstudio-v256 .cmd-card h3{font-size:19px!important;margin:8px 0!important}
+.cmdstudio-v256 .cmd-card-tag{background:#15617a!important;color:#a9f7ff!important;border-radius:20px!important;padding:4px 10px!important}
+.cmdstudio-v256 .cmd-card.linux .cmd-card-tag{background:#165b54!important;color:#9af3c8!important}
+.cmdstudio-v256 .cmd-card.cisco .cmd-card-tag{background:#65452e!important;color:#ffd69a!important}
+.cmdstudio-v256 .cmd-card p{font-size:13px!important;line-height:1.55!important}
+.cmdstudio-v256 .cmd-card-foot button{background:#0b526c!important;border-color:#2699b8!important;border-radius:9px!important}
+.cmdstudio-v256 .cmd-card-foot button:hover{background:#078cae!important}
+.cmdstudio-v256 .cmd-chips{gap:9px!important;margin:15px 0 20px!important}
+.cmdstudio-v256 .cmd-chips button{border-radius:20px!important;padding:9px 16px!important}
+.cmdstudio-v256 .cmd-chips button:nth-child(n+6){display:inline-flex!important}
+.cmdstudio-v256 .cmd-toolbar{border-color:#257c94!important;background:linear-gradient(110deg,#103d55,#08273c)!important}
+@media(max-width:1200px){.cmdstudio-v256 .cmd-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:700px){.cmdstudio-v256 .cmd-card-grid{grid-template-columns:1fr!important}.v83-chapters .mg-course-tile .mg-card-actions button{font-size:10px}}
