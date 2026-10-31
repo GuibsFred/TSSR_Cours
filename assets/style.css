@@ -675,3 +675,38 @@ body.dark,body[data-theme="dark"],html[data-theme="dark"] body{--edu-title:#f4f9
 #articleContent a{color:var(--edu-h2)!important;text-decoration:underline}
 #articleContent hr{border:0!important;border-top:1px solid #599d9c66!important;margin:25px 0!important}
 
+
+/* V25.9 — navigation rapide des commandes, sans filtres redondants */
+.cmdstudio .cmd-quick-tabs{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 14px}
+.cmdstudio .cmd-quick-tabs .cmd-tab{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid #27536b;background:#0c3044;color:#c9e5f4;font-weight:750;cursor:pointer;transition:background .16s,border-color .16s}
+.cmdstudio .cmd-quick-tabs .cmd-tab span{font-size:11px;opacity:.75;border-radius:6px;background:#ffffff13;padding:2px 6px}
+.cmdstudio .cmd-quick-tabs .cmd-tab.active{background:#0d5269;border-color:#28c6e2;color:white;box-shadow:inset 0 0 0 1px #19b6d233}
+.cmdstudio .cmd-quick-tabs .cmd-tab.powershell.active{border-color:#a58aff;box-shadow:0 0 15px #8c65e52b}
+.cmdstudio .cmd-quick-tabs .cmd-tab.linux.active{border-color:#2bdfab;box-shadow:0 0 15px #18c69c26}
+.cmdstudio .cmd-quick-tabs .cmd-tab.windows.active{border-color:#38b9ff;box-shadow:0 0 15px #29b6ff26}
+.cmdstudio .cmd-simple-toolbar{border:1px solid #245a70;border-radius:13px;padding:12px;background:#0d3448;display:grid;gap:11px}
+.cmdstudio .cmd-simple-toolbar .cmd-toolbar-search{width:100%;max-width:none}
+.cmdstudio .cmd-family-list{display:flex;gap:7px;flex-wrap:wrap}
+.cmdstudio .cmd-family-list button{border:1px solid #2a6179;background:#0a293b;border-radius:8px;padding:7px 11px;color:#c3e2ef;cursor:pointer;font-size:12px}
+.cmdstudio .cmd-family-list button.active{background:#0c7d9b;border-color:#2bd2e8;color:white}
+.cmdstudio .cmd-card-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cmdstudio .cmd-card{min-height:0;padding:13px 14px}
+.cmdstudio .cmd-card.powershell{border-color:#7f69bf;box-shadow:inset 3px 0 #a58aff,0 0 14px #a58aff12}
+.cmdstudio .cmd-card.powershell .cmd-os{color:#bca8ff}
+.cmdstudio .cmd-card h3{font-size:16px}
+.cmdstudio .cmd-card p{font-size:12px}
+@media(max-width:1250px){.cmdstudio .cmd-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:850px){.cmdstudio .cmd-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.cmdstudio .cmd-card-grid{grid-template-columns:1fr}}
+
+/* V26.0 — Bibliothèque 12 domaines : isolée du reste du site */
+.cmdstudio-v260 .cmd-v260-domains{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 16px}
+.cmdstudio-v260 .cmd-v260-domain{position:relative;min-width:0;min-height:91px;display:flex;align-items:center;gap:12px;text-align:left;padding:13px 12px;border:1px solid var(--domain-color);border-radius:12px;color:#eaf6ff;background:linear-gradient(120deg,color-mix(in srgb,var(--domain-color) 14%,#09253a),#092338 83%);cursor:pointer;box-shadow:inset 0 0 17px color-mix(in srgb,var(--domain-color) 8%,transparent);transition:box-shadow .15s,transform .15s}
+.cmdstudio-v260 .cmd-v260-domain:hover,.cmdstudio-v260 .cmd-v260-domain.active{box-shadow:0 0 15px color-mix(in srgb,var(--domain-color) 30%,transparent),inset 0 0 0 1px var(--domain-color);transform:translateY(-1px)}
+.cmdstudio-v260 .cmd-v260-number{position:absolute;top:5px;left:6px;font-size:10px;color:var(--domain-color);font-weight:800}
+.cmdstudio-v260 .cmd-v260-symbol{width:47px;height:47px;flex:none;display:grid;place-items:center;border:1px solid var(--domain-color);border-radius:9px;color:var(--domain-color);font-size:24px;background:#071e31;margin-left:8px}
+.cmdstudio-v260 .cmd-v260-domain-text{display:flex;flex-direction:column;gap:4px;min-width:0}.cmdstudio-v260 .cmd-v260-domain-text b{font-size:13px;line-height:1.25}.cmdstudio-v260 .cmd-v260-domain-text small{font-size:10px;color:#afc8d9;line-height:1.3}.cmdstudio-v260 .cmd-v260-total{margin-left:auto;align-self:flex-start;background:var(--domain-color);color:#071d2d;border-radius:20px;padding:3px 7px;font-weight:800;font-size:11px}
+.cmdstudio-v260 .cmd-v260-searchrow{display:flex;gap:10px;align-items:center;margin-bottom:12px}.cmdstudio-v260 .cmd-v260-search{display:flex;align-items:center;gap:10px;flex:1;border:1px solid #28718b;border-radius:10px;padding:10px 14px;color:#58cbe7;background:#0a2b40}.cmdstudio-v260 .cmd-v260-search input{flex:1;width:100%;border:0;outline:0;background:transparent;color:white;font:inherit}.cmdstudio-v260 .cmd-v260-reset{border:1px solid #28647c;background:#0c3349;color:#bce6f5;border-radius:9px;padding:11px 13px;cursor:pointer}
+.cmdstudio-v260 .cmd-v260-families{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}.cmdstudio-v260 .cmd-v260-families button{border:1px solid #266078;background:#0b3048;color:#c4e2ef;border-radius:20px;padding:7px 12px;font-size:12px;cursor:pointer}.cmdstudio-v260 .cmd-v260-families button.active{background:#0898c4;color:#fff;border-color:#17d2ff}.cmdstudio-v260 .cmd-v260-count{color:#b5d7e9;margin-bottom:12px}.cmdstudio-v260 .cmd-v260-count b{color:#38d6f0}
+.cmdstudio-v260 .cmd-v260-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.cmdstudio-v260 .cmd-v260-card{min-width:0;border:1px solid color-mix(in srgb,var(--domain-color) 65%,#1c4962);border-left:4px solid var(--domain-color);border-radius:12px;padding:11px;background:linear-gradient(125deg,color-mix(in srgb,var(--domain-color) 8%,#09263a),#09283c);box-shadow:0 0 9px color-mix(in srgb,var(--domain-color) 9%,transparent);display:flex;flex-direction:column;gap:8px}.cmdstudio-v260 .cmd-v260-cardtop{display:flex;align-items:center;gap:10px;min-width:0}.cmdstudio-v260 .cmd-v260-cardicon{flex:none;display:grid;place-items:center;width:35px;height:35px;border:1px solid var(--domain-color);border-radius:7px;color:var(--domain-color);font-size:18px}.cmdstudio-v260 .cmd-v260-cardname{min-width:0;flex:1;display:flex;flex-direction:column;gap:4px}.cmdstudio-v260 .cmd-v260-cardname strong{font-size:15px;overflow-wrap:anywhere;color:#fff}.cmdstudio-v260 .cmd-v260-cardname small{font-size:10px;color:#7ed1eb}.cmdstudio-v260 .cmd-v260-cardtop button{flex:none;background:#0a3046;border:1px solid #28708b;border-radius:7px;color:#c3e9fa;padding:5px 9px;cursor:pointer}.cmdstudio-v260 .cmd-v260-card p{font-size:11px;line-height:1.4;color:#c4d7e3;margin:0;flex:1}.cmdstudio-v260 .cmd-v260-code{display:flex;align-items:center;gap:4px;min-width:0;border:1px solid #24637b;border-radius:7px;padding:5px 7px;background:#062033}.cmdstudio-v260 .cmd-v260-code code{font-size:11px;color:#dcecf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}.cmdstudio-v260 .cmd-v260-code button{border:0;background:transparent;color:#b9e4f4;cursor:pointer}
+@media(max-width:1250px){.cmdstudio-v260 .cmd-v260-domains,.cmdstudio-v260 .cmd-v260-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:850px){.cmdstudio-v260 .cmd-v260-domains,.cmdstudio-v260 .cmd-v260-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:540px){.cmdstudio-v260 .cmd-v260-domains,.cmdstudio-v260 .cmd-v260-grid{grid-template-columns:1fr}.cmdstudio-v260 .cmd-v260-searchrow{flex-direction:column;align-items:stretch}}
