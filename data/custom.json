@@ -900,5 +900,12 @@
       "download": "outils/Grille_IP_binaire_A4.pdf",
       "tags": "pdf grille imprimer octets puissances de 2"
     }
-  ]
+  ],
+  "management": {
+    "overrides": {},
+    "hidden": [
+      "chapter:01:01"
+    ],
+    "folders": []
+  }
 }
