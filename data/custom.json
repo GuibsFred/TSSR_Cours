@@ -1163,6 +1163,12 @@
         "category": "03 — Systèmes clients Microsoft (1 / 2) / Cours",
         "order": 0,
         "art": ""
+      },
+      "chapter:03:10": {
+        "title": "Le partage de ressources",
+        "category": "03 — Systèmes clients Microsoft (1 / 2) / Cours",
+        "order": 0,
+        "art": ""
       }
     },
     "hidden": [
