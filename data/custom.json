@@ -1072,7 +1072,14 @@
     }
   ],
   "management": {
-    "overrides": {},
+    "overrides": {
+      "chapter:03:09": {
+        "title": "Gestion du réseau et du pare-feu",
+        "category": "03 — Systèmes clients Microsoft (1 / 2) / Cours",
+        "order": 0,
+        "art": ""
+      }
+    },
     "hidden": [
       "chapter:01:01"
     ],
