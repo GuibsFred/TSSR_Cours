@@ -31,3 +31,12 @@
 #view .course-library-grid>.mg-module-tile>.mg-module-edit{top:13px!important;right:13px!important;z-index:7!important}
 #view:has(> .course-library-grid) .pagehead .actions,#view:has(> .course-library-grid) .page-header .actions{position:relative!important;z-index:6!important;display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:flex-end!important;gap:9px!important}
 #view:has(> .course-library-grid) .pagehead .actions .btn,#view:has(> .course-library-grid) .page-header .actions .btn{white-space:nowrap!important;min-height:40px!important;position:relative!important;z-index:7!important}
+
+/* V35 — only the Courses module-list background. One globe from approved reference, no tiling. */
+#view:has(> .course-library-grid)::before{
+ background-image:linear-gradient(90deg,#05283a 0%,rgba(5,40,58,.05) 24%,rgba(5,40,58,.05) 76%,#05283a 100%),linear-gradient(180deg,transparent 0%,transparent 60%,#05283a 100%),url('cours-globe-v35.jpg')!important;
+ background-size:100% 100%,100% 100%,auto 210px!important;
+ background-position:center top,center top,center top!important;
+ background-repeat:no-repeat,no-repeat,no-repeat!important;
+ height:240px!important;
+}
