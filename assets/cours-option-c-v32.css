@@ -40,3 +40,15 @@
  background-repeat:no-repeat,no-repeat,no-repeat!important;
  height:240px!important;
 }
+
+/* V36: globe starts after the 'Cours' heading, fills the remaining width.
+   No new artwork, no other section affected. */
+#view:has(> .course-library-grid)::before{
+ left:225px!important;right:0!important;top:0!important;height:220px!important;
+ background-image:linear-gradient(180deg,rgba(3,31,47,.04) 0%,rgba(3,31,47,.06) 54%,#05283a 100%),url('cours-globe-v36.png')!important;
+ background-size:100% 100%,100% auto!important;
+ background-position:center top,center top!important;
+ background-repeat:no-repeat,no-repeat!important;
+}
+@media(max-width:950px){#view:has(> .course-library-grid)::before{left:175px!important}}
+@media(max-width:600px){#view:has(> .course-library-grid)::before{left:0!important;opacity:.45!important}}
