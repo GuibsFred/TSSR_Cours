@@ -20,3 +20,14 @@
 .cours-c-icon-picker img{width:100px;height:76px;object-fit:contain;mix-blend-mode:screen}.cours-c-icon-picker small{font-size:10px}
 @media(max-width:1250px){#view .course-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:730px){#view .course-library-grid{grid-template-columns:1fr!important}#view .course-library-grid .module-card{grid-template-columns:145px minmax(0,1fr)!important}#view .course-library-grid .module-card-top{width:145px!important}#view .course-library-grid .module-art{width:145px!important}#view .course-library-grid .module-card h3{font-size:16px!important}}
+
+/* V33 — corrections ciblées, page Cours seulement */
+#view:has(> .course-library-grid)::before{height:245px!important;background-image:linear-gradient(180deg,rgba(2,23,37,.08) 0%,rgba(2,23,37,.15) 50%,#05283a 100%),url('cours-c-globe.jpg')!important;background-size:100% 100%,auto 174px!important;background-position:center top,center top!important;background-repeat:no-repeat!important}
+#view .course-library-grid>.mg-module-tile{position:relative!important}
+#view .course-library-grid .module-card-top{overflow:visible!important}
+#view .course-library-grid .module-index{top:0!important;left:0!important;z-index:5!important}
+#view .course-library-grid .module-art{overflow:visible!important}
+#view .course-library-grid .module-art img{mix-blend-mode:normal!important;object-fit:contain!important}
+#view .course-library-grid>.mg-module-tile>.mg-module-edit{top:13px!important;right:13px!important;z-index:7!important}
+#view:has(> .course-library-grid) .pagehead .actions,#view:has(> .course-library-grid) .page-header .actions{position:relative!important;z-index:6!important;display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:flex-end!important;gap:9px!important}
+#view:has(> .course-library-grid) .pagehead .actions .btn,#view:has(> .course-library-grid) .page-header .actions .btn{white-space:nowrap!important;min-height:40px!important;position:relative!important;z-index:7!important}
