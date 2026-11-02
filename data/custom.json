@@ -1353,6 +1353,24 @@
     "hidden": [
       "chapter:01:01"
     ],
-    "folders": []
+    "folders": [
+      {
+        "old": "03 — Systèmes clients Microsoft (1",
+        "name": "03 — Systèmes clients Microsoft"
+      },
+      {
+        "old": "04 — Systèmes clients Microsoft (2",
+        "name": "04 — Systèmes clients Microsoft  2"
+      },
+      {
+        "old": "Module additionnelle VMWare Workstation",
+        "name": "Module additionnelle VMWare Workstation"
+      }
+    ],
+    "moduleIcons": {
+      "03 — Systèmes clients Microsoft": "windows",
+      "04 — Systèmes clients Microsoft  2": "windows",
+      "Module additionnelle VMWare Workstation": "backup"
+    }
   }
 }
