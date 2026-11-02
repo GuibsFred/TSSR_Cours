@@ -1357,10 +1357,15 @@
       {
         "old": "03 — Systèmes clients Microsoft (1",
         "name": "03 — Systèmes clients Microsoft"
+      },
+      {
+        "old": "04 — Systèmes clients Microsoft (2",
+        "name": "04 — Systèmes clients Microsoft  2"
       }
     ],
     "moduleIcons": {
-      "03 — Systèmes clients Microsoft": "windows"
+      "03 — Systèmes clients Microsoft": "windows",
+      "04 — Systèmes clients Microsoft  2": "windows"
     }
   }
 }
