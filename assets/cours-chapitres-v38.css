@@ -1,0 +1,16 @@
+/* V38 — chapter cards only: professional artwork, clean separation, spacious layout. */
+#view .v83-chapters{gap:24px!important;row-gap:26px!important}
+#view .v83-chapters .mg-course-tile{min-width:0!important}
+#view .v83-chapters .v83-chapter{height:304px!important;min-height:304px!important;max-height:304px!important;border-color:#168eaa!important;background:linear-gradient(160deg,#0a344b 0%,#061d2e 65%,#041727 100%)!important;border-radius:16px!important;box-shadow:0 12px 25px #00121b66!important}
+#view .v83-chapters .v231-chapter-art{position:absolute!important;inset:43px 14px auto!important;width:calc(100% - 28px)!important;height:165px!important;display:grid!important;place-items:center!important;background:radial-gradient(ellipse at 50% 75%,#0a5a7b70,transparent 70%)!important}
+#view .v83-chapters .v231-chapter-art img{width:100%!important;height:100%!important;max-width:230px!important;max-height:164px!important;object-fit:contain!important;object-position:center!important;filter:drop-shadow(0 10px 14px #0007)!important;opacity:1!important;border-radius:0!important}
+#view .v83-chapters .v83-chapter::after{background:linear-gradient(180deg,transparent 0%,transparent 56%,#061c2caa 73%,#061b2bf5 100%)!important}
+#view .v83-chapters .v83-chapter strong{bottom:45px!important;left:17px!important;right:17px!important;max-height:55px!important;font-size:16px!important;line-height:1.3!important;text-shadow:none!important}
+#view .v83-chapters .v83-chapter-bottom{bottom:0!important;left:17px!important;right:17px!important;height:36px!important;border-top:1px solid #1e667d!important}
+#view .v83-chapters .v83-chapter-number{background:#056b86!important;border:1px solid #31c8dd!important;color:#e9fcff!important;box-shadow:none!important}
+#view .v83-chapters .mg-card-actions{top:10px!important;right:10px!important;background:#051e2b!important;border:1px solid #276b7e!important;gap:4px!important}
+#view .v83-chapters .tssr-written-label{top:19px!important;right:94px!important;font-size:11px!important}
+#view .v83-chapters .v83-module-intro{margin-bottom:22px!important}
+@media(max-width:1100px){#view .v83-chapters{gap:18px!important}}
+/* Single globe, centered inside its allotted course header, no stretching. */
+#view:has(> .course-library-grid)::before{background-size:100% 100%,100% 100%,cover!important;background-position:center top,center top,center 44%!important}
