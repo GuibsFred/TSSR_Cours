@@ -1353,6 +1353,14 @@
     "hidden": [
       "chapter:01:01"
     ],
-    "folders": []
+    "folders": [
+      {
+        "old": "03 — Systèmes clients Microsoft (1",
+        "name": "03 — Systèmes clients Microsoft (1/2)"
+      }
+    ],
+    "moduleIcons": {
+      "03 — Systèmes clients Microsoft (1/2)": "windows"
+    }
   }
 }
