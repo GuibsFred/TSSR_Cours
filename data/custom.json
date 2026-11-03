@@ -1356,11 +1356,12 @@
     "folders": [
       {
         "old": "03 — Systèmes clients Microsoft (1",
-        "name": "03 — Systèmes clients Microsoft (1/2)"
+        "name": "03 — Systèmes clients Microsoft"
       }
     ],
     "moduleIcons": {
-      "03 — Systèmes clients Microsoft (1/2)": "windows"
+      "03 — Systèmes clients Microsoft (1/2)": "windows",
+      "03 — Systèmes clients Microsoft": "windows"
     }
   }
 }
