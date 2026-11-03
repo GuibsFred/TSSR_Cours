@@ -1348,11 +1348,32 @@
         "category": "03 — Systèmes clients Microsoft (1 / 2) / Cours",
         "order": 0,
         "art": ""
+      },
+      "chapter:03:04": {
+        "title": "Tour d’horizon du système",
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 20,
+        "art": ""
+      },
+      "chapter:03:01": {
+        "title": "Présentation du matériel et initiation à VMware Workstation",
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 5,
+        "art": ""
       }
     },
     "hidden": [
       "chapter:01:01"
     ],
-    "folders": []
+    "folders": [
+      {
+        "old": "03 — Systèmes clients Microsoft (1",
+        "name": "03 — Systèmes clients Microsoft"
+      }
+    ],
+    "moduleIcons": {
+      "03 — Systèmes clients Microsoft (1/2)": "windows",
+      "03 — Systèmes clients Microsoft": "windows"
+    }
   }
 }
