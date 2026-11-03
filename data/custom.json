@@ -1354,6 +1354,12 @@
         "category": "03 — Systèmes clients Microsoft / 2) / Cours",
         "order": 20,
         "art": ""
+      },
+      "chapter:03:01": {
+        "title": "Présentation du matériel et initiation à VMware Workstation",
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 5,
+        "art": ""
       }
     },
     "hidden": [
