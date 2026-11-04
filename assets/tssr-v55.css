@@ -1,0 +1,19 @@
+/* V55 : corrections ciblees, sans modification des jeux ou de leurs scores. */
+.v54-hero{background-size:contain!important;background-position:center center!important;background-color:#031421!important;min-height:185px}
+.v54-logo{width:45px!important;height:45px!important;object-fit:contain!important;flex-shrink:0!important;border-radius:50%;margin:0 8px 0 0!important}
+header.top .logo{display:flex!important;align-items:center!important;overflow:visible!important;min-width:0}
+.v54-resources{align-content:center;align-items:center;min-height:175px;margin-top:0!important}
+.v54-resources button{min-height:96px}
+.v54-coffee-art{width:155px;min-width:155px;background:none!important;font-size:0!important}
+.v54-coffee-art img{display:block;width:100%;height:100%;max-height:235px;object-fit:contain}
+.v54-last{gap:12px;flex-wrap:wrap}.v54-last button{max-width:75%;text-align:left;white-space:normal}
+/* Les choix Ambiance s'appliquent aussi au nouveau bandeau V54/V55. */
+.v54-hero{transition:filter .3s ease,box-shadow .3s ease}
+html[data-tssr-ambiance="chalet"] .v54-hero{filter:saturate(1.15) sepia(.08)}
+html[data-tssr-ambiance="cyber"] .v54-hero{filter:saturate(1.25) hue-rotate(8deg);box-shadow:inset 0 0 25px #00caff33}
+html[data-tssr-ambiance="gaming"] .v54-hero{filter:hue-rotate(135deg) saturate(1.3);box-shadow:inset 0 0 30px #fd638f44}
+html[data-tssr-ambiance="studio"] .v54-hero{filter:saturate(.65) brightness(.9);box-shadow:inset 0 0 25px #d5e1ef33}
+#tssr-amb-menu{z-index:2147483000!important}
+@media(max-width:650px){.v54-hero{min-height:105px}.v54-coffee-art{display:none}.v54-resources{min-height:0}.v54-last button{max-width:100%}}
+
+.v23-sideextras .v23-coffee{display:none!important}

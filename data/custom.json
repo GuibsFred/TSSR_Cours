@@ -1374,6 +1374,58 @@
     "moduleIcons": {
       "03 — Systèmes clients Microsoft (1/2)": "windows",
       "03 — Systèmes clients Microsoft": "windows"
-    }
+    },
+    "notes": [
+      {
+        "id": "starter-v55-0",
+        "cmd": "ipconfig /all",
+        "desc": "Configuration réseau détaillée"
+      },
+      {
+        "id": "starter-v55-1",
+        "cmd": "netstat -n",
+        "desc": "Connexions réseau en adresses numériques"
+      },
+      {
+        "id": "starter-v55-2",
+        "cmd": "sysdm.cpl",
+        "desc": "Propriétés système Windows"
+      },
+      {
+        "id": "starter-v55-3",
+        "cmd": "ncpa.cpl",
+        "desc": "Connexions réseau Windows"
+      },
+      {
+        "id": "starter-v55-4",
+        "cmd": "services.msc",
+        "desc": "Gestionnaire des services"
+      },
+      {
+        "id": "starter-v55-5",
+        "cmd": "devmgmt.msc",
+        "desc": "Gestionnaire de périphériques"
+      },
+      {
+        "id": "starter-v55-6",
+        "cmd": "compmgmt.msc",
+        "desc": "Gestion de l’ordinateur"
+      },
+      {
+        "id": "starter-v55-7",
+        "cmd": "control",
+        "desc": "Panneau de configuration"
+      },
+      {
+        "id": "starter-v55-8",
+        "cmd": "Get-Command | Select *",
+        "desc": "Toutes les propriétés des commandes PowerShell"
+      },
+      {
+        "id": "starter-v55-9",
+        "cmd": "Get-Help Get-Command -Examples",
+        "desc": "Exemples de Get-Command"
+      }
+    ]
   }
 }
