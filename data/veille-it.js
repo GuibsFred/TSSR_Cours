@@ -1,0 +1,1 @@
+window.TSSR_NEWS = [];
