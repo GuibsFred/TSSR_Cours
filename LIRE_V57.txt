@@ -1,0 +1,7 @@
+V57 — Installation
+1. Copier tout le contenu du ZIP dans le dépôt GitHub en conservant les dossiers.
+2. Dans Supabase > SQL Editor, exécuter SUPABASE_JOURNAL_V57.sql UNE SEULE FOIS pour activer le compteur public permanent.
+3. GitHub > Actions > Veille IT : lancer « Run workflow » une fois pour remplir data/veille-it.js ; puis toutes les six heures environ automatiquement.
+4. Les articles enregistrés et le classement du carnet sont stockés dans le navigateur (localStorage), pas synchronisés entre appareils.
+5. Les flux sont francophones : aucun système de traduction automatique n'est inclus. Si les flux ne répondent pas, le journal garde les anciennes données.
+6. Les jeux et la configuration de leurs scores n'ont pas été modifiés.
