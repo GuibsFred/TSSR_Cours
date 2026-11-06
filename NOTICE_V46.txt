@@ -1,4 +1,0 @@
-TSSR V46 : Block Drop, Démineur Pro, Brick Breaker, Snake Neon.
-Pour les classements partagés, exécuter ARCADE_CLASSEMENT_SUPABASE.sql dans Supabase SQL Editor, même si la table existe déjà.
-Renseigner assets/arcade-config.js avec URL et clé anon/publishable de Supabase. Ne jamais utiliser service_role.
-Les anciens scores restent conservés.

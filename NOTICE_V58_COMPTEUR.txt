@@ -1,9 +1,0 @@
-V58 — Compteur Journal TSSR
-
-La table Supabase tssr_journal_counter et la fonction tssr_increment_journal_reads ont déjà été créées avec le SQL V57. Aucun nouveau SQL à exécuter.
-
-Une ouverture de la rubrique Journal TSSR incrémente le compteur partagé, au maximum une fois toutes les 30 minutes par navigateur (stockage local). Recherche, favoris et Lire la source ne déclenchent pas de comptage.
-
-Le compteur public s’affiche sur l’accueil. En cas d’indisponibilité Supabase, il affiche — au lieu d’un faux total local.
-
-Cette limitation par navigateur n’empêche pas tous les abus ou visites automatisées.
