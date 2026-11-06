@@ -1367,6 +1367,13 @@
         "order": 0,
         "displayNumber": "21",
         "art": ""
+      },
+      "chapter:03:03": {
+        "title": "Installation de Windows Client",
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 35,
+        "displayNumber": "35",
+        "art": ""
       }
     },
     "hidden": [
