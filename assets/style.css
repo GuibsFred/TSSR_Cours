@@ -729,3 +729,14 @@ body.dark,body[data-theme="dark"],html[data-theme="dark"] body{--edu-title:#f4f9
 .tssr-studio-home .v23-quickcard:hover,.tssr-studio-home .v81-qmodule:hover{transform:translateY(-4px)!important;box-shadow:0 18px 40px #000a,0 0 20px #14cbe322!important}
 .tssr-studio-home .v23-quickcard img,.tssr-studio-home .v81-qmodule img{object-fit:contain!important;image-rendering:auto!important}
 .tssr-studio-home .v23-sectiontitle h2{color:#e7faff!important}
+
+/* V60 : commandes de chapitre visibles et statut bien positionné */
+.v83-chapters .mg-course-tile{position:relative;min-width:0;display:flex;flex-direction:column;gap:9px}
+.v83-chapters .mg-course-tile>.v83-chapter{width:100%;flex:1;min-width:0}
+.v83-chapters .mg-card-actions{position:static!important;display:flex!important;visibility:visible!important;opacity:1!important;transform:none!important;gap:8px;justify-content:flex-end;z-index:5}
+.v83-chapters .mg-card-actions button{display:inline-flex!important;align-items:center;justify-content:center;gap:5px;min-height:33px;padding:7px 12px;border-radius:9px;background:#10374e;border:1px solid #2484a2;color:#c4f2ff;font-size:12px;font-weight:750;cursor:pointer}
+.v83-chapters .mg-card-actions button:hover{background:#15516c;border-color:#40d9ee;color:white}
+.v83-chapters .mg-card-actions button[data-hide-course]{border-color:#8b4a55;color:#ffc7cc;background:#402630}
+.v83-chapters .mg-card-actions button[data-hide-course]:hover{background:#67313b}
+.v83-chapters .tssr-written-label{top:18px!important;right:17px!important;background:#483719;border:1px solid #d4a54b;border-radius:16px;padding:5px 9px;font-size:11px!important;line-height:1!important}
+.v83-chapters .v83-chapter-top{padding-right:82px}
