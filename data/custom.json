@@ -1385,8 +1385,8 @@
       "chapter:01:02": {
         "title": "Découverte de Microsoft 365",
         "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
-        "order": 2,
-        "displayNumber": "02",
+        "order": 1,
+        "displayNumber": "01",
         "art": ""
       }
     },
