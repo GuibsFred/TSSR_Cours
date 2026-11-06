@@ -1405,7 +1405,8 @@
       }
     },
     "hidden": [
-      "chapter:01:01"
+      "chapter:01:01",
+      "base:content/04-syst-mes-clients-microsoft-2-2.md"
     ],
     "folders": [
       {
@@ -1468,6 +1469,7 @@
         "cmd": "Get-Help Get-Command -Examples",
         "desc": "Exemples de Get-Command"
       }
-    ]
+    ],
+    "moduleOrder": []
   }
 }
