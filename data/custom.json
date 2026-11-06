@@ -1374,6 +1374,13 @@
         "order": 35,
         "displayNumber": "35",
         "art": ""
+      },
+      "chapter:01:03": {
+        "title": "Nortions de base de Word",
+        "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
+        "order": 3,
+        "displayNumber": "03",
+        "art": ""
       }
     },
     "hidden": [
