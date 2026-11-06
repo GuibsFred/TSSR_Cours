@@ -1,5 +1,13 @@
 window.TSSR_NEWS = [
   {
+    "title": "OpenAI lance GPT-6 Cyber : son modèle IA taillé pour trouver et exploiter des failles",
+    "summary": "OpenAI lance GPT-6 Cyber, réservé à Daybreak Red : 948 exploits Linux, 81 failles graves dans Firefox et un modèle entraîné à rester dans son périmètre. Le post OpenAI lance GPT-6 Cyber : son modèle IA taillé pour trouver et exploiter des failles a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/openai-gpt-6-cyber-exploits-linux-firefox-daybreak-red/",
+    "date": "2026-11-06",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
     "title": "CleanYourTV : comment nettoyer une box Android TV avec l’IA (sans root)",
     "summary": "Supprimez les pubs de l'accueil de votre box Android TV avec CleanYourTV et Claude Code, ou une app gratuite : ADB, prérequis, thèmes et précautions. Le post CleanYourTV : comment nettoyer une box Android TV avec l’IA (sans root) a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/cleanyourtv-nettoyer-box-android-tv/",
@@ -267,14 +275,6 @@ window.TSSR_NEWS = [
     "title": "Claude Code : qu’est-ce qu’un Skill et comment en créer un ?",
     "summary": "Découvrez ce qu'est un Skill dans Claude Code et comment en créer un : structure du fichier SKILL.md, emplacement, exemples et bonnes pratiques. Le post Claude Code : qu’est-ce qu’un Skill et comment en créer un ? a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/claude-code-quest-ce-quun-skill-et-comment-en-creer-un/",
-    "date": "2026-11-03",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "GPT-6 Astra a touché 0,016 % des poids de Qwen : son score en maths est multiplié par 6",
-    "summary": "GPT-6 Astra a modifié 0,016 % des poids de Qwen3.5-0.8B, sans entraînement : son score MATH-500 passe de 7,9 % à 48,1 %. Quand un LLM en améliore un autre. Le post GPT-6 Astra a touché 0,016 % des poids de Qwen : son score en maths est multiplié par 6 a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/gpt-6-astra-weight-space-programming-poids-ia/",
     "date": "2026-11-03",
     "source": "IT-Connect",
     "category": "Infrastructures"
