@@ -1353,8 +1353,7 @@
         "title": "Tour d’horizon du système",
         "category": "03 — Systèmes clients Microsoft / 2) / Cours",
         "order": 20,
-        "art": "",
-        "displayNumber": "22"
+        "art": ""
       },
       "chapter:03:01": {
         "title": "Présentation du matériel et initiation à VMware Workstation",
