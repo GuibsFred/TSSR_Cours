@@ -1374,6 +1374,27 @@
         "order": 35,
         "displayNumber": "35",
         "art": ""
+      },
+      "chapter:01:03": {
+        "title": "Nortions de base de Word",
+        "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
+        "order": 3,
+        "displayNumber": "03",
+        "art": ""
+      },
+      "chapter:01:02": {
+        "title": "Découverte de Microsoft 365",
+        "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
+        "order": 1,
+        "displayNumber": "01",
+        "art": ""
+      },
+      "chapter:01:04": {
+        "title": "Notions de base d’Excel",
+        "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
+        "order": 4,
+        "displayNumber": "04",
+        "art": ""
       }
     },
     "hidden": [
