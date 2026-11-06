@@ -1388,6 +1388,13 @@
         "order": 1,
         "displayNumber": "01",
         "art": ""
+      },
+      "chapter:01:04": {
+        "title": "Notions de base d’Excel",
+        "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
+        "order": 4,
+        "displayNumber": "04",
+        "art": ""
       }
     },
     "hidden": [
