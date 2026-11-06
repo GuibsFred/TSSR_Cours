@@ -1380,7 +1380,7 @@
         "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
         "order": 3,
         "displayNumber": "03",
-        "art": ""
+        "art": "assets/icons-apps/word.svg"
       },
       "chapter:01:02": {
         "title": "Découverte de Microsoft 365",
