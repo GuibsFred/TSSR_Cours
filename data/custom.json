@@ -1477,6 +1477,9 @@
         "desc": "Exemples de Get-Command"
       }
     ],
-    "moduleOrder": []
+    "moduleOrder": [],
+    "goldModules": {
+      "01 — Microsoft 365 — Outils collaboratifs": true
+    }
   }
 }
