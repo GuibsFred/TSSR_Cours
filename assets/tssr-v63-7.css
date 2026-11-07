@@ -1,0 +1,5 @@
+/* V63.7 — les statuts publiés restent visibles aux visiteurs. */
+body .mg-module-tile.tssr-module-finished .module-card{border:2px solid #e9b647!important;box-shadow:0 0 0 1px #f5d07a80,0 0 15px 3px #e7aa4380,inset 0 0 13px #bd832220!important}
+body .mg-module-tile.tssr-module-finished .module-index{background:linear-gradient(135deg,#ffe38c,#b77b16)!important;color:#241806!important;border-color:#ffda6b!important}
+body:not(.tssr-admin) .tssr-gold-admin{display:none!important}
+body.tssr-admin .tssr-gold-admin{display:grid!important;place-items:center}
