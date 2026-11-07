@@ -1,5 +1,13 @@
 window.TSSR_NEWS = [
   {
+    "title": "Clap de fin pour le Tesla Cybertruck : chronique d’un échec industriel annoncé",
+    "summary": "Après trois petites années et quelque 70 000 exemplaires écoulés, Tesla confirme l'arrêt progressif de la production du Cybertruck au Texas d'ici mi-2027.",
+    "url": "https://www.numerama.com/vroom/2369931-clap-de-fin-pour-le-tesla-cybertruck-chronique-dun-echec-industriel-annonce.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "NIKKE : la version PC du jeu piégée pour installer un redoutable malware",
     "summary": "Le lanceur PC de NIKKE a chargé un malware depuis le CDN de Level Infinite : contrôle à distance, vol de secrets et de cryptos. Voici ce qu'il faut vérifier. Le post NIKKE : la version PC du jeu piégée pour installer un redoutable malware a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/nikke-lanceur-pc-pirate-malware-k2f/",
@@ -163,14 +171,6 @@ window.TSSR_NEWS = [
     "title": "Tant pis pour les superstitieux : SpaceX choisit un vendredi 13 pour le double rattrapage inédit de Starship",
     "summary": "SpaceX vise le vendredi 13 novembre 2026 pour le quinzième vol d'essai de Starship, sa méga-fusée. C'est la première date donnée publiquement par un dirigeant de l'entreprise, pour un vol où SpaceX prévoit de rattraper les deux étages avec sa tour.",
     "url": "https://www.numerama.com/sciences/2369107-tant-pis-pour-les-superstitieux-spacex-choisit-un-vendredi-13-pour-le-double-rattrapage-inedit-de-starship.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Pendant dix ans, taper 300 fois la lettre A suffisait pour pirater des serveurs Linux",
-    "summary": "Un chercheur a découvert qu’il suffisait de saisir un mot de passe de plus de 256 caractères pour ouvrir, via OpenSSH, des comptes pourtant verrouillés. Cette faille, présente sur des systèmes Linux qui utilisent la bibliothèque musl, vient d’être corrigée.",
-    "url": "https://www.numerama.com/cyberguerre/2368965-pendant-dix-ans-taper-300-fois-la-lettre-a-suffisait-pour-pirater-des-serveurs-linux.html",
     "date": "2026-11-06",
     "source": "Numerama",
     "category": "Cybersécurité"
