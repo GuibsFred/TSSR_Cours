@@ -1407,7 +1407,8 @@
     },
     "hidden": [
       "chapter:01:01",
-      "base:content/04-syst-mes-clients-microsoft-2-2.md"
+      "base:content/04-syst-mes-clients-microsoft-2-2.md",
+      "chapter:01:02"
     ],
     "folders": [
       {
