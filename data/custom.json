@@ -1392,8 +1392,8 @@
       "chapter:01:04": {
         "title": "Notions de base d’Excel",
         "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
-        "order": 4,
-        "displayNumber": "04",
+        "order": 2,
+        "displayNumber": "02",
         "art": "assets/icons-apps/excel.svg"
       },
       "chapter:01:05": {
