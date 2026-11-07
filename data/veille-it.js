@@ -1,7 +1,87 @@
 window.TSSR_NEWS = [
   {
+    "title": "Firefox cache un jeu Snake dans sa barre d’adresse : voici comment le lancer",
+    "summary": "Un calcul égal à 150 dans la barre d'adresse de Firefox débloque un jeu Snake caché. Voici comment lancer cet easter egg dans le navigateur Firefox. Le post Firefox cache un jeu Snake dans sa barre d’adresse : voici comment le lancer a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/firefox-jeu-snake-cache-barre-adresse/",
+    "date": "2026-11-07",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "LiberNT : ni Windows, ni Linux, qu’est-ce que cet OS open source ?",
+    "summary": "J'ai testé LiberNT dans une machine virtuelle, un OS libre basé sur ReactOS qui veut ressembler à Windows 11 : bureau, applications et même un terminal Linux. Le post LiberNT : ni Windows, ni Linux, qu’est-ce que cet OS open source ? a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/libernt-test-os-libre-windows-11/",
+    "date": "2026-11-07",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Test Reolink OMVI 3i WiFi : une caméra triple objectif avec suivi automatique",
+    "summary": "Test de la Reolink OMVI 3i WiFi : une caméra triple objectif avec vue panoramique à 180°, caméra PT 4K, suivi automatique, IA locale et Wi-Fi 6. Le post Test Reolink OMVI 3i WiFi : une caméra triple objectif avec suivi automatique a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/test-reolink-omvi-3i-wifi/",
+    "date": "2026-11-07",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Dragon Ball Super ne reviendra peut-être pas, tout comme certains studios d’EA, tandis que Nicolas Cage revient dans l’un de ses meilleurs rôles, c’est le récap pop culture de la semaine",
+    "summary": "La suite de Dragon Ball Super se fait toujours attendre depuis le décès d'Akira Toriyama, et les fans du manga ont de moins en moins d'espoir de découvrir un nouveau chapitre un jour. Du côté d'EA, les joueuses et les joueurs font déjà le deuil des studios qu'ils ont tant aimés et qui ont fermé leurs portes. Nicolas Cage, lui, est toujours bien présent et revient dans la suite de Lord of War. Voici le récap pop culture de la semaine !",
+    "url": "https://www.numerama.com/pop-culture/2369591-dragon-ball-super-ne-reviendra-peut-etre-pas-tout-comme-certains-studios-dea-tandis-que-nicolas-cage-revient-dans-lun-de-ses-meilleurs-roles-cest-le-recap-pop-culture-de-la-semaine.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "À bord de sa station spatiale, la Chine frôle le zéro absolu et bat un record du monde",
+    "summary": "Des physiciens chinois ont refroidi des atomes de rubidium à 9,7 picokelvins à bord de la station spatiale Tiangong, d'après une étude parue ce jeudi 5 novembre 2026 dans la revue Science. Ils font 4 fois mieux que le précédent record, établi en Allemagne en 2021.",
+    "url": "https://www.numerama.com/sciences/2370075-a-bord-de-sa-station-spatiale-la-chine-frole-le-zero-absolu-et-bat-un-record-du-monde.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Cet astronaute canadien capture une photo vertigineuse à 400 kilomètres au-dessus de la Terre",
+    "summary": "L'astronaute canadien Joshua Kutryk a publié sur X une photo de sa sortie dans l'espace, à quelque 400 kilomètres au-dessus de la Terre. Ce jeudi 5 novembre 2026, il s'est aventuré hors de l'ISS pour installer un nouveau panneau solaire.",
+    "url": "https://www.numerama.com/sciences/2370029-cet-astronaute-canadien-capture-une-photo-vertigineuse-a-400-kilometres-au-dessus-de-la-terre.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Ce site rétro affiche la météo d’aujourd’hui comme une télé des années 1990, musique d’ascenseur comprise",
+    "summary": "Consulter la météo du jour, comme si vous regardiez une chaîne câblée américaine des années 1990 ? C'est possible sur RetroCast Now. Ce site créé par The Weather Channel a été remis en avant sur X ce vendredi 6 novembre 2026.",
+    "url": "https://www.numerama.com/politique/2369979-ce-site-retro-affiche-la-meteo-daujourdhui-comme-une-tele-des-annees-1990-musique-dascenseur-comprise.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Le manga Zelda Ocarina of Time prend des libertés avec le jeu, et ça vaut le détour",
+    "summary": "[Deal du jour] Le remake de The Legend of Zelda : Ocarina of Time est sorti le 5 novembre 2026 sur Switch 2. C'est le bon moment pour rappeler que son adaptation en manga existe dans une Perfect Edition.",
+    "url": "https://www.numerama.com/pop-culture/2369437-le-manga-zelda-ocarina-of-time-prend-des-libertes-avec-le-jeu-et-ca-vaut-le-detour.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "El Niño record : 2027 a 96 % de chances de battre tous les records de chaleur",
+    "summary": "L'année 2027 devrait finir autour de +1,74 °C au-dessus de l'ère préindustrielle, avec 96 % de chances de battre le record de chaleur mondial, selon une analyse publiée le 3 novembre 2026 par Carbon Brief. En cause, un El Niño qui a déjà pulvérisé son record d'intensité en septembre.",
+    "url": "https://www.numerama.com/sciences/2369951-el-nino-record-2027-a-96-de-chances-de-battre-tous-les-records-de-chaleur.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Vers le Rafale du futur, une facture à l’élu qui veut taxer les gigaoctets et la preuve secrète d’OpenAI – le recap’ tech de la semaine",
+    "summary": "La taxe sur les gigaoctets a connu un fort écho médiatique, jusqu'au rejet du projet de loi des finances lors de son examen à l'Assemblée nationale. Mais ce n'est peut-être que partie remise... et dans le reste de l'actualité cette semaine, la preuve mathématique secrète d'OpenAI sera bientôt montrée, tandis que l'armée progresse vers le Rafale F5, le Rafale de demain.",
+    "url": "https://www.numerama.com/tech/2369173-vers-le-rafale-du-futur-une-facture-a-lelu-qui-veut-taxer-les-gigaoctets-et-la-preuve-secrete-dopenai-le-recap-tech-de-la-semaine.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Clap de fin pour le Tesla Cybertruck : chronique d’un échec industriel annoncé",
-    "summary": "Après trois petites années et quelque 70 000 exemplaires écoulés, Tesla confirme l'arrêt progressif de la production du Cybertruck au Texas d'ici mi-2027.",
+    "summary": "Après trois petites années et quelque 70 000 exemplaires écoulés, Tesla confirme l'arrêt progressif de la production du Cybertruck au Texas d'ici à la mi-2027.",
     "url": "https://www.numerama.com/vroom/2369931-clap-de-fin-pour-le-tesla-cybertruck-chronique-dun-echec-industriel-annonce.html",
     "date": "2026-11-07",
     "source": "Numerama",
@@ -115,62 +195,6 @@ window.TSSR_NEWS = [
     "title": "Amazon retire déjà 300 € à l’iPhone Duo pour le Black Friday",
     "summary": "[Deal du jour] L'iPhone Duo, le tout premier smartphone pliant d'Apple, est déjà moins cher chez Amazon. La version 1 To passe à 2 780,10 €, contre 3 089 € habituellement, soit une économie de 308,90 €.",
     "url": "https://www.numerama.com/tech/2369315-amazon-retire-deja-300-e-a-liphone-duo-pour-le-black-friday.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "« C’est fini » : Adam Driver confirme qu’il ne rejouera plus jamais Kylo Ren dans Star Wars",
-    "summary": "Invité le 4 novembre 2026 de l'émission américaine The Rich Eisen Show, Adam Driver a affirmé qu'il ne rejouerait plus jamais Kylo Ren dans Star Wars. « The Hunt for Ben Solo », le film qu'il a développé avec Steven Soderbergh et que Disney a refusé, ne verra donc sans doute jamais le jour, malgré la campagne des fans.",
-    "url": "https://www.numerama.com/pop-culture/2369313-cest-fini-adam-driver-confirme-quil-ne-rejouera-plus-jamais-kylo-ren-dans-star-wars.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "« Ne méprisez pas l’intelligence de vos utilisateurs » : des développeurs accusent Claude Code de divulguer leur adresse email à des sites web",
-    "summary": "Un ticket GitHub très commenté accuse Claude Code d’avoir transmis l’adresse email de ses utilisateurs à des sites tiers pendant des recherches web. Un correctif existe depuis le 3 novembre, mais il ne bloque qu’une partie des cas.",
-    "url": "https://www.numerama.com/cyberguerre/2369181-ne-meprisez-pas-lintelligence-de-vos-utilisateurs-des-developpeurs-accusent-claude-code-de-divulguer-leur-adresse-email-a-des-sites-web.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Mass Effect : l’ultime chapitre de la saga annulée aura le droit à un documentaire",
-    "summary": "Deux semaines après l'annonce coup de poing de la fermeture du studio mythique par Electronic Arts, un long-métrage documentaire prépare sa sortie pour retracer la trajectoire exceptionnelle et le clap de fin de l'équipe derrière Mass Effect et Baldur's Gate.",
-    "url": "https://www.numerama.com/pop-culture/2369239-mass-effect-lultime-chapitre-de-la-saga-annulee-aura-le-droit-a-un-documentaire.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "À 503,17 km/h sur une route publique, la Yangwang U9 Xtreme de BYD devient la voiture la plus rapide du monde",
-    "summary": "Sur une route publique fermée pour l'occasion à Abu Dhabi, BYD a réussi l'exploit de franchir la barre des 500 km/h. Le missile employé pour ce record n'est autre que l'hypercar électrique Yangwang U9 Xtreme, forte de 3 019 ch.",
-    "url": "https://www.numerama.com/vroom/2369115-a-50317-km-h-sur-une-route-publique-la-yangwang-u9-xtreme-de-byd-devient-la-voiture-la-plus-rapide-du-monde.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Si vous voulez découvrir GTA 6 sur grand écran, ce TV Xiaomi Mini LED 144 Hz tombe au bon moment",
-    "summary": "[Deal du jour] GTA 6 sort le 19 novembre 2026, et AliExpress propose justement le Xiaomi TV S Mini LED 55 2025 à 378,29 € avec un code promo. Ce téléviseur 4K de 55 pouces à rétroéclairage QD-Mini LED a trois ports HDMI 2.1 compatibles VRR et ALLM, les fonctions qu'attendent les consoles.",
-    "url": "https://www.numerama.com/tech/2369169-si-vous-voulez-decouvrir-gta-6-sur-grand-ecran-ce-tv-xiaomi-mini-led-144-hz-tombe-au-bon-moment.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Surprise, la Terre a une nouvelle mini-lune",
-    "summary": "Le Minor Planet Center a confirmé le 29 octobre 2026 que la Terre héberge une nouvelle mini-lune, un caillou de 1 à 2 mètres baptisé 2026 QQ8. Des scientifiques l'ont même soupçonné d'être un débris spatial, allant jusqu'à parler d'un reste de la mission Apollo 13.",
-    "url": "https://www.numerama.com/sciences/2368985-une-nouvelle-mini-lune-tourne-autour-de-la-terre-et-on-a-cru-que-cetait-un-morceau-dapollo-13.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Tant pis pour les superstitieux : SpaceX choisit un vendredi 13 pour le double rattrapage inédit de Starship",
-    "summary": "SpaceX vise le vendredi 13 novembre 2026 pour le quinzième vol d'essai de Starship, sa méga-fusée. C'est la première date donnée publiquement par un dirigeant de l'entreprise, pour un vol où SpaceX prévoit de rattraper les deux étages avec sa tour.",
-    "url": "https://www.numerama.com/sciences/2369107-tant-pis-pour-les-superstitieux-spacex-choisit-un-vendredi-13-pour-le-double-rattrapage-inedit-de-starship.html",
     "date": "2026-11-06",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -310,30 +334,6 @@ window.TSSR_NEWS = [
     "date": "2026-11-04",
     "source": "CERT-FR",
     "category": "Sécurité"
-  },
-  {
-    "title": "Braquage numérique au Crédit Mutuel Arkéa : la banque confirme l’attaque, 133 millions de dollars en jeu",
-    "summary": "Plus de 133 millions de dollars auraient été détournés au Crédit Mutuel Arkéa, maison mère de Fortuneo. La banque confirme une attaque. Voici ce que l'on sait. Le post Braquage numérique au Crédit Mutuel Arkéa : la banque confirme l’attaque, 133 millions de dollars en jeu a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/cyberattaque-credit-mutuel-arkea-fortuneo-133-millions/",
-    "date": "2026-11-04",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Cyberattaque contre un prestataire de l’EFS : des congélateurs de plasma réglés à 110 °C",
-    "summary": "Un prestataire de l'EFS piraté, des congélateurs de plasma réglés à 110 °C au lieu de -30 °C. Ce que l'on sait de l'attaque qui touche le secteur de la santé. Le post Cyberattaque contre un prestataire de l’EFS : des congélateurs de plasma réglés à 110 °C a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/cyberattaque-efs-coolworld-congelateurs-plasma/",
-    "date": "2026-11-04",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Pas d’IA, pas de recherche Google : c’est ce que veut imposer Google aux écoles",
-    "summary": "Gemini et Google Search seront désactivés par défaut sur les comptes élèves. Une école qui refuse l'IA de Google perdra aussi l'accès au moteur de recherche. Le post Pas d’IA, pas de recherche Google : c’est ce que veut imposer Google aux écoles a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/google-ecoles-ia-gemini-recherche-desactivee/",
-    "date": "2026-11-04",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
   },
   {
     "title": "Multiples vulnérabilités dans NetApp ONTAP 9 (03 novembre 2026)",
