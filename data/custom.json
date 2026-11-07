@@ -1399,8 +1399,8 @@
       "chapter:01:05": {
         "title": "Utilisation et dépannage d’Outlook",
         "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
-        "order": 5,
-        "displayNumber": "05",
+        "order": 3,
+        "displayNumber": "03",
         "art": "assets/icons-apps/outlook.svg"
       }
     },
