@@ -1479,7 +1479,9 @@
     ],
     "moduleOrder": [],
     "goldModules": {
-      "01 — Microsoft 365 — Outils collaboratifs": true
+      "01 — Microsoft 365 — Outils collaboratifs": true,
+      "02 — Bases des réseaux": true,
+      "03 — Systèmes clients Microsoft": true
     }
   }
 }
