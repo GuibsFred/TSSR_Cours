@@ -1378,8 +1378,8 @@
       "chapter:01:03": {
         "title": "Nortions de base de Word",
         "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
-        "order": 1,
-        "displayNumber": "01",
+        "order": 3,
+        "displayNumber": "03",
         "art": "assets/icons-apps/word.svg"
       },
       "chapter:01:02": {
@@ -1392,23 +1392,21 @@
       "chapter:01:04": {
         "title": "Notions de base d’Excel",
         "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
-        "order": 2,
-        "displayNumber": "02",
+        "order": 4,
+        "displayNumber": "04",
         "art": "assets/icons-apps/excel.svg"
       },
       "chapter:01:05": {
         "title": "Utilisation et dépannage d’Outlook",
         "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
-        "order": 3,
-        "displayNumber": "03",
+        "order": 5,
+        "displayNumber": "05",
         "art": "assets/icons-apps/outlook.svg"
       }
     },
     "hidden": [
       "chapter:01:01",
-      "base:content/04-syst-mes-clients-microsoft-2-2.md",
-      "chapter:01:02",
-      "chapter:01:07"
+      "base:content/04-syst-mes-clients-microsoft-2-2.md"
     ],
     "folders": [
       {
@@ -1477,11 +1475,6 @@
         "desc": "Exemples de Get-Command"
       }
     ],
-    "moduleOrder": [],
-    "goldModules": {
-      "01 — Microsoft 365 — Outils collaboratifs": true,
-      "02 — Bases des réseaux": true,
-      "03 — Systèmes clients Microsoft": true
-    }
+    "moduleOrder": []
   }
 }
