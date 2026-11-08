@@ -24,46 +24,6 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Le jour où les astronautes d’Apollo 11 ont suivi un entraînement spécial pour ne pas dire de gros mots",
-    "summary": "Comme la mission Apollo 11 était suivie en direct à la télévision par des centaines de millions de personnes, ses astronautes devaient éviter de dire des grossièretés devant toute la planète. La Nasa a pris le problème très au sérieux.",
-    "url": "https://www.numerama.com/sciences/2367567-le-jour-ou-les-astronautes-dapollo-11-ont-suivi-un-entrainement-special-pour-ne-pas-dire-de-gros-mots.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Dans 20-30 ans, y’en aura plus : voici comment sauvegarder vous-même les sites web de notre époque",
-    "summary": "Une archiviste appelle les internautes à sauvegarder eux-mêmes les sites web qu’ils aiment, avant qu’ils ne disparaissent. Voici les outils qu’elle recommande, et d’autres options fiables pour le faire selon vos besoins.",
-    "url": "https://www.numerama.com/tech/2366929-dans-20-30-ans-yen-aura-plus-voici-comment-sauvegarder-vous-meme-les-sites-web-de-notre-epoque.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Une marque pénalisé par l’Europe sans le vouloir, Electra change ses abonnements et BYD bat le record de vitesse : le récap Vroom de la semaine",
-    "summary": "À la une sur Vroom cette semaine : Toyota pourra se retrouver pénaliser par un projet de loi européen qui vise des marques chinoises, Electra brise sa promesse de ne pas toucher à ses forfaits et BYD fixe le nouveau record de vitesse pour une voiture de route à 503,17 km/h.",
-    "url": "https://www.numerama.com/vroom/2369813-une-marque-penalise-par-leurope-sans-le-vouloir-electra-change-ses-abonnements-et-byd-bat-le-record-de-vitesse-le-recap-vroom-de-la-semaine.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Netflix : les 10 meilleures comédies en 2026 pour une fin d’année plus joyeuse",
-    "summary": "Parce qu'on a tous besoin de débrancher le cerveau après une semaine éreintante, voici notre sélection des meilleures comédies disponibles actuellement sur Netflix. Blockbusters survitaminés, parodies cultes, pépites françaises et comédies romantiques : de quoi soigner toutes vos pannes de rire.",
-    "url": "https://www.numerama.com/pop-culture/2368699-netflix-les-10-meilleures-comedies-en-2026-pour-une-fin-dannee-plus-joyeuse.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Final Fantasy 10 a directement été inspiré par Star Wars et ses courses de pods",
-    "summary": "Vingt-cinq ans après la sortie de Final Fantasy X, Yoshinori Kitase, qui avait réalisé le jeu, est revenu auprès d'IGN sur l'origine d'une des activités les plus emblématiques de l'aventure : le Blitzball. Pour imaginer ce sport aquatique propre à Spira, le producteur de Square Enix s'est directement inspiré des courses de modules de Star Wars : Épisode I.",
-    "url": "https://www.numerama.com/pop-culture/2368669-final-fantasy-10-a-directement-ete-inspire-par-star-wars-et-ses-courses-de-pods.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Dragon Ball Super ne reviendra peut-être pas, tout comme certains studios d’EA, tandis que Nicolas Cage revient dans l’un de ses meilleurs rôles, c’est le récap pop culture de la semaine",
     "summary": "La suite de Dragon Ball Super se fait toujours attendre depuis le décès d'Akira Toriyama, et les fans du manga ont de moins en moins d'espoir de découvrir un nouveau chapitre un jour. Du côté d'EA, les joueuses et les joueurs font déjà le deuil des studios qu'ils ont tant aimés et qui ont fermé leurs portes. Nicolas Cage, lui, est toujours bien présent et revient dans la suite de Lord of War. Voici le récap pop culture de la semaine !",
     "url": "https://www.numerama.com/pop-culture/2369591-dragon-ball-super-ne-reviendra-peut-etre-pas-tout-comme-certains-studios-dea-tandis-que-nicolas-cage-revient-dans-lun-de-ses-meilleurs-roles-cest-le-recap-pop-culture-de-la-semaine.html",
@@ -184,14 +144,6 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Projet informatique qui dérape : cinq réflexes juridiques pour la DSI",
-    "summary": "Retards qui s’accumulent, livrables non conformes, périmètre qui glisse. Quand un projet informatique dérape, les premières semaines pèsent lourd sur la suite. Les conseils de Maître François-Xavier Langlais, avocat associé du cabinet Quantic Avocats.",
-    "url": "https://www.lemondeinformatique.fr/articles/projet-informatique-qui-derape-cinq-reflexes-jurid",
-    "date": "2026-11-06",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
     "title": "« Être une femme, ça aide » : l’astronaute Sophie Adenot raconte comment son corps a vécu l’espace",
     "summary": "De retour sur Terre, l'astronaute française Sophie Adenot a livré un témoignage rare et intime sur les réactions du corps féminin en microgravité, entre adaptation facilitée et défis physiques.",
     "url": "https://www.numerama.com/sciences/2369573-etre-une-femme-ca-aide-lastronaute-sophie-adenot-raconte-comment-son-corps-a-vecu-lespace.html",
@@ -203,6 +155,46 @@ window.TSSR_NEWS = [
     "title": "Black Friday 2026 : voici les seules offres qui méritent votre argent chez Amazon, Fnac, Boulanger",
     "summary": "Une semaine de « Black November » derrière nous, et déjà de belles affaires chez Amazon, la Fnac, Boulanger ou Darty. On a fait le tri, et ce live s’enrichit chaque jour de nos nouvelles trouvailles.",
     "url": "https://www.numerama.com/tech/2363357-black-friday-2026-voici-les-offres-qui-meritent-votre-argent-chez-amazon-fnac-boulanger-ce-vendredi.html",
+    "date": "2026-11-06",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "The Terminal List : une nouvelle suite arrive sur Prime Video avec un changement majeur",
+    "summary": "James Reece s'apprête à faire parler la poudre une fois de plus sur Prime Video. La plateforme de streaming d'Amazon a annoncé ce jeudi 5 novembre 2026 la commande d'une nouvelle série, un thriller militaire centré sur le personnage incarné par Chris Pratt.",
+    "url": "https://www.numerama.com/pop-culture/2369367-the-terminal-list-une-nouvelle-suite-arrive-sur-prime-video-avec-un-changement-majeur.html",
+    "date": "2026-11-06",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Stranger Things sera de retour dans une nouvelle série préquelle prévue pour 2028",
+    "summary": "Alors que les aventures d'Eleven et de ses amis sont terminées, Netflix n'en a pas fini avec Stranger Things. À l'occasion du Stranger Things Day de ce vendredi 6 novembre, la plateforme a dévoilé Other Worlds: A Stranger Things Adventure, une nouvelle série qui nous ramènera dans les années 1950.",
+    "url": "https://www.numerama.com/pop-culture/2369601-stranger-things-netflix-annonce-par-surprise-une-nouvelle-serie-prequelle-prevue-pour-2028.html",
+    "date": "2026-11-06",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Assez rapides pour faire Paris-New York en 10 minutes : les sondes Escapade foncent enfin vers Mars",
+    "summary": "Ce samedi 7 et le lundi 9 novembre, les deux vaisseaux de la mission Escapade, revenus frôler la Terre après un an passé à tourner autour du point de Lagrange L2, vont se propulser vers Mars. Une étape clé pour ces sondes, qui vont se servir de la gravité terrestre et de leur moteur pour accélérer.",
+    "url": "https://www.numerama.com/sciences/2369433-assez-rapides-pour-faire-paris-new-york-en-10-minutes-les-sondes-escapade-foncent-enfin-vers-mars.html",
+    "date": "2026-11-06",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Singles Day 2026 : les promotions d’AliExpress continuent, voici les meilleures offres à saisir",
+    "summary": "Lancé le 1er novembre, le Singles Day 2026 se poursuit jusqu'au 18 novembre, avec une nouvelle occasion de profiter de réductions sur des milliers de produits, notamment dans la high-tech. Smartphones, consoles, casques audio, objets connectés ou encore accessoires : les promotions sont nombreuses, mais toutes ne se valent pas. Numerama sélectionne les bons plans qui méritent vraiment le détour, avec les codes promo à utiliser pour obtenir les prix affichés.",
+    "url": "https://www.numerama.com/tech/2365399-singles-day-2026-les-promotions-daliexpress-continuent-voici-les-meilleures-offres-a-saisir.html",
+    "date": "2026-11-06",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Amazon retire déjà 300 € à l’iPhone Duo pour le Black Friday",
+    "summary": "[Deal du jour] L'iPhone Duo, le tout premier smartphone pliant d'Apple, est déjà moins cher chez Amazon. La version 1 To passe à 2 780,10 €, contre 3 089 € habituellement, soit une économie de 308,90 €.",
+    "url": "https://www.numerama.com/tech/2369315-amazon-retire-deja-300-e-a-liphone-duo-pour-le-black-friday.html",
     "date": "2026-11-06",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -382,14 +374,6 @@ window.TSSR_NEWS = [
     "date": "2026-11-03",
     "source": "CERT-FR",
     "category": "Sécurité"
-  },
-  {
-    "title": "IA générative : du POC à la production, les choix structurants pour la DSI",
-    "summary": "Passer une IA générative du POC à la production revient à trancher cinq décisions : l’architecture en couches, le type de modèle, la méthode d’adaptation (RAG, fine-tuning ou agents), l’hébergement et le cadre règlementaire. L’implémentation d’IA générative se juge au coût par usage, à la tenue en charge et à la conformité, pas à une démonstration réussie. Toute stratégie IA générative de DSI gagne à hiérarchiser ces choix avant le moindre chantier de mise en production.",
-    "url": "https://www.lemondeinformatique.fr/articles/ia-generative-du-poc-a-la-production-les-choix-str",
-    "date": "2026-10-28",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
   },
   {
     "title": "Multiples vulnérabilités dans Roundcube Webmail (19 octobre 2026)",
