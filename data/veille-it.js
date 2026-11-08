@@ -1,5 +1,37 @@
 window.TSSR_NEWS = [
   {
+    "title": "En 1985, un pilote de F-15 a détruit un satellite en orbite avec un missile, et il reste le seul à l’avoir fait depuis un avion",
+    "summary": "Le 13 septembre 1985, le major américain Wilbert « Doug » Pearson a détruit le satellite Solwind, à 555 kilomètres d’altitude, avec un missile tiré depuis son F-15 Eagle. Plus de 40 ans après, il reste le seul pilote à avoir abattu un satellite depuis un avion.",
+    "url": "https://www.numerama.com/tech/2366915-en-1985-un-pilote-de-f-15-a-detruit-un-satellite-en-orbite-avec-un-missile-et-il-reste-le-seul-a-lavoir-fait-depuis-un-avion.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GPT-6 Astra répare Qwen sans le réentraîner, PostgreSQL 19 prend du retard à cause de l’IA, OpenAI industrialise la chasse aux failles de Linux : on vous raconte la semaine Cyberguerre",
+    "summary": "Trois actualités à retenir cette semaine dans le cyberespace, un modèle d’OpenAI qui corrige un autre modèle en retouchant directement ses paramètres, un projet open source majeur dépassé par le nombre de bugs que l’IA lui signale, et OpenAI qui affirme avoir industrialisé la recherche de failles dans le noyau Linux.",
+    "url": "https://www.numerama.com/cyberguerre/2369365-gpt-6-astra-repare-qwen-sans-le-reentrainer-postgresql-19-prend-du-retard-a-cause-de-lia-openai-industrialise-la-chasse-aux-failles-de-linux-on-vous-raconte-la-semaine-cyberguerre.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Sony prépare votre PS5 pour GTA 6 avec son TV OLED Bravia de 55 pouces qui passe sous les 1 000 €",
+    "summary": "[Deal du jour] Boulanger a lancé son Black Friday, et le Sony Bravia 6, un téléviseur particulièrement adapté à la PS5, en profite. Le téléviseur OLED de 55 pouces, un modèle 2026, passe à 999 € au lieu de 1 199 €.",
+    "url": "https://www.numerama.com/tech/2369811-sony-prepare-votre-ps5-pour-gta-6-avec-son-tv-oled-bravia-de-55-pouces-qui-passe-sous-les-1-000-e.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Pourquoi El Niño s’appelle El Niño ?",
+    "summary": "El Niño se renforce actuellement, et devrait culminer à la fin de l'année 2026. Ce phénomène climatique, de retour depuis l'été, inquiète en raison de son intensité et de ses effets en cascade potentiels sur la planète. Mais d'où vient son nom ?",
+    "url": "https://www.numerama.com/sciences/2363901-pourquoi-el-nino-sappelle-el-nino.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "À la sortie de GTA 6, tout le monde va chercher cette maison",
     "summary": "Saviez-vous que GTA 6 était peut-être apparu pour la première fois dans GTA San Andreas ? En 2021, les joueurs ont découvert une mystérieuse photographie dans la Definitive Edition du jeu, représentant une maison inconnue au style très floridien, qui pourrait venir de GTA 6. À moins de deux semaines de sa sortie, le mystère reste entier.",
     "url": "https://www.numerama.com/pop-culture/2369507-a-la-sortie-de-gta-6-tout-le-monde-va-probablement-chercher-cette-maison.html",
@@ -107,38 +139,6 @@ window.TSSR_NEWS = [
     "title": "Final Fantasy 10 a directement été inspiré par Star Wars et ses courses de pods",
     "summary": "Vingt-cinq ans après la sortie de Final Fantasy X, Yoshinori Kitase, qui avait réalisé le jeu, est revenu auprès d'IGN sur l'origine d'une des activités les plus emblématiques de l'aventure : le Blitzball. Pour imaginer ce sport aquatique propre à Spira, le producteur de Square Enix s'est directement inspiré des courses de modules de Star Wars : Épisode I.",
     "url": "https://www.numerama.com/pop-culture/2368669-final-fantasy-10-a-directement-ete-inspire-par-star-wars-et-ses-courses-de-pods.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Dragon Ball Super ne reviendra peut-être pas, tout comme certains studios d’EA, tandis que Nicolas Cage revient dans l’un de ses meilleurs rôles, c’est le récap pop culture de la semaine",
-    "summary": "La suite de Dragon Ball Super se fait toujours attendre depuis le décès d'Akira Toriyama, et les fans du manga ont de moins en moins d'espoir de découvrir un nouveau chapitre un jour. Du côté d'EA, les joueuses et les joueurs font déjà le deuil des studios qu'ils ont tant aimés et qui ont fermé leurs portes. Nicolas Cage, lui, est toujours bien présent et revient dans la suite de Lord of War. Voici le récap pop culture de la semaine !",
-    "url": "https://www.numerama.com/pop-culture/2369591-dragon-ball-super-ne-reviendra-peut-etre-pas-tout-comme-certains-studios-dea-tandis-que-nicolas-cage-revient-dans-lun-de-ses-meilleurs-roles-cest-le-recap-pop-culture-de-la-semaine.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "À bord de sa station spatiale, la Chine frôle le zéro absolu et bat un record du monde",
-    "summary": "Des physiciens chinois ont refroidi des atomes de rubidium à 9,7 picokelvins à bord de la station spatiale Tiangong, d'après une étude parue ce jeudi 5 novembre 2026 dans la revue Science. Ils font 4 fois mieux que le précédent record, établi en Allemagne en 2021.",
-    "url": "https://www.numerama.com/sciences/2370075-a-bord-de-sa-station-spatiale-la-chine-frole-le-zero-absolu-et-bat-un-record-du-monde.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Cet astronaute canadien capture une photo vertigineuse à 400 kilomètres au-dessus de la Terre",
-    "summary": "L'astronaute canadien Joshua Kutryk a publié sur X une photo de sa sortie dans l'espace, à quelque 400 kilomètres au-dessus de la Terre. Ce jeudi 5 novembre 2026, il s'est aventuré hors de l'ISS pour installer un nouveau panneau solaire.",
-    "url": "https://www.numerama.com/sciences/2370029-cet-astronaute-canadien-capture-une-photo-vertigineuse-a-400-kilometres-au-dessus-de-la-terre.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Ce site rétro affiche la météo d’aujourd’hui comme une télé des années 1990, musique d’ascenseur comprise",
-    "summary": "Consulter la météo du jour, comme si vous regardiez une chaîne câblée américaine des années 1990 ? C'est possible sur RetroCast Now. Ce site créé par The Weather Channel a été remis en avant sur X ce vendredi 6 novembre 2026.",
-    "url": "https://www.numerama.com/politique/2369979-ce-site-retro-affiche-la-meteo-daujourdhui-comme-une-tele-des-annees-1990-musique-dascenseur-comprise.html",
     "date": "2026-11-07",
     "source": "Numerama",
     "category": "Cybersécurité"
