@@ -184,6 +184,14 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
+    "title": "Projet informatique qui dérape : cinq réflexes juridiques pour la DSI",
+    "summary": "Retards qui s’accumulent, livrables non conformes, périmètre qui glisse. Quand un projet informatique dérape, les premières semaines pèsent lourd sur la suite. Les conseils de Maître François-Xavier Langlais, avocat associé du cabinet Quantic Avocats.",
+    "url": "https://www.lemondeinformatique.fr/articles/projet-informatique-qui-derape-cinq-reflexes-jurid",
+    "date": "2026-11-06",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
     "title": "« Être une femme, ça aide » : l’astronaute Sophie Adenot raconte comment son corps a vécu l’espace",
     "summary": "De retour sur Terre, l'astronaute française Sophie Adenot a livré un témoignage rare et intime sur les réactions du corps féminin en microgravité, entre adaptation facilitée et défis physiques.",
     "url": "https://www.numerama.com/sciences/2369573-etre-une-femme-ca-aide-lastronaute-sophie-adenot-raconte-comment-son-corps-a-vecu-lespace.html",
@@ -374,6 +382,14 @@ window.TSSR_NEWS = [
     "date": "2026-11-03",
     "source": "CERT-FR",
     "category": "Sécurité"
+  },
+  {
+    "title": "IA générative : du POC à la production, les choix structurants pour la DSI",
+    "summary": "Passer une IA générative du POC à la production revient à trancher cinq décisions : l’architecture en couches, le type de modèle, la méthode d’adaptation (RAG, fine-tuning ou agents), l’hébergement et le cadre règlementaire. L’implémentation d’IA générative se juge au coût par usage, à la tenue en charge et à la conformité, pas à une démonstration réussie. Toute stratégie IA générative de DSI gagne à hiérarchiser ces choix avant le moindre chantier de mise en production.",
+    "url": "https://www.lemondeinformatique.fr/articles/ia-generative-du-poc-a-la-production-les-choix-str",
+    "date": "2026-10-28",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
   },
   {
     "title": "Multiples vulnérabilités dans Roundcube Webmail (19 octobre 2026)",
