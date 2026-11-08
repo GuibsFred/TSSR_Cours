@@ -1402,6 +1402,13 @@
         "order": 5,
         "displayNumber": "05",
         "art": "assets/icons-apps/outlook.svg"
+      },
+      "chapter:02:03": {
+        "title": "L’adressage IPV4",
+        "category": "02 — Bases des réseaux / Cours",
+        "order": 3,
+        "displayNumber": "03",
+        "art": "assets/icons-apps/vlan.svg"
       }
     },
     "hidden": [
