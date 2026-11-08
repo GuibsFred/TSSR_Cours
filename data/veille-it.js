@@ -1,5 +1,53 @@
 window.TSSR_NEWS = [
   {
+    "title": "À la sortie de GTA 6, tout le monde va chercher cette maison",
+    "summary": "Saviez-vous que GTA 6 était peut-être apparu pour la première fois dans GTA San Andreas ? En 2021, les joueurs ont découvert une mystérieuse photographie dans la Definitive Edition du jeu, représentant une maison inconnue au style très floridien, qui pourrait venir de GTA 6. À moins de deux semaines de sa sortie, le mystère reste entier.",
+    "url": "https://www.numerama.com/pop-culture/2369507-a-la-sortie-de-gta-6-tout-le-monde-va-probablement-chercher-cette-maison.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Ils soufflent le chaud (et surtout le froid) en Bourse : c’est quoi, les néoclouds ?",
+    "summary": "CoreWeave, Nebius ou IREN... Derrière ces noms encore peu connus du grand public, on trouve des loueurs de puissance de calcul pour l’IA, dont le modèle est pour le moins fragile.",
+    "url": "https://www.numerama.com/tech/2369495-ils-soufflent-le-chaud-et-surtout-le-froid-en-bourse-cest-quoi-les-neoclouds.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "J’ai roulé près de 1 000 km sans les mains en BMW iX3 : le SUV électrique pour avaler les kilomètres sans fatigue",
+    "summary": "Parmi tout l'arsenal technologique embarqué dans le BMW iX3, on trouve la capacité de conduite semi-autonome. J'ai roulé avec le SUV électrique allemand pendant plus de 1 000 km, dont une bonne partie sans toucher ni au volant ni aux pédales. Le logiciel est-il sans défauts ? J'en ai également profité pour mettre à l'épreuve l'autonomie pendant ce test longue distance.",
+    "url": "https://www.numerama.com/vroom/2368597-jai-roule-pres-de-1-000-km-sans-les-mains-en-bmw-ix3-le-suv-electrique-pour-avaler-les-kilometres-sans-fatigue.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Vous ne voulez pas jouer à Ocarina of Time avec des Joy-Con ? On a trouvé la manette parfaite",
+    "summary": "[Deal du jour] Le remake d’Ocarina of Time est sorti ce jeudi sur Switch 2, et une aventure de cette ampleur mérite mieux que des Joy-Con. Sous licence Nintendo, la manette sans fil Afterglow Deluxe de PDP tombe à 19,99 € sur Amazon.",
+    "url": "https://www.numerama.com/tech/2369619-vous-ne-voulez-pas-jouer-a-ocarina-of-time-avec-des-joy-con-cette-manette-switch-sous-licence-nintendo-tombe-a-1999-e.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Avion espion de la Nasa, changement des heures creuses EDF, preuve mathématique d’OpenAI imminente – le récap’ sciences de la semaine",
+    "summary": "La Nasa jette un froid sur le mythique avion SR-71 Blackbird, EDF déploie de nouveaux horaires d'heures creuses auprès de ses clients, la preuve mathématique secrète d'OpenAI bientôt publiée : c'était l'actualité scientifique de la semaine.",
+    "url": "https://www.numerama.com/sciences/2369401-avion-espion-de-la-nasa-changement-des-heures-creuses-edf-preuve-mathematique-dopenai-imminente-le-recap-sciences-de-la-semaine.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Recharge électrique : pourquoi il vaut mieux être un client volage",
+    "summary": "Installer des bornes ne suffit plus. Pour survivre, les opérateurs doivent désormais convaincre les automobilistes de leur rester fidèles. Et ce n'est pas gagné !",
+    "url": "https://www.numerama.com/vroom/2369955-recharge-electrique-pourquoi-il-vaut-mieux-etre-un-client-volage.html",
+    "date": "2026-11-08",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Firefox cache un jeu Snake dans sa barre d’adresse : voici comment le lancer",
     "summary": "Un calcul égal à 150 dans la barre d'adresse de Firefox débloque un jeu Snake caché. Voici comment lancer cet easter egg dans le navigateur Firefox. Le post Firefox cache un jeu Snake dans sa barre d’adresse : voici comment le lancer a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/firefox-jeu-snake-cache-barre-adresse/",
@@ -22,6 +70,46 @@ window.TSSR_NEWS = [
     "date": "2026-11-07",
     "source": "IT-Connect",
     "category": "Infrastructures"
+  },
+  {
+    "title": "Le jour où les astronautes d’Apollo 11 ont suivi un entraînement spécial pour ne pas dire de gros mots",
+    "summary": "Comme la mission Apollo 11 était suivie en direct à la télévision par des centaines de millions de personnes, ses astronautes devaient éviter de dire des grossièretés devant toute la planète. La Nasa a pris le problème très au sérieux.",
+    "url": "https://www.numerama.com/sciences/2367567-le-jour-ou-les-astronautes-dapollo-11-ont-suivi-un-entrainement-special-pour-ne-pas-dire-de-gros-mots.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Dans 20-30 ans, y’en aura plus : voici comment sauvegarder vous-même les sites web de notre époque",
+    "summary": "Une archiviste appelle les internautes à sauvegarder eux-mêmes les sites web qu’ils aiment, avant qu’ils ne disparaissent. Voici les outils qu’elle recommande, et d’autres options fiables pour le faire selon vos besoins.",
+    "url": "https://www.numerama.com/tech/2366929-dans-20-30-ans-yen-aura-plus-voici-comment-sauvegarder-vous-meme-les-sites-web-de-notre-epoque.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Une marque pénalisé par l’Europe sans le vouloir, Electra change ses abonnements et BYD bat le record de vitesse : le récap Vroom de la semaine",
+    "summary": "À la une sur Vroom cette semaine : Toyota pourra se retrouver pénaliser par un projet de loi européen qui vise des marques chinoises, Electra brise sa promesse de ne pas toucher à ses forfaits et BYD fixe le nouveau record de vitesse pour une voiture de route à 503,17 km/h.",
+    "url": "https://www.numerama.com/vroom/2369813-une-marque-penalise-par-leurope-sans-le-vouloir-electra-change-ses-abonnements-et-byd-bat-le-record-de-vitesse-le-recap-vroom-de-la-semaine.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Netflix : les 10 meilleures comédies en 2026 pour une fin d’année plus joyeuse",
+    "summary": "Parce qu'on a tous besoin de débrancher le cerveau après une semaine éreintante, voici notre sélection des meilleures comédies disponibles actuellement sur Netflix. Blockbusters survitaminés, parodies cultes, pépites françaises et comédies romantiques : de quoi soigner toutes vos pannes de rire.",
+    "url": "https://www.numerama.com/pop-culture/2368699-netflix-les-10-meilleures-comedies-en-2026-pour-une-fin-dannee-plus-joyeuse.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Final Fantasy 10 a directement été inspiré par Star Wars et ses courses de pods",
+    "summary": "Vingt-cinq ans après la sortie de Final Fantasy X, Yoshinori Kitase, qui avait réalisé le jeu, est revenu auprès d'IGN sur l'origine d'une des activités les plus emblématiques de l'aventure : le Blitzball. Pour imaginer ce sport aquatique propre à Spira, le producteur de Square Enix s'est directement inspiré des courses de modules de Star Wars : Épisode I.",
+    "url": "https://www.numerama.com/pop-culture/2368669-final-fantasy-10-a-directement-ete-inspire-par-star-wars-et-ses-courses-de-pods.html",
+    "date": "2026-11-07",
+    "source": "Numerama",
+    "category": "Cybersécurité"
   },
   {
     "title": "Dragon Ball Super ne reviendra peut-être pas, tout comme certains studios d’EA, tandis que Nicolas Cage revient dans l’un de ses meilleurs rôles, c’est le récap pop culture de la semaine",
@@ -51,38 +139,6 @@ window.TSSR_NEWS = [
     "title": "Ce site rétro affiche la météo d’aujourd’hui comme une télé des années 1990, musique d’ascenseur comprise",
     "summary": "Consulter la météo du jour, comme si vous regardiez une chaîne câblée américaine des années 1990 ? C'est possible sur RetroCast Now. Ce site créé par The Weather Channel a été remis en avant sur X ce vendredi 6 novembre 2026.",
     "url": "https://www.numerama.com/politique/2369979-ce-site-retro-affiche-la-meteo-daujourdhui-comme-une-tele-des-annees-1990-musique-dascenseur-comprise.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Le manga Zelda Ocarina of Time prend des libertés avec le jeu, et ça vaut le détour",
-    "summary": "[Deal du jour] Le remake de The Legend of Zelda : Ocarina of Time est sorti le 5 novembre 2026 sur Switch 2. C'est le bon moment pour rappeler que son adaptation en manga existe dans une Perfect Edition.",
-    "url": "https://www.numerama.com/pop-culture/2369437-le-manga-zelda-ocarina-of-time-prend-des-libertes-avec-le-jeu-et-ca-vaut-le-detour.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "El Niño record : 2027 a 96 % de chances de battre tous les records de chaleur",
-    "summary": "L'année 2027 devrait finir autour de +1,74 °C au-dessus de l'ère préindustrielle, avec 96 % de chances de battre le record de chaleur mondial, selon une analyse publiée le 3 novembre 2026 par Carbon Brief. En cause, un El Niño qui a déjà pulvérisé son record d'intensité en septembre.",
-    "url": "https://www.numerama.com/sciences/2369951-el-nino-record-2027-a-96-de-chances-de-battre-tous-les-records-de-chaleur.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Vers le Rafale du futur, une facture à l’élu qui veut taxer les gigaoctets et la preuve secrète d’OpenAI – le recap’ tech de la semaine",
-    "summary": "La taxe sur les gigaoctets a connu un fort écho médiatique, jusqu'au rejet du projet de loi des finances lors de son examen à l'Assemblée nationale. Mais ce n'est peut-être que partie remise... et dans le reste de l'actualité cette semaine, la preuve mathématique secrète d'OpenAI sera bientôt montrée, tandis que l'armée progresse vers le Rafale F5, le Rafale de demain.",
-    "url": "https://www.numerama.com/tech/2369173-vers-le-rafale-du-futur-une-facture-a-lelu-qui-veut-taxer-les-gigaoctets-et-la-preuve-secrete-dopenai-le-recap-tech-de-la-semaine.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Clap de fin pour le Tesla Cybertruck : chronique d’un échec industriel annoncé",
-    "summary": "Après trois petites années et quelque 70 000 exemplaires écoulés, Tesla confirme l'arrêt progressif de la production du Cybertruck au Texas d'ici à la mi-2027.",
-    "url": "https://www.numerama.com/vroom/2369931-clap-de-fin-pour-le-tesla-cybertruck-chronique-dun-echec-industriel-annonce.html",
     "date": "2026-11-07",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -144,60 +200,12 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "« Être une femme, ça aide » : l’astronaute Sophie Adenot raconte comment son corps a vécu l’espace",
-    "summary": "De retour sur Terre, l'astronaute française Sophie Adenot a livré un témoignage rare et intime sur les réactions du corps féminin en microgravité, entre adaptation facilitée et défis physiques.",
-    "url": "https://www.numerama.com/sciences/2369573-etre-une-femme-ca-aide-lastronaute-sophie-adenot-raconte-comment-son-corps-a-vecu-lespace.html",
+    "title": "Projet informatique qui dérape : cinq réflexes juridiques pour la DSI",
+    "summary": "Retards qui s’accumulent, livrables non conformes, périmètre qui glisse. Quand un projet informatique dérape, les premières semaines pèsent lourd sur la suite. Les conseils de Maître François-Xavier Langlais, avocat associé du cabinet Quantic Avocats.",
+    "url": "https://www.lemondeinformatique.fr/articles/projet-informatique-qui-derape-cinq-reflexes-jurid",
     "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Black Friday 2026 : voici les seules offres qui méritent votre argent chez Amazon, Fnac, Boulanger",
-    "summary": "Une semaine de « Black November » derrière nous, et déjà de belles affaires chez Amazon, la Fnac, Boulanger ou Darty. On a fait le tri, et ce live s’enrichit chaque jour de nos nouvelles trouvailles.",
-    "url": "https://www.numerama.com/tech/2363357-black-friday-2026-voici-les-offres-qui-meritent-votre-argent-chez-amazon-fnac-boulanger-ce-vendredi.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "The Terminal List : une nouvelle suite arrive sur Prime Video avec un changement majeur",
-    "summary": "James Reece s'apprête à faire parler la poudre une fois de plus sur Prime Video. La plateforme de streaming d'Amazon a annoncé ce jeudi 5 novembre 2026 la commande d'une nouvelle série, un thriller militaire centré sur le personnage incarné par Chris Pratt.",
-    "url": "https://www.numerama.com/pop-culture/2369367-the-terminal-list-une-nouvelle-suite-arrive-sur-prime-video-avec-un-changement-majeur.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Stranger Things sera de retour dans une nouvelle série préquelle prévue pour 2028",
-    "summary": "Alors que les aventures d'Eleven et de ses amis sont terminées, Netflix n'en a pas fini avec Stranger Things. À l'occasion du Stranger Things Day de ce vendredi 6 novembre, la plateforme a dévoilé Other Worlds: A Stranger Things Adventure, une nouvelle série qui nous ramènera dans les années 1950.",
-    "url": "https://www.numerama.com/pop-culture/2369601-stranger-things-netflix-annonce-par-surprise-une-nouvelle-serie-prequelle-prevue-pour-2028.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Assez rapides pour faire Paris-New York en 10 minutes : les sondes Escapade foncent enfin vers Mars",
-    "summary": "Ce samedi 7 et le lundi 9 novembre, les deux vaisseaux de la mission Escapade, revenus frôler la Terre après un an passé à tourner autour du point de Lagrange L2, vont se propulser vers Mars. Une étape clé pour ces sondes, qui vont se servir de la gravité terrestre et de leur moteur pour accélérer.",
-    "url": "https://www.numerama.com/sciences/2369433-assez-rapides-pour-faire-paris-new-york-en-10-minutes-les-sondes-escapade-foncent-enfin-vers-mars.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Singles Day 2026 : les promotions d’AliExpress continuent, voici les meilleures offres à saisir",
-    "summary": "Lancé le 1er novembre, le Singles Day 2026 se poursuit jusqu'au 18 novembre, avec une nouvelle occasion de profiter de réductions sur des milliers de produits, notamment dans la high-tech. Smartphones, consoles, casques audio, objets connectés ou encore accessoires : les promotions sont nombreuses, mais toutes ne se valent pas. Numerama sélectionne les bons plans qui méritent vraiment le détour, avec les codes promo à utiliser pour obtenir les prix affichés.",
-    "url": "https://www.numerama.com/tech/2365399-singles-day-2026-les-promotions-daliexpress-continuent-voici-les-meilleures-offres-a-saisir.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Amazon retire déjà 300 € à l’iPhone Duo pour le Black Friday",
-    "summary": "[Deal du jour] L'iPhone Duo, le tout premier smartphone pliant d'Apple, est déjà moins cher chez Amazon. La version 1 To passe à 2 780,10 €, contre 3 089 € habituellement, soit une économie de 308,90 €.",
-    "url": "https://www.numerama.com/tech/2369315-amazon-retire-deja-300-e-a-liphone-duo-pour-le-black-friday.html",
-    "date": "2026-11-06",
-    "source": "Numerama",
-    "category": "Cybersécurité"
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
   },
   {
     "title": "CleanYourTV : comment nettoyer une box Android TV avec l’IA (sans root)",
@@ -374,6 +382,14 @@ window.TSSR_NEWS = [
     "date": "2026-11-03",
     "source": "CERT-FR",
     "category": "Sécurité"
+  },
+  {
+    "title": "IA générative : du POC à la production, les choix structurants pour la DSI",
+    "summary": "Passer une IA générative du POC à la production revient à trancher cinq décisions : l’architecture en couches, le type de modèle, la méthode d’adaptation (RAG, fine-tuning ou agents), l’hébergement et le cadre règlementaire. L’implémentation d’IA générative se juge au coût par usage, à la tenue en charge et à la conformité, pas à une démonstration réussie. Toute stratégie IA générative de DSI gagne à hiérarchiser ces choix avant le moindre chantier de mise en production.",
+    "url": "https://www.lemondeinformatique.fr/articles/ia-generative-du-poc-a-la-production-les-choix-str",
+    "date": "2026-10-28",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
   },
   {
     "title": "Multiples vulnérabilités dans Roundcube Webmail (19 octobre 2026)",
