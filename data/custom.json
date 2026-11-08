@@ -1418,6 +1418,13 @@
         "order": 3,
         "displayNumber": "03",
         "art": "assets/icons-apps/vlan.svg"
+      },
+      "doc-b489cdf5-5b33-40ba-91b0-5c3964cb1b10": {
+        "title": "L'adressage IPV6",
+        "category": "02 — Bases des réseaux / Cours",
+        "order": 6,
+        "displayNumber": "06",
+        "art": "assets/icons-premium/icon-097.svg"
       }
     },
     "hidden": [
