@@ -1,81 +1,225 @@
 window.TSSR_NEWS = [
   {
-    "title": "En 1985, un pilote de F-15 a détruit un satellite en orbite avec un missile, et il reste le seul à l’avoir fait depuis un avion",
-    "summary": "Le 13 septembre 1985, le major américain Wilbert « Doug » Pearson a détruit le satellite Solwind, à 555 kilomètres d’altitude, avec un missile tiré depuis son F-15 Eagle. Plus de 40 ans après, il reste le seul pilote à avoir abattu un satellite depuis un avion.",
-    "url": "https://www.numerama.com/tech/2366915-en-1985-un-pilote-de-f-15-a-detruit-un-satellite-en-orbite-avec-un-missile-et-il-reste-le-seul-a-lavoir-fait-depuis-un-avion.html",
-    "date": "2026-11-08",
+    "title": "Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs",
+    "summary": "290 Mo de RAM avec deux comptes connectés : c'est ce qu'affiche une première version du futur client Discord, réécrit en Rust pour Windows, mais pas seulement. Le post Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/discord-client-rust-gpui-fin-electron/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Sniffnet : un moniteur réseau gratuit et open source pour Windows, Linux et macOS",
+    "summary": "Découvrez Sniffnet, l'analyseur réseau gratuit et open source : installation avec Npcap, trafic par programme, export PCAP, filtres BPF et blacklist d'IP. Le post Sniffnet : un moniteur réseau gratuit et open source pour Windows, Linux et macOS a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/sniffnet-moniteur-trafic-reseau/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Plex2Shell : QNAP fait état de NAS compromis, vous devez patcher !",
+    "summary": "QNAP fait état de NAS compromis via Plex2Shell. Si Plex Media Server était exposé sur Internet, la mise à jour ne suffit pas : voici comment vérifier votre NAS. Le post Plex2Shell : QNAP fait état de NAS compromis, vous devez patcher ! a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/qnap-plex2shell-nas-compromis/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "SonicWall : une faille dans le VPN SSL permet de contourner le MFA et elle est exploitée",
+    "summary": "Une faille exploitée dans le VPN SSL des firewalls SonicWall peut permettre de contourner SAML et le MFA associé. Qui est affecté ? Comment se protoéger ? Le post SonicWall : une faille dans le VPN SSL permet de contourner le MFA et elle est exploitée a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/sonicwall-vpn-ssl-faille-saml-mfa-cve-2026-19868/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "VMware vSphere Express : Broadcom revient vers les PME avec une nouvelle offre !",
+    "summary": "128 cœurs, pas un de plus : avec vSphere Express, Broadcom veut séduire à nouveau les PME, dont beaucoup lorgnent vers Proxmox. Voici ce qu'il faut savoir. Le post VMware vSphere Express : Broadcom revient vers les PME avec une nouvelle offre ! a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/vmware-vsphere-express-128-coeurs-pme/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Bon plan : les serrures connectées WELOCK aux prix les plus bas de l’année pour le 11.11",
+    "summary": "Profitez du 11.11 pour équiper votre porte d’une serrure connectée WELOCK à prix réduit : déverrouillage par empreinte, code ou smartphone. Notre sélection d'offres. Le post Bon plan : les serrures connectées WELOCK aux prix les plus bas de l’année pour le 11.11 a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/bon-plan-welock-novembre-2026-single-day/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Moins d’un PC Windows sur deux patché en 2 semaines, et c’est risqué avec l’IA !",
+    "summary": "Selon Microsoft, moins d'un appareil Windows sur deux en entreprise installe le patch de sécurité en deux semaines. Un délai risqué face à l'IA. Voici pourquoi. Le post Moins d’un PC Windows sur deux patché en 2 semaines, et c’est risqué avec l’IA ! a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/microsoft-windows-mises-a-jour-securite-patch-gap-ia/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Infomaniak lance un service de stockage objet S3 souverain en Suisse",
+    "summary": "Infomaniak lance un stockage objet compatible S3 hébergé en Suisse : Object Lock, réplication, 10 To de trafic sortant inclus et aucun frais de requêtes. Le post Infomaniak lance un service de stockage objet S3 souverain en Suisse a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/infomaniak-stockage-objet-s3/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Bon plan VZMORE AX9 MAX : ce mini-PC Ryzen AI 9 HX 470 à son prix le plus bas sur le Web",
+    "summary": "Jusqu'au 22 novembre 2026, le mini PC VZMORE AX9 MAX (Ryzen AI 9 HX 470) passe à 1 310 € au lieu de 1 549 € grâce au code réservé aux lecteurs d'IT-Connect. Le post Bon plan VZMORE AX9 MAX : ce mini-PC Ryzen AI 9 HX 470 à son prix le plus bas sur le Web a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/bon-plan-vzmore-ax9-max-novembre-2026/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Phishing : 7,3 milliards de menaces par e-mail au troisième trimestre 2026, voici ce que révèle Microsoft",
+    "summary": "Microsoft a détecté 7,3 milliards e-mails de phishing au troisième trimestre 2026. Faux DocuSign, SVG, code d'appareil : voici ce qu'il faut retenir. Le post Phishing : 7,3 milliards de menaces par e-mail au troisième trimestre 2026, voici ce que révèle Microsoft a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/microsoft-rapport-menaces-email-phishing-exceptions/",
+    "date": "2026-11-09",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Airbnb accélère sa croissance et renforce ses investissements dans l’IA",
+    "summary": "Au troisième trimestre 2026, Airbnb a enregistré une hausse de 19 % de son chiffre d’affaires, à 4,9 Md$. Le groupe attribue notamment l’accélération de son développement produit à l’utilisation de l’IA.",
+    "url": "https://www.lemondeinformatique.fr/applications-developpement/airbnb-accelere-sa-croissance-et-renforce-ses-inve",
+    "date": "2026-11-09",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Omnissa veut étendre la gestion des terminaux aux agents IA",
+    "summary": "Nommé CEO d’Omnissa en septembre dernier, Amit Singh entend positionner l’éditeur sur la sécurisation des environnements de travail à l’heure des agents IA. Pour lui, les outils de gestion des terminaux doivent désormais permettre de découvrir, de contrôler et d’encadrer ces nouveaux utilisateurs logiciels.",
+    "url": "https://www.lemondeinformatique.fr/applications-developpement/omnissa-veut-etendre-la-gestion-des-terminaux-aux-",
+    "date": "2026-11-09",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Nvidia ébranlé par une enquête visant Jensen Huang, l’industrie des semi-conducteurs sous surveillance",
+    "summary": "Nvidia a ouvert une enquête indépendante pour déterminer si son PDG Jensen Huang a été la cible d’une opération de renseignement étrangère. Alors que Donald Trump défend le dirigeant, l’affaire inquiète les investisseurs. La Corée du Sud assure toutefois que les livraisons de GPU déjà contractualisées ne seront pas affectées.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/nvidia-ebranle-par-une-enquete-visant-jensen-huang",
+    "date": "2026-11-09",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Ce que la fusée géante Starship va tenter dans les airs minute par minute, si tout se passe bien",
+    "summary": "SpaceX vise ce vendredi 13 novembre 2026 pour le quinzième vol d'essai de Starship. Pour la première fois, l'entreprise va tenter de rattraper les deux étages de sa fusée avec les bras de sa tour de lancement, y compris le vaisseau, après plus de 22 heures en orbite.",
+    "url": "https://www.numerama.com/sciences/2370717-ce-que-la-fusee-geante-starship-va-tenter-dans-les-airs-minute-par-minute-si-tout-se-passe-bien.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "GPT-6 Astra répare Qwen sans le réentraîner, PostgreSQL 19 prend du retard à cause de l’IA, OpenAI industrialise la chasse aux failles de Linux : on vous raconte la semaine Cyberguerre",
-    "summary": "Trois actualités à retenir cette semaine dans le cyberespace, un modèle d’OpenAI qui corrige un autre modèle en retouchant directement ses paramètres, un projet open source majeur dépassé par le nombre de bugs que l’IA lui signale, et OpenAI qui affirme avoir industrialisé la recherche de failles dans le noyau Linux.",
-    "url": "https://www.numerama.com/cyberguerre/2369365-gpt-6-astra-repare-qwen-sans-le-reentrainer-postgresql-19-prend-du-retard-a-cause-de-lia-openai-industrialise-la-chasse-aux-failles-de-linux-on-vous-raconte-la-semaine-cyberguerre.html",
-    "date": "2026-11-08",
+    "title": "6 000 km de détour pour battre Boeing : l’Airbus A350-1000ULR s’approprie un record vieux de 21 ans",
+    "summary": "Le Guinness World Records a homologué le vol Melbourne-Toulouse de l'Airbus A350-1000ULR, 23 155 kilomètres sans escale, comme le plus long jamais réalisé par un avion de ligne, a annoncé Airbus ce lundi 9 novembre 2026. Le précédent record, établi par un Boeing 777, datait de novembre 2005.",
+    "url": "https://www.numerama.com/sciences/2371035-6-000-km-de-detour-pour-battre-boeing-lairbus-a350-1000ulr-sapproprie-un-record-vieux-de-21-ans.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Sony prépare votre PS5 pour GTA 6 avec son TV OLED Bravia de 55 pouces qui passe sous les 1 000 €",
-    "summary": "[Deal du jour] Boulanger a lancé son Black Friday, et le Sony Bravia 6, un téléviseur particulièrement adapté à la PS5, en profite. Le téléviseur OLED de 55 pouces, un modèle 2026, passe à 999 € au lieu de 1 199 €.",
-    "url": "https://www.numerama.com/tech/2369811-sony-prepare-votre-ps5-pour-gta-6-avec-son-tv-oled-bravia-de-55-pouces-qui-passe-sous-les-1-000-e.html",
-    "date": "2026-11-08",
+    "title": "Singles Day 2026 : Joybuy rejoint AliExpress, voici les meilleures offres à ne pas manquer",
+    "summary": "Le Singles Day ne se limite plus à AliExpress : Joybuy se joint également à l'événement avec une sélection de promotions sur de nombreux produits. Les deux plateformes multiplient les réductions dans la high-tech, avec des offres sur les smartphones, les consoles, les téléviseurs, les casques audio et les accessoires. Nous avons sélectionné les bons plans les plus intéressants, ainsi que les codes promo à utiliser pour profiter des meilleurs prix.",
+    "url": "https://www.numerama.com/tech/2365399-singles-day-2026-joybuy-rejoint-aliexpress-voici-les-meilleures-offres-a-ne-pas-manquer.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Pourquoi El Niño s’appelle El Niño ?",
-    "summary": "El Niño se renforce actuellement, et devrait culminer à la fin de l'année 2026. Ce phénomène climatique, de retour depuis l'été, inquiète en raison de son intensité et de ses effets en cascade potentiels sur la planète. Mais d'où vient son nom ?",
-    "url": "https://www.numerama.com/sciences/2363901-pourquoi-el-nino-sappelle-el-nino.html",
-    "date": "2026-11-08",
+    "title": "Belib’ augmente ses tarifs : ce que la nouvelle grille va changer pour vos recharges à Paris",
+    "summary": "À partir du 7 décembre 2026, Belib', le réseau public de bornes de recharge de Paris, fait passer le kilowattheure de 0,33 à 0,35 € sur ses bornes lentes. Les tarifs des bornes rapides Boost et Boost+ ne bougent pas.",
+    "url": "https://www.numerama.com/vroom/2370779-belib-augmente-ses-tarifs-ce-que-la-nouvelle-grille-va-changer-pour-vos-recharges-a-paris.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "À la sortie de GTA 6, tout le monde va chercher cette maison",
-    "summary": "Saviez-vous que GTA 6 était peut-être apparu pour la première fois dans GTA San Andreas ? En 2021, les joueurs ont découvert une mystérieuse photographie dans la Definitive Edition du jeu, représentant une maison inconnue au style très floridien, qui pourrait venir de GTA 6. À moins de deux semaines de sa sortie, le mystère reste entier.",
-    "url": "https://www.numerama.com/pop-culture/2369507-a-la-sortie-de-gta-6-tout-le-monde-va-probablement-chercher-cette-maison.html",
-    "date": "2026-11-08",
+    "title": "GTA 6 : pas de mode 60 fps, mais une option 40 fps sur PS5 Pro ?",
+    "summary": "Les métadonnées contenues dans les fichiers de GTA 6 suggèrent que la version PS5 Pro aura droit à des améliorations liées à l'affichage. Repérées ce lundi 9 novembre 2026, elles mentionnent notamment une compatibilité 120 Hz, qui ouvrirait la porte à un mode 40 fps.",
+    "url": "https://www.numerama.com/pop-culture/2370743-gta-6-pas-de-mode-60-fps-mais-une-option-40-fps-sur-ps5-pro.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Ils soufflent le chaud (et surtout le froid) en Bourse : c’est quoi, les néoclouds ?",
-    "summary": "CoreWeave, Nebius ou IREN... Derrière ces noms encore peu connus du grand public, on trouve des loueurs de puissance de calcul pour l’IA, dont le modèle est pour le moins fragile.",
-    "url": "https://www.numerama.com/tech/2369495-ils-soufflent-le-chaud-et-surtout-le-froid-en-bourse-cest-quoi-les-neoclouds.html",
-    "date": "2026-11-08",
+    "title": "Zelda Ocarina of Time : les speedrunners sont déjà en train de casser le remake dans tous les sens",
+    "summary": "À peine sorti, le remake de The Legend of Zelda: Ocarina of Time est déjà passé entre les mains des speedrunners. Déplacements optimisés, bugs exploités et Link envoyé dans la stratosphère ou catapulté par-dessus des énigmes entières : la communauté n'a pas attendu longtemps pour contourner les règles du jeu.",
+    "url": "https://www.numerama.com/pop-culture/2370757-zelda-ocarina-of-time-les-speedrunners-sont-deja-en-train-de-casser-le-remake-dans-tous-les-sens.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "J’ai roulé près de 1 000 km sans les mains en BMW iX3 : le SUV électrique pour avaler les kilomètres sans fatigue",
-    "summary": "Parmi tout l'arsenal technologique embarqué dans le BMW iX3, on trouve la capacité de conduite semi-autonome. J'ai roulé avec le SUV électrique allemand pendant plus de 1 000 km, dont une bonne partie sans toucher ni au volant ni aux pédales. Le logiciel est-il sans défauts ? J'en ai également profité pour mettre à l'épreuve l'autonomie pendant ce test longue distance.",
-    "url": "https://www.numerama.com/vroom/2368597-jai-roule-pres-de-1-000-km-sans-les-mains-en-bmw-ix3-le-suv-electrique-pour-avaler-les-kilometres-sans-fatigue.html",
-    "date": "2026-11-08",
+    "title": "Sans prévenir, Microsoft s’est mis à bloquer des mails de petites structures vers Hotmail et Outlook : voici comment y remédier",
+    "summary": "Depuis le 5 novembre 2026, les messageries grand public de Microsoft rejettent une partie des mails envoyés par des domaines qui n’ont pas mis en place un réglage technique appelé DMARC.",
+    "url": "https://www.numerama.com/cyberguerre/2370747-sans-prevenir-microsoft-sest-mis-a-bloquer-des-mails-de-petites-structures-vers-hotmail-et-outlook-voici-comment-y-remedier.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Vous ne voulez pas jouer à Ocarina of Time avec des Joy-Con ? On a trouvé la manette parfaite",
-    "summary": "[Deal du jour] Le remake d’Ocarina of Time est sorti ce jeudi sur Switch 2, et une aventure de cette ampleur mérite mieux que des Joy-Con. Sous licence Nintendo, la manette sans fil Afterglow Deluxe de PDP tombe à 19,99 € sur Amazon.",
-    "url": "https://www.numerama.com/tech/2369619-vous-ne-voulez-pas-jouer-a-ocarina-of-time-avec-des-joy-con-cette-manette-switch-sous-licence-nintendo-tombe-a-1999-e.html",
-    "date": "2026-11-08",
+    "title": "Free Mobile, c’est fini : l’opérateur met fin à une société lancée il y a 19 ans",
+    "summary": "Free Mobile n'existera plus le 1er décembre 2026. Dans les factures de ses abonnés, Free annonce la fusion de sa filiale mobile, créée en 2007 avant un lancement en 2012, avec la société Free. Pour les clients, rien ne change.",
+    "url": "https://www.numerama.com/tech/2370411-free-mobile-cest-fini-loperateur-met-fin-a-une-societe-lancee-il-y-a-19-ans.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Avion espion de la Nasa, changement des heures creuses EDF, preuve mathématique d’OpenAI imminente – le récap’ sciences de la semaine",
-    "summary": "La Nasa jette un froid sur le mythique avion SR-71 Blackbird, EDF déploie de nouveaux horaires d'heures creuses auprès de ses clients, la preuve mathématique secrète d'OpenAI bientôt publiée : c'était l'actualité scientifique de la semaine.",
-    "url": "https://www.numerama.com/sciences/2369401-avion-espion-de-la-nasa-changement-des-heures-creuses-edf-preuve-mathematique-dopenai-imminente-le-recap-sciences-de-la-semaine.html",
-    "date": "2026-11-08",
+    "title": "Ce robot croit viser une pomme, mais c’est un poupon qui se trouve sous son couteau",
+    "summary": "Des chercheurs ont modifié les images reçues par des IA pour leur faire tenter des gestes dangereux avec un robot. Même les modèles qui refusaient jusque-là peuvent s’exécuter lorsqu’ils ne voient plus correctement la scène.",
+    "url": "https://www.numerama.com/tech/2370721-ce-robot-croit-viser-une-pomme-mais-cest-un-poupon-qui-se-trouve-sous-son-couteau.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Recharge électrique : pourquoi il vaut mieux être un client volage",
-    "summary": "Installer des bornes ne suffit plus. Pour survivre, les opérateurs doivent désormais convaincre les automobilistes de leur rester fidèles. Et ce n'est pas gagné !",
-    "url": "https://www.numerama.com/vroom/2369955-recharge-electrique-pourquoi-il-vaut-mieux-etre-un-client-volage.html",
-    "date": "2026-11-08",
+    "title": "Harry Potter : bandes-annonces, nouvelles affiches, tout savoir sur la série de HBO",
+    "summary": "Warner Bros. développe actuellement une série adaptée des livres Harry Potter, pour sa plateforme de streaming HBO Max : elle s'étendra au moins sur « une décennie » et J.K. Rowling en est la productrice exécutive. Date de sortie, casting, histoire... Voici tout ce que l'on sait déjà sur ce nouveau voyage à Poudlard.",
+    "url": "https://www.numerama.com/pop-culture/1337516-harry-potter-premiere-image-casting-date-de-sortie-tout-savoir-sur-la-serie-de-hbo.html",
+    "date": "2026-11-09",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Comment éviter les spoilers de GTA 6, la fin de l’histoire et le destin de Lucia et Jason ?",
+    "summary": "On ne plaisante pas avec les spoilers. GTA 6 sort le 19 novembre, et des vidéos volées du jeu circulent déjà : pour les fans de Rockstar, le web est devenu un champ de mines. Voici les outils pour passer entre les gouttes.",
+    "url": "https://www.numerama.com/pop-culture/791321-comment-eviter-les-spoilers-de-gta-6-la-fin-de-lhistoire-et-le-destin-de-lucia-et-jason.html",
+    "date": "2026-11-09",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday 2026 : Switch 2, iPhone Duo, Pixel 11, LEGO Pokémon… le live des bonnes affaires",
+    "summary": "À trois semaines du Black Friday, les produits phares de l’année affichent déjà leurs premières remises chez Amazon, la Fnac, Boulanger et Cdiscount. Ce live recense, jour après jour, les promos qui valent le coup, et signale celles dont le prix barré est trop beau pour être vrai.",
+    "url": "https://www.numerama.com/tech/2363357-black-friday-2026-les-seules-promos-qui-meritent-votre-argent-ce-lundi-chez-amazon-fnac-boulanger.html",
+    "date": "2026-11-09",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Campus Driver : c’est quoi cette nouvelle série que tout le monde regarde sur Prime Video ?",
+    "summary": "Sortie le vendredi 6 novembre 2026 sur Prime Video, la série française Campus Drivers a pris la première place du Top 10 mondial des séries de la plateforme d'Amazon. Elle passe devant The Terminal List, la série d'action portée par Chris Pratt.",
+    "url": "https://www.numerama.com/pop-culture/2370577-campus-driver-la-nouvelle-serie-prime-video-explose-tout-et-elle-a-une-specificite.html",
+    "date": "2026-11-09",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Compatible Xbox, PC, iOS et Android, la manette sans fil Xbox passe à 50 € sur Amazon",
+    "summary": "[Deal du jour] Pour ce Black Friday 2026, Amazon propose la manette sans fil Xbox en noir carbone à 50,58 €. Elle fonctionne aussi bien sur console Xbox que sur PC Windows et sur smartphone.",
+    "url": "https://www.numerama.com/pop-culture/2370599-compatible-xbox-pc-ios-et-android-la-manette-sans-fil-xbox-passe-a-50-e-sur-amazon.html",
+    "date": "2026-11-09",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "279 000 euros, jade incrusté et portes antagonistes : BYD déclare la guerre à Rolls-Royce",
+    "summary": "Yangwang, la marque de luxe de BYD, a présenté, à Abu Dhabi, l'Altior, une limousine de 5,60 mètres à quatre places, en précommande en Chine à 2,08 millions de yuans (environ 279 000 euros). Cette première édition est limitée à 399 exemplaires.",
+    "url": "https://www.numerama.com/vroom/2370487-279-000-euros-jade-incruste-et-portes-antagonistes-byd-declare-la-guerre-a-rolls-royce.html",
+    "date": "2026-11-09",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
@@ -104,46 +248,6 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Le jour où les astronautes d’Apollo 11 ont suivi un entraînement spécial pour ne pas dire de gros mots",
-    "summary": "Comme la mission Apollo 11 était suivie en direct à la télévision par des centaines de millions de personnes, ses astronautes devaient éviter de dire des grossièretés devant toute la planète. La Nasa a pris le problème très au sérieux.",
-    "url": "https://www.numerama.com/sciences/2367567-le-jour-ou-les-astronautes-dapollo-11-ont-suivi-un-entrainement-special-pour-ne-pas-dire-de-gros-mots.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Dans 20-30 ans, y’en aura plus : voici comment sauvegarder vous-même les sites web de notre époque",
-    "summary": "Une archiviste appelle les internautes à sauvegarder eux-mêmes les sites web qu’ils aiment, avant qu’ils ne disparaissent. Voici les outils qu’elle recommande, et d’autres options fiables pour le faire selon vos besoins.",
-    "url": "https://www.numerama.com/tech/2366929-dans-20-30-ans-yen-aura-plus-voici-comment-sauvegarder-vous-meme-les-sites-web-de-notre-epoque.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Une marque pénalisé par l’Europe sans le vouloir, Electra change ses abonnements et BYD bat le record de vitesse : le récap Vroom de la semaine",
-    "summary": "À la une sur Vroom cette semaine : Toyota pourra se retrouver pénaliser par un projet de loi européen qui vise des marques chinoises, Electra brise sa promesse de ne pas toucher à ses forfaits et BYD fixe le nouveau record de vitesse pour une voiture de route à 503,17 km/h.",
-    "url": "https://www.numerama.com/vroom/2369813-une-marque-penalise-par-leurope-sans-le-vouloir-electra-change-ses-abonnements-et-byd-bat-le-record-de-vitesse-le-recap-vroom-de-la-semaine.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Netflix : les 10 meilleures comédies en 2026 pour une fin d’année plus joyeuse",
-    "summary": "Parce qu'on a tous besoin de débrancher le cerveau après une semaine éreintante, voici notre sélection des meilleures comédies disponibles actuellement sur Netflix. Blockbusters survitaminés, parodies cultes, pépites françaises et comédies romantiques : de quoi soigner toutes vos pannes de rire.",
-    "url": "https://www.numerama.com/pop-culture/2368699-netflix-les-10-meilleures-comedies-en-2026-pour-une-fin-dannee-plus-joyeuse.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Final Fantasy 10 a directement été inspiré par Star Wars et ses courses de pods",
-    "summary": "Vingt-cinq ans après la sortie de Final Fantasy X, Yoshinori Kitase, qui avait réalisé le jeu, est revenu auprès d'IGN sur l'origine d'une des activités les plus emblématiques de l'aventure : le Blitzball. Pour imaginer ce sport aquatique propre à Spira, le producteur de Square Enix s'est directement inspiré des courses de modules de Star Wars : Épisode I.",
-    "url": "https://www.numerama.com/pop-culture/2368669-final-fantasy-10-a-directement-ete-inspire-par-star-wars-et-ses-courses-de-pods.html",
-    "date": "2026-11-07",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "NIKKE : la version PC du jeu piégée pour installer un redoutable malware",
     "summary": "Le lanceur PC de NIKKE a chargé un malware depuis le CDN de Level Infinite : contrôle à distance, vol de secrets et de cryptos. Voici ce qu'il faut vérifier. Le post NIKKE : la version PC du jeu piégée pour installer un redoutable malware a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/nikke-lanceur-pc-pirate-malware-k2f/",
@@ -160,46 +264,6 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Faux événements OpenAI, SpaceX et Anthropic : ce phishing vole les comptes Microsoft et Google",
-    "summary": "Trois mois de ChatGPT Pro offerts pour une simple inscription ? Cette fausse invitation OpenAI sert à pirater votre compte Microsoft ou Google, MFA compris. Le post Faux événements OpenAI, SpaceX et Anthropic : ce phishing vole les comptes Microsoft et Google a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/faux-evenements-openai-spacex-phishing-microsoft-google/",
-    "date": "2026-11-06",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "DigiCert : une erreur de migration expose les données et pièces d’identité de clients",
-    "summary": "Une erreur de migration a ouvert les archives de DigiCert à des comptes créés sur Internet : données clients et pièces d'identité consultées. Ce que l'on sait. Le post DigiCert : une erreur de migration expose les données et pièces d’identité de clients a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/digicert-une-erreur-de-migration-expose-les-donnees-et-pieces-didentite-de-clients/",
-    "date": "2026-11-06",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Après l’Europe, le FBI et la CISA alertent sur les cyberattaques contre les systèmes de réfrigération",
-    "summary": "Après les supermarchés et l'EFS, la CISA et le FBI alertent sur les attaques contre les systèmes de froid industriels. Voici leurs recommandations. Le post Après l’Europe, le FBI et la CISA alertent sur les cyberattaques contre les systèmes de réfrigération a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/fbi-cisa-alerte-cyberattaques-systemes-refrigeration/",
-    "date": "2026-11-06",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "*sshole : sur Alpine Linux, un mot de passe trop long peut mener à un accès root via SSH",
-    "summary": "La faille *sshole (CVE-2026-123158) ouvre en SSH, avec un mot de passe trop long, des comptes Linux sans mot de passe. Alpine Linux est le premier concerné. Le post *sshole : sur Alpine Linux, un mot de passe trop long peut mener à un accès root via SSH a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/faille-openssh-musl-sshhole-alpine-linux/",
-    "date": "2026-11-06",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "OpenAI lance GPT-6 Cyber : son modèle IA taillé pour trouver et exploiter des failles",
-    "summary": "OpenAI lance GPT-6 Cyber, réservé à Daybreak Red : 948 exploits Linux, 81 failles graves dans Firefox et un modèle entraîné à rester dans son périmètre. Le post OpenAI lance GPT-6 Cyber : son modèle IA taillé pour trouver et exploiter des failles a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/openai-gpt-6-cyber-exploits-linux-firefox-daybreak-red/",
-    "date": "2026-11-06",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
     "title": "Projet informatique qui dérape : cinq réflexes juridiques pour la DSI",
     "summary": "Retards qui s’accumulent, livrables non conformes, périmètre qui glisse. Quand un projet informatique dérape, les premières semaines pèsent lourd sur la suite. Les conseils de Maître François-Xavier Langlais, avocat associé du cabinet Quantic Avocats.",
     "url": "https://www.lemondeinformatique.fr/articles/projet-informatique-qui-derape-cinq-reflexes-jurid",
@@ -208,57 +272,57 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "CleanYourTV : comment nettoyer une box Android TV avec l’IA (sans root)",
-    "summary": "Supprimez les pubs de l'accueil de votre box Android TV avec CleanYourTV et Claude Code, ou une app gratuite : ADB, prérequis, thèmes et précautions. Le post CleanYourTV : comment nettoyer une box Android TV avec l’IA (sans root) a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/cleanyourtv-nettoyer-box-android-tv/",
+    "title": "Multiples vulnérabilités dans Microsoft Edge (05 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Edge. Elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données et un problème de sécurité non spécifié par l'éditeur.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1466/",
     "date": "2026-11-05",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "Sync-in 2.4 à 2.6 : Euro-Office, favoris, draw.io et un serveur plus robuste",
-    "summary": "Euro-Office, favoris, draw.io et 16 failles corrigées : voici les nouveautés de Sync-in 2.4, 2.5 et 2.6, et ce qu'il faut vérifier avant de mettre à jour. Le post Sync-in 2.4 à 2.6 : Euro-Office, favoris, draw.io et un serveur plus robuste a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/sync-in-nouveautes-euro-office-favoris-draw-io/",
+    "title": "Multiples vulnérabilités dans les produits Siemens (05 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Siemens. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1464/",
     "date": "2026-11-05",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "Windows 11 : Microsoft dévoile ses optimisations pour les PC équipés de 8 Go de RAM",
-    "summary": "Votre PC n'a que 8 Go de RAM ? Microsoft assure que Windows 11 y est désormais jusqu'à 20 % plus réactif. Voici ce qui a changé et comment en profiter. Le post Windows 11 : Microsoft dévoile ses optimisations pour les PC équipés de 8 Go de RAM a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/windows-11-8-go-ram-optimisations-microsoft/",
+    "title": "Vulnérabilité dans OpenSSH (05 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans OpenSSH. Elle permet à un attaquant de provoquer un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1468/",
     "date": "2026-11-05",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "SonicWall GMS : deux failles, dont une critique, ne seront jamais corrigées",
-    "summary": "Vous gérez vos firewalls SonicWall avec GMS ? Deux failles, dont une critique exploitable sans authentification, ne seront jamais corrigées. Voici pourquoi. Le post SonicWall GMS : deux failles, dont une critique, ne seront jamais corrigées a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/sonicwall-gms-fin-de-vie-failles-non-corrigees/",
+    "title": "Multiples vulnérabilités dans les produits Cisco (05 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Cisco. Elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un contournement de la politique de sécurité et un problème de sécurité non spécifié par l'éditeur.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1467/",
     "date": "2026-11-05",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "Linux : une faille dans APT permet de remplacer un paquet vérifié et de l’exécuter en root",
-    "summary": "Une faille dans APT permet de remplacer un paquet déjà vérifié et de l'exécuter en root. Debian, Ubuntu et leurs dérivées sont concernées. Voici l'essentiel. Le post Linux : une faille dans APT permet de remplacer un paquet vérifié et de l’exécuter en root a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/faille-apt-cve-2026-109518-debian-ubuntu-root/",
+    "title": "Multiples vulnérabilités dans OpenOffice (05 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans OpenOffice. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1463/",
     "date": "2026-11-05",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans SPIP (05 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans SPIP. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1465/",
+    "date": "2026-11-05",
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
     "title": "Multiples vulnérabilités dans les produits Symfony (04 novembre 2026)",
     "summary": "De multiples vulnérabilités ont été découvertes dans les produits Symfony. Certaines d'entre elles permettent à un attaquant de provoquer un déni de service à distance, une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1460/",
-    "date": "2026-11-04",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Apache Zookeeper (04 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Apache Zookeeper. Elles permettent à un attaquant de provoquer un déni de service à distance et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1448/",
     "date": "2026-11-04",
     "source": "CERT-FR",
     "category": "Sécurité"
@@ -304,25 +368,9 @@ window.TSSR_NEWS = [
     "category": "Sécurité"
   },
   {
-    "title": "Multiples vulnérabilités dans Google Chrome (04 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Google Chrome. Elles permettent à un attaquant de provoquer un problème de sécurité non spécifié par l'éditeur.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1450/",
-    "date": "2026-11-04",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
     "title": "Vulnérabilité dans Mozilla Firefox (04 novembre 2026)",
     "summary": "Une vulnérabilité a été découverte dans Mozilla Firefox. Elle permet à un attaquant de provoquer un problème de sécurité non spécifié par l'éditeur.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1455/",
-    "date": "2026-11-04",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits Citrix (04 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Citrix. Elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance et une élévation de privilèges.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1449/",
     "date": "2026-11-04",
     "source": "CERT-FR",
     "category": "Sécurité"
@@ -344,42 +392,26 @@ window.TSSR_NEWS = [
     "category": "Sécurité"
   },
   {
-    "title": "Multiples vulnérabilités dans NetApp ONTAP 9 (03 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans NetApp ONTAP 9. Elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1446/",
-    "date": "2026-11-03",
+    "title": "Multiples vulnérabilités dans SolarWinds Dameware (04 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans SolarWinds Dameware. Elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance et un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1459/",
+    "date": "2026-11-04",
     "source": "CERT-FR",
     "category": "Sécurité"
   },
   {
-    "title": "Multiples vulnérabilités dans GLPI (03 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans GLPI. Elles permettent à un attaquant de provoquer une élévation de privilèges, une injection de code indirecte à distance (XSS) et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1444/",
-    "date": "2026-11-03",
+    "title": "Multiples vulnérabilités dans Ruby on Rails (04 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Ruby on Rails. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1452/",
+    "date": "2026-11-04",
     "source": "CERT-FR",
     "category": "Sécurité"
   },
   {
-    "title": "Multiples vulnérabilités dans PostgreSQL (03 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans PostgreSQL. Elles permettent à un attaquant de provoquer une injection SQL (SQLi), un contournement de la politique de sécurité et un problème de sécurité non spécifié par l'éditeur.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1445/",
-    "date": "2026-11-03",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Xen (03 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Xen. Elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1447/",
-    "date": "2026-11-03",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Google Android (03 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Google Android. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1443/",
-    "date": "2026-11-03",
+    "title": "Multiples vulnérabilités dans WordPress (29 octobre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans WordPress. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1420/",
+    "date": "2026-10-29",
     "source": "CERT-FR",
     "category": "Sécurité"
   },
@@ -390,13 +422,5 @@ window.TSSR_NEWS = [
     "date": "2026-10-28",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Roundcube Webmail (19 octobre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Roundcube Webmail. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une falsification de requêtes côté serveur (SSRF) et une injection de code indirecte à distance (XSS).",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1340/",
-    "date": "2026-10-19",
-    "source": "CERT-FR",
-    "category": "Sécurité"
   }
 ];
