@@ -1,0 +1,16 @@
+/* V22.22 — Logithèque: contraste et cohérence avec le thème sombre */
+.tssr-library .tssr-library-toolbar{background:#102b3c!important;border:1px solid #31576b!important;box-shadow:0 12px 25px #07172435!important;color:#eaf8ff!important}
+.tssr-library .tssr-library-search{background:#092232!important;border-color:#37677b!important;color:#d9edf6!important}
+.tssr-library .tssr-library-search input,.tssr-library .tssr-library-search input::placeholder{color:#c4dce8!important;opacity:1!important}
+.tssr-library .tssr-library-filters button{background:#16394c!important;color:#dcecf5!important;border-color:#39667b!important}
+.tssr-library .tssr-library-filters button.active{background:#0789aa!important;color:#fff!important;border-color:#13bad5!important}
+.tssr-library .tssr-library-count{color:#bdd6e5!important;opacity:1!important}
+.tssr-library .tssr-tool-card{background:linear-gradient(150deg,#14384e,#0a2537)!important;border:1px solid #315d76!important;box-shadow:0 10px 24px #04121f45!important;color:#f4faff!important}
+.tssr-library .tssr-tool-card h3{color:#fff!important;opacity:1!important}
+.tssr-library .tssr-tool-card p{color:#c9dce9!important;opacity:1!important}
+.tssr-library .tssr-tool-card .tssr-tool-metric{color:#a9d4e5!important;opacity:1!important}
+.tssr-library .tssr-tool-card .tssr-tool-metric strong{color:#fff!important}
+.tssr-library .tssr-tool-category{background:#144e60!important;color:#77edfa!important}
+.tssr-library .tssr-tool-open{background:#087fa4!important;color:#fff!important}
+.tssr-library .tssr-tool-download{background:#153c50!important;border:1px solid #46788f!important;color:#e7f6ff!important}
+.tssr-library .tssr-tool-card:hover{border-color:#2ac4d6!important;transform:translateY(-2px);transition:transform .18s,border-color .18s}

@@ -1,0 +1,27 @@
+
+/* TSSR 22.28: restaurer l'identité du tableau de bord et des cartes 3D */
+body.home-network #view{background:transparent}
+.tssr-studio-home .studio-hero{border-radius:16px;overflow:hidden;min-height:250px;max-height:350px}
+.tssr-studio-home .tssr-hero-info{max-width:540px;padding:22px 34px;background:linear-gradient(90deg,rgba(2,14,25,.84),rgba(2,14,25,.42) 82%,transparent)}
+.tssr-studio-home .tssr-hero-info h1{font-size:clamp(24px,2.5vw,39px);line-height:1.13;margin:9px 0}
+.tssr-studio-home .tssr-hero-info p{font-size:clamp(12px,1.1vw,15px);max-width:430px}
+.tssr-small-clock{position:absolute;right:16px;bottom:12px;z-index:3;background:rgba(3,20,31,.8);border:1px solid #5f93a266;border-radius:9px;padding:5px 10px;display:flex;gap:10px;align-items:center;color:#e7f5f9;font-size:11px;backdrop-filter:blur(6px)}
+.tssr-small-clock strong{font-size:13px}
+.tssr-live-stats{margin:10px 0 12px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;border:1px solid #17657b;background:linear-gradient(90deg,#082b40,#0a3950,#082b40);color:#cde7ed;border-radius:10px;min-height:39px;font-size:12px}
+.tssr-live-stats span{padding:3px 20px;border-right:1px solid #23647a}.tssr-live-stats span:last-child{border-right:0}.tssr-live-stats b{color:white}
+.tssr-premium-quick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-bottom:15px}
+.tssr-premium-tile{border:1px solid #1d718f;border-radius:12px;min-height:91px;display:flex;align-items:center;gap:11px;padding:11px 13px;color:white;text-align:left;cursor:pointer;box-shadow:0 7px 16px #00131f22;transition:transform .16s,filter .16s;min-width:0}
+.tssr-premium-tile:hover{transform:translateY(-3px);filter:brightness(1.13)}
+.tssr-tile-cours{background:linear-gradient(115deg,#0a4680,#093256)}.tssr-tile-fiches{background:linear-gradient(115deg,#066b56,#075043)}.tssr-tile-quiz{background:linear-gradient(115deg,#5b27a7,#472078)}.tssr-tile-tp{background:linear-gradient(115deg,#b9581b,#88421e)}
+.tssr-premium-tile img{width:66px;height:66px;object-fit:contain;flex:none;filter:drop-shadow(0 3px 5px #00121a55)}
+.tssr-premium-tile span{display:flex;flex-direction:column;gap:5px;min-width:0;flex:1}.tssr-premium-tile b{font-size:14px;line-height:1.25}.tssr-premium-tile small{font-size:10px;color:#e2eef7;line-height:1.35}.tssr-premium-tile i{font-style:normal;font-size:18px;border-radius:50%;width:29px;height:29px;display:grid;place-items:center;background:#ffffff25;flex:none}
+.tssr-weather{background:linear-gradient(155deg,#073047,#092338);border:1px solid #14748b;border-radius:11px;padding:12px;color:#f0f8ff;margin-bottom:10px}.tssr-weather-place{font-weight:700;font-size:12px}.tssr-weather-main{display:flex;gap:12px;align-items:center;margin:8px 0}.tssr-weather-main>span{font-size:37px}.tssr-weather-main strong{display:block;font-size:28px;line-height:1.2}.tssr-weather-main small{display:block;font-size:12px}.tssr-weather p{font-size:10px;color:#b4d8e6;line-height:1.4;margin:7px 0}.tssr-weather button{background:#0b5269;color:white;border:1px solid #278ca2;border-radius:7px;padding:7px;font-size:11px;cursor:pointer;width:100%}
+.v23-sideextras{display:flex;flex-direction:column;gap:0}.v23-sideaction{display:none!important}
+/* QCM : cartes et filtres harmonisés avec le tableau de bord */
+.v81-qmodules{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:16px}
+.v81-qmodules>button,.v81-qmodules>div{background:linear-gradient(145deg,#08374b,#071f32)!important;color:#f4fbff!important;border:1px solid #19778f!important;border-radius:14px!important;box-shadow:0 9px 23px #00111d2b!important}
+.v81-qmodules *{color:inherit}
+.v81-qitems .v81-qitem{background:linear-gradient(135deg,#0a3347,#08263a)!important;border:1px solid #18738c!important;color:#e9f8ff!important;border-radius:12px!important}
+.v81-qitem button{color:#e9f8ff!important}
+[data-q-filter]{border-radius:10px!important}
+@media(max-width:1150px){.tssr-premium-quick{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.tssr-premium-quick{grid-template-columns:1fr}.tssr-small-clock{display:none}.tssr-live-stats span{border:0;padding:5px 10px}.tssr-studio-home .tssr-hero-info{padding:18px}}

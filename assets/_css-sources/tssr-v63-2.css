@@ -1,0 +1,8 @@
+.mg-module-tile.tssr-module-finished .module-card{border-color:rgba(240,187,72,.85)!important;box-shadow:0 0 0 1px rgba(241,191,83,.22),0 0 17px 3px rgba(236,177,56,.23),inset 0 0 15px rgba(235,175,45,.06)!important}.mg-module-tile.tssr-module-finished .module-card:hover{box-shadow:0 0 0 1px rgba(251,210,117,.5),0 0 24px 5px rgba(238,179,52,.34)!important}.tssr-module-finished .module-card-footer{color:#f4ce80!important}.tssr-completion-toggle.is-done{border-color:#d5a647!important;color:#f5d58a!important;background:rgba(189,131,28,.12)!important}
+/* Halo uniquement sur la page de sélection des modules */
+.mg-module-tile.tssr-module-finished .module-index{color:#ffda76!important;border-color:#d6a23b!important;background:rgba(169,110,13,.25)!important}
+
+/* V63.5 : commande manuelle visible uniquement en administration */
+.tssr-gold-admin{display:none;position:absolute;right:84px;top:10px;z-index:5;width:30px;height:30px;border:1px solid #c79c37;border-radius:8px;background:#33270d;color:#ffd16b;font-size:21px;cursor:pointer;line-height:1}
+body.tssr-admin .tssr-gold-admin{display:grid;place-items:center}
+.tssr-gold-admin:hover{background:#604617;box-shadow:0 0 10px #c99846}

@@ -1,0 +1,65 @@
+/* V32 — UNIQUEMENT la page liste des modules Cours, Option C approuvée. */
+#view:has(> .course-library-grid){position:relative;isolation:isolate}
+#view:has(> .course-library-grid)::before{content:"";position:absolute;z-index:-1;top:0;left:0;right:0;height:340px;background:linear-gradient(180deg,rgba(2,23,37,.08) 0%,rgba(2,23,37,.18) 48%,#05283a 100%),url('cours-c-globe.jpg') center top/cover no-repeat;pointer-events:none}
+#view:has(> .course-library-grid) .pagehead,#view:has(> .course-library-grid) .page-header{background:transparent!important}
+#view .course-library-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important;position:relative;z-index:1}
+#view .course-library-grid>.mg-module-tile{height:188px!important;min-height:188px!important}
+#view .course-library-grid .module-card{display:grid!important;grid-template-columns:185px minmax(0,1fr)!important;grid-template-rows:1fr 43px!important;align-items:center!important;column-gap:10px!important;min-height:188px!important;height:188px!important;padding:14px 16px!important;border:1px solid #00c7e4!important;border-radius:18px!important;background:linear-gradient(100deg,rgba(1,28,43,.96),rgba(2,22,37,.97))!important;box-shadow:inset 0 1px #70e7ff20,0 9px 20px #0006!important;overflow:hidden!important;transform:none!important}
+#view .course-library-grid .module-card:hover{border-color:#6af1ff!important;box-shadow:0 0 20px #00b9db33,inset 0 1px #70e7ff35!important;transform:translateY(-2px)!important}
+#view .course-library-grid .module-card-top{grid-column:1!important;grid-row:1/3!important;position:relative!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;width:185px!important;height:160px!important;min-width:0!important;margin:0!important;overflow:visible!important}
+#view .course-library-grid .module-index{position:absolute!important;top:0!important;left:0!important;z-index:3!important;border:1px solid #10c9e4!important;border-radius:8px!important;background:#043b4e!important;color:#50efff!important;font-size:15px!important;font-weight:850!important;padding:4px 7px!important}
+#view .course-library-grid .module-art{display:block!important;width:180px!important;height:150px!important;max-width:none!important;background:transparent!important;box-shadow:none!important;border:0!important;margin:0!important;overflow:hidden!important}
+#view .course-library-grid .module-art img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:contain!important;filter:contrast(1.07) saturate(1.12)!important;mix-blend-mode:screen!important;transform:none!important}
+#view .course-library-grid .module-card h3{grid-column:2!important;grid-row:1!important;align-self:center!important;min-height:0!important;margin:0!important;padding:0 22px 0 0!important;max-width:100%!important;color:#f5fcff!important;font-size:18px!important;font-weight:800!important;line-height:1.27!important;letter-spacing:-.3px!important;text-align:left!important}
+#view .course-library-grid .module-card-footer{grid-column:2!important;grid-row:2!important;align-self:end!important;display:flex!important;width:100%!important;min-width:0!important;align-items:center!important;justify-content:space-between!important;margin:0!important;padding:8px 0 0!important;border-top:1px solid #1a9bb08c!important;color:#e2f4fc!important;font-size:12px!important}
+#view .course-library-grid .module-enter{display:grid!important;place-items:center!important;width:30px!important;height:30px!important;border-radius:50%!important;background:#00b7d7!important;color:white!important;font-size:25px!important;box-shadow:0 0 14px #00d5f455!important}
+#view .course-library-grid>.mg-module-tile>.mg-module-edit{position:absolute!important;top:69px!important;right:12px!important;bottom:auto!important;z-index:4!important;display:grid!important;place-items:center!important;width:30px!important;height:30px!important;padding:0!important;margin:0!important;background:#053b4d!important;color:#e2faff!important;border:1px solid #158aa5!important;border-radius:7px!important}
+.cours-c-icon-picker{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:9px;max-height:340px;overflow:auto;padding:12px;border:1px solid #377f91;border-radius:12px;margin:12px 0}
+.cours-c-icon-picker label{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px;border:1px solid #32647b;border-radius:10px;background:#082a3e;cursor:pointer;color:#dff7ff}
+.cours-c-icon-picker label:has(input:checked){border-color:#36e4f3;outline:2px solid #12bed5}
+.cours-c-icon-picker img{width:100px;height:76px;object-fit:contain;mix-blend-mode:screen}.cours-c-icon-picker small{font-size:10px}
+@media(max-width:1250px){#view .course-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:730px){#view .course-library-grid{grid-template-columns:1fr!important}#view .course-library-grid .module-card{grid-template-columns:145px minmax(0,1fr)!important}#view .course-library-grid .module-card-top{width:145px!important}#view .course-library-grid .module-art{width:145px!important}#view .course-library-grid .module-card h3{font-size:16px!important}}
+
+/* V33 — corrections ciblées, page Cours seulement */
+#view:has(> .course-library-grid)::before{height:245px!important;background-image:linear-gradient(180deg,rgba(2,23,37,.08) 0%,rgba(2,23,37,.15) 50%,#05283a 100%),url('cours-c-globe.jpg')!important;background-size:100% 100%,auto 174px!important;background-position:center top,center top!important;background-repeat:no-repeat!important}
+#view .course-library-grid>.mg-module-tile{position:relative!important}
+#view .course-library-grid .module-card-top{overflow:visible!important}
+#view .course-library-grid .module-index{top:0!important;left:0!important;z-index:5!important}
+#view .course-library-grid .module-art{overflow:visible!important}
+#view .course-library-grid .module-art img{mix-blend-mode:normal!important;object-fit:contain!important}
+#view .course-library-grid>.mg-module-tile>.mg-module-edit{top:13px!important;right:13px!important;z-index:7!important}
+#view:has(> .course-library-grid) .pagehead .actions,#view:has(> .course-library-grid) .page-header .actions{position:relative!important;z-index:6!important;display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:flex-end!important;gap:9px!important}
+#view:has(> .course-library-grid) .pagehead .actions .btn,#view:has(> .course-library-grid) .page-header .actions .btn{white-space:nowrap!important;min-height:40px!important;position:relative!important;z-index:7!important}
+
+/* V35 — only the Courses module-list background. One globe from approved reference, no tiling. */
+#view:has(> .course-library-grid)::before{
+ background-image:linear-gradient(90deg,#05283a 0%,rgba(5,40,58,.05) 24%,rgba(5,40,58,.05) 76%,#05283a 100%),linear-gradient(180deg,transparent 0%,transparent 60%,#05283a 100%),url('cours-globe-v35.jpg')!important;
+ background-size:100% 100%,100% 100%,auto 210px!important;
+ background-position:center top,center top,center top!important;
+ background-repeat:no-repeat,no-repeat,no-repeat!important;
+ height:240px!important;
+}
+
+/* V36: globe starts after the 'Cours' heading, fills the remaining width.
+   No new artwork, no other section affected. */
+#view:has(> .course-library-grid)::before{
+ left:225px!important;right:0!important;top:0!important;height:220px!important;
+ background-image:linear-gradient(180deg,rgba(3,31,47,.04) 0%,rgba(3,31,47,.06) 54%,#05283a 100%),url('cours-globe-v36.png')!important;
+ background-size:100% 100%,100% auto!important;
+ background-position:center top,center top!important;
+ background-repeat:no-repeat,no-repeat!important;
+}
+@media(max-width:950px){#view:has(> .course-library-grid)::before{left:175px!important}}
+@media(max-width:600px){#view:has(> .course-library-grid)::before{left:0!important;opacity:.45!important}}
+
+/* V37: full-width single globe from the user-approved visual, page Cours only. */
+#view:has(> .course-library-grid)::before{
+ left:225px!important;right:0!important;top:0!important;height:210px!important;
+ background-image:linear-gradient(90deg,rgba(5,40,58,.45),transparent 23%,transparent 85%,rgba(5,40,58,.12)),linear-gradient(180deg,transparent 0%,transparent 65%,#05283a 100%),url('cours-globe-v37.png')!important;
+ background-size:100% 100%,100% 100%,100% auto!important;
+ background-position:center top,center top,center top!important;
+ background-repeat:no-repeat,no-repeat,no-repeat!important;
+}
+@media(max-width:950px){#view:has(> .course-library-grid)::before{left:175px!important}}
+@media(max-width:600px){#view:has(> .course-library-grid)::before{left:0!important;opacity:.45!important}}

@@ -1,0 +1,8 @@
+/* Halo doré automatique sur les cartes des modules dans tous les modes */
+body .course-library-grid .mg-module-tile.tssr-module-finished > .module-card{border:2px solid #f2c35a!important;box-shadow:0 0 0 1px rgba(255,217,120,.65),0 0 18px 4px rgba(240,177,45,.52),inset 0 0 13px rgba(240,178,40,.1)!important}
+body .course-library-grid .mg-module-tile.tssr-module-finished .module-index{background:linear-gradient(140deg,#ffe99d,#c18a23)!important;border-color:#ffd66e!important;color:#241600!important}
+body .course-library-grid .mg-module-tile.tssr-module-finished .module-card-footer{color:#ffda85!important}
+
+/* V63.4 correction finale : le style est porté par la carte elle-même. */
+body .course-library-grid button.module-card.tssr-gold-complete{border:2px solid #f4c75c!important;box-shadow:0 0 0 1px rgba(255,219,125,.75),0 0 21px 5px rgba(244,181,48,.56),inset 0 0 14px rgba(255,197,70,.1)!important}
+body .course-library-grid button.module-card.tssr-gold-complete .module-index{background:linear-gradient(140deg,#ffe69c,#c18a23)!important;border-color:#ffd66e!important;color:#241600!important}

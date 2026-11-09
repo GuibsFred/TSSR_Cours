@@ -1,0 +1,44 @@
+
+/* V22.4 - maquette validée, non destructive: navigation and stored data unchanged */
+.tssr-studio-home .studio-hero{height:clamp(290px,22vw,350px)!important;min-height:290px!important;max-height:350px!important;border:1px solid #09628b!important;background:#041624!important}
+.tssr-studio-home .studio-scene.v19-scene .v19-cinema{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important}
+.tssr-studio-home .studio-hero:before{display:none!important}
+.tssr-studio-home .studio-overlay,.tssr-studio-home .studio-caption{display:none!important}
+.tssr-studio-home .studio-scene.v19-scene .v20-effects{display:none!important}
+.tssr-studio-home .studio-hero{box-shadow:0 10px 32px #00121f40!important}
+.course-library-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px 18px!important}
+.course-library-grid .module-card{position:relative!important;display:grid!important;grid-template-columns:58px 164px minmax(0,1fr) 40px!important;grid-template-rows:1fr 1fr!important;align-items:center!important;min-height:113px!important;padding:10px 15px!important;gap:0 12px!important;border-radius:13px!important;background:linear-gradient(120deg,#173b52,#09283e)!important;border:1px solid #225570!important;box-shadow:0 5px 15px #00192c18!important;text-align:left!important;overflow:hidden!important}
+.course-library-grid .module-card:hover{transform:translateY(-2px)!important;border-color:#14c6ed!important;box-shadow:0 9px 25px #0099c128!important}
+.course-library-grid .module-card-top{grid-column:1/3!important;grid-row:1/3!important;display:grid!important;grid-template-columns:58px 164px!important;align-items:center!important;height:100%!important;gap:8px!important}
+.course-library-grid .module-index{font-size:27px!important;font-weight:800!important;color:#21d0f4!important;background:transparent!important;box-shadow:none!important}
+.course-library-grid .module-art{width:160px!important;height:94px!important;display:block!important;background-position:center!important;background-size:contain!important;background-repeat:no-repeat!important;filter:drop-shadow(0 7px 6px #0007)!important}
+.course-library-grid .module-art svg{display:none!important}
+.course-library-grid .module-card h3{grid-column:3!important;grid-row:1!important;margin:0!important;font-size:clamp(16px,1.16vw,20px)!important;line-height:1.25!important;color:white!important;align-self:end!important;font-weight:750!important}
+.course-library-grid .module-card-footer{grid-column:3/5!important;grid-row:2!important;align-self:start!important;margin-top:8px!important;color:#b7d0e2!important;display:flex!important;justify-content:space-between!important;align-items:center!important}
+.course-library-grid .module-enter{border:1px solid #04c4ee!important;border-radius:50%!important;width:35px!important;height:35px!important;display:grid!important;place-items:center!important;font-size:25px!important;color:#16c9ef!important;position:absolute!important;right:18px!important;top:calc(50% - 18px)!important}
+.course-library-grid .module-card[data-topic="m365"] .module-art{background-image:url("icon3d-m365.png")!important}
+.course-library-grid .module-card[data-topic="network"] .module-art{background-image:url("icon3d-network.png")!important}
+.course-library-grid .module-card[data-topic="windows"] .module-art{background-image:url("icon3d-windows.png")!important}
+.course-library-grid .module-card[data-topic="linux"] .module-art{background-image:url("icon3d-linux.png")!important}
+.course-library-grid .module-card[data-topic="support"] .module-art{background-image:url("icon3d-support.png")!important}
+.course-library-grid .module-card[data-topic="cloud"] .module-art{background-image:url("icon3d-cloud.png")!important}
+.course-library-grid .module-card[data-topic="security"] .module-art{background-image:url("icon3d-security.png")!important}
+.course-library-grid .module-card[data-topic="backup"] .module-art{background-image:url("icon3d-backup.png")!important}
+.course-library-grid .module-card[data-topic="script"] .module-art{background-image:url("icon3d-script.png")!important}
+.course-library-grid .module-card[data-topic="practice"] .module-art{background-image:url("icon3d-practice.png")!important}
+.course-library-grid .module-card[data-topic="monitor"] .module-art{background-image:url("icon3d-monitor.png")!important}
+.course-library-grid .module-card[data-topic="other"] .module-art{background-image:url("icon3d-other.png")!important}
+
+@media(max-width:1050px){.course-library-grid{grid-template-columns:1fr!important}}
+@media(max-width:650px){.course-library-grid .module-card{grid-template-columns:42px 94px minmax(0,1fr) 26px!important;min-height:100px!important;gap:0 6px!important}.course-library-grid .module-card-top{grid-template-columns:42px 94px!important}.course-library-grid .module-art{width:94px!important;height:78px!important}.course-library-grid .module-card h3{font-size:15px!important}.tssr-studio-home .studio-hero{height:260px!important;min-height:260px!important}}
+
+/* V22.5: reference panorama fills the complete hero, without cropping or stretching */
+.tssr-studio-home .studio-hero{height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:1559 / 327!important;border-radius:17px!important;overflow:hidden!important}
+.tssr-studio-home .studio-scene.v19-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+.tssr-studio-home .studio-scene.v19-scene .v19-cinema{width:100%!important;height:100%!important;object-fit:fill!important;object-position:center!important}
+.tssr-studio-home .studio-motto{display:none!important}
+.tssr-studio-home .v84-shortcuts{margin-top:10px!important}
+.tssr-studio-home .v84-shortcut{border:1px solid #15709b!important;box-shadow:0 7px 22px #00152240!important}
+.tssr-studio-home .v84-shortcut img{filter:drop-shadow(0 5px 7px #0005) saturate(1.3)!important}
+.course-library-grid .module-art{filter:drop-shadow(0 7px 8px #0009) saturate(1.3) contrast(1.12)!important}
+@media(max-width:700px){.tssr-studio-home .studio-hero{aspect-ratio:1559 / 420!important}}

@@ -1,0 +1,10 @@
+/* V49 — accueil uniquement : aucun changement aux jeux ou autres pages. */
+body.home-network .v84-home .tssr-live-stats{min-height:32px!important;height:auto!important;padding:0 8px!important;margin:10px 0 14px!important;border-radius:9px!important;box-shadow:none!important;gap:0!important}
+body.home-network .v84-home .tssr-live-stats>span{padding:5px 8px!important;font-size:10px!important;line-height:1.15!important;min-height:30px!important}
+body.home-network .v84-home .tssr-live-stats .tssr-stats-clock strong{font-size:10px!important}
+body.home-network .v47-dashboard{gap:16px!important}
+body.home-network .v47-featured{padding:14px!important;border-radius:17px!important;background:linear-gradient(125deg,#082c41,#051e30)!important;box-shadow:0 12px 30px #0004!important}
+body.home-network .v47-featured:before{display:none!important}
+body.home-network .v47-quick-grid{gap:15px!important}
+body.home-network .v47-quick{min-height:235px!important}
+@media(max-width:650px){body.home-network .v47-featured{padding:10px!important}body.home-network .v84-home .tssr-live-stats{height:auto!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}}
