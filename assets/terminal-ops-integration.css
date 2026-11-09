@@ -1,0 +1,19 @@
+/* TERMINAL OPS : accès toujours visible dans le site TSSR */
+#mainNav .tssr-terminal-nav{display:flex!important;align-items:center;gap:10px;margin:14px 7px 6px;padding:12px 10px;min-height:56px;border:1px solid #20baf2!important;border-radius:12px;background:linear-gradient(120deg,#073b56,#082231)!important;box-shadow:inset 0 0 25px #0c91bc25,0 0 18px #0ab8e01c;color:#f1fcff!important;text-decoration:none!important;font-weight:800;letter-spacing:.4px;transition:transform .2s,box-shadow .2s}
+#mainNav .tssr-terminal-nav:hover{transform:translateX(3px);box-shadow:0 0 24px #21bff544}
+#mainNav .tssr-terminal-nav .sym{display:grid;place-items:center;flex:none;font-size:23px;width:38px;height:38px;border-radius:10px;background:#075374;color:#5ae7ff}
+#mainNav .tssr-terminal-nav small{display:block;font-size:10px;font-weight:500;letter-spacing:0;color:#89c5db;margin-top:3px}
+#mainNav .tssr-terminal-nav .terminal-chevron{margin-left:auto;color:#43d9ff;font-size:18px}
+.tssr-ops-launch{position:relative;isolation:isolate;display:block;overflow:hidden;min-height:250px;margin:13px 0 17px;border:1px solid #26a7e2;border-radius:15px;background:#07182b;color:#fff;text-decoration:none!important;box-shadow:0 6px 26px #020c1970;transition:transform .2s,box-shadow .2s}
+.tssr-ops-launch:hover{transform:translateY(-2px);box-shadow:0 9px 34px #139ce244}
+.tssr-ops-launch-art{position:absolute;z-index:-2;inset:0;background:url('../terminal-ops/hero-ops.webp') center 40%/cover no-repeat;opacity:.8}
+.tssr-ops-launch:before{position:absolute;z-index:-1;content:'';inset:0;background:linear-gradient(90deg,#041423 2%,#061c30 33%,#071b2ade 55%,#081b2920 100%)}
+.tssr-ops-launch-content{position:relative;max-width:650px;padding:30px 32px 54px}
+.tssr-ops-launch-kicker{display:block;color:#6ce2fa;font-size:10px;font-weight:900;letter-spacing:2px;margin-bottom:8px}
+.tssr-ops-launch-content strong{display:block;font-size:clamp(29px,3.5vw,46px);letter-spacing:2px;line-height:1.1;font-weight:900}
+.tssr-ops-launch-content em{font-style:normal;color:#34c8fc}
+.tssr-ops-launch-content p{font-size:14px;line-height:1.6;color:#d0e4f2;margin:12px 0 16px}
+.tssr-ops-launch-content p b{color:#fff}
+.tssr-ops-launch-btn{display:inline-flex;gap:20px;align-items:center;padding:11px 18px;border-radius:9px;background:linear-gradient(#48d5ff,#0799df);color:#031625;font-weight:900;box-shadow:0 0 26px #179cfd55;font-size:12px}
+.tssr-ops-launch-meta{position:absolute;bottom:0;left:0;right:0;display:flex;gap:20px;flex-wrap:wrap;padding:9px 29px;border-top:1px solid #4fd6ff22;background:#02111dcc;color:#a1dbea;font-size:10px;letter-spacing:1px;font-weight:700}
+@media(max-width:750px){.tssr-ops-launch{min-height:260px}.tssr-ops-launch-content{padding:25px 19px 56px}.tssr-ops-launch:before{background:linear-gradient(90deg,#041423ed,#041423bb)}.tssr-ops-launch-meta{gap:8px;font-size:8px;padding:9px 12px}}
