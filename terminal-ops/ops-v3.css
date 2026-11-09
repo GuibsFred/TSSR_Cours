@@ -31,3 +31,19 @@
 .world-network-footer{padding:11px 14px;display:flex;align-items:center;gap:13px;flex-wrap:wrap;background:#051b29;border-top:1px solid #2a526a;color:#b2d5e3;font-size:10px}.world-network-footer span:nth-child(1){color:#54e8bd}.world-network-footer span:nth-child(2){color:#ffc08b}.world-network-footer button{margin-left:auto}
 .world-network-panel{padding:13px 15px;background:#0b2a3d;border-top:1px solid #34627b;color:#c8eaf8;font-size:11px;line-height:1.7}.world-network-panel[hidden]{display:none}
 @media(max-width:850px){.world-map-stage{height:350px}.world-navigation-head span{display:none}.world-zones{grid-template-columns:1fr}}
+
+/* V3.5 — scene de mission plein cadre, cartes choisies automatiquement par niveau */
+.world-navigation,.world-strip,.world-navigation-head{display:none!important}
+.world-map-stage{height:clamp(440px,38vw,650px);background:#061523}
+.world-map-stage>img{object-fit:cover;object-position:center}
+.world-map-area .world-services{background:#081f30;border-top:1px solid #2b5870}
+.world-services>summary{list-style:none;cursor:pointer;min-height:48px;padding:12px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#9de4fc}
+.world-services>summary::-webkit-details-marker{display:none}
+.world-services>summary b{display:block;font-size:11px;letter-spacing:.75px}
+.world-services>summary small{display:block;color:#90adc1;font-size:10px;margin-top:4px}
+.world-disclosure{color:#9cd4e9;white-space:nowrap;font-size:11px}
+.world-services[open] .world-disclosure{font-size:0}
+.world-services[open] .world-disclosure::after{content:'Masquer ▴';font-size:11px}
+.world-services .world-zone-head{border-top:1px solid #244e65}
+.world-map-guide{padding:10px 14px}
+@media(max-width:850px){.world-map-stage{height:clamp(310px,63vw,475px)}}
