@@ -72,3 +72,22 @@
 .connected-machine small{display:block;font-size:9px;letter-spacing:1px;color:#83aec6}.connected-machine strong{display:block;font-size:13px;color:#ddfaff;margin:3px 0}.connected-machine span{font-size:10px;color:#9bbfd0}
 .connected-pill{font-size:9px!important;color:#7be3b7!important;white-space:nowrap}
 @media(max-width:780px){.world-map-stage{height:380px!important}.world-machine-head{align-items:flex-start;flex-direction:column}}
+
+/* V3.8 — clic sur les pièces directement dans la vue, sans menus intermédiaires */
+.world-explore,.world-quickzones,.world-services,.world-machines,.world-inspector,.world-network-footer,.world-network-panel{display:none!important}
+.world-map-stage{height:clamp(420px,39vw,680px)!important}
+.world-clickmap{position:absolute;z-index:4;pointer-events:none;transform:scale(var(--scene-zoom,1));transform-origin:center center}
+.world-clickmap .room-hit{position:absolute;pointer-events:auto;background:transparent;border:1px solid transparent;border-radius:9px;cursor:pointer;color:transparent;padding:0;transition:background .12s,border-color .12s}
+.world-clickmap .room-hit:hover,.world-clickmap .room-hit:focus-visible{outline:none;background:#42dfff16;border-color:#69e8ff;box-shadow:0 0 0 2px #04253d77,0 0 25px #30d9ff36}
+.world-clickmap .room-hit.active{border-color:#52e8ff;background:#2accff10}
+.world-room-popup{position:absolute;z-index:9;right:12px;bottom:56px;width:min(350px,calc(100% - 24px));max-height:min(360px,72%);overflow-y:auto;background:#071827f5;border:1px solid #4db9df;border-radius:12px;box-shadow:0 20px 55px #000d,0 0 25px #03cffa20;backdrop-filter:blur(14px);color:#dff8ff}
+.world-room-popup[hidden]{display:none!important}
+.world-room-popup-header{padding:14px 15px 10px;display:flex;align-items:start;justify-content:space-between;gap:10px;border-bottom:1px solid #2a526b}
+.world-room-popup-header small{display:block;color:#68def3;letter-spacing:1px;font-weight:800;font-size:9px}
+.world-room-popup-header strong{display:block;font-size:17px;margin:4px 0}
+.world-room-popup-header span{display:block;color:#a7cadb;font-size:11px;line-height:1.5}
+#world-popup-close{background:#113248;color:#c7f3ff;border:1px solid #447c98;border-radius:6px;padding:6px 10px;cursor:pointer}
+.world-popup-machines{padding:10px;display:grid;gap:7px}
+.world-popup-machines .world-machine{background:#0d2e42}
+.world-map-guide{border-bottom:1px solid #235470}
+@media(max-width:650px){.world-room-popup{bottom:45px;max-height:65%;width:calc(100% - 24px)}}
