@@ -4,9 +4,9 @@
 (()=>{'use strict';
 const clone=x=>JSON.parse(JSON.stringify(x));
 const INITIAL={
- machine:'ACCUEIL-07',user:'GHPL\\Technicien',cwd:'C:\\Users\\Technicien',ip:'192.168.10.42',mask:'255.255.255.0',gateway:'192.168.10.1',dns:'192.168.10.10',mac:'00-25-96-4A-10-07',dhcp:'192.168.10.5',
- dnsRecords:{'intranet.hopital.local':'192.168.10.25','srv-fichiers.hopital.local':'192.168.10.30','dns-ghpl.local':'192.168.10.10','accueil-07.hopital.local':'192.168.10.42','srv-app.hopital.local':'192.168.10.20'},
- cache:{'intranet.hopital.local':'192.168.10.99','srv-fichiers.hopital.local':'192.168.10.30'},
+ machine:'ACCUEIL-07',user:'AGENCE\\Technicien',cwd:'C:\\Users\\Technicien',ip:'192.168.10.42',mask:'255.255.255.0',gateway:'192.168.10.1',dns:'192.168.10.10',mac:'00-25-96-4A-10-07',dhcp:'192.168.10.5',
+ dnsRecords:{'intranet.agence.local':'192.168.10.25','srv-fichiers.agence.local':'192.168.10.30','dns-agence.local':'192.168.10.10','accueil-07.agence.local':'192.168.10.42','srv-app.agence.local':'192.168.10.20'},
+ cache:{'intranet.agence.local':'192.168.10.99','srv-fichiers.agence.local':'192.168.10.30'},
  routes:[{target:'192.168.10.0',mask:'255.255.255.0',gateway:'On-link'},{target:'0.0.0.0',mask:'0.0.0.0',gateway:'192.168.10.1'}],
  services:{Dnscache:'RUNNING',EventLog:'RUNNING',LanmanWorkstation:'RUNNING',LanmanServer:'RUNNING',Spooler:'RUNNING',W32Time:'RUNNING'},
  files:{'c:\\users\\technicien\\notes.txt':'Dossier de test du service informatique.','c:\\users\\technicien\\diagnostic.txt':'Journal local de maintenance.','c:\\windows\\system32\\drivers\\etc\\hosts':'# localhost\n127.0.0.1 localhost'},
@@ -28,9 +28,9 @@ const cacheWorks=()=>s.services.Dnscache==='RUNNING';
 const resolve=(name,usesCache)=>{const key=name.toLowerCase().replace(/\.$/,'');if(ipValid(key))return key;if(usesCache&&cacheWorks()&&Object.hasOwn(s.cache,key))return s.cache[key];const v=s.dnsRecords[key];if(v&&usesCache&&cacheWorks())s.cache[key]=v;return v||null};
 const connected=(ip)=>{if(ip==='127.0.0.1'||ip===s.ip||ip==='192.168.10.1'||ip==='192.168.10.10'||ip==='192.168.10.25'||ip==='192.168.10.30'||ip==='192.168.10.20')return true;if(ip==='192.168.10.99')return false;return goodGateway()&&ip==='8.8.8.8'};
 const cacheRows=()=>Object.entries(s.cache).map(([name,ip])=>`    ${name.padEnd(34)} ${ip}`).join('\n')||'    (cache vide)';
-function reset(mission){s=clone(INITIAL);s.mission=mission||'cmd-dns';if(mission==='cmd-route'){s.routes=s.routes.filter(r=>r.target!=='0.0.0.0');s.cache['intranet.hopital.local']=s.dnsRecords['intranet.hopital.local']}event('Environnement de laboratoire initialisé')}
+function reset(mission){s=clone(INITIAL);s.mission=mission||'cmd-dns';if(mission==='cmd-route'){s.routes=s.routes.filter(r=>r.target!=='0.0.0.0');s.cache['intranet.agence.local']=s.dnsRecords['intranet.agence.local']}event('Environnement de laboratoire initialisé')}
 function normalizePath(p){let path=(p||'.').trim().replace(/^"|"$/g,'').replace(/\//g,'\\');if(path==='.')return s.cwd.toLowerCase();if(/^[a-z]:\\/i.test(path))return path.toLowerCase();if(path.startsWith('\\'))return ('c:'+path).toLowerCase();return (s.cwd+'\\'+path).toLowerCase().replace(/\\\.\\/g,'\\')}
-function info(){return [`Configuration IP Windows — ${s.machine}`,'Carte Ethernet Ethernet0 :',`   Suffixe DNS propre à la connexion : hopital.local`,`   Adresse physique . . . . . . . . : ${s.mac}`,`   DHCP activé. . . . . . . . . . . : Oui`,`   Adresse IPv4. . . . . . . . . . : ${s.ip}`,`   Masque de sous-réseau . . . . . : ${s.mask}`,`   Passerelle par défaut . . . . . : ${goodGateway()?s.gateway:'(absente)'}`,`   Serveurs DNS . . . . . . . . . : ${s.dns}`,`   Serveur DHCP . . . . . . . . . : ${s.dhcp}`].join('\n')}
+function info(){return [`Configuration IP Windows — ${s.machine}`,'Carte Ethernet Ethernet0 :',`   Suffixe DNS propre à la connexion : agence.local`,`   Adresse physique . . . . . . . . : ${s.mac}`,`   DHCP activé. . . . . . . . . . . : Oui`,`   Adresse IPv4. . . . . . . . . . : ${s.ip}`,`   Masque de sous-réseau . . . . . : ${s.mask}`,`   Passerelle par défaut . . . . . : ${goodGateway()?s.gateway:'(absente)'}`,`   Serveurs DNS . . . . . . . . . : ${s.dns}`,`   Serveur DHCP . . . . . . . . . : ${s.dhcp}`].join('\n')}
 function checkProgress(command){const completed=[];if(s.mission==='cmd-dns'){
  if(s.examinedConfig){s.steps[0]=true}if(s.examinedDNS){s.steps[1]=true}if(s.pingedAfterFix&&s.services.Dnscache==='RUNNING'&&s.corruption.length===0){s.steps[2]=true}
  }else if(s.mission==='cmd-route'){
@@ -44,7 +44,7 @@ function execute(line){const raw=(line||'').trim();if(!raw)return result('');con
  else if(cmd==='cls'){r=result('', 'clear')}
  else if(cmd==='ver')r=result('Microsoft Windows [version simulée 10.0.22631] — laboratoire TERMINAL OPS');
  else if(cmd==='hostname')r=result(s.machine);
- else if(cmd==='whoami')r=result(lowerArgs.includes('/groups')?'INFORMATIONS DE GROUPE\nGHPL\\Techniciens · Utilisateurs':lowerArgs.includes('/priv')?'SeChangeNotifyPrivilege   Activé\nSeShutdownPrivilege       Désactivé':s.user);
+ else if(cmd==='whoami')r=result(lowerArgs.includes('/groups')?'INFORMATIONS DE GROUPE\nAGENCE\\Techniciens · Utilisateurs':lowerArgs.includes('/priv')?'SeChangeNotifyPrivilege   Activé\nSeShutdownPrivilege       Désactivé':s.user);
  else if(cmd==='date'||cmd==='time')r=result('Date/heure du laboratoire : 10/11/2026 09:15');
  else if(cmd==='echo')r=result(args.join(' '));
  else if(cmd==='set')r=result('COMPUTERNAME='+s.machine+'\nUSERNAME=Technicien\nUSERPROFILE=C:\\Users\\Technicien\nTEMP=C:\\Windows\\Temp');
@@ -65,13 +65,13 @@ function execute(line){const raw=(line||'').trim();if(!raw)return result('');con
  else r=err('Paramètre non reconnu. Tapez help ipconfig.');
  }
  else if(cmd==='nslookup'){
- const name=(a[0]||'intranet.hopital.local').toLowerCase();const dnsServer=a[1]||s.dns;const ip=s.dnsRecords[name];s.examinedDNS=true;observe('dns-server');r=ip?result(`Serveur : dns-ghpl.local\nAddress: ${dnsServer}\n\nNom : ${name}\nAddress: ${ip}`):err(`Serveur : dns-ghpl.local\n*** ${name} : domaine inexistant (NXDOMAIN)`);
+ const name=(a[0]||'intranet.agence.local').toLowerCase();const dnsServer=a[1]||s.dns;const ip=s.dnsRecords[name];s.examinedDNS=true;observe('dns-server');r=ip?result(`Serveur : dns-agence.local\nAddress: ${dnsServer}\n\nNom : ${name}\nAddress: ${ip}`):err(`Serveur : dns-agence.local\n*** ${name} : domaine inexistant (NXDOMAIN)`);
  }
  else if(cmd==='ping'||cmd==='tracert'||cmd==='pathping'){
  const tgt=a.find(x=>!x.startsWith('-'))||'';if(!tgt)r=err('Syntaxe : ping [-n N] adresse');else {const ip=resolve(tgt,true);if(!ip)r=err('La requête Ping n’a pas pu trouver l’hôte '+tgt+'. Vérifiez le nom et essayez à nouveau.');else{
  const alive=s.ip!=='0.0.0.0'&&connected(ip)&&(ip.startsWith('192.168.10.')||goodGateway());
- if(tgt.toLowerCase()==='intranet.hopital.local'&&alive&&ip===s.dnsRecords[tgt.toLowerCase()]&&s.mission==='cmd-dns')s.pingedAfterFix=true;
- if(tgt.toLowerCase()==='intranet.hopital.local')observe('ping-intranet');
+ if(tgt.toLowerCase()==='intranet.agence.local'&&alive&&ip===s.dnsRecords[tgt.toLowerCase()]&&s.mission==='cmd-dns')s.pingedAfterFix=true;
+ if(tgt.toLowerCase()==='intranet.agence.local')observe('ping-intranet');
  if(tgt.toLowerCase()==='192.168.10.1'&&alive&&s.mission==='cmd-route')s.routeRestored=goodGateway();
  if(cmd==='ping')r=alive?ok(`Envoi d’une requête 'ping' sur ${tgt} [${ip}]\nRéponse de ${ip} : octets=32 temps<1 ms TTL=64\nPaquets : envoyés = 4, reçus = 4, perdus = 0 (perte 0 %)`):err(`Envoi d’une requête 'ping' sur ${tgt} [${ip}]\nDélai d’attente de la demande dépassé.\nPaquets : envoyés = 4, reçus = 0, perdus = 4 (perte 100 %)`);
  else r=warn(`Détermination de l’itinéraire vers ${tgt} [${ip}]\n  1   ${s.gateway}\n  2   ${alive?ip:'* * * délai dépassé'}`);
@@ -91,7 +91,7 @@ function execute(line){const raw=(line||'').trim();if(!raw)return result('');con
  }
  else if(cmd==='tasklist')r=result('Nom de l’image               PID\n'+s.processes.map(p=>p.name.padEnd(29)+p.pid).join('\n'));
  else if(cmd==='taskkill'){const at=lowerArgs.indexOf('/pid'),pid=Number(a[at+1]);const p=s.processes.find(x=>x.pid===pid);if(at<0||!p)r=err('ERREUR : processus introuvable ou paramètre invalide.');else if(pid===4)r=err('ERREUR : accès refusé au processus système.');else {s.processes=s.processes.filter(x=>x!==p);event('Processus '+p.name+' terminé','WARNING');r=ok('Opération réussie : PID '+pid+' terminé.')}}
- else if(cmd==='systeminfo')r=result(`Nom de l’hôte : ${s.machine}\nNom du système : Microsoft Windows (simulé)\nFabricant : TERMINAL OPS LAB\nDomaine : GHPL.LOCAL\nMémoire physique totale : 8 Go`);
+ else if(cmd==='systeminfo')r=result(`Nom de l’hôte : ${s.machine}\nNom du système : Microsoft Windows (simulé)\nFabricant : TERMINAL OPS LAB\nDomaine : AGENCE.LOCAL\nMémoire physique totale : 8 Go`);
  else if(cmd==='driverquery')r=result('Nom du module      Type\ne1dexpress         Pilote réseau\nprintqueue         Pilote d’impression');
  else if(cmd==='net'){const op=lowerArgs[0]||'';if(op==='user')r=result('Comptes du poste : Administrateur, Technicien, Invité');else if(op==='localgroup')r=result('Groupes locaux : Administrateurs, Utilisateurs, Opérateurs');else if(op==='view')r=result('\u005c\u005cSRV-FICHIERS\n\u005c\u005cWIN-SRV-02');else if(op==='use')r=result('Lecteurs réseau : Z: \\SRV-FICHIERS\\Partage');else r=err('Sous-commande net non disponible.');}
  else if(cmd==='gpresult')r=result('Stratégies de groupe : GPO-Postes-Administratifs, GPO-Securite');
@@ -105,6 +105,6 @@ function execute(line){const raw=(line||'').trim();if(!raw)return result('');con
  const steps=checkProgress(cmd);return {...r,steps,observations:[...s.observations],snapshot:getState()}
 }
 function getState(){return clone(s)}
-function status(){return {mission:s.mission,steps:[...s.steps],services:clone(s.services),cache:clone(s.cache),routes:clone(s.routes),observations:[...s.observations],corruption:[...s.corruption],events:clone(s.events),healthyDNS:s.services.Dnscache==='RUNNING'&&resolve('intranet.hopital.local',false)===resolve('intranet.hopital.local',true)}}
+function status(){return {mission:s.mission,steps:[...s.steps],services:clone(s.services),cache:clone(s.cache),routes:clone(s.routes),observations:[...s.observations],corruption:[...s.corruption],events:clone(s.events),healthyDNS:s.services.Dnscache==='RUNNING'&&resolve('intranet.agence.local',false)===resolve('intranet.agence.local',true)}}
 window.TerminalOpsSim={reset,execute,getState,status,commands:[...names]};reset('cmd-dns');
 })();
