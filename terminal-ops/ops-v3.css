@@ -50,3 +50,25 @@
 
 /* Carnet d’enquête intégré, sans perturber les panneaux de mission */
 #investigation-notes {margin-top:15px;}#investigation-notes summary {cursor:pointer;}#investigation-notes .investigation-content {white-space:pre-wrap;font:12px/1.65 ui-monospace,Consolas,monospace;color:#9ee8ef;padding:13px 14px;background:#091b29;border:1px solid #285475;border-radius:9px;margin-top:8px;}
+
+/* V3.7 — La carte n'est jamais recadrée et l'exploration n'encombre pas la scène. */
+.world-map-stage{height:clamp(390px,37vw,650px)!important;overflow:hidden;background:#061522!important}
+.world-map-stage>img{object-fit:contain!important;object-position:center!important;transform:scale(var(--scene-zoom,1))!important}
+.world-explore{position:absolute;top:12px;left:12px;z-index:6;background:#0a253eea;border:1px solid #4db3dc;border-radius:7px;color:#b9eeff;padding:9px 12px;cursor:pointer;font-size:11px;font-weight:800}
+.world-quickzones{position:absolute!important;top:50px;left:12px;z-index:7;width:min(260px,calc(100% - 24px));max-height:calc(100% - 112px);overflow:auto;background:#071a2bf5;border:1px solid #377997;border-radius:10px;padding:7px;box-shadow:0 14px 35px #000b;display:grid;gap:5px}
+.world-quickzones[hidden]{display:none!important}
+.world-quickzones button{border:1px solid #284c67;background:#0d2b40;color:#cbe8f7;text-align:left;border-radius:6px;padding:9px;cursor:pointer;display:flex;justify-content:space-between;gap:8px;font-size:11px}
+.world-quickzones button.selected,.world-quickzones button:hover{border-color:#4fc8ef;background:#124361}
+.world-quickzones small{color:#78b8d6;white-space:nowrap}
+.world-machines{padding:12px 14px;background:#081c2d;border-top:1px solid #265670}
+.world-machine-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:9px}
+.world-machine-head strong{font-size:10px;letter-spacing:1px;color:#94e9ff}.world-machine-head span{font-size:10px;color:#91aec0}
+.world-machine-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:7px}
+.world-machine{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px;background:#0e2b42;border:1px solid #2b5a77;border-radius:7px;min-width:0}
+.world-machine div{min-width:0}.world-machine strong{display:block;font-size:11px;color:#e1f5ff}.world-machine small{display:block;color:#a2bbc9;font-size:10px;margin-top:4px}
+.world-machine button{padding:7px 9px;border-radius:6px;border:1px solid #43a8d3;background:#135074;color:#eaffff;font-size:10px;white-space:nowrap;cursor:pointer}
+.world-machine button:disabled{background:#0b493e;border-color:#1a8065;color:#a3ffe1;cursor:default}
+.connected-machine{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:10px 14px;background:#0d2a3b;border-bottom:1px solid #28617c}
+.connected-machine small{display:block;font-size:9px;letter-spacing:1px;color:#83aec6}.connected-machine strong{display:block;font-size:13px;color:#ddfaff;margin:3px 0}.connected-machine span{font-size:10px;color:#9bbfd0}
+.connected-pill{font-size:9px!important;color:#7be3b7!important;white-space:nowrap}
+@media(max-width:780px){.world-map-stage{height:380px!important}.world-machine-head{align-items:flex-start;flex-direction:column}}
