@@ -47,3 +47,6 @@
 .world-services .world-zone-head{border-top:1px solid #244e65}
 .world-map-guide{padding:10px 14px}
 @media(max-width:850px){.world-map-stage{height:clamp(310px,63vw,475px)}}
+
+/* Carnet d’enquête intégré, sans perturber les panneaux de mission */
+#investigation-notes {margin-top:15px;}#investigation-notes summary {cursor:pointer;}#investigation-notes .investigation-content {white-space:pre-wrap;font:12px/1.65 ui-monospace,Consolas,monospace;color:#9ee8ef;padding:13px 14px;background:#091b29;border:1px solid #285475;border-radius:9px;margin-top:8px;}
