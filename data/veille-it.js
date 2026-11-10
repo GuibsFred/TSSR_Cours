@@ -1,5 +1,69 @@
 window.TSSR_NEWS = [
   {
+    "title": "Ray-Ban Meta piratées : une chercheuse obtient un shell, puis contourne le correctif de Meta",
+    "summary": "Une chercheuse a obtenu un shell sur des lunettes Ray-Ban Meta en détournant le Device Access Toolkit, puis a contourné le correctif de Meta. Voici comment. Le post Ray-Ban Meta piratées : une chercheuse obtient un shell, puis contourne le correctif de Meta a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/lunettes-ray-ban-meta-piratees-shell/",
+    "date": "2026-11-10",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Anthropic dévoile Claude Fable 5.2 et Mythos 5.2, plus rapides et plus performants en code",
+    "summary": "Anthropic a présenté le 9 novembre les versions 5.2 de Claude Fable et Claude Mythos, ses modèles destinés aux travaux techniques les plus exigeants. L'éditeur revendique des progrès en programmation, en raisonnement et en vision, ainsi qu'une génération de réponses jusqu'à 30 % plus rapide que celle des versions 5.1.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/anthropic-devoile-claude-fable-5-2-et-mythos-5-2-p",
+    "date": "2026-11-10",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "OccupySaaS : licenciés par la tech, ils retournent l’IA contre les géants du logiciel",
+    "summary": "Lancé en octobre 2026, OccupySaaS rassemble des développeurs qui affirment avoir été licenciés par l’industrie technologique. Avec l’aide d’agents d’IA, ils reconstruisent des alternatives open source aux logiciels professionnels, à commencer par Auth0 et Salesforce.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/occupysaas-des-ingenieurs-qui-se-disent-licencies-",
+    "date": "2026-11-10",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Google présente deux nouveaux systèmes TPU pour l’inférence et les traitements à long contexte",
+    "summary": "Le TPU 8tx vise l’inférence confidentielle, tandis que le TPU 8i Max associe deux puces pour augmenter les capacités de calcul et la bande passante mémoire.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/google-presente-deux-nouveaux-systemes-tpu-pour-l-",
+    "date": "2026-11-10",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "OpenAI lève 11 Md$ pour une valorisation de 1 250 Md$",
+    "summary": "L’entreprise américaine a déjà réuni 11 Md$ dans le cadre d’un tour de table qui pourrait atteindre 20 Md$. Sa valorisation grimpe à 1 250 Md$.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/openai-leve-11-md-pour-une-valorisation-de-1-250-m",
+    "date": "2026-11-10",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "NIS 2 : la loi Résilience arrive enfin à l’Assemblée",
+    "summary": "Le projet de loi Résilience est examiné en séance publique après plusieurs reports. Son adoption doit permettre de préciser le cadre réglementaire applicable aux milliers d’organisations concernées.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/nis-2-la-loi-resilience-arrive-enfin-a-l-assemblee",
+    "date": "2026-11-10",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "L’Europe lance un plan de 525 M€ pour aider les start-up qui conçoivent des puces",
+    "summary": "Baptisée European Chip Design Platform, cette initiative mobilisera 525 M€ afin de faciliter l’accès aux outils de conception, aux financements et aux capacités de fabrication.",
+    "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/l-europe-lance-un-plan-de-525-m-pour-aider-les-sta",
+    "date": "2026-11-10",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "L’univers cinématographique DC Comics de James Gunn est déjà mort",
+    "summary": "Propulsé il y a quatre ans à la tête du reboot de l'univers cinématographique DC, James Gunn est déjà écarté de la direction de DC Studios par Skydance, son nouveau propriétaire, tout comme son binôme Peter Safran. Jeremy Latcham, ancien cadre de Marvel Studios, les remplace le 1er décembre.",
+    "url": "https://www.numerama.com/pop-culture/2371125-lunivers-cinematographique-dc-comics-de-james-gunn-est-deja-mort.html",
+    "date": "2026-11-10",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs",
     "summary": "290 Mo de RAM avec deux comptes connectés : c'est ce qu'affiche une première version du futur client Discord, réécrit en Rust pour Windows, mais pas seulement. Le post Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/discord-client-rust-gpui-fin-electron/",
@@ -216,14 +280,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "279 000 euros, jade incrusté et portes antagonistes : BYD déclare la guerre à Rolls-Royce",
-    "summary": "Yangwang, la marque de luxe de BYD, a présenté, à Abu Dhabi, l'Altior, une limousine de 5,60 mètres à quatre places, en précommande en Chine à 2,08 millions de yuans (environ 279 000 euros). Cette première édition est limitée à 399 exemplaires.",
-    "url": "https://www.numerama.com/vroom/2370487-279-000-euros-jade-incruste-et-portes-antagonistes-byd-declare-la-guerre-a-rolls-royce.html",
-    "date": "2026-11-09",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Firefox cache un jeu Snake dans sa barre d’adresse : voici comment le lancer",
     "summary": "Un calcul égal à 150 dans la barre d'adresse de Firefox débloque un jeu Snake caché. Voici comment lancer cet easter egg dans le navigateur Firefox. Le post Firefox cache un jeu Snake dans sa barre d’adresse : voici comment le lancer a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/firefox-jeu-snake-cache-barre-adresse/",
@@ -251,14 +307,6 @@ window.TSSR_NEWS = [
     "title": "NIKKE : la version PC du jeu piégée pour installer un redoutable malware",
     "summary": "Le lanceur PC de NIKKE a chargé un malware depuis le CDN de Level Infinite : contrôle à distance, vol de secrets et de cryptos. Voici ce qu'il faut vérifier. Le post NIKKE : la version PC du jeu piégée pour installer un redoutable malware a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/nikke-lanceur-pc-pirate-malware-k2f/",
-    "date": "2026-11-06",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Deep-Live-Cam : cet outil open source de deepfake change votre visage à partir d’une photo",
-    "summary": "Deep-Live-Cam est un outil open source capable de remplacer un visage en direct lors d'une visio (Teams, Zoom, etc.) à partir d'une seule photo. Le post Deep-Live-Cam : cet outil open source de deepfake change votre visage à partir d’une photo a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/deep-live-cam-deepfake-temps-reel-open-source/",
     "date": "2026-11-06",
     "source": "IT-Connect",
     "category": "Infrastructures"
