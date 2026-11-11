@@ -1,5 +1,149 @@
 window.TSSR_NEWS = [
   {
+    "title": "Outlook et Hotmail : les e-mails rejetés faute de DMARC, c’était un bug de Microsoft",
+    "summary": "Du 6 au 9 novembre, Outlook.com a rejeté à tort des e-mails, surtout issus de domaines sans DMARC. Microsoft reconnaît un bug. Voici ce qu'il faut vérifier. Le post Outlook et Hotmail : les e-mails rejetés faute de DMARC, c’était un bug de Microsoft a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/outlook-hotmail-bug-rejet-emails-dmarc/",
+    "date": "2026-11-11",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Firefox 160 : Mini Window, vitesse de lecture en Picture-in-Picture et reconnaissance vocale locale",
+    "summary": "Un onglet qui reste au premier plan pendant que vous travaillez ailleurs : c'est Mini Window, la nouveauté phare de Firefox 160. Voici ce qui change. Le post Firefox 160 : Mini Window, vitesse de lecture en Picture-in-Picture et reconnaissance vocale locale a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/firefox-160-mini-window-nouveautes/",
+    "date": "2026-11-11",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Patch Tuesday – Novembre 2026 : 1 093 failles corrigées, dont une faille zero-day dans Outlook",
+    "summary": "Microsoft a corrigé 1 093 failles avec le Patch Tuesday de novembre 2026. Une faille zero-day est déjà exploitée dans Outlook : voici le récapitulatif complet. Le post Patch Tuesday – Novembre 2026 : 1 093 failles corrigées, dont une faille zero-day dans Outlook a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/patch-tuesday-novembre-2026-recapitulatif/",
+    "date": "2026-11-11",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Windows 11 KB5132061 : voici l’essentiel à savoir sur la mise à jour de novembre 2026",
+    "summary": "KB5132061 : menu contextuel personnalisable, signature NTLM par défaut, audio USB corrigé. Voici le récapitulatif de la mise à jour Windows 11 de novembre 2026. Le post Windows 11 KB5132061 : voici l’essentiel à savoir sur la mise à jour de novembre 2026 a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/windows-11-kb5132061-kb5131087-nouveautes-correctifs/",
+    "date": "2026-11-11",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Windows 10 – KB5131096 : voici la mise à jour de sécurité de novembre 2026",
+    "summary": "KB5131096 pour Windows 10 : le bug audio USB est corrigé, l'ESU entre dans sa deuxième année et la signature des scripts PowerShell devient plus stricte. Le post Windows 10 – KB5131096 : voici la mise à jour de sécurité de novembre 2026 a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/windows-10-kb5131096-mise-a-jour-esu/",
+    "date": "2026-11-11",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Audi A2 e-tron, Lancia Gamma, Leapmotor B10… les voitures électriques que vous allez payer moins cher grâce à l’éco-score",
+    "summary": "Un arrêté publié au Journal officiel ajoute 31 versions de voitures électriques, de 11 marques, à la liste des véhicules qui ont validé leur score environnemental, condition pour toucher les aides à l'achat. Audi A2 e-tron, Lancia Gamma ou encore Leapmotor B10, voici la liste complète.",
+    "url": "https://www.numerama.com/vroom/2372241-audi-a2-e-tron-lancia-gamma-leapmotor-b10-les-voitures-electriques-que-vous-allez-payer-moins-cher-grace-a-leco-score.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Arrêter les dégâts « dans les 35 secondes » : OpenAI dévoile le kill switch censé stopper ses IA quand elles dérapent",
+    "summary": "OpenAI a présenté le 10 novembre Control Room, un système central qui suit toutes les tâches de ses chercheurs utilisant ses modèles d’IA.",
+    "url": "https://www.numerama.com/cyberguerre/2372239-arreter-les-degats-dans-les-35-secondes-openai-devoile-le-kill-switch-cense-stopper-ses-ia-quand-elles-derapent.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "« Qui va payer 500 euros ? Sûrement pas moi » : déterminée à pirater des Meta Ray-Ban, elle emprunte celles de son beau-frère et réussit son pari",
+    "summary": "Une chercheuse en sécurité a réussi à exécuter son propre code sur les lunettes connectées de Meta, puis à contourner le correctif de l’entreprise. Les failles, signalées à Meta, ont depuis été corrigées.",
+    "url": "https://www.numerama.com/cyberguerre/2372185-qui-va-payer-500-euros-surement-pas-moi-determinee-a-pirater-des-meta-ray-ban-elle-emprunte-celles-de-son-beau-frere-et-reussit-son-pari.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Apple préparerait Harbor, une app pour transformer vos Mac en serveur d’IA privé",
+    "summary": "Apple n'a pas pris le virage de l'IA, mais l'entreprise de John Ternus pourrait bien en être un pilier. Elle teste en ce moment discrètement Harbor, une application qui fait tourner des modèles d’IA open-weight en local, sur un ou plusieurs Mac reliés en Thunderbolt 5.",
+    "url": "https://www.numerama.com/tech/2372219-apple-preparerait-harbor-une-app-pour-transformer-vos-mac-en-serveur-dia-prive.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "30 heures de panne d’électricité : il branche sa maison sur son Renault Scénic et ne perd que 8 % de batterie",
+    "summary": "Fin octobre, une tempête a privé d'électricité pendant 30 heures la location de vacances d'un journaliste d'Automotive News, dans le Lake District, en Angleterre. Il a alimenté la cuisine avec son Renault Scénic électrique et n'a consommé qu'environ 8 % de la batterie.",
+    "url": "https://www.numerama.com/vroom/2372157-30-heures-de-panne-delectricite-il-branche-sa-maison-sur-son-renault-scenic-et-ne-perd-que-8-de-batterie.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Single Day AliExpress : les 9 accessoires pour personnaliser sa Tesla Model 3 ou Model Y, à poser sans outil",
+    "summary": "Même pas honte : quand j'ai cherché à modifier ma Tesla Model 3, puis ma Model Y, je suis toujours passé par AliExpress quand les produits ne touchent pas au fonctionnement du véhicule. Le 11.11, l'Amazon chinois casse les prix pour le Single Day. Nous avons sélectionné 9 accessoires utiles pour Model 3 et Model Y, qui se posent sans outil et sans toucher à l'électronique de la voiture",
+    "url": "https://www.numerama.com/vroom/2372141-single-day-aliexpress-les-9-accessoires-pour-personnaliser-sa-tesla-model-3-ou-model-y-a-poser-sans-outil.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Tesla fait homologuer le FSD dans un pays aux conditions parmi les plus hostiles d’Europe",
+    "summary": "L'autorité finlandaise des transports a autorisé le Tesla FSD, sans attendre le vote européen toujours en suspens. Elle prévient que la neige et la gadoue peuvent gêner les caméras sur lesquelles il s'appuie uniquement pour voir.",
+    "url": "https://www.numerama.com/vroom/2372089-tesla-fait-homologuer-le-fsd-dans-un-pays-aux-conditions-parmi-les-plus-hostiles-deurope.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "11.11 : les plus grosses promos du Singles Day tombent aujourd’hui, notre sélection AliExpress et Joybuy (EN DIRECT)",
+    "summary": "Le 11.11, c’est aujourd’hui. AliExpress sort le grand jeu et Joybuy entame son dernier jour de promotions : nous avons sélectionné les offres high-tech qui méritent votre attention, avec les codes à appliquer pour payer le moins cher possible.",
+    "url": "https://www.numerama.com/tech/2372107-11-11-les-plus-grosses-promos-du-singles-day-tombent-aujourdhui-notre-selection-aliexpress-et-joybuy-en-direct.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "À la recherche de la preuve parfaite : Google a lâché 80 agents IA sur le code de Signal pour prouver qu’il était sûr",
+    "summary": "Des agents d’IA de Google DeepMind ont démontré que le code au cœur du chiffrement de Signal respecte ses principales garanties de sécurité. Une première pour un logiciel aussi largement déployé, qui comporte néanmoins des limites.",
+    "url": "https://www.numerama.com/cyberguerre/2372071-a-la-recherche-de-la-preuve-parfaite-google-a-lache-80-agents-ia-sur-le-code-de-signal-pour-prouver-quil-etait-sur.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "OpenAI lance la fiche « Google My Business » de ChatGPT, avec un agent IA en prime",
+    "summary": "Avec Businesses in ChatGPT, OpenAI permet aux entreprises de revendiquer leur fiche dans le chatbot, d'y corriger leurs infos et de savoir combien de fois elles y sont citées. Certaines pourront même y installer leur propre agent conversationnel. Si ChatGPT est le « Google » de 2026, vous avez toutes les raisons de créer votre fiche.",
+    "url": "https://www.numerama.com/tech/2372045-openai-lance-la-fiche-google-my-business-de-chatgpt-avec-un-agent-ia-en-prime.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Anthropic offre un « reset » gratuit de toutes les limites à ses abonnés payants : comment en profiter",
+    "summary": "Anthropic accorde à tous les abonnés Pro, Max, Ultra et Team de Claude une réinitialisation complète et gratuite de leurs limites d'utilisation, à utiliser avant le 10 décembre. Un geste pour compenser des bugs qui ont fait fondre les quotas plus vite que prévu.",
+    "url": "https://www.numerama.com/tech/2372047-anthropic-offre-un-reset-gratuit-de-toutes-les-limites-a-ses-abonnes-payants-comment-en-profiter.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Starlink Mini 2 : l’antenne satellite nomade a enfin sa batterie",
+    "summary": "SpaceX a présenté le 10 novembre la Mini 2, deuxième génération de son antenne Starlink portable. Principale nouveauté : une batterie amovible qui promet jusqu'à 4 h 30 d'internet par satellite sans aucune prise. Les précommandes sont ouvertes, mais seulement sur invitation et aux États-Unis.",
+    "url": "https://www.numerama.com/tech/2372043-starlink-mini-2-lantenne-satellite-nomade-a-enfin-sa-batterie.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "6 questions auxquelles la saison 3 des Anneaux de pouvoir doit répondre",
+    "summary": "Bienvenue en Terre du milieu ! Avant de vous lancer corps et âme dans la saison 3 des Anneaux de pouvoir, la série préquelle du Seigneur des anneaux, Numerama revient sur les grandes questions posées par la saison 2, et auxquelles les scénaristes de l’épique série devront répondre.",
+    "url": "https://www.numerama.com/pop-culture/2369607-6-questions-auxquelles-la-saison-3-des-anneaux-de-pouvoir-doit-repondre.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Claude Fable 5.2 a codé un système d’exploitation en 8 jours avec plus de 1 000 sous-agents",
     "summary": "Anthropic a dévoilé Claude Fable 5.2 (et Mythos 5.2), et à cette occasion, l'IA a créée un système d'exploitation en huit jours avec plus de 1 000 sous-agents. Le post Claude Fable 5.2 a codé un système d’exploitation en 8 jours avec plus de 1 000 sous-agents a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/claude-fable-5-2-systeme-exploitation-1000-sous-agents/",
@@ -160,110 +304,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Black Friday 2026 : les meilleures offres disponibles chez Amazon, Fnac, Boulanger ce mardi",
-    "summary": "Un peu plus d'une semaine après le coup d'envoi des avant-premières Black Friday on a déjà retenu plus de 50 offres. Les marchands ne sont pas près de lever le pied. Amazon, la Fnac, Boulanger et Cdiscount accélèrent avant le Black Friday du 27 novembre. Nous trions les offres au fil de l’eau pour ne garder que celles qui valent vraiment le coup.",
-    "url": "https://www.numerama.com/tech/2363357-black-friday-2026-plus-de-50-offres-17-jours-avant-le-jour-j-notre-live-tourne-a-plein-regime-ce-mardi.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Vous n’avez pas besoin de PS5 ou de Xbox Series pour jouer à GTA 6",
-    "summary": "Alors que le pré-téléchargement de GTA 6 a ouvert ce mardi 10 novembre, neuf jours avant la sortie officielle du 19 novembre, Rockstar a glissé dans son communiqué une annonce destinée aux joueurs restés sur Xbox One. Pensé et développé de fond en comble pour la génération actuelle de consoles (PS5 et Xbox Series X|S), GTA 6 semblait définitivement […]",
-    "url": "https://www.numerama.com/pop-culture/2371735-vous-navez-pas-besoin-de-ps5-ou-de-xbox-series-pour-jouer-a-gta-6.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Singles Day 2026 : AliExpress et Joybuy multiplient les bons plans, voici notre sélection",
-    "summary": "AliExpress et Joybuy profitent du Singles Day pour proposer une avalanche de promotions dans leurs catalogues. Smartphones, consoles, téléviseurs, casques audio et accessoires high-tech : les réductions concernent de nombreuses catégories de produits. Pour vous aider à faire le tri, nous avons sélectionné les offres les plus intéressantes sur les deux plateformes, en indiquant les éventuels codes promo à appliquer pour obtenir les meilleurs tarifs.",
-    "url": "https://www.numerama.com/tech/2365399-singles-day-2026-aliexpress-et-joybuy-multiplient-les-bons-plans-voici-notre-selection.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 sera jouable sur une console à 65 € : est-ce vraiment une bonne affaire ?",
-    "summary": "Rockstar l’a confirmé ce mardi : GTA 6 sera jouable en cloud sur Xbox One. Chez Micromania, la console d’occasion coûte 64,99 €, manette incluse. Avec le jeu à 79,99 €, votre ticket pour Vice City revient à environ 145 €, auxquels s’ajoutent un abonnement Game Pass (ou des heures de cloud) et une excellente connexion internet.",
-    "url": "https://www.numerama.com/tech/2371757-gta-6-sera-jouable-sur-une-console-a-65-e-est-ce-vraiment-une-bonne-affaire.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Le Goncourt britannique récompense un roman de SF qui résonne avec la polémique sur l’IA en France",
-    "summary": "Après la polémique autour de Thélyson Orélien et de son roman C'était ça ou mourir, l'intelligence artificielle revient dans l'actualité littéraire, mais sous un angle différent. Au Royaume-Uni, The End of Everything, un roman de science-fiction qui interroge notre rapport aux intelligences artificielles et à l'imitation du vivant, vient de remporter le prestigieux Booker Prize. Une première historique pour un auteur issu de la SF.",
-    "url": "https://www.numerama.com/pop-culture/2371623-le-goncourt-britannique-recompense-un-roman-de-sf-qui-resonne-avec-la-polemique-sur-lia-en-france.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Orange espère que vous utiliserez sa nouvelle « super-app » même si vous n’êtes pas chez Orange",
-    "summary": "Orange a officialisé sa nouvelle application « Orange France » le 10 novembre, un jour après sa publication surprise sur l'App Store. L'opérateur fusionne toutes ses applications dans une seule « super-app » inspirée des applications asiatiques comme WeChat. Des services tiers sont aussi de la partie, comme Deezer ou AlloCiné. Enfin, Orange mise sur l'IA en intégrant GPT, Claude, Gemini et Mistral.",
-    "url": "https://www.numerama.com/tech/2371577-orange-espere-que-vous-utiliserez-sa-nouvelle-super-app-meme-si-vous-netes-pas-chez-orange.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 : une très mauvaise nouvelle technique se confirme",
-    "summary": "C'est le grand jour pour les joueurs impatients : Rockstar Games vient officiellement d'ouvrir le pré-téléchargement de GTA 6. Mais derrière cette étape clé avant le lancement officiel du 19 novembre se cache une douche froide technique.",
-    "url": "https://www.numerama.com/pop-culture/2371667-gta-6-une-tres-mauvaise-nouvelle-technique-se-confirme.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Binance quitte la France et facturera les comptes non vidés dès le 29 novembre : voici comment partir",
-    "summary": "Binance France n’a pas obtenu l’agrément européen MiCA et fermera tous les comptes de ses clients le 31 décembre 2026. Les utilisateurs qui laissent encore des cryptos sur la plateforme paieront des frais dès le 29 novembre, et c’est donc cette date qu’il faut retenir.",
-    "url": "https://www.numerama.com/tech/2371589-binance-quitte-la-france-et-facturera-les-comptes-non-vides-des-le-29-novembre-voici-comment-partir.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Un raté, une réussite historique et déjà le troisième vol : l’Europe s’apprête à accueillir un nouveau tir orbital",
-    "summary": "Isar Aerospace pourrait tenter le troisième vol de sa fusée Spectrum dès le 26 novembre 2026, depuis la base norvégienne d'Andøya, d'après un avis aéronautique publié le 28 octobre. La fenêtre de tir reste ouverte jusqu'au 17 février 2027.",
-    "url": "https://www.numerama.com/sciences/2371613-un-rate-une-reussite-historique-et-deja-le-troisieme-vol-leurope-sapprete-a-accueillir-un-nouveau-tir-orbital.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "La Switch 2 est trop chère ? Pour 179 €, E.Leclerc propose la première Switch avec Mario Kart 8 Deluxe",
-    "summary": "[Deal du jour] Pour le Black Friday, E.Leclerc prépare une offre sur la Nintendo Switch de première génération, avec le pack qui inclut Mario Kart 8 Deluxe pour moins de 180 €.",
-    "url": "https://www.numerama.com/tech/2371437-la-switch-2-est-trop-chere-pour-179-e-e-leclerc-propose-la-premiere-switch-avec-mario-kart-8-deluxe.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "HBO Max et Paramount+ : à quand la réunion des deux plateformes ? On a un début de réponse",
-    "summary": "David Ellison, CEO de Skydance, a annoncé ce lundi 9 novembre une offre groupée réunissant HBO Max et Paramount+, qui sera lancée début 2027. Il la présente comme une première étape vers la fusion des deux plateformes.",
-    "url": "https://www.numerama.com/pop-culture/2371509-hbo-max-et-paramount-a-quand-la-reunion-des-deux-plateformes-on-a-un-debut-de-reponse.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Mazda promet 703 km d’autonomie sur sa nouvelle 6e, mais lisez bien les petites lignes",
-    "summary": "La Mazda 6e va profiter d'évolutions pour son millésime 2027, qui arrive en concessions dès ce mois de novembre. La berline électrique n'est désormais disponible qu'avec une batterie de 78 kWh, rechargeable jusqu'à 200 kW, à partir de 43 900 euros. La berline annonce 560 km en cycle mixte WLTP, loin des 703 km mis en avant par le communiqué français.",
-    "url": "https://www.numerama.com/vroom/2371357-mazda-promet-703-km-dautonomie-sur-sa-nouvelle-6e-mais-lisez-bien-les-petites-lignes.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Mauvaise surprise, Notion découvre que des conversations avec son IA ont été volées chez un prestataire",
-    "summary": "Le logiciel de travail collaboratif a reconnu que des conversations de ses utilisateurs avec Notion AI se sont retrouvées entre les mains de pirates. La fuite ne vient pas de Notion lui-même, mais d'un prestataire victime d’une intrusion en octobre.",
-    "url": "https://www.numerama.com/cyberguerre/2371399-mauvaise-surprise-notion-decouvre-que-des-conversations-avec-son-ia-ont-ete-volees-chez-un-prestataire.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs",
     "summary": "290 Mo de RAM avec deux comptes connectés : c'est ce qu'affiche une première version du futur client Discord, réécrit en Rust pour Windows, mais pas seulement. Le post Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/discord-client-rust-gpui-fin-electron/",
@@ -291,46 +331,6 @@ window.TSSR_NEWS = [
     "title": "SonicWall : une faille dans le VPN SSL permet de contourner le MFA et elle est exploitée",
     "summary": "Une faille exploitée dans le VPN SSL des firewalls SonicWall peut permettre de contourner SAML et le MFA associé. Qui est affecté ? Comment se protoéger ? Le post SonicWall : une faille dans le VPN SSL permet de contourner le MFA et elle est exploitée a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/sonicwall-vpn-ssl-faille-saml-mfa-cve-2026-19868/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "VMware vSphere Express : Broadcom revient vers les PME avec une nouvelle offre !",
-    "summary": "128 cœurs, pas un de plus : avec vSphere Express, Broadcom veut séduire à nouveau les PME, dont beaucoup lorgnent vers Proxmox. Voici ce qu'il faut savoir. Le post VMware vSphere Express : Broadcom revient vers les PME avec une nouvelle offre ! a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/vmware-vsphere-express-128-coeurs-pme/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Bon plan : les serrures connectées WELOCK aux prix les plus bas de l’année pour le 11.11",
-    "summary": "Profitez du 11.11 pour équiper votre porte d’une serrure connectée WELOCK à prix réduit : déverrouillage par empreinte, code ou smartphone. Notre sélection d'offres. Le post Bon plan : les serrures connectées WELOCK aux prix les plus bas de l’année pour le 11.11 a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/bon-plan-welock-novembre-2026-single-day/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Moins d’un PC Windows sur deux patché en 2 semaines, et c’est risqué avec l’IA !",
-    "summary": "Selon Microsoft, moins d'un appareil Windows sur deux en entreprise installe le patch de sécurité en deux semaines. Un délai risqué face à l'IA. Voici pourquoi. Le post Moins d’un PC Windows sur deux patché en 2 semaines, et c’est risqué avec l’IA ! a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/microsoft-windows-mises-a-jour-securite-patch-gap-ia/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Infomaniak lance un service de stockage objet S3 souverain en Suisse",
-    "summary": "Infomaniak lance un stockage objet compatible S3 hébergé en Suisse : Object Lock, réplication, 10 To de trafic sortant inclus et aucun frais de requêtes. Le post Infomaniak lance un service de stockage objet S3 souverain en Suisse a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/infomaniak-stockage-objet-s3/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Bon plan VZMORE AX9 MAX : ce mini-PC Ryzen AI 9 HX 470 à son prix le plus bas sur le Web",
-    "summary": "Jusqu'au 22 novembre 2026, le mini PC VZMORE AX9 MAX (Ryzen AI 9 HX 470) passe à 1 310 € au lieu de 1 549 € grâce au code réservé aux lecteurs d'IT-Connect. Le post Bon plan VZMORE AX9 MAX : ce mini-PC Ryzen AI 9 HX 470 à son prix le plus bas sur le Web a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/bon-plan-vzmore-ax9-max-novembre-2026/",
     "date": "2026-11-09",
     "source": "IT-Connect",
     "category": "Infrastructures"
