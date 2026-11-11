@@ -1,5 +1,13 @@
 window.TSSR_NEWS = [
   {
+    "title": "Claude Fable 5.2 a codé un système d’exploitation en 8 jours avec plus de 1 000 sous-agents",
+    "summary": "Anthropic a dévoilé Claude Fable 5.2 (et Mythos 5.2), et à cette occasion, l'IA a créée un système d'exploitation en huit jours avec plus de 1 000 sous-agents. Le post Claude Fable 5.2 a codé un système d’exploitation en 8 jours avec plus de 1 000 sous-agents a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/claude-fable-5-2-systeme-exploitation-1000-sous-agents/",
+    "date": "2026-11-10",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
     "title": "Faux support IT sur Teams : moins de 15 minutes entre la réponse de la victime et le malware",
     "summary": "Plus de 400 attaques au faux support IT via le chat externe de Teams : l'ordinateur de la victime peut être compromis en moins de 15 minutes. Le post Faux support IT sur Teams : moins de 15 minutes entre la réponse de la victime et le malware a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/teams-faux-support-it-email-bombing/",
@@ -136,6 +144,14 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
+    "title": "Scrooge : on a vu le film qui signe le retour de Johnny Depp au cinéma (avis sans spoiler)",
+    "summary": "Le célèbre conte de Charles Dickens s'offre une cure de jouvence macabre sous la caméra de Ti West. Porté par un Johnny Depp métamorphosé en Ebenezer Scrooge, ce nouveau long-métrage adapte Un chant de Noël avec une esthétique gothique. Alors, réussite ? Notre avis sans spoiler.",
+    "url": "https://www.numerama.com/pop-culture/2370931-scrooge-on-a-vu-le-film-qui-signe-le-retour-de-johnny-depp-au-cinema-reussite-ou-grosse-cata.html",
+    "date": "2026-11-10",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Loi Résilience : les députés suppriment l’article qui aurait empêché l’État d’imposer des portes dérobées",
     "summary": "Ce mardi 10 novembre, l’Assemblée nationale a supprimé l’article 16 bis du projet de loi Résilience, qui interdisait à l’État d’imposer des portes dérobées aux messageries chiffrées.",
     "url": "https://www.numerama.com/cyberguerre/2371907-loi-resilience-les-deputes-suppriment-larticle-qui-aurait-empeche-letat-dimposer-des-portes-derobees.html",
@@ -248,14 +264,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Les physiciens ont vu un événement subatomique qui ne se produit qu’une fois sur 10 milliards",
-    "summary": "Les physiciens de l'expérience LHCb, au CERN, ont obtenu les premiers indices solides de la désintégration d'une minuscule particule subatomique en deux muons. Un événement qui ne survient qu'une fois sur 10 milliards et qui aide à traquer d'éventuelles nouvelles particules, liées à la matière noire ou à l'origine de la matière après le Big Bang.",
-    "url": "https://www.numerama.com/sciences/2371341-les-physiciens-ont-vu-un-evenement-subatomique-qui-ne-se-produit-quune-fois-sur-10-milliards.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs",
     "summary": "290 Mo de RAM avec deux comptes connectés : c'est ce qu'affiche une première version du futur client Discord, réécrit en Rust pour Windows, mais pas seulement. Le post Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/discord-client-rust-gpui-fin-electron/",
@@ -323,14 +331,6 @@ window.TSSR_NEWS = [
     "title": "Bon plan VZMORE AX9 MAX : ce mini-PC Ryzen AI 9 HX 470 à son prix le plus bas sur le Web",
     "summary": "Jusqu'au 22 novembre 2026, le mini PC VZMORE AX9 MAX (Ryzen AI 9 HX 470) passe à 1 310 € au lieu de 1 549 € grâce au code réservé aux lecteurs d'IT-Connect. Le post Bon plan VZMORE AX9 MAX : ce mini-PC Ryzen AI 9 HX 470 à son prix le plus bas sur le Web a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/bon-plan-vzmore-ax9-max-novembre-2026/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Phishing : 7,3 milliards de menaces par e-mail au troisième trimestre 2026, voici ce que révèle Microsoft",
-    "summary": "Microsoft a détecté 7,3 milliards e-mails de phishing au troisième trimestre 2026. Faux DocuSign, SVG, code d'appareil : voici ce qu'il faut retenir. Le post Phishing : 7,3 milliards de menaces par e-mail au troisième trimestre 2026, voici ce que révèle Microsoft a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/microsoft-rapport-menaces-email-phishing-exceptions/",
     "date": "2026-11-09",
     "source": "IT-Connect",
     "category": "Infrastructures"
