@@ -1,5 +1,277 @@
 window.TSSR_NEWS = [
   {
+    "title": "NAS Synology : deux failles exploitables sans authentification dans DSM, dont une injection SQL",
+    "summary": "Synology a corrigé deux failles dans DSM exploitables sans authentification, dont une injection SQL critique. Voici les versions à installer sur votre NAS. Le post NAS Synology : deux failles exploitables sans authentification dans DSM, dont une injection SQL a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/nas-synology-dsm-failles-sans-authentification-novembre-2026/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Notion AI : le piratage de Fireworks AI a exposé des conversations de clients",
+    "summary": "Le piratage de Fireworks AI, sous-traitant de Notion, a exposé des conversations Notion AI. Moins de 1 % des espaces de travail sont touchés. Le post Notion AI : le piratage de Fireworks AI a exposé des conversations de clients a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/notion-ai-fuite-conversations-fireworks/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Maersk confirme une fuite de données : WhiteArmor réclame 5 millions de dollars",
+    "summary": "Maersk reconnaît un vol de données sur un système hérité d'un rachat. WhiteArmor revendique 100 Go de données volées et exige 5 millions de dollars en bitcoins. Le post Maersk confirme une fuite de données : WhiteArmor réclame 5 millions de dollars a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/maersk-fuite-de-donnees-whitearmor/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Xen Orchestra : cette faille critique déjà exploitée permet de compromettre les hôtes XCP-ng",
+    "summary": "Un cookie piégé suffit pour devenir administrateur de Xen Orchestra : cette faille critique est déjà exploitée. Voici comment protéger vos hôtes XCP-ng. Le post Xen Orchestra : cette faille critique déjà exploitée permet de compromettre les hôtes XCP-ng a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/xen-orchestra-faille-critique-vsa-2026-062-exploitee/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "GTA 6 : Logitech offre à ses 7 000 salariés une journée de congé pour jouer aux jeux vidéo",
+    "summary": "Logitech offre à ses 7 000 salariés, stagiaires compris, un jour de congé pour jouer au jeu de leur choix, à neuf jours de la sortie de GTA 6. Explications. Le post GTA 6 : Logitech offre à ses 7 000 salariés une journée de congé pour jouer aux jeux vidéo a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/logitech-jour-conge-jeux-video-gta-6/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Claude Whiteboards, Sheets et Data : Anthropic ajoute un tableur et un tableau blanc à Claude",
+    "summary": "Anthropic déploie Claude Sheets et Claude Whiteboards en bêta, et Claude Data en version finale. Fonctions, limites et réglages admin : voici l'essentiel. Le post Claude Whiteboards, Sheets et Data : Anthropic ajoute un tableur et un tableau blanc à Claude a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/claude-whiteboards-sheets-data-anthropic/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Nvidia : Jensen Huang démissionne, Colette Kress prend la direction par intérim",
+    "summary": "Jensen Huang a démissionné de ses fonctions de directeur général de Nvidia, jeudi 12 novembre 2026, après 33 ans à la tête du fabricant de GPU. Son départ intervient dans un contexte de crise de gouvernance, sur fond d’enquête interne et de révélations sur sa vie privée, dont une relation extraconjugale qu’il a reconnue. Le conseil d’administration a nommé Colette Kress, jusqu’ici directrice financière, pour assurer l’intérim, tandis que Harvey C. Jones en prend la présidence.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/nvidia-jensen-huang-demissionne-colette-kress-pren",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Zoom Workplace : une faille critique et une faille élevée corrigées sous Windows",
+    "summary": "Zoom a publié des correctifs pour deux vulnérabilités affectant Workplace sous Windows, dont une faille critique d’élévation de privilèges notée 9,6 sur l’échelle CVSS. Référencées CVE-2026-108186 et CVE-2026-108187, elles pourraient permettre à un attaquant non authentifié d’obtenir des privilèges supplémentaires à distance, à condition que l’utilisateur interagisse. Les entreprises sont invitées à déployer rapidement les mises à jour.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/zoom-workplace-une-faille-critique-et-une-faille-e",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Puces Nvidia : les entreprises chinoises d’IA anticipent de nouvelles restrictions américaines",
+    "summary": "Les entreprises chinoises spécialisées dans l’intelligence artificielle cherchent à réserver davantage de puissance de calcul équipée de GPU Nvidia dans des centres de données situés à l’étranger, selon Reuters. Elles redoutent que l’affaire entourant Jensen Huang, directeur général du fabricant américain, n’accélère le durcissement des restrictions de Washington sur l’accès distant aux processeurs avancés. Parallèlement, les achats de puces Nvidia sur le marché gris chinois s’intensifieraient.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/puces-nvidia-les-entreprises-chinoises-d-ia-antici",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "IA : Meta lance Muse Ember, un modèle léger pour réduire les coûts des agents",
+    "summary": "Meta enrichit sa gamme de modèles d’intelligence artificielle avec Muse Ember, conçu pour automatiser à grande échelle les tâches répétitives des agents IA. Doté d’une fenêtre de contexte d’un million de tokens, ce modèle multimodal mise sur son coût par tâche pour concurrencer Claude Haiku 5.5 d’Anthropic et GPT-6 Luna d’OpenAI. Il est disponible via la Meta Model API et Muse Code.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/ia-meta-lance-muse-ember-un-modele-leger-pour-redu",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Anthropic en Bourse : les particuliers pourraient acheter 250 M$ d’actions dès le premier jour",
+    "summary": "L’introduction en Bourse d’Anthropic pourrait provoquer un afflux exceptionnel d’investisseurs particuliers. Selon une note de Vanda Research publiée le 11 novembre 2026, le développeur de Claude pourrait enregistrer environ 250 millions de dollars d’achats nets de particuliers lors de sa première séance sur le Nasdaq, prévue le 19 novembre. Ce serait le double du record établi par SpaceX.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/introduction-en-bourse-d-anthropic-les-particulier",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "ChatGPT Enterprise arrive sur AWS Marketplace pour simplifier les achats IT",
+    "summary": "OpenAI a rendu ChatGPT Enterprise disponible sur AWS Marketplace le 9 novembre 2026. Les entreprises clientes d’Amazon Web Services peuvent désormais acheter et gérer la solution d’intelligence artificielle via leurs circuits d’achat existants, et imputer les dépenses éligibles sur leurs engagements AWS. L’accord vise à faciliter la facturation, le suivi des dépenses logicielles et le déploiement de l’IA générative dans les organisations.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/chatgpt-enterprise-arrive-sur-aws-marketplace-pour",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Grok Build : plus de 35 000 applications IA accessibles sans authentification",
+    "summary": "Une étude de la société de cybersécurité Claroc révèle d’importants défauts de confidentialité dans des applications créées avec Grok Build, l’outil de création d’applications assistée par IA de SpaceXSI, l’éditeur de Grok anciennement appelé xAI. Sur les 37 571 applications actives examinées, 35 578 étaient accessibles sans authentification, exposant potentiellement des données personnelles, des documents internes et des identifiants sensibles.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/grok-build-plus-de-35-000-applications-ia-accessib",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Cloud IA : les résultats de CoreWeave soutiennent Nvidia et rassurent les investisseurs",
+    "summary": "Les résultats de CoreWeave ont provoqué un rebond des valeurs du cloud spécialisé dans l’intelligence artificielle, mercredi 11 novembre 2026. Le fournisseur américain a relevé ses perspectives de chiffre d’affaires et apporté des précisions destinées à rassurer sur sa stratégie de financement. Des annonces qui ont temporairement atténué les inquiétudes entourant les investissements massifs dans les infrastructures d’IA.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/cloud-ia-les-resultats-de-coreweave-soutiennent-nv",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Digital Fairness Act : l’UE veut encadrer les dark patterns et les abonnements numériques",
+    "summary": "La Commission européenne a présenté, le 11 novembre 2026, une proposition de règlement visant à mieux protéger les consommateurs contre les interfaces manipulatrices, les mécanismes numériques addictifs et les abonnements difficiles à résilier. Baptisé Digital Fairness Act, ce texte pourrait imposer de nouvelles contraintes aux plateformes, aux éditeurs de services numériques et aux entreprises du commerce électronique.",
+    "url": "https://www.lemondeinformatique.fr/applications-developpement/digital-fairness-act-l-ue-veut-encadrer-les-dark-p",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Nvidia : le conseil réuni pour décider de l’avenir de Jensen Huang",
+    "summary": "Le conseil d’administration de Nvidia s’est réuni mercredi 11 novembre 2026 pour décider de l’avenir de Jensen Huang, son cofondateur et directeur général, selon le Wall Street Journal. Le dirigeant, qui a reconnu une relation extraconjugale avec une femme soupçonnée par les services américains d’espionnage pour la Chine, fait l’objet d’une enquête interne. L’action Nvidia a chuté de plus de 8 % après la clôture.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/nvidia-le-conseil-reuni-pour-decider-de-l-avenir-d",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "IA : Google accélère l’inférence en supprimant Python de l’exécution des modèles",
+    "summary": "Google a dévoilé XLA Serving Engine (XSE), un moteur d’inférence destiné à exécuter des modèles d’intelligence artificielle sans interpréteur Python en production. Déjà utilisé à grande échelle dans plusieurs de ses services, il offrirait un débit deux à cinq fois supérieur à celui d’un serveur Python optimisé, tout en réduisant l’empreinte mémoire.",
+    "url": "https://www.lemondeinformatique.fr/applications-developpement/ia-google-accelere-l-inference-en-supprimant-pytho",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Informatique quantique : IBM prépare un système Nighthawk de 1 040 qubits pour 2027",
+    "summary": "IBM prévoit de franchir le seuil des 1 000 qubits en 2027 grâce à l'interconnexion de deux processeurs quantiques Nighthawk r3. Chaque puce devrait intégrer 520 qubits et prendre en charge jusqu'à 10 000 opérations quantiques. Une nouvelle étape dans la stratégie d'industrialisation du groupe, même si la fiabilité des calculs demeure un défi majeur.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/informatique-quantique-ibm-prepare-un-systeme-nigh",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "OpenAI lance Businesses in ChatGPT pour renforcer la visibilité des entreprises",
+    "summary": "OpenAI dévoile Businesses in ChatGPT, une offre permettant aux entreprises de gérer leurs informations, de mesurer leur visibilité dans l'assistant et, pour certaines, de déployer des agents conversationnels dédiés. Avec Business Hub et Business Agents, le fournisseur entend faire de ChatGPT un nouveau point de contact entre les marques et leurs clients.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/openai-lance-businesses-in-chatgpt-pour-renforcer-",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "World of Warcraft: Forever a un problème avec son économie",
+    "summary": "World of Warcraft: Forever ne reprend pas la mécanique permettant de récupérer de l'or à la place de points d'expérience, une fois le niveau 60 atteint. Blizzard Entertainment assume ce choix de design mais reconnaît un souci avec l'économie du jeu. Un correctif, qui ajoute de l'or à la plupart des quêtes de niveau 48 et plus, a été déployé ce mercredi 11 novembre.",
+    "url": "https://www.numerama.com/pop-culture/2372991-world-of-warcraft-forever-a-un-probleme-avec-son-economie.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Plateforme CMP, architecture CEA, voitures à prix cassés : ce que Volkswagen va (ou non) importer de Chine",
+    "summary": "Rencontré à Xiamen, Thomas Schäfer, le patron de la marque Volkswagen, ouvre la porte à l'arrivée de l'architecture électronique chinoise en Europe. Mais oubliez l’importation de modèles ou de plateformes à bas coût.",
+    "url": "https://www.numerama.com/vroom/2373019-plateforme-cmp-architecture-cea-voitures-a-prix-casses-ce-que-volkswagen-va-ou-non-importer-de-chine.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Italie-France : où voir le match de foot en direct et en streaming ?",
+    "summary": "Ce jeudi 12 novembre 2026, les Bleus de Zinédine Zidane font leur retour sur le terrain pour affronter l'Italie, un peu plus d'un mois après avoir partagé les points. Le match est diffusé en clair sur TF1 et en streaming sur TF1+.",
+    "url": "https://www.numerama.com/pop-culture/2372963-italie-france-ou-voir-le-match-de-foot-en-direct-et-en-streaming.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Jensen Huang démissionne de Nvidia : le patron le plus puissant de l’IA tombe après deux liaisons extraconjugales",
+    "summary": "Jensen Huang, le cofondateur de Nvidia, a démissionné de ses fonctions de CEO. Il quitte le conseil d’administration avec effet immédiat. Colette Kress, la directrice financière, assure l’intérim. L’annonce de la démission de l’emblématique patron de Nvidia intervient après les révélations de deux relations extraconjugales, dont l’une avec une dirigeante soupçonnée d’espionnage pour Pékin.",
+    "url": "https://www.numerama.com/tech/2373021-cest-officiel-jensen-huang-demissionne-de-nvidia.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Rouler reste toujours le moyen le plus rapide de se déplacer dans Zelda Ocarina of Time",
+    "summary": "Nintendo a beau avoir ajouté une fonction de sprint au remake de Zelda Ocarina of Time, les joueuses et les joueurs qui n'ont pas de temps à perdre ont déjà trouvé une meilleure technique pour traverser Hyrule. Elle consiste, encore et toujours, à enchaîner les roulades.",
+    "url": "https://www.numerama.com/pop-culture/2372837-rouler-reste-toujours-le-moyen-le-plus-rapide-de-se-deplacer-dans-zelda-ocarina-of-time.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Les meilleurs films d’action à voir sur Netflix en 2026",
+    "summary": "Entre blockbusters internationaux, thrillers musclés à la française et productions originales, le catalogue de Netflix regorge de séquences explosives. Pour vous aider à faire le tri ce week-end, nous avons sélectionné huit titres incontournables disponibles actuellement sur la plateforme. Des chorégraphies millimétrées de Tyler Rake à l'intensité brutale d'AKA, voici le guide de survie pour vos soirées cinéma.",
+    "url": "https://www.numerama.com/pop-culture/2234141-les-meilleurs-films-daction-a-voir-sur-netflix-en-2026.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Superman : Henry Cavill de retour ? L’acteur fait une déclaration",
+    "summary": "Ce mercredi 11 novembre, deux jours après l'annonce du départ de James Gunn et Peter Safran de la tête de DC Studios, Henry Cavill a été interrogé sur un éventuel retour dans le costume de l'Homme d'Acier. L'acteur britannique ne ferme plus la porte.",
+    "url": "https://www.numerama.com/pop-culture/2372845-superman-henry-cavill-de-retour-dans-le-role-lacteur-sexprime.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Comment la Nasa a « perdu » une exoplanète géante de la taille de Jupiter",
+    "summary": "Le télescope spatial TESS de la Nasa a vu la planète géante TOI-2535 b, située à environ 1 000 années-lumière, passer devant son étoile pendant 7 ans, puis plus rien à partir de mars 2026. Aucune autre planète tournant autour d'une étoile seule n'avait jamais été vue en train de disparaître ainsi.",
+    "url": "https://www.numerama.com/sciences/2372575-comment-la-nasa-a-perdu-une-exoplanete-geante-de-la-taille-de-jupiter.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Faut-il acheter le pack Ultime de GTA 6 à 20 euros ?",
+    "summary": "L'édition physique de GTA 6 est désormais disponible. Elle permet de télécharger le jeu en avance, pour être prêt le jour de la sortie, prévue le 19 novembre sur PS5, Xbox Series S et Xbox Series X. Elle contient un feuillet qui fait la promotion d'une version Ultime. C'est quoi au juste ?",
+    "url": "https://www.numerama.com/pop-culture/2372761-faut-il-acheter-le-pack-ultime-de-gta-6-a-20-euros.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Bilan des frappes de drones ukrainiens : Yandex a perdu à jamais près de 3 % des données de son cloud",
+    "summary": "Un mois après des frappes de drones ukrainiens sur trois de ses data centers, le géant russe de la tech a dressé le bilan de la restauration de Yandex Cloud. Près de 3 % des données de ses clients ont disparu définitivement, faute de matériel réparable et de sauvegardes.",
+    "url": "https://www.numerama.com/cyberguerre/2372839-bilan-des-frappes-de-drones-ukrainiens-yandex-a-perdu-a-jamais-pres-de-3-des-donnees-de-son-cloud.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 est en magasin : où le payer moins cher, à J-7 de sa sortie",
+    "summary": "Plus que sept jours avant GTA 6. Depuis ce jeudi 12 novembre, le jeu est en rayon dans sa version boîte, qui permet encore de le payer moins cher que les 79,99 € réclamés sur le PlayStation Store et le Microsoft Store.",
+    "url": "https://www.numerama.com/pop-culture/2372707-gta-6-est-en-magasin-ou-le-payer-moins-cher-a-j-7-de-sa-sortie.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "CD Projekt mobilise l’IA pour l’extension de The Witcher 3 : « C’est l’un des cas de figure où l’on peut utiliser l’IA de manière éthique »",
+    "summary": "Pour Songs of the Past, la nouvelle extension de The Witcher 3, les équipes de CD Projekt Red ont eu recours à l'intelligence artificielle pour retrouver la voix polonaise originale de Geralt. Le comédien Jacek Rozenek, dont la voix a changé après un AVC en 2019, a donné son accord.",
+    "url": "https://www.numerama.com/pop-culture/2372693-cd-projekt-mobilise-lia-pour-lextension-de-the-witcher-3-cest-lun-des-cas-de-figure-ou-lon-peut-utiliser-lia-de-maniere-ethique.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Nvidia sans Jensen Huang ? Le casse-tête de la succession",
+    "summary": "Selon le Wall Street Journal, le conseil d'administration de Nvidia se préparerait à évincer Jensen Huang, son cofondateur et patron depuis 33 ans. Mais qui pour le remplacer ? L'entreprise la plus stratégique de l'IA n'a désigné aucun successeur et tout a été construit autour d'un seul homme.",
+    "url": "https://www.numerama.com/tech/2372735-nvidia-sans-jensen-huang-le-casse-tete-de-la-succession.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Les fans avaient raison : la série Les Anneaux de pouvoir révèle enfin qui est le magicien ténébreux (dark wizard)",
+    "summary": "Dans l'épisode 3 de la saison 3 des Anneaux de pouvoir, mis en ligne ce mercredi 11 novembre sur Prime Video, Gandalf apprend la vraie identité du magicien ténébreux (dark wizard). La série donne ainsi un nom à ce personnage, joué par Ciarán Hinds, après deux ans de théories de fans.",
+    "url": "https://www.numerama.com/pop-culture/2372631-les-fans-avaient-raison-la-serie-les-anneaux-de-pouvoir-revele-enfin-qui-est-le-magicien-tenebreux-dark-wizard.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Vous pouvez payer 3,49 € pour jouer 10 heures à des jeux Xbox en streaming",
+    "summary": "Microsoft lance de nouvelles manières d'accéder à son service de jeux vidéo en streaming. Deux formules, distinctes du Xbox Game Pass, sont proposées : une option gratuite avec des publicités et une autre payante, à 3,49 € les 10 heures de jeu.",
+    "url": "https://www.numerama.com/pop-culture/2372621-vous-pouvez-payer-349-e-pour-jouer-10-heures-a-des-jeux-xbox-en-streaming.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Kudu : découverte de l’alternative gratuite et open source à CCleaner pour Windows, macOS et Linux",
     "summary": "Kudu est un logiciel de nettoyage et d'optimisation gratuit et open source pour Windows, macOS et Linux. Voici les fonctionnalités de cette alternative à CCleaner. Le post Kudu : découverte de l’alternative gratuite et open source à CCleaner pour Windows, macOS et Linux a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/kudu-alternative-open-source-ccleaner/",
@@ -56,126 +328,6 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Le jeu de cartes de League of Legends en promo : la display Riftbound Armes Spirituelles est bradée",
-    "summary": "Philibert fait passer la display Armes Spirituelles sous la barre des 100 € pour quelques jours. Cela fait 24 boosters du deuxième set de Riftbound, le jeu de cartes de League of Legends, en VF et moins cher que dans la plupart des autres enseignes.",
-    "url": "https://www.numerama.com/pop-culture/2372419-le-jeu-de-cartes-de-league-of-legends-en-promo-la-display-riftbound-armes-spirituelles-est-bradee-chez-philibert.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "WoW Forever signe le plus gros lancement de l’histoire de World of Warcraft",
-    "summary": "Une semaine après sa sortie, World of Warcraft: Forever revendique deux records : le plus haut pic de joueurs connectés pour un lancement de WoW et le plus grand nombre de joueurs revenus au jeu.",
-    "url": "https://www.numerama.com/pop-culture/2372279-wow-forever-signe-le-plus-gros-lancement-de-lhistoire-de-world-of-warcraft.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Black Friday 2026 : les meilleures offres de ce 11 novembre, dénichées en direct",
-    "summary": "Jour férié pour beaucoup, mais pas pour les marchands : ce 11 novembre, Boulanger, Amazon et la Fnac continuent de dégainer codes promo et baisses de prix, à seize jours du Black Friday. Voici les 50 meilleures offres.",
-    "url": "https://www.numerama.com/tech/2363357-black-friday-2026-les-meilleures-offres-de-ce-11-novembre-denichees-en-direct.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Audi A2 e-tron, Lancia Gamma, Leapmotor B10… les voitures électriques que vous allez payer moins cher grâce à l’éco-score",
-    "summary": "Un arrêté publié au Journal officiel ajoute 31 versions de voitures électriques, de 11 marques, à la liste des véhicules qui ont validé leur score environnemental, condition pour toucher les aides à l'achat. Audi A2 e-tron, Lancia Gamma ou encore Leapmotor B10, voici la liste complète.",
-    "url": "https://www.numerama.com/vroom/2372241-audi-a2-e-tron-lancia-gamma-leapmotor-b10-les-voitures-electriques-que-vous-allez-payer-moins-cher-grace-a-leco-score.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Arrêter les dégâts « dans les 35 secondes » : OpenAI dévoile le kill switch censé stopper ses IA quand elles dérapent",
-    "summary": "OpenAI a présenté le 10 novembre Control Room, un système central qui suit toutes les tâches de ses chercheurs utilisant ses modèles d’IA.",
-    "url": "https://www.numerama.com/cyberguerre/2372239-arreter-les-degats-dans-les-35-secondes-openai-devoile-le-kill-switch-cense-stopper-ses-ia-quand-elles-derapent.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "« Qui va payer 500 euros ? Sûrement pas moi » : déterminée à pirater des Meta Ray-Ban, elle emprunte celles de son beau-frère et réussit son pari",
-    "summary": "Une chercheuse en sécurité a réussi à exécuter son propre code sur les lunettes connectées de Meta, puis à contourner le correctif de l’entreprise. Les failles, signalées à Meta, ont depuis été corrigées.",
-    "url": "https://www.numerama.com/cyberguerre/2372185-qui-va-payer-500-euros-surement-pas-moi-determinee-a-pirater-des-meta-ray-ban-elle-emprunte-celles-de-son-beau-frere-et-reussit-son-pari.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Apple préparerait Harbor, une app pour transformer vos Mac en serveur d’IA privé",
-    "summary": "Apple n'a pas pris le virage de l'IA, mais l'entreprise de John Ternus pourrait bien en être un pilier. Elle teste en ce moment discrètement Harbor, une application qui fait tourner des modèles d’IA open-weight en local, sur un ou plusieurs Mac reliés en Thunderbolt 5.",
-    "url": "https://www.numerama.com/tech/2372219-apple-preparerait-harbor-une-app-pour-transformer-vos-mac-en-serveur-dia-prive.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "30 heures de panne d’électricité : il branche sa maison sur son Renault Scénic et ne perd que 8 % de batterie",
-    "summary": "Fin octobre, une tempête a privé d'électricité pendant 30 heures la location de vacances d'un journaliste d'Automotive News, dans le Lake District, en Angleterre. Il a alimenté la cuisine avec son Renault Scénic électrique et n'a consommé qu'environ 8 % de la batterie.",
-    "url": "https://www.numerama.com/vroom/2372157-30-heures-de-panne-delectricite-il-branche-sa-maison-sur-son-renault-scenic-et-ne-perd-que-8-de-batterie.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Single Day AliExpress : les 9 accessoires pour personnaliser sa Tesla Model 3 ou Model Y, à poser sans outil",
-    "summary": "Même pas honte : quand j'ai cherché à modifier ma Tesla Model 3, puis ma Model Y, je suis toujours passé par AliExpress quand les produits ne touchent pas au fonctionnement du véhicule. Le 11.11, l'Amazon chinois casse les prix pour le Single Day. Nous avons sélectionné 9 accessoires utiles pour Model 3 et Model Y, qui se posent sans outil et sans toucher à l'électronique de la voiture",
-    "url": "https://www.numerama.com/vroom/2372141-single-day-aliexpress-les-9-accessoires-pour-personnaliser-sa-tesla-model-3-ou-model-y-a-poser-sans-outil.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Tesla fait homologuer le FSD dans un pays aux conditions parmi les plus hostiles d’Europe",
-    "summary": "L'autorité finlandaise des transports a autorisé le Tesla FSD, sans attendre le vote européen toujours en suspens. Elle prévient que la neige et la gadoue peuvent gêner les caméras sur lesquelles il s'appuie uniquement pour voir.",
-    "url": "https://www.numerama.com/vroom/2372089-tesla-fait-homologuer-le-fsd-dans-un-pays-aux-conditions-parmi-les-plus-hostiles-deurope.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "11.11 : les plus grosses promos du Singles Day tombent aujourd’hui, notre sélection AliExpress et Joybuy (EN DIRECT)",
-    "summary": "Le 11.11, c’est aujourd’hui. AliExpress sort le grand jeu et Joybuy entame son dernier jour de promotions : nous avons sélectionné les offres high-tech qui méritent votre attention, avec les codes à appliquer pour payer le moins cher possible.",
-    "url": "https://www.numerama.com/tech/2372107-11-11-les-plus-grosses-promos-du-singles-day-tombent-aujourdhui-notre-selection-aliexpress-et-joybuy-en-direct.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "À la recherche de la preuve parfaite : Google a lâché 80 agents IA sur le code de Signal pour prouver qu’il était sûr",
-    "summary": "Des agents d’IA de Google DeepMind ont démontré que le code au cœur du chiffrement de Signal respecte ses principales garanties de sécurité. Une première pour un logiciel aussi largement déployé, qui comporte néanmoins des limites.",
-    "url": "https://www.numerama.com/cyberguerre/2372071-a-la-recherche-de-la-preuve-parfaite-google-a-lache-80-agents-ia-sur-le-code-de-signal-pour-prouver-quil-etait-sur.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "OpenAI lance la fiche « Google My Business » de ChatGPT, avec un agent IA en prime",
-    "summary": "Avec Businesses in ChatGPT, OpenAI permet aux entreprises de revendiquer leur fiche dans le chatbot, d'y corriger leurs infos et de savoir combien de fois elles y sont citées. Certaines pourront même y installer leur propre agent conversationnel. Si ChatGPT est le « Google » de 2026, vous avez toutes les raisons de créer votre fiche.",
-    "url": "https://www.numerama.com/tech/2372045-openai-lance-la-fiche-google-my-business-de-chatgpt-avec-un-agent-ia-en-prime.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Anthropic offre un « reset » gratuit de toutes les limites à ses abonnés payants : comment en profiter",
-    "summary": "Anthropic accorde à tous les abonnés Pro, Max, Ultra et Team de Claude une réinitialisation complète et gratuite de leurs limites d'utilisation, à utiliser avant le 10 décembre. Un geste pour compenser des bugs qui ont fait fondre les quotas plus vite que prévu.",
-    "url": "https://www.numerama.com/tech/2372047-anthropic-offre-un-reset-gratuit-de-toutes-les-limites-a-ses-abonnes-payants-comment-en-profiter.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Starlink Mini 2 : l’antenne satellite nomade a enfin sa batterie",
-    "summary": "SpaceX a présenté le 10 novembre la Mini 2, deuxième génération de son antenne Starlink portable. Principale nouveauté : une batterie amovible qui promet jusqu'à 4 h 30 d'internet par satellite sans aucune prise. Les précommandes sont ouvertes, mais seulement sur invitation et aux États-Unis.",
-    "url": "https://www.numerama.com/tech/2372043-starlink-mini-2-lantenne-satellite-nomade-a-enfin-sa-batterie.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Claude Fable 5.2 a codé un système d’exploitation en 8 jours avec plus de 1 000 sous-agents",
     "summary": "Anthropic a dévoilé Claude Fable 5.2 (et Mythos 5.2), et à cette occasion, l'IA a créée un système d'exploitation en huit jours avec plus de 1 000 sous-agents. Le post Claude Fable 5.2 a codé un système d’exploitation en 8 jours avec plus de 1 000 sous-agents a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/claude-fable-5-2-systeme-exploitation-1000-sous-agents/",
@@ -187,38 +339,6 @@ window.TSSR_NEWS = [
     "title": "Faux support IT sur Teams : moins de 15 minutes entre la réponse de la victime et le malware",
     "summary": "Plus de 400 attaques au faux support IT via le chat externe de Teams : l'ordinateur de la victime peut être compromis en moins de 15 minutes. Le post Faux support IT sur Teams : moins de 15 minutes entre la réponse de la victime et le malware a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/teams-faux-support-it-email-bombing/",
-    "date": "2026-11-10",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Early Black Friday chez GoDeal24 : Office 2024 Pro Plus à 22.11€ et Windows 11 Pro à 12.25€",
-    "summary": "Notre partenaire GoDeal24 propose une nouvelle vente flash avec des prix très intéressants sur les licences Windows 11, Office 2024 et même Windows 10 LTSC. Le post Early Black Friday chez GoDeal24 : Office 2024 Pro Plus à 22.11€ et Windows 11 Pro à 12.25€ a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/bon-plan-des-promos-sur-les-licences-office-2021-windows-10-et-windows-11/",
-    "date": "2026-11-10",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Exchange Online : comment désactiver SMTP AUTH et sécuriser l’envoi d’e-mails",
-    "summary": "SMTP AUTH reste activé sur votre tenant Microsoft 365 ? Auditez son usage, désactivez-le pour l'organisation et les boîtes aux lettres, et bloquez l'auth basique. Le post Exchange Online : comment désactiver SMTP AUTH et sécuriser l’envoi d’e-mails a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/desactiver-smtp-auth-exchange-online/",
-    "date": "2026-11-10",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Frigos piratés : la France accuse les Gardiens de la révolution iraniens",
-    "summary": "Frigos réglés à haute température dans 700 supermarchés : la France attribue cette attaque, et d'autres incidents, aux Gardiens de la révolution iraniens. Le post Frigos piratés : la France accuse les Gardiens de la révolution iraniens a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/frigos-supermarches-france-impute-iran-cgri-shahid-kaveh/",
-    "date": "2026-11-10",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Ray-Ban Meta piratées : une chercheuse obtient un shell, puis contourne le correctif de Meta",
-    "summary": "Une chercheuse a obtenu un shell sur des lunettes Ray-Ban Meta en détournant le Device Access Toolkit, puis a contourné le correctif de Meta. Voici comment. Le post Ray-Ban Meta piratées : une chercheuse obtient un shell, puis contourne le correctif de Meta a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/lunettes-ray-ban-meta-piratees-shell/",
     "date": "2026-11-10",
     "source": "IT-Connect",
     "category": "Infrastructures"
@@ -260,102 +380,6 @@ window.TSSR_NEWS = [
     "summary": "Infineon, STMicroelectronics et NXP estiment que l’Europe peut rivaliser avec les États-Unis et l’Asie dans la robotique et l’IA physique. Leurs dirigeants misent sur l’expérience du continent dans l’automobile, l’industrie et la conception de systèmes sûrs.",
     "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/robotique-et-ia-physique-les-fabricants-de-puces-d",
     "date": "2026-11-10",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Qubole : des accès cloud oubliés exposent les entreprises au vol de données",
-    "summary": "Des attaquants ont détourné les accès AWS de Qubole pour voler des secrets et des données chez plusieurs entreprises clientes. Certaines avaient abandonné la plateforme sans révoquer ses autorisations. Rendue publique le 9 novembre 2026, la campagne a été observée du 14 au 26 octobre",
-    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/qubole-des-acces-cloud-oublies-exposent-les-entrep",
-    "date": "2026-11-10",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Anthropic dévoile Claude Fable 5.2 et Mythos 5.2, plus rapides et plus performants en code",
-    "summary": "Anthropic a présenté le 9 novembre les versions 5.2 de Claude Fable et Claude Mythos, ses modèles destinés aux travaux techniques les plus exigeants. L'éditeur revendique des progrès en programmation, en raisonnement et en vision, ainsi qu'une génération de réponses jusqu'à 30 % plus rapide que celle des versions 5.1.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/anthropic-devoile-claude-fable-5-2-et-mythos-5-2-p",
-    "date": "2026-11-10",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "OccupySaaS : licenciés par la tech, ils retournent l’IA contre les géants du logiciel",
-    "summary": "Lancé en octobre 2026, OccupySaaS rassemble des développeurs qui affirment avoir été licenciés par l’industrie technologique. Avec l’aide d’agents d’IA, ils reconstruisent des alternatives open source aux logiciels professionnels, à commencer par Auth0 et Salesforce.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/occupysaas-licencies-par-la-tech-ils-retournent-l",
-    "date": "2026-11-10",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Google présente deux nouveaux systèmes TPU pour l’inférence et les traitements à long contexte",
-    "summary": "Le TPU 8tx vise l’inférence confidentielle, tandis que le TPU 8i Max associe deux puces pour augmenter les capacités de calcul et la bande passante mémoire.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/google-presente-deux-nouveaux-systemes-tpu-pour-l-",
-    "date": "2026-11-10",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "OpenAI lève 11 Md$ pour une valorisation de 1 250 Md$",
-    "summary": "L’entreprise américaine a déjà réuni 11 Md$ dans le cadre d’un tour de table qui pourrait atteindre 20 Md$. Sa valorisation grimpe à 1 250 Md$.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/openai-leve-11-md-pour-une-valorisation-de-1-250-m",
-    "date": "2026-11-10",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "NIS 2 : la loi Résilience arrive enfin à l’Assemblée",
-    "summary": "Le projet de loi Résilience est examiné en séance publique après plusieurs reports. Son adoption doit permettre de préciser le cadre réglementaire applicable aux milliers d’organisations concernées.",
-    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/nis-2-la-loi-resilience-arrive-enfin-a-l-assemblee",
-    "date": "2026-11-10",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "L’Europe lance un plan de 525 M€ pour aider les start-up qui conçoivent des puces",
-    "summary": "Baptisée European Chip Design Platform, cette initiative mobilisera 525 M€ afin de faciliter l’accès aux outils de conception, aux financements et aux capacités de fabrication.",
-    "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/l-europe-lance-un-plan-de-525-m-pour-aider-les-sta",
-    "date": "2026-11-10",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs",
-    "summary": "290 Mo de RAM avec deux comptes connectés : c'est ce qu'affiche une première version du futur client Discord, réécrit en Rust pour Windows, mais pas seulement. Le post Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/discord-client-rust-gpui-fin-electron/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Sniffnet : un moniteur réseau gratuit et open source pour Windows, Linux et macOS",
-    "summary": "Découvrez Sniffnet, l'analyseur réseau gratuit et open source : installation avec Npcap, trafic par programme, export PCAP, filtres BPF et blacklist d'IP. Le post Sniffnet : un moniteur réseau gratuit et open source pour Windows, Linux et macOS a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/sniffnet-moniteur-trafic-reseau/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Airbnb accélère sa croissance et renforce ses investissements dans l’IA",
-    "summary": "Au troisième trimestre 2026, Airbnb a enregistré une hausse de 19 % de son chiffre d’affaires, à 4,9 Md$. Le groupe attribue notamment l’accélération de son développement produit à l’utilisation de l’IA.",
-    "url": "https://www.lemondeinformatique.fr/applications-developpement/airbnb-accelere-sa-croissance-et-renforce-ses-inve",
-    "date": "2026-11-09",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Omnissa veut étendre la gestion des terminaux aux agents IA",
-    "summary": "Nommé CEO d’Omnissa en septembre dernier, Amit Singh entend positionner l’éditeur sur la sécurisation des environnements de travail à l’heure des agents IA. Pour lui, les outils de gestion des terminaux doivent désormais permettre de découvrir, de contrôler et d’encadrer ces nouveaux utilisateurs logiciels.",
-    "url": "https://www.lemondeinformatique.fr/applications-developpement/omnissa-veut-etendre-la-gestion-des-terminaux-aux-",
-    "date": "2026-11-09",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Nvidia ébranlé par une enquête visant Jensen Huang, l’industrie des semi-conducteurs sous surveillance",
-    "summary": "Nvidia a ouvert une enquête indépendante pour déterminer si son PDG Jensen Huang a été la cible d’une opération de renseignement étrangère. Alors que Donald Trump défend le dirigeant, l’affaire inquiète les investisseurs. La Corée du Sud assure toutefois que les livraisons de GPU déjà contractualisées ne seront pas affectées.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/nvidia-ebranle-par-une-enquete-visant-jensen-huang",
-    "date": "2026-11-09",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
   },
@@ -432,12 +456,12 @@ window.TSSR_NEWS = [
     "category": "Sécurité"
   },
   {
-    "title": "Projet informatique qui dérape : cinq réflexes juridiques pour la DSI",
-    "summary": "Retards qui s’accumulent, livrables non conformes, périmètre qui glisse. Quand un projet informatique dérape, les premières semaines pèsent lourd sur la suite. Les conseils de Maître François-Xavier Langlais, avocat associé du cabinet Quantic Avocats.",
-    "url": "https://www.lemondeinformatique.fr/articles/projet-informatique-qui-derape-cinq-reflexes-jurid",
+    "title": "Multiples vulnérabilités dans les produits Splunk (06 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Splunk. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1475/",
     "date": "2026-11-06",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
     "title": "Multiples vulnérabilités dans Microsoft Edge (05 novembre 2026)",
@@ -488,14 +512,6 @@ window.TSSR_NEWS = [
     "category": "Sécurité"
   },
   {
-    "title": "Multiples vulnérabilités dans MongoDB (05 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans MongoDB. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1462/",
-    "date": "2026-11-05",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
     "title": "[MàJ] Vulnérabilité dans OpenSSH (05 novembre 2026)",
     "summary": "[Mise à jour du 6 novembre 2026] Cette vulnérabilité porte l'identifiant CVE-2026-123158. Alpine a publié un bulletin de sécurité (cf. section Documentation) concernant cette vulnérabilité. Le CERT-FR précise que toute installation de correctif ou modification de la configuration doit...",
     "url": "https://www.cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-015/",
@@ -510,13 +526,5 @@ window.TSSR_NEWS = [
     "date": "2026-10-29",
     "source": "CERT-FR",
     "category": "Sécurité"
-  },
-  {
-    "title": "IA générative : du POC à la production, les choix structurants pour la DSI",
-    "summary": "Passer une IA générative du POC à la production revient à trancher cinq décisions : l’architecture en couches, le type de modèle, la méthode d’adaptation (RAG, fine-tuning ou agents), l’hébergement et le cadre règlementaire. L’implémentation d’IA générative se juge au coût par usage, à la tenue en charge et à la conformité, pas à une démonstration réussie. Toute stratégie IA générative de DSI gagne à hiérarchiser ces choix avant le moindre chantier de mise en production.",
-    "url": "https://www.lemondeinformatique.fr/articles/ia-generative-du-poc-a-la-production-les-choix-str",
-    "date": "2026-10-28",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
   }
 ];
