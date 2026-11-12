@@ -1,5 +1,101 @@
 window.TSSR_NEWS = [
   {
+    "title": "Point de situation de l’opération REACTIV – octobre 2026 (12 novembre 2026)",
+    "summary": "Face à l’intensification des attaques cybercriminelles liées à des violations de données affectant les services de l’État, le Premier ministre a demandé le 1er septembre 2026 à l’Agence nationale de la sécurité des systèmes d’information (ANSSI) de mettre en place une capacité renforcée de...",
+    "url": "https://www.cert.cyber.gouv.fr/cti/CERTFR-2026-CTI-010/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Vulnérabilité dans Sonicwall SonicOS (12 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans Sonicwall SonicOS. Elle permet à un attaquant de provoquer une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1507/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Vulnérabilité dans NetApp ONTAP tools pour VMware vSphere 10 (12 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans NetApp ONTAP tools pour VMware vSphere 10. Elle permet à un attaquant de provoquer un déni de service à distance et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1518/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans Microsoft .Net (12 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft .Net. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1512/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans les produits Mozilla (12 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Mozilla. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire, une élévation de privilèges et une atteinte à la confidentialité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1505/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans Microsoft Azure (12 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Azure. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à la confidentialité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1514/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans Microsoft Windows (12 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Windows. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1513/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Serveurs Apache : cette faille critique dans HTTP/2 permet d’exécuter du code à distance",
+    "summary": "CVE-2026-119618 : une faille critique dans le module HTTP/2 d'Apache permet d'exécuter du code à distance. Voici comment protéger votre serveur Web. Le post Serveurs Apache : cette faille critique dans HTTP/2 permet d’exécuter du code à distance a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/faille-apache-http2-cve-2026-119618-rce/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Dark Web : comment y accéder avec Tor et Tails, et publier un site .onion",
+    "summary": "Dark Web, Tor, routage en oignon : comprenez comment fonctionne ce réseau, accédez-y en sécurité avec Tails et publiez votre propre site .onion. Le post Dark Web : comment y accéder avec Tor et Tails, et publier un site .onion a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/dark-web-tor-tails-site-onion/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "CAF, France Travail, OFB… l’ANSSI fait le point sur les fuites de données d’octobre 2026",
+    "summary": "64 violations de données signalées depuis fin septembre : l'ANSSI publie son 2e point REACTIV. CAF, France Travail, OFB... avec toujours les mêmes failles. Le post CAF, France Travail, OFB… l’ANSSI fait le point sur les fuites de données d’octobre 2026 a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/reactiv-anssi-point-situation-fuites-donnees-caf-france-travail/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Votre SQL Server est lent ? Les mises à jour Windows récentes sont peut-être en cause",
+    "summary": "Depuis les mises à jour Windows d'octobre 2026, les serveurs liés SQL Server peuvent laisser des connexions ouvertes. Microsoft a confirmé et prépare un patch. Le post Votre SQL Server est lent ? Les mises à jour Windows récentes sont peut-être en cause a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/sql-server-serveurs-lies-connexions-ouvertes-mises-a-jour-windows/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Windows 11 : la mise à jour KB5132061 refuse de s’installer sur certains PC, Microsoft promet un correctif",
+    "summary": "L'installation de la KB5132061 échoue sur certains PC Windows 11 ayant reçu la préversion d'octobre. Microsoft promet une réparation automatique sous 48h. Le post Windows 11 : la mise à jour KB5132061 refuse de s’installer sur certains PC, Microsoft promet un correctif a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/windows-11-kb5132061-echec-installation-0800f0989/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
     "title": "NAS Synology : deux failles exploitables sans authentification dans DSM, dont une injection SQL",
     "summary": "Synology a corrigé deux failles dans DSM exploitables sans authentification, dont une injection SQL critique. Voici les versions à installer sur votre NAS. Le post NAS Synology : deux failles exploitables sans authentification dans DSM, dont une injection SQL a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/nas-synology-dsm-failles-sans-authentification-novembre-2026/",
@@ -152,6 +248,70 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
+    "title": "Quel est ce « Feu Secret » que Gandalf dit servir dans Les Anneaux de pouvoir ?",
+    "summary": "Le Feu Secret est un concept clé de l'univers du Seigneur des anneaux. Gandalf s'en réclame face au Balrog dans les romans ainsi que dans l'adaptation cinématographique de Peter Jackson. Ce Feu Secret est aussi au menu de la série Les Anneaux de pouvoir. On en parle dès la saison 2 et c'est même le titre du troisième épisode de sa saison 3.",
+    "url": "https://www.numerama.com/pop-culture/1811462-quel-est-ce-feu-secret-que-gandalf-dit-servir-dans-les-anneaux-de-pouvoir.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Les Anneaux de pouvoir : voilà les Nazgnagôl (Nazgûl) déjà identifiés dans la saison 3",
+    "summary": "Les quatre premiers épisodes de la saison 3 des Anneaux de pouvoir, disponibles depuis ce mercredi 11 novembre 2026 sur Prime Video, montrent déjà quatre des neuf futurs Nazgûl. Un seul d'entre eux vient directement des livres de Tolkien.",
+    "url": "https://www.numerama.com/pop-culture/2372969-les-anneaux-de-pouvoir-voila-les-nazgnagol-nazgul-deja-identifies-dans-la-saison-3.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "« Les actes ont des conséquences » : un bras de fer secoue l’usine Volkswagen de la future Golf électrique",
+    "summary": "Quelques jours après les mises en garde de Thomas Schäfer sur le dérapage des coûts à Wolfsburg, Volkswagen abandonne le gigacasting pour une fabrication plus conventionnelle de sa future ID. Golf.",
+    "url": "https://www.numerama.com/vroom/2373127-les-actes-ont-des-consequences-un-bras-de-fer-secoue-lusine-volkswagen-de-la-future-golf-electrique.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Train complet ? Il existe une astuce pour réserver un billet au dernier moment",
+    "summary": "Prévoir ses déplacements à l'avance n'est pas toujours possible. Les trains de la SNCF peuvent toutefois se remplir rapidement après l'ouverture des ventes. Heureusement, une astuce peut parfois permettre de trouver un billet en dernière minute, pour voyager dans un train qui affichait déjà complet.",
+    "url": "https://www.numerama.com/vroom/1586516-train-complet-il-existe-une-astuce-pour-reserver-un-billet-au-dernier-moment.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Leclerc casse le prix de Mafia: The Old Country sur PS5",
+    "summary": "Il y a des jeux qu’on garde dans un coin de sa tête en attendant le bon moment. Pour Mafia: The Old Country, la préquelle sicilienne de Hangar 13, ce moment pourrait bien être arrivé. Leclerc vient de faire nettement baisser son prix sur PS5, pour une durée limitée.",
+    "url": "https://www.numerama.com/pop-culture/2373135-leclerc-casse-le-prix-de-mafia-the-old-country-sur-ps5.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Intersport retire 500 € au Nakamura Crossover V LTD, son VTC électrique à cadre ouvert",
+    "summary": "[Deal du jour] Le Nakamura Crossover V LTD, un VTC électrique à moteur central et cadre ouvert, perd 500 € chez Intersport. Il passe de 1 899,99 € à 1 399,99 €.",
+    "url": "https://www.numerama.com/vroom/2373201-intersport-retire-500-e-au-nakamura-crossover-v-ltd-son-vtc-electrique-a-cadre-ouvert.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Après Mass Effect, The Expanse: Osiris Reborn pourrait bien prendre la relève du RPG spatial",
+    "summary": "The Expanse: Osiris Reborn se montre davantage avec une nouvelle vidéo de gameplay de plusieurs minutes. De quoi confirmer les ambitions du RPG d'Owlcat Games, qui compte bien rentrer dans la course du successeur à Mass Effect.",
+    "url": "https://www.numerama.com/pop-culture/2373039-apres-mass-effect-the-expanse-osiris-reborn-pourrait-bien-prendre-la-releve-du-rpg-spatial.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Qui est Colette Kress, qui remplace Jensen Huang à la tête de Nvidia ?",
+    "summary": "Après la démission de Jensen Huang, ce 12 novembre 2026, c'est Colette Kress, directrice financière de Nvidia depuis 2013, qui prend les commandes du géant de l'IA par intérim.",
+    "url": "https://www.numerama.com/tech/2373085-qui-est-colette-kress-qui-remplace-jensen-huang-a-la-tete-de-nvidia.html",
+    "date": "2026-11-12",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "World of Warcraft: Forever a un problème avec son économie",
     "summary": "World of Warcraft: Forever ne reprend pas la mécanique permettant de récupérer de l'or à la place de points d'expérience, une fois le niveau 60 atteint. Blizzard Entertainment assume ce choix de design mais reconnaît un souci avec l'économie du jeu. Un correctif, qui ajoute de l'or à la plupart des quêtes de niveau 48 et plus, a été déployé ce mercredi 11 novembre.",
     "url": "https://www.numerama.com/pop-culture/2372991-world-of-warcraft-forever-a-un-probleme-avec-son-economie.html",
@@ -160,7 +320,7 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Plateforme CMP, architecture CEA, voitures à prix cassés : ce que Volkswagen va (ou non) importer de Chine",
+    "title": "Volkswagen rapatrie la technologie chinoise, pas les voitures : Thomas Schäfer explique pourquoi",
     "summary": "Rencontré à Xiamen, Thomas Schäfer, le patron de la marque Volkswagen, ouvre la porte à l'arrivée de l'architecture électronique chinoise en Europe. Mais oubliez l’importation de modèles ou de plateformes à bas coût.",
     "url": "https://www.numerama.com/vroom/2373019-plateforme-cmp-architecture-cea-voitures-a-prix-casses-ce-que-volkswagen-va-ou-non-importer-de-chine.html",
     "date": "2026-11-12",
@@ -184,7 +344,7 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Rouler reste toujours le moyen le plus rapide de se déplacer dans Zelda Ocarina of Time",
+    "title": "N’en déplaise à Nintendo, Link continuera de rouler dans Zelda Ocarina of Time",
     "summary": "Nintendo a beau avoir ajouté une fonction de sprint au remake de Zelda Ocarina of Time, les joueuses et les joueurs qui n'ont pas de temps à perdre ont déjà trouvé une meilleure technique pour traverser Hyrule. Elle consiste, encore et toujours, à enchaîner les roulades.",
     "url": "https://www.numerama.com/pop-culture/2372837-rouler-reste-toujours-le-moyen-le-plus-rapide-de-se-deplacer-dans-zelda-ocarina-of-time.html",
     "date": "2026-11-12",
@@ -203,70 +363,6 @@ window.TSSR_NEWS = [
     "title": "Superman : Henry Cavill de retour ? L’acteur fait une déclaration",
     "summary": "Ce mercredi 11 novembre, deux jours après l'annonce du départ de James Gunn et Peter Safran de la tête de DC Studios, Henry Cavill a été interrogé sur un éventuel retour dans le costume de l'Homme d'Acier. L'acteur britannique ne ferme plus la porte.",
     "url": "https://www.numerama.com/pop-culture/2372845-superman-henry-cavill-de-retour-dans-le-role-lacteur-sexprime.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Comment la Nasa a « perdu » une exoplanète géante de la taille de Jupiter",
-    "summary": "Le télescope spatial TESS de la Nasa a vu la planète géante TOI-2535 b, située à environ 1 000 années-lumière, passer devant son étoile pendant 7 ans, puis plus rien à partir de mars 2026. Aucune autre planète tournant autour d'une étoile seule n'avait jamais été vue en train de disparaître ainsi.",
-    "url": "https://www.numerama.com/sciences/2372575-comment-la-nasa-a-perdu-une-exoplanete-geante-de-la-taille-de-jupiter.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Faut-il acheter le pack Ultime de GTA 6 à 20 euros ?",
-    "summary": "L'édition physique de GTA 6 est désormais disponible. Elle permet de télécharger le jeu en avance, pour être prêt le jour de la sortie, prévue le 19 novembre sur PS5, Xbox Series S et Xbox Series X. Elle contient un feuillet qui fait la promotion d'une version Ultime. C'est quoi au juste ?",
-    "url": "https://www.numerama.com/pop-culture/2372761-faut-il-acheter-le-pack-ultime-de-gta-6-a-20-euros.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Bilan des frappes de drones ukrainiens : Yandex a perdu à jamais près de 3 % des données de son cloud",
-    "summary": "Un mois après des frappes de drones ukrainiens sur trois de ses data centers, le géant russe de la tech a dressé le bilan de la restauration de Yandex Cloud. Près de 3 % des données de ses clients ont disparu définitivement, faute de matériel réparable et de sauvegardes.",
-    "url": "https://www.numerama.com/cyberguerre/2372839-bilan-des-frappes-de-drones-ukrainiens-yandex-a-perdu-a-jamais-pres-de-3-des-donnees-de-son-cloud.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 est en magasin : où le payer moins cher, à J-7 de sa sortie",
-    "summary": "Plus que sept jours avant GTA 6. Depuis ce jeudi 12 novembre, le jeu est en rayon dans sa version boîte, qui permet encore de le payer moins cher que les 79,99 € réclamés sur le PlayStation Store et le Microsoft Store.",
-    "url": "https://www.numerama.com/pop-culture/2372707-gta-6-est-en-magasin-ou-le-payer-moins-cher-a-j-7-de-sa-sortie.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "CD Projekt mobilise l’IA pour l’extension de The Witcher 3 : « C’est l’un des cas de figure où l’on peut utiliser l’IA de manière éthique »",
-    "summary": "Pour Songs of the Past, la nouvelle extension de The Witcher 3, les équipes de CD Projekt Red ont eu recours à l'intelligence artificielle pour retrouver la voix polonaise originale de Geralt. Le comédien Jacek Rozenek, dont la voix a changé après un AVC en 2019, a donné son accord.",
-    "url": "https://www.numerama.com/pop-culture/2372693-cd-projekt-mobilise-lia-pour-lextension-de-the-witcher-3-cest-lun-des-cas-de-figure-ou-lon-peut-utiliser-lia-de-maniere-ethique.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Nvidia sans Jensen Huang ? Le casse-tête de la succession",
-    "summary": "Selon le Wall Street Journal, le conseil d'administration de Nvidia se préparerait à évincer Jensen Huang, son cofondateur et patron depuis 33 ans. Mais qui pour le remplacer ? L'entreprise la plus stratégique de l'IA n'a désigné aucun successeur et tout a été construit autour d'un seul homme.",
-    "url": "https://www.numerama.com/tech/2372735-nvidia-sans-jensen-huang-le-casse-tete-de-la-succession.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Les fans avaient raison : la série Les Anneaux de pouvoir révèle enfin qui est le magicien ténébreux (dark wizard)",
-    "summary": "Dans l'épisode 3 de la saison 3 des Anneaux de pouvoir, mis en ligne ce mercredi 11 novembre sur Prime Video, Gandalf apprend la vraie identité du magicien ténébreux (dark wizard). La série donne ainsi un nom à ce personnage, joué par Ciarán Hinds, après deux ans de théories de fans.",
-    "url": "https://www.numerama.com/pop-culture/2372631-les-fans-avaient-raison-la-serie-les-anneaux-de-pouvoir-revele-enfin-qui-est-le-magicien-tenebreux-dark-wizard.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Vous pouvez payer 3,49 € pour jouer 10 heures à des jeux Xbox en streaming",
-    "summary": "Microsoft lance de nouvelles manières d'accéder à son service de jeux vidéo en streaming. Deux formules, distinctes du Xbox Game Pass, sont proposées : une option gratuite avec des publicités et une autre payante, à 3,49 € les 10 heures de jeu.",
-    "url": "https://www.numerama.com/pop-culture/2372621-vous-pouvez-payer-349-e-pour-jouer-10-heures-a-des-jeux-xbox-en-streaming.html",
     "date": "2026-11-12",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -304,44 +400,92 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Patch Tuesday – Novembre 2026 : 1 093 failles corrigées, dont une faille zero-day dans Outlook",
-    "summary": "Microsoft a corrigé 1 093 failles avec le Patch Tuesday de novembre 2026. Une faille zero-day est déjà exploitée dans Outlook : voici le récapitulatif complet. Le post Patch Tuesday – Novembre 2026 : 1 093 failles corrigées, dont une faille zero-day dans Outlook a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/patch-tuesday-novembre-2026-recapitulatif/",
-    "date": "2026-11-11",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Windows 11 KB5132061 : voici l’essentiel à savoir sur la mise à jour de novembre 2026",
-    "summary": "KB5132061 : menu contextuel personnalisable, signature NTLM par défaut, audio USB corrigé. Voici le récapitulatif de la mise à jour Windows 11 de novembre 2026. Le post Windows 11 KB5132061 : voici l’essentiel à savoir sur la mise à jour de novembre 2026 a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/windows-11-kb5132061-kb5131087-nouveautes-correctifs/",
-    "date": "2026-11-11",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Windows 10 – KB5131096 : voici la mise à jour de sécurité de novembre 2026",
-    "summary": "KB5131096 pour Windows 10 : le bug audio USB est corrigé, l'ESU entre dans sa deuxième année et la signature des scripts PowerShell devient plus stricte. Le post Windows 10 – KB5131096 : voici la mise à jour de sécurité de novembre 2026 a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/windows-10-kb5131096-mise-a-jour-esu/",
-    "date": "2026-11-11",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Claude Fable 5.2 a codé un système d’exploitation en 8 jours avec plus de 1 000 sous-agents",
-    "summary": "Anthropic a dévoilé Claude Fable 5.2 (et Mythos 5.2), et à cette occasion, l'IA a créée un système d'exploitation en huit jours avec plus de 1 000 sous-agents. Le post Claude Fable 5.2 a codé un système d’exploitation en 8 jours avec plus de 1 000 sous-agents a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/claude-fable-5-2-systeme-exploitation-1000-sous-agents/",
+    "title": "Multiples vulnérabilités dans les produits SAP (10 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits SAP. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1497/",
     "date": "2026-11-10",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "Faux support IT sur Teams : moins de 15 minutes entre la réponse de la victime et le malware",
-    "summary": "Plus de 400 attaques au faux support IT via le chat externe de Teams : l'ordinateur de la victime peut être compromis en moins de 15 minutes. Le post Faux support IT sur Teams : moins de 15 minutes entre la réponse de la victime et le malware a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/teams-faux-support-it-email-bombing/",
+    "title": "Vulnérabilité dans Atlassian Confluence Data Center (10 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans Atlassian Confluence Data Center. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1492/",
     "date": "2026-11-10",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans Roundcube (10 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Roundcube. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire, une falsification de requêtes côté serveur (SSRF) et une injection de requêtes illégitimes par rebond (CSRF).",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1489/",
+    "date": "2026-11-10",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans Synology DSM (10 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Synology DSM. Certaines d'entre elles permettent à un attaquant de provoquer un déni de service à distance, une atteinte à la confidentialité des données et une falsification de requêtes côté serveur (SSRF).",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1493/",
+    "date": "2026-11-10",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans Siemens SIMATIC (10 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Siemens SIMATIC. Elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance et un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1495/",
+    "date": "2026-11-10",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans les produits Apple (10 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Apple. Certaines d'entre elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données, une atteinte à l'intégrité des données et un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1487/",
+    "date": "2026-11-10",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans Mozilla Firefox (10 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Mozilla Firefox. Elles permettent à un attaquant de provoquer une élévation de privilèges et un problème de sécurité non spécifié par l'éditeur.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1490/",
+    "date": "2026-11-10",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans OpenSSL (10 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans OpenSSL. Certaines d'entre elles permettent à un attaquant de provoquer un déni de service à distance, une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1496/",
+    "date": "2026-11-10",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Vulnérabilité dans Schneider Electric EcoStruxure (10 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans Schneider Electric EcoStruxure. Elle permet à un attaquant de provoquer une exécution de code arbitraire.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1494/",
+    "date": "2026-11-10",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans le greffon OpenID Connect OpenID Provider (OIDC OP) pour Shibboleth (10 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans le greffon OpenID Connect OpenID Provider (OIDC OP) pour Shibboleth. Elles permettent à un attaquant de provoquer un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1491/",
+    "date": "2026-11-10",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans Google Chrome (10 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Google Chrome. Elles permettent à un attaquant de provoquer un problème de sécurité non spécifié par l'éditeur. Google indique que la vulnérabilité CVE-2026-125350 est activement exploitée.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1488/",
+    "date": "2026-11-10",
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
     "title": "ONLYOFFICE 10.0 : l'IA et la sécurité au service d'une bureautique souveraine",
@@ -382,149 +526,5 @@ window.TSSR_NEWS = [
     "date": "2026-11-10",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
-  },
-  {
-    "title": "Multiples vulnérabilités dans le noyau Linux de SUSE (06 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de SUSE. Certaines d'entre elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données, une atteinte à l'intégrité des données et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1470/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans le noyau Linux d'Ubuntu (06 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux d'Ubuntu. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire, une atteinte à l'intégrité des données et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1469/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans les produits VMware (06 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans les produits VMware. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1474/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans les produits Mitel (06 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans les produits Mitel. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1477/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans le noyau Linux de Red Hat (06 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de Red Hat. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1471/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits Foxit (06 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Foxit. Elles permettent à un attaquant de provoquer une falsification de requêtes côté serveur (SSRF) et une injection de code indirecte à distance (XSS).",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1478/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits IBM (06 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits IBM. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1472/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans le noyau Linux de Debian (06 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de Debian. Elles permettent à un attaquant de provoquer une élévation de privilèges, une atteinte à la confidentialité des données et un déni de service.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1473/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits Cisco (06 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Cisco. Elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1476/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits Splunk (06 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Splunk. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1475/",
-    "date": "2026-11-06",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Microsoft Edge (05 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Edge. Elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données et un problème de sécurité non spécifié par l'éditeur.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1466/",
-    "date": "2026-11-05",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits Siemens (05 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Siemens. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1464/",
-    "date": "2026-11-05",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans OpenSSH (05 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans OpenSSH. Elle permet à un attaquant de provoquer un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1468/",
-    "date": "2026-11-05",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits Cisco (05 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Cisco. Elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un contournement de la politique de sécurité et un problème de sécurité non spécifié par l'éditeur.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1467/",
-    "date": "2026-11-05",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans OpenOffice (05 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans OpenOffice. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1463/",
-    "date": "2026-11-05",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans SPIP (05 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans SPIP. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à l'intégrité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1465/",
-    "date": "2026-11-05",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "[MàJ] Vulnérabilité dans OpenSSH (05 novembre 2026)",
-    "summary": "[Mise à jour du 6 novembre 2026] Cette vulnérabilité porte l'identifiant CVE-2026-123158. Alpine a publié un bulletin de sécurité (cf. section Documentation) concernant cette vulnérabilité. Le CERT-FR précise que toute installation de correctif ou modification de la configuration doit...",
-    "url": "https://www.cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-015/",
-    "date": "2026-11-05",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans WordPress (29 octobre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans WordPress. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1420/",
-    "date": "2026-10-29",
-    "source": "CERT-FR",
-    "category": "Sécurité"
   }
 ];
