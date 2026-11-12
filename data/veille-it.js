@@ -1,5 +1,21 @@
 window.TSSR_NEWS = [
   {
+    "title": "Kudu : découverte de l’alternative gratuite et open source à CCleaner pour Windows, macOS et Linux",
+    "summary": "Kudu est un logiciel de nettoyage et d'optimisation gratuit et open source pour Windows, macOS et Linux. Voici les fonctionnalités de cette alternative à CCleaner. Le post Kudu : découverte de l’alternative gratuite et open source à CCleaner pour Windows, macOS et Linux a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/kudu-alternative-open-source-ccleaner/",
+    "date": "2026-11-11",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "pfSense 26.10 : Netgate fusionne CE et Plus, toutes les fonctionnalités deviennent gratuites",
+    "summary": "Vous utilisez pfSense CE sur votre propre matériel ? Avec la version 26.10, Netgate fusionne CE et Plus en une seule édition gratuite. Voici ce qui change. Le post pfSense 26.10 : Netgate fusionne CE et Plus, toutes les fonctionnalités deviennent gratuites a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/pfsense-26-10-fusion-ce-plus-edition-unique-gratuite/",
+    "date": "2026-11-11",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
     "title": "Outlook et Hotmail : les e-mails rejetés faute de DMARC, c’était un bug de Microsoft",
     "summary": "Du 6 au 9 novembre, Outlook.com a rejeté à tort des e-mails, surtout issus de domaines sans DMARC. Microsoft reconnaît un bug. Voici ce qu'il faut vérifier. Le post Outlook et Hotmail : les e-mails rejetés faute de DMARC, c’était un bug de Microsoft a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/outlook-hotmail-bug-rejet-emails-dmarc/",
@@ -38,6 +54,30 @@ window.TSSR_NEWS = [
     "date": "2026-11-11",
     "source": "IT-Connect",
     "category": "Infrastructures"
+  },
+  {
+    "title": "Le jeu de cartes de League of Legends en promo : la display Riftbound Armes Spirituelles est bradée",
+    "summary": "Philibert fait passer la display Armes Spirituelles sous la barre des 100 € pour quelques jours. Cela fait 24 boosters du deuxième set de Riftbound, le jeu de cartes de League of Legends, en VF et moins cher que dans la plupart des autres enseignes.",
+    "url": "https://www.numerama.com/pop-culture/2372419-le-jeu-de-cartes-de-league-of-legends-en-promo-la-display-riftbound-armes-spirituelles-est-bradee-chez-philibert.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "WoW Forever signe le plus gros lancement de l’histoire de World of Warcraft",
+    "summary": "Une semaine après sa sortie, World of Warcraft: Forever revendique deux records : le plus haut pic de joueurs connectés pour un lancement de WoW et le plus grand nombre de joueurs revenus au jeu.",
+    "url": "https://www.numerama.com/pop-culture/2372279-wow-forever-signe-le-plus-gros-lancement-de-lhistoire-de-world-of-warcraft.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday 2026 : les meilleures offres de ce 11 novembre, dénichées en direct",
+    "summary": "Jour férié pour beaucoup, mais pas pour les marchands : ce 11 novembre, Boulanger, Amazon et la Fnac continuent de dégainer codes promo et baisses de prix, à seize jours du Black Friday. Voici les 50 meilleures offres.",
+    "url": "https://www.numerama.com/tech/2363357-black-friday-2026-les-meilleures-offres-de-ce-11-novembre-denichees-en-direct.html",
+    "date": "2026-11-11",
+    "source": "Numerama",
+    "category": "Cybersécurité"
   },
   {
     "title": "Audi A2 e-tron, Lancia Gamma, Leapmotor B10… les voitures électriques que vous allez payer moins cher grâce à l’éco-score",
@@ -131,14 +171,6 @@ window.TSSR_NEWS = [
     "title": "Starlink Mini 2 : l’antenne satellite nomade a enfin sa batterie",
     "summary": "SpaceX a présenté le 10 novembre la Mini 2, deuxième génération de son antenne Starlink portable. Principale nouveauté : une batterie amovible qui promet jusqu'à 4 h 30 d'internet par satellite sans aucune prise. Les précommandes sont ouvertes, mais seulement sur invitation et aux États-Unis.",
     "url": "https://www.numerama.com/tech/2372043-starlink-mini-2-lantenne-satellite-nomade-a-enfin-sa-batterie.html",
-    "date": "2026-11-11",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "6 questions auxquelles la saison 3 des Anneaux de pouvoir doit répondre",
-    "summary": "Bienvenue en Terre du milieu ! Avant de vous lancer corps et âme dans la saison 3 des Anneaux de pouvoir, la série préquelle du Seigneur des anneaux, Numerama revient sur les grandes questions posées par la saison 2, et auxquelles les scénaristes de l’épique série devront répondre.",
-    "url": "https://www.numerama.com/pop-culture/2369607-6-questions-auxquelles-la-saison-3-des-anneaux-de-pouvoir-doit-repondre.html",
     "date": "2026-11-11",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -288,22 +320,6 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Scrooge : on a vu le film qui signe le retour de Johnny Depp au cinéma (avis sans spoiler)",
-    "summary": "Le célèbre conte de Charles Dickens s'offre une cure de jouvence macabre sous la caméra de Ti West. Porté par un Johnny Depp métamorphosé en Ebenezer Scrooge, ce nouveau long-métrage adapte Un chant de Noël avec une esthétique gothique. Alors, réussite ? Notre avis sans spoiler.",
-    "url": "https://www.numerama.com/pop-culture/2370931-scrooge-on-a-vu-le-film-qui-signe-le-retour-de-johnny-depp-au-cinema-reussite-ou-grosse-cata.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Loi Résilience : les députés suppriment l’article qui aurait empêché l’État d’imposer des portes dérobées",
-    "summary": "Ce mardi 10 novembre, l’Assemblée nationale a supprimé l’article 16 bis du projet de loi Résilience, qui interdisait à l’État d’imposer des portes dérobées aux messageries chiffrées.",
-    "url": "https://www.numerama.com/cyberguerre/2371907-loi-resilience-les-deputes-suppriment-larticle-qui-aurait-empeche-letat-dimposer-des-portes-derobees.html",
-    "date": "2026-11-10",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs",
     "summary": "290 Mo de RAM avec deux comptes connectés : c'est ce qu'affiche une première version du futur client Discord, réécrit en Rust pour Windows, mais pas seulement. Le post Discord abandonne Electron et réécrit son client en Rust : 290 Mo de RAM avec deux comptes actifs a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/discord-client-rust-gpui-fin-electron/",
@@ -315,22 +331,6 @@ window.TSSR_NEWS = [
     "title": "Sniffnet : un moniteur réseau gratuit et open source pour Windows, Linux et macOS",
     "summary": "Découvrez Sniffnet, l'analyseur réseau gratuit et open source : installation avec Npcap, trafic par programme, export PCAP, filtres BPF et blacklist d'IP. Le post Sniffnet : un moniteur réseau gratuit et open source pour Windows, Linux et macOS a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/sniffnet-moniteur-trafic-reseau/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Plex2Shell : QNAP fait état de NAS compromis, vous devez patcher !",
-    "summary": "QNAP fait état de NAS compromis via Plex2Shell. Si Plex Media Server était exposé sur Internet, la mise à jour ne suffit pas : voici comment vérifier votre NAS. Le post Plex2Shell : QNAP fait état de NAS compromis, vous devez patcher ! a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/qnap-plex2shell-nas-compromis/",
-    "date": "2026-11-09",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "SonicWall : une faille dans le VPN SSL permet de contourner le MFA et elle est exploitée",
-    "summary": "Une faille exploitée dans le VPN SSL des firewalls SonicWall peut permettre de contourner SAML et le MFA associé. Qui est affecté ? Comment se protoéger ? Le post SonicWall : une faille dans le VPN SSL permet de contourner le MFA et elle est exploitée a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/sonicwall-vpn-ssl-faille-saml-mfa-cve-2026-19868/",
     "date": "2026-11-09",
     "source": "IT-Connect",
     "category": "Infrastructures"
