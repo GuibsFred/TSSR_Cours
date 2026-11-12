@@ -227,7 +227,7 @@ function editRevisionNotes(id){
 const normKind=x=>x==='cours'?'cours':x;
 function nav(){
  const q=$('#search').value.toLowerCase().trim();
- $('#mainNav').innerHTML=Object.entries(labels).map(([k,[ico,label]])=>`<button class="navlink ${section===k?'active':''}" data-sec="${k}"><span class="sym">${ico}</span>${label}</button>`).join('')+`<a class="navlink tssr-terminal-nav" href="terminal-ops.html" title="Lancer Terminal Ops"><span class="sym">⌘</span><span>TERMINAL OPS<small>Simulateur de commandes</small></span><span class="terminal-chevron">↗</span></a>`;
+ $('#mainNav').innerHTML=Object.entries(labels).map(([k,[ico,label]])=>`<button class="navlink ${section===k?'active':''}" data-sec="${k}"><span class="sym">${ico}</span>${label}</button>`).join('')+`<a class="navlink tssr-terminal-nav" href="linux-lab/" title="Laboratoire Linux v86"><span class="sym">🐧</span><span>BASH OPERATOR CENTER<small>Laboratoire Linux v86</small></span><span class="terminal-chevron">↗</span></a><a class="navlink tssr-terminal-nav" href="terminal-ops.html" title="Lancer Terminal Ops"><span class="sym">⌘</span><span>TERMINAL OPS<small>Simulateur de commandes</small></span><span class="terminal-chevron">↗</span></a>`;
  const courses=all().filter(x=>x.kind==='cours'&&(!q||(x.title+' '+x.category).toLowerCase().includes(q)));
  const roots=[...new Set(courses.map(x=>rootCategory(x.category)))].sort(moduleSort);
  const panel=$('#modules');

@@ -1,0 +1,8 @@
+TSSR - Intégration Bash Lab et pause Terminal Ops
+
+- Accès Bash Lab : menu latéral BASH OPERATOR CENTER ou bouton BASH LAB en haut.
+- Page : linux-lab/index.html
+- Terminal Ops : page de maintenance visible, anciens fichiers conservés.
+- Bash Lab : prototype v86 dépendant de ressources externes copy.sh. L’image Alpine publique ne garantit pas GNU Bash ; il ne s’agit PAS encore du laboratoire Bash complet promis.
+- Déployer le CONTENU du dossier TSSR_Cours-main à la racine du dépôt GitHub Pages.
+- Ne pas annoncer le laboratoire comme validé sans test dans un navigateur.
