@@ -1,5 +1,53 @@
 window.TSSR_NEWS = [
   {
+    "title": "Panne mondiale de Microsoft 365 : Outlook, Teams et Copilot perturbés depuis plus de 11 heures",
+    "summary": "Depuis jeudi soir, une panne mondiale de Microsoft 365 perturbe Outlook, Teams et Copilot. Le service n'est pas rétabli en ce vendredi 13 novembre 2026. Le post Panne mondiale de Microsoft 365 : Outlook, Teams et Copilot perturbés depuis plus de 11 heures a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/panne-mondiale-microsoft-365-exchange-online-outlook-teams/",
+    "date": "2026-11-13",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "SignDrop : cette faille zero-day détourne la protection CLFS de Windows pour obtenir les droits SYSTEM",
+    "summary": "SignDrop, nouvelle zero-day publiée par Nightmare Eclipse, détourne l'authentification CLFS de Windows pour obtenir les droits SYSTEM. Voici ce que l'on sait. Le post SignDrop : cette faille zero-day détourne la protection CLFS de Windows pour obtenir les droits SYSTEM a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/signdrop-zero-day-windows-clfs-system/",
+    "date": "2026-11-13",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Panne mondiale de Microsoft 365 : Outlook perturbé pendant des heures",
+    "summary": "Une panne majeure a frappé Microsoft 365 jeudi 12 novembre 2026, perturbant principalement Outlook et Exchange Online, avec des répercussions sur Copilot et certaines fonctionnalités de Teams. Des incidents ont été signalés dans 74 pays et territoires. Malgré plusieurs interventions techniques, Microsoft peinait toujours à stabiliser ses infrastructures près de 11 heures après le début des perturbations. L'éditeur assure ne disposer d'aucun indice d'une cyberattaque.",
+    "url": "https://www.lemondeinformatique.fr/applications-developpement/panne-mondiale-de-microsoft-365-outlook-perturbe-p",
+    "date": "2026-11-13",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Starship : suivez en direct la tentative inédite de la double capture de la fusée géante en plein vol",
+    "summary": "SpaceX a prévu le 15e vol d'essai de Starship ce vendredi 13 novembre, à 23 h 45 heure de Paris. Au programme : plus de 22 heures en orbite et une première tentative de rattrapage des deux étages par la tour de lancement. L'évènement pourra être suivi en direct et en vidéo.",
+    "url": "https://www.numerama.com/sciences/2373405-starship-spacex-vise-un-vol-de-22-heures-et-un-double-rattrapage-par-la-tour.html",
+    "date": "2026-11-13",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Une panne géante frappe Microsoft : Outlook et Microsoft 365 impactés, voici ce que l’on sait",
+    "summary": "Depuis le jeudi 12 novembre au soir, des millions d'utilisateurs dans le monde ne parviennent plus à se connecter aux services de Microsoft 365. L’entreprise a reconnu une panne d’ampleur.",
+    "url": "https://www.numerama.com/tech/2373485-une-panne-geante-frappe-microsoft-outlook-teams-et-microsoft-365-inaccessibles-voici-ce-que-lon-sait.html",
+    "date": "2026-11-13",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "J’ai essayé la nouvelle Dacia Spring : simple Twingo au rabais ou vraie bonne affaire ?",
+    "summary": "J'ai roulé 182 km avec la deuxième génération de la Dacia Spring, une citadine électrique de 82 ch vendue entre 17 900 et 19 400 €. Plus qu'une simple Twingo clônée ? La réponse est plus compliquée que ça.",
+    "url": "https://www.numerama.com/vroom/2371605-jai-essaye-la-nouvelle-dacia-spring-simple-twingo-au-rabais-ou-vraie-bonne-affaire.html",
+    "date": "2026-11-13",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Point de situation de l’opération REACTIV – octobre 2026 (12 novembre 2026)",
     "summary": "Face à l’intensification des attaques cybercriminelles liées à des violations de données affectant les services de l’État, le Premier ministre a demandé le 1er septembre 2026 à l’Agence nationale de la sécurité des systèmes d’information (ANSSI) de mettre en place une capacité renforcée de...",
     "url": "https://www.cert.cyber.gouv.fr/cti/CERTFR-2026-CTI-010/",
@@ -344,30 +392,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "N’en déplaise à Nintendo, Link continuera de rouler dans Zelda Ocarina of Time",
-    "summary": "Nintendo a beau avoir ajouté une fonction de sprint au remake de Zelda Ocarina of Time, les joueuses et les joueurs qui n'ont pas de temps à perdre ont déjà trouvé une meilleure technique pour traverser Hyrule. Elle consiste, encore et toujours, à enchaîner les roulades.",
-    "url": "https://www.numerama.com/pop-culture/2372837-rouler-reste-toujours-le-moyen-le-plus-rapide-de-se-deplacer-dans-zelda-ocarina-of-time.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Les meilleurs films d’action à voir sur Netflix en 2026",
-    "summary": "Entre blockbusters internationaux, thrillers musclés à la française et productions originales, le catalogue de Netflix regorge de séquences explosives. Pour vous aider à faire le tri ce week-end, nous avons sélectionné huit titres incontournables disponibles actuellement sur la plateforme. Des chorégraphies millimétrées de Tyler Rake à l'intensité brutale d'AKA, voici le guide de survie pour vos soirées cinéma.",
-    "url": "https://www.numerama.com/pop-culture/2234141-les-meilleurs-films-daction-a-voir-sur-netflix-en-2026.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Superman : Henry Cavill de retour ? L’acteur fait une déclaration",
-    "summary": "Ce mercredi 11 novembre, deux jours après l'annonce du départ de James Gunn et Peter Safran de la tête de DC Studios, Henry Cavill a été interrogé sur un éventuel retour dans le costume de l'Homme d'Acier. L'acteur britannique ne ferme plus la porte.",
-    "url": "https://www.numerama.com/pop-culture/2372845-superman-henry-cavill-de-retour-dans-le-role-lacteur-sexprime.html",
-    "date": "2026-11-12",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Kudu : découverte de l’alternative gratuite et open source à CCleaner pour Windows, macOS et Linux",
     "summary": "Kudu est un logiciel de nettoyage et d'optimisation gratuit et open source pour Windows, macOS et Linux. Voici les fonctionnalités de cette alternative à CCleaner. Le post Kudu : découverte de l’alternative gratuite et open source à CCleaner pour Windows, macOS et Linux a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/kudu-alternative-open-source-ccleaner/",
@@ -379,22 +403,6 @@ window.TSSR_NEWS = [
     "title": "pfSense 26.10 : Netgate fusionne CE et Plus, toutes les fonctionnalités deviennent gratuites",
     "summary": "Vous utilisez pfSense CE sur votre propre matériel ? Avec la version 26.10, Netgate fusionne CE et Plus en une seule édition gratuite. Voici ce qui change. Le post pfSense 26.10 : Netgate fusionne CE et Plus, toutes les fonctionnalités deviennent gratuites a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/pfsense-26-10-fusion-ce-plus-edition-unique-gratuite/",
-    "date": "2026-11-11",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Outlook et Hotmail : les e-mails rejetés faute de DMARC, c’était un bug de Microsoft",
-    "summary": "Du 6 au 9 novembre, Outlook.com a rejeté à tort des e-mails, surtout issus de domaines sans DMARC. Microsoft reconnaît un bug. Voici ce qu'il faut vérifier. Le post Outlook et Hotmail : les e-mails rejetés faute de DMARC, c’était un bug de Microsoft a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/outlook-hotmail-bug-rejet-emails-dmarc/",
-    "date": "2026-11-11",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Firefox 160 : Mini Window, vitesse de lecture en Picture-in-Picture et reconnaissance vocale locale",
-    "summary": "Un onglet qui reste au premier plan pendant que vous travaillez ailleurs : c'est Mini Window, la nouveauté phare de Firefox 160. Voici ce qui change. Le post Firefox 160 : Mini Window, vitesse de lecture en Picture-in-Picture et reconnaissance vocale locale a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/firefox-160-mini-window-nouveautes/",
     "date": "2026-11-11",
     "source": "IT-Connect",
     "category": "Infrastructures"
@@ -515,14 +523,6 @@ window.TSSR_NEWS = [
     "title": "Cisco et IBM vont intégrer Mythos à leurs outils de cybersécurité",
     "summary": "Cisco et IBM préparent l’intégration de Claude Mythos dans leurs produits de sécurité. Le premier utilisera le modèle d’Anthropic pour renforcer les tests offensifs des systèmes d’IA. Le second vise la détection et la correction de vulnérabilités logicielles. Ces projets élargissent l’accès aux capacités de Mythos, avec des conditions d’utilisation et des calendriers distincts.",
     "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/cisco-et-ibm-vont-integrer-mythos-a-leurs-outils-d",
-    "date": "2026-11-10",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Robotique et IA physique : les fabricants de puces défendent les atouts européens",
-    "summary": "Infineon, STMicroelectronics et NXP estiment que l’Europe peut rivaliser avec les États-Unis et l’Asie dans la robotique et l’IA physique. Leurs dirigeants misent sur l’expérience du continent dans l’automobile, l’industrie et la conception de systèmes sûrs.",
-    "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/robotique-et-ia-physique-les-fabricants-de-puces-d",
     "date": "2026-11-10",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
