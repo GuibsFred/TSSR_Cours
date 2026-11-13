@@ -6,6 +6,14 @@ V86="$APP/vendor/v86"
 OUT="$APP/assets"
 mkdir -p "$OUT" "$OUT/rootfs-flat"
 
+# Les ZIP extraits sous Windows peuvent perdre le bit d'execution des outils v86.
+# GitHub Actions recree ces autorisations avant make et cargo.
+printf '\n==> Preparation des autorisations des scripts v86\n'
+chmod +x "$V86"/gen/generate_interpreter.js \
+         "$V86"/gen/generate_analyzer.js \
+         "$V86"/gen/generate_jit.js \
+         "$V86"/tools/rust-lld-wrapper
+
 printf '\n==> Compilation de v86 depuis le code source fourni\n'
 (cd "$V86" && make build/libv86.js build/v86.wasm)
 cp "$V86/build/libv86.js" "$OUT/libv86.js"
