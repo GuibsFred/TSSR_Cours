@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1727">
+<title>Linux Operator — Laboratoire Bash TSSR</title>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./assets/xterm.css">
+<script src="./assets/libv86.js" defer></script>
+<script src="./assets/xterm.js" defer></script>
+<script src="./assets/xterm-addon-fit.js" defer></script>
+<script src="./app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+<header class="topbar"><div class="brand"><div class="symbol">⌘</div><div><strong>LINUX<span>OPERATOR</span></strong><small>LABORATOIRE BASH · TSSR</small></div></div><div class="topright"><span id="powerLed" class="led"></span><span id="status" role="status">En attente de lancement</span><a class="back" href="../index.html">↗ Retour aux cours</a></div></header>
+<main class="content">
+<section class="intro"><div><div class="eyebrow">ENVIRONNEMENT LINUX • NIVEAU DÉCOUVERTE</div><h1>Apprendre Linux <em>pour de vrai.</em></h1><p>Un vrai système Linux 32 bits émulé dans le navigateur. Exécute tes commandes dans Bash, puis fais valider le résultat réel.</p></div><div class="boot"><button id="boot" class="primary">▶ Démarrer Linux</button><button id="restart" class="secondary" disabled>↻ Réinitialiser</button></div></section>
+<div class="workspace">
+<section class="console-panel"><div class="console-head"><div class="lights"><i></i><i></i><i></i></div><div>root@operator — bash</div><span id="runtime">VM NON DÉMARRÉE</span></div><div id="terminal" class="terminal" tabindex="0"><div class="placeholder"><span>LINUX OPERATOR OS</span><p>Clique sur « Démarrer Linux ».<br>Le terminal n'est pas simulé : le système doit réellement charger.</p></div></div><div class="console-foot"><span>Clavier réel · Vim, grep, find, Bash</span><button id="fullscreen" type="button">⛶ Agrandir</button></div></section>
+<aside class="missions"><div class="missions-head"><span>MISSIONS PRATIQUES</span><strong id="progress">0 / 3</strong></div><div id="missionList"></div><section class="mission-detail"><div class="badge">MISSION <span id="missionNum">01</span></div><h2 id="missionTitle">Préparation</h2><p id="missionDesc"></p><div class="target"><span>OBJECTIF À VÉRIFIER</span><code id="missionTarget"></code></div><button id="check" class="primary" disabled>✓ Vérifier la mission</button><p id="feedback" aria-live="polite"></p></section><section class="help"><b>🛡️ Bac à sable local</b><p>Les commandes agissent dans un Linux isolé du navigateur, pas sur ton ordinateur. Les fichiers sont remis à zéro au rechargement. Seule la progression est enregistrée localement.</p></section></aside>
+</div>
+<footer>Prototype technique • Moteur v86 par copy/v86 • Distribution Alpine Linux • Aucun serveur d'exécution</footer>
+</main></div>
+<div id="screen_container" class="hidden-vga" aria-hidden="true"><div></div><canvas></canvas></div>
+</body></html>

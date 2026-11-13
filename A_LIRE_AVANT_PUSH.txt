@@ -1,0 +1,15 @@
+LINUX OPERATOR - PROTOTYPE TECHNIQUE POUR SITE TSSR
+
+IMPORTANT : ce ZIP contient le CODE SOURCE v86, l'interface et une construction AUTOMATISEE.
+Il ne contient PAS encore de Linux démarrable prêt à l'emploi.
+La première action GitHub doit compiler v86 et construire l'image Alpine 32 bits avec Bash.
+
+1. Extraire le ZIP A LA RACINE du dépôt local TSSR avec GitHub Desktop.
+2. Faire Commit et Push origin.
+3. Regarder l'onglet Actions sur GitHub (workflow « Construire Linux Operator »).
+4. Après un workflow REUSSI et son commit des assets, ouvrir la page /linux-operator/.
+5. Tester le démarrage réel de Bash et les 3 premières missions.
+
+Le menu du site TSSR n'est pas modifié dans ce kit : on intégrera son lien après le test.
+Les cours et les fichiers existants ne sont pas remplacés.
+Détails : linux-operator/README.md
