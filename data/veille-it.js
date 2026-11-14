@@ -1,5 +1,13 @@
 window.TSSR_NEWS = [
   {
+    "title": "Passerelles Check Point piratées via PHP2Shell : une porte dérobée et un wiper pour VMware ESXi",
+    "summary": "PHP2Shell et une faille zero-day de Gaia OS ont permis de pirater des passerelles Check Point, avant le déploiement d'un wiper sur un hôte VMware ESXi. Le post Passerelles Check Point piratées via PHP2Shell : une porte dérobée et un wiper pour VMware ESXi a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/check-point-php2shell-wiper-esxi-tsga/",
+    "date": "2026-11-14",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
     "title": "Claude Code : revenir en arrière avec les checkpoints et /rewind",
     "summary": "Ce tutoriel explique comment Claude Code vous permet de revenir en arrière à tout moment grâce à ses checkpoints automatiques et à la commande /rewind. Le post Claude Code : revenir en arrière avec les checkpoints et /rewind a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/claude-code-revenir-en-arriere-avec-les-checkpoints-et-rewind/",
@@ -112,6 +120,22 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
+    "title": "Starship : SpaceX réussit le décollage de sa fusée géante, mais bute encore sur le retour du booster, qui est tombé à l’eau",
+    "summary": "Le Starship de SpaceX a décollé du Texas ce vendredi 13 novembre 2026 pour son 15e vol d'essai, mais son propulseur Super Heavy a fini dans le golfe du Mexique au lieu d'être rattrapé par la tour. C'était la première fois que SpaceX prévoyait de rattraper un premier étage de nouvelle génération.",
+    "url": "https://www.numerama.com/sciences/2374491-starship-spacex-reussit-le-decollage-de-sa-fusee-geante-mais-bute-encore-sur-le-retour-du-booster-qui-est-tombe-a-leau.html",
+    "date": "2026-11-13",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Nouveau vol orbital en Europe, ce que dit la justice si vous refusez un compteur Linky, 15e vol du Starship – le récap’ sciences de la semaine",
+    "summary": "Peut-on refuser d'installer chez soi un compteur comme Linky ? La justice européenne a tranché. C'est l'une des actualités de la semaine dans la rubrique Sciences de Numerama, aux côtés de décollages imminents de fusées Starship et Spectrum. Découvrez le récap' !",
+    "url": "https://www.numerama.com/sciences/2374195-nouveau-vol-orbital-en-europe-ce-que-dit-la-justice-si-vous-refusez-un-compteur-linky-15e-vol-du-starship-le-recap-sciences-de-la-semaine.html",
+    "date": "2026-11-13",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Starship : suivez en direct la tentative inédite de la double capture de la fusée géante en plein vol",
     "summary": "SpaceX a prévu le 15e vol d'essai de Starship ce vendredi 13 novembre, à 23 h 45 heure de Paris. Au programme : plus de 22 heures en orbite et une première tentative de rattrapage des deux étages par la tour de lancement. L'évènement pourra être suivi en direct et en vidéo.",
     "url": "https://www.numerama.com/sciences/2373405-starship-spacex-vise-un-vol-de-22-heures-et-un-double-rattrapage-par-la-tour.html",
@@ -211,22 +235,6 @@ window.TSSR_NEWS = [
     "title": "Une étude de 1960 avait calculé la fin du monde pour aujourd’hui, le vendredi 13 novembre 2026",
     "summary": "Publiée dans la revue Science en 1960, une étude fixait la fin de l'humanité à ce vendredi 13 novembre 2026, jour où la population mondiale devait devenir infinie. La date n'avait rien d'un hasard, puisque c'était l'anniversaire de son principal auteur, Heinz von Foerster.",
     "url": "https://www.numerama.com/sciences/2373805-une-etude-de-1960-avait-calcule-la-fin-du-monde-pour-aujourdhui-le-vendredi-13-novembre-2026.html",
-    "date": "2026-11-13",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Le Salvador déploie des chiens-robots armés en Haïti pour chasser les gangs",
-    "summary": "Des images virales montrent une scène tout droit sortie d'un film de science-fiction : dans le cadre de son intervention sécuritaire en Haïti, l'armée salvadorienne déploie désormais des chiens robots armés.",
-    "url": "https://www.numerama.com/tech/2373907-salvador-haiti-chiens-robots-armes.html",
-    "date": "2026-11-13",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Panne de Claude : l’IA ne répond plus chez une partie des utilisateurs, voici ce que l’on sait",
-    "summary": "Claude rencontre des difficultés ce vendredi 13 novembre : Anthropic confirme un problème de connexion à Claude.ai et Claude Code, sans annoncer de délai de rétablissement.",
-    "url": "https://www.numerama.com/cyberguerre/2373927-panne-de-claude-lia-ne-repond-plus-chez-une-partie-des-utilisateurs-voici-ce-que-lon-sait.html",
     "date": "2026-11-13",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -443,14 +451,6 @@ window.TSSR_NEWS = [
     "title": "Xen Orchestra : cette faille critique déjà exploitée permet de compromettre les hôtes XCP-ng",
     "summary": "Un cookie piégé suffit pour devenir administrateur de Xen Orchestra : cette faille critique est déjà exploitée. Voici comment protéger vos hôtes XCP-ng. Le post Xen Orchestra : cette faille critique déjà exploitée permet de compromettre les hôtes XCP-ng a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/xen-orchestra-faille-critique-vsa-2026-062-exploitee/",
-    "date": "2026-11-12",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "GTA 6 : Logitech offre à ses 7 000 salariés une journée de congé pour jouer aux jeux vidéo",
-    "summary": "Logitech offre à ses 7 000 salariés, stagiaires compris, un jour de congé pour jouer au jeu de leur choix, à neuf jours de la sortie de GTA 6. Explications. Le post GTA 6 : Logitech offre à ses 7 000 salariés une journée de congé pour jouer aux jeux vidéo a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/logitech-jour-conge-jeux-video-gta-6/",
     "date": "2026-11-12",
     "source": "IT-Connect",
     "category": "Infrastructures"
