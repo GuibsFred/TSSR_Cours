@@ -8,6 +8,78 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
+    "title": "« Mechazilla a attrapé le Starship ! » : SpaceX réussit l’exploit inédit de capturer le vaisseau en plein vol avec la tour",
+    "summary": "Le vaisseau Starship de SpaceX a été rattrapé par les bras de sa tour de lancement au Texas ce samedi 14 novembre 2026, après environ 22 heures et demie de vol et 14 tours de la Terre. Aucun étage supérieur de fusée orbitale n'avait encore été récupéré de cette façon, mais le propulseur Super Heavy a fini dans le golfe du Mexique.",
+    "url": "https://www.numerama.com/sciences/2374713-mechazilla-a-attrape-le-starship-spacex-reussit-lexploit-inedit-de-capturer-le-vaisseau-en-plein-vol-avec-la-tour.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 n’a pas cassé le record du trafic Internet en France, mais les chiffres sont quand même impressonnants",
+    "summary": "Contacté par Numerama, Orange, premier opérateur fixe de France, indique que son réseau n'a pas enregistré de pic de trafic anormal lors de l'ouverture des téléchargements de GTA 6. L'opérateur salue la décision de Rockstar d'étaler les téléchargements entre le 10 et le 19 novembre, avec une ouverture à minuit pour ne pas saturer le réseau. Le pic a atteint 19 Tb/s, loin derrière le record d'Orange, autour de 23 Tb/s.",
+    "url": "https://www.numerama.com/pop-culture/2374705-gta-6-na-pas-casse-le-record-du-trafic-internet-en-france-mais-les-chiffres-sont-quand-meme-impressonnants.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Un Scénic qui dépanne, des nouveautés eco-scorées, trop de commandes de Cybertruck : le récap Vroom de la semaine",
+    "summary": "À la une sur Vroom cette semaine : un Scénic comme générateur pendant une panne de 30 h, les derniers modèles éco-scorés, et la production du Cybertruck qui doit augmenter avant son arrêt définitif.",
+    "url": "https://www.numerama.com/vroom/2374153-une-scenic-qui-depanne-des-nouveautes-eco-scorees-trop-de-commandes-de-cybertruck-le-recap-vroom-de-la-semaine.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Saison 3 des Anneaux de pouvoir : qu’est-ce que Gundabad, la forteresse au cœur de l’épisode 4 ?",
+    "summary": "Dans les quatre premiers épisodes de la saison 3 des Anneaux de pouvoir, mis en ligne ce mercredi 11 novembre sur Prime Video, Galadriel s'introduit dans Gundabad, une forteresse orque du nord de la Terre du Milieu. Le quatrième épisode porte même son nom.",
+    "url": "https://www.numerama.com/pop-culture/2372829-saison-3-des-anneaux-de-pouvoir-quest-ce-que-gundabad-la-forteresse-au-coeur-de-lepisode-4.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Disney+ : les 10 meilleures comédies sur la plateforme de Mickey",
+    "summary": "On a trop souvent tendance à résumer Disney+ aux dessins animés de notre enfance et aux blockbusters Marvel. Pourtant, depuis que Disney a racheté la 21st Century Fox en 2019, et au fil des films qu'elle accueille sous licence, la plateforme propose aussi des comédies franchement irrévérencieuses. Voici 10 films cultes qui vont vous faire rire !",
+    "url": "https://www.numerama.com/pop-culture/2373149-disney-les-10-meilleures-comedies-sur-la-plateforme-de-mickey.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Vous vous demandez quelle température fait-il dans l’espace ? La question n’est pas si vite répondue",
+    "summary": "Un satellite possède une face éclairée et une face à l’ombre dont les températures peuvent différer de plusieurs centaines de degrés. Dans le milieu spatial, les instruments mesurent plusieurs températures en même temps qui coexistent au même endroit. « Quelle température fait-il dans l’espace ? » n’a pas une, mais plusieurs réponses.",
+    "url": "https://www.numerama.com/sciences/2373263-vous-vous-demandez-quelle-temperature-fait-il-dans-lespace-la-question-nest-pas-si-vite-repondue.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Très mauvaise nouvelle pour GTA 6, retour de Johnny Depp au cinéma, le recap Pop Culture de la semaine",
+    "summary": "Cette semaine fut forte en actualité pop culture, entre la mauvaise nouvelle technique pour GTA 6 et ses 30 FPS, le retour de Johnny Depp au cinéma dans le film Scrooge et la révélation du magicien ténébreux dans Les Anneaux de Pouvoir. Retour sur l'actu forte de cette semaine de novembre.",
+    "url": "https://www.numerama.com/tech/2374239-tres-mauvaise-nouvelle-pour-gta-6-retour-de-johnny-depp-au-cinema-le-recap-pop-culture-de-la-semaine.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Pour le Black Friday, Darty fait chuter le Galaxy S25 Edge de 700 €, avec un casque à réduction de bruit en prime",
+    "summary": "[Deal du jour] Le Black Friday chez Darty permet de mettre la main sur le Galaxy S25 Edge de Samsung, le plus fin des Galaxy S25 à 599 € au lieu de 1 299 €. Il vient en prime avec un casque Bluetooth à réduction de bruit active.",
+    "url": "https://www.numerama.com/tech/2374209-pour-le-black-friday-darty-fait-chuter-le-galaxy-s25-edge-de-700-e-avec-un-casque-a-reduction-de-bruit-en-prime.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "J’ai appris à aimer Phantom Blade Zero",
+    "summary": "J'ai une relation que l'on pourra qualifier de toxique avec Phantom Blade Zero. Je l'ai tant aimé. Je l'ai tant détesté aussi. J'aurais aimé en faire mon jeu de l'année 2026, mais certains de ses défauts m'en empêchent. Il n'en demeure pas moins un excellent jeu d'action, comme le montre mon test.",
+    "url": "https://www.numerama.com/pop-culture/2370715-test-de-phantom-blade-zero-sur-ps5-pro.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "J’ai laissé Gemini me coacher pour mon premier marathon : il m’a menti avec aplomb",
     "summary": "Cinq mois de préparation, des dizaines de fichiers CSV commentés, un plan pyramidal impeccable sur le papier… et une explosion au 22e kilomètre que Gemini n'avait pas vue venir. Claude lui, avait tout anticipé. Retour d'expérience sur mon premier marathon, et sur ce qu'on doit vraiment attendre d'un coach artificiel.",
     "url": "https://www.numerama.com/tech/2372409-jai-laisse-gemini-me-coacher-pour-mon-premier-marathon-il-ma-menti-avec-aplomb.html",
@@ -51,22 +123,6 @@ window.TSSR_NEWS = [
     "title": "Xiaomi Electric Scooter 4 Ultra : la trottinette aux 70 km d’autonomie perd un tiers de son prix",
     "summary": "[Deal du jour] La trottinette la plus haut placée de la gamme 4 de Xiaomi baisse son prix pendant le Black Friday. Sur la boutique de Xiaomi, l'Electric Scooter 4 Ultra perd 200 € de son prix.",
     "url": "https://www.numerama.com/vroom/2374207-xiaomi-electric-scooter-4-ultra-la-trottinette-aux-70-km-dautonomie-perd-un-tiers-de-son-prix.html",
-    "date": "2026-11-14",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "On en sait plus sur le raté de la capture du booster de la fusée géante Starship par la tour",
-    "summary": "Le propulseur Super Heavy de Starship a annulé tout seul sa capture par la tour de Starbase ce vendredi 13 novembre, après avoir détecté une anomalie dans son système de guidage, et a terminé sa course en explosant dans le golfe du Mexique.",
-    "url": "https://www.numerama.com/sciences/2374555-on-en-sait-plus-sur-le-rate-de-la-capture-du-booster-de-la-fusee-geante-starship-par-la-tour.html",
-    "date": "2026-11-14",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Choisir une offre d’électricité ou de gaz : tout ce qu’il faut savoir avant de signer [Sponso]",
-    "summary": "Cet article a été réalisé en collaboration avec EDF Prix du kWh, puissance en kVA, heures creuses, offre de marché, tarif réglementé, PDL, PCE… Choisir une offre d’électricité ou de gaz suppose aujourd’hui de jongler avec un vocabulaire qui n’est pas toujours évident à comprendre.",
-    "url": "https://www.numerama.com/sciences/2344351-choisir-une-offre-delectricite-ou-de-gaz-tout-ce-quil-faut-savoir-avant-de-signer.html",
     "date": "2026-11-14",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -182,62 +238,6 @@ window.TSSR_NEWS = [
     "date": "2026-11-13",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
-  },
-  {
-    "title": "Starship : SpaceX réussit le décollage de sa fusée géante, mais bute encore sur le retour du booster, qui est tombé à l’eau",
-    "summary": "Le Starship de SpaceX a décollé du Texas ce vendredi 13 novembre 2026 pour son 15e vol d'essai, mais son propulseur Super Heavy a fini dans le golfe du Mexique au lieu d'être rattrapé par la tour. C'était la première fois que SpaceX prévoyait de rattraper un premier étage de nouvelle génération.",
-    "url": "https://www.numerama.com/sciences/2374491-starship-spacex-reussit-le-decollage-de-sa-fusee-geante-mais-bute-encore-sur-le-retour-du-booster-qui-est-tombe-a-leau.html",
-    "date": "2026-11-13",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Nouveau vol orbital en Europe, ce que dit la justice si vous refusez un compteur Linky, 15e vol du Starship – le récap’ sciences de la semaine",
-    "summary": "Peut-on refuser d'installer chez soi un compteur comme Linky ? La justice européenne a tranché. C'est l'une des actualités de la semaine dans la rubrique Sciences de Numerama, aux côtés de décollages imminents de fusées Starship et Spectrum. Découvrez le récap' !",
-    "url": "https://www.numerama.com/sciences/2374195-nouveau-vol-orbital-en-europe-ce-que-dit-la-justice-si-vous-refusez-un-compteur-linky-15e-vol-du-starship-le-recap-sciences-de-la-semaine.html",
-    "date": "2026-11-13",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Starship : suivez en direct la tentative inédite de la double capture de la fusée géante en plein vol",
-    "summary": "SpaceX a prévu le 15e vol d'essai de Starship ce vendredi 13 novembre, à 23 h 45 heure de Paris. Au programme : plus de 22 heures en orbite et une première tentative de rattrapage des deux étages par la tour de lancement. L'évènement pourra être suivi en direct et en vidéo.",
-    "url": "https://www.numerama.com/sciences/2373405-starship-spacex-vise-un-vol-de-22-heures-et-un-double-rattrapage-par-la-tour.html",
-    "date": "2026-11-13",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Découvrez Nāpōwawāʻenakaulua, un couple de quasars datant des débuts de l’Univers",
-    "summary": "Née à peine 900 millions d'années après le Big Bang, la paire de quasars Nāpōwawāʻenakaulua est la plus ancienne paire compacte connue. Elle a été repérée grâce au télescope spatial James Webb et au télescope Gemini North, et les astrophysiciens ne comprennent pas comment elle a pu voir le jour.",
-    "url": "https://www.numerama.com/sciences/2373725-decouvrez-napowawa%ca%bbenakaulua-un-couple-de-quasars-datant-des-debuts-de-lunivers.html",
-    "date": "2026-11-13",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "1 220 € d’écart avec l’iPhone Duo : le Galaxy Z Fold 8 tombe à moitié prix sur Amazon pour le Black Friday",
-    "summary": "[Deal du jour] L’iPhone Duo coûte 2 339 € en 256 Go. À capacité égale, le Galaxy Z Fold8 de Samsung revient à 1 119 € sur Amazon grâce à une nouvelle offre de remboursement de 300 €, contre 1 999 € à sa sortie. Il coûte ainsi moins de la moitié du prix du pliable d’Apple.",
-    "url": "https://www.numerama.com/tech/2355819-1-220-e-decart-avec-liphone-duo-le-galaxy-z-fold8-tombe-a-moitie-prix-sur-amazon-pour-le-black-friday.html",
-    "date": "2026-11-13",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Predator : Schwarzenegger confirme enfin la grande nouvelle pour la suite du film de 87",
-    "summary": "Près de 40 ans après le premier film culte de 1987, Arnold Schwarzenegger a confirmé qu'il comptait reprendre son rôle emblématique du major Alan « Dutch » Schaefer dans un prochain volet de la saga Predator, dont le scénario n'est pas encore écrit.",
-    "url": "https://www.numerama.com/pop-culture/2374203-predator-schwarzenegger-confirme-enfin-la-grande-nouvelle-pour-la-suite-du-film-de-87.html",
-    "date": "2026-11-13",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Grosse chute de prix pour Borderlands 4 sur PS5",
-    "summary": "Un an après sa sortie, Borderlands 4 a eu le temps de recevoir ses correctifs et ses premières extensions. C’est souvent le meilleur moment pour se lancer dans un looter shooter, et l'offre de Leclerc tombe à pic.",
-    "url": "https://www.numerama.com/pop-culture/2374193-grosse-chute-de-prix-pour-borderlands-4-sur-ps5.html",
-    "date": "2026-11-13",
-    "source": "Numerama",
-    "category": "Cybersécurité"
   },
   {
     "title": "Point de situation de l’opération REACTIV – octobre 2026 (12 novembre 2026)",
