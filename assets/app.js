@@ -496,6 +496,7 @@ $('#closeModal').addEventListener('click',closeEditorSafely);
 $('#modal').addEventListener('cancel',e=>{e.preventDefault();closeEditorSafely()});
 function editor(id,quickImport=false){let p=all().find(x=>x.id===id),isBase=p?.readonly;let kind=isBase?'cours':(p?.kind||(section==='accueil'?'cours':section)); if(!p)kind=section==='accueil'?'cours':section;if(kind==='quiz')kind='cours';let title=isBase?p.title:p?.title||'',cat=isBase?p.category:p?.category||'',html=isBase?'':p?.html||'';
 modal(isBase?'Rédiger mon cours':p?'Modifier le document':'Nouveau document',`<label>Titre du cours<input id="docTitle" class="formfield" value="${esc(title)}" placeholder="Ex. Configuration Wi-Fi" required></label><label>Rubrique<select id="docKind" class="formfield">${Object.entries(labels).filter(([k])=>!['accueil','quiz','glossaire','tp'].includes(k)).map(([k,[i,l]])=>`<option value="${k}" ${kind===k?'selected':''}>${l}</option>`).join('')}</select></label><label>Catégorie / Sous-dossiers (séparés par /)<input id="docCat" class="formfield" value="${esc(cat)}" placeholder="02 — Bases des réseaux / Cisco / Wi-Fi"></label><div class="toolbar"><button type="button" data-cmd="bold"><b>G</b></button><button type="button" data-cmd="italic"><i>I</i></button><button type="button" data-cmd="formatBlock" data-val="h2">Titre</button><button type="button" data-cmd="insertUnorderedList">☷ Liste</button><button type="button" id="blueRevision" title="Marquer ce passage pour la fiche de révision">🔵 Bleu révision</button><button type="button" id="normalText" title="Retirer le bleu révision de la sélection ou continuer à écrire en texte normal">⚫ Texte normal</button><button type="button" id="addLink">Lien</button><button type="button" id="addImage">＋ Image</button><button type="button" id="addTable">Tableau</button><span id="imageControls" class="image-controls"><label for="imageWidth">Image sélectionnée :</label><input id="imageWidth" type="range" min="10" max="100" step="1" value="100" aria-label="Largeur de l’image"><output id="imageWidthValue">Sélectionne une image</output><label>Largeur % <input type="number" id="imageWidthNumber" min="10" max="100" value="100" style="width:68px;padding:5px"></label><button type="button" id="imageAlignLeft">◧ Gauche</button><button type="button" id="imageAlignCenter">▣ Centre</button><button type="button" id="imageAlignRight">◨ Droite</button><button type="button" id="imageReset">Réinitialiser</button></span><input type="file" id="imageFile" accept="image/*" hidden></div><section class="tssr-import-panel"><label for="tssrRawImport">📥 Importer un chapitre complet (Markdown brut)</label><p>Colle ici le texte intégral avec les marqueurs === COURS COMPLET ===, === FICHE DE RÉVISION === et === QCM ===. Les tableaux, titres, commandes et sauts de ligne seront préservés. Pour une rédaction manuelle, utilise l’éditeur classique ci-dessous.</p><textarea id="tssrRawImport" spellcheck="false" placeholder="MODULE : Linux\nCHAPITRE : Archivage et compression\n\n=== COURS COMPLET ===\n# Mon cours...\n\n=== FICHE DE RÉVISION ===\n# Ma fiche...\n\n=== QCM ===\n### Question 1\n..." rows="9"></textarea><div id="tssrImportStatus" role="status">Import prêt : aucune donnée collée.</div></section><div id="docEditor" class="editor" contenteditable="true" aria-label="Texte du cours">${DOMPurify.sanitize(html)}</div><p class="editorhelp">Écris ici, colle du texte Word ou une capture avec Ctrl+V. Clique sur une image pour régler sa taille et son alignement dans la barre au-dessus. Tu peux aussi importer une image. Copie le contenu de Word. Pour les images Word qui ne passent pas, colle la capture séparément ou utilise « + Image ».</p><div class="actions"><button type="button" class="btn" id="cancelDoc">Annuler</button><button type="button" class="btn primary" id="savePublish">☁ Enregistrer et publier sur GitHub</button></div>`);
+if(p?.rawMarkdown){const rawField=$('#tssrRawImport');if(rawField){rawField.value=p.rawMarkdown;const status=$('#tssrImportStatus');if(status)status.textContent='✓ Source Markdown conservée : tu peux la modifier puis enregistrer.'}}
 if(quickImport){
   const moduleName=activeFolder;
   $('#docKind').value='cours';
@@ -640,7 +641,7 @@ if(kind==='cours' && rawInput){
  }
 }
 
-let obj={...(p||{}),id:stableId,title:t,kind,category,...((p?.chapter||quickImport)?{chapter:true}:{}),html,revisionHtml:kind==='cours'?importedRevisionHtml:(p?.revisionHtml||''),revisionExtracts:kind==='cours'?extractBlue(html):[],updatedAt:new Date().toISOString()};
+let obj={...(p||{}),id:stableId,title:t,kind,category,...((p?.chapter||quickImport)?{chapter:true}:{}),html,revisionHtml:kind==='cours'?importedRevisionHtml:(p?.revisionHtml||''),revisionExtracts:kind==='cours'?extractBlue(html):[],rawMarkdown:kind==='cours'?(rawInput||p?.rawMarkdown||''):(p?.rawMarkdown||''),updatedAt:new Date().toISOString()};
 let idx=custom.pages.findIndex(x=>x.id===stableId);if(idx>=0)custom.pages[idx]=obj;else custom.pages.push(obj);
 lastSavedCourseId=stableId;saveLocal(stableId);if(closeEditor){$('#modal').close();goto(obj.kind,obj.id)}return true}
 $('#cancelDoc').onclick=closeEditorSafely;$('#savePublish').onclick=async()=>{if(!persist(false))return;const kindSaved=$('#docKind').value,idSaved=lastSavedCourseId;const btn=$('#savePublish');btn.disabled=true;btn.textContent='⏳ Publication en cours…';const ok=await publish();btn.disabled=false;btn.textContent='☁ Enregistrer et publier sur GitHub';if(ok){$('#modal').close();goto(kindSaved,idSaved)}else{toast('Cours sauvegardé localement. Publication non confirmée : réessaie après connexion GitHub.')}}}
@@ -755,26 +756,40 @@ function tssrRestoreStructure(source){
  }
  return result.innerHTML;
 }
-function tssrDisplayHtml(source){return tssrRestoreStructure(source||'')}
+function tssrDisplayHtml(source){return DOMPurify.sanitize(source||'')}
 // Extraction des commandes réelles présentes dans les exemples des cours, sans les inventer.
 function tssrCourseCommands(){
- const found=new Map();const info={tar:['Archivage et compression','Créer, consulter ou extraire une archive'],gzip:['Compression','Compresser un fichier avec gzip'],gunzip:['Compression','Décompresser un fichier gzip'],bzip2:['Compression','Compresser un fichier avec bzip2'],bunzip2:['Compression','Décompresser un fichier bzip2'],ls:['Fichiers','Lister les fichiers et dossiers'],cd:['Navigation','Changer de répertoire'],pwd:['Navigation','Afficher le répertoire courant'],mkdir:['Fichiers','Créer un dossier'],cp:['Fichiers','Copier un fichier ou dossier'],mv:['Fichiers','Déplacer ou renommer un fichier'],rm:['Fichiers','Supprimer un fichier'],find:['Recherche','Rechercher des fichiers'],grep:['Recherche','Rechercher du texte'],chmod:['Permissions','Modifier les permissions'],chown:['Permissions','Changer le propriétaire'],ps:['Processus','Lister les processus'],top:['Processus','Surveiller les processus'],systemctl:['Services','Gérer les services'],ip:['Réseau','Afficher ou configurer le réseau'],ping:['Réseau','Tester la connectivité'],ssh:['Accès distant','Se connecter à distance'],sudo:['Administration','Exécuter une commande avec des privilèges élevés'],apt:['Paquets','Gérer les paquets'],'Get-Service':['Services','Afficher les services Windows']};
- for(const page of all().filter(x=>x.kind==='cours'&&x.html)){
-  const box=document.createElement('div');box.innerHTML=DOMPurify.sanitize(page.html);
-  const snippets=[...box.querySelectorAll('pre,code')].map(x=>x.textContent);
-  // Les anciens imports contiennent des exemples de commandes en texte courant.
-  const text=box.textContent||'';
-  for(const [name,[category,description]] of Object.entries(info)){
-   const escName=name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-   const re=new RegExp('(?:^|[\\s:;])('+escName+'\\s+(?:-{1,2}[\\w-]+\\s*)?[^\\n.;]{0,100})','gmi');
-   const match=snippets.map(x=>x.match(re)?.[0]).find(Boolean)||text.match(re)?.[0];
-   if(!match)continue;
-   let example=match.trim().replace(/\s+/g,' ').slice(0,125);
-   // Écarter les phrases ordinaires : la commande doit contenir une option ou un argument plausible.
-   if(!example||example.split(' ').length<2)continue;
-   const environment=/^(Get-|Set-|New-|Remove-)/i.test(name)?'PowerShell':/Windows|CMD/i.test(page.category||'')?'Windows CMD':'Linux / Bash';
-   const key=environment.toLowerCase()+':'+name.toLowerCase();
-   if(!found.has(key))found.set(key,{id:'auto-course-'+key.replace(/[^a-z0-9]+/g,'-'),name,environment,category,theme:page.title,description,syntax:example,example,notes:'Extrait du chapitre « '+page.title+' ». Vérifie les arguments avant exécution.',tags:[page.title,'Extrait des cours'],sourceChapterId:page.id});
+ // Indexer uniquement les blocs de code authentiques, jamais une phrase du cours.
+ const found=new Map();
+ const known={
+ tar:['Archivage','Créer, lister ou extraire des archives'],gzip:['Compression','Compresser des fichiers au format gzip'],gunzip:['Compression','Décompresser des fichiers gzip'],bzip2:['Compression','Compresser des fichiers au format bzip2'],bunzip2:['Compression','Décompresser des fichiers bzip2'],
+ ls:['Fichiers','Lister les fichiers et répertoires'],cd:['Navigation','Changer de répertoire'],pwd:['Navigation','Afficher le répertoire courant'],mkdir:['Fichiers','Créer un répertoire'],cp:['Fichiers','Copier des fichiers'],mv:['Fichiers','Déplacer ou renommer des fichiers'],rm:['Fichiers','Supprimer des fichiers'],cat:['Fichiers','Afficher un fichier texte'],grep:['Recherche','Rechercher un motif dans du texte'],find:['Recherche','Rechercher des fichiers'],chmod:['Permissions','Modifier les permissions'],chown:['Permissions','Changer le propriétaire'],ps:['Processus','Afficher les processus'],kill:['Processus','Envoyer un signal à un processus'],systemctl:['Services','Administrer les services systemd'],ip:['Réseau','Afficher ou configurer les paramètres réseau'],ping:['Réseau','Tester la connectivité'],ss:['Réseau','Afficher les sockets réseau'],ssh:['Réseau','Ouvrir une session distante sécurisée'],curl:['Réseau','Effectuer une requête réseau'],apt:['Paquets','Gérer les paquets Debian/Ubuntu'],sudo:['Privilèges','Exécuter une commande avec des privilèges élevés'],
+ 'Get-Service':['Services','Consulter les services Windows'], 'Get-Process':['Processus','Consulter les processus'], 'Get-ChildItem':['Fichiers','Lister les éléments'], 'Get-Content':['Fichiers','Lire un fichier'], 'Set-Location':['Navigation','Changer de répertoire'], 'Test-Connection':['Réseau','Tester une connexion'], 'Get-NetIPAddress':['Réseau','Afficher les adresses IP'],
+ ipconfig:['Réseau','Afficher la configuration IP Windows'],tracert:['Réseau','Afficher le chemin réseau'],nslookup:['DNS','Interroger le DNS'],netstat:['Réseau','Afficher les connexions réseau'],dir:['Fichiers','Lister un répertoire Windows']
+ };
+ const normalize=x=>String(x||'').trim().replace(/^\$\s+|^PS[^>]*>\s*|^[A-Za-z]:\\[^>]*>\s*/,'');
+ for(const page of all().filter(x=>x.kind==='cours')){
+  const snippets=[];
+  if(page.rawMarkdown){
+   const raw=page.rawMarkdown;
+   const coursePart=raw.split(/===\s*FICHE DE R[ÉE]VISION\s*===/i)[0];
+   for(const match of coursePart.matchAll(/```(?:bash|sh|shell|console|powershell|ps1|cmd|bat|dos|terminal)?[^\n]*\n([\s\S]*?)```/gi))snippets.push(match[1]);
+  }
+  if(!snippets.length&&page.html){const box=document.createElement('div');box.innerHTML=DOMPurify.sanitize(page.html);for(const pre of box.querySelectorAll('pre'))snippets.push(pre.textContent||'')}
+  for(const snippet of snippets){
+   for(const original of snippet.split(/\r?\n/)){
+    const line=normalize(original);if(!line||line.startsWith('#')||line.length>180||/[<>]/.test(line))continue;
+    const token=line.match(/^([A-Za-z][\w-]*)\b/);if(!token)continue;
+    const name=Object.keys(known).find(k=>k.toLowerCase()===token[1].toLowerCase());if(!name)continue;
+    // Pas de faux exemples comme « gzip ou bzip2 » ou des descriptions en français.
+    const rest=line.slice(token[0].length).trim();
+    if(!rest||/^(?:ou|et|peut|permet|est|sert|avec|pour|correspond|signifie|:)/i.test(rest))continue;
+    if(!/^(?:[-./~$\\]|\w+[./\\]|\w+\.(?:txt|tar|gz|bz2|log|conf|json|csv|zip)|\d|\$\w|["'])/.test(rest))continue;
+    const environment=/^(Get-|Set-|New-|Remove-|Test-)/i.test(name)?'PowerShell':/Windows|CMD/i.test(page.category||'')?'Windows CMD':'Linux / Bash';
+    const key=environment.toLowerCase()+':'+name.toLowerCase();
+    if(found.has(key))continue;
+    found.set(key,{id:'auto-course-'+key.replace(/[^a-z0-9]+/g,'-'),name,environment,category:known[name][0],theme:page.title,description:known[name][1],syntax:name+' [options] [arguments]',example:line,notes:'Exemple provenant du chapitre « '+page.title+' ». À adapter à ton environnement.',tags:[page.title,'Cours'],sourceChapterId:page.id});
+   }
   }
  }
  return [...found.values()];
