@@ -226,6 +226,28 @@
       "revisionHtml": "<p>Fiche mémo — Archivage et compression\nDéfinitions essentielles\nArchiver : regrouper plusieurs fichiers dans un seul conteneur.\nCompresser : réduire la taille des données.\nTAR : outil Linux permettant de créer, extraire, consulter et mettre à jour des archives.\ngzip : mécanisme de compression associé à l'option -z.\nbzip2 : mécanisme de compression associé à l'option -j, généralement plus exigeant en calcul.\nOptions à mémoriser\nOptionSignification\ncCreate : créer\nxExtract : extraire\ntTable : lister\nzgzip\njbzip2\nuUpdate : mettre à jour\nvVerbose : afficher les détails\nfFile : nom de l'archive\n-CExtraire dans un répertoire donné\nCommandes indispensables\nCréer une archive :\ntar -cf archive.tar fichier1 fichier2\nCréer une archive avec affichage :\ntar -cvf archive.tar Edition *.txt\nCompresser avec gzip :\ntar -czf archive.tar.gz Edition *.txt\nCompresser avec bzip2 :\ntar -cjvf archive.tar.bz2 Edition <em>.txt\nExtraire une archive :\ntar -xf archive.tar\nExtraire une archive gzip :\ntar -xzf archive.tar.gz\nExtraire dans un dossier précis :\ntar xvf archive.tar.gz -C restau.d\nMettre à jour une archive TAR :\ntar -uvf archive.tar home/user30/</em>.txt\nLister le contenu :\ntar -tf archive.tar.gz\nAfficher les détails :\ntar -tvf archive.tar.gz\nExtensions à connaître\nExtensionType\n.tarArchive TAR\n.tar.gzTAR + gzip\n.tgzAbréviation de .tar.gz\n.tar.bz2TAR + bzip2\n.isoImage de disque, généralement non compressée\n.zipArchivage et compression\nLes pièges à éviter</p>\n<ul>\n<li><p>Une archive n'est pas forcément compressée.</p>\n</li>\n<li><p>-c crée, -x extrait et -t liste.</p>\n</li>\n<li><p>-z correspond à gzip ; -j correspond à bzip2.</p>\n</li>\n<li><p>-v affiche les détails, mais n'est pas indispensable.</p>\n</li>\n<li><p>-f doit être suivi du nom de l'archive.</p>\n</li>\n<li><p>-C permet de choisir le dossier de destination.</p>\n</li>\n<li><p>-u ne permet pas de mettre à jour directement une archive gzip ou bzip2.</p>\n</li>\n</ul>\n",
       "revisionExtracts": [],
       "updatedAt": "2026-11-15T22:41:28.434Z"
+    },
+    {
+      "id": "chapter:1794785338497:12:6cm3l4",
+      "kind": "cours",
+      "chapter": true,
+      "title": "Gestion des alias avec Bash",
+      "category": "04 — Utilisation d’une distribution GNU / Cours",
+      "order": 13,
+      "displayNumber": "13",
+      "html": "",
+      "revisionHtml": ""
+    },
+    {
+      "id": "chapter:1794785338515:13:hwxr4v",
+      "kind": "cours",
+      "chapter": true,
+      "title": "Plus loin avec les variables",
+      "category": "04 — Utilisation d’une distribution GNU / Cours",
+      "order": 14,
+      "displayNumber": "14",
+      "html": "",
+      "revisionHtml": ""
     }
   ],
   "quizzes": [
@@ -551,9 +573,74 @@
         "order": 6,
         "displayNumber": "06",
         "art": "assets/icons-premium/icon-097.svg"
+      },
+      "chapter:05:01": {
+        "title": "Caractéristiques générales des systèmes GNU/Linux",
+        "order": 1,
+        "displayNumber": "01"
+      },
+      "chapter:05:02": {
+        "title": "Syntaxe des commandes",
+        "order": 2,
+        "displayNumber": "02"
+      },
+      "chapter:05:03": {
+        "title": "Connexion à un terminal",
+        "order": 3,
+        "displayNumber": "03"
+      },
+      "chapter:05:04": {
+        "title": "Le Shell Bash",
+        "order": 4,
+        "displayNumber": "04"
+      },
+      "chapter:05:05": {
+        "title": "Utiliser l’aide",
+        "order": 5,
+        "displayNumber": "05"
+      },
+      "chapter:05:06": {
+        "title": "Comprendre l’arborescence",
+        "order": 6,
+        "displayNumber": "06"
+      },
+      "chapter:05:07": {
+        "title": "Gérer les fichiers",
+        "order": 7,
+        "displayNumber": "07"
+      },
+      "chapter:05:08": {
+        "title": "Les expressions régulières",
+        "order": 8,
+        "displayNumber": "08"
+      },
+      "chapter:05:09": {
+        "title": "Les commandes de recherche",
+        "order": 9,
+        "displayNumber": "09"
+      },
+      "chapter:05:10": {
+        "title": "L’éditeur de texte Vim",
+        "order": 10,
+        "displayNumber": "10"
+      },
+      "chapter:05:11": {
+        "title": "Processus, redirections et pipelines",
+        "order": 11,
+        "displayNumber": "11"
+      },
+      "chapter:05:12": {
+        "title": "Archivage et compression",
+        "order": 12,
+        "displayNumber": "12"
       }
     },
-    "hidden": [],
+    "hidden": [
+      "chapter:01:02",
+      "chapter:01:07",
+      "doc-e3434a9c-c026-43b9-af85-1f1830c014c2",
+      "doc-20f3a7e4-bb6b-45c7-aea8-8cf4d97a01f7"
+    ],
     "folders": [
       {
         "old": "03 — Systèmes clients Microsoft (1",
