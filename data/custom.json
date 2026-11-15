@@ -222,10 +222,20 @@
       "kind": "cours",
       "category": "04 — Utilisation d’une distribution GNU / Linux / Cours",
       "chapter": true,
-      "html": "<p>Archivage et compression sous Linux</p>\n<ol>\n<li>Différence entre archiver et compresser\nLes notions d'archivage et de compression sont souvent confondues. Pourtant, elles désignent deux opérations différentes.\n1.1. Archiver\nArchiver consiste à regrouper plusieurs fichiers ou dossiers dans un seul fichier conteneur, appelé archive.\nUne archive n'est pas nécessairement compressée.\nExemple : le fichier ISO\nUn fichier ISO peut contenir l'ensemble des fichiers nécessaires à l'installation d'un système Linux. Il constitue un conteneur, sans appliquer nécessairement de compression aux données.\n1.2. Compresser\nCompresser consiste à réduire la taille des données afin de :</li>\n</ol>\n<ul>\n<li><p>Diminuer l'espace de stockage utilisé.</p>\n</li>\n<li><p>Réduire les temps de transfert.</p>\n</li>\n<li><p>Faciliter les opérations de sauvegarde.</p>\n</li>\n</ul>\n<p>Les formats ZIP et RAR permettent de regrouper plusieurs fichiers tout en les compressant.\nArchivageCompression\nRegroupe plusieurs fichiersRéduit la taille des données\nNe réduit pas forcément leur tailleÉconomise de l'espace\nExemple : archive TARExemples : gzip, bzip2\nPeut être associé à une compressionPeut être utilisé avec une archive\n2. Présentation de la commande TAR\nSous Linux, la commande tar permet de créer, consulter, extraire et mettre à jour des archives.\nElle peut également utiliser des mécanismes de compression comme gzip ou bzip2.\nLe nom TAR provient de Tape Archiver, en référence à son utilisation historique pour les sauvegardes sur bandes magnétiques.\nAttention : certaines versions de TAR sous Unix ne disposent pas directement des mêmes options de compression que celles utilisées sous Linux.\n2.1. Les principales options\nOptionFonction\n-cCréer une archive\n-tLister le contenu d'une archive\n-xExtraire les fichiers d'une archive\n-zUtiliser la compression gzip\n-jUtiliser la compression bzip2\n-uMettre à jour une archive existante\n-vActiver le mode verbeux (affichage détaillé)\n-fIndiquer le nom du fichier archive\nLes options peuvent être regroupées dans une même commande.\nExemple :\ntar -cvf archive.tar dossier/</p>\n<ul>\n<li><p>c : créer l'archive.</p>\n</li>\n<li><p>v : afficher les fichiers traités.</p>\n</li>\n<li><p>f : préciser le nom de l'archive.</p>\n</li>\n</ul>\n<p>Le nom du fichier archive doit être placé immédiatement après l'option f lorsque celle-ci attend son argument.\n3. Créer une archive TAR\n3.1. Archiver plusieurs fichiers\ntar -cf archive.tar fichier1 fichier2\nCette commande crée une archive appelée archive.tar contenant fichier1 et fichier2.\nL'extension .tar désigne une archive non compressée par TAR.\n3.2. Archiver un dossier et plusieurs fichiers\nExemple du cours ENI :\ntar -cvf archive.tar Edition *.txt\nCette commande crée une archive contenant :</p>\n<ul>\n<li><p>Le fichier ou dossier Edition.</p>\n</li>\n<li><p>Tous les fichiers du répertoire courant dont le nom se termine par .txt.</p>\n</li>\n</ul>\n<p>L'option -v affiche les éléments ajoutés à l'archive.\nLe caractère * est un joker : *.txt désigne tous les noms se terminant par .txt.\n4. Créer une archive compressée\nTAR peut associer l'archivage à une compression.\n4.1. Compression gzip\ntar -czf archive.tar.gz Edition *.txt\nCette commande :</p>\n<ul>\n<li><p>Crée une archive.</p>\n</li>\n<li><p>Y ajoute Edition et les fichiers .txt.</p>\n</li>\n<li><p>Compresse l'archive avec gzip.</p>\n</li>\n<li><p>Enregistre le résultat dans archive.tar.gz.</p>\n</li>\n</ul>\n<p>Extensions courantes :</p>\n<ul>\n<li><p>.tar.gz : archive TAR compressée avec gzip.</p>\n</li>\n<li><p>.tgz : forme abrégée de .tar.gz.</p>\n</li>\n</ul>\n<p>4.2. Compression bzip2\ntar -cjvf archive.tar.bz2 Edition *.txt\nCette commande crée une archive compressée avec bzip2.</p>\n<ul>\n<li><p>c : création.</p>\n</li>\n<li><p>j : compression bzip2.</p>\n</li>\n<li><p>v : affichage détaillé.</p>\n</li>\n<li><p>f : nom de l'archive.</p>\n</li>\n</ul>\n<p>4.3. Comparaison gzip et bzip2\ngzipbzip2\nUtilise l'option -zUtilise l'option -j\nExtension .tar.gzExtension .tar.bz2\nCompression généralement plus rapideCompression souvent plus efficace\nDemande généralement moins de calculDemande davantage de calcul processeur\nLe cours ENI présente bzip2 comme offrant une meilleure compression que gzip, au prix d'un calcul processeur plus important.\n5. Extraire une archive\nL'extraction permet de récupérer les fichiers contenus dans une archive.\n5.1. Extraire une archive TAR\ntar -xf archive.tar</p>\n<ul>\n<li><p>x : extraire.</p>\n</li>\n<li><p>f : indiquer l'archive.</p>\n</li>\n</ul>\n<p>Les fichiers sont extraits dans le répertoire courant.\n5.2. Extraire une archive gzip\ntar -xzf archive.tar.gz</p>\n<ul>\n<li><p>x : extraire.</p>\n</li>\n<li><p>z : utiliser gzip.</p>\n</li>\n<li><p>f : préciser le fichier.</p>\n</li>\n</ul>\n<p>Sur les versions de TAR qui détectent automatiquement le format de compression, on peut également rencontrer :\ntar -xf archive.tar.gz\n5.3. Extraire dans un dossier précis\nExemple du cours :\ntar xvf archive.tar.gz -C restau.d\nCette commande extrait le contenu de l'archive dans le répertoire restau.d.</p>\n<ul>\n<li><p>x : extraction.</p>\n</li>\n<li><p>v : affichage des fichiers extraits.</p>\n</li>\n<li><p>f : nom de l'archive.</p>\n</li>\n<li><p>-C : changement de répertoire de destination.</p>\n</li>\n</ul>\n<p>Important : le répertoire restau.d doit déjà exister.\n6. Mettre à jour une archive existante\nL'option -u permet d'ajouter à une archive TAR les fichiers absents ou plus récents que ceux déjà archivés.\nExemple du cours ENI :\ncd /\ntar -uvf archive.tar home/user30/*.txt\nExplication</p>\n<ul>\n<li><p>cd / : se placer à la racine du système.</p>\n</li>\n<li><p>tar -uvf : mettre à jour l'archive en affichant les fichiers traités.</p>\n</li>\n<li><p>archive.tar : nom de l'archive à modifier.</p>\n</li>\n<li><p>home/user30/*.txt : fichiers .txt concernés.</p>\n</li>\n</ul>\n<p>Pourquoi ne pas écrire /home/user30/*.txt ?\nTAR retire généralement le / initial des chemins absolus enregistrés dans les archives. L'utilisation de chemins relatifs évite cette situation.\nÀ retenir : l'option -u concerne ici une archive TAR non compressée. La mise à jour directe d'une archive compressée avec gzip ou bzip2 n'est pas prise en charge de la même manière.\n7. Consulter le contenu d'une archive\nIl n'est pas nécessaire d'extraire une archive pour connaître son contenu.\n7.1. Affichage simple\ntar -tf archive.tar.gz</p>\n<ul>\n<li><p>t : afficher la liste des éléments.</p>\n</li>\n<li><p>f : préciser l'archive.</p>\n</li>\n</ul>\n<p>Exemple de résultat :\nEdition\ncontacts.txt\nedition1.txt\nerr.txt\nFait.txt\n7.2. Affichage détaillé\ntar -tvf archive.tar.gz\nL'option -v permet d'obtenir davantage d'informations :</p>\n<ul>\n<li><p>Les permissions.</p>\n</li>\n<li><p>Le propriétaire et le groupe.</p>\n</li>\n<li><p>La taille.</p>\n</li>\n<li><p>La date de modification.</p>\n</li>\n<li><p>Le nom du fichier.</p>\n</li>\n</ul>\n<p>Cette présentation permet de consulter les caractéristiques des fichiers archivés sans les extraire.\n8. Synthèse du chapitre\nLa commande TAR constitue un outil essentiel pour l'administration des systèmes Linux.\nElle permet de :</p>\n<ul>\n<li><p>Regrouper plusieurs fichiers dans une archive.</p>\n</li>\n<li><p>Compresser une archive avec gzip ou bzip2.</p>\n</li>\n<li><p>Extraire les fichiers archivés.</p>\n</li>\n<li><p>Mettre à jour une archive existante.</p>\n</li>\n<li><p>Consulter son contenu sans extraction.</p>\n</li>\n</ul>\n<p>La maîtrise de TAR est particulièrement utile pour la sauvegarde, la restauration et le transfert de fichiers.</p>\n",
-      "revisionHtml": "<p>Fiche mémo — Archivage et compression\nDéfinitions essentielles\nArchiver : regrouper plusieurs fichiers dans un seul conteneur.\nCompresser : réduire la taille des données.\nTAR : outil Linux permettant de créer, extraire, consulter et mettre à jour des archives.\ngzip : mécanisme de compression associé à l'option -z.\nbzip2 : mécanisme de compression associé à l'option -j, généralement plus exigeant en calcul.\nOptions à mémoriser\nOptionSignification\ncCreate : créer\nxExtract : extraire\ntTable : lister\nzgzip\njbzip2\nuUpdate : mettre à jour\nvVerbose : afficher les détails\nfFile : nom de l'archive\n-CExtraire dans un répertoire donné\nCommandes indispensables\nCréer une archive :\ntar -cf archive.tar fichier1 fichier2\nCréer une archive avec affichage :\ntar -cvf archive.tar Edition *.txt\nCompresser avec gzip :\ntar -czf archive.tar.gz Edition *.txt\nCompresser avec bzip2 :\ntar -cjvf archive.tar.bz2 Edition <em>.txt\nExtraire une archive :\ntar -xf archive.tar\nExtraire une archive gzip :\ntar -xzf archive.tar.gz\nExtraire dans un dossier précis :\ntar xvf archive.tar.gz -C restau.d\nMettre à jour une archive TAR :\ntar -uvf archive.tar home/user30/</em>.txt\nLister le contenu :\ntar -tf archive.tar.gz\nAfficher les détails :\ntar -tvf archive.tar.gz\nExtensions à connaître\nExtensionType\n.tarArchive TAR\n.tar.gzTAR + gzip\n.tgzAbréviation de .tar.gz\n.tar.bz2TAR + bzip2\n.isoImage de disque, généralement non compressée\n.zipArchivage et compression\nLes pièges à éviter</p>\n<ul>\n<li><p>Une archive n'est pas forcément compressée.</p>\n</li>\n<li><p>-c crée, -x extrait et -t liste.</p>\n</li>\n<li><p>-z correspond à gzip ; -j correspond à bzip2.</p>\n</li>\n<li><p>-v affiche les détails, mais n'est pas indispensable.</p>\n</li>\n<li><p>-f doit être suivi du nom de l'archive.</p>\n</li>\n<li><p>-C permet de choisir le dossier de destination.</p>\n</li>\n<li><p>-u ne permet pas de mettre à jour directement une archive gzip ou bzip2.</p>\n</li>\n</ul>\n",
+      "html": "<h1>Archivage et compression sous Linux</h1>\n<h2>1. Différence entre archiver et compresser</h2>\n<p>Les notions d'archivage et de compression sont souvent confondues. Pourtant, elles désignent deux opérations différentes.</p>\n<h3>1.1. Archiver</h3>\n<p><strong>Archiver consiste à regrouper plusieurs fichiers ou dossiers dans un seul fichier conteneur</strong>, appelé <em>archive</em>.</p>\n<p>Une archive n'est pas nécessairement compressée.</p>\n<p><strong>Exemple : le fichier ISO</strong></p>\n<p>Un fichier ISO peut contenir l'ensemble des fichiers nécessaires à l'installation d'un système Linux. Il constitue un conteneur, sans appliquer nécessairement de compression aux données.</p>\n<h3>1.2. Compresser</h3>\n<p><strong>Compresser consiste à réduire la taille des données</strong> afin de :</p>\n<ul>\n<li>Diminuer l'espace de stockage utilisé.</li>\n<li>Réduire les temps de transfert.</li>\n<li>Faciliter les opérations de sauvegarde.</li>\n</ul>\n<p>Les formats ZIP et RAR permettent de regrouper plusieurs fichiers tout en les compressant.</p>\n<table>\n<thead>\n<tr>\n<th>Archivage</th>\n<th>Compression</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Regroupe plusieurs fichiers</td>\n<td>Réduit la taille des données</td>\n</tr>\n<tr>\n<td>Ne réduit pas forcément leur taille</td>\n<td>Économise de l'espace</td>\n</tr>\n<tr>\n<td>Exemple : archive TAR</td>\n<td>Exemples : gzip, bzip2</td>\n</tr>\n<tr>\n<td>Peut être associé à une compression</td>\n<td>Peut être utilisé avec une archive</td>\n</tr>\n</tbody></table>\n<h2>2. Présentation de la commande TAR</h2>\n<p>Sous Linux, la commande <code>tar</code> permet de créer, consulter, extraire et mettre à jour des archives.</p>\n<p>Elle peut également utiliser des mécanismes de compression comme <strong>gzip</strong> ou <strong>bzip2</strong>.</p>\n<p>Le nom TAR provient de <em>Tape Archiver</em>, en référence à son utilisation historique pour les sauvegardes sur bandes magnétiques.</p>\n<p><strong>Attention :</strong> certaines versions de TAR sous Unix ne disposent pas directement des mêmes options de compression que celles utilisées sous Linux.</p>\n<h3>2.1. Les principales options</h3>\n<table>\n<thead>\n<tr>\n<th>Option</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>-c</code></td>\n<td>Créer une archive</td>\n</tr>\n<tr>\n<td><code>-t</code></td>\n<td>Lister le contenu d'une archive</td>\n</tr>\n<tr>\n<td><code>-x</code></td>\n<td>Extraire les fichiers d'une archive</td>\n</tr>\n<tr>\n<td><code>-z</code></td>\n<td>Utiliser la compression gzip</td>\n</tr>\n<tr>\n<td><code>-j</code></td>\n<td>Utiliser la compression bzip2</td>\n</tr>\n<tr>\n<td><code>-u</code></td>\n<td>Mettre à jour une archive existante</td>\n</tr>\n<tr>\n<td><code>-v</code></td>\n<td>Activer le mode verbeux (affichage détaillé)</td>\n</tr>\n<tr>\n<td><code>-f</code></td>\n<td>Indiquer le nom du fichier archive</td>\n</tr>\n</tbody></table>\n<p>Les options peuvent être regroupées dans une même commande.</p>\n<p>Exemple :</p>\n<pre><code class=\"language-bash\">tar -cvf archive.tar dossier/\n</code></pre>\n<ul>\n<li><code>c</code> : créer l'archive.</li>\n<li><code>v</code> : afficher les fichiers traités.</li>\n<li><code>f</code> : préciser le nom de l'archive.</li>\n</ul>\n<p>Le nom du fichier archive doit être placé immédiatement après l'option <code>f</code> lorsque celle-ci attend son argument.</p>\n<h2>3. Créer une archive TAR</h2>\n<h3>3.1. Archiver plusieurs fichiers</h3>\n<pre><code class=\"language-bash\">tar -cf archive.tar fichier1 fichier2\n</code></pre>\n<p>Cette commande crée une archive appelée <code>archive.tar</code> contenant <code>fichier1</code> et <code>fichier2</code>.</p>\n<p><strong>L'extension <code>.tar</code> désigne une archive non compressée par TAR.</strong></p>\n<h3>3.2. Archiver un dossier et plusieurs fichiers</h3>\n<p>Exemple du cours ENI :</p>\n<pre><code class=\"language-bash\">tar -cvf archive.tar Edition *.txt\n</code></pre>\n<p>Cette commande crée une archive contenant :</p>\n<ul>\n<li>Le fichier ou dossier <code>Edition</code>.</li>\n<li>Tous les fichiers du répertoire courant dont le nom se termine par <code>.txt</code>.</li>\n</ul>\n<p>L'option <code>-v</code> affiche les éléments ajoutés à l'archive.</p>\n<p>Le caractère <code>*</code> est un <strong>joker</strong> : <code>*.txt</code> désigne tous les noms se terminant par <code>.txt</code>.</p>\n<h2>4. Créer une archive compressée</h2>\n<p>TAR peut associer l'archivage à une compression.</p>\n<h3>4.1. Compression gzip</h3>\n<pre><code class=\"language-bash\">tar -czf archive.tar.gz Edition *.txt\n</code></pre>\n<p>Cette commande :</p>\n<ol>\n<li>Crée une archive.</li>\n<li>Y ajoute <code>Edition</code> et les fichiers <code>.txt</code>.</li>\n<li>Compresse l'archive avec gzip.</li>\n<li>Enregistre le résultat dans <code>archive.tar.gz</code>.</li>\n</ol>\n<p><strong>Extensions courantes :</strong></p>\n<ul>\n<li><code>.tar.gz</code> : archive TAR compressée avec gzip.</li>\n<li><code>.tgz</code> : forme abrégée de <code>.tar.gz</code>.</li>\n</ul>\n<h3>4.2. Compression bzip2</h3>\n<pre><code class=\"language-bash\">tar -cjvf archive.tar.bz2 Edition *.txt\n</code></pre>\n<p>Cette commande crée une archive compressée avec bzip2.</p>\n<ul>\n<li><code>c</code> : création.</li>\n<li><code>j</code> : compression bzip2.</li>\n<li><code>v</code> : affichage détaillé.</li>\n<li><code>f</code> : nom de l'archive.</li>\n</ul>\n<h3>4.3. Comparaison gzip et bzip2</h3>\n<table>\n<thead>\n<tr>\n<th>gzip</th>\n<th>bzip2</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Utilise l'option <code>-z</code></td>\n<td>Utilise l'option <code>-j</code></td>\n</tr>\n<tr>\n<td>Extension <code>.tar.gz</code></td>\n<td>Extension <code>.tar.bz2</code></td>\n</tr>\n<tr>\n<td>Compression généralement plus rapide</td>\n<td>Compression souvent plus efficace</td>\n</tr>\n<tr>\n<td>Demande généralement moins de calcul</td>\n<td>Demande davantage de calcul processeur</td>\n</tr>\n</tbody></table>\n<p>Le cours ENI présente bzip2 comme offrant une meilleure compression que gzip, au prix d'un calcul processeur plus important.</p>\n<h2>5. Extraire une archive</h2>\n<p>L'extraction permet de récupérer les fichiers contenus dans une archive.</p>\n<h3>5.1. Extraire une archive TAR</h3>\n<pre><code class=\"language-bash\">tar -xf archive.tar\n</code></pre>\n<ul>\n<li><code>x</code> : extraire.</li>\n<li><code>f</code> : indiquer l'archive.</li>\n</ul>\n<p>Les fichiers sont extraits dans le répertoire courant.</p>\n<h3>5.2. Extraire une archive gzip</h3>\n<pre><code class=\"language-bash\">tar -xzf archive.tar.gz\n</code></pre>\n<ul>\n<li><code>x</code> : extraire.</li>\n<li><code>z</code> : utiliser gzip.</li>\n<li><code>f</code> : préciser le fichier.</li>\n</ul>\n<p>Sur les versions de TAR qui détectent automatiquement le format de compression, on peut également rencontrer :</p>\n<pre><code class=\"language-bash\">tar -xf archive.tar.gz\n</code></pre>\n<h3>5.3. Extraire dans un dossier précis</h3>\n<p>Exemple du cours :</p>\n<pre><code class=\"language-bash\">tar xvf archive.tar.gz -C restau.d\n</code></pre>\n<p>Cette commande extrait le contenu de l'archive dans le répertoire <code>restau.d</code>.</p>\n<ul>\n<li><code>x</code> : extraction.</li>\n<li><code>v</code> : affichage des fichiers extraits.</li>\n<li><code>f</code> : nom de l'archive.</li>\n<li><code>-C</code> : changement de répertoire de destination.</li>\n</ul>\n<p><strong>Important :</strong> le répertoire <code>restau.d</code> doit déjà exister.</p>\n<h2>6. Mettre à jour une archive existante</h2>\n<p>L'option <code>-u</code> permet d'ajouter à une archive TAR les fichiers absents ou plus récents que ceux déjà archivés.</p>\n<p>Exemple du cours ENI :</p>\n<pre><code class=\"language-bash\">cd /\ntar -uvf archive.tar home/user30/*.txt\n</code></pre>\n<h3>Explication</h3>\n<ol>\n<li><code>cd /</code> : se placer à la racine du système.</li>\n<li><code>tar -uvf</code> : mettre à jour l'archive en affichant les fichiers traités.</li>\n<li><code>archive.tar</code> : nom de l'archive à modifier.</li>\n<li><code>home/user30/*.txt</code> : fichiers <code>.txt</code> concernés.</li>\n</ol>\n<p><strong>Pourquoi ne pas écrire <code>/home/user30/*.txt</code> ?</strong></p>\n<p>TAR retire généralement le <code>/</code> initial des chemins absolus enregistrés dans les archives. L'utilisation de chemins relatifs évite cette situation.</p>\n<p><strong>À retenir :</strong> l'option <code>-u</code> concerne ici une archive TAR non compressée. La mise à jour directe d'une archive compressée avec gzip ou bzip2 n'est pas prise en charge de la même manière.</p>\n<h2>7. Consulter le contenu d'une archive</h2>\n<p>Il n'est pas nécessaire d'extraire une archive pour connaître son contenu.</p>\n<h3>7.1. Affichage simple</h3>\n<pre><code class=\"language-bash\">tar -tf archive.tar.gz\n</code></pre>\n<ul>\n<li><code>t</code> : afficher la liste des éléments.</li>\n<li><code>f</code> : préciser l'archive.</li>\n</ul>\n<p>Exemple de résultat :</p>\n<pre><code class=\"language-text\">Edition\ncontacts.txt\nedition1.txt\nerr.txt\nFait.txt\n</code></pre>\n<h3>7.2. Affichage détaillé</h3>\n<pre><code class=\"language-bash\">tar -tvf archive.tar.gz\n</code></pre>\n<p>L'option <code>-v</code> permet d'obtenir davantage d'informations :</p>\n<ul>\n<li>Les permissions.</li>\n<li>Le propriétaire et le groupe.</li>\n<li>La taille.</li>\n<li>La date de modification.</li>\n<li>Le nom du fichier.</li>\n</ul>\n<p>Cette présentation permet de consulter les caractéristiques des fichiers archivés sans les extraire.</p>\n<h2>8. Synthèse du chapitre</h2>\n<p>La commande TAR constitue un outil essentiel pour l'administration des systèmes Linux.</p>\n<p>Elle permet de :</p>\n<ul>\n<li>Regrouper plusieurs fichiers dans une archive.</li>\n<li>Compresser une archive avec gzip ou bzip2.</li>\n<li>Extraire les fichiers archivés.</li>\n<li>Mettre à jour une archive existante.</li>\n<li>Consulter son contenu sans extraction.</li>\n</ul>\n<p>La maîtrise de TAR est particulièrement utile pour la sauvegarde, la restauration et le transfert de fichiers.</p>\n<hr>\n",
+      "revisionHtml": "<h1>Fiche mémo — Archivage et compression</h1>\n<h2>Définitions essentielles</h2>\n<p><strong>Archiver :</strong> regrouper plusieurs fichiers dans un seul conteneur.</p>\n<p><strong>Compresser :</strong> réduire la taille des données.</p>\n<p><strong>TAR :</strong> outil Linux permettant de créer, extraire, consulter et mettre à jour des archives.</p>\n<p><strong>gzip :</strong> mécanisme de compression associé à l'option <code>-z</code>.</p>\n<p><strong>bzip2 :</strong> mécanisme de compression associé à l'option <code>-j</code>, généralement plus exigeant en calcul.</p>\n<h2>Options à mémoriser</h2>\n<table>\n<thead>\n<tr>\n<th>Option</th>\n<th>Signification</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>c</code></td>\n<td>Create : créer</td>\n</tr>\n<tr>\n<td><code>x</code></td>\n<td>Extract : extraire</td>\n</tr>\n<tr>\n<td><code>t</code></td>\n<td>Table : lister</td>\n</tr>\n<tr>\n<td><code>z</code></td>\n<td>gzip</td>\n</tr>\n<tr>\n<td><code>j</code></td>\n<td>bzip2</td>\n</tr>\n<tr>\n<td><code>u</code></td>\n<td>Update : mettre à jour</td>\n</tr>\n<tr>\n<td><code>v</code></td>\n<td>Verbose : afficher les détails</td>\n</tr>\n<tr>\n<td><code>f</code></td>\n<td>File : nom de l'archive</td>\n</tr>\n<tr>\n<td><code>-C</code></td>\n<td>Extraire dans un répertoire donné</td>\n</tr>\n</tbody></table>\n<h2>Commandes indispensables</h2>\n<p><strong>Créer une archive :</strong></p>\n<pre><code class=\"language-bash\">tar -cf archive.tar fichier1 fichier2\n</code></pre>\n<p><strong>Créer une archive avec affichage :</strong></p>\n<pre><code class=\"language-bash\">tar -cvf archive.tar Edition *.txt\n</code></pre>\n<p><strong>Compresser avec gzip :</strong></p>\n<pre><code class=\"language-bash\">tar -czf archive.tar.gz Edition *.txt\n</code></pre>\n<p><strong>Compresser avec bzip2 :</strong></p>\n<pre><code class=\"language-bash\">tar -cjvf archive.tar.bz2 Edition *.txt\n</code></pre>\n<p><strong>Extraire une archive :</strong></p>\n<pre><code class=\"language-bash\">tar -xf archive.tar\n</code></pre>\n<p><strong>Extraire une archive gzip :</strong></p>\n<pre><code class=\"language-bash\">tar -xzf archive.tar.gz\n</code></pre>\n<p><strong>Extraire dans un dossier précis :</strong></p>\n<pre><code class=\"language-bash\">tar xvf archive.tar.gz -C restau.d\n</code></pre>\n<p><strong>Mettre à jour une archive TAR :</strong></p>\n<pre><code class=\"language-bash\">tar -uvf archive.tar home/user30/*.txt\n</code></pre>\n<p><strong>Lister le contenu :</strong></p>\n<pre><code class=\"language-bash\">tar -tf archive.tar.gz\n</code></pre>\n<p><strong>Afficher les détails :</strong></p>\n<pre><code class=\"language-bash\">tar -tvf archive.tar.gz\n</code></pre>\n<h2>Extensions à connaître</h2>\n<table>\n<thead>\n<tr>\n<th>Extension</th>\n<th>Type</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>.tar</code></td>\n<td>Archive TAR</td>\n</tr>\n<tr>\n<td><code>.tar.gz</code></td>\n<td>TAR + gzip</td>\n</tr>\n<tr>\n<td><code>.tgz</code></td>\n<td>Abréviation de <code>.tar.gz</code></td>\n</tr>\n<tr>\n<td><code>.tar.bz2</code></td>\n<td>TAR + bzip2</td>\n</tr>\n<tr>\n<td><code>.iso</code></td>\n<td>Image de disque, généralement non compressée</td>\n</tr>\n<tr>\n<td><code>.zip</code></td>\n<td>Archivage et compression</td>\n</tr>\n</tbody></table>\n<h2>Les pièges à éviter</h2>\n<ul>\n<li>Une archive n'est pas forcément compressée.</li>\n<li><code>-c</code> crée, <code>-x</code> extrait et <code>-t</code> liste.</li>\n<li><code>-z</code> correspond à gzip ; <code>-j</code> correspond à bzip2.</li>\n<li><code>-v</code> affiche les détails, mais n'est pas indispensable.</li>\n<li><code>-f</code> doit être suivi du nom de l'archive.</li>\n<li><code>-C</code> permet de choisir le dossier de destination.</li>\n<li><code>-u</code> ne permet pas de mettre à jour directement une archive gzip ou bzip2.</li>\n</ul>\n<hr>\n",
       "revisionExtracts": [],
-      "updatedAt": "2026-11-15T22:41:28.434Z"
+      "updatedAt": "2026-11-15T23:07:17.470Z"
+    },
+    {
+      "id": "doc-e6387a66-6394-4710-9f0a-b5dc1088a3d6",
+      "title": "13 Gestion des alias avec Bash",
+      "kind": "cours",
+      "category": "04 — Utilisation d’une distribution GNU / Cours",
+      "html": "",
+      "revisionHtml": "",
+      "revisionExtracts": [],
+      "updatedAt": "2026-11-15T23:16:47.113Z"
     }
   ],
   "quizzes": [
@@ -271,16 +281,16 @@
         {
           "question": "Quelle commande permet de créer une archive TAR ?",
           "answers": [
-            "tar -xf archive.tar",
-            "tar -tf archive.tar",
-            "tar -cf archive.tar fichier1 fichier2",
-            "tar -uf archive.tar"
+            "`tar -xf archive.tar`",
+            "`tar -tf archive.tar`",
+            "`tar -cf archive.tar fichier1 fichier2`",
+            "`tar -uf archive.tar`"
           ],
           "correct": 2,
-          "explanation": "-c permet de créer une archive et -f d'indiquer son nom."
+          "explanation": "`-c` permet de créer une archive et `-f` d'indiquer son nom."
         },
         {
-          "question": "Que signifie l'option -x ?",
+          "question": "Que signifie l'option `-x` ?",
           "answers": [
             "Compresser.",
             "Extraire.",
@@ -288,54 +298,54 @@
             "Mettre à jour."
           ],
           "correct": 1,
-          "explanation": "-x sert à extraire les fichiers archivés."
+          "explanation": "`-x` sert à extraire les fichiers archivés."
         },
         {
           "question": "Quelle option permet d'utiliser gzip ?",
           "answers": [
-            "-j",
-            "-v",
-            "-z",
-            "-u"
+            "`-j`",
+            "`-v`",
+            "`-z`",
+            "`-u`"
           ],
           "correct": 2,
-          "explanation": "-z active la compression gzip."
+          "explanation": "`-z` active la compression gzip."
         },
         {
           "question": "Quelle option correspond à bzip2 ?",
           "answers": [
-            "-j",
-            "-x",
-            "-t",
-            "-f"
+            "`-j`",
+            "`-x`",
+            "`-t`",
+            "`-f`"
           ],
           "correct": 0,
-          "explanation": "-j permet d'utiliser bzip2."
+          "explanation": "`-j` permet d'utiliser bzip2."
         },
         {
           "question": "Quelle commande crée une archive gzip ?",
           "answers": [
-            "tar -xf archive.tar.gz",
-            "tar -czf archive.tar.gz dossier/",
-            "tar -tf archive.tar.gz",
-            "tar -uvf archive.tar dossier/"
+            "`tar -xf archive.tar.gz`",
+            "`tar -czf archive.tar.gz dossier/`",
+            "`tar -tf archive.tar.gz`",
+            "`tar -uvf archive.tar dossier/`"
           ],
           "correct": 1,
-          "explanation": "-c crée l'archive et -z active gzip."
+          "explanation": "`-c` crée l'archive et `-z` active gzip."
         },
         {
-          "question": "Quelle extension est une forme abrégée de .tar.gz ?",
+          "question": "Quelle extension est une forme abrégée de `.tar.gz` ?",
           "answers": [
-            ".bz2",
-            ".iso",
-            ".tgz",
-            ".rar"
+            "`.bz2`",
+            "`.iso`",
+            "`.tgz`",
+            "`.rar`"
           ],
           "correct": 2,
-          "explanation": ".tgz est une abréviation courante de .tar.gz."
+          "explanation": "`.tgz` est une abréviation courante de `.tar.gz`."
         },
         {
-          "question": "À quoi sert l'option -v ?",
+          "question": "À quoi sert l'option `-v` ?",
           "answers": [
             "Vérifier les mots de passe.",
             "Activer l'affichage détaillé.",
@@ -348,16 +358,16 @@
         {
           "question": "Quelle commande permet de consulter le contenu d'une archive sans l'extraire ?",
           "answers": [
-            "tar -cf archive.tar fichier1",
-            "tar -xf archive.tar",
-            "tar -tf archive.tar",
-            "tar -czf archive.tar.gz fichier1"
+            "`tar -cf archive.tar fichier1`",
+            "`tar -xf archive.tar`",
+            "`tar -tf archive.tar`",
+            "`tar -czf archive.tar.gz fichier1`"
           ],
           "correct": 2,
-          "explanation": "-t affiche la liste des éléments archivés."
+          "explanation": "`-t` affiche la liste des éléments archivés."
         },
         {
-          "question": "Que permet d'obtenir tar -tvf archive.tar.gz ?",
+          "question": "Que permet d'obtenir `tar -tvf archive.tar.gz` ?",
           "answers": [
             "La suppression des fichiers.",
             "Une liste détaillée du contenu.",
@@ -365,10 +375,10 @@
             "Une compression bzip2."
           ],
           "correct": 1,
-          "explanation": "-t liste les fichiers et -v affiche leurs caractéristiques."
+          "explanation": "`-t` liste les fichiers et `-v` affiche leurs caractéristiques."
         },
         {
-          "question": "À quoi sert l'option -C lors de l'extraction ?",
+          "question": "À quoi sert l'option `-C` lors de l'extraction ?",
           "answers": [
             "À compresser avec gzip.",
             "À modifier les permissions.",
@@ -376,10 +386,10 @@
             "À créer une archive."
           ],
           "correct": 2,
-          "explanation": "-C indique dans quel répertoire TAR doit effectuer l'extraction."
+          "explanation": "`-C` indique dans quel répertoire TAR doit effectuer l'extraction."
         },
         {
-          "question": "Quel est le rôle de l'option -u ?",
+          "question": "Quel est le rôle de l'option `-u` ?",
           "answers": [
             "Extraire les fichiers.",
             "Mettre à jour une archive TAR existante.",
@@ -387,10 +397,10 @@
             "Compresser avec bzip2."
           ],
           "correct": 1,
-          "explanation": "-u ajoute à une archive TAR les fichiers absents ou plus récents."
+          "explanation": "`-u` ajoute à une archive TAR les fichiers absents ou plus récents."
         },
         {
-          "question": "Pourquoi le cours utilise-t-il cd / avant une commande TAR de mise à jour ?",
+          "question": "Pourquoi le cours utilise-t-il `cd /` avant une commande TAR de mise à jour ?",
           "answers": [
             "Pour supprimer les archives existantes.",
             "Pour activer automatiquement gzip.",
@@ -398,7 +408,7 @@
             "Pour afficher les utilisateurs connectés."
           ],
           "correct": 2,
-          "explanation": "depuis /, on peut utiliser un chemin comme home/user30/*.txt sans slash initial."
+          "explanation": "depuis `/`, on peut utiliser un chemin comme `home/user30/*.txt` sans slash initial."
         }
       ]
     }
