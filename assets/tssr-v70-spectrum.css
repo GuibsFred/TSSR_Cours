@@ -1,0 +1,26 @@
+/* V70 — Spectrum : sommaire compact et actions avec relief */
+#view .tssr-spectrum{max-width:1190px;margin:26px auto 30px;padding:22px 25px 25px;border:1px solid rgba(76,166,187,.28);border-radius:19px;background:linear-gradient(155deg,rgba(14,60,78,.72),rgba(4,35,52,.93));box-shadow:0 14px 40px rgba(0,0,0,.16)}
+#view .tssr-spectrum-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}
+#view .tssr-spectrum-head>div{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+#view .tssr-spectrum-eyebrow{font-size:11px;letter-spacing:.13em;font-weight:800;color:#6ce0e8}
+#view .tssr-spectrum-head strong{font-size:13px;color:#d6eaf0;font-weight:600}
+#view .tssr-spectrum-art{display:block;width:52px;height:48px;overflow:hidden;filter:drop-shadow(0 5px 8px rgba(0,0,0,.35))}
+#view .tssr-spectrum-art img{width:100%;height:100%;object-fit:contain}
+#view .tssr-spectrum-search{margin-bottom:14px}
+#view .tssr-spectrum-list{display:flex!important;flex-direction:column!important;gap:7px!important}
+#view .tssr-spectrum-row{min-width:0!important;min-height:67px!important;display:flex!important;flex-direction:row!important;align-items:center!important;gap:15px!important;padding:11px 14px!important;border:1px solid rgba(82,157,178,.24)!important;border-left:3px solid #25b8cb!important;border-radius:10px!important;background:linear-gradient(110deg,rgba(18,72,90,.88),rgba(8,44,62,.9))!important;box-shadow:0 3px 12px rgba(0,0,0,.10)!important;transition:background .18s,border-color .18s,transform .18s!important}
+#view .tssr-spectrum-row:nth-child(4n+2){border-left-color:#f0b85f!important}#view .tssr-spectrum-row:nth-child(4n+3){border-left-color:#9e95eb!important}#view .tssr-spectrum-row:nth-child(4n+4){border-left-color:#66d6ad!important}
+#view .tssr-spectrum-row:hover{background:linear-gradient(110deg,rgba(23,85,104,.95),rgba(11,52,70,.96))!important;transform:translateX(2px)!important;border-top-color:rgba(100,202,223,.45)!important}
+#view .tssr-spectrum-number{flex:0 0 37px;font-size:19px;font-weight:800;color:#63d9e6;text-shadow:0 2px 12px rgba(61,219,233,.25);font-variant-numeric:tabular-nums}
+#view .tssr-spectrum-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+#view .tssr-spectrum-title{display:block;padding:0!important;border:0!important;background:none!important;color:#f4f9fb!important;text-align:left;font-size:14px!important;line-height:1.3;font-weight:700!important;cursor:pointer}
+#view .tssr-spectrum-title:hover{color:#86e8f0!important}
+#view .tssr-spectrum-status{font-size:11px;color:#8eafbb}#view .tssr-spectrum-status.is-written{color:#81e5b9}
+#view .tssr-spectrum-links{display:flex;align-items:center;gap:7px;flex:0 0 auto}
+#view .tssr-spectrum-action{display:flex;align-items:center;gap:7px;padding:5px 10px 5px 6px!important;border:1px solid rgba(115,172,194,.24)!important;border-radius:9px!important;background:rgba(3,28,42,.42)!important;color:#e3f0f4!important;font-size:12px!important;font-weight:700;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s}
+#view .tssr-spectrum-action:hover{transform:translateY(-2px);background:rgba(21,79,100,.8)!important;box-shadow:0 6px 15px rgba(0,0,0,.23)}
+#view .tssr-spectrum-icon{display:grid;place-items:center;width:25px;height:25px;border-radius:7px;font-size:15px;font-weight:900;box-shadow:inset 0 1px 1px rgba(255,255,255,.4),inset 0 -3px 4px rgba(0,0,0,.27),0 3px 6px rgba(0,0,0,.35);text-shadow:0 1px 2px rgba(0,0,0,.35)}
+#view .tssr-spectrum-course .tssr-spectrum-icon{background:linear-gradient(145deg,#69b5ff,#215dba);color:white}#view .tssr-spectrum-fiche .tssr-spectrum-icon{background:linear-gradient(145deg,#ffda85,#b87821);color:#fff}#view .tssr-spectrum-qcm .tssr-spectrum-icon{background:linear-gradient(145deg,#8cf3c4,#168b68);color:#fff}
+#view .tssr-spectrum-admin{display:flex;align-items:center;gap:1px;margin-left:2px}#view .tssr-spectrum-admin button{border:0;background:transparent;color:#91b3c1;font-size:15px;padding:5px;cursor:pointer}#view .tssr-spectrum-admin button:hover{color:#fff}
+@media(max-width:950px){#view .tssr-spectrum-row{flex-wrap:wrap!important}#view .tssr-spectrum-links{margin-left:52px}#view .tssr-spectrum-admin{margin-left:auto}}
+@media(max-width:600px){#view .tssr-spectrum{padding:15px 12px}#view .tssr-spectrum-row{gap:9px!important}#view .tssr-spectrum-number{flex-basis:28px}#view .tssr-spectrum-links{margin-left:0;width:100%;justify-content:space-between}#view .tssr-spectrum-admin{margin-left:auto}}
