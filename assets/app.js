@@ -8,7 +8,7 @@ const tssrAdminActions='[data-edit],[data-delete],[data-manage-course],[data-hid
 function tssrSetAdmin(enabled){tssrAdminVerified=Boolean(enabled);document.body.classList.toggle('tssr-admin',tssrAdminVerified);const btn=document.querySelector('#connectBtn');if(btn){btn.textContent=tssrAdminVerified?'✓ GitHub connecté':'⚙ Connexion GitHub';btn.title=tssrAdminVerified?'Administration activée — cliquer pour se déconnecter':'Connexion nécessaire pour modifier le site';}render();}
 // Capture : empêche aussi les commandes lancées par un clic artificiel ou un élément masqué.
 document.addEventListener('click',e=>{if(!tssrAdminVerified&&e.target.closest(tssrAdminActions)){e.preventDefault();e.stopImmediatePropagation();toast('Connecte-toi à GitHub pour modifier le site.');}},true);
-const labels={accueil:['⌂','Accueil'],cours:['▤','Cours'],tp:['🛠','Outils & Utilitaires TSSR'],fiches:['✦','Fiches de révision'],quiz:['✓','QCM interactifs'],commandes:['⌘','Commandes'],cheats:['▧','Cheatsheets'],carnet:['▣','Mon carnet TSSR'],journal:['☕','Le Journal TSSR'],homelab:['▣','Homelab']};
+const labels={accueil:['⌂','Accueil'],cours:['▤','Cours'],tp:['🛠','Outils & Utilitaires TSSR'],fiches:['✦','Fiches de révision'],quiz:['✓','QCM interactifs'],commandes:['⌘','Commandes'],cheats:['▧','Cheatsheets'],journal:['☕','Le Journal TSSR'],homelab:['▣','Homelab']};
 const V57_ICON={accueil:'⌂',cours:'▤',tp:'⚒',fiches:'✦',quiz:'✓',commandes:'⌘',cheats:'▧',carnet:'▣',journal:'☕',homelab:'▣'};
 const v57Read=(k,fallback)=>{try{return JSON.parse(localStorage.getItem(k)||'null')||fallback}catch(e){return fallback}};
 const v57Save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
@@ -334,13 +334,14 @@ if(section==='accueil'){
  const news=(window.TSSR_NEWS||[]).slice(0,3);
  v.innerHTML=`<div class="v54-home"><div class="v54-hero" role="img" aria-label="Mon Espace TSSR — Cours, notes, révisions et outils"></div>
  <div class="v54-navgrid">${[['cours','cours-c-servers.png','Cours','Modules et chapitres'],['fiches','cours-c-support.png','Révisions','Fiches synthétiques'],['quiz','cours-c-security.png','QCM','Tester ses connaissances'],['tp','cours-c-network.png','Outils & TP','Calculateurs et travaux pratiques']].map(([k,img,title,sub])=>`<button data-sec="${k}" class="v54-navcard v54-${k}"><img src="assets/${img}" alt=""><span><strong>${title}</strong><small>${sub}</small></span><b>➜</b></button>`).join('')}</div>
- <div class="v54-middle"><section class="v54-panel"><div class="v54-heading"><h2>▣ Mon carnet TSSR</h2><button data-sec="carnet">Ouvrir mon carnet →</button></div><input class="v56-home-search" id="v56HomeSearch" type="search" placeholder="Rechercher une commande, une fonction, un mot-clé…" aria-label="Rechercher dans mon carnet"><div class="v54-notes">${quick.map(n=>`<div class="v54-note" data-search="${esc((n.cmd+' '+n.desc).toLowerCase())}"><span><b>${esc(n.cmd)}</b><small>${esc(n.desc)}</small></span><button data-copy-note="${esc(n.cmd)}" title="Copier">▣</button></div>`).join('')}</div></section>
- <section class="v54-panel"><div class="v54-heading"><h2>◈ Ressources rapides</h2></div><div class="v54-resources">${[['⌘','Windows','commandes'],['>_','PowerShell','commandes'],['🐧','Linux','commandes'],['◎','Réseau','tp'],['▤','Cheatsheets','cheats']].map(([ic,t,k])=>`<button data-sec="${k}"><b>${ic}</b><span>${t}</span></button>`).join('')}</div></section></div>
+ <div class="v54-middle tssr-home-focus"><section class="v54-panel tssr-home-progress"><div class="v54-heading"><h2>◈ Ma formation en un coup d’œil</h2><button data-sec="cours">Explorer les modules →</button></div><p>Retrouve tes cours, tes fiches et tes QCM sans multiplier les espaces.</p><div class="tssr-home-shortcuts"><button data-sec="cours"><b>📘</b><strong>Parcourir les cours</strong><small>Modules et chapitres</small></button><button data-sec="fiches"><b>✦</b><strong>Réviser</strong><small>Fiches synthétiques</small></button><button data-sec="quiz"><b>✓</b><strong>M’évaluer</strong><small>QCM interactifs</small></button></div></section>
+ <section class="v54-panel tssr-home-resources"><div class="v54-heading"><h2>◈ Accès direct</h2></div><div class="v54-resources">${[['⌘','Windows','commandes'],['>_','PowerShell','commandes'],['🐧','Linux','commandes'],['◎','Réseau','tp'],['▤','Cheatsheets','cheats']].map(([ic,t,k])=>`<button data-sec="${k}"><b>${ic}</b><span>${t}</span></button>`).join('')}</div><div class="tssr-home-search-tip">⌕ La recherche globale est disponible en haut de chaque page.</div></section></div>
  <div class="v54-bottom"><section class="v54-panel v54-coffee"><div class="v54-coffee-art"><img src="assets/v23-coffee.png" alt="Tasse Pause TSSR"></div><div class="v54-coffee-main"><div class="v54-heading"><h2>Le Journal <em>TSSR</em></h2><button data-sec="journal">Ouvrir le journal →</button></div><p>Veille technologique & actualités IT</p><div class="v54-news">${news.length?news.map(n=>v57NewsCard(n,true)).join(''):'<p>Les actualités apparaîtront après la première mise à jour automatique.</p>'}</div></div></section>
  <section class="v54-panel v54-stats"><div class="v54-heading"><h2>▥ Suivi & activité</h2></div><div class="v54-statgrid"><div><b id="v23-downloads">0</b><small>Téléchargements</small></div><div><b id="tssr-views">0</b><small>Visites sur cet appareil</small></div><div><b id="v54-reads">0</b><small>Lectures du journal</small></div></div><div class="v54-last"><b>Reprendre ma formation</b>${lastCourse?`<button data-id="${esc(lastCourse.id)}" title="Reprendre le dernier cours ouvert">${esc(lastCourse.title)} →</button>`:`<button data-sec="cours">Choisir un cours →</button>`}</div></section></div></div>`;
- const homeSearch=$('#v56HomeSearch');if(homeSearch){homeSearch.addEventListener('input',e=>{const q=e.target.value.trim().toLocaleLowerCase('fr');const matches=q?v57SortedNotes(notes.filter(n=>(n.cmd+' '+n.desc).toLocaleLowerCase('fr').includes(q))).slice(0,3):v57SortedNotes(notes).slice(0,3);const target=document.querySelector('.v54-notes');if(target)target.innerHTML=matches.map(n=>`<div class="v54-note"><span><b>${esc(n.cmd)}</b><small>${esc(n.desc)}</small></span><button data-copy-note="${esc(n.cmd)}" title="Copier">▣</button></div>`).join('')||'<p class="v56-no-result">Aucune note trouvée</p>';});}try{const key='tssr-local-pageviews';let n=Number(localStorage.getItem(key)||'0');if(!sessionStorage.getItem('tssr-counted-visit')){n++;localStorage.setItem(key,String(n));sessionStorage.setItem('tssr-counted-visit','1')}const el=$('#tssr-views');if(el)el.textContent=n;const reads=$('#v54-reads');if(reads)v57NewsCount()}catch(e){}return;
+try{const key='tssr-local-pageviews';let n=Number(localStorage.getItem(key)||'0');if(!sessionStorage.getItem('tssr-counted-visit')){n++;localStorage.setItem(key,String(n));sessionStorage.setItem('tssr-counted-visit','1')}const el=$('#tssr-views');if(el)el.textContent=n;const reads=$('#v54-reads');if(reads)v57NewsCount()}catch(e){}return;
 }
-if(section==='carnet'){
+if(section==='carnet'){section='accueil';render();return;}
+if(false){
  const notes=management().notes||[];
  v.innerHTML=header('Mon carnet TSSR','Mes commandes, raccourcis et astuces personnelles.',`<button class="btn primary" id="v54AddNote">＋ Ajouter une note</button>`)+`<div class="v54-carnet"><input class="formfield" id="v54NoteSearch" placeholder="Rechercher une commande ou une astuce…"><div id="v54NoteList">${notes.map(n=>`<article class="v54-note-card" data-search="${esc((n.cmd+' '+n.desc).toLowerCase())}"><div><code>${esc(n.cmd)}</code><p>${esc(n.desc)}</p></div><div><button data-copy-note="${esc(n.cmd)}" title="Copier">Copier</button><button data-edit-note="${esc(n.id)}">Modifier</button><button data-remove-note="${esc(n.id)}">Supprimer</button></div></article>`).join('')||'<p>Ton carnet est vide. Ajoute ta première note !</p>'}</div></div>`;
  $('#v54NoteSearch').oninput=e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.v54-note-card').forEach(el=>el.hidden=!el.dataset.search.includes(q))};$('#v54AddNote').onclick=()=>editPersonalNote();return;
@@ -537,36 +538,22 @@ if(kind==='cours'){
  const markerPattern=/^===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===$/i;
  const blocks=[...temp.childNodes];
  const sections={};const sectionHtml={};let currentSection=null;let hasStructuredSections=false;
- // Les marqueurs sont des paragraphes indépendants lors d'un collage riche.
- for(const node of blocks){
-  const content=(node.textContent||'').trim();
-  const found=content.match(markerPattern);
-  if(found){currentSection=normalizeSection(found[1]);hasStructuredSections=true;sections[currentSection]='';sectionHtml[currentSection]='';continue;}
-  if(currentSection){
-   const blockText=node.nodeType===3?node.textContent:(node.innerText||node.textContent||'');
-   sections[currentSection]+=(sections[currentSection]?'\n':'')+blockText;
-   sectionHtml[currentSection]+=node.nodeType===3?esc(node.textContent):node.outerHTML;
-  }
+ // Un seul analyseur pour les collages HTML, Word et Markdown (y compris un bloc unique).
+ const raw=tssrEditorPlainText(temp).replace(/\r/g,'');
+ const mark=/===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===/gi;
+ const markers=[...raw.matchAll(mark)];
+ for(let i=0;i<markers.length;i++){
+  const key=normalizeSection(markers[i][1]);
+  sections[key]=raw.slice(markers[i].index+markers[i][0].length,i+1<markers.length?markers[i+1].index:raw.length).trim();
  }
- // Secours : texte brut collé dans un seul élément.
- if(!hasStructuredSections){
-  const raw=(temp.innerText||temp.textContent||'').replace(/\r/g,'');
-  const mark=/===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===/gi;
-  const markers=[...raw.matchAll(mark)];
-  for(let i=0;i<markers.length;i++){
-   const key=normalizeSection(markers[i][1]);
-   sections[key]=raw.slice(markers[i].index+markers[i][0].length,i+1<markers.length?markers[i+1].index:raw.length).trim();
-  }
-  hasStructuredSections=markers.length>0;
- }
+ hasStructuredSections=markers.length>0;
  if(sections['FICHE DE REVISION']||sectionHtml['FICHE DE REVISION']){
   const ficheHtml=sectionHtml['FICHE DE REVISION'];
-  importedRevisionHtml=ficheHtml?.trim()?DOMPurify.sanitize(ficheHtml,{ADD_ATTR:['style']}):
-   DOMPurify.sanitize(marked.parse(sections['FICHE DE REVISION']||''));
+  importedRevisionHtml=DOMPurify.sanitize(marked.parse(sections['FICHE DE REVISION']||''));
  }
  if(sections.QCM){
   const questions=parseQuizBulk(sections.QCM);
-  if(!questions.length){toast('QCM détecté mais aucune question valide. Vérifie les intitulés Question 1, A., B. et Réponse : B.');return false}
+  if(!questions.length){toast('QCM non reconnu : vérifie que chaque question a un titre, au moins 2 choix et une ligne Réponse : B.');return false}
   const previous=custom.quizzes.find(q=>q.chapterId===stableId);
   const quizId=previous?.id||'quiz-auto-'+stableId;
   custom.quizzes=custom.quizzes.filter(q=>q.id!==quizId);
@@ -575,7 +562,7 @@ if(kind==='cours'){
   toast(questions.length+' questions reconnues : QCM interactif créé.');
  }
  if(hasStructuredSections){
-  if(sectionHtml['COURS COMPLET']){
+  if(false && sectionHtml['COURS COMPLET']){
    html=DOMPurify.sanitize(sectionHtml['COURS COMPLET'],{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
   }else if(sections['COURS COMPLET']){
    html=DOMPurify.sanitize(marked.parse(sections['COURS COMPLET']));
@@ -588,6 +575,17 @@ let idx=custom.pages.findIndex(x=>x.id===stableId);if(idx>=0)custom.pages[idx]=o
 lastSavedCourseId=stableId;saveLocal(stableId);if(closeEditor){$('#modal').close();goto(obj.kind,obj.id)}return true}
 $('#cancelDoc').onclick=closeEditorSafely;$('#savePublish').onclick=async()=>{if(!persist(false))return;const kindSaved=$('#docKind').value,idSaved=lastSavedCourseId;const btn=$('#savePublish');btn.disabled=true;btn.textContent='⏳ Publication en cours…';const ok=await publish();btn.disabled=false;btn.textContent='☁ Enregistrer et publier sur GitHub';if(ok){$('#modal').close();goto(kindSaved,idSaved)}else{toast('Cours sauvegardé localement. Publication non confirmée : réessaie après connexion GitHub.')}}}
 async function insertImageFile(file){if(!file)return;if(file.size>5*1024*1024){toast('Image trop lourde : maximum 5 Mo par image.');return}let data=await new Promise((resolve,reject)=>{let r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});$('#docEditor').focus();document.execCommand('insertHTML',false,`<img src="${data}" alt="Capture de cours">`)}
+function tssrEditorPlainText(node){
+ // Les sauts de ligne d'un collage Markdown/Word ne sont pas conservés par textContent.
+ // Les blocs HTML et <br> sont donc explicitement convertis en lignes.
+ if(node.nodeType===3)return node.nodeValue||'';
+ if(node.nodeType!==1)return '';
+ if(node.tagName==='BR')return '\n';
+ if(node.tagName==='LI')return '- '+Array.from(node.childNodes).map(tssrEditorPlainText).join('')+'\n';
+ const block=/^(DIV|P|H[1-6]|PRE|TR|UL|OL|SECTION|ARTICLE)$/i.test(node.tagName);
+ const value=Array.from(node.childNodes).map(tssrEditorPlainText).join('');
+ return block?value+'\n':value;
+}
 function parseQuizBulk(text){
  const raw=String(text||'').replace(/\r/g,'').replace(/\*\*/g,'').replace(/^#{1,5}\s*QCM[^\n]*$/gim,'');
  const lines=raw.split('\n').map(x=>x.trim()).filter(Boolean);
