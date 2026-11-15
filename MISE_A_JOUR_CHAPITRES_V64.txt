@@ -1,0 +1,7 @@
+V64 — Présentation des chapitres
+- Liste compacte des chapitres dans chaque module, avec recherche locale.
+- Trois onglets dans chaque chapitre : Cours complet, Fiche de révision, QCM.
+- Fiches et QCM vierges affichent un message en attendant leur reconstruction.
+- Ancienne version conservée dans le ZIP précédent.
+- La reconstruction de l'import à quatre sections et de la banque de commandes est une étape ultérieure.
+- Tester localement / sur un site de prévisualisation avant publication ; des contenus du navigateur ou distants peuvent subsister.

@@ -1,0 +1,9 @@
+TSSR — Version de travail, contenu pédagogique réinitialisé
+
+Retiré : Terminal OPS, BASH Operator Center, liens et éléments dédiés.
+Vidé : cours, fiches de révision, QCM et banque de commandes.
+Conservé : interface, outils indépendants, noms des chapitres et métadonnées des modules.
+
+IMPORTANT : cette version ne contient PAS encore le nouveau moteur d’import à quatre sections.
+La sauvegarde des anciens contenus dans le navigateur ou sur GitHub peut encore exister.
+Avant mise en ligne, conserver le ZIP original et tester les fonctions du site.
