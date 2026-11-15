@@ -210,9 +210,9 @@ async function revisionSourceHtml(course){
 async function showRevision(id){
  const course=revisionCourses().find(x=>x.id===id),notes=revisionNotes(id),v=$('#view');
  if(!course){v.innerHTML=header('Fiche introuvable','Le cours associé n’existe plus.');return}
- v.innerHTML=header('Fiche de révision — '+course.title,course.category,`<div class="actions"><button class="btn" data-id="${esc(id)}">📘 Voir le cours</button><button class="btn primary" data-revision-edit="${esc(id)}">✎ Mes notes</button></div>`)+`<article class="article tssr-revision-detail"><h2>🔵 À retenir dans ce cours</h2><p class="muted">Les passages sélectionnés en bleu dans le cours sont repris ici en noir, avec leur mise en forme.</p><div id="revisionExtract" class="revision-extract">Chargement…</div><h2>📝 Mes notes personnelles</h2><div class="content">${DOMPurify.sanitize(notes?.html||'<p class="muted">Aucune note pour le moment. Clique sur « Mes notes » pour compléter cette fiche.</p>')}</div></article>`;
+ v.innerHTML=header('Fiche de révision — '+course.title,course.category,`<div class="actions"><button class="btn" data-id="${esc(id)}">📘 Voir le cours</button><button class="btn primary" data-revision-edit="${esc(id)}">✎ Mes notes</button></div>`)+`<article class="article tssr-revision-detail"><h2>🔵 À retenir dans ce cours</h2><p class="muted">Synthèse du chapitre importée automatiquement. Les passages marqués en bleu restent disponibles si aucune fiche n’est fournie.</p><div id="revisionExtract" class="revision-extract">Chargement…</div><h2>📝 Mes notes personnelles</h2><div class="content">${DOMPurify.sanitize(notes?.html||'<p class="muted">Aucune note pour le moment. Clique sur « Mes notes » pour compléter cette fiche.</p>')}</div></article>`;
  const html=await revisionSourceHtml(course);const dest=$('#revisionExtract');if(!dest)return;
- const formatted=extractRevisionHtml(html);dest.innerHTML=formatted.trim()?formatted:'<p class="muted">Aucun passage bleu pour le moment. Ouvre le cours, colore une phrase en bleu et enregistre.</p>';
+ const formatted=course.revisionHtml||extractRevisionHtml(html);dest.innerHTML=formatted.trim()?DOMPurify.sanitize(formatted):'<p class="muted">Fiche de révision à compléter lors de l’import du cours.</p>';
 }
 function editRevisionNotes(id){
  const course=revisionCourses().find(x=>x.id===id),old=revisionNotes(id);if(!course)return;
@@ -299,7 +299,33 @@ function header(t,desc,act=''){return `<div class="heading"><div><div class="eye
 let commandSelectedId=null;
 function editPersonalNote(id){const m=management();m.notes=m.notes||[];const old=m.notes.find(n=>String(n.id)===String(id));modal(old?'Modifier ma note':'Ajouter une note',`<div class="commandform"><label>Commande ou astuce<input id="v54Cmd" class="formfield" value="${esc(old?.cmd||'')}" placeholder="Get-Command | Select *"></label><label>Explication courte<textarea id="v54Desc" class="formfield" rows="3">${esc(old?.desc||'')}</textarea></label><div class="actions"><button class="btn primary" id="v54SaveNote">☁ Enregistrer sur GitHub</button><button class="btn" id="v54CancelNote">Annuler</button></div></div>`);$('#v54CancelNote').onclick=()=>$('#modal').close();$('#v54SaveNote').onclick=async()=>{const cmd=$('#v54Cmd').value.trim(),desc=$('#v54Desc').value.trim();if(!cmd){toast('Indique une commande ou une astuce');return}if(old){old.cmd=cmd;old.desc=desc}else m.notes.unshift({id:'note-'+Date.now(),cmd,desc});$('#modal').close();await publishManagement()}}
 function deletePersonalNote(id){if(!confirm('Supprimer cette note personnelle ?'))return;const m=management();m.notes=(m.notes||[]).filter(n=>String(n.id)!==String(id));publishManagement()}
-function render(){document.body.classList.remove('tssr-current-module-gold');if(current){try{const last=all().find(x=>x.id===current&&x.kind==='cours');if(last)localStorage.setItem('tssr-last-course-id',last.id)}catch(e){}}document.body.classList.toggle('home-network',section==='accueil'&&!current);nav();let v=$('#view'),a=all(),q=$('#search').value.toLowerCase().trim();if(current?.startsWith('revision:')){showRevision(sourceId(current));return}if(current){let p=a.find(x=>x.id===current);if(!p){current=null;return render()}v.innerHTML=header(p.title,p.category||'Mon espace TSSR',`<div class="actions"><button class="btn primary" data-edit="${esc(p.id)}">✎ ${p.readonly?'Rédiger mon cours':'Modifier'}</button><button class="btn" data-manage-course="${esc(p.id)}">⚙ Titre · Dossier · Image</button><button class="btn warn" data-hide-course="${esc(p.id)}">Retirer</button></div>`)+`<nav class="tssr-course-tabs" aria-label="Sections du chapitre"><button class="active" data-course-tab="cours" data-course-id="${esc(p.id)}">📘 Cours complet</button><button data-course-tab="fiche" data-course-id="${esc(p.id)}">▤ Fiche de révision</button><button data-course-tab="qcm" data-course-id="${esc(p.id)}">☑ QCM</button></nav>`+`<article class="article"><div class="articlebar"><span class="pill">${esc(labels[p.kind]?.[1]||'Cours')}</span><span class="muted">${p.readonly?'Chapitre à personnaliser':'Mon cours'}</span></div><div class="content" id="articleContent">Chargement…</div></article>`;if(p.readonly&&p.file){fetch(p.file).then(r=>{if(!r.ok)throw Error('Cours introuvable');return r.text()}).then(t=>{$('#articleContent').innerHTML=DOMPurify.sanitize(marked.parse(stripFrontmatter(t)))}).catch(()=>{$('#articleContent').textContent='Impossible de charger le cours.'})}else{$('#articleContent').innerHTML=DOMPurify.sanitize(p.html||'<p>Chapitre prêt à compléter. Clique sur « Rédiger mon cours » pour rédiger ton cours.</p>')}return}
+const tssrStaticCourseText=new Map();
+function tssrSearchNormalize(s){return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('fr');}
+function tssrSearchText(html){const d=document.createElement('div');d.innerHTML=String(html||'');return (d.textContent||'').replace(/\s+/g,' ').trim();}
+function tssrGlobalResults(term){
+ const query=tssrSearchNormalize(term).trim();if(!query)return [];
+ const words=query.split(/\s+/).filter(Boolean),found=[];
+ function add(type,title,body,id,extra=''){
+  const hay=tssrSearchNormalize(title+' '+body+' '+extra);if(!words.every(w=>hay.includes(w)))return;
+  const score=(tssrSearchNormalize(title)===query?100:0)+(tssrSearchNormalize(title).includes(query)?40:0)+(tssrSearchNormalize(extra).includes(query)?12:0);
+  const pos=hay.indexOf(query),plain=String(body||'');let excerpt=plain.slice(0,190);
+  const idx=tssrSearchNormalize(plain).indexOf(query);if(idx>=0)excerpt=plain.slice(Math.max(0,idx-65),idx+150);
+  found.push({type,title,id,excerpt,score});
+ }
+ for(const p of all().filter(x=>x.kind==='cours')){
+  const body=tssrSearchText(p.html||tssrStaticCourseText.get(p.file)||'');add('Cours',p.title,body,p.id,p.category);
+  const fiche=tssrSearchText(p.revisionHtml||'');if(fiche)add('Fiche',p.title,fiche,p.id,p.category);
+ }
+ for(const c of allCommands()){add('Commande',c.name||c.title||'',[(c.description||''),(c.syntax||''),(c.example||''),JSON.stringify(c.examples||[]),(c.tags||[]).join(' ')].join(' '),c.id,[c.category,c.environment,c.theme].join(' '));}
+ for(const q of custom.quizzes||[]){if(!q.questions?.length)continue;add('QCM',q.title,(q.questions||[]).map(x=>x.question+' '+x.answers.join(' ')).join(' '),q.id,q.category);}
+ return found.sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title,'fr')).slice(0,100);
+}
+function tssrRenderGlobalSearch(term){
+ const results=tssrGlobalResults(term),types=['Cours','Fiche','Commande','QCM'];
+ const grouped=types.map(type=>({type,items:results.filter(r=>r.type===type)})).filter(x=>x.items.length);
+ $('#view').innerHTML=header('Recherche globale',`Résultats pour « ${esc(term)} » · ${results.length} résultat(s)`)+`<section class="tssr-global-results"><div class="tssr-global-summary">${types.map(t=>`<span>${esc(t)} : <b>${results.filter(r=>r.type===t).length}</b></span>`).join('')}</div>${grouped.map(group=>`<div class="tssr-search-group"><h2>${esc(group.type)} <small>${group.items.length}</small></h2><div class="tssr-search-grid">${group.items.map(r=>`<button type="button" class="tssr-search-result" data-global-type="${esc(r.type)}" data-global-id="${esc(r.id)}"><strong>${esc(r.title)}</strong><small>${esc(r.excerpt||'Ouvrir le résultat')}</small><span>Ouvrir →</span></button>`).join('')}</div></div>`).join('')||'<p class="tssr-search-empty">Aucun résultat. Essaie un autre terme ou une commande.</p>'}</section>`;
+}
+function render(){document.body.classList.remove('tssr-current-module-gold');if(current){try{const last=all().find(x=>x.id===current&&x.kind==='cours');if(last)localStorage.setItem('tssr-last-course-id',last.id)}catch(e){}}document.body.classList.toggle('home-network',section==='accueil'&&!current);nav();let v=$('#view'),a=all(),q=$('#search').value.toLowerCase().trim();if(q){current=null;tssrRenderGlobalSearch($('#search').value.trim());return;}if(current?.startsWith('revision:')){showRevision(sourceId(current));return}if(current){let p=a.find(x=>x.id===current);if(!p){current=null;return render()}v.innerHTML=header(p.title,p.category||'Mon espace TSSR',`<div class="actions"><button class="btn primary" data-edit="${esc(p.id)}">✎ ${p.readonly?'Rédiger mon cours':'Modifier'}</button><button class="btn" data-manage-course="${esc(p.id)}">⚙ Titre · Dossier · Image</button><button class="btn warn" data-hide-course="${esc(p.id)}">Retirer</button></div>`)+`<nav class="tssr-course-tabs" aria-label="Sections du chapitre"><button class="active" data-course-tab="cours" data-course-id="${esc(p.id)}">📘 Cours complet</button><button data-course-tab="fiche" data-course-id="${esc(p.id)}">▤ Fiche de révision</button><button data-course-tab="qcm" data-course-id="${esc(p.id)}">☑ QCM</button></nav>`+`<article class="article"><div class="articlebar"><span class="pill">${esc(labels[p.kind]?.[1]||'Cours')}</span><span class="muted">${p.readonly?'Chapitre à personnaliser':'Mon cours'}</span></div><div class="content" id="articleContent">Chargement…</div></article>`;if(p.readonly&&p.file){fetch(p.file).then(r=>{if(!r.ok)throw Error('Cours introuvable');return r.text()}).then(t=>{$('#articleContent').innerHTML=DOMPurify.sanitize(marked.parse(stripFrontmatter(t)))}).catch(()=>{$('#articleContent').textContent='Impossible de charger le cours.'})}else{$('#articleContent').innerHTML=DOMPurify.sanitize(p.html||'<p>Chapitre prêt à compléter. Clique sur « Rédiger mon cours » pour rédiger ton cours.</p>')}return}
 if(section==='homelab'){v.innerHTML=header('Homelab','Ton laboratoire informatique personnel')+`<section class="homelab-coming"><div class="homelab-visual"><img src="assets/cours-c-servers.png" alt="Serveurs du laboratoire"></div><div><span class="homelab-tag">PROCHAINEMENT</span><h2>Ton Homelab prend forme.</h2><p>Un espace dédié à tes machines virtuelles, serveurs, réseaux et expérimentations TSSR.</p><div class="homelab-status"><span></span> En préparation</div></div></section>`;return}
 if(section==='accueil'){
  const notes=management().notes||[];
@@ -339,7 +365,7 @@ if(section==='cours'&&!activeFolder&&!q){const roots=[...new Set([...a.filter(x=
 if(section==='cours'&&activeFolder&&!q){
  const chapters=a.filter(x=>x.kind==='cours'&&x.chapter&&rootCategory(x.category)===activeFolder).sort(compareChapters);
  v.innerHTML=header(activeFolder,'Choisis un chapitre pour consulter son cours, sa fiche ou son QCM.',`<div class="actions"><button class="btn primary" id="addChapter">＋ Ajouter un chapitre</button><button class="btn" data-sec="cours">← Modules</button></div>`)+
- `<section class="tssr-chapter-panel"><div class="tssr-chapter-heading"><span class="tssr-chapter-heading-icon">${moduleSymbol(activeFolder)}</span><div><h2>${esc(activeFolder.replace(/^\d{1,2}\s*[—–-]\s*/,''))}</h2><p>${chapters.length} chapitres · Cours complet · Fiche de révision · QCM</p></div></div><div class="tssr-chapter-search"><span>⌕</span><input type="search" id="tssrChapterSearch" placeholder="Rechercher un chapitre dans ce module…" aria-label="Rechercher un chapitre"></div><div id="tssrChapterList" class="tssr-chapter-list">${chapters.map((x,i)=>`<div class="tssr-chapter-row" data-chapter-search="${esc(x.title.toLowerCase())}"><button class="tssr-chapter-open" data-id="${esc(x.id)}"><span class="tssr-chapter-index">${String(i+1).padStart(2,'0')}</span><span class="tssr-chapter-details"><strong>${esc(x.title)}</strong><small>Cours complet · Fiche de révision · QCM</small></span><span class="tssr-chapter-status">${isChapterWritten(x)?'Rédigé':'À compléter'}</span><span class="tssr-chapter-arrow">›</span></button><div class="tssr-chapter-actions"><button data-manage-course="${esc(x.id)}" title="Modifier le chapitre">✎</button><button data-hide-course="${esc(x.id)}" title="Retirer le chapitre">×</button></div></div>`).join('')}</div></section>`;
+ `<section class="tssr-chapter-panel tssr-chapter-panel-v65"><div class="tssr-chapter-intro"><strong>${chapters.length} chapitres</strong><span>Choisis un chapitre pour accéder au cours, à sa fiche et au QCM.</span></div><div class="tssr-chapter-search"><span>⌕</span><input type="search" id="tssrChapterSearch" placeholder="Rechercher un chapitre dans ce module…" aria-label="Rechercher un chapitre"></div><div id="tssrChapterList" class="tssr-chapter-list tssr-chapter-grid">${chapters.map((x,i)=>`<div class="tssr-chapter-row" data-chapter-search="${esc(x.title.toLowerCase())}"><button class="tssr-chapter-open" data-id="${esc(x.id)}"><span class="tssr-chapter-index">${String(i+1).padStart(2,'0')}</span><span class="tssr-chapter-details"><strong>${esc(x.title)}</strong><small>Cours complet · Fiche de révision · QCM</small></span><span class="tssr-chapter-status">${isChapterWritten(x)?'Rédigé':'À compléter'}</span><span class="tssr-chapter-arrow">›</span></button><div class="tssr-chapter-actions"><button data-manage-course="${esc(x.id)}" title="Modifier le chapitre">✎</button><button data-hide-course="${esc(x.id)}" title="Retirer le chapitre">×</button></div></div>`).join('')}</div></section>`;
  const search=$('#tssrChapterSearch');if(search)search.oninput=()=>{const q=search.value.toLocaleLowerCase('fr').trim();document.querySelectorAll('.tssr-chapter-row').forEach(el=>el.hidden=!el.dataset.chapterSearch.includes(q))};
  $('#addChapter').onclick=()=>{editor(null);$('#docKind').value='cours';$('#docCat').value=activeFolder+' / Cours'};return;
 }
@@ -504,22 +530,39 @@ if(selectedCourseImage)selectedCourseImage.classList.remove('course-image-select
 let importedRevisionHtml=p?.revisionHtml||'';
 if(kind==='cours'){
  const temp=document.createElement('div');temp.innerHTML=html;
- const raw=(temp.innerText||temp.textContent||'').replace(/\r/g,'');
- const mark=/===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===/gi;
- const markers=[...raw.matchAll(mark)];
- const sections={};
- for(let i=0;i<markers.length;i++){
-  const key=markers[i][1].normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
-  sections[key]=raw.slice(markers[i].index+markers[i][0].length,i+1<markers.length?markers[i+1].index:raw.length).trim();
+ // Séparer les sections à partir des éléments HTML : innerText ne préserve pas
+ // toujours les sauts de ligne d'un collage Word/Markdown dans un éditeur riche.
+ const sectionNames={'COURS COMPLET':'COURS COMPLET','FICHE DE REVISION':'FICHE DE REVISION','BANQUE DE COMMANDES':'BANQUE DE COMMANDES','QCM':'QCM'};
+ const normalizeSection=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().trim();
+ const markerPattern=/^===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===$/i;
+ const blocks=[...temp.childNodes];
+ const sections={};const sectionHtml={};let currentSection=null;let hasStructuredSections=false;
+ // Les marqueurs sont des paragraphes indépendants lors d'un collage riche.
+ for(const node of blocks){
+  const content=(node.textContent||'').trim();
+  const found=content.match(markerPattern);
+  if(found){currentSection=normalizeSection(found[1]);hasStructuredSections=true;sections[currentSection]='';sectionHtml[currentSection]='';continue;}
+  if(currentSection){
+   const blockText=node.nodeType===3?node.textContent:(node.innerText||node.textContent||'');
+   sections[currentSection]+=(sections[currentSection]?'\n':'')+blockText;
+   sectionHtml[currentSection]+=node.nodeType===3?esc(node.textContent):node.outerHTML;
+  }
  }
- if(sections['FICHE DE REVISION']){
-  const fiche=sections['FICHE DE REVISION'];
-  importedRevisionHtml=fiche.split(/\n\s*\n/).map(block=>{
-   const lines=block.split('\n').map(x=>x.trim()).filter(Boolean);
-   if(!lines.length)return '';
-   if(/^#{1,4}\s/.test(lines[0]))return '<h3>'+esc(lines[0].replace(/^#+\s*/,''))+'</h3>'+lines.slice(1).map(x=>'<p>'+esc(x)+'</p>').join('');
-   return '<p>'+lines.map(x=>esc(x)).join('<br>')+'</p>';
-  }).join('');
+ // Secours : texte brut collé dans un seul élément.
+ if(!hasStructuredSections){
+  const raw=(temp.innerText||temp.textContent||'').replace(/\r/g,'');
+  const mark=/===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===/gi;
+  const markers=[...raw.matchAll(mark)];
+  for(let i=0;i<markers.length;i++){
+   const key=normalizeSection(markers[i][1]);
+   sections[key]=raw.slice(markers[i].index+markers[i][0].length,i+1<markers.length?markers[i+1].index:raw.length).trim();
+  }
+  hasStructuredSections=markers.length>0;
+ }
+ if(sections['FICHE DE REVISION']||sectionHtml['FICHE DE REVISION']){
+  const ficheHtml=sectionHtml['FICHE DE REVISION'];
+  importedRevisionHtml=ficheHtml?.trim()?DOMPurify.sanitize(ficheHtml,{ADD_ATTR:['style']}):
+   DOMPurify.sanitize(marked.parse(sections['FICHE DE REVISION']||''));
  }
  if(sections.QCM){
   const questions=parseQuizBulk(sections.QCM);
@@ -531,19 +574,14 @@ if(kind==='cours'){
   saveLocal('quiz:'+quizId);
   toast(questions.length+' questions reconnues : QCM interactif créé.');
  }
- if(markers.length){
-  // Conserver seulement le cours dans l'onglet cours, sans les autres sections.
-  const first=markers.find(m=>m[1].normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase()==='COURS COMPLET');
-  const courseText=sections['COURS COMPLET']||raw.slice(0,markers[0].index).trim();
-  const nodes=[...temp.querySelectorAll('p,div,h1,h2,h3,h4,h5,h6,li')];
-  const boundary=nodes.filter(el=>/^===\s*(FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===$/i.test((el.textContent||'').trim())).sort((x,y)=>nodes.indexOf(x)-nodes.indexOf(y))[0];
-  const firstCourse=nodes.find(el=>/^===\s*COURS COMPLET\s*===$/i.test((el.textContent||'').trim()));
-  if(boundary){const range=document.createRange();range.setStartBefore(boundary);range.setEnd(temp,temp.childNodes.length);range.deleteContents()}
-  if(firstCourse)firstCourse.remove();
-  html=DOMPurify.sanitize(temp.innerHTML,{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
-  // Secours pour les collages dans un seul bloc de texte.
-  if(/===\s*(FICHE DE R[ÉE]VISION|QCM)\s*===/i.test(temp.textContent||''))html='<div>'+esc(courseText).replace(/\n/g,'<br>')+'</div>';
+ if(hasStructuredSections){
+  if(sectionHtml['COURS COMPLET']){
+   html=DOMPurify.sanitize(sectionHtml['COURS COMPLET'],{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
+  }else if(sections['COURS COMPLET']){
+   html=DOMPurify.sanitize(marked.parse(sections['COURS COMPLET']));
+  }
  }
+
 }
 let obj={id:stableId,title:t,kind,category,...(p?.chapter?{chapter:true}:{}),html,revisionHtml:kind==='cours'?importedRevisionHtml:(p?.revisionHtml||''),revisionExtracts:kind==='cours'?extractBlue(html):[],updatedAt:new Date().toISOString()};
 let idx=custom.pages.findIndex(x=>x.id===stableId);if(idx>=0)custom.pages[idx]=obj;else custom.pages.push(obj);
@@ -551,27 +589,25 @@ lastSavedCourseId=stableId;saveLocal(stableId);if(closeEditor){$('#modal').close
 $('#cancelDoc').onclick=closeEditorSafely;$('#savePublish').onclick=async()=>{if(!persist(false))return;const kindSaved=$('#docKind').value,idSaved=lastSavedCourseId;const btn=$('#savePublish');btn.disabled=true;btn.textContent='⏳ Publication en cours…';const ok=await publish();btn.disabled=false;btn.textContent='☁ Enregistrer et publier sur GitHub';if(ok){$('#modal').close();goto(kindSaved,idSaved)}else{toast('Cours sauvegardé localement. Publication non confirmée : réessaie après connexion GitHub.')}}}
 async function insertImageFile(file){if(!file)return;if(file.size>5*1024*1024){toast('Image trop lourde : maximum 5 Mo par image.');return}let data=await new Promise((resolve,reject)=>{let r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});$('#docEditor').focus();document.execCommand('insertHTML',false,`<img src="${data}" alt="Capture de cours">`)}
 function parseQuizBulk(text){
- const raw=String(text||'').replace(/\r/g,'').replace(/^#{1,5}\s*QCM[^\n]*\n/gim,'');
- const chunks=raw.split(/(?=^\s*(?:#{1,5}\s*)?(?:Question\s*)?\d+\s*[.)\-:]?\s*(?:\n|\S))/gim).filter(x=>/\b(?:Réponse|Bonne réponse|Correct)\s*:/i.test(x));
- const questions=[];
- for(const chunk of chunks){
-  const lines=chunk.split('\n').map(x=>x.trim()).filter(Boolean);
-  let question='',answers=[],correct=-1,explanation='';
-  for(const line of lines){
-   if(/^#{1,5}\s*QCM\b/i.test(line))continue;
-   const a=line.match(/^(?:\*\*)?([A-D])\s*[).]\s*(.*?)(?:\*\*)?$/i);
-   if(a){answers.push(a[2].replace(/\*\*$/,'').trim());continue}
-   const r=line.match(/^(?:\*\*)?(?:Réponse|Bonne réponse|Correct)\s*:\s*([A-D]|[1-4])/i);
-   if(r){correct=/^[A-D]$/i.test(r[1])?r[1].toUpperCase().charCodeAt(0)-65:Number(r[1])-1;continue}
-   const e=line.match(/^(?:\*\*)?Explication\s*:\s*(.*)/i);
-   if(e){explanation=e[1].replace(/\*\*$/,'');continue}
-   if(/^---+$/.test(line))continue;
-   if(!question)question=line.replace(/^#{1,5}\s*/,'').replace(/^(?:Question\s*)?\d+\s*[.)\-:]?\s*/i,'').replace(/\*\*/g,'').trim();
-   else if(!answers.length && /^Question\s*\d+$/i.test(question))question=line.replace(/\*\*/g,'').trim();
-  }
-  if(question&&answers.length>=2&&correct>=0&&correct<answers.length)questions.push({question,answers,correct,explanation});
+ const raw=String(text||'').replace(/\r/g,'').replace(/\*\*/g,'').replace(/^#{1,5}\s*QCM[^\n]*$/gim,'');
+ const lines=raw.split('\n').map(x=>x.trim()).filter(Boolean);
+ const result=[];let item=null,mode='';
+ function finish(){if(item&&item.question&&item.answers.length>=2&&item.correct>=0&&item.correct<item.answers.length)result.push(item);item=null;}
+ for(const line of lines){
+  if(/^---+$/.test(line)||/^FIN DU CHAPITRE/i.test(line))continue;
+  const q=line.match(/^(?:#{1,6}\s*)?(?:Question\s*(\d+)\s*[:.)-]?|(?:\d+)\s*[.)-])\s*(.*)$/i);
+  if(q){finish();item={question:(q[2]||'').trim(),answers:[],correct:-1,explanation:''};mode='question';continue;}
+  if(!item)continue;
+  const answer=line.match(/^([A-D])\s*[).:-]\s*(.*)$/i);
+  if(answer){item.answers.push(answer[2].trim());mode='answers';continue;}
+  const correct=line.match(/^(?:Réponse|Bonne réponse|Correct)\s*:\s*([A-D]|[1-4])\b/i);
+  if(correct){item.correct=/^[A-D]$/i.test(correct[1])?correct[1].toUpperCase().charCodeAt(0)-65:Number(correct[1])-1;mode='correct';continue;}
+  const explanation=line.match(/^Explication\s*:\s*(.*)$/i);
+  if(explanation){item.explanation=explanation[1].trim();mode='explanation';continue;}
+  if(mode==='question')item.question+=(item.question?' ':'')+line.replace(/^#+\s*/,'');
+  else if(mode==='explanation')item.explanation+=' '+line;
  }
- return questions;
+ finish();return result;
 }
 function newQuiz(id){const old=custom.quizzes.find(x=>x.id===id);const roots=[...new Set(catalog.filter(x=>x.kind==='cours').map(x=>rootCategory(x.category)))].sort((a,b)=>moduleNumber(a)-moduleNumber(b));const allCourses=all().filter(x=>x.kind==='cours');modal(old?'Modifier le QCM':'Créer un QCM',`<label>Nom du QCM<input class="formfield" id="qTitle" value="${esc(old?.title||'')}" placeholder="QCM Modèle OSI"></label><label>Module TSSR<select class="formfield" id="qCat">${roots.map(x=>`<option ${x===(old?.category||activeFolder)?'selected':''} value="${esc(x)}">${esc(x)}</option>`).join('')}</select></label><label>Chapitre associé (facultatif)<select class="formfield" id="qChapter"><option value="">QCM général du module</option>${allCourses.filter(x=>x.chapter).map(x=>`<option value="${esc(x.id)}" ${x.id===old?.chapterId?'selected':''}>${esc(x.category.split('/')[0])} · ${esc(x.title)}</option>`).join('')}</select></label><p class="editorhelp">Colle directement le QCM préparé avec ChatGPT : question numérotée, réponses A) à D), « Réponse : B » et « Explication : ... ». L'ancien format avec | est aussi accepté.</p><textarea class="formfield" id="qLines" rows="12" placeholder="1. Quel protocole attribue une adresse IP ?&#10;A) DNS&#10;B) DHCP&#10;C) HTTP&#10;D) FTP&#10;Réponse : B&#10;Explication : DHCP attribue les paramètres réseau.">${esc(old?.questions?.map((z,i)=>`${i+1}. ${z.question}\n${z.answers.map((a,j)=>String.fromCharCode(65+j)+') '+a).join('\n')}\nRéponse : ${String.fromCharCode(65+z.correct)}\nExplication : ${z.explanation||''}`).join('\n\n')||'')}</textarea><p id="qPreview" class="editorhelp">Questions reconnues : 0</p><div class="actions"><button type="button" class="btn" id="cancelQ">Annuler</button><button type="button" class="btn primary" id="saveQ">☁ Enregistrer et publier sur GitHub</button></div>`);const parse=()=>{const text=$('#qLines').value;let parsed=parseQuizBulk(text);if(!parsed.length){parsed=text.split('\n').map(x=>x.split('|').map(y=>y.trim())).filter(x=>x.length===5&&[1,2,3].includes(+x[4])).map(x=>({question:x[0],answers:x.slice(1,4),correct:+x[4]-1,explanation:''}))}return parsed};$('#qLines').oninput=()=>{$('#qPreview').textContent='Questions reconnues : '+parse().length};$('#qLines').dispatchEvent(new Event('input'));$('#cancelQ').onclick=()=>$('#modal').close();$('#qChapter').onchange=()=>{const ch=allCourses.find(x=>x.id===$('#qChapter').value);if(ch)$('#qCat').value=rootCategory(ch.category)};$('#saveQ').onclick=async()=>{let title=$('#qTitle').value.trim(),questions=parse();if(!title||!questions.length){toast('Ajoute un titre et au moins une question valide.');return}let obj={id:old?.id||'quiz-'+Date.now(),title,category:$('#qCat').value,chapterId:$('#qChapter').value,questions};custom.quizzes=custom.quizzes.filter(x=>x.id!==obj.id);custom.quizzes.push(obj);saveLocal('quiz:'+obj.id);const btn=$('#saveQ');btn.disabled=true;const ok=await publish();btn.disabled=false;if(ok){$('#modal').close();goto('quiz')}else toast('QCM gardé localement : publication non confirmée.')}}
 function newCheat(id){const old=(custom.cheats||[]).find(x=>x.id===id);modal(old?'Modifier la cheatsheet':'Ajouter une cheatsheet',`<label>Nom affiché sous la miniature<input class="formfield" id="cheatTitle" value="${esc(old?.title||'')}" placeholder="Commandes Linux"></label><label>Catégorie<input class="formfield" id="cheatCat" value="${esc(old?.category||'Linux / Bash')}" placeholder="Linux / Bash"></label><label>Image, PDF ou document (maximum 4 Mo)<input class="formfield" type="file" id="cheatFile" accept="image/*,.pdf,.doc,.docx,.txt"></label><div id="cheatPaste" class="cheatpaste" tabindex="0">📋 Clique ici puis Ctrl + V pour coller une capture d'écran</div><div class="actions"><button type="button" class="btn primary" id="saveCheat">☁ Enregistrer et publier sur GitHub</button><button type="button" class="btn" id="cancelCheat">Annuler</button></div>`);let fileData=old?.data||'',mime=old?.mime||'',fileName=old?.fileName||'';const load=async file=>{if(!file)return;if(file.size>4*1024*1024){toast('Fichier trop volumineux (maximum 4 Mo).');return}mime=file.type||'application/octet-stream';fileName=file.name;fileData=await new Promise(resolve=>{let r=new FileReader();r.onload=()=>resolve(r.result);r.readAsDataURL(file)});$('#cheatPaste').textContent='✓ '+fileName};$('#cheatFile').onchange=e=>load(e.target.files[0]);$('#cheatPaste').onpaste=e=>{let f=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'))?.getAsFile();if(f){e.preventDefault();load(f)}};$('#cancelCheat').onclick=()=>$('#modal').close();$('#saveCheat').onclick=async()=>{let title=$('#cheatTitle').value.trim();if(!title||!fileData){toast('Ajoute un titre et un fichier.');return}let obj={id:old?.id||'cheat-'+Date.now(),title,category:$('#cheatCat').value.trim()||'Divers',data:fileData,mime,fileName};custom.cheats=custom.cheats||[];custom.cheats=custom.cheats.filter(x=>x.id!==obj.id);custom.cheats.push(obj);saveLocal('cheat:'+obj.id);const ok=await publish();if(ok){$('#modal').close();goto('cheats')}else toast('Cheatsheet conservée localement : publication non confirmée.')}}
@@ -641,7 +677,10 @@ async function restoreGithubSession(){
   if(dirtyIds.size)scheduleTssrAutosave();
  }catch(e){sessionStorage.removeItem('tssr-github-session-v636');token='';}
 }
-async function init(){if(!builtInCommands.length){try{let r0=await fetch('data/commandes-reseau.json?v=25.8',{cache:'no-store'});if(r0.ok){let data=await r0.json();if(Array.isArray(data))builtInCommands=data;} }catch(e){console.warn('Commandes intégrées indisponibles',e)}}try{let r=await fetch('data/catalog.json');if(r.ok)catalog=await r.json();r=await fetch(DATA+'?v='+Date.now(),{cache:'no-store'});if(r.ok)custom=await r.json()}catch(e){console.warn(e)}if(!Array.isArray(custom.pages))custom.pages=[];if(!Array.isArray(custom.quizzes))custom.quizzes=[];if(!Array.isArray(custom.cheats))custom.cheats=[];if(!Array.isArray(custom.commands))custom.commands=[];if(!Array.isArray(custom.library))custom.library=defaultLibrary.map(x=>({...x}));remoteSnapshot=new Map(custom.pages.map(p=>[p.id,JSON.stringify(p)]));try{const d=JSON.parse(localStorage.getItem(storageKey)||'null');if(d?.data&&Array.isArray(d.dirtyIds)&&d.dirtyIds.length){for(const id of d.dirtyIds){let p=d.data.pages?.find(x=>x.id===id);if(id.startsWith('management:')){custom.management=d.data.management||custom.management;dirtyIds.add(id);continue}if(id.startsWith('library:')){custom.library=Array.isArray(d.data.library)?d.data.library:custom.library;dirtyIds.add(id);continue}if(id.startsWith('quiz:')){let x=d.data.quizzes?.find(q=>q.id===id.slice(5));custom.quizzes=custom.quizzes.filter(q=>q.id!==id.slice(5));if(x)custom.quizzes.push(x);dirtyIds.add(id);continue}if(id.startsWith('cmd:')){let x=d.data.commands?.find(q=>q.id===id.slice(4));custom.commands=custom.commands.filter(q=>q.id!==id.slice(4));if(x)custom.commands.push(x);dirtyIds.add(id);continue}if(id.startsWith('cheat:')){let x=d.data.cheats?.find(q=>q.id===id.slice(6));custom.cheats=custom.cheats.filter(q=>q.id!==id.slice(6));if(x)custom.cheats.push(x);dirtyIds.add(id);continue}if(p){custom.pages=custom.pages.filter(x=>x.id!==id);custom.pages.push(p);dirtyIds.add(id)}else{custom.pages=custom.pages.filter(x=>x.id!==id);dirtyIds.add(id)}}dirty=true;toast('Modifications locales non publiées récupérées.')}}catch(e){console.warn('Brouillon ignoré',e)}reconcileHidden();restoreRouteFromHash();await restoreGithubSession()}
+async function init(){if(!builtInCommands.length){try{let r0=await fetch('data/commandes-reseau.json?v=25.8',{cache:'no-store'});if(r0.ok){let data=await r0.json();if(Array.isArray(data))builtInCommands=data;} }catch(e){console.warn('Commandes intégrées indisponibles',e)}}try{let r=await fetch('data/catalog.json');if(r.ok)catalog=await r.json();r=await fetch(DATA+'?v='+Date.now(),{cache:'no-store'});if(r.ok)custom=await r.json()}catch(e){console.warn(e)}if(!Array.isArray(custom.pages))custom.pages=[];if(!Array.isArray(custom.quizzes))custom.quizzes=[];if(!Array.isArray(custom.cheats))custom.cheats=[];if(!Array.isArray(custom.commands))custom.commands=[];if(!Array.isArray(custom.library))custom.library=defaultLibrary.map(x=>({...x}));remoteSnapshot=new Map(custom.pages.map(p=>[p.id,JSON.stringify(p)]));try{const d=JSON.parse(localStorage.getItem(storageKey)||'null');if(d?.data&&Array.isArray(d.dirtyIds)&&d.dirtyIds.length){for(const id of d.dirtyIds){let p=d.data.pages?.find(x=>x.id===id);if(id.startsWith('management:')){custom.management=d.data.management||custom.management;dirtyIds.add(id);continue}if(id.startsWith('library:')){custom.library=Array.isArray(d.data.library)?d.data.library:custom.library;dirtyIds.add(id);continue}if(id.startsWith('quiz:')){let x=d.data.quizzes?.find(q=>q.id===id.slice(5));custom.quizzes=custom.quizzes.filter(q=>q.id!==id.slice(5));if(x)custom.quizzes.push(x);dirtyIds.add(id);continue}if(id.startsWith('cmd:')){let x=d.data.commands?.find(q=>q.id===id.slice(4));custom.commands=custom.commands.filter(q=>q.id!==id.slice(4));if(x)custom.commands.push(x);dirtyIds.add(id);continue}if(id.startsWith('cheat:')){let x=d.data.cheats?.find(q=>q.id===id.slice(6));custom.cheats=custom.cheats.filter(q=>q.id!==id.slice(6));if(x)custom.cheats.push(x);dirtyIds.add(id);continue}if(p){custom.pages=custom.pages.filter(x=>x.id!==id);custom.pages.push(p);dirtyIds.add(id)}else{custom.pages=custom.pages.filter(x=>x.id!==id);dirtyIds.add(id)}}dirty=true;toast('Modifications locales non publiées récupérées.')}}catch(e){console.warn('Brouillon ignoré',e)}reconcileHidden();restoreRouteFromHash();await restoreGithubSession();
+ // Indexation asynchrone des supports statiques, sans ralentir l'affichage initial.
+ const staticCourses=all().filter(p=>p.kind==='cours'&&p.file&&!p.html);
+ Promise.allSettled(staticCourses.map(async p=>{try{const r=await fetch(p.file);if(r.ok)tssrStaticCourseText.set(p.file,await r.text())}catch(e){}})).then(()=>{if($('#search')?.value.trim())tssrRenderGlobalSearch($('#search').value.trim())});}
 document.addEventListener('click',async e=>{
  const b=e.target.closest('[data-course-tab]');if(!b)return;
  e.preventDefault();e.stopImmediatePropagation();
@@ -657,4 +696,6 @@ document.addEventListener('click',async e=>{
  article.innerHTML=`<div class="articlebar"><span class="pill">QCM</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Tester mes connaissances</h2>${qs.length?qs.map(q=>`<button class="btn primary" data-quiz="${esc(q.id)}">Commencer : ${esc(q.title)} (${q.questions.length} questions)</button>`).join(' '):'<p class="muted">Aucun QCM associé pour le moment. Il sera ajouté lors de la reconstruction du chapitre.</p>'}</div>`;
 },true);
 document.addEventListener('click',e=>{const doneButton=e.target.closest('[data-complete-chapter]');if(doneButton){setChapterCompleted(doneButton.dataset.completeChapter,!chapterCompleted(doneButton.dataset.completeChapter));return}let b=e.target.closest('[data-sec],[data-id],[data-revision],[data-revision-edit],[data-folder],[data-edit],[data-delete],[data-quiz],[data-quiz-category],[data-rev-module],[data-q-filter],[data-cheat-category],[data-open-cheat],[data-edit-cheat],[data-delete-cheat],[data-edit-quiz],[data-delete-quiz],[data-cmd-letter],[data-view-command],[data-edit-command],[data-delete-command],[data-manage-course],[data-hide-course],[data-manage-module],[data-gold-module],[data-remove-module],[data-copy-note],[data-news-save],[data-edit-note],[data-remove-note],[data-news-open],#createModule,#restoreCourses,#newCommand,#importCommands,#exportCommands,#newCheat,#newPage,#newQuiz,#connectBtn,#newBtn,#themeBtn,#menuBtn');if(!b)return;if(b.dataset.copyNote){const u=v57Usage();u[b.dataset.copyNote]=(u[b.dataset.copyNote]||0)+1;v57Save('tssr-v57-note-usage',u);navigator.clipboard?.writeText(b.dataset.copyNote).then(()=>toast('Commande copiée'));return}else if(b.dataset.newsSave){const url=b.dataset.newsSave;const article=(window.TSSR_NEWS||[]).find(n=>n.url===url)||v57Bookmarks().find(n=>n.url===url);if(!article)return;const saved=v57Bookmarks();const exists=saved.some(n=>n.url===url);v57Save('tssr-v57-bookmarks',exists?saved.filter(n=>n.url!==url):[article,...saved]);toast(exists?'Article retiré des favoris':'Article sauvegardé sur cet appareil');render();return}else if(b.dataset.editNote){editPersonalNote(b.dataset.editNote);return}else if(b.dataset.removeNote){deletePersonalNote(b.dataset.removeNote);return}else if(b.dataset.newsOpen){return}if(b.dataset.manageCourse)editCourseInfo(b.dataset.manageCourse);else if(b.dataset.hideCourse)removeManagedCourse(b.dataset.hideCourse);else if(b.dataset.manageModule)manageModule(b.dataset.manageModule);else if(b.dataset.goldModule)toggleModuleGold(b.dataset.goldModule);else if(b.dataset.removeModule)removeTssrModule(b.dataset.removeModule);else if(b.id==='createModule')createModule();else if(b.id==='restoreCourses')restoreCourses();else if(b.hasAttribute('data-cmd-letter')){commandLetter=b.dataset.cmdLetter;render()}else if(b.dataset.revisionEdit)editRevisionNotes(b.dataset.revisionEdit);else if(b.dataset.revision)goto('fiches',revisionId(b.dataset.revision));else if(b.dataset.viewCommand)commandDetail(b.dataset.viewCommand);else if(b.dataset.editCommand)commandEditor(b.dataset.editCommand);else if(b.dataset.deleteCommand){if(confirm('Supprimer cette commande ?')){custom.commands=custom.commands.filter(x=>x.id!==b.dataset.deleteCommand);if(builtInCommands.some(x=>x.id===b.dataset.deleteCommand)){const m=management();m.hiddenCommands=m.hiddenCommands||[];if(!m.hiddenCommands.includes(b.dataset.deleteCommand))m.hiddenCommands.push(b.dataset.deleteCommand);saveManagement()}saveLocal('cmd:'+b.dataset.deleteCommand);render();publish()}}else if(b.id==='newCommand')commandEditor();else if(b.id==='importCommands')importCommands();else if(b.id==='exportCommands')exportCommands();else if(b.dataset.sec){goto(b.dataset.sec);$('#sidebar').classList.remove('show')}else if(b.hasAttribute('data-folder')){gotoFolder(b.dataset.folder);$('#sidebar').classList.remove('show')}else if(b.dataset.id){let p=all().find(x=>x.id===b.dataset.id);goto(p?.kind||'cours',b.dataset.id)}else if(b.dataset.edit)editor(b.dataset.edit);else if(b.dataset.delete&&all().find(x=>x.id===b.dataset.delete)?.readonly){removeManagedCourse(b.dataset.delete)}else if(b.dataset.delete){if(confirm('Supprimer ce document ?')){custom.pages=custom.pages.filter(x=>x.id!==b.dataset.delete);saveLocal(b.dataset.delete);goto(section)}}else if(b.hasAttribute('data-rev-module')){revisionModule=b.dataset.revModule;render()}else if(b.hasAttribute('data-q-filter')){quizFilter=b.dataset.qFilter;render()}else if(b.hasAttribute('data-quiz-category')){activeFolder=b.dataset.quizCategory;quizFilter='all';section='quiz';current=null;render()}else if(b.hasAttribute('data-cheat-category')){section='cheats';$('#search').value=b.dataset.cheatCategory;render()}else if(b.dataset.openCheat)openCheat(b.dataset.openCheat);else if(b.dataset.editCheat)newCheat(b.dataset.editCheat);else if(b.dataset.deleteCheat){if(confirm('Supprimer cette cheatsheet ?')){custom.cheats=custom.cheats.filter(x=>x.id!==b.dataset.deleteCheat);saveLocal('cheat:'+b.dataset.deleteCheat);render()}}else if(b.dataset.editQuiz)newQuiz(b.dataset.editQuiz);else if(b.dataset.deleteQuiz){if(confirm('Supprimer ce QCM ?')){custom.quizzes=custom.quizzes.filter(x=>x.id!==b.dataset.deleteQuiz);saveLocal('quiz:'+b.dataset.deleteQuiz);render();publish()}}else if(b.dataset.quiz)playQuiz(b.dataset.quiz);else if(b.id==='newCheat')newCheat();else if(b.id==='newQuiz')newQuiz();else if(['newPage','newBtn'].includes(b.id))editor(null);else if(b.id==='connectBtn')githubModal();else if(b.id==='themeBtn'){document.body.classList.toggle('dark');localStorage.setItem('tssr-theme',document.body.classList.contains('dark')?'dark':'light')}else if(b.id==='menuBtn')document.body.classList.toggle('sidebar-collapsed')});
-$('#search').addEventListener('input',()=>{current=null;render()});if((localStorage.getItem('tssr-theme')||localStorage.getItem('viking-theme'))==='dark')document.body.classList.add('dark');init();
+$('#search').addEventListener('input',()=>{const term=$('#search').value.trim();if(term){current=null;tssrRenderGlobalSearch(term)}else render()});if((localStorage.getItem('tssr-theme')||localStorage.getItem('viking-theme'))==='dark')document.body.classList.add('dark');init();
+
+document.addEventListener('click',e=>{const b=e.target.closest('[data-global-type]');if(!b)return;e.preventDefault();e.stopImmediatePropagation();const type=b.dataset.globalType,id=b.dataset.globalId;$('#search').value='';if(type==='Commande'){section='commandes';current=null;commandDetail(id)}else if(type==='QCM'){goto('quiz');playQuiz(id)}else{goto('cours',id);if(type==='Fiche')setTimeout(()=>document.querySelector('[data-course-tab="fiche"]')?.click(),0)}},true);

@@ -210,9 +210,9 @@ async function revisionSourceHtml(course){
 async function showRevision(id){
  const course=revisionCourses().find(x=>x.id===id),notes=revisionNotes(id),v=$('#view');
  if(!course){v.innerHTML=header('Fiche introuvable','Le cours associé n’existe plus.');return}
- v.innerHTML=header('Fiche de révision — '+course.title,course.category,`<div class="actions"><button class="btn" data-id="${esc(id)}">📘 Voir le cours</button><button class="btn primary" data-revision-edit="${esc(id)}">✎ Mes notes</button></div>`)+`<article class="article tssr-revision-detail"><h2>🔵 À retenir dans ce cours</h2><p class="muted">Les passages sélectionnés en bleu dans le cours sont repris ici en noir, avec leur mise en forme.</p><div id="revisionExtract" class="revision-extract">Chargement…</div><h2>📝 Mes notes personnelles</h2><div class="content">${DOMPurify.sanitize(notes?.html||'<p class="muted">Aucune note pour le moment. Clique sur « Mes notes » pour compléter cette fiche.</p>')}</div></article>`;
+ v.innerHTML=header('Fiche de révision — '+course.title,course.category,`<div class="actions"><button class="btn" data-id="${esc(id)}">📘 Voir le cours</button><button class="btn primary" data-revision-edit="${esc(id)}">✎ Mes notes</button></div>`)+`<article class="article tssr-revision-detail"><h2>🔵 À retenir dans ce cours</h2><p class="muted">Synthèse du chapitre importée automatiquement. Les passages marqués en bleu restent disponibles si aucune fiche n’est fournie.</p><div id="revisionExtract" class="revision-extract">Chargement…</div><h2>📝 Mes notes personnelles</h2><div class="content">${DOMPurify.sanitize(notes?.html||'<p class="muted">Aucune note pour le moment. Clique sur « Mes notes » pour compléter cette fiche.</p>')}</div></article>`;
  const html=await revisionSourceHtml(course);const dest=$('#revisionExtract');if(!dest)return;
- const formatted=extractRevisionHtml(html);dest.innerHTML=formatted.trim()?formatted:'<p class="muted">Aucun passage bleu pour le moment. Ouvre le cours, colore une phrase en bleu et enregistre.</p>';
+ const formatted=course.revisionHtml||extractRevisionHtml(html);dest.innerHTML=formatted.trim()?DOMPurify.sanitize(formatted):'<p class="muted">Fiche de révision à compléter lors de l’import du cours.</p>';
 }
 function editRevisionNotes(id){
  const course=revisionCourses().find(x=>x.id===id),old=revisionNotes(id);if(!course)return;
@@ -504,22 +504,39 @@ if(selectedCourseImage)selectedCourseImage.classList.remove('course-image-select
 let importedRevisionHtml=p?.revisionHtml||'';
 if(kind==='cours'){
  const temp=document.createElement('div');temp.innerHTML=html;
- const raw=(temp.innerText||temp.textContent||'').replace(/\r/g,'');
- const mark=/===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===/gi;
- const markers=[...raw.matchAll(mark)];
- const sections={};
- for(let i=0;i<markers.length;i++){
-  const key=markers[i][1].normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
-  sections[key]=raw.slice(markers[i].index+markers[i][0].length,i+1<markers.length?markers[i+1].index:raw.length).trim();
+ // Séparer les sections à partir des éléments HTML : innerText ne préserve pas
+ // toujours les sauts de ligne d'un collage Word/Markdown dans un éditeur riche.
+ const sectionNames={'COURS COMPLET':'COURS COMPLET','FICHE DE REVISION':'FICHE DE REVISION','BANQUE DE COMMANDES':'BANQUE DE COMMANDES','QCM':'QCM'};
+ const normalizeSection=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().trim();
+ const markerPattern=/^===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===$/i;
+ const blocks=[...temp.childNodes];
+ const sections={};const sectionHtml={};let currentSection=null;let hasStructuredSections=false;
+ // Les marqueurs sont des paragraphes indépendants lors d'un collage riche.
+ for(const node of blocks){
+  const content=(node.textContent||'').trim();
+  const found=content.match(markerPattern);
+  if(found){currentSection=normalizeSection(found[1]);hasStructuredSections=true;sections[currentSection]='';sectionHtml[currentSection]='';continue;}
+  if(currentSection){
+   const blockText=node.nodeType===3?node.textContent:(node.innerText||node.textContent||'');
+   sections[currentSection]+=(sections[currentSection]?'\n':'')+blockText;
+   sectionHtml[currentSection]+=node.nodeType===3?esc(node.textContent):node.outerHTML;
+  }
  }
- if(sections['FICHE DE REVISION']){
-  const fiche=sections['FICHE DE REVISION'];
-  importedRevisionHtml=fiche.split(/\n\s*\n/).map(block=>{
-   const lines=block.split('\n').map(x=>x.trim()).filter(Boolean);
-   if(!lines.length)return '';
-   if(/^#{1,4}\s/.test(lines[0]))return '<h3>'+esc(lines[0].replace(/^#+\s*/,''))+'</h3>'+lines.slice(1).map(x=>'<p>'+esc(x)+'</p>').join('');
-   return '<p>'+lines.map(x=>esc(x)).join('<br>')+'</p>';
-  }).join('');
+ // Secours : texte brut collé dans un seul élément.
+ if(!hasStructuredSections){
+  const raw=(temp.innerText||temp.textContent||'').replace(/\r/g,'');
+  const mark=/===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===/gi;
+  const markers=[...raw.matchAll(mark)];
+  for(let i=0;i<markers.length;i++){
+   const key=normalizeSection(markers[i][1]);
+   sections[key]=raw.slice(markers[i].index+markers[i][0].length,i+1<markers.length?markers[i+1].index:raw.length).trim();
+  }
+  hasStructuredSections=markers.length>0;
+ }
+ if(sections['FICHE DE REVISION']||sectionHtml['FICHE DE REVISION']){
+  const ficheHtml=sectionHtml['FICHE DE REVISION'];
+  importedRevisionHtml=ficheHtml?.trim()?DOMPurify.sanitize(ficheHtml,{ADD_ATTR:['style']}):
+   DOMPurify.sanitize(marked.parse(sections['FICHE DE REVISION']||''));
  }
  if(sections.QCM){
   const questions=parseQuizBulk(sections.QCM);
@@ -531,19 +548,14 @@ if(kind==='cours'){
   saveLocal('quiz:'+quizId);
   toast(questions.length+' questions reconnues : QCM interactif créé.');
  }
- if(markers.length){
-  // Conserver seulement le cours dans l'onglet cours, sans les autres sections.
-  const first=markers.find(m=>m[1].normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase()==='COURS COMPLET');
-  const courseText=sections['COURS COMPLET']||raw.slice(0,markers[0].index).trim();
-  const nodes=[...temp.querySelectorAll('p,div,h1,h2,h3,h4,h5,h6,li')];
-  const boundary=nodes.filter(el=>/^===\s*(FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===$/i.test((el.textContent||'').trim())).sort((x,y)=>nodes.indexOf(x)-nodes.indexOf(y))[0];
-  const firstCourse=nodes.find(el=>/^===\s*COURS COMPLET\s*===$/i.test((el.textContent||'').trim()));
-  if(boundary){const range=document.createRange();range.setStartBefore(boundary);range.setEnd(temp,temp.childNodes.length);range.deleteContents()}
-  if(firstCourse)firstCourse.remove();
-  html=DOMPurify.sanitize(temp.innerHTML,{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
-  // Secours pour les collages dans un seul bloc de texte.
-  if(/===\s*(FICHE DE R[ÉE]VISION|QCM)\s*===/i.test(temp.textContent||''))html='<div>'+esc(courseText).replace(/\n/g,'<br>')+'</div>';
+ if(hasStructuredSections){
+  if(sectionHtml['COURS COMPLET']){
+   html=DOMPurify.sanitize(sectionHtml['COURS COMPLET'],{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
+  }else if(sections['COURS COMPLET']){
+   html=DOMPurify.sanitize(marked.parse(sections['COURS COMPLET']));
+  }
  }
+
 }
 let obj={id:stableId,title:t,kind,category,...(p?.chapter?{chapter:true}:{}),html,revisionHtml:kind==='cours'?importedRevisionHtml:(p?.revisionHtml||''),revisionExtracts:kind==='cours'?extractBlue(html):[],updatedAt:new Date().toISOString()};
 let idx=custom.pages.findIndex(x=>x.id===stableId);if(idx>=0)custom.pages[idx]=obj;else custom.pages.push(obj);

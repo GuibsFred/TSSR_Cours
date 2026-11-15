@@ -1,0 +1,7 @@
+V66 — Correctif import des fiches de révision
+
+- Lors d'un collage unique, la section === FICHE DE RÉVISION === est extraite du HTML enrichi et enregistrée avec le chapitre.
+- La rubrique « Fiches de révision » affiche désormais cette fiche importée, et pas seulement les passages colorés en bleu.
+- Le cours complet est séparé des sections fiche, banque de commandes et QCM.
+- Les fiches des chapitres importés avant cette correction nécessitent de rouvrir le cours et recoller le contenu structuré, puis enregistrer/publier.
+- La banque de commandes automatique n'est pas encore implémentée.
