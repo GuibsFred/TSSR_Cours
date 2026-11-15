@@ -212,7 +212,7 @@ async function showRevision(id){
  if(!course){v.innerHTML=header('Fiche introuvable','Le cours associé n’existe plus.');return}
  v.innerHTML=header('Fiche de révision — '+course.title,course.category,`<div class="actions"><button class="btn" data-id="${esc(id)}">📘 Voir le cours</button><button class="btn primary" data-revision-edit="${esc(id)}">✎ Mes notes</button></div>`)+`<article class="article tssr-revision-detail"><h2>🔵 À retenir dans ce cours</h2><p class="muted">Synthèse du chapitre importée automatiquement. Les passages marqués en bleu restent disponibles si aucune fiche n’est fournie.</p><div id="revisionExtract" class="revision-extract">Chargement…</div><h2>📝 Mes notes personnelles</h2><div class="content">${DOMPurify.sanitize(notes?.html||'<p class="muted">Aucune note pour le moment. Clique sur « Mes notes » pour compléter cette fiche.</p>')}</div></article>`;
  const html=await revisionSourceHtml(course);const dest=$('#revisionExtract');if(!dest)return;
- const formatted=course.revisionHtml||extractRevisionHtml(html);dest.innerHTML=formatted.trim()?DOMPurify.sanitize(formatted):'<p class="muted">Fiche de révision à compléter lors de l’import du cours.</p>';
+ const formatted=course.revisionHtml||extractRevisionHtml(html);dest.innerHTML=formatted.trim()?tssrDisplayHtml(formatted):'<p class="muted">Cette fiche existe déjà dans la bibliothèque. Son contenu sera disponible dès que tu importeras la section « FICHE DE RÉVISION » du chapitre.</p>';
 }
 function editRevisionNotes(id){
  const course=revisionCourses().find(x=>x.id===id),old=revisionNotes(id);if(!course)return;
@@ -359,7 +359,7 @@ function tssrRenderGlobalSearch(term){
  const grouped=types.map(type=>({type,items:results.filter(r=>r.type===type)})).filter(x=>x.items.length);
  $('#view').innerHTML=header('Recherche globale',`Résultats pour « ${esc(term)} » · ${results.length} résultat(s)`)+`<section class="tssr-global-results"><div class="tssr-global-summary">${types.map(t=>`<span>${esc(t)} : <b>${results.filter(r=>r.type===t).length}</b></span>`).join('')}</div>${grouped.map(group=>`<div class="tssr-search-group"><h2>${esc(group.type)} <small>${group.items.length}</small></h2><div class="tssr-search-grid">${group.items.map(r=>`<button type="button" class="tssr-search-result" data-global-type="${esc(r.type)}" data-global-id="${esc(r.id)}"><strong>${esc(r.title)}</strong><small>${esc(r.excerpt||'Ouvrir le résultat')}</small><span>Ouvrir →</span></button>`).join('')}</div></div>`).join('')||'<p class="tssr-search-empty">Aucun résultat. Essaie un autre terme ou une commande.</p>'}</section>`;
 }
-function render(){document.body.classList.remove('tssr-current-module-gold');if(current){try{const last=all().find(x=>x.id===current&&x.kind==='cours');if(last)localStorage.setItem('tssr-last-course-id',last.id)}catch(e){}}document.body.classList.toggle('home-network',section==='accueil'&&!current);nav();let v=$('#view'),a=all(),q=$('#search').value.toLowerCase().trim();if(q){current=null;tssrRenderGlobalSearch($('#search').value.trim());return;}if(current?.startsWith('revision:')){showRevision(sourceId(current));return}if(current){let p=a.find(x=>x.id===current);if(!p){current=null;return render()}v.innerHTML=header(p.title,p.category||'Mon espace TSSR',`<div class="actions"><button class="btn primary" data-edit="${esc(p.id)}">✎ ${p.readonly?'Rédiger mon cours':'Modifier'}</button><button class="btn" data-manage-course="${esc(p.id)}">⚙ Titre · Dossier · Image</button><button class="btn warn" data-hide-course="${esc(p.id)}">Retirer</button></div>`)+`<nav class="tssr-course-tabs" aria-label="Sections du chapitre"><button class="active" data-course-tab="cours" data-course-id="${esc(p.id)}">📘 Cours complet</button><button data-course-tab="fiche" data-course-id="${esc(p.id)}">▤ Fiche de révision</button><button data-course-tab="qcm" data-course-id="${esc(p.id)}">☑ QCM</button></nav>`+`<article class="article"><div class="articlebar"><span class="pill">${esc(labels[p.kind]?.[1]||'Cours')}</span><span class="muted">${p.readonly?'Chapitre à personnaliser':'Mon cours'}</span></div><div class="content" id="articleContent">Chargement…</div></article>`;if(p.readonly&&p.file){fetch(p.file).then(r=>{if(!r.ok)throw Error('Cours introuvable');return r.text()}).then(t=>{$('#articleContent').innerHTML=DOMPurify.sanitize(marked.parse(stripFrontmatter(t)))}).catch(()=>{$('#articleContent').textContent='Impossible de charger le cours.'})}else{$('#articleContent').innerHTML=DOMPurify.sanitize(p.html||'<p>Chapitre prêt à compléter. Clique sur « Rédiger mon cours » pour rédiger ton cours.</p>')}return}
+function render(){document.body.classList.remove('tssr-current-module-gold');if(current){try{const last=all().find(x=>x.id===current&&x.kind==='cours');if(last)localStorage.setItem('tssr-last-course-id',last.id)}catch(e){}}document.body.classList.toggle('home-network',section==='accueil'&&!current);nav();let v=$('#view'),a=all(),q=$('#search').value.toLowerCase().trim();if(q){current=null;tssrRenderGlobalSearch($('#search').value.trim());return;}if(current?.startsWith('revision:')){showRevision(sourceId(current));return}if(current){let p=a.find(x=>x.id===current);if(!p){current=null;return render()}v.innerHTML=header(p.title,p.category||'Mon espace TSSR',`<div class="actions"><button class="btn primary" data-edit="${esc(p.id)}">✎ ${p.readonly?'Rédiger mon cours':'Modifier'}</button><button class="btn" data-manage-course="${esc(p.id)}">⚙ Titre · Dossier · Image</button><button class="btn warn" data-hide-course="${esc(p.id)}">Retirer</button></div>`)+`<nav class="tssr-course-tabs" aria-label="Sections du chapitre"><button class="active" data-course-tab="cours" data-course-id="${esc(p.id)}">📘 Cours complet</button><button data-course-tab="fiche" data-course-id="${esc(p.id)}">▤ Fiche de révision</button><button data-course-tab="qcm" data-course-id="${esc(p.id)}">☑ QCM</button></nav>`+`<article class="article"><div class="articlebar"><span class="pill">${esc(labels[p.kind]?.[1]||'Cours')}</span><span class="muted">${p.readonly?'Chapitre à personnaliser':'Mon cours'}</span></div><div class="content" id="articleContent">Chargement…</div></article>`;if(p.readonly&&p.file){fetch(p.file).then(r=>{if(!r.ok)throw Error('Cours introuvable');return r.text()}).then(t=>{$('#articleContent').innerHTML=DOMPurify.sanitize(marked.parse(stripFrontmatter(t)))}).catch(()=>{$('#articleContent').textContent='Impossible de charger le cours.'})}else{$('#articleContent').innerHTML=tssrDisplayHtml(p.html||'<p>Chapitre prêt à compléter. Clique sur « Rédiger mon cours » pour rédiger ton cours.</p>')}return}
 if(section==='homelab'){v.innerHTML=header('Homelab','Ton laboratoire informatique personnel')+`<section class="homelab-coming"><div class="homelab-visual"><img src="assets/cours-c-servers.png" alt="Serveurs du laboratoire"></div><div><span class="homelab-tag">PROCHAINEMENT</span><h2>Ton Homelab prend forme.</h2><p>Un espace dédié à tes machines virtuelles, serveurs, réseaux et expérimentations TSSR.</p><div class="homelab-status"><span></span> En préparation</div></div></section>`;return}
 if(section==='accueil'){
  const notes=management().notes||[];
@@ -393,11 +393,11 @@ if(section==='journal'){
 if(section==='fiches'){
  current=null;activeFolder='';
  // La bibliothèque des fiches est une vue des chapitres existants : aucune copie ni saisie supplémentaire.
- const courses=revisionCourses().filter(x=>x.chapter && (x.revisionHtml?.trim() || x.html?.trim() || x.readonly));
+ const courses=revisionCourses().filter(x=>x.chapter); // Chaque chapitre possède une fiche, même encore vide.
  const roots=[...new Set(courses.map(x=>rootCategory(x.category)))].sort((a,b)=>moduleSort(a,b));
  const groupHtml=roots.map((root,moduleIndex)=>{
    const chapters=courses.filter(x=>rootCategory(x.category)===root).sort(compareChapters);
-   return `<section class="v54-revgroup" data-search="${esc(root.toLowerCase())}"><div class="tssr-rev-heading"><span class="tssr-rev-illustration">${coursCModuleSymbol(root)}</span><div><small>MODULE ${String(moduleIndex+1).padStart(2,'0')}</small><h2>${esc(root.replace(/^\d+\s*[—–-]\s*/,''))}</h2><p>${chapters.length} fiche${chapters.length>1?'s':''} de révision</p></div></div><div class="tssr-rev-cards">${chapters.map((x,i)=>`<button data-revision="${esc(x.id)}" class="v54-revlink" data-search="${esc((root+' '+x.title).toLowerCase())}"><span class="tssr-rev-card-index">CHAPITRE ${String(i+1).padStart(2,'0')}</span><span class="tssr-rev-card-icon">${courseIcon(x)}</span><strong>${esc(x.title)}</strong><b>Consulter la fiche <span>➜</span></b></button>`).join('')}</div></section>`;
+   return `<section class="v54-revgroup" data-search="${esc(root.toLowerCase())}"><div class="tssr-rev-heading"><span class="tssr-rev-illustration">${coursCModuleSymbol(root)}</span><div><small>MODULE ${String(moduleIndex+1).padStart(2,'0')}</small><h2>${esc(root.replace(/^\d+\s*[—–-]\s*/,''))}</h2><p>${chapters.length} fiche${chapters.length>1?'s':''} de révision · ${chapters.filter(x=>!x.revisionHtml?.trim()).length} à compléter</p></div></div><div class="tssr-rev-cards">${chapters.map((x,i)=>`<button data-revision="${esc(x.id)}" class="v54-revlink" data-search="${esc((root+' '+x.title).toLowerCase())}"><span class="tssr-rev-card-index">CHAPITRE ${String(i+1).padStart(2,'0')}</span><span class="tssr-rev-card-icon">${courseIcon(x)}</span><strong>${esc(x.title)}</strong><b>${x.revisionHtml?.trim()?'Consulter la fiche':'Fiche à compléter'} <span>➜</span></b></button>`).join('')}</div></section>`;
  }).join('');
  v.innerHTML=header('Fiches de révision','Toutes les fiches de tes chapitres, classées par module. Une fiche est liée à son cours, sans doublon.')+`<div class="v54-revisions"><input class="formfield" id="v54RevisionSearch" type="search" placeholder="Rechercher une fiche ou un module…"><div id="v54RevisionResults">${groupHtml||'<div class="article"><h2>Aucune fiche disponible</h2><p>Importe un chapitre avec une section FICHE DE RÉVISION : elle apparaîtra automatiquement ici.</p><button class="btn primary" data-sec="cours">Parcourir les cours</button></div>'}</div></div>`;
  $('#v54RevisionSearch').oninput=e=>{const q=e.target.value.toLowerCase().trim();document.querySelectorAll('.v54-revlink').forEach(el=>el.hidden=!el.dataset.search.includes(q));document.querySelectorAll('.v54-revgroup').forEach(el=>el.hidden=![...el.querySelectorAll('.v54-revlink')].some(x=>!x.hidden))};return;
@@ -640,7 +640,7 @@ if(kind==='cours' && rawInput){
  }
 }
 
-let obj={id:stableId,title:t,kind,category,...((p?.chapter||quickImport)?{chapter:true}:{}),html,revisionHtml:kind==='cours'?importedRevisionHtml:(p?.revisionHtml||''),revisionExtracts:kind==='cours'?extractBlue(html):[],updatedAt:new Date().toISOString()};
+let obj={...(p||{}),id:stableId,title:t,kind,category,...((p?.chapter||quickImport)?{chapter:true}:{}),html,revisionHtml:kind==='cours'?importedRevisionHtml:(p?.revisionHtml||''),revisionExtracts:kind==='cours'?extractBlue(html):[],updatedAt:new Date().toISOString()};
 let idx=custom.pages.findIndex(x=>x.id===stableId);if(idx>=0)custom.pages[idx]=obj;else custom.pages.push(obj);
 lastSavedCourseId=stableId;saveLocal(stableId);if(closeEditor){$('#modal').close();goto(obj.kind,obj.id)}return true}
 $('#cancelDoc').onclick=closeEditorSafely;$('#savePublish').onclick=async()=>{if(!persist(false))return;const kindSaved=$('#docKind').value,idSaved=lastSavedCourseId;const btn=$('#savePublish');btn.disabled=true;btn.textContent='⏳ Publication en cours…';const ok=await publish();btn.disabled=false;btn.textContent='☁ Enregistrer et publier sur GitHub';if(ok){$('#modal').close();goto(kindSaved,idSaved)}else{toast('Cours sauvegardé localement. Publication non confirmée : réessaie après connexion GitHub.')}}}
@@ -734,7 +734,52 @@ for(const id of dirtyIds){if(id.startsWith('management:'))live.management=custom
 const result=await fetch(url,{method:'PUT',headers:{...head,'Content-Type':'application/json'},body:JSON.stringify({message:'TSSR : sauvegarde des cours',content:b64utf8(JSON.stringify(live,null,2)),branch:'main',...(remoteSha?{sha:remoteSha}:{})})});if(result.status===409&&attempt===0)continue;if(!result.ok){const raw=await result.text();let error={};try{error=raw?JSON.parse(raw):{}}catch(e){}throw Error(error.message||('Écriture GitHub refusée : HTTP '+result.status+(raw?' — '+raw.slice(0,160):' (réponse vide)')))}
 custom=live;reconcileHidden();remoteSnapshot=new Map(live.pages.map(p=>[p.id,JSON.stringify(p)]));dirtyIds.clear();localStorage.removeItem(storageKey);localStorage.removeItem(oldStorageKey);dirty=false;toast('✓ Enregistré sur GitHub. La publication du site peut prendre quelques minutes.');render();return true}
 }catch(e){toast('Publication impossible : '+e.message);return false}}
-function allCommands(){const hidden=management().hiddenCommands||[];const map=new Map(builtInCommands.filter(x=>!hidden.includes(x.id)).map(x=>[x.id,x]));for(const x of (custom.commands||[]))map.set(x.id,x);return [...map.values()]};
+
+// V75 : restauration non destructive des contenus HTML importés depuis du Markdown aplati.
+function tssrRestoreStructure(source){
+ const template=document.createElement('template');template.innerHTML=DOMPurify.sanitize(source||'');
+ const headings=/^(?:\d+(?:\.\d+)*\.?\s+.{4,}|(?:Définitions essentielles|Options à mémoriser|Commandes indispensables|Extensions à connaître|Les pièges à éviter|Exemples?\s*:|Présentation de la commande.*|Fiche mémo.*))$/i;
+ const result=document.createElement('div');
+ for(const child of [...template.content.childNodes]){
+  if(child.nodeType!==1||!['P','LI'].includes(child.tagName)||!child.textContent.includes('\n')){result.append(child.cloneNode(true));continue;}
+  // Ne pas convertir des blocs contenant déjà des éléments riches (images, tableaux, code).
+  if(child.querySelector('img,table,pre,code')){result.append(child.cloneNode(true));continue;}
+  const lines=child.textContent.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+  if(lines.length<2){result.append(child.cloneNode(true));continue;}
+  for(const line of lines){
+   const heading=headings.test(line)&&line.length<110;
+   const el=document.createElement(heading?'h3':/^(?:[-*•]\s)/.test(line)?'p':'p');
+   el.textContent=line; if(heading)el.className='tssr-restored-heading';
+   result.append(el);
+  }
+ }
+ return result.innerHTML;
+}
+function tssrDisplayHtml(source){return tssrRestoreStructure(source||'')}
+// Extraction des commandes réelles présentes dans les exemples des cours, sans les inventer.
+function tssrCourseCommands(){
+ const found=new Map();const info={tar:['Archivage et compression','Créer, consulter ou extraire une archive'],gzip:['Compression','Compresser un fichier avec gzip'],gunzip:['Compression','Décompresser un fichier gzip'],bzip2:['Compression','Compresser un fichier avec bzip2'],bunzip2:['Compression','Décompresser un fichier bzip2'],ls:['Fichiers','Lister les fichiers et dossiers'],cd:['Navigation','Changer de répertoire'],pwd:['Navigation','Afficher le répertoire courant'],mkdir:['Fichiers','Créer un dossier'],cp:['Fichiers','Copier un fichier ou dossier'],mv:['Fichiers','Déplacer ou renommer un fichier'],rm:['Fichiers','Supprimer un fichier'],find:['Recherche','Rechercher des fichiers'],grep:['Recherche','Rechercher du texte'],chmod:['Permissions','Modifier les permissions'],chown:['Permissions','Changer le propriétaire'],ps:['Processus','Lister les processus'],top:['Processus','Surveiller les processus'],systemctl:['Services','Gérer les services'],ip:['Réseau','Afficher ou configurer le réseau'],ping:['Réseau','Tester la connectivité'],ssh:['Accès distant','Se connecter à distance'],sudo:['Administration','Exécuter une commande avec des privilèges élevés'],apt:['Paquets','Gérer les paquets'],'Get-Service':['Services','Afficher les services Windows']};
+ for(const page of all().filter(x=>x.kind==='cours'&&x.html)){
+  const box=document.createElement('div');box.innerHTML=DOMPurify.sanitize(page.html);
+  const snippets=[...box.querySelectorAll('pre,code')].map(x=>x.textContent);
+  // Les anciens imports contiennent des exemples de commandes en texte courant.
+  const text=box.textContent||'';
+  for(const [name,[category,description]] of Object.entries(info)){
+   const escName=name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+   const re=new RegExp('(?:^|[\\s:;])('+escName+'\\s+(?:-{1,2}[\\w-]+\\s*)?[^\\n.;]{0,100})','gmi');
+   const match=snippets.map(x=>x.match(re)?.[0]).find(Boolean)||text.match(re)?.[0];
+   if(!match)continue;
+   let example=match.trim().replace(/\s+/g,' ').slice(0,125);
+   // Écarter les phrases ordinaires : la commande doit contenir une option ou un argument plausible.
+   if(!example||example.split(' ').length<2)continue;
+   const environment=/^(Get-|Set-|New-|Remove-)/i.test(name)?'PowerShell':/Windows|CMD/i.test(page.category||'')?'Windows CMD':'Linux / Bash';
+   const key=environment.toLowerCase()+':'+name.toLowerCase();
+   if(!found.has(key))found.set(key,{id:'auto-course-'+key.replace(/[^a-z0-9]+/g,'-'),name,environment,category,theme:page.title,description,syntax:example,example,notes:'Extrait du chapitre « '+page.title+' ». Vérifie les arguments avant exécution.',tags:[page.title,'Extrait des cours'],sourceChapterId:page.id});
+  }
+ }
+ return [...found.values()];
+}
+function allCommands(){const hidden=management().hiddenCommands||[];const map=new Map(builtInCommands.filter(x=>!hidden.includes(x.id)).map(x=>[x.id,x]));for(const x of (custom.commands||[]))map.set(x.id,x);const existing=new Set([...map.values()].map(x=>String(x.environment).toLowerCase()+":"+String(x.name).toLowerCase()));for(const x of tssrCourseCommands()){const key=x.environment.toLowerCase()+":"+x.name.toLowerCase();if(!existing.has(key)){map.set(x.id,x);existing.add(key)}}return [...map.values()]};
 async function restoreGithubSession(){
  const saved=sessionStorage.getItem('tssr-github-session-v636');
  if(!saved)return;
@@ -758,7 +803,7 @@ document.addEventListener('click',async e=>{
  if(tab==='cours'){current=id;render();return}
  if(tab==='fiche'){
   const html=await revisionSourceHtml(p);const extracted=p.revisionHtml||extractRevisionHtml(html);const notes=revisionNotes(id);
-  article.innerHTML=`<div class="articlebar"><span class="pill">Fiche de révision</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Les points clés du chapitre</h2>${extracted.trim()?DOMPurify.sanitize(extracted):'<p class="muted">Fiche à rédiger lors de la reconstruction du cours.</p>'}${notes?.html?`<h3>Mes notes</h3>${DOMPurify.sanitize(notes.html)}`:''}<div class="actions"><button class="btn primary" data-revision-edit="${esc(id)}">✎ Modifier mes notes</button></div></div>`;return;
+  article.innerHTML=`<div class="articlebar"><span class="pill">Fiche de révision</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Les points clés du chapitre</h2>${extracted.trim()?tssrDisplayHtml(extracted):'<p class="muted">Fiche à rédiger lors de la reconstruction du cours.</p>'}${notes?.html?`<h3>Mes notes</h3>${DOMPurify.sanitize(notes.html)}`:''}<div class="actions"><button class="btn primary" data-revision-edit="${esc(id)}">✎ Modifier mes notes</button></div></div>`;return;
  }
  const qs=(custom.quizzes||[]).filter(x=>Array.isArray(x.questions)&&x.questions.length&&(x.revisionSource===id||x.courseId===id||x.chapterId===id||String(x.title||'').toLocaleLowerCase('fr').includes(p.title.toLocaleLowerCase('fr'))));
  article.innerHTML=`<div class="articlebar"><span class="pill">QCM</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Tester mes connaissances</h2>${qs.length?qs.map(q=>`<button class="btn primary" data-quiz="${esc(q.id)}">Commencer : ${esc(q.title)} (${q.questions.length} questions)</button>`).join(' '):'<p class="muted">Aucun QCM associé pour le moment. Il sera ajouté lors de la reconstruction du chapitre.</p>'}</div>`;
