@@ -500,32 +500,79 @@ $('#imageFile').onchange=e=>{if(e.target.files[0])insertImageFile(e.target.files
 function persist(closeEditor=true){let t=$('#docTitle').value.trim();if(!t){toast('Ajoute un titre.');return false}let category=$('#docCat').value.trim(),kind=$('#docKind').value;
 let stableId=p?.id||'doc-'+crypto.randomUUID();if(!p){let existing=all().find(x=>cleanKey(x)===cleanKey({kind,category,title:t}));if(existing){toast('Ce titre existe déjà dans cette catégorie. Ouvre le chapitre existant pour le modifier.');return false}}if(p?.chapter){t=p.title;category=p.category;kind='cours'}
 if(selectedCourseImage)selectedCourseImage.classList.remove('course-image-selected');let html=DOMPurify.sanitize($('#docEditor').innerHTML,{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
-// V25.3 : sépare le bloc === QCM === collé dans l’éditeur de cours.
+// Import structuré : cours, fiche et QCM depuis un seul collage.
+let importedRevisionHtml=p?.revisionHtml||'';
 if(kind==='cours'){
  const temp=document.createElement('div');temp.innerHTML=html;
- const marker=[...temp.querySelectorAll('p,div,h1,h2,h3,h4,li')].find(el=>/^={3}\s*QCM\s*={3}$/i.test((el.textContent||'').trim())&&!([...el.children].some(ch=>/^={3}\s*QCM\s*={3}$/i.test((ch.textContent||'').trim()))));
- if(marker){
-  const textNode=document.createElement('div');textNode.innerHTML=temp.innerHTML.replace(/<br\s*\/?>/gi,'\n').replace(/<\/(?:p|div|li|h[1-6]|tr)>/gi,'\n\n');const allText=textNode.textContent||'';
-  const qcmText=allText.slice(allText.search(/={3}\s*QCM\s*={3}/i)).replace(/^={3}\s*QCM\s*={3}/i,'').trim();
-  const normalized=qcmText.replace(/\s+(?=\d+[.)]\s+[^\n])/g,'\n\n');
-  const questions=parseQuizBulk(normalized);
-  if(!questions.length){toast('Séparateur QCM trouvé, mais aucune question valide : vérifie les réponses A), B), C), D) et Réponse : B.');return false}
-  const range=document.createRange();range.setStartBefore(marker);range.setEnd(temp,temp.childNodes.length);range.deleteContents();
-  html=DOMPurify.sanitize(temp.innerHTML,{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
+ const raw=(temp.innerText||temp.textContent||'').replace(/\r/g,'');
+ const mark=/===\s*(COURS COMPLET|FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===/gi;
+ const markers=[...raw.matchAll(mark)];
+ const sections={};
+ for(let i=0;i<markers.length;i++){
+  const key=markers[i][1].normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
+  sections[key]=raw.slice(markers[i].index+markers[i][0].length,i+1<markers.length?markers[i+1].index:raw.length).trim();
+ }
+ if(sections['FICHE DE REVISION']){
+  const fiche=sections['FICHE DE REVISION'];
+  importedRevisionHtml=fiche.split(/\n\s*\n/).map(block=>{
+   const lines=block.split('\n').map(x=>x.trim()).filter(Boolean);
+   if(!lines.length)return '';
+   if(/^#{1,4}\s/.test(lines[0]))return '<h3>'+esc(lines[0].replace(/^#+\s*/,''))+'</h3>'+lines.slice(1).map(x=>'<p>'+esc(x)+'</p>').join('');
+   return '<p>'+lines.map(x=>esc(x)).join('<br>')+'</p>';
+  }).join('');
+ }
+ if(sections.QCM){
+  const questions=parseQuizBulk(sections.QCM);
+  if(!questions.length){toast('QCM détecté mais aucune question valide. Vérifie les intitulés Question 1, A., B. et Réponse : B.');return false}
   const previous=custom.quizzes.find(q=>q.chapterId===stableId);
   const quizId=previous?.id||'quiz-auto-'+stableId;
-  const quiz={id:quizId,title:'QCM — '+t,category:rootCategory(category),chapterId:stableId,questions};
-  custom.quizzes=custom.quizzes.filter(q=>q.id!==quizId);custom.quizzes.push(quiz);
+  custom.quizzes=custom.quizzes.filter(q=>q.id!==quizId);
+  custom.quizzes.push({id:quizId,title:'QCM — '+t,category:rootCategory(category),chapterId:stableId,questions});
   saveLocal('quiz:'+quizId);
   toast(questions.length+' questions reconnues : QCM interactif créé.');
  }
+ if(markers.length){
+  // Conserver seulement le cours dans l'onglet cours, sans les autres sections.
+  const first=markers.find(m=>m[1].normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase()==='COURS COMPLET');
+  const courseText=sections['COURS COMPLET']||raw.slice(0,markers[0].index).trim();
+  const nodes=[...temp.querySelectorAll('p,div,h1,h2,h3,h4,h5,h6,li')];
+  const boundary=nodes.filter(el=>/^===\s*(FICHE DE R[ÉE]VISION|BANQUE DE COMMANDES|QCM)\s*===$/i.test((el.textContent||'').trim())).sort((x,y)=>nodes.indexOf(x)-nodes.indexOf(y))[0];
+  const firstCourse=nodes.find(el=>/^===\s*COURS COMPLET\s*===$/i.test((el.textContent||'').trim()));
+  if(boundary){const range=document.createRange();range.setStartBefore(boundary);range.setEnd(temp,temp.childNodes.length);range.deleteContents()}
+  if(firstCourse)firstCourse.remove();
+  html=DOMPurify.sanitize(temp.innerHTML,{ADD_DATA_URI_TAGS:['img'],ADD_ATTR:['src','style','data-revision-blue']});
+  // Secours pour les collages dans un seul bloc de texte.
+  if(/===\s*(FICHE DE R[ÉE]VISION|QCM)\s*===/i.test(temp.textContent||''))html='<div>'+esc(courseText).replace(/\n/g,'<br>')+'</div>';
+ }
 }
-let obj={id:stableId,title:t,kind,category,...(p?.chapter?{chapter:true}:{}),html,revisionExtracts:kind==='cours'?extractBlue(html):[],updatedAt:new Date().toISOString()};
+let obj={id:stableId,title:t,kind,category,...(p?.chapter?{chapter:true}:{}),html,revisionHtml:kind==='cours'?importedRevisionHtml:(p?.revisionHtml||''),revisionExtracts:kind==='cours'?extractBlue(html):[],updatedAt:new Date().toISOString()};
 let idx=custom.pages.findIndex(x=>x.id===stableId);if(idx>=0)custom.pages[idx]=obj;else custom.pages.push(obj);
 lastSavedCourseId=stableId;saveLocal(stableId);if(closeEditor){$('#modal').close();goto(obj.kind,obj.id)}return true}
 $('#cancelDoc').onclick=closeEditorSafely;$('#savePublish').onclick=async()=>{if(!persist(false))return;const kindSaved=$('#docKind').value,idSaved=lastSavedCourseId;const btn=$('#savePublish');btn.disabled=true;btn.textContent='⏳ Publication en cours…';const ok=await publish();btn.disabled=false;btn.textContent='☁ Enregistrer et publier sur GitHub';if(ok){$('#modal').close();goto(kindSaved,idSaved)}else{toast('Cours sauvegardé localement. Publication non confirmée : réessaie après connexion GitHub.')}}}
 async function insertImageFile(file){if(!file)return;if(file.size>5*1024*1024){toast('Image trop lourde : maximum 5 Mo par image.');return}let data=await new Promise((resolve,reject)=>{let r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});$('#docEditor').focus();document.execCommand('insertHTML',false,`<img src="${data}" alt="Capture de cours">`)}
-function parseQuizBulk(text){const blocks=String(text).replace(/\r/g,'').split(/\n\s*\n(?=\s*\d+[.)]\s)/).filter(Boolean);const questions=[];for(const block of blocks){const lines=block.split('\n').map(x=>x.trim()).filter(Boolean);let question=(lines.shift()||'').replace(/^\d+[.)]\s*/,''),answers=[],correct=-1,explanation='';for(const line of lines){let m=line.match(/^([A-D])[).]\s*(.+)$/i);if(m){answers.push(m[2]);continue}m=line.match(/^(?:Réponse|Bonne réponse|Correct)\s*:\s*([A-D]|[1-4])\b/i);if(m){correct=/^[A-D]$/i.test(m[1])?m[1].toUpperCase().charCodeAt(0)-65:Number(m[1])-1;continue}m=line.match(/^Explication\s*:\s*(.*)/i);if(m){explanation=m[1]}}if(question&&answers.length>=2&&correct>=0&&correct<answers.length)questions.push({question,answers,correct,explanation})}return questions}
+function parseQuizBulk(text){
+ const raw=String(text||'').replace(/\r/g,'').replace(/^#{1,5}\s*QCM[^\n]*\n/gim,'');
+ const chunks=raw.split(/(?=^\s*(?:#{1,5}\s*)?(?:Question\s*)?\d+\s*[.)\-:]?\s*(?:\n|\S))/gim).filter(x=>/\b(?:Réponse|Bonne réponse|Correct)\s*:/i.test(x));
+ const questions=[];
+ for(const chunk of chunks){
+  const lines=chunk.split('\n').map(x=>x.trim()).filter(Boolean);
+  let question='',answers=[],correct=-1,explanation='';
+  for(const line of lines){
+   if(/^#{1,5}\s*QCM\b/i.test(line))continue;
+   const a=line.match(/^(?:\*\*)?([A-D])\s*[).]\s*(.*?)(?:\*\*)?$/i);
+   if(a){answers.push(a[2].replace(/\*\*$/,'').trim());continue}
+   const r=line.match(/^(?:\*\*)?(?:Réponse|Bonne réponse|Correct)\s*:\s*([A-D]|[1-4])/i);
+   if(r){correct=/^[A-D]$/i.test(r[1])?r[1].toUpperCase().charCodeAt(0)-65:Number(r[1])-1;continue}
+   const e=line.match(/^(?:\*\*)?Explication\s*:\s*(.*)/i);
+   if(e){explanation=e[1].replace(/\*\*$/,'');continue}
+   if(/^---+$/.test(line))continue;
+   if(!question)question=line.replace(/^#{1,5}\s*/,'').replace(/^(?:Question\s*)?\d+\s*[.)\-:]?\s*/i,'').replace(/\*\*/g,'').trim();
+   else if(!answers.length && /^Question\s*\d+$/i.test(question))question=line.replace(/\*\*/g,'').trim();
+  }
+  if(question&&answers.length>=2&&correct>=0&&correct<answers.length)questions.push({question,answers,correct,explanation});
+ }
+ return questions;
+}
 function newQuiz(id){const old=custom.quizzes.find(x=>x.id===id);const roots=[...new Set(catalog.filter(x=>x.kind==='cours').map(x=>rootCategory(x.category)))].sort((a,b)=>moduleNumber(a)-moduleNumber(b));const allCourses=all().filter(x=>x.kind==='cours');modal(old?'Modifier le QCM':'Créer un QCM',`<label>Nom du QCM<input class="formfield" id="qTitle" value="${esc(old?.title||'')}" placeholder="QCM Modèle OSI"></label><label>Module TSSR<select class="formfield" id="qCat">${roots.map(x=>`<option ${x===(old?.category||activeFolder)?'selected':''} value="${esc(x)}">${esc(x)}</option>`).join('')}</select></label><label>Chapitre associé (facultatif)<select class="formfield" id="qChapter"><option value="">QCM général du module</option>${allCourses.filter(x=>x.chapter).map(x=>`<option value="${esc(x.id)}" ${x.id===old?.chapterId?'selected':''}>${esc(x.category.split('/')[0])} · ${esc(x.title)}</option>`).join('')}</select></label><p class="editorhelp">Colle directement le QCM préparé avec ChatGPT : question numérotée, réponses A) à D), « Réponse : B » et « Explication : ... ». L'ancien format avec | est aussi accepté.</p><textarea class="formfield" id="qLines" rows="12" placeholder="1. Quel protocole attribue une adresse IP ?&#10;A) DNS&#10;B) DHCP&#10;C) HTTP&#10;D) FTP&#10;Réponse : B&#10;Explication : DHCP attribue les paramètres réseau.">${esc(old?.questions?.map((z,i)=>`${i+1}. ${z.question}\n${z.answers.map((a,j)=>String.fromCharCode(65+j)+') '+a).join('\n')}\nRéponse : ${String.fromCharCode(65+z.correct)}\nExplication : ${z.explanation||''}`).join('\n\n')||'')}</textarea><p id="qPreview" class="editorhelp">Questions reconnues : 0</p><div class="actions"><button type="button" class="btn" id="cancelQ">Annuler</button><button type="button" class="btn primary" id="saveQ">☁ Enregistrer et publier sur GitHub</button></div>`);const parse=()=>{const text=$('#qLines').value;let parsed=parseQuizBulk(text);if(!parsed.length){parsed=text.split('\n').map(x=>x.split('|').map(y=>y.trim())).filter(x=>x.length===5&&[1,2,3].includes(+x[4])).map(x=>({question:x[0],answers:x.slice(1,4),correct:+x[4]-1,explanation:''}))}return parsed};$('#qLines').oninput=()=>{$('#qPreview').textContent='Questions reconnues : '+parse().length};$('#qLines').dispatchEvent(new Event('input'));$('#cancelQ').onclick=()=>$('#modal').close();$('#qChapter').onchange=()=>{const ch=allCourses.find(x=>x.id===$('#qChapter').value);if(ch)$('#qCat').value=rootCategory(ch.category)};$('#saveQ').onclick=async()=>{let title=$('#qTitle').value.trim(),questions=parse();if(!title||!questions.length){toast('Ajoute un titre et au moins une question valide.');return}let obj={id:old?.id||'quiz-'+Date.now(),title,category:$('#qCat').value,chapterId:$('#qChapter').value,questions};custom.quizzes=custom.quizzes.filter(x=>x.id!==obj.id);custom.quizzes.push(obj);saveLocal('quiz:'+obj.id);const btn=$('#saveQ');btn.disabled=true;const ok=await publish();btn.disabled=false;if(ok){$('#modal').close();goto('quiz')}else toast('QCM gardé localement : publication non confirmée.')}}
 function newCheat(id){const old=(custom.cheats||[]).find(x=>x.id===id);modal(old?'Modifier la cheatsheet':'Ajouter une cheatsheet',`<label>Nom affiché sous la miniature<input class="formfield" id="cheatTitle" value="${esc(old?.title||'')}" placeholder="Commandes Linux"></label><label>Catégorie<input class="formfield" id="cheatCat" value="${esc(old?.category||'Linux / Bash')}" placeholder="Linux / Bash"></label><label>Image, PDF ou document (maximum 4 Mo)<input class="formfield" type="file" id="cheatFile" accept="image/*,.pdf,.doc,.docx,.txt"></label><div id="cheatPaste" class="cheatpaste" tabindex="0">📋 Clique ici puis Ctrl + V pour coller une capture d'écran</div><div class="actions"><button type="button" class="btn primary" id="saveCheat">☁ Enregistrer et publier sur GitHub</button><button type="button" class="btn" id="cancelCheat">Annuler</button></div>`);let fileData=old?.data||'',mime=old?.mime||'',fileName=old?.fileName||'';const load=async file=>{if(!file)return;if(file.size>4*1024*1024){toast('Fichier trop volumineux (maximum 4 Mo).');return}mime=file.type||'application/octet-stream';fileName=file.name;fileData=await new Promise(resolve=>{let r=new FileReader();r.onload=()=>resolve(r.result);r.readAsDataURL(file)});$('#cheatPaste').textContent='✓ '+fileName};$('#cheatFile').onchange=e=>load(e.target.files[0]);$('#cheatPaste').onpaste=e=>{let f=[...e.clipboardData.items].find(x=>x.type.startsWith('image/'))?.getAsFile();if(f){e.preventDefault();load(f)}};$('#cancelCheat').onclick=()=>$('#modal').close();$('#saveCheat').onclick=async()=>{let title=$('#cheatTitle').value.trim();if(!title||!fileData){toast('Ajoute un titre et un fichier.');return}let obj={id:old?.id||'cheat-'+Date.now(),title,category:$('#cheatCat').value.trim()||'Divers',data:fileData,mime,fileName};custom.cheats=custom.cheats||[];custom.cheats=custom.cheats.filter(x=>x.id!==obj.id);custom.cheats.push(obj);saveLocal('cheat:'+obj.id);const ok=await publish();if(ok){$('#modal').close();goto('cheats')}else toast('Cheatsheet conservée localement : publication non confirmée.')}}
 function openCheat(id){let x=(custom.cheats||[]).find(x=>x.id===id);if(!x)return;modal(x.title,`<p>${esc(x.category)}</p>${x.mime?.startsWith('image/')?`<img class="cheatpreview" src="${esc(x.data)}" alt="${esc(x.title)}">`:x.mime==='application/pdf'?`<iframe class="cheatpreview" src="${esc(x.data)}" title="${esc(x.title)}"></iframe>`:'<p>Document disponible en téléchargement.</p>'}<p><a class="btn primary" download="${esc(x.fileName||x.title)}" href="${esc(x.data)}">⬇ Télécharger le document</a></p>`)}
@@ -603,7 +650,7 @@ document.addEventListener('click',async e=>{
  const article=document.querySelector('.article');if(!article)return;
  if(tab==='cours'){current=id;render();return}
  if(tab==='fiche'){
-  const html=await revisionSourceHtml(p);const extracted=extractRevisionHtml(html);const notes=revisionNotes(id);
+  const html=await revisionSourceHtml(p);const extracted=p.revisionHtml||extractRevisionHtml(html);const notes=revisionNotes(id);
   article.innerHTML=`<div class="articlebar"><span class="pill">Fiche de révision</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Les points clés du chapitre</h2>${extracted.trim()?DOMPurify.sanitize(extracted):'<p class="muted">Fiche à rédiger lors de la reconstruction du cours.</p>'}${notes?.html?`<h3>Mes notes</h3>${DOMPurify.sanitize(notes.html)}`:''}<div class="actions"><button class="btn primary" data-revision-edit="${esc(id)}">✎ Modifier mes notes</button></div></div>`;return;
  }
  const qs=(custom.quizzes||[]).filter(x=>Array.isArray(x.questions)&&x.questions.length&&(x.revisionSource===id||x.courseId===id||x.chapterId===id||String(x.title||'').toLocaleLowerCase('fr').includes(p.title.toLocaleLowerCase('fr'))));
