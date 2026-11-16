@@ -207,12 +207,35 @@ async function revisionSourceHtml(course){
  if(!course.readonly)return course.html||'';
  try{const r=await fetch(course.file);if(!r.ok)return '';return marked.parse(stripFrontmatter(await r.text()))}catch{return ''}
 }
+// V77 : rendu EXCLUSIVEMENT dédié aux fiches. Ne modifie jamais le HTML du cours.
+function tssrRevisionHtml(course, fallback=''){
+ let html=course?.revisionHtml||fallback||'';
+ const raw=String(course?.rawMarkdown||'');
+ const match=raw.match(/===\s*FICHE DE R[ÉE]VISION\s*===([\s\S]*?)(?====\s*(?:QCM|BANQUE DE COMMANDES|COURS COMPLET)\s*===|$)/i);
+ // Le Markdown original reste la source fiable si la fiche HTML a été aplatie.
+ if(match&&match[1].trim())html=marked.parse(match[1].trim());
+ const holder=document.createElement('div');holder.innerHTML=DOMPurify.sanitize(html);
+ const sections=[];let current=null;
+ function addSection(node){current=document.createElement('section');current.className='tssr-fiche-section';sections.push(current);current.appendChild(node)}
+ for(const node of [...holder.childNodes]){
+  if(node.nodeType===1&&/^H[23]$/.test(node.tagName)){addSection(node);continue}
+  if(!current){current=document.createElement('section');current.className='tssr-fiche-section tssr-fiche-intro';sections.push(current)}
+  current.appendChild(node);
+ }
+ const shell=document.createElement('div');shell.className='tssr-fiche-layout';
+ for(const sec of sections){
+  sec.querySelectorAll('pre').forEach(pre=>{const wrap=document.createElement('div');wrap.className='tssr-fiche-terminal';pre.parentNode.insertBefore(wrap,pre);const top=document.createElement('div');top.className='tssr-fiche-terminal-head';top.textContent='TERMINAL · BASH';wrap.appendChild(top);wrap.appendChild(pre)});
+  sec.querySelectorAll('table').forEach(table=>{const wrap=document.createElement('div');wrap.className='tssr-fiche-table-scroll';table.parentNode.insertBefore(wrap,table);wrap.appendChild(table)});
+  shell.appendChild(sec);
+ }
+ return DOMPurify.sanitize(shell.outerHTML,{ADD_ATTR:['class']});
+}
 async function showRevision(id){
  const course=revisionCourses().find(x=>x.id===id),notes=revisionNotes(id),v=$('#view');
  if(!course){v.innerHTML=header('Fiche introuvable','Le cours associé n’existe plus.');return}
  v.innerHTML=header('Fiche de révision — '+course.title,course.category,`<div class="actions"><button class="btn" data-id="${esc(id)}">📘 Voir le cours</button><button class="btn primary" data-revision-edit="${esc(id)}">✎ Mes notes</button></div>`)+`<article class="article tssr-revision-detail"><h2>🔵 À retenir dans ce cours</h2><p class="muted">Synthèse du chapitre importée automatiquement. Les passages marqués en bleu restent disponibles si aucune fiche n’est fournie.</p><div id="revisionExtract" class="revision-extract">Chargement…</div><h2>📝 Mes notes personnelles</h2><div class="content">${DOMPurify.sanitize(notes?.html||'<p class="muted">Aucune note pour le moment. Clique sur « Mes notes » pour compléter cette fiche.</p>')}</div></article>`;
  const html=await revisionSourceHtml(course);const dest=$('#revisionExtract');if(!dest)return;
- const formatted=course.revisionHtml||extractRevisionHtml(html);dest.innerHTML=formatted.trim()?tssrDisplayHtml(formatted):'<p class="muted">Cette fiche existe déjà dans la bibliothèque. Son contenu sera disponible dès que tu importeras la section « FICHE DE RÉVISION » du chapitre.</p>';
+ const formatted=course.revisionHtml||extractRevisionHtml(html);dest.innerHTML=formatted.trim()?tssrRevisionHtml(course,formatted):'<p class="muted">Cette fiche existe déjà dans la bibliothèque. Son contenu sera disponible dès que tu importeras la section « FICHE DE RÉVISION » du chapitre.</p>';
 }
 function editRevisionNotes(id){
  const course=revisionCourses().find(x=>x.id===id),old=revisionNotes(id);if(!course)return;
@@ -818,7 +841,7 @@ document.addEventListener('click',async e=>{
  if(tab==='cours'){current=id;render();return}
  if(tab==='fiche'){
   const html=await revisionSourceHtml(p);const extracted=p.revisionHtml||extractRevisionHtml(html);const notes=revisionNotes(id);
-  article.innerHTML=`<div class="articlebar"><span class="pill">Fiche de révision</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Les points clés du chapitre</h2>${extracted.trim()?tssrDisplayHtml(extracted):'<p class="muted">Fiche à rédiger lors de la reconstruction du cours.</p>'}${notes?.html?`<h3>Mes notes</h3>${DOMPurify.sanitize(notes.html)}`:''}<div class="actions"><button class="btn primary" data-revision-edit="${esc(id)}">✎ Modifier mes notes</button></div></div>`;return;
+  article.innerHTML=`<div class="articlebar"><span class="pill">Fiche de révision</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Les points clés du chapitre</h2>${extracted.trim()?tssrRevisionHtml(p,extracted):'<p class="muted">Fiche à rédiger lors de la reconstruction du cours.</p>'}${notes?.html?`<h3>Mes notes</h3>${DOMPurify.sanitize(notes.html)}`:''}<div class="actions"><button class="btn primary" data-revision-edit="${esc(id)}">✎ Modifier mes notes</button></div></div>`;return;
  }
  const qs=(custom.quizzes||[]).filter(x=>Array.isArray(x.questions)&&x.questions.length&&(x.revisionSource===id||x.courseId===id||x.chapterId===id||String(x.title||'').toLocaleLowerCase('fr').includes(p.title.toLocaleLowerCase('fr'))));
  article.innerHTML=`<div class="articlebar"><span class="pill">QCM</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Tester mes connaissances</h2>${qs.length?qs.map(q=>`<button class="btn primary" data-quiz="${esc(q.id)}">Commencer : ${esc(q.title)} (${q.questions.length} questions)</button>`).join(' '):'<p class="muted">Aucun QCM associé pour le moment. Il sera ajouté lors de la reconstruction du chapitre.</p>'}</div>`;
