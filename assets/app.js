@@ -230,12 +230,21 @@ function tssrRevisionHtml(course, fallback=''){
  }
  return DOMPurify.sanitize(shell.outerHTML,{ADD_ATTR:['class']});
 }
+// V78: récupération ciblée de la fiche source structurée, uniquement pour l'ancien chapitre aplati.
+// Aucun changement au rendu des cours ni aux autres chapitres.
+let tssrArchivedFichePromise=null;
+async function tssrFicheStructuree(course){
+ if(course?.id!=='chapter:05:12')return null;
+ if(!tssrArchivedFichePromise)tssrArchivedFichePromise=fetch('assets/fiche-archivage-structuree.md',{cache:'no-store'}).then(r=>r.ok?r.text():null).catch(()=>null);
+ const md=await tssrArchivedFichePromise;
+ return md?DOMPurify.sanitize(marked.parse(md)):null;
+}
 async function showRevision(id){
  const course=revisionCourses().find(x=>x.id===id),notes=revisionNotes(id),v=$('#view');
  if(!course){v.innerHTML=header('Fiche introuvable','Le cours associé n’existe plus.');return}
  v.innerHTML=header('Fiche de révision — '+course.title,course.category,`<div class="actions"><button class="btn" data-id="${esc(id)}">📘 Voir le cours</button><button class="btn primary" data-revision-edit="${esc(id)}">✎ Mes notes</button></div>`)+`<article class="article tssr-revision-detail"><h2>🔵 À retenir dans ce cours</h2><p class="muted">Synthèse du chapitre importée automatiquement. Les passages marqués en bleu restent disponibles si aucune fiche n’est fournie.</p><div id="revisionExtract" class="revision-extract">Chargement…</div><h2>📝 Mes notes personnelles</h2><div class="content">${DOMPurify.sanitize(notes?.html||'<p class="muted">Aucune note pour le moment. Clique sur « Mes notes » pour compléter cette fiche.</p>')}</div></article>`;
  const html=await revisionSourceHtml(course);const dest=$('#revisionExtract');if(!dest)return;
- const formatted=course.revisionHtml||extractRevisionHtml(html);dest.innerHTML=formatted.trim()?tssrRevisionHtml(course,formatted):'<p class="muted">Cette fiche existe déjà dans la bibliothèque. Son contenu sera disponible dès que tu importeras la section « FICHE DE RÉVISION » du chapitre.</p>';
+ const restored=await tssrFicheStructuree(course);const formatted=restored||course.revisionHtml||extractRevisionHtml(html);dest.innerHTML=formatted.trim()?tssrRevisionHtml(restored?{...course,revisionHtml:restored,rawMarkdown:''}:course,formatted):'<p class="muted">Cette fiche existe déjà dans la bibliothèque. Son contenu sera disponible dès que tu importeras la section « FICHE DE RÉVISION » du chapitre.</p>';
 }
 function editRevisionNotes(id){
  const course=revisionCourses().find(x=>x.id===id),old=revisionNotes(id);if(!course)return;
@@ -840,8 +849,8 @@ document.addEventListener('click',async e=>{
  const article=document.querySelector('.article');if(!article)return;
  if(tab==='cours'){current=id;render();return}
  if(tab==='fiche'){
-  const html=await revisionSourceHtml(p);const extracted=p.revisionHtml||extractRevisionHtml(html);const notes=revisionNotes(id);
-  article.innerHTML=`<div class="articlebar"><span class="pill">Fiche de révision</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Les points clés du chapitre</h2>${extracted.trim()?tssrRevisionHtml(p,extracted):'<p class="muted">Fiche à rédiger lors de la reconstruction du cours.</p>'}${notes?.html?`<h3>Mes notes</h3>${DOMPurify.sanitize(notes.html)}`:''}<div class="actions"><button class="btn primary" data-revision-edit="${esc(id)}">✎ Modifier mes notes</button></div></div>`;return;
+  const html=await revisionSourceHtml(p);const restored=await tssrFicheStructuree(p);const extracted=restored||p.revisionHtml||extractRevisionHtml(html);const notes=revisionNotes(id);
+  article.innerHTML=`<div class="articlebar"><span class="pill">Fiche de révision</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Les points clés du chapitre</h2>${extracted.trim()?tssrRevisionHtml(restored?{...p,revisionHtml:restored,rawMarkdown:''}:p,extracted):'<p class="muted">Fiche à rédiger lors de la reconstruction du cours.</p>'}${notes?.html?`<h3>Mes notes</h3>${DOMPurify.sanitize(notes.html)}`:''}<div class="actions"><button class="btn primary" data-revision-edit="${esc(id)}">✎ Modifier mes notes</button></div></div>`;return;
  }
  const qs=(custom.quizzes||[]).filter(x=>Array.isArray(x.questions)&&x.questions.length&&(x.revisionSource===id||x.courseId===id||x.chapterId===id||String(x.title||'').toLocaleLowerCase('fr').includes(p.title.toLocaleLowerCase('fr'))));
  article.innerHTML=`<div class="articlebar"><span class="pill">QCM</span><span class="muted">${esc(p.title)}</span></div><div class="content"><h2>Tester mes connaissances</h2>${qs.length?qs.map(q=>`<button class="btn primary" data-quiz="${esc(q.id)}">Commencer : ${esc(q.title)} (${q.questions.length} questions)</button>`).join(' '):'<p class="muted">Aucun QCM associé pour le moment. Il sera ajouté lors de la reconstruction du chapitre.</p>'}</div>`;
