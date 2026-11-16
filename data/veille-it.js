@@ -1,93 +1,5 @@
 window.TSSR_NEWS = [
   {
-    "title": "Linux 7.4 : pour Linus Torvalds, les correctifs assistés par l’IA sont devenus la norme",
-    "summary": "Dans l'annonce de Linux 7.4-rc2, Linus Torvalds tient les correctifs issus de l'IA pour acquis. Sur BPF, ils arriveraient plus vite que les rapports de bugs. Le post Linux 7.4 : pour Linus Torvalds, les correctifs assistés par l’IA sont devenus la norme a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/linux-7-4-correctifs-ia-norme-torvalds/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Avant la sortie de GTA 6, les joueurs de GTA 5 organisent une dernière balade à Los Santos",
-    "summary": "À moins d'une semaine de la sortie de GTA 6, les fans de GTA 5 ont prévu de se retrouver une dernière fois dans les rues de Los Santos. Baptisé « The Last Ride », cet événement communautaire invite tout le monde à ranger les armes et à profiter d'une ultime virée dans le monde ouvert de Rockstar.",
-    "url": "https://www.numerama.com/pop-culture/2373859-avant-la-sortie-de-gta-6-les-joueurs-de-gta-5-organisent-une-derniere-balade-a-los-santos.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Prime Video : livraison de fous rires garantie avec les 10 meilleures comédies",
-    "summary": "De la satire d'espionnage tricolore aux comédies britanniques, sans oublier la nostalgie des années 90 et l'humour noir vintage, Prime Video a de quoi faire rire dans tous les registres. Voici notre sélection des 10 meilleurs films que vous pouvez retrouver sur la plateforme.",
-    "url": "https://www.numerama.com/pop-culture/2369627-prime-video-livraison-de-fous-rires-garantie-avec-les-10-meilleures-comedies.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Microsoft bloque des mails sans prévenir, Google fait prouver la sécurité de Signal par 80 agents, OpenAI installe un bouton stop sur ses IA : on vous raconte la semaine Cyberguerre",
-    "summary": "Trois actualités à retenir cette semaine dans le cyberespace, un durcissement discret de Microsoft qui fait rejeter les mails de petites structures vers Hotmail et Outlook, Google qui démontre mathématiquement, avec des agents IA, que le chiffrement de Signal tient ses promesses, et OpenAI qui dévoile un dispositif censé interrompre ses IA en quelques secondes quand elles dérapent.",
-    "url": "https://www.numerama.com/tech/2374157-microsoft-bloque-des-mails-sans-prevenir-google-fait-prouver-la-securite-de-signal-par-80-agents-openai-installe-un-bouton-stop-sur-ses-ia-on-vous-raconte-la-semaine-cyberguerre.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "France-Turquie : où voir le match de foot en direct et en streaming ?",
-    "summary": "L'Équipe de France n'est pas encore qualifiée pour les quarts de finale de la Ligue des nations, en raison de sa défaite face à l'Italie. Mais les Bleus reçoivent la Turquie, 0 point au compteur, pour la dernière journée. Le match est diffusé ce dimanche 15 novembre à 20h45, sur TF1 et TF1+.",
-    "url": "https://www.numerama.com/pop-culture/2373649-france-turquie-ou-voir-le-match-de-foot-en-direct-et-en-streaming.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Cette étoile brillait fort tous les 113 jours et on sait enfin pourquoi",
-    "summary": "Une étoile particulièrement instable interrogeait les scientifiques depuis près de quinze ans. Une étude publiée ce lundi 9 novembre, appuyée sur le télescope Chandra, trouve enfin une explication à son étrange comportement : un compagnon caché qui provoque des explosions cycliques semblables à des supernovæ.",
-    "url": "https://www.numerama.com/sciences/2372635-cette-etoile-brillait-fort-tous-les-113-jours-et-on-sait-enfin-pourquoi.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Ils vont monter à bord, mais les astronautes n’ont pas le droit de voir la fusée : le rituel le plus paradoxal des lancements Soyouz",
-    "summary": "Quelques jours avant chaque décollage d'un Soyouz depuis Baïkonour, l'équipage n'a pas le droit de voir sa fusée partir vers le pas de tir.",
-    "url": "https://www.numerama.com/sciences/2371751-ils-vont-monter-a-bord-mais-les-astronautes-nont-pas-le-droit-de-la-voir-le-rituel-le-plus-paradoxal-des-lancements-soyouz.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Meilleurs mangas shôjo : voici notre top 10 des œuvres incontournables à lire absolument",
-    "summary": "Longtemps résumé aux histoires d'amour et aux romances lycéennes, le shôjo est pourtant bien plus riche qu'il n'y paraît. Du drame familial à la fantasy, en passant par les récits initiatiques et les histoires fantastiques, cette catégorie du manga regorge de pépites. Voici 10 œuvres incontournables pour découvrir toute la richesse du genre.",
-    "url": "https://www.numerama.com/pop-culture/2371755-meilleurs-mangas-shojo-voici-notre-top-10-des-oeuvres-incontournables-a-lire-absolument.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Disney+ propose ses abonnements à 30 % de réduction, mais ça ne durera pas",
-    "summary": "[Deal du jour] Disney+ remet ses trois abonnements mensuels en promotion. Les prix baissent pendant deux mois, à condition de s’abonner avant la date limite.",
-    "url": "https://www.numerama.com/pop-culture/2240235-vous-avez-manque-la-derniere-promo-disney-elle-est-deja-de-retour.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Cette app française connaît mieux votre Tesla que l’app Tesla",
-    "summary": "Vous trouvez votre app Tesla trop limitée ? Un Français lance Copeel, une application iPhone destinée aux propriétaires de Tesla et nous avons eu la chance de la bêta-tester. Elle enregistre trajets, recharges, stationnement et santé de la batterie, ajoute un assistant IA et plusieurs features malines.",
-    "url": "https://www.numerama.com/tech/2373571-cette-app-francaise-connait-mieux-votre-tesla-que-lapp-tesla.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Après 40 ans de règne, Volkswagen doit tout réapprendre en Chine",
-    "summary": "40 ans au sommet, et voilà Volkswagen obligée de réapprendre son métier. En Chine, le réveil est brutal. Un édito Watt Else publié le 12 novembre 2026 au retour d'un séjour en Chine.",
-    "url": "https://www.numerama.com/vroom/2374243-apres-40-ans-de-regne-volkswagen-doit-tout-reapprendre-en-chine.html",
-    "date": "2026-11-15",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Passerelles Check Point piratées via PHP2Shell : une porte dérobée et un wiper pour VMware ESXi",
     "summary": "PHP2Shell et une faille zero-day de Gaia OS ont permis de pirater des passerelles Check Point, avant le déploiement d'un wiper sur un hôte VMware ESXi. Le post Passerelles Check Point piratées via PHP2Shell : une porte dérobée et un wiper pour VMware ESXi a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/check-point-php2shell-wiper-esxi-tsga/",
@@ -131,6 +43,86 @@ window.TSSR_NEWS = [
     "title": "Disney+ : les 10 meilleures comédies sur la plateforme de Mickey",
     "summary": "On a trop souvent tendance à résumer Disney+ aux dessins animés de notre enfance et aux blockbusters Marvel. Pourtant, depuis que Disney a racheté la 21st Century Fox en 2019, et au fil des films qu'elle accueille sous licence, la plateforme propose aussi des comédies franchement irrévérencieuses. Voici 10 films cultes qui vont vous faire rire !",
     "url": "https://www.numerama.com/pop-culture/2373149-disney-les-10-meilleures-comedies-sur-la-plateforme-de-mickey.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Vous vous demandez quelle température fait-il dans l’espace ? La question n’est pas si vite répondue",
+    "summary": "Un satellite possède une face éclairée et une face à l’ombre dont les températures peuvent différer de plusieurs centaines de degrés. Dans le milieu spatial, les instruments mesurent plusieurs températures en même temps qui coexistent au même endroit. « Quelle température fait-il dans l’espace ? » n’a pas une, mais plusieurs réponses.",
+    "url": "https://www.numerama.com/sciences/2373263-vous-vous-demandez-quelle-temperature-fait-il-dans-lespace-la-question-nest-pas-si-vite-repondue.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Très mauvaise nouvelle pour GTA 6, retour de Johnny Depp au cinéma, le recap Pop Culture de la semaine",
+    "summary": "Cette semaine fut forte en actualité pop culture, entre la mauvaise nouvelle technique pour GTA 6 et ses 30 FPS, le retour de Johnny Depp au cinéma dans le film Scrooge et la révélation du magicien ténébreux dans Les Anneaux de Pouvoir. Retour sur l'actu forte de cette semaine de novembre.",
+    "url": "https://www.numerama.com/tech/2374239-tres-mauvaise-nouvelle-pour-gta-6-retour-de-johnny-depp-au-cinema-le-recap-pop-culture-de-la-semaine.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Pour le Black Friday, Darty fait chuter le Galaxy S25 Edge de 700 €, avec un casque à réduction de bruit en prime",
+    "summary": "[Deal du jour] Le Black Friday chez Darty permet de mettre la main sur le Galaxy S25 Edge de Samsung, le plus fin des Galaxy S25 à 599 € au lieu de 1 299 €. Il vient en prime avec un casque Bluetooth à réduction de bruit active.",
+    "url": "https://www.numerama.com/tech/2374209-pour-le-black-friday-darty-fait-chuter-le-galaxy-s25-edge-de-700-e-avec-un-casque-a-reduction-de-bruit-en-prime.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "J’ai appris à aimer Phantom Blade Zero",
+    "summary": "J'ai une relation que l'on pourra qualifier de toxique avec Phantom Blade Zero. Je l'ai tant aimé. Je l'ai tant détesté aussi. J'aurais aimé en faire mon jeu de l'année 2026, mais certains de ses défauts m'en empêchent. Il n'en demeure pas moins un excellent jeu d'action, comme le montre mon test.",
+    "url": "https://www.numerama.com/pop-culture/2370715-test-de-phantom-blade-zero-sur-ps5-pro.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "J’ai laissé Gemini me coacher pour mon premier marathon : il m’a menti avec aplomb",
+    "summary": "Cinq mois de préparation, des dizaines de fichiers CSV commentés, un plan pyramidal impeccable sur le papier… et une explosion au 22e kilomètre que Gemini n'avait pas vue venir. Claude lui, avait tout anticipé. Retour d'expérience sur mon premier marathon, et sur ce qu'on doit vraiment attendre d'un coach artificiel.",
+    "url": "https://www.numerama.com/tech/2372409-jai-laisse-gemini-me-coacher-pour-mon-premier-marathon-il-ma-menti-avec-aplomb.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday 2026 : voici la technique la plus rapide pour vérifier si un message provient vraiment d’Amazon",
+    "summary": "Avant le Black Friday, les faux messages qui se font passer pour Amazon se multiplient. La plateforme propose une adresse mail pour vérifier en quelques instants si un mail, un SMS ou un appel vient bien d’elle.",
+    "url": "https://www.numerama.com/cyberguerre/2374317-black-friday-2026-voici-la-technique-la-plus-rapide-pour-verifier-si-un-message-provient-vraiment-damazon.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Númenor dans Les Anneaux de pouvoir : ce qu’il est advenu de l’île de Tolkien dans Le Seigneur des anneaux",
+    "summary": "Númenor est apparue dès l'épisode 3 de la saison 1 des Anneaux de pouvoir, en 2022. Dans la saison 3, lancée ce mercredi 11 novembre 2026 sur Prime Video, l'île est au bord de la guerre civile. Ce royaume, à peine cité dans Le Seigneur des anneaux, est pourtant capital.",
+    "url": "https://www.numerama.com/pop-culture/1107026-numenor-dans-les-anneaux-de-pouvoir-ce-quil-est-advenu-de-lile-de-tolkien-dans-le-seigneur-des-anneaux.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Panne géante : Microsoft balaie la théorie d’un agent IA qui aurait dérapé",
+    "summary": "Dans un message publié sur X, Microsoft présente ses excuses pour la panne mondiale de Microsoft 365. Selon l'entreprise, il s'agit d'un « problème technique » sans lien avec une cyberattaque ni avec l'IA ou ses agents.",
+    "url": "https://www.numerama.com/tech/2374527-panne-geante-microsoft-balaie-la-theorie-dun-agent-ia-qui-aurait-derape.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Aucune sonde n’a jamais été aussi loin dans le cosmos : Voyager 1 arrive à un jour lumière de la Terre, et la NASA lance un jeu",
+    "summary": "La sonde Voyager 1 sera à un jour-lumière de la Terre le mercredi 18 novembre 2026, soit 25,9 milliards de kilomètres. La veille au soir, la NASA propose à tout le monde de lui faire signe en morse avec son smartphone.",
+    "url": "https://www.numerama.com/sciences/2374607-aucune-sonde-na-jamais-ete-aussi-loin-dans-le-cosmos-voyager-1-arrive-a-un-jour-lumiere-de-la-terre-et-la-nasa-lance-un-jeu.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Xiaomi Electric Scooter 4 Ultra : la trottinette aux 70 km d’autonomie perd un tiers de son prix",
+    "summary": "[Deal du jour] La trottinette la plus haut placée de la gamme 4 de Xiaomi baisse son prix pendant le Black Friday. Sur la boutique de Xiaomi, l'Electric Scooter 4 Ultra perd 200 € de son prix.",
+    "url": "https://www.numerama.com/vroom/2374207-xiaomi-electric-scooter-4-ultra-la-trottinette-aux-70-km-dautonomie-perd-un-tiers-de-son-prix.html",
     "date": "2026-11-14",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -451,6 +443,14 @@ window.TSSR_NEWS = [
     "title": "Maersk confirme une fuite de données : WhiteArmor réclame 5 millions de dollars",
     "summary": "Maersk reconnaît un vol de données sur un système hérité d'un rachat. WhiteArmor revendique 100 Go de données volées et exige 5 millions de dollars en bitcoins. Le post Maersk confirme une fuite de données : WhiteArmor réclame 5 millions de dollars a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/maersk-fuite-de-donnees-whitearmor/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Xen Orchestra : cette faille critique déjà exploitée permet de compromettre les hôtes XCP-ng",
+    "summary": "Un cookie piégé suffit pour devenir administrateur de Xen Orchestra : cette faille critique est déjà exploitée. Voici comment protéger vos hôtes XCP-ng. Le post Xen Orchestra : cette faille critique déjà exploitée permet de compromettre les hôtes XCP-ng a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/xen-orchestra-faille-critique-vsa-2026-062-exploitee/",
     "date": "2026-11-12",
     "source": "IT-Connect",
     "category": "Infrastructures"
