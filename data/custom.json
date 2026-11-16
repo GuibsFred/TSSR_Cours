@@ -1486,9 +1486,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:09": {
-        "title": "Gestion de la planification",
+        "title": "Gestion des utilisateurs et des groupes",
         "order": 10,
-        "displayNumber": "10"
+        "displayNumber": "10",
+        "category": "06 — Administration GNU / Linux (1 / 2) / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:10": {
         "title": "Utilisation de la journalisation",
