@@ -225,11 +225,43 @@ function tssrV82Reading(course,html){
  const parts=tssrV82Blocks(course.rawMarkdown||'');
  const essentials=course.essentialsMarkdown||parts['POINTS ESSENTIELS']||'';
  const commands=course.commandsMarkdown||parts['COMMANDES A RETENIR']||'';
- const icon=String(course.chapterIcon||'').trim();
- const safeIcon=/^(?:🐧|🌐|🖥️|🛡️|⌨️|💾|☁️|🗄️|📡|🔧|🐚|🪟)$/.test(icon)?icon:'🐧';
- const aside=(essentials||commands)?'<aside class="tssr-v82-aside">'+(essentials?'<section class="tssr-v82-panel"><h3>✦ L’essentiel à retenir</h3><div class="tssr-v82-panel-scroll">'+DOMPurify.sanitize(marked.parse(essentials))+'</div></section>':'')+(commands?'<section class="tssr-v82-panel"><h3>⌘ Commandes à retenir</h3><div class="tssr-v82-panel-scroll">'+tssrV82CommandMarkup(commands)+'</div><footer><span class="tssr-syn-cmd">Commande</span> · <span class="tssr-syn-opt">Option</span> · <span class="tssr-syn-arg">Argument</span></footer></section>':'')+'</aside>':'';
- return '<div class="tssr-v82-layout"><section class="tssr-v82-reading"><div class="tssr-v82-hero"><div><small>ESPACE DE FORMATION · TSSR</small><h2>'+esc(course.title)+'</h2></div><span class="tssr-v82-icon" aria-label="Icône du chapitre">'+safeIcon+'</span></div><div class="tssr-v82-reading-body">'+html+'</div></section>'+aside+'</div>';
+ const root=document.createElement('div');root.innerHTML=html;
+ const headings=[...root.querySelectorAll('h1,h2,h3,h4')];
+ let number=0;
+ const toc=headings.filter(h=>h.tagName!=='H1').map((h,i)=>{
+  const id='tssr-section-'+i;h.id=id;
+  const level=Number(h.tagName.slice(1));
+  return {id,label:h.textContent.trim(),level};
+ });
+ const tocMarkup=toc.length?'<div class="tssr-plan-scroll">'+toc.map((x,i)=>'<button type="button" class="tssr-plan-link '+(i===0?'active ':'')+'tssr-plan-level-'+x.level+'" data-tssr-anchor="'+x.id+'" title="'+esc(x.label)+'">'+esc(x.label)+'</button>').join('')+'</div>':'<p class="tssr-panel-empty">Le plan apparaîtra avec les titres du cours.</p>';
+ const commandMarkup=commands?tssrV82CommandMarkup(commands):'<p class="tssr-panel-empty">Les commandes à retenir apparaîtront ici après import.</p>';
+ const essentialMarkup=essentials?DOMPurify.sanitize(marked.parse(essentials)):'<p class="tssr-panel-empty">Les points essentiels apparaîtront ici après import.</p>';
+ const aside='<aside class="tssr-v82-aside"><section class="tssr-v82-panel tssr-plan"><h3>▤ Plan du cours</h3>'+tocMarkup+'</section><section class="tssr-v82-panel tssr-commands"><h3>⌘ Commandes essentielles</h3><div class="tssr-v82-panel-scroll">'+commandMarkup+'</div></section><section class="tssr-v82-panel tssr-essentials"><h3>✦ Points clés à retenir</h3><div class="tssr-v82-panel-scroll">'+essentialMarkup+'</div></section></aside>';
+ return '<div class="tssr-v82-layout tssr-vfinal-layout"><section class="tssr-v82-reading"><div class="tssr-v82-reading-body">'+root.innerHTML+'</div></section>'+aside+'</div>';
 }
+function tssrActivatePlan(){
+ const container=document.querySelector('.tssr-vfinal-layout');if(!container)return;
+ const links=[...container.querySelectorAll('[data-tssr-anchor]')];
+ const reading=container.querySelector('.tssr-v82-reading');
+ links.forEach(btn=>btn.addEventListener('click',()=>{
+  const target=document.getElementById(btn.dataset.tssrAnchor);if(!target)return;
+  target.scrollIntoView({behavior:'smooth',block:'start'});
+  links.forEach(x=>x.classList.toggle('active',x===btn));
+ }));
+ if(window.tssrPlanObserver)window.tssrPlanObserver.disconnect();
+ if('IntersectionObserver' in window){
+  window.tssrPlanObserver=new IntersectionObserver(entries=>{
+   for(const e of entries){if(e.isIntersecting){links.forEach(x=>x.classList.toggle('active',x.dataset.tssrAnchor===e.target.id));break}}
+  },{root:null,rootMargin:'-12% 0px -65% 0px',threshold:0});
+  links.forEach(x=>{const el=document.getElementById(x.dataset.tssrAnchor);if(el)window.tssrPlanObserver.observe(el)});
+ }
+}
+function tssrSetReading(course,html){
+ const el=document.getElementById('articleContent');if(!el)return;
+ el.innerHTML=tssrV82Reading(course,html);
+ tssrActivatePlan();
+}
+
 function extractBlue(html){
  const div=document.createElement('div');div.innerHTML=extractRevisionHtml(html);
  return [...div.children].map(el=>el.textContent.trim()).filter(Boolean);
@@ -441,7 +473,7 @@ async function tssrRenderArchivedCourse(page){
  dest.innerHTML=DOMPurify.sanitize(marked.parse(await r.text()));}
  catch(e){dest.innerHTML=tssrDisplayHtml(html)}
 }
-function render(){document.body.classList.remove('tssr-current-module-gold');if(current){try{const last=all().find(x=>x.id===current&&x.kind==='cours');if(last)localStorage.setItem('tssr-last-course-id',last.id)}catch(e){}}document.body.classList.toggle('home-network',section==='accueil'&&!current);nav();let v=$('#view'),a=all(),q=$('#search').value.toLowerCase().trim();if(q){current=null;tssrRenderGlobalSearch($('#search').value.trim());return;}if(current?.startsWith('revision:')){showRevision(sourceId(current));return}if(current){let p=a.find(x=>x.id===current);if(!p){current=null;return render()}v.innerHTML=header(p.title,p.category||'Mon espace TSSR',`<div class="actions"><button class="btn primary" data-edit="${esc(p.id)}">✎ ${p.readonly?'Rédiger mon cours':'Modifier'}</button><button class="btn" data-manage-course="${esc(p.id)}">⚙ Titre · Dossier · Image</button><button class="btn warn" data-hide-course="${esc(p.id)}">Retirer</button></div>`)+`<nav class="tssr-course-tabs" aria-label="Sections du chapitre"><button class="active" data-course-tab="cours" data-course-id="${esc(p.id)}">📘 Cours complet</button><button data-course-tab="fiche" data-course-id="${esc(p.id)}">▤ Fiche de révision</button><button data-course-tab="qcm" data-course-id="${esc(p.id)}">☑ QCM</button></nav>`+`<article class="article"><div class="articlebar"><span class="pill">${esc(labels[p.kind]?.[1]||'Cours')}</span><span class="muted">${p.readonly?'Chapitre à personnaliser':'Mon cours'}</span></div><div class="content" id="articleContent">Chargement…</div></article>`;if(p.readonly&&p.file){fetch(p.file).then(r=>{if(!r.ok)throw Error('Cours introuvable');return r.text()}).then(t=>{$('#articleContent').innerHTML=DOMPurify.sanitize(marked.parse(stripFrontmatter(t)))}).catch(()=>{$('#articleContent').textContent='Impossible de charger le cours.'})}else{if(p.id==='chapter:05:12')tssrRenderArchivedCourse(p);else $('#articleContent').innerHTML=tssrV82Reading(p,tssrDisplayHtml(p.html||'<p>Chapitre prêt à compléter. Clique sur « Rédiger mon cours » pour rédiger ton cours.</p>'))}return}
+function render(){document.body.classList.remove('tssr-current-module-gold');if(current){try{const last=all().find(x=>x.id===current&&x.kind==='cours');if(last)localStorage.setItem('tssr-last-course-id',last.id)}catch(e){}}document.body.classList.toggle('home-network',section==='accueil'&&!current);nav();let v=$('#view'),a=all(),q=$('#search').value.toLowerCase().trim();if(q){current=null;tssrRenderGlobalSearch($('#search').value.trim());return;}if(current?.startsWith('revision:')){showRevision(sourceId(current));return}if(current){let p=a.find(x=>x.id===current);if(!p){current=null;return render()}v.innerHTML=header(p.title,p.category||'Mon espace TSSR',`<div class="actions"><button class="btn primary" data-edit="${esc(p.id)}">✎ ${p.readonly?'Rédiger mon cours':'Modifier'}</button><button class="btn" data-manage-course="${esc(p.id)}">⚙ Titre · Dossier · Image</button><button class="btn warn" data-hide-course="${esc(p.id)}">Retirer</button></div>`)+`<div class="tssr-chapter-badge" aria-label="Illustration du chapitre"><img src="assets/icons-apps/debian.svg" alt="Debian"></div>`+`<nav class="tssr-course-tabs" aria-label="Sections du chapitre"><button class="active" data-course-tab="cours" data-course-id="${esc(p.id)}">📘 Cours complet</button><button data-course-tab="fiche" data-course-id="${esc(p.id)}">▤ Fiche de révision</button><button data-course-tab="qcm" data-course-id="${esc(p.id)}">☑ QCM</button></nav>`+`<article class="article"><div class="articlebar"><span class="pill">${esc(labels[p.kind]?.[1]||'Cours')}</span><span class="muted">${p.readonly?'Chapitre à personnaliser':'Mon cours'}</span></div><div class="content" id="articleContent">Chargement…</div></article>`;if(p.readonly&&p.file){fetch(p.file).then(r=>{if(!r.ok)throw Error('Cours introuvable');return r.text()}).then(t=>{tssrSetReading(p,DOMPurify.sanitize(marked.parse(stripFrontmatter(t))))}).catch(()=>{$('#articleContent').textContent='Impossible de charger le cours.'})}else{if(p.id==='chapter:05:12')tssrRenderArchivedCourse(p);else tssrSetReading(p,tssrDisplayHtml(p.html||'<p>Chapitre prêt à compléter. Clique sur « Rédiger mon cours » pour rédiger ton cours.</p>'))}return}
 if(section==='homelab'){v.innerHTML=header('Homelab','Ton laboratoire informatique personnel')+`<section class="homelab-coming"><div class="homelab-visual"><img src="assets/cours-c-servers.png" alt="Serveurs du laboratoire"></div><div><span class="homelab-tag">PROCHAINEMENT</span><h2>Ton Homelab prend forme.</h2><p>Un espace dédié à tes machines virtuelles, serveurs, réseaux et expérimentations TSSR.</p><div class="homelab-status"><span></span> En préparation</div></div></section>`;return}
 if(section==='accueil'){
  const notes=management().notes||[];

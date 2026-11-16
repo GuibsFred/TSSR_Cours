@@ -1,61 +1,5 @@
 window.TSSR_NEWS = [
   {
-    "title": "Maileva (La Poste) : les noms et adresses de 22 millions de personnes dérobés lors d’une cyberattaque",
-    "summary": "Maileva, filiale de La Poste, confirme le vol des noms et adresses de 22 millions de personnes. Relances, données des clients : voici ce que l'on sait. Le post Maileva (La Poste) : les noms et adresses de 22 millions de personnes dérobés lors d’une cyberattaque a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/maileva-la-poste-fuite-donnees-22-millions-personnes/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Cybersécurité : j’ai créé des films de sensibilisation avec Claude et Higgsfield",
-    "summary": "J'ai connecté Claude à Higgsfield via MCP pour créer deux films de sensibilisation à la cybersécurité, sans caméra ni acteur. Méthode, coût et limites. Le post Cybersécurité : j’ai créé des films de sensibilisation avec Claude et Higgsfield a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/higgsfield-claude-mcp-films-sensibilisation/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Microsoft 365 : un correctif Windows défectueux à l’origine de la panne mondiale",
-    "summary": "Microsoft a publié son rapport sur la panne de Microsoft 365 : un bug Windows dormant depuis juillet est à l'origine de la panne, mais pas tout seul. Le post Microsoft 365 : un correctif Windows défectueux à l’origine de la panne mondiale a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/panne-microsoft-365-rapport-post-incident-bug-windows/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Erreur 0x80041008 : Microsoft corrige l’activation de Windows avec des mises à jour hors bande",
-    "summary": "Microsoft a publié des mises à jour hors bande pour corriger l'erreur 0x80041008 qui bloque l'activation de Windows via slmgr.vbs. Voici les KB à installer. Le post Erreur 0x80041008 : Microsoft corrige l’activation de Windows avec des mises à jour hors bande a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/windows-mise-a-jour-hors-bande-activation-slmgr-080041008/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "GTA 6 : comment 212 Go arrivent sur des millions de consoles sans saturer Internet ?",
-    "summary": "GTA 6 pèse jusqu'à 212 Go et sort le 19 novembre. Préchargement, CDN, clé livrée au lancement : voici comment le réseau absorbe des millions de téléchargements. Le post GTA 6 : comment 212 Go arrivent sur des millions de consoles sans saturer Internet ? a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/gta-6-prechargement-cdn-chiffrement/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Bon plan Geekom : les meilleures offres sur les mini-PC avant même le Black Friday",
-    "summary": "Vente flash Geekom : économisez jusqu’à 200€ sur l’IT13 Max et l’A5 Pro jusqu'au 3 décembre 2026. Codes promo exclusifs et livraisons gratuites. Le post Bon plan Geekom : les meilleures offres sur les mini-PC avant même le Black Friday a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/bon-plan-geekom-les-meilleures-offres-sur-les-mini-pc-avant-meme-le-black-friday/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Nextcloud Office Desktop : l’application de bureau basée sur Euro-Office est disponible",
-    "summary": "Nextcloud Office Desktop, l'application de bureau gratuite basée sur Euro-Office, est disponible pour Windows, Linux et macOS. Voici ce qu'il faut retenir. Le post Nextcloud Office Desktop : l’application de bureau basée sur Euro-Office est disponible a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/nextcloud-office-desktop-euro-office-disponible/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
     "title": "Linux 7.4 : pour Linus Torvalds, les correctifs assistés par l’IA sont devenus la norme",
     "summary": "Dans l'annonce de Linux 7.4-rc2, Linus Torvalds tient les correctifs issus de l'IA pour acquis. Sur BPF, ils arriveraient plus vite que les rapports de bugs. Le post Linux 7.4 : pour Linus Torvalds, les correctifs assistés par l’IA sont devenus la norme a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/linux-7-4-correctifs-ia-norme-torvalds/",
@@ -64,186 +8,82 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Alibaba lance Qwen4-Max, son nouveau modèle d’IA axé sur la performance et la sécurité",
-    "summary": "Alibaba a officiellement lancé Qwen4-Max le 16 novembre 2026, son nouveau modèle phare d’intelligence artificielle destiné aux applications professionnelles et scientifiques. Le géant chinois annonce une réduction de 62 % du coût moyen par tâche, des capacités de raisonnement améliorées et des dispositifs de sécurité renforcés. Une offensive qui intensifie la concurrence mondiale sur le marché de l’IA générative.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/alibaba-lance-qwen4-max-son-nouveau-modele-d-ia-ax",
-    "date": "2026-11-16",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Intel poursuivi par ses actionnaires après une chute de près de 29 % en Bourse",
-    "summary": "Intel fait face à une plainte visant à engager une action collective, qui doit encore être certifiée par le tribunal. Des investisseurs accusent le fabricant américain de semi-conducteurs d’avoir dissimulé l’impact du ralentissement du marché des PC et de l’accumulation des stocks sur ses perspectives financières. Cette procédure intervient après une chute de 28,6 % de son action, le 30 octobre 2026, effaçant près de 140 milliards de dollars de capitalisation boursière.",
-    "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/intel-poursuivi-par-ses-actionnaires-apres-une-chu",
-    "date": "2026-11-16",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Nvidia : Jensen Huang envisage un retour à la direction",
-    "summary": "Quelques jours après son départ de Nvidia, Jensen Huang envisagerait déjà de reprendre ses fonctions. Selon le Financial Times, plusieurs de ses proches se mobilisent pour soutenir son retour, tandis que le secrétaire américain au Trésor, Scott Bessent, appelle le fabricant de puces à recruter un dirigeant extérieur. Ces discussions interviennent à deux jours de la publication des résultats trimestriels du groupe.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/nvidia-jensen-huang-envisage-un-retour-a-la-direct",
-    "date": "2026-11-16",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "OpenAI lance ChatGPT Wallet pour les paiements par agents IA",
-    "summary": "OpenAI a présenté, le 13 novembre 2026, ChatGPT Wallet, un portefeuille de paiement permettant aux agents d'intelligence artificielle d'effectuer des achats pour le compte des utilisateurs. Développée en partenariat avec American Express, Mastercard et Visa, la solution repose sur la tokenisation des données bancaires et une validation de chaque transaction. Son déploiement débute aux États-Unis auprès des abonnés ChatGPT Pro, via dots.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/openai-lance-chatgpt-wallet-pour-les-paiements-par",
-    "date": "2026-11-16",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Cloudflare ouvre Kitesurf et sécurise l’accès aux réseaux privés",
-    "summary": "Cloudflare a annoncé deux évolutions de son infrastructure destinées aux développeurs et aux entreprises. Le fournisseur a rendu open source Kitesurf, son moteur de navigation conçu pour les agents IA, et généralisé Application Services for Private Origins, une solution permettant d’accéder à des applications hébergées sur des réseaux privés sans exposer directement leurs serveurs sur Internet.",
-    "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/cloudflare-ouvre-kitesurf-et-securise-l-acces-aux-",
-    "date": "2026-11-16",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Cursor : une clé volée chez Fireworks AI à l’origine d’une cyberattaque",
-    "summary": "Cursor a détaillé les circonstances de la cyberattaque ayant permis la diffusion d’une version malveillante de l’extension Claude Code sur sa marketplace. Dans un rapport publié le 13 novembre 2026, l’éditeur affirme qu’une clé d’accès compromise chez son fournisseur Fireworks AI a permis aux attaquants d’accéder à plusieurs systèmes internes et à des données clients.",
-    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/cursor-une-cle-volee-chez-fireworks-ai-a-l-origine",
-    "date": "2026-11-16",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Anthropic ouvre l'auto-hébergement de Claude Managed Agents",
-    "summary": "Anthropic a annoncé, le 12 novembre 2026, la disponibilité en bêta privée d'une version auto-hébergée de Claude Managed Agents. Les entreprises peuvent désormais exécuter l'infrastructure d'orchestration de leurs agents IA dans leur propre environnement cloud ou sur site. La solution permet de conserver les historiques de sessions en interne et, sous certaines conditions, de bénéficier d'une conservation zéro des données transmises aux modèles Claude.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/anthropic-ouvre-l-auto-hebergement-de-claude-manag",
-    "date": "2026-11-16",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "PostgreSQL corrige 52 failles, dont une vieille de 22 ans",
-    "summary": "Le PostgreSQL Global Development Group a publié, le 12 novembre 2026, des mises à jour corrigeant 52 vulnérabilités de sécurité, dont 32 affichent un score CVSS de 8,8. Parmi elles, CVE-2026-6460 permet une exécution de code arbitraire sur le serveur. Cette publication marque également la fin du support de PostgreSQL 14, dont la version 14.25 constitue la dernière mise à jour.",
-    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/postgresql-corrige-52-failles-dont-une-vieille-de-",
-    "date": "2026-11-16",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Entre Orange en octobre et SFR en novembre, la 2G disparaît de France en quelques semaines",
-    "summary": "SFR éteint son réseau 2G du 15 au 30 novembre 2026 dans les grandes agglomérations, puis du 1er au 15 décembre dans le reste de la métropole. L'opérateur prévoit aussi de couper sa 3G fin 2028, alors que ses trois concurrents pourraient l'avoir racheté d'ici là.",
-    "url": "https://www.numerama.com/tech/2375261-entre-orange-en-octobre-et-sfr-en-novembre-la-2g-disparait-de-france-en-quelques-semaines.html",
-    "date": "2026-11-16",
+    "title": "Avant la sortie de GTA 6, les joueurs de GTA 5 organisent une dernière balade à Los Santos",
+    "summary": "À moins d'une semaine de la sortie de GTA 6, les fans de GTA 5 ont prévu de se retrouver une dernière fois dans les rues de Los Santos. Baptisé « The Last Ride », cet événement communautaire invite tout le monde à ranger les armes et à profiter d'une ultime virée dans le monde ouvert de Rockstar.",
+    "url": "https://www.numerama.com/pop-culture/2373859-avant-la-sortie-de-gta-6-les-joueurs-de-gta-5-organisent-une-derniere-balade-a-los-santos.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Apple change d’avis sur l’iPhone Duo : la reconnaissance faciale arrive",
-    "summary": "La deuxième bêta d'iOS 27.3 ajoute plusieurs nouvelle fonctionnalités exclusives à l'iPhone Duo, dont un nouveau mode « Déverrouiller avec le visage ». Apple, qui a remplacé Face ID (visage) par Touch ID (empreinte) avec son premier téléphone pliant, a décidé d'écouter les utilisateurs et de leur offrir une reconnaissance faciale moins sécurisée que Face ID s'ils le souhaitent. La nouveauté est optionnelle et vient avec plusieurs limites.",
-    "url": "https://www.numerama.com/tech/2374873-apple-change-davis-sur-liphone-duo-la-reconnaissance-faciale-arrive.html",
-    "date": "2026-11-16",
+    "title": "Prime Video : livraison de fous rires garantie avec les 10 meilleures comédies",
+    "summary": "De la satire d'espionnage tricolore aux comédies britanniques, sans oublier la nostalgie des années 90 et l'humour noir vintage, Prime Video a de quoi faire rire dans tous les registres. Voici notre sélection des 10 meilleurs films que vous pouvez retrouver sur la plateforme.",
+    "url": "https://www.numerama.com/pop-culture/2369627-prime-video-livraison-de-fous-rires-garantie-avec-les-10-meilleures-comedies.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Fini les excès de vitesse, Tesla met à jour son FSD pour l’Europe",
-    "summary": "En Europe, le FSD de Tesla ne peut plus rouler qu'à 10 % au-dessus de la vitesse autorisée, contre 50 % jusqu'ici. Ce lundi 16 novembre, le régulateur néerlandais a validé de nouvelles contraintes, dont les mains sur le volant au-delà de 130 km/h.",
-    "url": "https://www.numerama.com/vroom/2375861-fini-les-exces-de-vitesse-tesla-met-a-jour-son-fsd-pour-leurope.html",
-    "date": "2026-11-16",
+    "title": "Microsoft bloque des mails sans prévenir, Google fait prouver la sécurité de Signal par 80 agents, OpenAI installe un bouton stop sur ses IA : on vous raconte la semaine Cyberguerre",
+    "summary": "Trois actualités à retenir cette semaine dans le cyberespace, un durcissement discret de Microsoft qui fait rejeter les mails de petites structures vers Hotmail et Outlook, Google qui démontre mathématiquement, avec des agents IA, que le chiffrement de Signal tient ses promesses, et OpenAI qui dévoile un dispositif censé interrompre ses IA en quelques secondes quand elles dérapent.",
+    "url": "https://www.numerama.com/tech/2374157-microsoft-bloque-des-mails-sans-prevenir-google-fait-prouver-la-securite-de-signal-par-80-agents-openai-installe-un-bouton-stop-sur-ses-ia-on-vous-raconte-la-semaine-cyberguerre.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "GTA 6 plus dangereux que le Beaujolais nouveau ? Cette comparaison lunaire fait réagir",
-    "summary": "Alors que GTA 6 doit sortir ce jeudi 19 novembre, certains semblent avoir du mal à comprendre pourquoi le lancement du titre de Rockstar est davantage attendu que l'arrivée du Beaujolais nouveau. Sur les réseaux sociaux, une comparaison entre la violence supposée du jeu et la convivialité du vin fait grincer des dents les internautes.",
-    "url": "https://www.numerama.com/pop-culture/2375745-gta-6-plus-dangereux-que-le-beaujolais-nouveau-cette-comparaison-lunaire-fait-reagir.html",
-    "date": "2026-11-16",
+    "title": "France-Turquie : où voir le match de foot en direct et en streaming ?",
+    "summary": "L'Équipe de France n'est pas encore qualifiée pour les quarts de finale de la Ligue des nations, en raison de sa défaite face à l'Italie. Mais les Bleus reçoivent la Turquie, 0 point au compteur, pour la dernière journée. Le match est diffusé ce dimanche 15 novembre à 20h45, sur TF1 et TF1+.",
+    "url": "https://www.numerama.com/pop-culture/2373649-france-turquie-ou-voir-le-match-de-foot-en-direct-et-en-streaming.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "James Bond : pourquoi Robert Pattinson est le meilleur choix possible pour 007",
-    "summary": "Alors que l'officialisation de Robert Pattinson dans le rôle de 007 divise déjà certains puristes de la saga, l'acteur britannique possède en réalité tous les atouts pour réussir ce pari risqué. C'est même le meilleur acteur pour James Bond.",
-    "url": "https://www.numerama.com/pop-culture/2375739-james-bond-pourquoi-robert-pattinson-est-le-meilleur-choix-possible-pour-007.html",
-    "date": "2026-11-16",
+    "title": "Cette étoile brillait fort tous les 113 jours et on sait enfin pourquoi",
+    "summary": "Une étoile particulièrement instable interrogeait les scientifiques depuis près de quinze ans. Une étude publiée ce lundi 9 novembre, appuyée sur le télescope Chandra, trouve enfin une explication à son étrange comportement : un compagnon caché qui provoque des explosions cycliques semblables à des supernovæ.",
+    "url": "https://www.numerama.com/sciences/2372635-cette-etoile-brillait-fort-tous-les-113-jours-et-on-sait-enfin-pourquoi.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Ni Model 3 ni Semi : Tesla parie 3 milliards à sa gigafactory de Berlin sur son Cybercab",
-    "summary": "Tesla va investir 3 milliards d'euros pour agrandir son usine de Grünheide, près de Berlin. Le nouveau bâtiment pourra produire à terme jusqu'à un million de Cybercab, son robotaxi sans volant ni pédales.",
-    "url": "https://www.numerama.com/vroom/2375715-ni-model-3-ni-semi-tesla-parie-3-milliards-a-sa-gigafactory-de-berlin-sur-son-cybercab.html",
-    "date": "2026-11-16",
+    "title": "Ils vont monter à bord, mais les astronautes n’ont pas le droit de voir la fusée : le rituel le plus paradoxal des lancements Soyouz",
+    "summary": "Quelques jours avant chaque décollage d'un Soyouz depuis Baïkonour, l'équipage n'a pas le droit de voir sa fusée partir vers le pas de tir.",
+    "url": "https://www.numerama.com/sciences/2371751-ils-vont-monter-a-bord-mais-les-astronautes-nont-pas-le-droit-de-la-voir-le-rituel-le-plus-paradoxal-des-lancements-soyouz.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Black Friday : les deals immanquables ce lundi 16 novembre (EN DIRECT)",
-    "summary": "À onze jours du Black Friday 2026, le rythme s’accélère : Amazon lance sa Black Friday Week dès jeudi, la Fnac, Darty et Boulanger enchaînent les remises. Suivez en direct les meilleures promos.",
-    "url": "https://www.numerama.com/tech/2374925-black-friday-en-direct-les-meilleures-offres-ce-lundi-avant-la-black-week.html",
-    "date": "2026-11-16",
+    "title": "Meilleurs mangas shôjo : voici notre top 10 des œuvres incontournables à lire absolument",
+    "summary": "Longtemps résumé aux histoires d'amour et aux romances lycéennes, le shôjo est pourtant bien plus riche qu'il n'y paraît. Du drame familial à la fantasy, en passant par les récits initiatiques et les histoires fantastiques, cette catégorie du manga regorge de pépites. Voici 10 œuvres incontournables pour découvrir toute la richesse du genre.",
+    "url": "https://www.numerama.com/pop-culture/2371755-meilleurs-mangas-shojo-voici-notre-top-10-des-oeuvres-incontournables-a-lire-absolument.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Il faut sauver le soldat Jensen Huang : une « war room » de la Silicon Valley veut le remettre à la tête de Nvidia",
-    "summary": "Jensen Huang, qui a démissionné de la direction de Nvidia le 12 novembre 2026, envisagerait déjà de revenir. Un de ses alliés monte une « war room » de dirigeants de la Silicon Valley pour faire pression sur le conseil d'administration. Mais le retour de l'ex-CEO à la tête du premier fournisseur de puces pour l'IA apparaît hautement incertain.",
-    "url": "https://www.numerama.com/tech/2375527-il-faut-sauver-le-soldat-jensen-huang-une-war-room-de-la-silicon-valley-veut-le-remettre-a-la-tete-de-nvidia.html",
-    "date": "2026-11-16",
+    "title": "Disney+ propose ses abonnements à 30 % de réduction, mais ça ne durera pas",
+    "summary": "[Deal du jour] Disney+ remet ses trois abonnements mensuels en promotion. Les prix baissent pendant deux mois, à condition de s’abonner avant la date limite.",
+    "url": "https://www.numerama.com/pop-culture/2240235-vous-avez-manque-la-derniere-promo-disney-elle-est-deja-de-retour.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Cette marque de moto vaut 1,2 milliard d’euros dans un secteur où les faillites se succèdent",
-    "summary": "Stark Future, le fabricant barcelonais de la moto électrique Varg, a levé au moins 150 millions d'euros sur la base d'une valorisation de 1,2 milliard d'euros. C'est la première marque européenne de moto électrique à devenir une licorne, alors qu'Energica et Cake ont fait faillite en 2024 et que LiveWire pourrait mettre la clé sous la porte.",
-    "url": "https://www.numerama.com/vroom/2375575-cette-marque-de-moto-vaut-12-milliard-deuros-dans-un-secteur-ou-les-faillites-se-succedent.html",
-    "date": "2026-11-16",
+    "title": "Cette app française connaît mieux votre Tesla que l’app Tesla",
+    "summary": "Vous trouvez votre app Tesla trop limitée ? Un Français lance Copeel, une application iPhone destinée aux propriétaires de Tesla et nous avons eu la chance de la bêta-tester. Elle enregistre trajets, recharges, stationnement et santé de la batterie, ajoute un assistant IA et plusieurs features malines.",
+    "url": "https://www.numerama.com/tech/2373571-cette-app-francaise-connait-mieux-votre-tesla-que-lapp-tesla.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Mais, au fait, pourquoi la saga Grand Theft Auto s’appelle-t-elle GTA ?",
-    "summary": "Mais pourquoi la saga de Rockstar s'appelle-t-elle Grand Theft Auto ? Derrière ces trois mots (devenus les trois lettres de GTA) se cachent un projet initialement consacré aux policiers et un changement de direction qui a contribué à donner naissance à l'une des plus grandes franchises du jeu vidéo.",
-    "url": "https://www.numerama.com/pop-culture/2375493-mais-au-fait-pourquoi-la-saga-grand-theft-auto-sappelle-t-elle-gta.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Ce robot financé par le Pentagone a assemblé une structure dans l’espace sans aide humaine",
-    "summary": "Un robot conçu par Caltech et financé par la DARPA a assemblé une structure en orbite sans aucune aide humaine, une première annoncée le 5 novembre 2026. Par contre, il n'aura construit qu'un seul des 11 segments prévus avant la fin de sa mission, prévue pour décembre.",
-    "url": "https://www.numerama.com/sciences/2375541-ce-robot-finance-par-le-pentagone-a-assemble-une-structure-dans-lespace-sans-aide-humaine.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Le RPG vampirique du créateur de The Witcher 3 baisse fort sur PS5 pour le Black Friday",
-    "summary": "Sorti il y a à peine plus de deux mois, The Blood of Dawnwalker s’est imposé comme l’un des RPG marquants de la rentrée. Il profite déjà d’une jolie baisse de prix sur PS5, pour une durée limitée.",
-    "url": "https://www.numerama.com/pop-culture/2375459-le-rpg-vampirique-du-createur-de-the-witcher-3-baisse-fort-sur-ps5-pour-le-black-friday.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "James Bond : c’est officiel, Robert Pattinson est le nouveau 007",
-    "summary": "Le suspense aura duré plus de cinq ans depuis Mourir peut attendre, le dernier James Bond de Daniel Craig, sorti en 2021. Amazon MGM Studios et la production viennent d’officialiser l’identité du comédien chargé de reprendre le smoking de l’agent secret britannique sous la direction de Denis Villeneuve : il s’agit de Robert Pattinson.",
-    "url": "https://www.numerama.com/pop-culture/2375401-james-bond-cest-officiel-robert-pattinson-est-le-nouveau-007.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Sortie de GTA 6 en direct : toutes les informations, les astuces et les chiffres",
-    "summary": "GTA 6 sort ce jeudi 19 novembre sur PlayStation 5, Xbox Series S et Xbox Series X. Treize ans après GTA 5, Rockstar lance enfin son nouvel épisode. Suivez la sortie en direct.",
-    "url": "https://www.numerama.com/pop-culture/2375431-sortie-de-gta-6-en-direct-toutes-les-informations-les-astuces-et-les-chiffres.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "VIDÉO : Recalé au contrôle antipollution, il pirate le calculateur de sa Jeep de 1994 avec deux IA et réussit son coup",
-    "summary": "Pour faire passer le contrôle antipollution à sa vieille Jeep Cherokee, un vidéaste américain a branché Claude Code puis Codex sur l'ordinateur de bord.",
-    "url": "https://www.numerama.com/cyberguerre/2375259-video-recale-au-controle-antipollution-il-pirate-le-calculateur-de-sa-jeep-de-1994-avec-deux-ia-et-reussit-son-coup.html",
-    "date": "2026-11-16",
+    "title": "Après 40 ans de règne, Volkswagen doit tout réapprendre en Chine",
+    "summary": "40 ans au sommet, et voilà Volkswagen obligée de réapprendre son métier. En Chine, le réveil est brutal. Un édito Watt Else publié le 12 novembre 2026 au retour d'un séjour en Chine.",
+    "url": "https://www.numerama.com/vroom/2374243-apres-40-ans-de-regne-volkswagen-doit-tout-reapprendre-en-chine.html",
+    "date": "2026-11-15",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
@@ -254,6 +94,46 @@ window.TSSR_NEWS = [
     "date": "2026-11-14",
     "source": "IT-Connect",
     "category": "Infrastructures"
+  },
+  {
+    "title": "« Mechazilla a attrapé le Starship ! » : SpaceX réussit l’exploit inédit de capturer le vaisseau en plein vol avec la tour",
+    "summary": "Le vaisseau Starship de SpaceX a été rattrapé par les bras de sa tour de lancement au Texas ce samedi 14 novembre 2026, après environ 22 heures et demie de vol et 14 tours de la Terre. Aucun étage supérieur de fusée orbitale n'avait encore été récupéré de cette façon, mais le propulseur Super Heavy a fini dans le golfe du Mexique.",
+    "url": "https://www.numerama.com/sciences/2374713-mechazilla-a-attrape-le-starship-spacex-reussit-lexploit-inedit-de-capturer-le-vaisseau-en-plein-vol-avec-la-tour.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 n’a pas cassé le record du trafic Internet en France, mais les chiffres sont quand même impressonnants",
+    "summary": "Contacté par Numerama, Orange, premier opérateur fixe de France, indique que son réseau n'a pas enregistré de pic de trafic anormal lors de l'ouverture des téléchargements de GTA 6. L'opérateur salue la décision de Rockstar d'étaler les téléchargements entre le 10 et le 19 novembre, avec une ouverture à minuit pour ne pas saturer le réseau. Le pic a atteint 19 Tb/s, loin derrière le record d'Orange, autour de 23 Tb/s.",
+    "url": "https://www.numerama.com/pop-culture/2374705-gta-6-na-pas-casse-le-record-du-trafic-internet-en-france-mais-les-chiffres-sont-quand-meme-impressonnants.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Un Scénic qui dépanne, des nouveautés eco-scorées, trop de commandes de Cybertruck : le récap Vroom de la semaine",
+    "summary": "À la une sur Vroom cette semaine : un Scénic comme générateur pendant une panne de 30 h, les derniers modèles éco-scorés, et la production du Cybertruck qui doit augmenter avant son arrêt définitif.",
+    "url": "https://www.numerama.com/vroom/2374153-une-scenic-qui-depanne-des-nouveautes-eco-scorees-trop-de-commandes-de-cybertruck-le-recap-vroom-de-la-semaine.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Saison 3 des Anneaux de pouvoir : qu’est-ce que Gundabad, la forteresse au cœur de l’épisode 4 ?",
+    "summary": "Dans les quatre premiers épisodes de la saison 3 des Anneaux de pouvoir, mis en ligne ce mercredi 11 novembre sur Prime Video, Galadriel s'introduit dans Gundabad, une forteresse orque du nord de la Terre du Milieu. Le quatrième épisode porte même son nom.",
+    "url": "https://www.numerama.com/pop-culture/2372829-saison-3-des-anneaux-de-pouvoir-quest-ce-que-gundabad-la-forteresse-au-coeur-de-lepisode-4.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Disney+ : les 10 meilleures comédies sur la plateforme de Mickey",
+    "summary": "On a trop souvent tendance à résumer Disney+ aux dessins animés de notre enfance et aux blockbusters Marvel. Pourtant, depuis que Disney a racheté la 21st Century Fox en 2019, et au fil des films qu'elle accueille sous licence, la plateforme propose aussi des comédies franchement irrévérencieuses. Voici 10 films cultes qui vont vous faire rire !",
+    "url": "https://www.numerama.com/pop-culture/2373149-disney-les-10-meilleures-comedies-sur-la-plateforme-de-mickey.html",
+    "date": "2026-11-14",
+    "source": "Numerama",
+    "category": "Cybersécurité"
   },
   {
     "title": "Claude Code : revenir en arrière avec les checkpoints et /rewind",
@@ -368,6 +248,22 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
+    "title": "Point de situation de l’opération REACTIV – octobre 2026 (12 novembre 2026)",
+    "summary": "Face à l’intensification des attaques cybercriminelles liées à des violations de données affectant les services de l’État, le Premier ministre a demandé le 1er septembre 2026 à l’Agence nationale de la sécurité des systèmes d’information (ANSSI) de mettre en place une capacité renforcée de...",
+    "url": "https://www.cert.cyber.gouv.fr/cti/CERTFR-2026-CTI-010/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Vulnérabilité dans Sonicwall SonicOS (12 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans Sonicwall SonicOS. Elle permet à un attaquant de provoquer une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1507/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
     "title": "Vulnérabilité dans NetApp ONTAP tools pour VMware vSphere 10 (12 novembre 2026)",
     "summary": "Une vulnérabilité a été découverte dans NetApp ONTAP tools pour VMware vSphere 10. Elle permet à un attaquant de provoquer un déni de service à distance et une atteinte à l'intégrité des données.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1518/",
@@ -379,6 +275,14 @@ window.TSSR_NEWS = [
     "title": "Multiples vulnérabilités dans Microsoft .Net (12 novembre 2026)",
     "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft .Net. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1512/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans les produits Mozilla (12 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Mozilla. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire, une élévation de privilèges et une atteinte à la confidentialité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1505/",
     "date": "2026-11-12",
     "source": "CERT-FR",
     "category": "Sécurité"
@@ -416,9 +320,25 @@ window.TSSR_NEWS = [
     "category": "Sécurité"
   },
   {
+    "title": "Multiples vulnérabilités dans Citrix XenServer (12 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Citrix XenServer. Certaines d'entre elles permettent à un attaquant de provoquer une élévation de privilèges, une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1502/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
     "title": "Multiples vulnérabilités dans les processeurs Intel (12 novembre 2026)",
     "summary": "De multiples vulnérabilités ont été découvertes dans les processeurs Intel. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire, une élévation de privilèges et une atteinte à la confidentialité des données.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1509/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans HPE Aruba Networking Private 5G Core (12 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans HPE Aruba Networking Private 5G Core. Certaines d'entre elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données, une atteinte à l'intégrité des données et un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1503/",
     "date": "2026-11-12",
     "source": "CERT-FR",
     "category": "Sécurité"
@@ -456,49 +376,17 @@ window.TSSR_NEWS = [
     "category": "Sécurité"
   },
   {
+    "title": "Multiples vulnérabilités dans Xen (12 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Xen. Certaines d'entre elles permettent à un attaquant de provoquer une élévation de privilèges, une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1508/",
+    "date": "2026-11-12",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
     "title": "Multiples vulnérabilités dans Google Pixel (12 novembre 2026)",
     "summary": "De multiples vulnérabilités ont été découvertes dans Google Pixel. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à la confidentialité des données.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1525/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Microsoft Office (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Office. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à la confidentialité des données. Microsoft indique que la vulnérabilité...",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1511/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Microsoft Edge (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Edge. Elles permettent à un attaquant de provoquer un problème de sécurité non spécifié par l'éditeur.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1510/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Mitel MiVoice MX-ONE (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Mitel MiVoice MX-ONE. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1516/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans les produits Kaspersky (12 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans les produits Kaspersky. Elle permet à un attaquant de provoquer un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1524/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits Axis (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Axis. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1523/",
     "date": "2026-11-12",
     "source": "CERT-FR",
     "category": "Sécurité"
@@ -512,6 +400,62 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
+    "title": "Dark Web : comment y accéder avec Tor et Tails, et publier un site .onion",
+    "summary": "Dark Web, Tor, routage en oignon : comprenez comment fonctionne ce réseau, accédez-y en sécurité avec Tails et publiez votre propre site .onion. Le post Dark Web : comment y accéder avec Tor et Tails, et publier un site .onion a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/dark-web-tor-tails-site-onion/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "CAF, France Travail, OFB… l’ANSSI fait le point sur les fuites de données d’octobre 2026",
+    "summary": "64 violations de données signalées depuis fin septembre : l'ANSSI publie son 2e point REACTIV. CAF, France Travail, OFB... avec toujours les mêmes failles. Le post CAF, France Travail, OFB… l’ANSSI fait le point sur les fuites de données d’octobre 2026 a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/reactiv-anssi-point-situation-fuites-donnees-caf-france-travail/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Votre SQL Server est lent ? Les mises à jour Windows récentes sont peut-être en cause",
+    "summary": "Depuis les mises à jour Windows d'octobre 2026, les serveurs liés SQL Server peuvent laisser des connexions ouvertes. Microsoft a confirmé et prépare un patch. Le post Votre SQL Server est lent ? Les mises à jour Windows récentes sont peut-être en cause a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/sql-server-serveurs-lies-connexions-ouvertes-mises-a-jour-windows/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Windows 11 : la mise à jour KB5132061 refuse de s’installer sur certains PC, Microsoft promet un correctif",
+    "summary": "L'installation de la KB5132061 échoue sur certains PC Windows 11 ayant reçu la préversion d'octobre. Microsoft promet une réparation automatique sous 48h. Le post Windows 11 : la mise à jour KB5132061 refuse de s’installer sur certains PC, Microsoft promet un correctif a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/windows-11-kb5132061-echec-installation-0800f0989/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "NAS Synology : deux failles exploitables sans authentification dans DSM, dont une injection SQL",
+    "summary": "Synology a corrigé deux failles dans DSM exploitables sans authentification, dont une injection SQL critique. Voici les versions à installer sur votre NAS. Le post NAS Synology : deux failles exploitables sans authentification dans DSM, dont une injection SQL a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/nas-synology-dsm-failles-sans-authentification-novembre-2026/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Notion AI : le piratage de Fireworks AI a exposé des conversations de clients",
+    "summary": "Le piratage de Fireworks AI, sous-traitant de Notion, a exposé des conversations Notion AI. Moins de 1 % des espaces de travail sont touchés. Le post Notion AI : le piratage de Fireworks AI a exposé des conversations de clients a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/notion-ai-fuite-conversations-fireworks/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Maersk confirme une fuite de données : WhiteArmor réclame 5 millions de dollars",
+    "summary": "Maersk reconnaît un vol de données sur un système hérité d'un rachat. WhiteArmor revendique 100 Go de données volées et exige 5 millions de dollars en bitcoins. Le post Maersk confirme une fuite de données : WhiteArmor réclame 5 millions de dollars a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/maersk-fuite-de-donnees-whitearmor/",
+    "date": "2026-11-12",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
     "title": "Nvidia : Jensen Huang démissionne, Colette Kress prend la direction par intérim",
     "summary": "Jensen Huang a démissionné de ses fonctions de directeur général de Nvidia, jeudi 12 novembre 2026, après 33 ans à la tête du fabricant de GPU. Son départ intervient dans un contexte de crise de gouvernance, sur fond d’enquête interne et de révélations sur sa vie privée, dont une relation extraconjugale qu’il a reconnue. Le conseil d’administration a nommé Colette Kress, jusqu’ici directrice financière, pour assurer l’intérim, tandis que Harvey C. Jones en prend la présidence.",
     "url": "https://www.lemondeinformatique.fr/donnees-ia/nvidia-jensen-huang-demissionne-colette-kress-pren",
@@ -520,11 +464,67 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Multiples vulnérabilités dans Citrix NetScaler ADC et Gateway (28 septembre 2026)",
-    "summary": "**[Mise à jour du 05 octobre 2026]** Le 4 octobre 2026, Citrix a publié un avis concernant une nouvelle vulnérabilité (CVE-2026-88779) permettant un déni de service à distance. La CISA indique que cette vulnérabilité est activement exploitée. **[Mise à jour du 30 septembre 2026]** Dans un billet...",
-    "url": "https://www.cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-011/",
-    "date": "2026-09-28",
-    "source": "CERT-FR",
-    "category": "Sécurité"
+    "title": "Zoom Workplace : une faille critique et une faille élevée corrigées sous Windows",
+    "summary": "Zoom a publié des correctifs pour deux vulnérabilités affectant Workplace sous Windows, dont une faille critique d’élévation de privilèges notée 9,6 sur l’échelle CVSS. Référencées CVE-2026-108186 et CVE-2026-108187, elles pourraient permettre à un attaquant non authentifié d’obtenir des privilèges supplémentaires à distance, à condition que l’utilisateur interagisse. Les entreprises sont invitées à déployer rapidement les mises à jour.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/zoom-workplace-une-faille-critique-et-une-faille-e",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Puces Nvidia : les entreprises chinoises d’IA anticipent de nouvelles restrictions américaines",
+    "summary": "Les entreprises chinoises spécialisées dans l’intelligence artificielle cherchent à réserver davantage de puissance de calcul équipée de GPU Nvidia dans des centres de données situés à l’étranger, selon Reuters. Elles redoutent que l’affaire entourant Jensen Huang, directeur général du fabricant américain, n’accélère le durcissement des restrictions de Washington sur l’accès distant aux processeurs avancés. Parallèlement, les achats de puces Nvidia sur le marché gris chinois s’intensifieraient.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/puces-nvidia-les-entreprises-chinoises-d-ia-antici",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "IA : Meta lance Muse Ember, un modèle léger pour réduire les coûts des agents",
+    "summary": "Meta enrichit sa gamme de modèles d’intelligence artificielle avec Muse Ember, conçu pour automatiser à grande échelle les tâches répétitives des agents IA. Doté d’une fenêtre de contexte d’un million de tokens, ce modèle multimodal mise sur son coût par tâche pour concurrencer Claude Haiku 5.5 d’Anthropic et GPT-6 Luna d’OpenAI. Il est disponible via la Meta Model API et Muse Code.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/ia-meta-lance-muse-ember-un-modele-leger-pour-redu",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Anthropic en Bourse : les particuliers pourraient acheter 250 M$ d’actions dès le premier jour",
+    "summary": "L’introduction en Bourse d’Anthropic pourrait provoquer un afflux exceptionnel d’investisseurs particuliers. Selon une note de Vanda Research publiée le 11 novembre 2026, le développeur de Claude pourrait enregistrer environ 250 millions de dollars d’achats nets de particuliers lors de sa première séance sur le Nasdaq, prévue le 19 novembre. Ce serait le double du record établi par SpaceX.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/introduction-en-bourse-d-anthropic-les-particulier",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "ChatGPT Enterprise arrive sur AWS Marketplace pour simplifier les achats IT",
+    "summary": "OpenAI a rendu ChatGPT Enterprise disponible sur AWS Marketplace le 9 novembre 2026. Les entreprises clientes d’Amazon Web Services peuvent désormais acheter et gérer la solution d’intelligence artificielle via leurs circuits d’achat existants, et imputer les dépenses éligibles sur leurs engagements AWS. L’accord vise à faciliter la facturation, le suivi des dépenses logicielles et le déploiement de l’IA générative dans les organisations.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/chatgpt-enterprise-arrive-sur-aws-marketplace-pour",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Grok Build : plus de 35 000 applications IA accessibles sans authentification",
+    "summary": "Une étude de la société de cybersécurité Claroc révèle d’importants défauts de confidentialité dans des applications créées avec Grok Build, l’outil de création d’applications assistée par IA de SpaceXSI, l’éditeur de Grok anciennement appelé xAI. Sur les 37 571 applications actives examinées, 35 578 étaient accessibles sans authentification, exposant potentiellement des données personnelles, des documents internes et des identifiants sensibles.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/grok-build-plus-de-35-000-applications-ia-accessib",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Cloud IA : les résultats de CoreWeave soutiennent Nvidia et rassurent les investisseurs",
+    "summary": "Les résultats de CoreWeave ont provoqué un rebond des valeurs du cloud spécialisé dans l’intelligence artificielle, mercredi 11 novembre 2026. Le fournisseur américain a relevé ses perspectives de chiffre d’affaires et apporté des précisions destinées à rassurer sur sa stratégie de financement. Des annonces qui ont temporairement atténué les inquiétudes entourant les investissements massifs dans les infrastructures d’IA.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/cloud-ia-les-resultats-de-coreweave-soutiennent-nv",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Digital Fairness Act : l’UE veut encadrer les dark patterns et les abonnements numériques",
+    "summary": "La Commission européenne a présenté, le 11 novembre 2026, une proposition de règlement visant à mieux protéger les consommateurs contre les interfaces manipulatrices, les mécanismes numériques addictifs et les abonnements difficiles à résilier. Baptisé Digital Fairness Act, ce texte pourrait imposer de nouvelles contraintes aux plateformes, aux éditeurs de services numériques et aux entreprises du commerce électronique.",
+    "url": "https://www.lemondeinformatique.fr/applications-developpement/digital-fairness-act-l-ue-veut-encadrer-les-dark-p",
+    "date": "2026-11-12",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
   }
 ];

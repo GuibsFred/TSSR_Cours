@@ -1,0 +1,1 @@
+V84: suppression du bandeau redondant; contrastes corrigés; cours plus large; badge Debian SVG en haut à droite; chapitres historiques intégrés à la grille; fiches de révision lisibles. Les panneaux de droite nécessitent les champs essentiels/commandes dans le cours.
