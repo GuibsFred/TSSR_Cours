@@ -1462,9 +1462,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:06": {
-        "title": "Gestion des disques",
+        "title": "Gestion des espaces de stockage",
         "order": 7,
-        "displayNumber": "07"
+        "displayNumber": "07",
+        "category": "06 — Administration GNU / Linux (1 / 2) / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:07": {
         "title": "Gestion de l’adressage IP",
