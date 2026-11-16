@@ -1,0 +1,16 @@
+/* V93: chapter-specific widescreen art; full-width, no tiny stretched thumbnails. */
+#view:has(.tssr-vfinal-layout) .tssr-chapter-badge{
+ width:min(54%,920px)!important;height:200px!important;right:0!important;
+ background:#052c3c!important;isolation:isolate!important;
+}
+#view:has(.tssr-vfinal-layout) .tssr-chapter-badge img{
+ width:100%!important;height:100%!important;object-fit:cover!important;
+ object-position:75% center!important;filter:none!important;
+}
+#view:has(.tssr-vfinal-layout) .tssr-chapter-badge::after{
+ background:linear-gradient(90deg,#062b3d 0%,rgba(6,43,61,.55) 13%,transparent 43%)!important;
+}
+.tssr-hero-choice img{height:78px!important;object-fit:cover!important;object-position:right center!important}
+#tssrHeroPreview{height:160px!important;object-fit:cover!important;object-position:right center!important}
+@media(max-width:950px){#view:has(.tssr-vfinal-layout) .tssr-chapter-badge{width:45%!important;height:145px!important}}
+@media(max-width:650px){#view:has(.tssr-vfinal-layout) .tssr-chapter-badge{width:37%!important;height:100px!important}}

@@ -62,18 +62,18 @@ const chapterSeeds=[{"id": "chapter:01:01", "kind": "cours", "title": "Découver
 // Petits pictogrammes liés au sujet : repérables sans alourdir la navigation.
 // V92 — bibliothèque de bannières panoramiques par chapitre.
 const tssrHeroLibrary=[
- {id:'linux',label:'Linux / Debian',src:'assets/cours-c-linux.png',keys:/debian|linux|gnu|bash|shell|grub|paquet|processus/i},
- {id:'network',label:'Réseaux et adressage IP',src:'assets/cours-c-network.png',keys:/réseau|reseau|ip|cidr|routeur|switch|vlan|dhcp|dns|wifi/i},
- {id:'servers',label:'Serveurs et infrastructure',src:'assets/cours-c-servers.png',keys:/serveur|système|systeme|administration|service/i},
- {id:'windows',label:'Windows et Active Directory',src:'assets/cours-c-windows.png',keys:/windows|active directory|microsoft/i},
- {id:'security',label:'Cybersécurité',src:'assets/cours-c-security.png',keys:/sécurité|securite|pare-feu|firewall|certificat/i},
- {id:'cloud',label:'Cloud',src:'assets/cours-c-cloud.png',keys:/cloud|azure|onedrive/i},
- {id:'backup',label:'Sauvegarde et stockage',src:'assets/cours-c-backup.png',keys:/sauvegarde|restauration|stockage|disque/i},
- {id:'script',label:'Shell et scripts',src:'assets/cours-c-script.png',keys:/script|powershell|commande|terminal/i},
- {id:'m365',label:'Microsoft 365',src:'assets/cours-c-m365.png',keys:/365|office|word|excel|teams|outlook/i},
- {id:'support',label:'Maintenance et support',src:'assets/cours-c-support.png',keys:/maintenance|dépannage|depannage|support|diagnostic/i},
- {id:'monitor',label:'Supervision',src:'assets/cours-c-monitor.png',keys:/supervision|monitor|journal|log/i},
- {id:'practice',label:'Travaux pratiques',src:'assets/cours-c-practice.png',keys:/tp|pratique|atelier/i}
+ {id:'linux',label:'Linux / Debian',src:'assets/tssr-banner-linux.webp',keys:/debian|linux|gnu|bash|shell|grub|paquet|processus/i},
+ {id:'network',label:'Réseaux et adressage IP',src:'assets/tssr-banner-network.webp',keys:/réseau|reseau|ip|cidr|routeur|switch|vlan|dhcp|dns|wifi/i},
+ {id:'servers',label:'Serveurs et infrastructure',src:'assets/tssr-banner-servers.webp',keys:/serveur|système|systeme|administration|service/i},
+ {id:'windows',label:'Windows et Active Directory',src:'assets/tssr-banner-windows.webp',keys:/windows|active directory|microsoft/i},
+ {id:'security',label:'Cybersécurité',src:'assets/tssr-banner-security.webp',keys:/sécurité|securite|pare-feu|firewall|certificat/i},
+ {id:'cloud',label:'Cloud',src:'assets/tssr-banner-cloud.webp',keys:/cloud|azure|onedrive/i},
+ {id:'backup',label:'Sauvegarde et stockage',src:'assets/tssr-banner-backup.webp',keys:/sauvegarde|restauration|stockage|disque/i},
+ {id:'script',label:'Shell et scripts',src:'assets/tssr-banner-script.webp',keys:/script|powershell|commande|terminal/i},
+ {id:'m365',label:'Microsoft 365',src:'assets/tssr-banner-m365.webp',keys:/365|office|word|excel|teams|outlook/i},
+ {id:'support',label:'Maintenance et support',src:'assets/tssr-banner-support.webp',keys:/maintenance|dépannage|depannage|support|diagnostic/i},
+ {id:'monitor',label:'Supervision',src:'assets/tssr-banner-monitor.webp',keys:/supervision|monitor|journal|log/i},
+ {id:'practice',label:'Travaux pratiques',src:'assets/tssr-banner-practice.webp',keys:/tp|pratique|atelier/i}
 ];
 function tssrHeroFor(course){
  const own=course?.heroImage||management().overrides?.[course?.id]?.heroImage;
@@ -81,8 +81,8 @@ function tssrHeroFor(course){
  const text=(course?.title||'')+' '+(course?.category||'');
  return (tssrHeroLibrary.find(x=>x.keys.test(text))||tssrHeroLibrary[2]).src;
 }
-function tssrHeroPicker(current){return `<div class="tssr-hero-picker"><strong>Illustration panoramique du chapitre</strong><p>Choisis une image adaptée au sujet ou importe la tienne (PNG, JPG, WebP, 1,5 Mo maximum).</p><div class="tssr-hero-gallery">${tssrHeroLibrary.map(x=>`<label class="tssr-hero-choice"><input type="radio" name="tssrHero" value="${esc(x.src)}" ${current===x.src?'checked':''}><img src="${x.src}" alt=""><span>${esc(x.label)}</span></label>`).join('')}</div><label>Importer mon illustration <input type="file" id="tssrHeroUpload" accept="image/png,image/jpeg,image/webp"></label><img id="tssrHeroPreview" src="${esc(current||tssrHeroLibrary[0].src)}" alt="Aperçu de la bannière"><p class="tssr-hero-help">Le cadrage est automatique, sans étirement. Les images importées sont enregistrées dans les données du chapitre.</p></div>`}
-async function tssrHeroFile(file){if(!file)return null;if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>1.5*1024*1024){toast('Image PNG/JPG/WebP de 1,5 Mo maximum.');return null}return await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});}
+function tssrHeroPicker(current){return `<div class="tssr-hero-picker"><strong>Illustration panoramique du chapitre</strong><p>Choisis une image adaptée au sujet ou importe la tienne (PNG, JPG, WebP, 8 Mo maximum).</p><div class="tssr-hero-gallery">${tssrHeroLibrary.map(x=>`<label class="tssr-hero-choice"><input type="radio" name="tssrHero" value="${esc(x.src)}" ${current===x.src?'checked':''}><img src="${x.src}" alt=""><span>${esc(x.label)}</span></label>`).join('')}</div><label>Importer mon illustration <input type="file" id="tssrHeroUpload" accept="image/png,image/jpeg,image/webp"></label><img id="tssrHeroPreview" src="${esc(current||tssrHeroLibrary[0].src)}" alt="Aperçu de la bannière"><p class="tssr-hero-help">Le cadrage est automatique, sans étirement. Les images importées sont enregistrées dans les données du chapitre.</p></div>`}
+async function tssrHeroFile(file){if(!file)return null;if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>8*1024*1024){toast('Image PNG/JPG/WebP de 8 Mo maximum.');return null}return await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});}
 function courseIcon(item){
  const name=String(typeof item==='string'?item:(item?.title||item?.category||'')).toLowerCase();
  if(/microsoft 365|office|outlook|word|excel|collaboratif/.test(name))return '🗂️';
