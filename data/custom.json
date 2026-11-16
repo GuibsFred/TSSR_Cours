@@ -1454,9 +1454,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:05": {
-        "title": "Gestion des droits utilisateurs",
+        "title": "Gestion des paquets logiciels",
         "order": 6,
-        "displayNumber": "06"
+        "displayNumber": "06",
+        "category": "06 — Administration GNU / Linux (1 / 2) / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:06": {
         "title": "Gestion des disques",
