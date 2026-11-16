@@ -1470,9 +1470,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:07": {
-        "title": "Gestion de l’adressage IP",
+        "title": "Gestion avancée des espaces de stockage - LVM",
         "order": 8,
-        "displayNumber": "08"
+        "displayNumber": "08",
+        "category": "06 — Administration GNU / Linux (1 / 2) / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:08": {
         "title": "Gestion de la mémoire et des processus",
