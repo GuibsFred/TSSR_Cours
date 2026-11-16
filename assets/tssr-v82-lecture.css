@@ -1,0 +1,29 @@
+/* V82 — design lecture / fiche / panneaux fixes */
+#view:has(.tssr-v82-layout) > .article{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;overflow:visible!important}
+#view:has(.tssr-v82-layout) .articlebar{display:none}
+#view:has(.tssr-v82-layout) #articleContent{max-width:none!important;padding:0!important}
+.tssr-v82-layout{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(270px,1fr);gap:18px;align-items:start;color:var(--text,#e8f6f7)}
+.tssr-v82-reading,.tssr-v82-panel{border:1px solid #258da0;border-radius:18px;overflow:hidden;background:linear-gradient(145deg,#102f3d,#0d2431);box-shadow:0 8px 30px #031c2930, inset 0 0 0 1px #65d8e519}
+.tssr-v82-hero,.tssr-v82-panel h3{margin:0!important;color:#f3feff!important;background:linear-gradient(115deg,#07556b,#0f92a3 55%,#063c53)!important;border-bottom:1px solid #64d4e3!important;text-shadow:0 1px 2px #00303b;box-shadow:inset 0 1px #91f4fa55,0 4px 18px #002f4055}
+.tssr-v82-hero{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:115px}
+.tssr-v82-hero small{font-size:11px;letter-spacing:.16em;color:#c3f7fb}.tssr-v82-hero h2{font-size:clamp(21px,2.4vw,31px)!important;margin:8px 0 0!important;color:#fff!important}
+.tssr-v82-icon{font-size:48px;line-height:1;flex-shrink:0;padding:13px;border-radius:19px;background:linear-gradient(135deg,#85f4fc44,#063849);border:1px solid #9aeaf088;filter:drop-shadow(0 7px 6px #001b2977);box-shadow:inset 0 2px 8px #a7f8ff44,0 6px 18px #00263188}
+.tssr-v82-reading-body{padding:22px 25px;line-height:1.8;min-width:0;overflow-wrap:anywhere}
+.tssr-v82-reading-body h2,.tssr-v82-reading-body h3{color:#6ee3ed!important;border-bottom:1px solid #238ca06b;padding-bottom:9px}
+.tssr-v82-reading-body pre,.tssr-v82-reading-body table{max-width:100%;overflow-x:auto}
+.tssr-v82-aside{position:sticky;top:86px;display:flex;flex-direction:column;gap:15px;max-height:calc(100vh - 105px);min-height:0}
+.tssr-v82-panel{display:flex;flex-direction:column;min-height:0;flex:0 1 auto}
+.tssr-v82-panel h3{padding:14px 16px!important;font-size:16px!important;flex:none}
+.tssr-v82-panel-scroll{padding:15px 18px;overflow:auto;min-height:0;max-height:calc((100vh - 240px)/2);overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#3ea9b7 transparent;line-height:1.65}
+.tssr-v82-panel-scroll>*:first-child{margin-top:0}.tssr-v82-panel-scroll>*:last-child{margin-bottom:0}
+.tssr-v82-panel footer{padding:9px 14px;border-top:1px solid #367c8b;font-size:11px;white-space:normal}
+.tssr-v82-command{padding:9px 0;border-bottom:1px solid #3b778047;overflow-wrap:anywhere}.tssr-v82-command:last-child{border:0}.tssr-v82-command code{display:block;white-space:normal;font-size:13px}.tssr-v82-command small{display:block;opacity:.78;margin-top:3px}
+.tssr-syn-cmd{color:#38c9e5!important;font-weight:750}.tssr-syn-opt{color:#d4a16c!important;font-weight:700}.tssr-syn-arg{color:#f07580!important;font-weight:700}
+.tssr-v82-icon-picker{display:flex;align-items:center;gap:12px;margin:14px 0;flex-wrap:wrap}.tssr-v82-icon-picker select{max-width:250px}
+.tssr-v82-revision{border:1px solid #2b9eaf!important;border-radius:18px!important;overflow:hidden!important;box-shadow:0 12px 35px #002d3830!important}
+.tssr-v82-revision .articlebar{background:linear-gradient(115deg,#07556b,#0f92a3 55%,#063c53)!important;padding:17px 22px!important}
+.tssr-v82-revision .content{padding:22px!important}.tssr-v82-revision .tssr-fiche-section{border-radius:14px;border:1px solid #2995a344;padding:16px;margin:14px 0}
+body:not(.dark) .tssr-v82-reading,body:not(.dark) .tssr-v82-panel{background:linear-gradient(145deg,#fff,#e9f7f9);color:#173c4a}
+body:not(.dark) .tssr-v82-reading-body h2,body:not(.dark) .tssr-v82-reading-body h3{color:#086c7d!important}
+@media(max-width:1050px){.tssr-v82-layout{grid-template-columns:minmax(0,1fr)}.tssr-v82-aside{position:static;max-height:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.tssr-v82-panel-scroll{max-height:260px}}
+@media(max-width:600px){.tssr-v82-hero{padding:15px}.tssr-v82-icon{font-size:30px;padding:9px}.tssr-v82-reading-body{padding:15px}.tssr-v82-aside{display:flex}}
