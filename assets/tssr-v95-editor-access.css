@@ -1,0 +1,6 @@
+/* V95 — accès explicite à l’éditeur sur la page du chapitre. */
+body:not(.tssr-admin) #view .tssr-v95-edit-btn{display:none!important}
+body.tssr-admin #view .tssr-course-tabs .tssr-v95-edit-btn{display:inline-flex!important;align-items:center;justify-content:center;gap:7px;order:10;margin-left:auto;padding:9px 16px;border-radius:9px;border:1px solid #ffc26c;background:linear-gradient(115deg,#f6a34b,#e97c25);color:#112b37;font-weight:800;cursor:pointer;box-shadow:0 3px 12px #0003;white-space:nowrap}
+body.tssr-admin #view .tssr-course-tabs .tssr-v95-edit-btn:hover{filter:brightness(1.08)}
+#view .tssr-course-tabs{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+@media(max-width:750px){body.tssr-admin #view .tssr-course-tabs .tssr-v95-edit-btn{order:10;width:100%;margin-left:0}}
