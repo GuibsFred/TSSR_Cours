@@ -1478,9 +1478,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:08": {
-        "title": "Gestion de la mémoire et des processus",
+        "title": "Gestion des espaces de stockage - File System",
         "order": 9,
-        "displayNumber": "09"
+        "displayNumber": "09",
+        "category": "06 — Administration GNU / Linux (1 / 2) / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:09": {
         "title": "Gestion de la planification",
