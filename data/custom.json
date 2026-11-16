@@ -227,6 +227,17 @@
       "revisionExtracts": [],
       "updatedAt": "2026-11-15T22:41:28.434Z",
       "rawMarkdown": "=== COURS COMPLET ===\n\n# Archivage et compression sous Linux\n\n**Module 04 — Utilisation d’une distribution GNU/Linux**\n\n## Objectifs\n\n- Distinguer **archivage** et **compression**.\n- Créer, extraire, consulter et mettre à jour une archive avec `tar`.\n- Comprendre le rôle des options `-c`, `-x`, `-t`, `-u`, `-v`, `-f` et `-z`.\n- Reconnaître une archive TAR et une archive TAR compressée avec gzip.\n\n## 1. Archiver et compresser : deux opérations différentes\n\n### 1.1 Archiver\n\n**Archiver**, c’est regrouper plusieurs fichiers ou dossiers dans un seul fichier conteneur appelé *archive*. **Une archive n’est pas nécessairement compressée.**\n\n**Exemple du support :** une image ISO d’installation de Linux rassemble les fichiers nécessaires à l’installation. Elle n’implique pas nécessairement une compression.\n\n### 1.2 Compresser\n\n**Compresser**, c’est réduire la taille des données afin d’économiser de l’espace de stockage et de diminuer les temps de transfert ou de sauvegarde.\n\nLes fichiers ZIP ou RAR peuvent combiner regroupement de fichiers et compression.\n\n| Opération | Objectif | Compression obligatoire ? |\n| --- | --- | --- |\n| Archivage | Regrouper plusieurs fichiers en un conteneur | Non |\n| Compression | Réduire la taille des données | C’est son objectif |\n| Archivage + compression | Regrouper les fichiers et réduire leur taille | Oui, si la compression est activée |\n\n> **À retenir :** archiver ≠ compresser. Une archive `.tar` peut être non compressée ; une archive `.tar.gz` est une archive TAR compressée avec gzip.\n\n## 2. Présentation de la commande TAR\n\nSous Linux, la commande **`tar`** permet notamment de créer, extraire, consulter et mettre à jour des archives. Elle peut aussi être associée à un mécanisme de compression.\n\nLe nom TAR vient historiquement de **Tape ARchiver**, en référence à son utilisation pour les sauvegardes sur bande.\n\n**Attention :** selon les systèmes Unix et les versions de `tar`, les options de compression disponibles peuvent différer.\n\n### 2.1 Options essentielles\n\n| Option | Signification | Utilité |\n| --- | --- | --- |\n| `-c` | Create | Créer une archive |\n| `-x` | Extract | Extraire une archive |\n| `-t` | List | Afficher le contenu d’une archive |\n| `-u` | Update | Mettre à jour une archive existante |\n| `-v` | Verbose | Afficher les fichiers traités |\n| `-f` | File | Indiquer le fichier archive |\n| `-z` | gzip | Utiliser la compression gzip |\n\n**Point important :** dans les exemples ci-dessous, l’option `-f` est suivie du nom de l’archive.\n\n## 3. Créer une archive TAR\n\nPour regrouper deux fichiers dans une archive non compressée :\n\n```bash\ntar -cf archive.tar fichier1 fichier2\n```\n\n- `-c` : crée l’archive.\n- `-f archive.tar` : définit le nom du fichier archive.\n- `fichier1 fichier2` : désignent les fichiers à archiver.\n\nCette commande **regroupe** les fichiers, mais ne demande **aucune compression**.\n\n## 4. Extraire une archive\n\n### 4.1 Extraire une archive TAR non compressée\n\n```bash\ntar -xf archive.tar\n```\n\n- `-x` : extrait les fichiers.\n- `-f archive.tar` : indique l’archive à lire.\n\n### 4.2 Extraire une archive TAR compressée avec gzip\n\n```bash\ntar -xzf archive.tar.gz\n```\n\n- `-x` : extrait les fichiers.\n- `-z` : prend en charge la compression gzip.\n- `-f` : indique le nom de l’archive.\n\n## 5. Ajouter ou mettre à jour des fichiers dans une archive\n\nLe support présente les commandes suivantes :\n\n```bash\ncd /\ntar -uvf archive.tar home/user30/ok\n```\n\n- `cd /` : se place à la racine du système de fichiers.\n- `-u` : met à jour l’archive avec les fichiers plus récents que ceux déjà archivés.\n- `-v` : affiche les fichiers traités.\n- `-f` : indique le nom de l’archive.\n\n**Remarque :** le chemin `home/user30/ok` est écrit sans `/` initial. Cela permet de conserver un chemin relatif dans l’archive, plutôt qu’un chemin absolu.\n\n> **Prudence :** avant de modifier une archive importante, vérifie son contenu et conserve une sauvegarde.\n\n## 6. Consulter le contenu d’une archive\n\n### 6.1 Lister les fichiers\n\n```bash\ntar -tf archive.tar\n```\n\n- `-t` : liste le contenu.\n- `-f` : désigne l’archive.\n\n### 6.2 Afficher une liste détaillée\n\n```bash\ntar -tvf archive.tar\n```\n\nL’option `-v` ajoute un affichage détaillé.\n\n## 7. Tableau récapitulatif des commandes du cours\n\n| Besoin | Commande |\n| --- | --- |\n| Créer une archive | `tar -cf archive.tar fichier1 fichier2` |\n| Extraire une archive TAR | `tar -xf archive.tar` |\n| Extraire une archive `.tar.gz` | `tar -xzf archive.tar.gz` |\n| Mettre à jour une archive | `tar -uvf archive.tar home/user30/ok` |\n| Lister les fichiers | `tar -tf archive.tar` |\n| Lister avec détails | `tar -tvf archive.tar` |\n| Aller à la racine | `cd /` |\n\n## 8. Exemple pratique complémentaire\n\n*Cette section complète le support avec un exemple de création d’une archive compressée, pour pouvoir t’entraîner.*\n\nCréer une archive TAR compressée avec gzip :\n\n```bash\ntar -czf sauvegarde.tar.gz dossier/\n```\n\nContrôler son contenu :\n\n```bash\ntar -tzf sauvegarde.tar.gz\n```\n\nExtraire cette archive :\n\n```bash\ntar -xzf sauvegarde.tar.gz\n```\n\n## 9. Erreurs fréquentes à éviter\n\n- Croire que **toutes** les archives sont compressées.\n- Confondre `-c` (**créer**) et `-x` (**extraire**).\n- Confondre `-t` (**lister**) et `-v` (**affichage détaillé**).\n- Oublier `-f` avant le nom de l’archive.\n- Utiliser une option de compression inadaptée au format réel du fichier.\n\n## Conclusion\n\nLa commande `tar` est un outil essentiel d’administration Linux pour regrouper, consulter, extraire et mettre à jour des fichiers. Avec une option adaptée, elle permet également de travailler avec des archives compressées. Pour les TP TSSR, il faut surtout **savoir lire les options et choisir la commande correspondant à l’action demandée**.\n\n=== FICHE DE RÉVISION ===\n\n# Fiche mémo — Archivage et compression\n\n## Les définitions à connaître\n\n| Notion | Définition courte |\n| --- | --- |\n| **Archiver** | Regrouper des fichiers dans un conteneur. |\n| **Compresser** | Réduire la taille des données. |\n| **TAR** | Outil Linux pour créer, consulter, extraire et mettre à jour des archives. |\n| **`.tar`** | Archive TAR, pas nécessairement compressée. |\n| **`.tar.gz`** | Archive TAR compressée avec gzip. |\n\n> **Piège classique :** une archive n’est pas forcément compressée !\n\n## Les options TAR à mémoriser\n\n| Option | Mot-clé | Action |\n| --- | --- | --- |\n| `-c` | Create | Créer |\n| `-x` | Extract | Extraire |\n| `-t` | List | Lister |\n| `-u` | Update | Mettre à jour |\n| `-v` | Verbose | Afficher les détails |\n| `-f` | File | Préciser l’archive |\n| `-z` | gzip | Compression gzip |\n\n## Les commandes indispensables\n\n**Créer une archive TAR :**\n\n```bash\ntar -cf archive.tar fichier1 fichier2\n```\n\n**Extraire une archive TAR :**\n\n```bash\ntar -xf archive.tar\n```\n\n**Extraire une archive compressée gzip :**\n\n```bash\ntar -xzf archive.tar.gz\n```\n\n**Lister le contenu :**\n\n```bash\ntar -tf archive.tar\n```\n\n**Lister avec détails :**\n\n```bash\ntar -tvf archive.tar\n```\n\n**Mettre à jour une archive :**\n\n```bash\ntar -uvf archive.tar home/user30/ok\n```\n\n**Créer une archive TAR compressée gzip (complément TP) :**\n\n```bash\ntar -czf sauvegarde.tar.gz dossier/\n```\n\n## À retenir pour l’examen\n\n- `-c` = **créer** ; `-x` = **extraire** ; `-t` = **lister**.\n- `-v` affiche les détails ; `-f` désigne le fichier archive.\n- `-z` correspond à **gzip**.\n- `.tar` et `.tar.gz` ne sont **pas** équivalents.\n- L’option `-u` sert à **mettre à jour** une archive TAR.\n"
+    },
+    {
+      "id": "chapter:1794816361860:12:pli5qt",
+      "kind": "cours",
+      "chapter": true,
+      "title": "Gestion des alias avec Bash",
+      "category": "04 — Utilisation d’une distribution GNU / Cours",
+      "order": 13,
+      "displayNumber": "13",
+      "html": "",
+      "revisionHtml": ""
     }
   ],
   "quizzes": [
@@ -552,9 +563,74 @@
         "order": 6,
         "displayNumber": "06",
         "art": "assets/icons-premium/icon-097.svg"
+      },
+      "chapter:05:01": {
+        "title": "Caractéristiques générales des systèmes GNU/Linux",
+        "order": 1,
+        "displayNumber": "01"
+      },
+      "chapter:05:02": {
+        "title": "Syntaxe des commandes",
+        "order": 2,
+        "displayNumber": "02"
+      },
+      "chapter:05:03": {
+        "title": "Connexion à un terminal",
+        "order": 3,
+        "displayNumber": "03"
+      },
+      "chapter:05:04": {
+        "title": "Le Shell Bash",
+        "order": 4,
+        "displayNumber": "04"
+      },
+      "chapter:05:05": {
+        "title": "Utiliser l’aide",
+        "order": 5,
+        "displayNumber": "05"
+      },
+      "chapter:05:06": {
+        "title": "Comprendre l’arborescence",
+        "order": 6,
+        "displayNumber": "06"
+      },
+      "chapter:05:07": {
+        "title": "Gérer les fichiers",
+        "order": 7,
+        "displayNumber": "07"
+      },
+      "chapter:05:08": {
+        "title": "Les expressions régulières",
+        "order": 8,
+        "displayNumber": "08"
+      },
+      "chapter:05:09": {
+        "title": "Les commandes de recherche",
+        "order": 9,
+        "displayNumber": "09"
+      },
+      "chapter:05:10": {
+        "title": "L’éditeur de texte Vim",
+        "order": 10,
+        "displayNumber": "10"
+      },
+      "chapter:05:11": {
+        "title": "Processus, redirections et pipelines",
+        "order": 11,
+        "displayNumber": "11"
+      },
+      "chapter:05:12": {
+        "title": "Archivage et compression",
+        "order": 12,
+        "displayNumber": "12"
       }
     },
-    "hidden": [],
+    "hidden": [
+      "chapter:01:02",
+      "chapter:01:07",
+      "doc-e3434a9c-c026-43b9-af85-1f1830c014c2",
+      "doc-20f3a7e4-bb6b-45c7-aea8-8cf4d97a01f7"
+    ],
     "folders": [
       {
         "old": "03 — Systèmes clients Microsoft (1",
