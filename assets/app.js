@@ -230,19 +230,29 @@ function tssrV82Blocks(raw){
  for(let i=0;i<matches.length;i++)parts[norm(matches[i][1])]=raw.slice(matches[i].index+matches[i][0].length,i+1<matches.length?matches[i+1].index:raw.length).trim();
  return parts;
 }
+// V96 : seules les lignes structurées « `commande` — description » alimentent le panneau.
+// Les phrases explicatives, blocs Markdown et exemples isolés sont ignorés.
 function tssrV82CommandMarkup(src){
- const color=x=>{
-  const chunks=String(x).match(/(?:"[^"]*"|'[^']*'|\S+)/g)||[];
-  return chunks.map((part,i)=>{
-   let cls=i===0?'tssr-syn-cmd':/^--?[a-zA-Z]/.test(part)?'tssr-syn-opt':'tssr-syn-arg';
-   return '<span class="'+cls+'">'+esc(part)+'</span>';
+ const tokenize=syntax=>{
+  const words=String(syntax).trim().split(/\s+/);
+  const executable=words[0]==='sudo'&&words[1]&&!words[1].startsWith('-')?2:1;
+  return words.map((word,i)=>{
+   const cls=word.startsWith('-')?'tssr-syn-opt':i<executable?'tssr-syn-cmd':'tssr-syn-arg';
+   return '<span class="'+cls+'">'+esc(word)+'</span>';
   }).join(' ');
  };
- return String(src||'').split('\n').map(line=>{
-  if(!line.trim())return '';
-  const m=line.match(/^\s*(?:[-*]\s*)?`([^`]+)`\s*(?:[—–:-]\s*(.*))?$/);
-  return m?'<div class="tssr-v82-command"><code>'+color(m[1])+'</code>'+(m[2]?'<small>'+esc(m[2])+'</small>':'')+'</div>':'<div class="tssr-v82-command">'+DOMPurify.sanitize(marked.parseInline(line))+'</div>';
- }).join('');
+ const entries=[];let inFence=false;
+ for(const line of String(src||'').split(/\r?\n/)){
+  if(/^\s*```/.test(line)){inFence=!inFence;continue}
+  if(inFence)continue;
+  const m=line.match(/^\s*(?:[-*]\s*)?`([^`\n]+)`\s*[—–-]\s*(.+?)\s*$/);
+  if(!m)continue;
+  const syntax=m[1].trim(),description=m[2].trim();
+  if(!/^[a-z][\w.+-]*(?:\s+[^\s]+)*$/i.test(syntax))continue;
+  if(entries.some(e=>e.syntax===syntax))continue;
+  entries.push({syntax,description});
+ }
+ return entries.length?entries.map(e=>'<div class="tssr-v82-command"><code>'+tokenize(e.syntax)+'</code><small>'+esc(e.description)+'</small></div>').join(''):'<p class="tssr-panel-empty">Aucune commande structurée trouvée. Format : `sudo -i` — Description.</p>';
 }
 function tssrV82Reading(course,html){
  const parts=tssrV82Blocks(course.rawMarkdown||'');
