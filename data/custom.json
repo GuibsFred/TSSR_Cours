@@ -1438,9 +1438,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:03": {
-        "title": "Gestion du démarrage de Linux",
+        "title": "Debian en mode maintenance",
         "order": 4,
-        "displayNumber": "04"
+        "displayNumber": "04",
+        "category": "06 — Administration GNU / Linux (1 / 2) / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:04": {
         "title": "Gestion des utilisateurs, des groupes et des mots de passe",
