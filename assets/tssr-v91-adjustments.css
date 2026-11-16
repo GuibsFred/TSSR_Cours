@@ -1,0 +1,20 @@
+/* V91: ajustements ciblés demandés après test réel V90 */
+#view:has(.tssr-vfinal-layout) .tssr-plan-scroll{max-height:min(25vh,215px)!important;overscroll-behavior:contain!important}
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside{gap:10px!important}
+#view:has(.tssr-vfinal-layout) .tssr-v82-panel-scroll{max-height:min(28vh,260px)!important;overflow-y:auto!important;overscroll-behavior:contain!important;scrollbar-width:thin!important}
+#view:has(.tssr-vfinal-layout) .tssr-commands .tssr-v82-panel-scroll{min-height:45px!important}
+#view:has(.tssr-vfinal-layout) .tssr-essentials .tssr-v82-panel-scroll{min-height:45px!important}
+/* Le thème sombre ne doit jamais assombrir le texte des encadrés de lecture */
+#view:has(.tssr-vfinal-layout) .tssr-v82-reading-body blockquote,
+#view:has(.tssr-vfinal-layout) .tssr-v82-reading-body blockquote p,
+#view:has(.tssr-vfinal-layout) .tssr-v82-reading-body blockquote strong,
+#view:has(.tssr-vfinal-layout) .tssr-v82-reading-body blockquote em,
+#view:has(.tssr-vfinal-layout) .tssr-v82-reading-body blockquote span{color:#352500!important;opacity:1!important;text-shadow:none!important}
+#view:has(.tssr-vfinal-layout) .tssr-v82-reading-body blockquote{background:linear-gradient(110deg,#fff3ce,#ffe7a3)!important;border:1px solid #e9b64c!important;border-left:5px solid #e8a020!important;border-radius:9px!important;padding:13px 17px!important;box-shadow:0 2px 8px #4b350020!important}
+/* Une illustration plus présente dans l'en-tête, sans bandeau-titre supplémentaire */
+#view:has(.tssr-vfinal-layout) .tssr-chapter-badge{right:24px!important;top:10px!important;width:200px!important;height:146px!important;display:flex!important;align-items:center!important;justify-content:center!important;pointer-events:none!important;z-index:1!important}
+#view:has(.tssr-vfinal-layout) .tssr-chapter-badge img{width:158px!important;height:136px!important;object-fit:contain!important;filter:drop-shadow(0 9px 12px #001523aa)!important}
+#view:has(.tssr-vfinal-layout) .tssr-v82-command code .tssr-syn-cmd{color:#37d7ef!important}
+#view:has(.tssr-vfinal-layout) .tssr-v82-command code .tssr-syn-opt{color:#d3a077!important}
+#view:has(.tssr-vfinal-layout) .tssr-v82-command code .tssr-syn-arg{color:#ff737e!important}
+@media(max-width:950px){#view:has(.tssr-vfinal-layout) .tssr-chapter-badge{width:95px!important;height:90px!important;right:8px!important}#view:has(.tssr-vfinal-layout) .tssr-chapter-badge img{width:86px!important;height:82px!important}}
