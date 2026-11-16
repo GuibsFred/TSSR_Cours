@@ -1494,9 +1494,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:10": {
-        "title": "Utilisation de la journalisation",
+        "title": "Droits sur les fichiers et répertoires",
         "order": 11,
-        "displayNumber": "11"
+        "displayNumber": "11",
+        "category": "06 — Administration GNU / Linux (1 / 2) / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:1794816361860:12:pli5qt": {
         "title": "Gestion des alias avec Bash",
