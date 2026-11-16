@@ -1446,9 +1446,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:04": {
-        "title": "Gestion des utilisateurs, des groupes et des mots de passe",
+        "title": "Gestion du réseau",
         "order": 5,
-        "displayNumber": "05"
+        "displayNumber": "05",
+        "category": "06 — Administration GNU / Linux (1 / 2) / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:05": {
         "title": "Gestion des droits utilisateurs",
