@@ -1430,9 +1430,12 @@
         "displayNumber": "02"
       },
       "chapter:06:02": {
-        "title": "Gestion des paquets",
+        "title": "Démarrage d'une distrubution Linux",
         "order": 3,
-        "displayNumber": "03"
+        "displayNumber": "03",
+        "category": "06 — Administration GNU / Linux (1 / 2) / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:06:03": {
         "title": "Gestion du démarrage de Linux",
