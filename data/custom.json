@@ -39,13 +39,23 @@
     },
     {
       "id": "chapter:01:04",
-      "title": "Bases d’Excel",
       "kind": "cours",
+      "title": "Notions de base d’Excel",
       "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
       "chapter": true,
-      "updatedAt": "2026-10-18T13:13:59.415Z",
-      "html": "",
-      "revisionExtracts": []
+      "readonly": false,
+      "updatedAt": "2026-11-17T17:36:22.874Z",
+      "html": "<h1>Microsoft Excel — notions de base</h1>\n<h2>Objectifs</h2>\n<ul>\n<li>Créer, ouvrir et manipuler un classeur Excel.</li>\n<li>Saisir des données et construire des calculs simples.</li>\n<li>Utiliser les fonctions courantes et recopier correctement les formules.</li>\n<li>Distinguer références relatives, absolues et mixtes.</li>\n<li>Comprendre le travail collaboratif avec SharePoint.</li>\n</ul>\n<h2>1. Classeur, feuille et cellule</h2>\n<p>Un <strong>classeur</strong> est le fichier Excel. Il contient une ou plusieurs <strong>feuilles de calcul</strong>. Chaque feuille est organisée en <strong>colonnes</strong> (A, B, C…) et <strong>lignes</strong> (1, 2, 3…). Leur intersection forme une <strong>cellule</strong>, identifiée par une adresse telle que <code>B2</code>.</p>\n<ul>\n<li><strong>Nouveau classeur</strong> : document vierge ou modèle prédéfini.</li>\n<li><strong>Ouvrir</strong> : classeur récent, fichier local, réseau, OneDrive ou SharePoint.</li>\n<li><strong>Zone Nom</strong> (à gauche de la barre de formule) : affiche l'adresse de la cellule active ; elle permet aussi d'atteindre une cellule ou d'attribuer un nom à une plage.</li>\n<li><strong>Formules &gt; Gestionnaire de noms</strong> : créer, modifier ou supprimer les noms définis.</li>\n<li><strong>Barre de formule</strong> : afficher ou modifier le contenu de la cellule active.</li>\n</ul>\n<p><strong>Repère visuel simplifié :</strong></p>\n<pre><code class=\"language-text\">┌────────────────────────────────────────────────────┐\n│ Ruban : Accueil | Insertion | Formules | Données…   │\n├──────────────┬─────────────────────────────────────┤\n│ Zone Nom B2  │ Barre de formule : =A2+C2           │\n├──────────────┴─────────────────────────────────────┤\n│      A        B        C        D                  │\n│ 1  Nom      Prix     Qté      Total                │\n│ 2  Câble    12       3        =B2*C2               │\n│ 3  Souris   20       2        =B3*C3               │\n├────────────────────────────────────────────────────┤\n│ Feuil1  [+]                                        │\n└────────────────────────────────────────────────────┘\n</code></pre>\n<p><strong>Quelques limites utiles :</strong> 16 384 colonnes (jusqu'à XFD), 1 048 576 lignes par feuille, 31 caractères au maximum dans le nom d'une feuille, 32 767 caractères dans une cellule et 8 192 caractères dans une formule. Le nombre de feuilles dépend notamment des ressources disponibles.</p>\n<h2>2. Sélectionner, modifier et recopier</h2>\n<table>\n<thead>\n<tr>\n<th>Action</th>\n<th>Manipulation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Sélectionner une cellule</td>\n<td>Cliquer dans la cellule.</td>\n</tr>\n<tr>\n<td>Sélectionner une plage</td>\n<td>Cliquer-glisser sur plusieurs cellules.</td>\n</tr>\n<tr>\n<td>Modifier une cellule</td>\n<td>Double-clic, touche <strong>F2</strong> ou barre de formule.</td>\n</tr>\n<tr>\n<td>Déplacer une cellule</td>\n<td>Glisser depuis le bord de la sélection.</td>\n</tr>\n<tr>\n<td>Copier en déplaçant</td>\n<td>Maintenir <strong>Ctrl</strong> pendant le glisser-déposer.</td>\n</tr>\n<tr>\n<td>Recopier une valeur ou formule</td>\n<td>Tirer la <strong>poignée de recopie</strong> (petit carré en bas à droite).</td>\n</tr>\n<tr>\n<td>Générer une suite</td>\n<td>Saisir deux valeurs définissant un pas, les sélectionner puis tirer la poignée.</td>\n</tr>\n</tbody></table>\n<p>Exemple de série : saisir <code>5</code> puis <code>10</code>, sélectionner les deux cellules et étirer : Excel poursuit <code>15</code>, <code>20</code>, <code>25</code>… Les listes personnalisées sont accessibles dans les options avancées d'Excel.</p>\n<h2>3. Écrire une formule et respecter les priorités</h2>\n<p>Une formule commence toujours par <strong><code>=</code></strong>. Les références des cellules permettent de recalculer automatiquement le résultat lorsque les données changent.</p>\n<table>\n<thead>\n<tr>\n<th>Opération</th>\n<th>Symbole</th>\n<th>Exemple</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Addition</td>\n<td><code>+</code></td>\n<td><code>=A1+B1</code></td>\n</tr>\n<tr>\n<td>Soustraction</td>\n<td><code>-</code></td>\n<td><code>=A1-B1</code></td>\n</tr>\n<tr>\n<td>Multiplication</td>\n<td><code>*</code></td>\n<td><code>=A1*B1</code></td>\n</tr>\n<tr>\n<td>Division</td>\n<td><code>/</code></td>\n<td><code>=A1/B1</code></td>\n</tr>\n<tr>\n<td>Puissance</td>\n<td><code>^</code></td>\n<td><code>=A1^2</code></td>\n</tr>\n</tbody></table>\n<p>Les parenthèses sont prioritaires, puis les puissances, les multiplications/divisions et les additions/soustractions. Exemple : <code>=(A1+B1)*C1</code> calcule d'abord la somme.</p>\n<p>Une <strong>plage</strong> s'écrit avec deux-points : <code>A1:A10</code> désigne toutes les cellules de A1 à A10. En français, les arguments d'une fonction sont généralement séparés par <strong><code>;</code></strong>.</p>\n<h2>4. Utiliser les fonctions</h2>\n<p>Une <strong>fonction</strong> est une formule prédéfinie qui reçoit des arguments et renvoie un résultat.</p>\n<p><strong>Méthode :</strong> sélectionner la cellule du résultat, saisir <code>=</code>, commencer le nom de la fonction (par exemple <code>=SOM</code>), choisir <code>SOMME</code> dans les suggestions, compléter les arguments puis valider. Le bouton <strong>fx</strong> à côté de la barre de formule ouvre l'assistant et l'aide détaillée.</p>\n<h3>Calculs et statistiques</h3>\n<table>\n<thead>\n<tr>\n<th>Fonction</th>\n<th>Utilité</th>\n<th>Exemple</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>SOMME</code></td>\n<td>Additionner une plage</td>\n<td><code>=SOMME(A1:A10)</code></td>\n</tr>\n<tr>\n<td><code>MOYENNE</code></td>\n<td>Calculer une moyenne</td>\n<td><code>=MOYENNE(A1:A10)</code></td>\n</tr>\n<tr>\n<td><code>MIN</code> / <code>MAX</code></td>\n<td>Plus petite / plus grande valeur</td>\n<td><code>=MAX(A1:A10)</code></td>\n</tr>\n<tr>\n<td><code>PRODUIT</code></td>\n<td>Multiplier plusieurs valeurs</td>\n<td><code>=PRODUIT(B2:B3;2)</code></td>\n</tr>\n<tr>\n<td><code>ARRONDI</code></td>\n<td>Arrondir à n décimales</td>\n<td><code>=ARRONDI(3,14159;2)</code> → <code>3,14</code></td>\n</tr>\n<tr>\n<td><code>ARRONDI.INF</code> / <code>ARRONDI.SUP</code></td>\n<td>Arrondir vers le bas / le haut</td>\n<td><code>=ARRONDI.SUP(3,14159;3)</code></td>\n</tr>\n<tr>\n<td><code>ENT</code></td>\n<td>Arrondir à l'entier inférieur</td>\n<td><code>=ENT(3,9)</code> → <code>3</code></td>\n</tr>\n<tr>\n<td><code>QUOTIENT</code> / <code>MOD</code></td>\n<td>Partie entière / reste d'une division</td>\n<td><code>=MOD(5;2)</code> → <code>1</code></td>\n</tr>\n<tr>\n<td><code>ALEA</code></td>\n<td>Nombre aléatoire entre 0 et 1</td>\n<td><code>=ALEA()*100</code></td>\n</tr>\n</tbody></table>\n<h3>Texte</h3>\n<table>\n<thead>\n<tr>\n<th>Fonction</th>\n<th>Utilité</th>\n<th>Exemple</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>CONCAT</code></td>\n<td>Assembler du texte</td>\n<td><code>=CONCAT(A2;\".\";B2)</code></td>\n</tr>\n<tr>\n<td><code>&amp;</code></td>\n<td>Assembler du texte sans fonction</td>\n<td><code>=A2&amp;\".\"&amp;B2</code></td>\n</tr>\n<tr>\n<td><code>GAUCHE</code> / <code>DROITE</code></td>\n<td>Extraire les premiers / derniers caractères</td>\n<td><code>=GAUCHE(A2;4)</code></td>\n</tr>\n<tr>\n<td><code>NBCAR</code></td>\n<td>Compter les caractères</td>\n<td><code>=NBCAR(A2)</code></td>\n</tr>\n<tr>\n<td><code>MAJUSCULE</code> / <code>MINUSCULE</code></td>\n<td>Changer la casse</td>\n<td><code>=MAJUSCULE(A2)</code></td>\n</tr>\n<tr>\n<td><code>TEXTE</code></td>\n<td>Convertir une valeur en texte formaté</td>\n<td><code>=TEXTE(A2;\"0,00\")</code></td>\n</tr>\n<tr>\n<td><code>CNUM</code></td>\n<td>Convertir un texte numérique en nombre</td>\n<td><code>=CNUM(\"17,12\")</code></td>\n</tr>\n</tbody></table>\n<h3>Logique et recherche</h3>\n<table>\n<thead>\n<tr>\n<th>Fonction</th>\n<th>Utilité</th>\n<th>Exemple</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>SI</code></td>\n<td>Choisir un résultat selon une condition</td>\n<td><code>=SI(A2&gt;=10;\"OK\";\"À revoir\")</code></td>\n</tr>\n<tr>\n<td><code>ET</code></td>\n<td>VRAI si toutes les conditions sont vraies</td>\n<td><code>=ET(A2&gt;5;B2&lt;15)</code></td>\n</tr>\n<tr>\n<td><code>OU</code></td>\n<td>VRAI si au moins une condition est vraie</td>\n<td><code>=OU(A2=10;B2=20)</code></td>\n</tr>\n<tr>\n<td><code>SIERREUR</code></td>\n<td>Afficher une alternative en cas d'erreur</td>\n<td><code>=SIERREUR(A2/B2;\"Erreur\")</code></td>\n</tr>\n<tr>\n<td><code>RECHERCHEV</code></td>\n<td>Rechercher dans la première colonne d'un tableau</td>\n<td><code>=RECHERCHEV(E2;A2:C20;3;FAUX)</code></td>\n</tr>\n<tr>\n<td><code>RECHERCHEH</code></td>\n<td>Rechercher dans la première ligne d'un tableau</td>\n<td><code>=RECHERCHEH(B1;A1:J5;3;FAUX)</code></td>\n</tr>\n<tr>\n<td><code>COLONNE</code> / <code>LIGNE</code></td>\n<td>Numéro de colonne / ligne</td>\n<td><code>=COLONNE(E3)</code> → <code>5</code></td>\n</tr>\n<tr>\n<td><code>TROUVE</code></td>\n<td>Position d'un texte dans un autre</td>\n<td><code>=TROUVE(\"o\";A2)</code></td>\n</tr>\n</tbody></table>\n<p><strong>RECHERCHEV :</strong> dans <code>=RECHERCHEV(E2;A2:C20;3;FAUX)</code>, Excel cherche la valeur de E2 dans la première colonne de A2:C20 et renvoie la valeur de la <strong>3e colonne</strong> de la ligne trouvée. <code>FAUX</code> impose une correspondance exacte.</p>\n<h3>Dates et fonctions imbriquées</h3>\n<ul>\n<li><code>=AUJOURDHUI()</code> : date du jour.</li>\n<li><code>=MAINTENANT()</code> : date et heure actuelles.</li>\n<li><code>=DATEDIF(A2;B2;\"d\")</code> : nombre de jours entre deux dates.</li>\n<li><code>=SI(A2&gt;10;SOMME(B2:D2);0)</code> : exemple de fonction <strong>imbriquée</strong> (une fonction dans une autre).</li>\n</ul>\n<h2>5. Recopier les formules : références relatives et absolues</h2>\n<p>La poignée de recopie copie une formule en adaptant ses références <strong>relatives</strong>.</p>\n<p>Exemple : en E2, <code>=SOMME(A2:D2)</code> devient en E3 <code>=SOMME(A3:D3)</code>.</p>\n<table>\n<thead>\n<tr>\n<th>Référence</th>\n<th>Comportement lors de la recopie</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>A1</code></td>\n<td>Colonne et ligne peuvent changer (<strong>relative</strong>).</td>\n</tr>\n<tr>\n<td><code>$A$1</code></td>\n<td>Colonne A et ligne 1 restent fixes (<strong>absolue</strong>).</td>\n</tr>\n<tr>\n<td><code>$A1</code></td>\n<td>Colonne A fixe, ligne variable (<strong>mixte</strong>).</td>\n</tr>\n<tr>\n<td><code>A$1</code></td>\n<td>Colonne variable, ligne 1 fixe (<strong>mixte</strong>).</td>\n</tr>\n</tbody></table>\n<p>La touche <strong>F4</strong>, lorsqu'une référence est sélectionnée dans une formule, permet de parcourir les différentes formes de référencement.</p>\n<p><strong>Exemple concret :</strong> pour multiplier chaque prix en colonne B par un taux unique stocké en F1, saisir <code>=B2*$F$1</code>, puis recopier vers le bas. <code>B2</code> devient <code>B3</code>, mais <code>$F$1</code> ne bouge pas.</p>\n<p>Pour ne copier que la formule sans écraser la mise en forme de destination, utiliser <strong>Collage spécial &gt; Formules</strong>.</p>\n<h2>6. Mise en forme et outils de saisie</h2>\n<p>Les démonstrations abordent aussi quelques fonctions pratiques :</p>\n<ul>\n<li><strong>Mise en forme</strong> : ajuster l'affichage des nombres, les couleurs et la présentation d'un tableau.</li>\n<li><strong>Validation des données</strong> : créer une <strong>liste déroulante</strong> pour limiter les choix possibles.</li>\n<li><strong>Mise en forme conditionnelle</strong> : appliquer automatiquement une présentation selon la valeur, par exemple « Acquis » en vert et « Non acquis » en rouge.</li>\n<li><strong>Concaténation</strong> : fabriquer une chaîne à partir de plusieurs colonnes, par exemple <code>=A2&amp;\".\"&amp;B2</code>.</li>\n</ul>\n<h2>7. Excel et SharePoint</h2>\n<p>Un classeur enregistré sur <strong>SharePoint</strong> peut être partagé et utilisé dans un cadre collaboratif.</p>\n<ul>\n<li><strong>Enregistrement automatique</strong> des modifications lorsque la fonction est disponible et activée.</li>\n<li><strong>Historique des versions</strong> pour consulter ou restaurer une version antérieure.</li>\n<li><strong>Suivi des modifications</strong> et identification des contributeurs selon les fonctionnalités disponibles.</li>\n<li><strong>Choix de l'emplacement</strong> dans une bibliothèque SharePoint depuis le nom du fichier ou les options d'enregistrement.</li>\n<li><strong>Fichier &gt; Informations &gt; Historique des versions</strong> : accès habituel aux versions précédentes.</li>\n</ul>\n<p><strong>Méthode de travail :</strong> créer le classeur → saisir les données → écrire les formules → vérifier les références avant recopie → mettre en forme → enregistrer et partager au bon emplacement.</p>\n",
+      "revisionExtracts": [],
+      "order": 4,
+      "displayNumber": "04",
+      "art": "assets/icons-apps/excel.svg",
+      "chapterIcon": "🐧",
+      "heroImage": "assets/tssr-banner-windows.webp",
+      "essentialsMarkdown": "- **Classeur** = fichier Excel ; **feuille** = onglet ; **cellule** = intersection ligne/colonne.\n- Une formule commence par **`=`** ; `A1:A10` représente une plage.\n- **`+` `-` `*` `/` `^`** sont les opérateurs de base.\n- **`SOMME`**, **`MOYENNE`**, **`MIN`**, **`MAX`** : fonctions de calcul courantes.\n- **`SI`**, **`ET`**, **`OU`** : fonctions logiques ; **`RECHERCHEV`** : recherche verticale.\n- La **poignée de recopie** copie ou prolonge une série ; les références relatives évoluent.\n- **`$A$1`** fige ligne et colonne ; **F4** aide à modifier le type de référence.\n- **fx** : assistant de fonction ; **F2** : modifier une cellule.\n- SharePoint permet l'enregistrement collaboratif et l'**historique des versions**.",
+      "commandsMarkdown": "> Dans Excel, les « commandes » essentielles sont surtout des **formules, fonctions et raccourcis** ; il ne s'agit pas de commandes Bash.\n\n| Formule / action | Résultat |\n|---|---|\n| `=A1+B1` | Additionner deux cellules. |\n| `=A1*B1` | Multiplier deux cellules. |\n| `=SOMME(A1:A10)` | Additionner une plage. |\n| `=MOYENNE(A1:A10)` | Calculer une moyenne. |\n| `=ARRONDI(A1;2)` | Arrondir à deux décimales. |\n| `=SI(A1>=10;\"OK\";\"NON\")` | Tester une condition. |\n| `=ET(A1>0;B1>0)` | Tester plusieurs conditions simultanément. |\n| `=RECHERCHEV(E2;A2:C20;3;FAUX)` | Recherche verticale exacte. |\n| `=CONCAT(A2;\" \";B2)` | Assembler du texte. |\n| `=AUJOURDHUI()` | Afficher la date actuelle. |\n| `=B2*$F$1` | Recopier en conservant une cellule fixe. |\n| **F2** | Modifier le contenu de la cellule. |\n| **F4** | Changer le type de référence dans une formule. |\n| **fx** | Ouvrir l'assistant de fonction. |\n| **Poignée de recopie** | Étendre une série ou une formule. |",
+      "revisionHtml": "<h1>Fiche express — Excel</h1>\n<h2>À savoir expliquer</h2>\n<p><strong>1. Classeur / feuille / cellule</strong></p>\n<ul>\n<li>Classeur : fichier de travail ; feuille : grille ; cellule : adresse comme <code>C5</code>.</li>\n<li>Une plage s'écrit <code>A2:A20</code>.</li>\n</ul>\n<p><strong>2. Calculs</strong></p>\n<ul>\n<li>Toute formule commence par <code>=</code>.</li>\n<li><code>*</code> multiplie, <code>/</code> divise ; les parenthèses changent les priorités.</li>\n<li><code>=SOMME(B2:B8)</code> additionne une plage.</li>\n</ul>\n<p><strong>3. Fonctions</strong></p>\n<ul>\n<li>Calcul : <code>SOMME</code>, <code>MOYENNE</code>, <code>MIN</code>, <code>MAX</code>, <code>ARRONDI</code>.</li>\n<li>Texte : <code>CONCAT</code>, <code>GAUCHE</code>, <code>DROITE</code>, <code>NBCAR</code>.</li>\n<li>Logique : <code>SI</code>, <code>ET</code>, <code>OU</code>, <code>SIERREUR</code>.</li>\n<li>Recherche : <code>RECHERCHEV</code>, <code>RECHERCHEH</code>.</li>\n<li>Date : <code>AUJOURDHUI</code>, <code>MAINTENANT</code>.</li>\n</ul>\n<p><strong>4. Références</strong></p>\n<pre><code class=\"language-text\">A1     : tout varie\n$A$1   : rien ne varie\n$A1    : colonne bloquée\nA$1    : ligne bloquée\n</code></pre>\n<p><strong>5. Recopie</strong></p>\n<ul>\n<li>Tirer le petit carré en bas à droite de la cellule.</li>\n<li>Une référence relative change selon la destination.</li>\n<li>Utiliser <code>$</code> pour fixer une ligne et/ou une colonne.</li>\n</ul>\n<p><strong>6. SharePoint</strong></p>\n<ul>\n<li>Enregistrement automatique (si activé), partage, versions et historique.</li>\n<li>Les versions précédentes se retrouvent dans l'historique du classeur.</li>\n</ul>\n<h2>Mini-entraînement</h2>\n<ol>\n<li>En B2, un prix de 20 ; en C2, une quantité de 3. Formule du total en D2 ? <strong><code>=B2*C2</code></strong>.</li>\n<li>Additionner D2 à D10 ? <strong><code>=SOMME(D2:D10)</code></strong>.</li>\n<li>Recopier <code>=A2*$F$1</code> une ligne plus bas ? <strong><code>=A3*$F$1</code></strong>.</li>\n<li>Tester si A2 est supérieur ou égal à 10 ? <strong><code>=SI(A2&gt;=10;\"OK\";\"NON\")</code></strong>.</li>\n<li>Retrouver une version précédente d'un classeur partagé ? <strong>Historique des versions SharePoint</strong>.</li>\n</ol>\n",
+      "rawMarkdown": "MODULE : 01 — Outils collaboratifs\nCHAPITRE : Connaissances des notions de base d’Excel\n\n=== COURS COMPLET ===\n\n# Microsoft Excel — notions de base\n\n## Objectifs\n\n- Créer, ouvrir et manipuler un classeur Excel.\n- Saisir des données et construire des calculs simples.\n- Utiliser les fonctions courantes et recopier correctement les formules.\n- Distinguer références relatives, absolues et mixtes.\n- Comprendre le travail collaboratif avec SharePoint.\n\n## 1. Classeur, feuille et cellule\n\nUn **classeur** est le fichier Excel. Il contient une ou plusieurs **feuilles de calcul**. Chaque feuille est organisée en **colonnes** (A, B, C…) et **lignes** (1, 2, 3…). Leur intersection forme une **cellule**, identifiée par une adresse telle que `B2`.\n\n- **Nouveau classeur** : document vierge ou modèle prédéfini.\n- **Ouvrir** : classeur récent, fichier local, réseau, OneDrive ou SharePoint.\n- **Zone Nom** (à gauche de la barre de formule) : affiche l'adresse de la cellule active ; elle permet aussi d'atteindre une cellule ou d'attribuer un nom à une plage.\n- **Formules > Gestionnaire de noms** : créer, modifier ou supprimer les noms définis.\n- **Barre de formule** : afficher ou modifier le contenu de la cellule active.\n\n**Repère visuel simplifié :**\n\n```text\n┌────────────────────────────────────────────────────┐\n│ Ruban : Accueil | Insertion | Formules | Données…   │\n├──────────────┬─────────────────────────────────────┤\n│ Zone Nom B2  │ Barre de formule : =A2+C2           │\n├──────────────┴─────────────────────────────────────┤\n│      A        B        C        D                  │\n│ 1  Nom      Prix     Qté      Total                │\n│ 2  Câble    12       3        =B2*C2               │\n│ 3  Souris   20       2        =B3*C3               │\n├────────────────────────────────────────────────────┤\n│ Feuil1  [+]                                        │\n└────────────────────────────────────────────────────┘\n```\n\n**Quelques limites utiles :** 16 384 colonnes (jusqu'à XFD), 1 048 576 lignes par feuille, 31 caractères au maximum dans le nom d'une feuille, 32 767 caractères dans une cellule et 8 192 caractères dans une formule. Le nombre de feuilles dépend notamment des ressources disponibles.\n\n## 2. Sélectionner, modifier et recopier\n\n| Action | Manipulation |\n|---|---|\n| Sélectionner une cellule | Cliquer dans la cellule. |\n| Sélectionner une plage | Cliquer-glisser sur plusieurs cellules. |\n| Modifier une cellule | Double-clic, touche **F2** ou barre de formule. |\n| Déplacer une cellule | Glisser depuis le bord de la sélection. |\n| Copier en déplaçant | Maintenir **Ctrl** pendant le glisser-déposer. |\n| Recopier une valeur ou formule | Tirer la **poignée de recopie** (petit carré en bas à droite). |\n| Générer une suite | Saisir deux valeurs définissant un pas, les sélectionner puis tirer la poignée. |\n\nExemple de série : saisir `5` puis `10`, sélectionner les deux cellules et étirer : Excel poursuit `15`, `20`, `25`… Les listes personnalisées sont accessibles dans les options avancées d'Excel.\n\n## 3. Écrire une formule et respecter les priorités\n\nUne formule commence toujours par **`=`**. Les références des cellules permettent de recalculer automatiquement le résultat lorsque les données changent.\n\n| Opération | Symbole | Exemple |\n|---|---|---|\n| Addition | `+` | `=A1+B1` |\n| Soustraction | `-` | `=A1-B1` |\n| Multiplication | `*` | `=A1*B1` |\n| Division | `/` | `=A1/B1` |\n| Puissance | `^` | `=A1^2` |\n\nLes parenthèses sont prioritaires, puis les puissances, les multiplications/divisions et les additions/soustractions. Exemple : `=(A1+B1)*C1` calcule d'abord la somme.\n\nUne **plage** s'écrit avec deux-points : `A1:A10` désigne toutes les cellules de A1 à A10. En français, les arguments d'une fonction sont généralement séparés par **`;`**.\n\n## 4. Utiliser les fonctions\n\nUne **fonction** est une formule prédéfinie qui reçoit des arguments et renvoie un résultat.\n\n**Méthode :** sélectionner la cellule du résultat, saisir `=`, commencer le nom de la fonction (par exemple `=SOM`), choisir `SOMME` dans les suggestions, compléter les arguments puis valider. Le bouton **fx** à côté de la barre de formule ouvre l'assistant et l'aide détaillée.\n\n### Calculs et statistiques\n\n| Fonction | Utilité | Exemple |\n|---|---|---|\n| `SOMME` | Additionner une plage | `=SOMME(A1:A10)` |\n| `MOYENNE` | Calculer une moyenne | `=MOYENNE(A1:A10)` |\n| `MIN` / `MAX` | Plus petite / plus grande valeur | `=MAX(A1:A10)` |\n| `PRODUIT` | Multiplier plusieurs valeurs | `=PRODUIT(B2:B3;2)` |\n| `ARRONDI` | Arrondir à n décimales | `=ARRONDI(3,14159;2)` → `3,14` |\n| `ARRONDI.INF` / `ARRONDI.SUP` | Arrondir vers le bas / le haut | `=ARRONDI.SUP(3,14159;3)` |\n| `ENT` | Arrondir à l'entier inférieur | `=ENT(3,9)` → `3` |\n| `QUOTIENT` / `MOD` | Partie entière / reste d'une division | `=MOD(5;2)` → `1` |\n| `ALEA` | Nombre aléatoire entre 0 et 1 | `=ALEA()*100` |\n\n### Texte\n\n| Fonction | Utilité | Exemple |\n|---|---|---|\n| `CONCAT` | Assembler du texte | `=CONCAT(A2;\".\";B2)` |\n| `&` | Assembler du texte sans fonction | `=A2&\".\"&B2` |\n| `GAUCHE` / `DROITE` | Extraire les premiers / derniers caractères | `=GAUCHE(A2;4)` |\n| `NBCAR` | Compter les caractères | `=NBCAR(A2)` |\n| `MAJUSCULE` / `MINUSCULE` | Changer la casse | `=MAJUSCULE(A2)` |\n| `TEXTE` | Convertir une valeur en texte formaté | `=TEXTE(A2;\"0,00\")` |\n| `CNUM` | Convertir un texte numérique en nombre | `=CNUM(\"17,12\")` |\n\n### Logique et recherche\n\n| Fonction | Utilité | Exemple |\n|---|---|---|\n| `SI` | Choisir un résultat selon une condition | `=SI(A2>=10;\"OK\";\"À revoir\")` |\n| `ET` | VRAI si toutes les conditions sont vraies | `=ET(A2>5;B2<15)` |\n| `OU` | VRAI si au moins une condition est vraie | `=OU(A2=10;B2=20)` |\n| `SIERREUR` | Afficher une alternative en cas d'erreur | `=SIERREUR(A2/B2;\"Erreur\")` |\n| `RECHERCHEV` | Rechercher dans la première colonne d'un tableau | `=RECHERCHEV(E2;A2:C20;3;FAUX)` |\n| `RECHERCHEH` | Rechercher dans la première ligne d'un tableau | `=RECHERCHEH(B1;A1:J5;3;FAUX)` |\n| `COLONNE` / `LIGNE` | Numéro de colonne / ligne | `=COLONNE(E3)` → `5` |\n| `TROUVE` | Position d'un texte dans un autre | `=TROUVE(\"o\";A2)` |\n\n**RECHERCHEV :** dans `=RECHERCHEV(E2;A2:C20;3;FAUX)`, Excel cherche la valeur de E2 dans la première colonne de A2:C20 et renvoie la valeur de la **3e colonne** de la ligne trouvée. `FAUX` impose une correspondance exacte.\n\n### Dates et fonctions imbriquées\n\n- `=AUJOURDHUI()` : date du jour.\n- `=MAINTENANT()` : date et heure actuelles.\n- `=DATEDIF(A2;B2;\"d\")` : nombre de jours entre deux dates.\n- `=SI(A2>10;SOMME(B2:D2);0)` : exemple de fonction **imbriquée** (une fonction dans une autre).\n\n## 5. Recopier les formules : références relatives et absolues\n\nLa poignée de recopie copie une formule en adaptant ses références **relatives**.\n\nExemple : en E2, `=SOMME(A2:D2)` devient en E3 `=SOMME(A3:D3)`.\n\n| Référence | Comportement lors de la recopie |\n|---|---|\n| `A1` | Colonne et ligne peuvent changer (**relative**). |\n| `$A$1` | Colonne A et ligne 1 restent fixes (**absolue**). |\n| `$A1` | Colonne A fixe, ligne variable (**mixte**). |\n| `A$1` | Colonne variable, ligne 1 fixe (**mixte**). |\n\nLa touche **F4**, lorsqu'une référence est sélectionnée dans une formule, permet de parcourir les différentes formes de référencement.\n\n**Exemple concret :** pour multiplier chaque prix en colonne B par un taux unique stocké en F1, saisir `=B2*$F$1`, puis recopier vers le bas. `B2` devient `B3`, mais `$F$1` ne bouge pas.\n\nPour ne copier que la formule sans écraser la mise en forme de destination, utiliser **Collage spécial > Formules**.\n\n## 6. Mise en forme et outils de saisie\n\nLes démonstrations abordent aussi quelques fonctions pratiques :\n\n- **Mise en forme** : ajuster l'affichage des nombres, les couleurs et la présentation d'un tableau.\n- **Validation des données** : créer une **liste déroulante** pour limiter les choix possibles.\n- **Mise en forme conditionnelle** : appliquer automatiquement une présentation selon la valeur, par exemple « Acquis » en vert et « Non acquis » en rouge.\n- **Concaténation** : fabriquer une chaîne à partir de plusieurs colonnes, par exemple `=A2&\".\"&B2`.\n\n## 7. Excel et SharePoint\n\nUn classeur enregistré sur **SharePoint** peut être partagé et utilisé dans un cadre collaboratif.\n\n- **Enregistrement automatique** des modifications lorsque la fonction est disponible et activée.\n- **Historique des versions** pour consulter ou restaurer une version antérieure.\n- **Suivi des modifications** et identification des contributeurs selon les fonctionnalités disponibles.\n- **Choix de l'emplacement** dans une bibliothèque SharePoint depuis le nom du fichier ou les options d'enregistrement.\n- **Fichier > Informations > Historique des versions** : accès habituel aux versions précédentes.\n\n**Méthode de travail :** créer le classeur → saisir les données → écrire les formules → vérifier les références avant recopie → mettre en forme → enregistrer et partager au bon emplacement.\n\n=== POINTS ESSENTIELS ===\n\n- **Classeur** = fichier Excel ; **feuille** = onglet ; **cellule** = intersection ligne/colonne.\n- Une formule commence par **`=`** ; `A1:A10` représente une plage.\n- **`+` `-` `*` `/` `^`** sont les opérateurs de base.\n- **`SOMME`**, **`MOYENNE`**, **`MIN`**, **`MAX`** : fonctions de calcul courantes.\n- **`SI`**, **`ET`**, **`OU`** : fonctions logiques ; **`RECHERCHEV`** : recherche verticale.\n- La **poignée de recopie** copie ou prolonge une série ; les références relatives évoluent.\n- **`$A$1`** fige ligne et colonne ; **F4** aide à modifier le type de référence.\n- **fx** : assistant de fonction ; **F2** : modifier une cellule.\n- SharePoint permet l'enregistrement collaboratif et l'**historique des versions**.\n\n=== COMMANDES À RETENIR ===\n\n> Dans Excel, les « commandes » essentielles sont surtout des **formules, fonctions et raccourcis** ; il ne s'agit pas de commandes Bash.\n\n| Formule / action | Résultat |\n|---|---|\n| `=A1+B1` | Additionner deux cellules. |\n| `=A1*B1` | Multiplier deux cellules. |\n| `=SOMME(A1:A10)` | Additionner une plage. |\n| `=MOYENNE(A1:A10)` | Calculer une moyenne. |\n| `=ARRONDI(A1;2)` | Arrondir à deux décimales. |\n| `=SI(A1>=10;\"OK\";\"NON\")` | Tester une condition. |\n| `=ET(A1>0;B1>0)` | Tester plusieurs conditions simultanément. |\n| `=RECHERCHEV(E2;A2:C20;3;FAUX)` | Recherche verticale exacte. |\n| `=CONCAT(A2;\" \";B2)` | Assembler du texte. |\n| `=AUJOURDHUI()` | Afficher la date actuelle. |\n| `=B2*$F$1` | Recopier en conservant une cellule fixe. |\n| **F2** | Modifier le contenu de la cellule. |\n| **F4** | Changer le type de référence dans une formule. |\n| **fx** | Ouvrir l'assistant de fonction. |\n| **Poignée de recopie** | Étendre une série ou une formule. |\n\n=== FICHE DE RÉVISION ===\n\n# Fiche express — Excel\n\n## À savoir expliquer\n\n**1. Classeur / feuille / cellule**\n- Classeur : fichier de travail ; feuille : grille ; cellule : adresse comme `C5`.\n- Une plage s'écrit `A2:A20`.\n\n**2. Calculs**\n- Toute formule commence par `=`.\n- `*` multiplie, `/` divise ; les parenthèses changent les priorités.\n- `=SOMME(B2:B8)` additionne une plage.\n\n**3. Fonctions**\n- Calcul : `SOMME`, `MOYENNE`, `MIN`, `MAX`, `ARRONDI`.\n- Texte : `CONCAT`, `GAUCHE`, `DROITE`, `NBCAR`.\n- Logique : `SI`, `ET`, `OU`, `SIERREUR`.\n- Recherche : `RECHERCHEV`, `RECHERCHEH`.\n- Date : `AUJOURDHUI`, `MAINTENANT`.\n\n**4. Références**\n\n```text\nA1     : tout varie\n$A$1   : rien ne varie\n$A1    : colonne bloquée\nA$1    : ligne bloquée\n```\n\n**5. Recopie**\n- Tirer le petit carré en bas à droite de la cellule.\n- Une référence relative change selon la destination.\n- Utiliser `$` pour fixer une ligne et/ou une colonne.\n\n**6. SharePoint**\n- Enregistrement automatique (si activé), partage, versions et historique.\n- Les versions précédentes se retrouvent dans l'historique du classeur.\n\n## Mini-entraînement\n\n1. En B2, un prix de 20 ; en C2, une quantité de 3. Formule du total en D2 ? **`=B2*C2`**.\n2. Additionner D2 à D10 ? **`=SOMME(D2:D10)`**.\n3. Recopier `=A2*$F$1` une ligne plus bas ? **`=A3*$F$1`**.\n4. Tester si A2 est supérieur ou égal à 10 ? **`=SI(A2>=10;\"OK\";\"NON\")`**.\n5. Retrouver une version précédente d'un classeur partagé ? **Historique des versions SharePoint**.\n\n=== QCM ===\n\n### Question 1\nComment appelle-t-on un fichier Excel ?\nA. Une diapositive\nB. Un classeur\nC. Une base de registre\nD. Une cellule\nRéponse : B\nExplication : Le fichier Excel est un classeur contenant des feuilles.\n\n### Question 2\nQue désigne `C7` ?\nA. La colonne 7, ligne C\nB. La feuille C, version 7\nC. La cellule de colonne C, ligne 7\nD. Une fonction\nRéponse : C\nExplication : Une adresse combine lettre(s) de colonne et numéro de ligne.\n\n### Question 3\nQuel caractère commence une formule Excel ?\nA. `=`\nB. `#`\nC. `@`\nD. `:`\nRéponse : A\nExplication : Une formule commence par le signe égal.\n\n### Question 4\nQuelle formule multiplie A2 par B2 ?\nA. `=A2xB2`\nB. `=A2+B2`\nC. `=A2/B2`\nD. `=A2*B2`\nRéponse : D\nExplication : L'astérisque est l'opérateur de multiplication.\n\n### Question 5\nQue signifie `A1:A10` ?\nA. Deux cellules uniquement\nB. Une plage de dix cellules\nC. Une feuille entière\nD. Une division\nRéponse : B\nExplication : Les deux-points délimitent une plage continue.\n\n### Question 6\nQuelle fonction calcule la moyenne d'une plage ?\nA. `MAX`\nB. `SOMME`\nC. `MOYENNE`\nD. `NBCAR`\nRéponse : C\nExplication : MOYENNE calcule la moyenne arithmétique.\n\n### Question 7\nÀ quoi sert le bouton `fx` ?\nA. À ouvrir l'assistant de fonction\nB. À supprimer une feuille\nC. À trier automatiquement\nD. À verrouiller le classeur\nRéponse : A\nExplication : fx permet de rechercher une fonction et de renseigner ses arguments.\n\n### Question 8\nQue fait la poignée de recopie ?\nA. Elle supprime le résultat\nB. Elle imprime la feuille\nC. Elle ferme le classeur\nD. Elle copie ou prolonge valeurs et formules\nRéponse : D\nExplication : La poignée est le petit carré au coin inférieur droit d'une sélection.\n\n### Question 9\nQuelle référence reste entièrement fixe lors d'une recopie ?\nA. `A1`\nB. `$A$1`\nC. `A$1` uniquement\nD. `$A1` uniquement\nRéponse : B\nExplication : Les deux signes dollar figent colonne et ligne.\n\n### Question 10\nDans `$A1`, quelle partie est fixe ?\nA. La ligne 1\nB. Rien\nC. La colonne A\nD. La colonne et la ligne\nRéponse : C\nExplication : Le dollar devant A fixe la colonne seulement.\n\n### Question 11\nQuelle touche permet de modifier une cellule sélectionnée ?\nA. F2\nB. F8\nC. Échap\nD. Impr. écran\nRéponse : A\nExplication : F2 active la modification du contenu de la cellule.\n\n### Question 12\nQuelle fonction renvoie une valeur différente selon qu'un test est vrai ou faux ?\nA. `CONCAT`\nB. `NBCAR`\nC. `MIN`\nD. `SI`\nRéponse : D\nExplication : SI évalue une condition et choisit le résultat correspondant.\n\n### Question 13\nÀ quoi sert `RECHERCHEV` ?\nA. À mettre le texte en majuscules\nB. À retrouver une valeur à partir de la première colonne d'un tableau\nC. À additionner une colonne\nD. À créer un graphique\nRéponse : B\nExplication : RECHERCHEV effectue une recherche verticale et renvoie une valeur associée.\n\n### Question 14\nQuel outil permet d'afficher « Acquis » en vert et « Non acquis » en rouge automatiquement ?\nA. La barre de formule\nB. Le gestionnaire de noms\nC. La mise en forme conditionnelle\nD. Le zoom\nRéponse : C\nExplication : La mise en forme conditionnelle dépend de la valeur de la cellule.\n\n### Question 15\nQuel avantage apporte l'historique des versions dans SharePoint ?\nA. Retrouver une version antérieure du classeur\nB. Remplacer toutes les formules par du texte\nC. Supprimer les utilisateurs\nD. Interdire tout partage\nRéponse : A\nExplication : L'historique permet de consulter et, selon les droits, de restaurer des versions précédentes."
     },
     {
       "id": "chapter:01:05",
@@ -2274,6 +2284,179 @@
           ],
           "correct": 1,
           "explanation": "La table des matières doit être actualisée pour refléter les modifications."
+        }
+      ]
+    },
+    {
+      "id": "quiz-auto-chapter:01:04",
+      "title": "QCM — Notions de base d’Excel",
+      "category": "01 — Microsoft 365 — Outils collaboratifs",
+      "chapterId": "chapter:01:04",
+      "questions": [
+        {
+          "question": "Comment appelle-t-on un fichier Excel ?",
+          "answers": [
+            "Une diapositive",
+            "Un classeur",
+            "Une base de registre",
+            "Une cellule"
+          ],
+          "correct": 1,
+          "explanation": "Le fichier Excel est un classeur contenant des feuilles."
+        },
+        {
+          "question": "Que désigne `C7` ?",
+          "answers": [
+            "La colonne 7, ligne C",
+            "La feuille C, version 7",
+            "La cellule de colonne C, ligne 7",
+            "Une fonction"
+          ],
+          "correct": 2,
+          "explanation": "Une adresse combine lettre(s) de colonne et numéro de ligne."
+        },
+        {
+          "question": "Quel caractère commence une formule Excel ?",
+          "answers": [
+            "`=`",
+            "`#`",
+            "`@`",
+            "`:`"
+          ],
+          "correct": 0,
+          "explanation": "Une formule commence par le signe égal."
+        },
+        {
+          "question": "Quelle formule multiplie A2 par B2 ?",
+          "answers": [
+            "`=A2xB2`",
+            "`=A2+B2`",
+            "`=A2/B2`",
+            "`=A2*B2`"
+          ],
+          "correct": 3,
+          "explanation": "L'astérisque est l'opérateur de multiplication."
+        },
+        {
+          "question": "Que signifie `A1:A10` ?",
+          "answers": [
+            "Deux cellules uniquement",
+            "Une plage de dix cellules",
+            "Une feuille entière",
+            "Une division"
+          ],
+          "correct": 1,
+          "explanation": "Les deux-points délimitent une plage continue."
+        },
+        {
+          "question": "Quelle fonction calcule la moyenne d'une plage ?",
+          "answers": [
+            "`MAX`",
+            "`SOMME`",
+            "`MOYENNE`",
+            "`NBCAR`"
+          ],
+          "correct": 2,
+          "explanation": "MOYENNE calcule la moyenne arithmétique."
+        },
+        {
+          "question": "À quoi sert le bouton `fx` ?",
+          "answers": [
+            "À ouvrir l'assistant de fonction",
+            "À supprimer une feuille",
+            "À trier automatiquement",
+            "À verrouiller le classeur"
+          ],
+          "correct": 0,
+          "explanation": "fx permet de rechercher une fonction et de renseigner ses arguments."
+        },
+        {
+          "question": "Que fait la poignée de recopie ?",
+          "answers": [
+            "Elle supprime le résultat",
+            "Elle imprime la feuille",
+            "Elle ferme le classeur",
+            "Elle copie ou prolonge valeurs et formules"
+          ],
+          "correct": 3,
+          "explanation": "La poignée est le petit carré au coin inférieur droit d'une sélection."
+        },
+        {
+          "question": "Quelle référence reste entièrement fixe lors d'une recopie ?",
+          "answers": [
+            "`A1`",
+            "`$A$1`",
+            "`A$1` uniquement",
+            "`$A1` uniquement"
+          ],
+          "correct": 1,
+          "explanation": "Les deux signes dollar figent colonne et ligne."
+        },
+        {
+          "question": "Dans `$A1`, quelle partie est fixe ?",
+          "answers": [
+            "La ligne 1",
+            "Rien",
+            "La colonne A",
+            "La colonne et la ligne"
+          ],
+          "correct": 2,
+          "explanation": "Le dollar devant A fixe la colonne seulement."
+        },
+        {
+          "question": "Quelle touche permet de modifier une cellule sélectionnée ?",
+          "answers": [
+            "F2",
+            "F8",
+            "Échap",
+            "Impr. écran"
+          ],
+          "correct": 0,
+          "explanation": "F2 active la modification du contenu de la cellule."
+        },
+        {
+          "question": "Quelle fonction renvoie une valeur différente selon qu'un test est vrai ou faux ?",
+          "answers": [
+            "`CONCAT`",
+            "`NBCAR`",
+            "`MIN`",
+            "`SI`"
+          ],
+          "correct": 3,
+          "explanation": "SI évalue une condition et choisit le résultat correspondant."
+        },
+        {
+          "question": "À quoi sert `RECHERCHEV` ?",
+          "answers": [
+            "À mettre le texte en majuscules",
+            "À retrouver une valeur à partir de la première colonne d'un tableau",
+            "À additionner une colonne",
+            "À créer un graphique"
+          ],
+          "correct": 1,
+          "explanation": "RECHERCHEV effectue une recherche verticale et renvoie une valeur associée."
+        },
+        {
+          "question": "Quel outil permet d'afficher « Acquis » en vert et « Non acquis » en rouge automatiquement ?",
+          "answers": [
+            "La barre de formule",
+            "Le gestionnaire de noms",
+            "La mise en forme conditionnelle",
+            "Le zoom"
+          ],
+          "correct": 2,
+          "explanation": "La mise en forme conditionnelle dépend de la valeur de la cellule."
+        },
+        {
+          "question": "Quel avantage apporte l'historique des versions dans SharePoint ?",
+          "answers": [
+            "Retrouver une version antérieure du classeur",
+            "Remplacer toutes les formules par du texte",
+            "Supprimer les utilisateurs",
+            "Interdire tout partage"
+          ],
+          "correct": 0,
+          "explanation": "L'historique permet de consulter et, selon les droits, de restaurer des versions précédentes."
         }
       ]
     }
