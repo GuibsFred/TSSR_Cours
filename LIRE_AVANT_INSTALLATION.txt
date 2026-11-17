@@ -1,0 +1,5 @@
+TSSR V99.1 — correctif ciblé.
+Sauvegarder le dépôt avant remplacement. Copier UNIQUEMENT assets/app.js et index.html dans le dossier ouvert par GitHub Desktop > Repository > Show in Explorer.
+Ne pas toucher data/custom.json.
+GitHub Desktop > Changes doit afficher 2 fichiers; Commit to main, puis Push origin.
+Testez un NOUVEAU cours sans écraser IPv4. Le collage d’images dépend du presse-papiers du navigateur; les images non présentes dans le collage ne peuvent pas être recréées.

@@ -233,9 +233,9 @@ function extractRevisionHtml(html){
 }
 // V82 — import unique et panneaux de lecture.
 function tssrV82Blocks(raw){
- const names=['COURS COMPLET','POINTS ESSENTIELS','COMMANDES A RETENIR','FICHE DE REVISION','QCM'];
+ const names=['COURS COMPLET','POINTS ESSENTIELS','COMMANDES A RETENIR','BANQUE DE COMMANDES','FICHE DE REVISION','QCM'];
  const norm=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().trim();
- const re=/===\s*(COURS COMPLET|POINTS ESSENTIELS|COMMANDES [ÀA] RETENIR|FICHE DE R[ÉE]VISION|QCM)\s*===/gi;
+ const re=/===\s*(COURS COMPLET|POINTS ESSENTIELS|COMMANDES [ÀA] RETENIR|BANQUE DE COMMANDES|FICHE DE R[ÉE]VISION|QCM)\s*===/gi;
  const matches=[...String(raw||'').matchAll(re)],parts={};
  for(let i=0;i<matches.length;i++)parts[norm(matches[i][1])]=raw.slice(matches[i].index+matches[i][0].length,i+1<matches.length?matches[i+1].index:raw.length).trim();
  return parts;
@@ -267,7 +267,7 @@ function tssrV82CommandMarkup(src){
 function tssrV82Reading(course,html){
  const parts=tssrV82Blocks(course.rawMarkdown||'');
  const essentials=course.essentialsMarkdown||parts['POINTS ESSENTIELS']||'';
- const commands=course.commandsMarkdown||parts['COMMANDES A RETENIR']||'';
+ const commands=course.commandsMarkdown||parts['COMMANDES A RETENIR']||parts['BANQUE DE COMMANDES']||'';
  const root=document.createElement('div');root.innerHTML=html;
  const headings=[...root.querySelectorAll('h1,h2,h3,h4')];
  let number=0;
@@ -726,7 +726,7 @@ if(quickImport){
     }
     const sections=['COURS COMPLET','FICHE DE RÉVISION','QCM'];
     const found=sections.map(x=>({name:x,yes:new RegExp('===\\s*'+x.replace('É','[ÉE]')+'\\s*===' ,'i').test(value)}));
-    const questions=(value.match(/(?:^|\n)\s*#{0,6}\s*Question\s+\d+/gi)||[]).length;
+    const questions=(value.match(/(?:^|\n)\s*#{0,6}\s*(?:Question\s*|Q)\d+\s*[.):-]?/gi)||[]).length;
     $('#tssrQuickPreview').textContent='Titre : '+(titleField.value||'à renseigner')+' · '+found.map(x=>(x.yes?'✓ ':'○ ')+x.name).join(' · ')+' · '+questions+' question(s) repérée(s)';
   };
   raw.addEventListener('input',update);titleField.addEventListener('input',update);
@@ -803,14 +803,14 @@ $('#blueRevision').onclick=()=>{
 $('#tssrRawImport')?.addEventListener('paste',e=>{
  const html=e.clipboardData?.getData('text/html')||'';
  const plain=e.clipboardData?.getData('text/plain')||'';
- if(!html||!(/<img\b/i.test(html)))return; // texte normal : le collage existant reste inchangé
+ if(!html||!(/<img\b|<table\b|<h[1-6]\b/i.test(html)))return; // collage riche uniquement
  const converted=tssrRichToMarkdown(html);
  if(!/===\s*COURS COMPLET\s*===/i.test(converted))return; // ne jamais écraser un cours incomplet
  e.preventDefault();const field=e.currentTarget,start=field.selectionStart,end=field.selectionEnd;
  field.setRangeText(converted,start,end,'end');field.dispatchEvent(new Event('input',{bubbles:true}));
  toast('Cours illustré collé. Les images seront publiées séparément sur GitHub lors de l’enregistrement.');
 });
-$('#tssrRawImport')?.addEventListener('input',e=>{const val=e.target.value;const count=(val.match(/(?:^|\n)\s*#{0,6}\s*Question\s+\d+/gi)||[]).length;$('#tssrImportStatus').textContent=val.trim()?'Sections détectées : '+(['COURS COMPLET','POINTS ESSENTIELS','COMMANDES À RETENIR','FICHE DE RÉVISION','QCM'].filter(k=>val.includes('=== '+k+' ===')).join(' · ')||'aucune')+' | Questions : '+count:'Import prêt : aucune donnée collée.';});
+$('#tssrRawImport')?.addEventListener('input',e=>{const val=e.target.value;const count=(val.match(/(?:^|\n)\s*#{0,6}\s*(?:Question\s*|Q)\d+\s*[.):-]?/gi)||[]).length;$('#tssrImportStatus').textContent=val.trim()?'Sections détectées : '+(['COURS COMPLET','POINTS ESSENTIELS','COMMANDES À RETENIR','BANQUE DE COMMANDES','FICHE DE RÉVISION','QCM'].filter(k=>val.includes('=== '+k+' ===')).join(' · ')||'aucune')+' | Questions : '+count:'Import prêt : aucune donnée collée.';});
 $('#docEditor').addEventListener('paste',async e=>{let image=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith('image/'));if(image){e.preventDefault();await insertImageFile(image.getAsFile());return}let html=e.clipboardData?.getData('text/html')||'';if(/<img[^>]+src=[\"'](?:file:|blob:|cid:)/i.test(html)){setTimeout(()=>toast('Certaines images Word ne sont pas transférables directement : colle les captures séparément ou utilise + Image.'),200)}});
 $('#imageFile').onchange=e=>{if(e.target.files[0])insertImageFile(e.target.files[0])};$('#addImage').onclick=()=>$('#imageFile').click();$('#addLink').onclick=()=>{let u=prompt('Adresse du lien (https://...)');if(u&&/^https:\/\//.test(u)){ $('#docEditor').focus();document.execCommand('createLink',false,u)}};$('#addTable').onclick=()=>{ $('#docEditor').focus();document.execCommand('insertHTML',false,'<table><tr><th>Colonne 1</th><th>Colonne 2</th></tr><tr><td>Texte</td><td>Texte</td></tr></table>')};document.querySelectorAll('[data-cmd]').forEach(b=>b.onclick=()=>{$('#docEditor').focus();document.execCommand(b.dataset.cmd,false,b.dataset.val||null)});
 function persist(closeEditor=true){let t=$('#docTitle').value.trim();if(!t){toast('Ajoute un titre.');return false}let category=$('#docCat').value.trim(),kind=$('#docKind').value;
@@ -833,7 +833,7 @@ if(kind==='cours' && rawInput){
  let parsedQuestions=[];
  if(quizText){
   parsedQuestions=parseQuizBulk(quizText);
-  const count=(quizText.match(/(?:^|\n)\s*#{0,6}\s*Question\s+\d+/gi)||[]).length;
+  const count=(quizText.match(/(?:^|\n)\s*#{0,6}\s*(?:Question\s*|Q)\d+\s*[.):-]?/gi)||[]).length;
   if(!parsedQuestions.length || (count && parsedQuestions.length!==count)){
    toast('QCM invalide : '+parsedQuestions.length+' question(s) valides sur '+count+'. Vérifie les réponses A à D et Réponse : B.');return false;
   }
@@ -871,18 +871,19 @@ function tssrEditorPlainText(node){
  return block?value+'\n':value;
 }
 function parseQuizBulk(text){
- const raw=String(text||'').replace(/\r/g,'').replace(/\*\*/g,'').replace(/^#{1,5}\s*QCM[^\n]*$/gim,'');
+ // Accepte les QCM issus du collage ChatGPT : Markdown, numéros, A./A)/A:, corrigé final.
+ const raw=String(text||'').replace(/\r/g,'').replace(/\*\*/g,'').replace(/^#{1,6}\s*QCM[^\n]*$/gim,'');
  const lines=raw.split('\n').map(x=>x.trim()).filter(Boolean);
  const result=[];let item=null,mode='';
- function finish(){if(item&&item.question&&item.answers.length>=2&&item.correct>=0&&item.correct<item.answers.length)result.push(item);item=null;}
+ function finish(){if(item&&item.question&&item.answers.length===4&&item.answers.every(Boolean)&&item.correct>=0&&item.correct<4)result.push({question:item.question,answers:item.answers,correct:item.correct,explanation:item.explanation});item=null;}
  for(const line of lines){
   if(/^---+$/.test(line)||/^FIN DU CHAPITRE/i.test(line))continue;
-  const q=line.match(/^(?:#{1,6}\s*)?(?:Question\s*(\d+)\s*[:.)-]?|(?:\d+)\s*[.)-])\s*(.*)$/i);
-  if(q){finish();item={question:(q[2]||'').trim(),answers:[],correct:-1,explanation:''};mode='question';continue;}
+  const q=line.match(/^(?:#{1,6}\s*)?(?:(?:Question\s*|Q)(\d+)\s*[:.)-]?|(?:\d+)\s*[.)-])\s*(.*)$/i);
+  if(q){finish();item={question:(q[2]||'').trim(),answers:['','','',''],correct:-1,explanation:''};mode='question';continue;}
   if(!item)continue;
-  const answer=line.match(/^([A-D])\s*[).:-]\s*(.*)$/i);
-  if(answer){item.answers.push(answer[2].trim());mode='answers';continue;}
-  const correct=line.match(/^(?:Réponse|Bonne réponse|Correct)\s*:\s*([A-D]|[1-4])\b/i);
+  const answer=line.match(/^(?:[-*]\s*)?([A-D])\s*[).:-]\s*(.*)$/i);
+  if(answer){item.answers[answer[1].toUpperCase().charCodeAt(0)-65]=answer[2].trim();mode='answers';continue;}
+  const correct=line.match(/^(?:Réponse|Bonne réponse|Correct|Correction)\s*:\s*([A-D]|[1-4])\b/i);
   if(correct){item.correct=/^[A-D]$/i.test(correct[1])?correct[1].toUpperCase().charCodeAt(0)-65:Number(correct[1])-1;mode='correct';continue;}
   const explanation=line.match(/^Explication\s*:\s*(.*)$/i);
   if(explanation){item.explanation=explanation[1].trim();mode='explanation';continue;}
