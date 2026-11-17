@@ -126,7 +126,17 @@ const safeImage=u=>/^data:image\/(png|jpeg|gif|webp);base64,/i.test(u)||/^https:
 
 let tssrAutosaveTimer=null;
 function scheduleTssrAutosave(){if(!tssrAdminVerified||!token)return;clearTimeout(tssrAutosaveTimer);tssrAutosaveTimer=setTimeout(()=>{if(dirtyIds.size)publish()},1300)}
-const saveLocal=(id)=>{if(id)dirtyIds.add(id);localStorage.setItem(storageKey,JSON.stringify({savedAt:Date.now(),data:custom,dirtyIds:[...dirtyIds]}));dirty=true;scheduleTssrAutosave();toast('Modification enregistrée localement — synchronisation GitHub en cours.')};
+// V97 — brouillons volumineux dans IndexedDB (sans limite localeStorage de ~5 Mo).
+function tssrDraftDb(){return new Promise((resolve,reject)=>{const r=indexedDB.open('tssr-drafts-v97',1);r.onupgradeneeded=()=>r.result.createObjectStore('drafts');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
+async function tssrDraftWrite(value){const db=await tssrDraftDb();return new Promise((resolve,reject)=>{const tx=db.transaction('drafts','readwrite');tx.objectStore('drafts').put(value,'pending');tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();reject(tx.error)}})}
+async function tssrDraftRead(){const db=await tssrDraftDb();return new Promise((resolve,reject)=>{const tx=db.transaction('drafts','readonly'),r=tx.objectStore('drafts').get('pending');r.onsuccess=()=>{db.close();resolve(r.result)};r.onerror=()=>{db.close();reject(r.error)}})}
+async function tssrDraftClear(){const db=await tssrDraftDb();return new Promise((resolve,reject)=>{const tx=db.transaction('drafts','readwrite');tx.objectStore('drafts').delete('pending');tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();reject(tx.error)}})}
+let tssrDraftWriteQueue=Promise.resolve();
+const saveLocal=(id)=>{if(id)dirtyIds.add(id);const draft={savedAt:Date.now(),data:custom,dirtyIds:[...dirtyIds]};dirty=true;
+ // Enregistrer d'abord dans IndexedDB, y compris si localStorage est déjà plein.
+ tssrDraftWriteQueue=tssrDraftWriteQueue.catch(()=>{}).then(()=>tssrDraftWrite(draft)).catch(e=>{console.error('Brouillon IndexedDB impossible',e);toast('Attention : brouillon local non garanti. Vérifie la publication GitHub.')});
+ try{localStorage.setItem(storageKey,JSON.stringify(draft))}catch(e){if(e.name!=='QuotaExceededError')console.warn('Sauvegarde locale',e);else console.info('localStorage saturé : sauvegarde IndexedDB utilisée')}
+ scheduleTssrAutosave();toast('Modification enregistrée — synchronisation GitHub en cours.')};
 // V63.3 : une suppression reste masquée même si une publication GitHub est en cours.
 const TSSR_HIDDEN_KEY='tssr-v633-hidden-courses';
 function localHidden(){try{const a=JSON.parse(localStorage.getItem(TSSR_HIDDEN_KEY)||'[]');return Array.isArray(a)?a:[]}catch(e){return []}}
@@ -641,6 +651,46 @@ function modal(title,body){$('#modalTitle').textContent=title;$('#modalBody').in
 function closeEditorSafely(){const edit=$('#docEditor');if(edit&&edit.innerHTML.trim()&&!confirm('Fermer sans enregistrer les modifications ?'))return;$('#modal').close()}
 $('#closeModal').addEventListener('click',closeEditorSafely);
 $('#modal').addEventListener('cancel',e=>{e.preventDefault();closeEditorSafely()});
+// V97 — collage enrichi dans l'import unique : HTML Word / ChatGPT -> Markdown.
+function tssrRichToMarkdown(html){
+ const doc=new DOMParser().parseFromString(html,'text/html');
+ doc.querySelectorAll('script,style,iframe,object').forEach(n=>n.remove());
+ const clean=x=>String(x||'').replace(/\u00a0/g,' ').replace(/\r/g,'');
+ function walk(node){if(node.nodeType===3)return clean(node.nodeValue);if(node.nodeType!==1)return '';
+  const tag=node.tagName.toLowerCase(),inside=()=>Array.from(node.childNodes).map(walk).join('');
+  if(tag==='img'){const src=node.getAttribute('src')||'';return /^(data:image\/(png|jpeg|webp|gif);base64,|https:\/\/)/i.test(src)?'![Illustration]('+src+')':'[Illustration non transférable : utiliser une image PNG/JPEG]'}
+  if(tag==='br')return '\n';if(/^h[1-6]$/.test(tag))return '\n\n'+'#'.repeat(+tag[1])+' '+inside().trim()+'\n\n';
+  if(tag==='strong'||tag==='b')return '**'+inside()+'**';if(tag==='em'||tag==='i')return '*'+inside()+'*';
+  if(tag==='code')return '`'+inside()+'`';if(tag==='pre')return '\n\n```\n'+node.textContent.trim()+'\n```\n\n';
+  if(tag==='a'){const href=node.getAttribute('href')||'';return /^https:\/\//.test(href)?'['+inside()+']('+href+')':inside()}
+  if(tag==='li')return '- '+inside().trim()+'\n';
+  if(tag==='table'){const rows=[...node.querySelectorAll('tr')].map(tr=>[...tr.children].filter(c=>/^(TH|TD)$/.test(c.tagName)).map(c=>c.textContent.trim().replace(/\|/g,'\\|'))).filter(x=>x.length);if(!rows.length)return '';const n=Math.max(...rows.map(r=>r.length));const line=r=>'| '+Array.from({length:n},(_,i)=>r[i]||'').join(' | ')+' |';return '\n\n'+line(rows[0])+'\n'+line(Array(n).fill('---'))+'\n'+rows.slice(1).map(line).join('\n')+'\n\n'}
+  if(['p','div','section','article','blockquote'].includes(tag))return inside().trim()+'\n\n';
+  if(['ul','ol'].includes(tag))return '\n'+inside()+'\n';return inside();
+ }
+ return walk(doc.body).replace(/\n{3,}/g,'\n\n').trim();
+}
+// Déplace les images Base64 du cours vers de vrais fichiers GitHub, sans supprimer les autres cours.
+async function tssrExternalizeImages(input){
+ const dataUri=/data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\r\n]+/gi;
+ const images=[...new Set((input.match(dataUri)||[]).map(x=>x.replace(/\s/g,'')))];
+ if(!images.length)return input;
+ if(!token||!tssrAdminVerified)throw Error('Connecte-toi à GitHub pour publier les images du cours.');
+ const head={Authorization:'Bearer '+token,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'};
+ let output=input;
+ for(let i=0;i<images.length;i++){
+  const uri=images[i],m=uri.match(/^data:image\/(png|jpeg|jpg|webp|gif);base64,([\s\S]+)$/i);
+  if(!m)continue;
+  const ext=m[1]==='jpeg'?'jpg':m[1];
+  const bytes=atob(m[2]);if(bytes.length>8*1024*1024)throw Error('Une image dépasse 8 Mo.');
+  const name='assets/course-images/'+crypto.randomUUID()+'.'+ext;
+  const url='https://api.github.com/repos/'+REPO+'/contents/'+name;
+  const res=await fetch(url,{method:'PUT',headers:head,body:JSON.stringify({message:'TSSR : illustration de cours',content:m[2],branch:'main'})});
+  if(!res.ok)throw Error('Publication image '+(i+1)+'/'+images.length+' impossible (HTTP '+res.status+'). Le cours n’a pas été remplacé.');
+  output=output.split(uri).join('/TSSR_Cours/'+name);
+ }
+ return output;
+}
 function editor(id,quickImport=false){let p=all().find(x=>x.id===id),isBase=p?.readonly;let kind=isBase?'cours':(p?.kind||(section==='accueil'?'cours':section)); if(!p)kind=section==='accueil'?'cours':section;if(kind==='quiz')kind='cours';let title=isBase?p.title:p?.title||'',cat=isBase?p.category:p?.category||'',html=isBase?'':p?.html||'';
 modal(isBase?'Rédiger mon cours':p?'Modifier le document':'Nouveau document',`<label>Titre du cours<input id="docTitle" class="formfield" value="${esc(title)}" placeholder="Ex. Configuration Wi-Fi" required></label><label>Rubrique<select id="docKind" class="formfield">${Object.entries(labels).filter(([k])=>!['accueil','quiz','glossaire','tp'].includes(k)).map(([k,[i,l]])=>`<option value="${k}" ${kind===k?'selected':''}>${l}</option>`).join('')}</select></label><label>Catégorie / Sous-dossiers (séparés par /)<input id="docCat" class="formfield" value="${esc(cat)}" placeholder="02 — Bases des réseaux / Cisco / Wi-Fi"></label><div class="toolbar"><button type="button" data-cmd="bold"><b>G</b></button><button type="button" data-cmd="italic"><i>I</i></button><button type="button" data-cmd="formatBlock" data-val="h2">Titre</button><button type="button" data-cmd="insertUnorderedList">☷ Liste</button><button type="button" id="blueRevision" title="Marquer ce passage pour la fiche de révision">🔵 Bleu révision</button><button type="button" id="normalText" title="Retirer le bleu révision de la sélection ou continuer à écrire en texte normal">⚫ Texte normal</button><button type="button" id="addLink">Lien</button><button type="button" id="addImage">＋ Image</button><button type="button" id="addTable">Tableau</button><span id="imageControls" class="image-controls"><label for="imageWidth">Image sélectionnée :</label><input id="imageWidth" type="range" min="10" max="100" step="1" value="100" aria-label="Largeur de l’image"><output id="imageWidthValue">Sélectionne une image</output><label>Largeur % <input type="number" id="imageWidthNumber" min="10" max="100" value="100" style="width:68px;padding:5px"></label><button type="button" id="imageAlignLeft">◧ Gauche</button><button type="button" id="imageAlignCenter">▣ Centre</button><button type="button" id="imageAlignRight">◨ Droite</button><button type="button" id="imageReset">Réinitialiser</button></span><input type="file" id="imageFile" accept="image/*" hidden></div><section class="tssr-import-panel"><label for="tssrRawImport">📥 Importer un chapitre complet (Markdown brut)</label><p>Colle ici le texte intégral avec les marqueurs === COURS COMPLET ===, === POINTS ESSENTIELS ===, === COMMANDES À RETENIR ===, === FICHE DE RÉVISION === et === QCM ===. Les tableaux, titres, commandes et sauts de ligne seront préservés. Pour une rédaction manuelle, utilise l’éditeur classique ci-dessous.</p><textarea id="tssrRawImport" spellcheck="false" placeholder="MODULE : Linux\nCHAPITRE : Archivage et compression\n\n=== COURS COMPLET ===\n# Mon cours...\n\n=== FICHE DE RÉVISION ===\n# Ma fiche...\n\n=== QCM ===\n### Question 1\n..." rows="9"></textarea><div id="tssrImportStatus" role="status">Import prêt : aucune donnée collée.</div></section><div id="docEditor" class="editor" contenteditable="true" aria-label="Texte du cours">${DOMPurify.sanitize(html)}</div><p class="editorhelp">Écris ici, colle du texte Word ou une capture avec Ctrl+V. Clique sur une image pour régler sa taille et son alignement dans la barre au-dessus. Tu peux aussi importer une image. Copie le contenu de Word. Pour les images Word qui ne passent pas, colle la capture séparément ou utilise « + Image ».</p><div class="actions"><button type="button" class="btn" id="cancelDoc">Annuler</button><button type="button" class="btn primary" id="savePublish">☁ Enregistrer et publier sur GitHub</button></div>`);
 if(p?.rawMarkdown){const rawField=$('#tssrRawImport');if(rawField){rawField.value=p.rawMarkdown;const status=$('#tssrImportStatus');if(status)status.textContent='✓ Source Markdown conservée : tu peux la modifier puis enregistrer.'}}
@@ -750,6 +800,16 @@ $('#blueRevision').onclick=()=>{
   toast('Passage bleu marqué pour la fiche de révision.');
  }catch(e){document.execCommand('foreColor',false,'#1769d2');toast('Texte coloré en bleu.');}
 };
+$('#tssrRawImport')?.addEventListener('paste',e=>{
+ const html=e.clipboardData?.getData('text/html')||'';
+ const plain=e.clipboardData?.getData('text/plain')||'';
+ if(!html||!(/<img\b/i.test(html)))return; // texte normal : le collage existant reste inchangé
+ const converted=tssrRichToMarkdown(html);
+ if(!/===\s*COURS COMPLET\s*===/i.test(converted))return; // ne jamais écraser un cours incomplet
+ e.preventDefault();const field=e.currentTarget,start=field.selectionStart,end=field.selectionEnd;
+ field.setRangeText(converted,start,end,'end');field.dispatchEvent(new Event('input',{bubbles:true}));
+ toast('Cours illustré collé. Les images seront publiées séparément sur GitHub lors de l’enregistrement.');
+});
 $('#tssrRawImport')?.addEventListener('input',e=>{const val=e.target.value;const count=(val.match(/(?:^|\n)\s*#{0,6}\s*Question\s+\d+/gi)||[]).length;$('#tssrImportStatus').textContent=val.trim()?'Sections détectées : '+(['COURS COMPLET','POINTS ESSENTIELS','COMMANDES À RETENIR','FICHE DE RÉVISION','QCM'].filter(k=>val.includes('=== '+k+' ===')).join(' · ')||'aucune')+' | Questions : '+count:'Import prêt : aucune donnée collée.';});
 $('#docEditor').addEventListener('paste',async e=>{let image=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith('image/'));if(image){e.preventDefault();await insertImageFile(image.getAsFile());return}let html=e.clipboardData?.getData('text/html')||'';if(/<img[^>]+src=[\"'](?:file:|blob:|cid:)/i.test(html)){setTimeout(()=>toast('Certaines images Word ne sont pas transférables directement : colle les captures séparément ou utilise + Image.'),200)}});
 $('#imageFile').onchange=e=>{if(e.target.files[0])insertImageFile(e.target.files[0])};$('#addImage').onclick=()=>$('#imageFile').click();$('#addLink').onclick=()=>{let u=prompt('Adresse du lien (https://...)');if(u&&/^https:\/\//.test(u)){ $('#docEditor').focus();document.execCommand('createLink',false,u)}};$('#addTable').onclick=()=>{ $('#docEditor').focus();document.execCommand('insertHTML',false,'<table><tr><th>Colonne 1</th><th>Colonne 2</th></tr><tr><td>Texte</td><td>Texte</td></tr></table>')};document.querySelectorAll('[data-cmd]').forEach(b=>b.onclick=()=>{$('#docEditor').focus();document.execCommand(b.dataset.cmd,false,b.dataset.val||null)});
@@ -792,7 +852,12 @@ if(kind==='cours' && rawInput){
 let obj={...(p||{}),id:stableId,title:t,kind,category,chapterIcon:$('#tssrChapterIcon')?.value||p?.chapterIcon||'🐧',heroImage:typeof window.tssrGetImportHero==='function'?window.tssrGetImportHero():p?.heroImage||tssrHeroFor({title:t,category}),essentialsMarkdown:rawInput?tssrV82Blocks(rawInput)['POINTS ESSENTIELS']||'':p?.essentialsMarkdown||'',commandsMarkdown:rawInput?tssrV82Blocks(rawInput)['COMMANDES A RETENIR']||'':p?.commandsMarkdown||'',...((p?.chapter||quickImport)?{chapter:true}:{}),html,revisionHtml:kind==='cours'?importedRevisionHtml:(p?.revisionHtml||''),revisionExtracts:kind==='cours'?extractBlue(html):[],rawMarkdown:kind==='cours'?(rawInput||p?.rawMarkdown||''):(p?.rawMarkdown||''),updatedAt:new Date().toISOString()};
 let idx=custom.pages.findIndex(x=>x.id===stableId);if(idx>=0)custom.pages[idx]=obj;else custom.pages.push(obj);
 lastSavedCourseId=stableId;saveLocal(stableId);if(closeEditor){$('#modal').close();goto(obj.kind,obj.id)}return true}
-$('#cancelDoc').onclick=closeEditorSafely;$('#savePublish').onclick=async()=>{if(!persist(false))return;const kindSaved=$('#docKind').value,idSaved=lastSavedCourseId;const btn=$('#savePublish');btn.disabled=true;btn.textContent='⏳ Publication en cours…';const ok=await publish();btn.disabled=false;btn.textContent='☁ Enregistrer et publier sur GitHub';if(ok){$('#modal').close();goto(kindSaved,idSaved)}else{toast('Cours sauvegardé localement. Publication non confirmée : réessaie après connexion GitHub.')}}}
+$('#cancelDoc').onclick=closeEditorSafely;$('#savePublish').onclick=async()=>{const btn=$('#savePublish');btn.disabled=true;
+ const previous=btn.textContent;try{
+  const raw=$('#tssrRawImport');if(raw?.value){btn.textContent='⏳ Préparation des images…';raw.value=await tssrExternalizeImages(raw.value)}
+  const rich=$('#docEditor');if(rich&&/data:image\//i.test(rich.innerHTML)){btn.textContent='⏳ Publication des illustrations…';rich.innerHTML=await tssrExternalizeImages(rich.innerHTML)}
+ }catch(e){toast(e.message);btn.disabled=false;btn.textContent=previous;return}
+ btn.disabled=false;btn.textContent=previous;if(!persist(false))return;const kindSaved=$('#docKind').value,idSaved=lastSavedCourseId;btn.disabled=true;btn.textContent='⏳ Publication en cours…';const ok=await publish();btn.disabled=false;btn.textContent='☁ Enregistrer et publier sur GitHub';if(ok){$('#modal').close();goto(kindSaved,idSaved)}else{toast('Cours sauvegardé localement. Publication non confirmée : réessaie après connexion GitHub.')}}}
 async function insertImageFile(file){if(!file)return;if(file.size>5*1024*1024){toast('Image trop lourde : maximum 5 Mo par image.');return}let data=await new Promise((resolve,reject)=>{let r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});$('#docEditor').focus();document.execCommand('insertHTML',false,`<img src="${data}" alt="Capture de cours">`)}
 function tssrEditorPlainText(node){
  // Les sauts de ligne d'un collage Markdown/Word ne sont pas conservés par textContent.
@@ -881,7 +946,7 @@ if(editedBaseNames.size){live.pages=live.pages.filter(p=>!editedBaseNames.has(St
 for(const id of [...dirtyIds].filter(x=>!x.startsWith('quiz:')&&!x.startsWith('cheat:')&&!x.startsWith('cmd:')&&!x.startsWith('library:')&&!x.startsWith('management:'))){let mine=custom.pages.find(x=>x.id===id);let ix=live.pages.findIndex(x=>x.id===id);if(mine){if(ix>=0)live.pages[ix]=mine;else live.pages.push(mine)}else if(ix>=0)live.pages.splice(ix,1)}
 for(const id of dirtyIds){if(id.startsWith('management:'))live.management=custom.management;if(id.startsWith('library:')){let key=id.slice(8),mine=(custom.library||[]).find(x=>x.id===key);live.library=live.library.filter(x=>x.id!==key);if(mine)live.library.push(mine)}if(id.startsWith('quiz:')){let key=id.slice(5),mine=custom.quizzes.find(x=>x.id===key);live.quizzes=live.quizzes.filter(x=>x.id!==key);if(mine)live.quizzes.push(mine)}if(id.startsWith('cmd:')){let key=id.slice(4),mine=(custom.commands||[]).find(x=>x.id===key);live.commands=live.commands.filter(x=>x.id!==key);if(mine)live.commands.push(mine)}if(id.startsWith('cheat:')){let key=id.slice(6),mine=(custom.cheats||[]).find(x=>x.id===key);live.cheats=live.cheats.filter(x=>x.id!==key);if(mine)live.cheats.push(mine)}}
 const result=await fetch(url,{method:'PUT',headers:{...head,'Content-Type':'application/json'},body:JSON.stringify({message:'TSSR : sauvegarde des cours',content:b64utf8(JSON.stringify(live,null,2)),branch:'main',...(remoteSha?{sha:remoteSha}:{})})});if(result.status===409&&attempt===0)continue;if(!result.ok){const raw=await result.text();let error={};try{error=raw?JSON.parse(raw):{}}catch(e){}throw Error(error.message||('Écriture GitHub refusée : HTTP '+result.status+(raw?' — '+raw.slice(0,160):' (réponse vide)')))}
-custom=live;reconcileHidden();remoteSnapshot=new Map(live.pages.map(p=>[p.id,JSON.stringify(p)]));dirtyIds.clear();localStorage.removeItem(storageKey);localStorage.removeItem(oldStorageKey);dirty=false;toast('✓ Enregistré sur GitHub. La publication du site peut prendre quelques minutes.');render();return true}
+custom=live;reconcileHidden();remoteSnapshot=new Map(live.pages.map(p=>[p.id,JSON.stringify(p)]));dirtyIds.clear();await tssrDraftWriteQueue.catch(()=>{});await tssrDraftClear().catch(e=>console.warn(e));localStorage.removeItem(storageKey);localStorage.removeItem(oldStorageKey);dirty=false;toast('✓ Enregistré sur GitHub. La publication du site peut prendre quelques minutes.');render();return true}
 }catch(e){toast('Publication impossible : '+e.message);return false}}
 
 // V75 : restauration non destructive des contenus HTML importés depuis du Markdown aplati.
@@ -953,7 +1018,19 @@ async function restoreGithubSession(){
   if(dirtyIds.size)scheduleTssrAutosave();
  }catch(e){sessionStorage.removeItem('tssr-github-session-v636');token='';}
 }
-async function init(){if(!builtInCommands.length){try{let r0=await fetch('data/commandes-reseau.json?v=25.8',{cache:'no-store'});if(r0.ok){let data=await r0.json();if(Array.isArray(data))builtInCommands=data;} }catch(e){console.warn('Commandes intégrées indisponibles',e)}}try{let r=await fetch('data/catalog.json');if(r.ok)catalog=await r.json();r=await fetch(DATA+'?v='+Date.now(),{cache:'no-store'});if(r.ok)custom=await r.json()}catch(e){console.warn(e)}if(!Array.isArray(custom.pages))custom.pages=[];if(!Array.isArray(custom.quizzes))custom.quizzes=[];if(!Array.isArray(custom.cheats))custom.cheats=[];if(!Array.isArray(custom.commands))custom.commands=[];if(!Array.isArray(custom.library))custom.library=defaultLibrary.map(x=>({...x}));remoteSnapshot=new Map(custom.pages.map(p=>[p.id,JSON.stringify(p)]));try{const d=JSON.parse(localStorage.getItem(storageKey)||'null');if(d?.data&&Array.isArray(d.dirtyIds)&&d.dirtyIds.length){for(const id of d.dirtyIds){let p=d.data.pages?.find(x=>x.id===id);if(id.startsWith('management:')){custom.management=d.data.management||custom.management;dirtyIds.add(id);continue}if(id.startsWith('library:')){custom.library=Array.isArray(d.data.library)?d.data.library:custom.library;dirtyIds.add(id);continue}if(id.startsWith('quiz:')){let x=d.data.quizzes?.find(q=>q.id===id.slice(5));custom.quizzes=custom.quizzes.filter(q=>q.id!==id.slice(5));if(x)custom.quizzes.push(x);dirtyIds.add(id);continue}if(id.startsWith('cmd:')){let x=d.data.commands?.find(q=>q.id===id.slice(4));custom.commands=custom.commands.filter(q=>q.id!==id.slice(4));if(x)custom.commands.push(x);dirtyIds.add(id);continue}if(id.startsWith('cheat:')){let x=d.data.cheats?.find(q=>q.id===id.slice(6));custom.cheats=custom.cheats.filter(q=>q.id!==id.slice(6));if(x)custom.cheats.push(x);dirtyIds.add(id);continue}if(p){custom.pages=custom.pages.filter(x=>x.id!==id);custom.pages.push(p);dirtyIds.add(id)}else{custom.pages=custom.pages.filter(x=>x.id!==id);dirtyIds.add(id)}}dirty=true;toast('Modifications locales non publiées récupérées.')}}catch(e){console.warn('Brouillon ignoré',e)}reconcileHidden();restoreRouteFromHash();await restoreGithubSession();
+async function init(){if(!builtInCommands.length){try{let r0=await fetch('data/commandes-reseau.json?v=25.8',{cache:'no-store'});if(r0.ok){let data=await r0.json();if(Array.isArray(data))builtInCommands=data;} }catch(e){console.warn('Commandes intégrées indisponibles',e)}}try{let r=await fetch('data/catalog.json');if(r.ok)catalog=await r.json();r=await fetch(DATA+'?v='+Date.now(),{cache:'no-store'});if(r.ok)custom=await r.json()}catch(e){console.warn(e)}if(!Array.isArray(custom.pages))custom.pages=[];if(!Array.isArray(custom.quizzes))custom.quizzes=[];if(!Array.isArray(custom.cheats))custom.cheats=[];if(!Array.isArray(custom.commands))custom.commands=[];if(!Array.isArray(custom.library))custom.library=defaultLibrary.map(x=>({...x}));remoteSnapshot=new Map(custom.pages.map(p=>[p.id,JSON.stringify(p)]));try{const d=JSON.parse(localStorage.getItem(storageKey)||'null');if(d?.data&&Array.isArray(d.dirtyIds)&&d.dirtyIds.length){for(const id of d.dirtyIds){let p=d.data.pages?.find(x=>x.id===id);if(id.startsWith('management:')){custom.management=d.data.management||custom.management;dirtyIds.add(id);continue}if(id.startsWith('library:')){custom.library=Array.isArray(d.data.library)?d.data.library:custom.library;dirtyIds.add(id);continue}if(id.startsWith('quiz:')){let x=d.data.quizzes?.find(q=>q.id===id.slice(5));custom.quizzes=custom.quizzes.filter(q=>q.id!==id.slice(5));if(x)custom.quizzes.push(x);dirtyIds.add(id);continue}if(id.startsWith('cmd:')){let x=d.data.commands?.find(q=>q.id===id.slice(4));custom.commands=custom.commands.filter(q=>q.id!==id.slice(4));if(x)custom.commands.push(x);dirtyIds.add(id);continue}if(id.startsWith('cheat:')){let x=d.data.cheats?.find(q=>q.id===id.slice(6));custom.cheats=custom.cheats.filter(q=>q.id!==id.slice(6));if(x)custom.cheats.push(x);dirtyIds.add(id);continue}if(p){custom.pages=custom.pages.filter(x=>x.id!==id);custom.pages.push(p);dirtyIds.add(id)}else{custom.pages=custom.pages.filter(x=>x.id!==id);dirtyIds.add(id)}}dirty=true;toast('Modifications locales non publiées récupérées.')}}catch(e){console.warn('Brouillon ignoré',e)}
+ try{const d=await tssrDraftRead();if(d?.data&&Array.isArray(d.dirtyIds)&&d.dirtyIds.length){
+ for(const id of d.dirtyIds){if(dirtyIds.has(id))continue;
+  if(id.startsWith('management:'))custom.management=d.data.management||custom.management;
+  else if(id.startsWith('library:'))custom.library=d.data.library||custom.library;
+  else if(id.startsWith('quiz:')){const key=id.slice(5);custom.quizzes=custom.quizzes.filter(x=>x.id!==key);const x=d.data.quizzes?.find(x=>x.id===key);if(x)custom.quizzes.push(x)}
+  else if(id.startsWith('cmd:')){const key=id.slice(4);custom.commands=custom.commands.filter(x=>x.id!==key);const x=d.data.commands?.find(x=>x.id===key);if(x)custom.commands.push(x)}
+  else if(id.startsWith('cheat:')){const key=id.slice(6);custom.cheats=custom.cheats.filter(x=>x.id!==key);const x=d.data.cheats?.find(x=>x.id===key);if(x)custom.cheats.push(x)}
+  else{const x=d.data.pages?.find(x=>x.id===id);custom.pages=custom.pages.filter(x=>x.id!==id);if(x)custom.pages.push(x)}
+  dirtyIds.add(id);
+ }dirty=true;toast('Brouillon volumineux récupéré depuis IndexedDB.');
+ }}catch(e){console.warn('Brouillon IndexedDB indisponible',e)}
+ reconcileHidden();restoreRouteFromHash();await restoreGithubSession();
  // Indexation asynchrone des supports statiques, sans ralentir l'affichage initial.
  const staticCourses=all().filter(p=>p.kind==='cours'&&p.file&&!p.html);
  Promise.allSettled(staticCourses.map(async p=>{try{const r=await fetch(p.file);if(r.ok)tssrStaticCourseText.set(p.file,await r.text())}catch(e){}})).then(()=>{if($('#search')?.value.trim())tssrRenderGlobalSearch($('#search').value.trim())});}

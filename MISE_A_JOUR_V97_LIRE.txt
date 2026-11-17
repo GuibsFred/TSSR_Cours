@@ -1,0 +1,15 @@
+TSSR V97 — IMPORT ENRICHI + PROTECTION DES COURS
+
+1. Une copie complète des fichiers et des cours présents dans le ZIP d'origine est conservée.
+2. Dans « Ajouter un chapitre », coller le cours structuré depuis ChatGPT avec ses marqueurs === ... ===.
+3. Lorsque le presse-papiers fournit du HTML avec images, l'importateur le transforme en Markdown structuré.
+4. Les images en Base64 de ce cours sont publiées sur GitHub comme vrais fichiers image avant la publication du cours.
+5. Les rubriques Cours complet, Points essentiels, Commandes à retenir, Fiche de révision et QCM restent actives.
+6. Les brouillons volumineux sont enregistrés dans IndexedDB au lieu de dépendre uniquement de localStorage.
+
+IMPORTANT :
+- Ne pas effacer les données du navigateur avant de confirmer que les brouillons en attente sont publiés.
+- Ne pas remplacer data/custom.json par une ancienne version si le site GitHub contient des cours plus récents.
+- Le collage d'images depuis ChatGPT/Word dépend du contenu réellement fourni par le navigateur. Si une image n'est pas incluse dans le presse-papiers, elle ne peut pas être récupérée automatiquement.
+- La publication d'images requiert une connexion GitHub valide et un jeton autorisant l'écriture dans le dépôt.
+- Après déploiement, tester d'abord avec un petit chapitre de démonstration et vérifier les 5 onglets avant de modifier un cours important.
