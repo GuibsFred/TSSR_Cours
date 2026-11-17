@@ -110,3 +110,78 @@
 #view .course-library-grid>.mg-module-tile[hidden]{display:none!important;}
 @media(max-width:1250px){#view .course-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
 @media(max-width:780px){#view .course-library-grid{grid-template-columns:1fr!important;}#view .course-library-grid.tssr-catalog-list .module-card{grid-template-columns:55px minmax(0,1fr)!important;}#view .course-library-grid.tssr-catalog-list .module-card-top{width:55px!important;}#view .course-library-grid.tssr-catalog-list .module-card-footer{display:none!important;}}
+
+
+/* V99 — Catalogue lisible : hauteur confortable, rythme visuel discret, sans modifier les cours */
+#view .course-library-grid{gap:14px!important}
+#view .course-library-grid>.mg-module-tile,
+#view .course-library-grid>.mg-module-tile>.module-card{
+  height:140px!important;min-height:140px!important;max-height:140px!important;
+}
+#view .course-library-grid>.mg-module-tile>.module-card{
+  grid-template-columns:116px minmax(0,1fr)!important;
+  grid-template-rows:minmax(0,1fr) 39px!important;
+  column-gap:14px!important;padding:12px 39px 12px 12px!important;
+  border-radius:13px!important;background:linear-gradient(125deg,#0b3447 0%,#082839 56%,#061e2e 100%)!important;
+  border-color:#2189a0!important;box-shadow:inset 0 1px #ffffff12,0 5px 14px #00152130!important;
+}
+#view .course-library-grid>.mg-module-tile:nth-child(3n+2)>.module-card{
+  background:linear-gradient(125deg,#113a4a 0%,#0a2c3c 60%,#082333 100%)!important;
+}
+#view .course-library-grid>.mg-module-tile:nth-child(3n)>.module-card{
+  background:linear-gradient(125deg,#0b3043 0%,#0b3444 62%,#082435 100%)!important;
+}
+#view .course-library-grid .module-card-top{width:116px!important;height:112px!important;max-height:112px!important}
+#view .course-library-grid .module-art{width:114px!important;height:105px!important;max-height:105px!important}
+#view .course-library-grid .module-art img{width:112px!important;height:103px!important;max-width:112px!important;max-height:103px!important}
+#view .course-library-grid .module-index{min-width:29px!important;height:24px!important;font-size:12px!important}
+#view .course-library-grid .module-card h3{
+  font-size:clamp(15px,1.16vw,18px)!important;line-height:1.35!important;
+  max-height:75px!important;-webkit-line-clamp:3!important;font-weight:800!important;
+}
+#view .course-library-grid .module-card-footer{font-size:12px!important;gap:5px!important}
+#view .course-library-grid .tssr-module-status{font-size:11px!important}
+#view .course-library-grid .tssr-module-track{height:6px!important}
+#view .course-library-grid .module-card-footer>.module-enter{width:26px!important;height:26px!important;bottom:13px!important}
+#view .course-library-grid>.mg-module-tile:has(.tssr-module-status.is-done)>.module-card{
+  border-color:#c99b42!important;box-shadow:inset 3px 0 #d8a84c,0 5px 16px #0004!important;
+}
+#view .course-library-grid>.mg-module-tile:has(.tssr-module-status:not(.is-done))>.module-card:hover{
+  border-color:#55d7e7!important;box-shadow:inset 3px 0 #22cbd8,0 9px 20px #0005!important;
+}
+/* Liste : 78px, illustration lisible et colonne d'état séparée */
+#view .course-library-grid.tssr-catalog-list{gap:7px!important}
+#view .course-library-grid.tssr-catalog-list>.mg-module-tile,
+#view .course-library-grid.tssr-catalog-list>.mg-module-tile>.module-card{
+  height:78px!important;min-height:78px!important;max-height:78px!important;
+}
+#view .course-library-grid.tssr-catalog-list>.mg-module-tile>.module-card{
+  grid-template-columns:84px minmax(160px,2fr) minmax(165px,1fr)!important;
+  grid-template-rows:1fr!important;gap:15px!important;padding:8px 52px 8px 12px!important;
+}
+#view .course-library-grid.tssr-catalog-list .module-card-top{width:84px!important;height:60px!important;max-height:60px!important}
+#view .course-library-grid.tssr-catalog-list .module-art{width:82px!important;height:59px!important;max-height:59px!important}
+#view .course-library-grid.tssr-catalog-list .module-art img{width:82px!important;height:59px!important;max-width:82px!important;max-height:59px!important}
+#view .course-library-grid.tssr-catalog-list .module-card h3{
+  font-size:16px!important;line-height:1.35!important;max-height:52px!important;-webkit-line-clamp:2!important;
+}
+#view .course-library-grid.tssr-catalog-list .module-card-footer{font-size:12px!important;gap:6px!important}
+#view .course-library-grid.tssr-catalog-list .tssr-module-status{font-size:12px!important}
+#view .course-library-grid.tssr-catalog-list .module-card-footer>.module-enter{bottom:25px!important}
+#view .course-library-grid.tssr-catalog-list>.mg-module-tile:nth-child(even)>.module-card{
+  background:linear-gradient(90deg,#103b4d,#0b2c3e)!important;
+}
+#view .course-library-grid.tssr-catalog-list>.mg-module-tile:nth-child(odd)>.module-card{
+  background:linear-gradient(90deg,#092b3d,#071f30)!important;
+}
+@media(max-width:1250px){#view .course-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:780px){
+  #view .course-library-grid{grid-template-columns:1fr!important}
+  #view .course-library-grid.tssr-catalog-list>.mg-module-tile>.module-card{
+    grid-template-columns:68px minmax(0,1fr)!important;padding-right:44px!important;
+  }
+  #view .course-library-grid.tssr-catalog-list .module-card-top{width:68px!important}
+  #view .course-library-grid.tssr-catalog-list .module-art,
+  #view .course-library-grid.tssr-catalog-list .module-art img{width:66px!important;max-width:66px!important}
+  #view .course-library-grid.tssr-catalog-list .module-card-footer{display:none!important}
+}
