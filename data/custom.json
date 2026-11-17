@@ -2,13 +2,20 @@
   "pages": [
     {
       "id": "chapter:01:01",
-      "title": "Découverte de l’environnement Microsoft 365",
       "kind": "cours",
+      "title": "Découverte de l’environnement Microsoft 365",
       "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
       "chapter": true,
-      "updatedAt": "2026-10-20T21:38:58.954Z",
-      "html": "",
-      "revisionExtracts": []
+      "readonly": false,
+      "updatedAt": "2026-11-17T17:19:50.977Z",
+      "html": "<h1>Découverte de Microsoft 365</h1>\n<h2>Objectifs</h2>\n<ul>\n<li>Comprendre le modèle SaaS et ses avantages et limites.</li>\n<li>Identifier les principaux services Microsoft 365.</li>\n<li>Distinguer les grandes familles de licences.</li>\n<li>Expliquer le rôle d'un tenant et de l'administrateur global.</li>\n<li>Comprendre les étapes de création d'un tenant et l'utilisation d'un domaine personnalisé.</li>\n</ul>\n<h2>1. Le SaaS : des logiciels fournis comme un service</h2>\n<p>Le <strong>SaaS</strong> (<em>Software as a Service</em>, logiciel en tant que service) est un modèle dans lequel les applications sont hébergées chez un fournisseur et accessibles par Internet, souvent depuis un navigateur. L'utilisateur souscrit généralement un abonnement plutôt que d'acheter une version définitive du logiciel.</p>\n<p><strong>Principales caractéristiques :</strong></p>\n<ul>\n<li>Hébergement distant et accès depuis différents appareils connectés.</li>\n<li>Maintenance, correctifs et évolutions principalement assurés par le fournisseur.</li>\n<li>Facturation généralement récurrente, adaptée aux utilisateurs ou aux fonctionnalités.</li>\n<li>Possibilité d'ajuster le nombre d'utilisateurs et les services souscrits.</li>\n</ul>\n<p><strong>Avantages :</strong> déploiement simplifié, investissement initial limité, mises à jour centralisées, travail à distance et évolutivité.</p>\n<p><strong>Limites :</strong> dépendance à la connexion Internet, coût récurrent, possibilités de personnalisation parfois limitées, vigilance sur la confidentialité et la protection des données.</p>\n<p>Exemples cités dans les supports : Microsoft 365, Google Workspace, Salesforce, Trello et Dropbox.</p>\n<h2>2. L'environnement Microsoft 365</h2>\n<p>Microsoft 365 regroupe des applications bureautiques et des services cloud destinés aux particuliers, entreprises, établissements scolaires et organismes publics. L'objectif est de permettre la communication, le partage documentaire et le travail collaboratif tout en réduisant une partie des infrastructures à héberger localement.</p>\n<table>\n<thead>\n<tr>\n<th>Service</th>\n<th>Utilité principale</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Exchange Online</td>\n<td>Messagerie professionnelle, calendriers et contacts.</td>\n</tr>\n<tr>\n<td>OneDrive</td>\n<td>Stockage et partage de fichiers personnels dans le cloud.</td>\n</tr>\n<tr>\n<td>SharePoint Online</td>\n<td>Sites d'équipe, gestion et partage de documents et d'informations.</td>\n</tr>\n<tr>\n<td>Microsoft Teams</td>\n<td>Conversations, réunions et collaboration entre utilisateurs.</td>\n</tr>\n<tr>\n<td>Applications Office</td>\n<td>Création et modification de documents : Word, Excel, PowerPoint, Outlook, etc.</td>\n</tr>\n<tr>\n<td>Azure AD (nom employé dans les supports)</td>\n<td>Gestion des identités et des accès ; service aujourd'hui nommé Microsoft Entra ID.</td>\n</tr>\n</tbody></table>\n<p>Le PDF évoque aussi OneNote, Stream, Yammer, Delve et Dynamics 365. Il s'agit de services complémentaires ; leur disponibilité dépend des offres et des évolutions de la plateforme.</p>\n<h3>Applications installées et applications en ligne</h3>\n<p>Les applications Office peuvent être utilisées dans un navigateur ou, selon la licence, installées sur un ordinateur. Le support emploie l'ancien nom <strong>Office 365 ProPlus</strong> pour désigner la suite bureautique installable.</p>\n<p><strong>À distinguer :</strong> disposer d'une application Office installable ne signifie pas automatiquement disposer d'une boîte Exchange ou de tous les services collaboratifs.</p>\n<h2>3. Les plans et licences Microsoft 365</h2>\n<p>Une licence détermine les applications, services et fonctions auxquels un utilisateur a droit. Le choix dépend du type d'organisation, des besoins, de la sécurité et du budget.</p>\n<h3>3.1. Grandes familles</h3>\n<table>\n<thead>\n<tr>\n<th>Public</th>\n<th>Exemples de plans étudiés</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Particuliers</td>\n<td>Personnel, Famille.</td>\n</tr>\n<tr>\n<td>PME</td>\n<td>Business Basic, Apps for Business, Business Standard, Business Premium.</td>\n</tr>\n<tr>\n<td>Grandes entreprises</td>\n<td>E3, E5 ; F3 pour certains personnels de terrain.</td>\n</tr>\n<tr>\n<td>Éducation</td>\n<td>A1, A3, A5.</td>\n</tr>\n<tr>\n<td>Associations et secteur public</td>\n<td>Offres adaptées à ces organisations.</td>\n</tr>\n</tbody></table>\n<h3>3.2. Repères pour les licences professionnelles</h3>\n<ul>\n<li><strong>Business Basic :</strong> principalement applications web et services cloud ; pas de suite Office de bureau installable dans la présentation du cours.</li>\n<li><strong>Apps for Business :</strong> applications Office installables et stockage OneDrive ; ne correspond pas à une offre complète de messagerie Exchange.</li>\n<li><strong>Business Standard :</strong> applications Office installables et services de collaboration.</li>\n<li><strong>Business Premium :</strong> reprend le socle Standard avec des fonctions renforcées de sécurité et de gestion des appareils.</li>\n<li><strong>E3 / E5 :</strong> offres destinées aux organisations plus importantes ; E5 apporte des fonctions de sécurité, de conformité et d'analyse plus avancées.</li>\n<li><strong>A1 / A3 / A5 :</strong> progression des fonctions proposées au secteur éducatif.</li>\n</ul>\n<p><strong>Important :</strong> les supports décrivent les familles et principes de licences, pas un catalogue commercial garanti à jour. Les noms, inclusions et conditions (notamment Teams) peuvent évoluer ; en situation professionnelle, vérifier la fiche de licence réellement souscrite.</p>\n<h3>3.3. Comment choisir ?</h3>\n<p>Quatre critères sont explicitement mis en avant :</p>\n<ol>\n<li>Taille et nature de l'organisation.</li>\n<li>Besoin d'applications installées ou utilisation web suffisante.</li>\n<li>Exigences de sécurité, d'administration et de conformité.</li>\n<li>Budget et services nécessaires.</li>\n</ol>\n<h2>4. Le tenant Microsoft 365</h2>\n<p>Un <strong>tenant</strong> est l'environnement cloud propre à une organisation. Il rassemble ses identités, ses abonnements et la configuration des services Microsoft 365. On peut le représenter comme un espace d'administration distinct pour l'entreprise.</p>\n<p>Le tenant sert notamment à :</p>\n<ul>\n<li>Gérer les utilisateurs et leurs accès.</li>\n<li>Attribuer les licences et suivre les abonnements.</li>\n<li>Configurer les services collaboratifs.</li>\n<li>Associer des domaines de messagerie à l'organisation.</li>\n</ul>\n<h3>L'administrateur global</h3>\n<p>L'<strong>administrateur global</strong> est un compte doté de privilèges étendus sur le tenant. Il peut gérer les paramètres, utilisateurs et services à l'échelle de l'organisation. Ce rôle doit donc être attribué avec précaution.</p>\n<p><strong>Différence essentielle :</strong> le tenant est l'environnement de l'organisation ; l'administrateur global est un rôle de gestion au sein de cet environnement.</p>\n<h2>5. Création d'un tenant : déroulement présenté dans le cours</h2>\n<ol>\n<li><strong>Sélectionner un plan</strong> adapté au besoin.</li>\n<li><strong>Fournir une adresse électronique valide</strong> pour l'inscription.</li>\n<li><strong>Renseigner les informations de l'organisation</strong>, notamment ses coordonnées.</li>\n<li><strong>Choisir le nom initial du tenant</strong> et son domaine Microsoft par défaut.</li>\n<li><strong>Valider l'inscription</strong> et accéder à l'environnement d'administration.</li>\n</ol>\n<p>Le domaine initial est généralement de la forme :</p>\n<p><code>monentreprise.onmicrosoft.com</code></p>\n<p>Une adresse de compte peut alors ressembler à :</p>\n<p><code>admin@monentreprise.onmicrosoft.com</code></p>\n<p>Le support insiste sur l'importance du choix initial du nom. En pratique, certaines possibilités de renommage existent selon le composant concerné : il faut distinguer le nom initial <code>onmicrosoft.com</code>, les noms d'affichage et les domaines personnalisés.</p>\n<h2>6. Ajouter un domaine personnalisé</h2>\n<p>Pour utiliser une adresse comme <code>prenom.nom@monentreprise.fr</code>, l'organisation doit disposer du nom de domaine correspondant.</p>\n<p><strong>Registrar (bureau d'enregistrement) :</strong> prestataire auprès duquel on enregistre un nom de domaine. Les supports citent notamment OVH, Gandi, Infomaniak, GoDaddy et IONOS/1&amp;1.</p>\n<p><strong>Étapes générales :</strong></p>\n<ol>\n<li>Rechercher la disponibilité du nom souhaité (<code>.fr</code>, <code>.com</code>, <code>.eu</code>, etc.).</li>\n<li>Enregistrer le domaine auprès d'un registrar.</li>\n<li>Ajouter ce domaine dans Microsoft 365.</li>\n<li>Réaliser les vérifications et réglages DNS demandés pour les services concernés.</li>\n<li>Utiliser le domaine personnalisé pour les comptes et la messagerie selon la configuration.</li>\n</ol>\n<p><strong>À retenir :</strong> le domaine Internet et le tenant sont deux notions différentes. Le domaine est une identité DNS et de messagerie ; le tenant est l'environnement de services Microsoft 365.</p>\n<h2>Bilan</h2>\n<p>Microsoft 365 est une plateforme SaaS qui réunit bureautique, messagerie, stockage et collaboration. Son administration repose sur le choix des licences, la gestion d'un tenant, les identités et les domaines. Pour un TSSR, l'essentiel est de comprendre <strong>quel service répond à quel besoin</strong>, <strong>ce qu'autorise une licence</strong> et <strong>comment une organisation structure son environnement cloud</strong>.</p>\n",
+      "revisionExtracts": [],
+      "chapterIcon": "🐧",
+      "heroImage": "assets/tssr-banner-windows.webp",
+      "essentialsMarkdown": "- **SaaS :** application hébergée chez un fournisseur et accessible via Internet, généralement par abonnement.\n- **Exchange Online :** courriels, calendriers et contacts.\n- **OneDrive :** espace de fichiers personnel dans le cloud.\n- **SharePoint Online :** sites collaboratifs et gestion documentaire.\n- **Teams :** communication, réunions et collaboration.\n- **Microsoft Entra ID (ancien Azure AD) :** identités et accès.\n- **Licence :** détermine les services et fonctionnalités disponibles.\n- **Tenant :** environnement Microsoft 365 d'une organisation.\n- **Administrateur global :** rôle disposant de privilèges étendus sur le tenant.\n- **onmicrosoft.com :** domaine Microsoft fourni lors de la création du tenant.\n- **Domaine personnalisé :** nom de domaine enregistré et associé à Microsoft 365.\n- **Registrar :** prestataire permettant d'enregistrer un nom de domaine.",
+      "commandsMarkdown": "Ce chapitre d'introduction ne présente **aucune commande Bash, PowerShell ou ligne de commande à mémoriser**. Les manipulations décrites concernent principalement le choix d'un abonnement, la création d'un tenant et la configuration des services dans les interfaces d'administration.\n\n**Repères pratiques (sans commande) :**\n- Identifier le service correspondant au besoin : Exchange, OneDrive, SharePoint ou Teams.\n- Vérifier les droits fournis par la licence.\n- Repérer le tenant et le rôle d'administrateur global.\n- Distinguer le domaine par défaut `onmicrosoft.com` du domaine personnalisé.\n- Identifier le registrar du nom de domaine.",
+      "revisionHtml": "<h1>Fiche de révision — Découverte de Microsoft 365</h1>\n<h2>Les définitions à savoir</h2>\n<table>\n<thead>\n<tr>\n<th>Terme</th>\n<th>Définition courte</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>SaaS</td>\n<td>Logiciel hébergé et fourni comme un service en ligne.</td>\n</tr>\n<tr>\n<td>Microsoft 365</td>\n<td>Ensemble d'applications et de services cloud.</td>\n</tr>\n<tr>\n<td>Tenant</td>\n<td>Environnement dédié à une organisation.</td>\n</tr>\n<tr>\n<td>Licence</td>\n<td>Droit d'utiliser des applications et services déterminés.</td>\n</tr>\n<tr>\n<td>Administrateur global</td>\n<td>Rôle d'administration à privilèges étendus.</td>\n</tr>\n<tr>\n<td>Registrar</td>\n<td>Prestataire d'enregistrement d'un nom de domaine.</td>\n</tr>\n</tbody></table>\n<h2>Quel service pour quel besoin ?</h2>\n<table>\n<thead>\n<tr>\n<th>Besoin</th>\n<th>Service</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Boîte mail professionnelle</td>\n<td>Exchange Online</td>\n</tr>\n<tr>\n<td>Fichiers personnels synchronisés</td>\n<td>OneDrive</td>\n</tr>\n<tr>\n<td>Bibliothèque de documents d'équipe</td>\n<td>SharePoint Online</td>\n</tr>\n<tr>\n<td>Réunions et échanges d'équipe</td>\n<td>Teams</td>\n</tr>\n<tr>\n<td>Documents, tableurs, présentations</td>\n<td>Word, Excel, PowerPoint</td>\n</tr>\n<tr>\n<td>Identités et accès</td>\n<td>Microsoft Entra ID / Azure AD (ancien nom)</td>\n</tr>\n</tbody></table>\n<h2>Repères licences</h2>\n<ul>\n<li><strong>Basic :</strong> principalement web + services cloud.</li>\n<li><strong>Apps for Business :</strong> applications installables.</li>\n<li><strong>Standard :</strong> applications installables + collaboration.</li>\n<li><strong>Premium :</strong> Standard + sécurité et gestion renforcées.</li>\n<li><strong>E3 / E5 :</strong> grandes organisations, fonctions croissantes.</li>\n<li><strong>A1 / A3 / A5 :</strong> éducation.</li>\n</ul>\n<p>Les fonctionnalités exactes dépendent des offres en vigueur et de la licence réellement attribuée.</p>\n<h2>Tenant et domaine : ne pas confondre</h2>\n<ul>\n<li><strong>Tenant :</strong> environnement d'administration et de services.</li>\n<li><strong>Domaine initial :</strong> <code>organisation.onmicrosoft.com</code>.</li>\n<li><strong>Domaine personnalisé :</strong> <code>organisation.fr</code>, par exemple.</li>\n<li><strong>Administrateur global :</strong> compte/rôle de gestion, pas un service de messagerie.</li>\n</ul>\n<h2>Les pièges classiques</h2>\n<ol>\n<li>Confondre <strong>OneDrive</strong> (fichiers personnels) et <strong>SharePoint</strong> (espaces documentaires collaboratifs).</li>\n<li>Confondre <strong>Exchange Online</strong> (messagerie) et <strong>Outlook</strong> (application cliente).</li>\n<li>Penser que toutes les licences donnent accès aux mêmes applications et services.</li>\n<li>Confondre le <strong>tenant</strong> avec son <strong>nom de domaine</strong>.</li>\n<li>Croire qu'un logiciel SaaS n'a aucune contrainte : connexion, confidentialité et coût récurrent restent à considérer.</li>\n</ol>\n",
+      "rawMarkdown": "MODULE : 01 — Outils collaboratifs\nCHAPITRE : Découverte de Microsoft 365\n\n=== COURS COMPLET ===\n\n# Découverte de Microsoft 365\n\n## Objectifs\n\n- Comprendre le modèle SaaS et ses avantages et limites.\n- Identifier les principaux services Microsoft 365.\n- Distinguer les grandes familles de licences.\n- Expliquer le rôle d'un tenant et de l'administrateur global.\n- Comprendre les étapes de création d'un tenant et l'utilisation d'un domaine personnalisé.\n\n## 1. Le SaaS : des logiciels fournis comme un service\n\nLe **SaaS** (*Software as a Service*, logiciel en tant que service) est un modèle dans lequel les applications sont hébergées chez un fournisseur et accessibles par Internet, souvent depuis un navigateur. L'utilisateur souscrit généralement un abonnement plutôt que d'acheter une version définitive du logiciel.\n\n**Principales caractéristiques :**\n- Hébergement distant et accès depuis différents appareils connectés.\n- Maintenance, correctifs et évolutions principalement assurés par le fournisseur.\n- Facturation généralement récurrente, adaptée aux utilisateurs ou aux fonctionnalités.\n- Possibilité d'ajuster le nombre d'utilisateurs et les services souscrits.\n\n**Avantages :** déploiement simplifié, investissement initial limité, mises à jour centralisées, travail à distance et évolutivité.\n\n**Limites :** dépendance à la connexion Internet, coût récurrent, possibilités de personnalisation parfois limitées, vigilance sur la confidentialité et la protection des données.\n\nExemples cités dans les supports : Microsoft 365, Google Workspace, Salesforce, Trello et Dropbox.\n\n## 2. L'environnement Microsoft 365\n\nMicrosoft 365 regroupe des applications bureautiques et des services cloud destinés aux particuliers, entreprises, établissements scolaires et organismes publics. L'objectif est de permettre la communication, le partage documentaire et le travail collaboratif tout en réduisant une partie des infrastructures à héberger localement.\n\n| Service | Utilité principale |\n|---|---|\n| Exchange Online | Messagerie professionnelle, calendriers et contacts. |\n| OneDrive | Stockage et partage de fichiers personnels dans le cloud. |\n| SharePoint Online | Sites d'équipe, gestion et partage de documents et d'informations. |\n| Microsoft Teams | Conversations, réunions et collaboration entre utilisateurs. |\n| Applications Office | Création et modification de documents : Word, Excel, PowerPoint, Outlook, etc. |\n| Azure AD (nom employé dans les supports) | Gestion des identités et des accès ; service aujourd'hui nommé Microsoft Entra ID. |\n\nLe PDF évoque aussi OneNote, Stream, Yammer, Delve et Dynamics 365. Il s'agit de services complémentaires ; leur disponibilité dépend des offres et des évolutions de la plateforme.\n\n### Applications installées et applications en ligne\n\nLes applications Office peuvent être utilisées dans un navigateur ou, selon la licence, installées sur un ordinateur. Le support emploie l'ancien nom **Office 365 ProPlus** pour désigner la suite bureautique installable.\n\n**À distinguer :** disposer d'une application Office installable ne signifie pas automatiquement disposer d'une boîte Exchange ou de tous les services collaboratifs.\n\n## 3. Les plans et licences Microsoft 365\n\nUne licence détermine les applications, services et fonctions auxquels un utilisateur a droit. Le choix dépend du type d'organisation, des besoins, de la sécurité et du budget.\n\n### 3.1. Grandes familles\n\n| Public | Exemples de plans étudiés |\n|---|---|\n| Particuliers | Personnel, Famille. |\n| PME | Business Basic, Apps for Business, Business Standard, Business Premium. |\n| Grandes entreprises | E3, E5 ; F3 pour certains personnels de terrain. |\n| Éducation | A1, A3, A5. |\n| Associations et secteur public | Offres adaptées à ces organisations. |\n\n### 3.2. Repères pour les licences professionnelles\n\n- **Business Basic :** principalement applications web et services cloud ; pas de suite Office de bureau installable dans la présentation du cours.\n- **Apps for Business :** applications Office installables et stockage OneDrive ; ne correspond pas à une offre complète de messagerie Exchange.\n- **Business Standard :** applications Office installables et services de collaboration.\n- **Business Premium :** reprend le socle Standard avec des fonctions renforcées de sécurité et de gestion des appareils.\n- **E3 / E5 :** offres destinées aux organisations plus importantes ; E5 apporte des fonctions de sécurité, de conformité et d'analyse plus avancées.\n- **A1 / A3 / A5 :** progression des fonctions proposées au secteur éducatif.\n\n**Important :** les supports décrivent les familles et principes de licences, pas un catalogue commercial garanti à jour. Les noms, inclusions et conditions (notamment Teams) peuvent évoluer ; en situation professionnelle, vérifier la fiche de licence réellement souscrite.\n\n### 3.3. Comment choisir ?\n\nQuatre critères sont explicitement mis en avant :\n1. Taille et nature de l'organisation.\n2. Besoin d'applications installées ou utilisation web suffisante.\n3. Exigences de sécurité, d'administration et de conformité.\n4. Budget et services nécessaires.\n\n## 4. Le tenant Microsoft 365\n\nUn **tenant** est l'environnement cloud propre à une organisation. Il rassemble ses identités, ses abonnements et la configuration des services Microsoft 365. On peut le représenter comme un espace d'administration distinct pour l'entreprise.\n\nLe tenant sert notamment à :\n- Gérer les utilisateurs et leurs accès.\n- Attribuer les licences et suivre les abonnements.\n- Configurer les services collaboratifs.\n- Associer des domaines de messagerie à l'organisation.\n\n### L'administrateur global\n\nL'**administrateur global** est un compte doté de privilèges étendus sur le tenant. Il peut gérer les paramètres, utilisateurs et services à l'échelle de l'organisation. Ce rôle doit donc être attribué avec précaution.\n\n**Différence essentielle :** le tenant est l'environnement de l'organisation ; l'administrateur global est un rôle de gestion au sein de cet environnement.\n\n## 5. Création d'un tenant : déroulement présenté dans le cours\n\n1. **Sélectionner un plan** adapté au besoin.\n2. **Fournir une adresse électronique valide** pour l'inscription.\n3. **Renseigner les informations de l'organisation**, notamment ses coordonnées.\n4. **Choisir le nom initial du tenant** et son domaine Microsoft par défaut.\n5. **Valider l'inscription** et accéder à l'environnement d'administration.\n\nLe domaine initial est généralement de la forme :\n\n`monentreprise.onmicrosoft.com`\n\nUne adresse de compte peut alors ressembler à :\n\n`admin@monentreprise.onmicrosoft.com`\n\nLe support insiste sur l'importance du choix initial du nom. En pratique, certaines possibilités de renommage existent selon le composant concerné : il faut distinguer le nom initial `onmicrosoft.com`, les noms d'affichage et les domaines personnalisés.\n\n## 6. Ajouter un domaine personnalisé\n\nPour utiliser une adresse comme `prenom.nom@monentreprise.fr`, l'organisation doit disposer du nom de domaine correspondant.\n\n**Registrar (bureau d'enregistrement) :** prestataire auprès duquel on enregistre un nom de domaine. Les supports citent notamment OVH, Gandi, Infomaniak, GoDaddy et IONOS/1&1.\n\n**Étapes générales :**\n1. Rechercher la disponibilité du nom souhaité (`.fr`, `.com`, `.eu`, etc.).\n2. Enregistrer le domaine auprès d'un registrar.\n3. Ajouter ce domaine dans Microsoft 365.\n4. Réaliser les vérifications et réglages DNS demandés pour les services concernés.\n5. Utiliser le domaine personnalisé pour les comptes et la messagerie selon la configuration.\n\n**À retenir :** le domaine Internet et le tenant sont deux notions différentes. Le domaine est une identité DNS et de messagerie ; le tenant est l'environnement de services Microsoft 365.\n\n## Bilan\n\nMicrosoft 365 est une plateforme SaaS qui réunit bureautique, messagerie, stockage et collaboration. Son administration repose sur le choix des licences, la gestion d'un tenant, les identités et les domaines. Pour un TSSR, l'essentiel est de comprendre **quel service répond à quel besoin**, **ce qu'autorise une licence** et **comment une organisation structure son environnement cloud**.\n\n=== POINTS ESSENTIELS ===\n\n- **SaaS :** application hébergée chez un fournisseur et accessible via Internet, généralement par abonnement.\n- **Exchange Online :** courriels, calendriers et contacts.\n- **OneDrive :** espace de fichiers personnel dans le cloud.\n- **SharePoint Online :** sites collaboratifs et gestion documentaire.\n- **Teams :** communication, réunions et collaboration.\n- **Microsoft Entra ID (ancien Azure AD) :** identités et accès.\n- **Licence :** détermine les services et fonctionnalités disponibles.\n- **Tenant :** environnement Microsoft 365 d'une organisation.\n- **Administrateur global :** rôle disposant de privilèges étendus sur le tenant.\n- **onmicrosoft.com :** domaine Microsoft fourni lors de la création du tenant.\n- **Domaine personnalisé :** nom de domaine enregistré et associé à Microsoft 365.\n- **Registrar :** prestataire permettant d'enregistrer un nom de domaine.\n\n=== COMMANDES À RETENIR ===\n\nCe chapitre d'introduction ne présente **aucune commande Bash, PowerShell ou ligne de commande à mémoriser**. Les manipulations décrites concernent principalement le choix d'un abonnement, la création d'un tenant et la configuration des services dans les interfaces d'administration.\n\n**Repères pratiques (sans commande) :**\n- Identifier le service correspondant au besoin : Exchange, OneDrive, SharePoint ou Teams.\n- Vérifier les droits fournis par la licence.\n- Repérer le tenant et le rôle d'administrateur global.\n- Distinguer le domaine par défaut `onmicrosoft.com` du domaine personnalisé.\n- Identifier le registrar du nom de domaine.\n\n=== FICHE DE RÉVISION ===\n\n# Fiche de révision — Découverte de Microsoft 365\n\n## Les définitions à savoir\n\n| Terme | Définition courte |\n|---|---|\n| SaaS | Logiciel hébergé et fourni comme un service en ligne. |\n| Microsoft 365 | Ensemble d'applications et de services cloud. |\n| Tenant | Environnement dédié à une organisation. |\n| Licence | Droit d'utiliser des applications et services déterminés. |\n| Administrateur global | Rôle d'administration à privilèges étendus. |\n| Registrar | Prestataire d'enregistrement d'un nom de domaine. |\n\n## Quel service pour quel besoin ?\n\n| Besoin | Service |\n|---|---|\n| Boîte mail professionnelle | Exchange Online |\n| Fichiers personnels synchronisés | OneDrive |\n| Bibliothèque de documents d'équipe | SharePoint Online |\n| Réunions et échanges d'équipe | Teams |\n| Documents, tableurs, présentations | Word, Excel, PowerPoint |\n| Identités et accès | Microsoft Entra ID / Azure AD (ancien nom) |\n\n## Repères licences\n\n- **Basic :** principalement web + services cloud.\n- **Apps for Business :** applications installables.\n- **Standard :** applications installables + collaboration.\n- **Premium :** Standard + sécurité et gestion renforcées.\n- **E3 / E5 :** grandes organisations, fonctions croissantes.\n- **A1 / A3 / A5 :** éducation.\n\nLes fonctionnalités exactes dépendent des offres en vigueur et de la licence réellement attribuée.\n\n## Tenant et domaine : ne pas confondre\n\n- **Tenant :** environnement d'administration et de services.\n- **Domaine initial :** `organisation.onmicrosoft.com`.\n- **Domaine personnalisé :** `organisation.fr`, par exemple.\n- **Administrateur global :** compte/rôle de gestion, pas un service de messagerie.\n\n## Les pièges classiques\n\n1. Confondre **OneDrive** (fichiers personnels) et **SharePoint** (espaces documentaires collaboratifs).\n2. Confondre **Exchange Online** (messagerie) et **Outlook** (application cliente).\n3. Penser que toutes les licences donnent accès aux mêmes applications et services.\n4. Confondre le **tenant** avec son **nom de domaine**.\n5. Croire qu'un logiciel SaaS n'a aucune contrainte : connexion, confidentialité et coût récurrent restent à considérer.\n\n=== QCM ===\n\n### Question 1\nQue signifie SaaS ?\nA. Storage as a Server\nB. Software as a Service\nC. Security and System\nD. Service and Storage\nRéponse : B\nExplication : SaaS signifie Software as a Service, logiciel fourni comme un service.\n\n### Question 2\nQuel est un avantage typique du SaaS ?\nA. L'absence totale de connexion Internet\nB. L'obligation d'héberger tous les serveurs en interne\nC. La maintenance principalement prise en charge par le fournisseur\nD. L'absence de coût récurrent\nRéponse : C\nExplication : Le fournisseur assure généralement l'hébergement et les mises à jour.\n\n### Question 3\nQuel service Microsoft 365 gère la messagerie professionnelle ?\nA. Exchange Online\nB. OneDrive\nC. PowerPoint\nD. Stream\nRéponse : A\nExplication : Exchange Online fournit notamment la messagerie, les calendriers et les contacts.\n\n### Question 4\nQuel service est principalement destiné aux fichiers personnels dans le cloud ?\nA. Teams\nB. OneDrive\nC. Exchange Online\nD. Dynamics 365\nRéponse : B\nExplication : OneDrive fournit un espace de stockage de fichiers lié à l'utilisateur.\n\n### Question 5\nQuel service sert notamment à créer des sites d'équipe et partager des documents ?\nA. Outlook\nB. Word\nC. SharePoint Online\nD. Excel\nRéponse : C\nExplication : SharePoint Online sert à organiser les informations et les documents collaboratifs.\n\n### Question 6\nQuel service est destiné aux conversations et réunions d'équipe ?\nA. Microsoft Teams\nB. Access\nC. Exchange Online uniquement\nD. OneNote uniquement\nRéponse : A\nExplication : Teams réunit échanges, réunions et outils de collaboration.\n\n### Question 7\nQue détermine principalement une licence Microsoft 365 ?\nA. Le nom physique du serveur\nB. Les applications et services accessibles\nC. L'adresse IP du poste\nD. Le système de fichiers local\nRéponse : B\nExplication : Les fonctionnalités disponibles dépendent de la licence attribuée.\n\n### Question 8\nQuel plan du cours met l'accent sur les applications Office installables sans offrir à lui seul une messagerie Exchange complète ?\nA. Apps for Business\nB. Business Basic\nC. Education A1\nD. F3\nRéponse : A\nExplication : Apps for Business est centré sur les applications Office installables.\n\n### Question 9\nQue représente un tenant Microsoft 365 ?\nA. Un logiciel de traitement de texte\nB. Un protocole réseau\nC. L'environnement cloud d'une organisation\nD. Une extension de fichier\nRéponse : C\nExplication : Le tenant regroupe l'environnement de services et d'administration de l'organisation.\n\n### Question 10\nQuel rôle dispose de privilèges étendus sur le tenant ?\nA. Utilisateur invité\nB. Administrateur global\nC. Lecteur de documents\nD. Utilisateur standard\nRéponse : B\nExplication : L'administrateur global possède des droits d'administration étendus.\n\n### Question 11\nQuel domaine est généralement fourni lors de la création d'un tenant ?\nA. organisation.local\nB. organisation.onmicrosoft.com\nC. organisation.lan\nD. organisation.internal\nRéponse : B\nExplication : Microsoft fournit un domaine initial de type onmicrosoft.com.\n\n### Question 12\nQuel est le rôle d'un registrar ?\nA. Installer Windows\nB. Créer des fichiers Excel\nC. Enregistrer un nom de domaine Internet\nD. Administrer les réunions Teams\nRéponse : C\nExplication : Le registrar est le prestataire auprès duquel un nom de domaine est enregistré.\n\n### Question 13\nQuel critère est pertinent pour choisir une licence ?\nA. Uniquement la couleur du logo\nB. Le budget et les services nécessaires\nC. Le modèle de clavier\nD. Le nom du navigateur par défaut\nRéponse : B\nExplication : Le choix dépend notamment des besoins, de la taille de l'organisation et du budget.\n\n### Question 14\nQuelle affirmation est correcte ?\nA. Tenant et domaine personnalisé sont exactement la même chose\nB. Le domaine personnalisé remplace automatiquement toutes les licences\nC. Le tenant héberge l'environnement de l'organisation ; le domaine sert notamment à ses adresses\nD. Le domaine est obligatoirement en .com\nRéponse : C\nExplication : Le tenant et le domaine ont des fonctions distinctes.\n\n### Question 15\nQuel nom actuel correspond à l'ancien Azure AD cité dans le support ?\nA. Microsoft Entra ID\nB. Microsoft Word\nC. Microsoft Stream\nD. Microsoft Defender Antivirus\nRéponse : A\nExplication : Azure Active Directory a été renommé Microsoft Entra ID."
     },
     {
       "id": "chapter:01:03",
@@ -1911,6 +1918,179 @@
           ],
           "correct": 3,
           "explanation": "make install installe les fichiers compilés lorsque le projet utilise cette procédure."
+        }
+      ]
+    },
+    {
+      "id": "quiz-auto-chapter:01:01",
+      "title": "QCM — Découverte de l’environnement Microsoft 365",
+      "category": "01 — Microsoft 365 — Outils collaboratifs",
+      "chapterId": "chapter:01:01",
+      "questions": [
+        {
+          "question": "Que signifie SaaS ?",
+          "answers": [
+            "Storage as a Server",
+            "Software as a Service",
+            "Security and System",
+            "Service and Storage"
+          ],
+          "correct": 1,
+          "explanation": "SaaS signifie Software as a Service, logiciel fourni comme un service."
+        },
+        {
+          "question": "Quel est un avantage typique du SaaS ?",
+          "answers": [
+            "L'absence totale de connexion Internet",
+            "L'obligation d'héberger tous les serveurs en interne",
+            "La maintenance principalement prise en charge par le fournisseur",
+            "L'absence de coût récurrent"
+          ],
+          "correct": 2,
+          "explanation": "Le fournisseur assure généralement l'hébergement et les mises à jour."
+        },
+        {
+          "question": "Quel service Microsoft 365 gère la messagerie professionnelle ?",
+          "answers": [
+            "Exchange Online",
+            "OneDrive",
+            "PowerPoint",
+            "Stream"
+          ],
+          "correct": 0,
+          "explanation": "Exchange Online fournit notamment la messagerie, les calendriers et les contacts."
+        },
+        {
+          "question": "Quel service est principalement destiné aux fichiers personnels dans le cloud ?",
+          "answers": [
+            "Teams",
+            "OneDrive",
+            "Exchange Online",
+            "Dynamics 365"
+          ],
+          "correct": 1,
+          "explanation": "OneDrive fournit un espace de stockage de fichiers lié à l'utilisateur."
+        },
+        {
+          "question": "Quel service sert notamment à créer des sites d'équipe et partager des documents ?",
+          "answers": [
+            "Outlook",
+            "Word",
+            "SharePoint Online",
+            "Excel"
+          ],
+          "correct": 2,
+          "explanation": "SharePoint Online sert à organiser les informations et les documents collaboratifs."
+        },
+        {
+          "question": "Quel service est destiné aux conversations et réunions d'équipe ?",
+          "answers": [
+            "Microsoft Teams",
+            "Access",
+            "Exchange Online uniquement",
+            "OneNote uniquement"
+          ],
+          "correct": 0,
+          "explanation": "Teams réunit échanges, réunions et outils de collaboration."
+        },
+        {
+          "question": "Que détermine principalement une licence Microsoft 365 ?",
+          "answers": [
+            "Le nom physique du serveur",
+            "Les applications et services accessibles",
+            "L'adresse IP du poste",
+            "Le système de fichiers local"
+          ],
+          "correct": 1,
+          "explanation": "Les fonctionnalités disponibles dépendent de la licence attribuée."
+        },
+        {
+          "question": "Quel plan du cours met l'accent sur les applications Office installables sans offrir à lui seul une messagerie Exchange complète ?",
+          "answers": [
+            "Apps for Business",
+            "Business Basic",
+            "Education A1",
+            "F3"
+          ],
+          "correct": 0,
+          "explanation": "Apps for Business est centré sur les applications Office installables."
+        },
+        {
+          "question": "Que représente un tenant Microsoft 365 ?",
+          "answers": [
+            "Un logiciel de traitement de texte",
+            "Un protocole réseau",
+            "L'environnement cloud d'une organisation",
+            "Une extension de fichier"
+          ],
+          "correct": 2,
+          "explanation": "Le tenant regroupe l'environnement de services et d'administration de l'organisation."
+        },
+        {
+          "question": "Quel rôle dispose de privilèges étendus sur le tenant ?",
+          "answers": [
+            "Utilisateur invité",
+            "Administrateur global",
+            "Lecteur de documents",
+            "Utilisateur standard"
+          ],
+          "correct": 1,
+          "explanation": "L'administrateur global possède des droits d'administration étendus."
+        },
+        {
+          "question": "Quel domaine est généralement fourni lors de la création d'un tenant ?",
+          "answers": [
+            "organisation.local",
+            "organisation.onmicrosoft.com",
+            "organisation.lan",
+            "organisation.internal"
+          ],
+          "correct": 1,
+          "explanation": "Microsoft fournit un domaine initial de type onmicrosoft.com."
+        },
+        {
+          "question": "Quel est le rôle d'un registrar ?",
+          "answers": [
+            "Installer Windows",
+            "Créer des fichiers Excel",
+            "Enregistrer un nom de domaine Internet",
+            "Administrer les réunions Teams"
+          ],
+          "correct": 2,
+          "explanation": "Le registrar est le prestataire auprès duquel un nom de domaine est enregistré."
+        },
+        {
+          "question": "Quel critère est pertinent pour choisir une licence ?",
+          "answers": [
+            "Uniquement la couleur du logo",
+            "Le budget et les services nécessaires",
+            "Le modèle de clavier",
+            "Le nom du navigateur par défaut"
+          ],
+          "correct": 1,
+          "explanation": "Le choix dépend notamment des besoins, de la taille de l'organisation et du budget."
+        },
+        {
+          "question": "Quelle affirmation est correcte ?",
+          "answers": [
+            "Tenant et domaine personnalisé sont exactement la même chose",
+            "Le domaine personnalisé remplace automatiquement toutes les licences",
+            "Le tenant héberge l'environnement de l'organisation ; le domaine sert notamment à ses adresses",
+            "Le domaine est obligatoirement en .com"
+          ],
+          "correct": 2,
+          "explanation": "Le tenant et le domaine ont des fonctions distinctes."
+        },
+        {
+          "question": "Quel nom actuel correspond à l'ancien Azure AD cité dans le support ?",
+          "answers": [
+            "Microsoft Entra ID",
+            "Microsoft Word",
+            "Microsoft Stream",
+            "Microsoft Defender Antivirus"
+          ],
+          "correct": 0,
+          "explanation": "Azure Active Directory a été renommé Microsoft Entra ID."
         }
       ]
     }
