@@ -1,5 +1,37 @@
 window.TSSR_NEWS = [
   {
+    "title": "Cyberattaque : Air France, IKEA, HSBC, Zoom… De nombreux sites ont servi du code malveillant à leurs visiteurs",
+    "summary": "Un pirate a détourné les scripts Optimizely de 178 organisations, dont Ikea, Transavia, CNN, la BBC et Zoom, pour voler des cartes bancaires et des cryptos. Le post Cyberattaque : Air France, IKEA, HSBC, Zoom… De nombreux sites ont servi du code malveillant à leurs visiteurs a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/optimizely-pirate-scripts-malveillants-cnn-bbc-zoom/",
+    "date": "2026-11-17",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "IA sur Windows 11 : Microsoft sait si vous codez avec Claude, Codex ou Cursor",
+    "summary": "Un composant de Windows 11 repère les agents IA de codage (Claude, Codex, Cursor...) et peut le signaler à Microsoft via les données de diagnostic facultatives. Le post IA sur Windows 11 : Microsoft sait si vous codez avec Claude, Codex ou Cursor a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/windows-11-telemetrie-agents-ia-codage/",
+    "date": "2026-11-17",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Claude Code : comment automatiser vos tâches avec le mode headless ?",
+    "summary": "Apprenez à utiliser Claude Code en mode headless avec la commande claude -p pour automatiser vos tâches dans des scripts, des tâches planifiées ou en CI/CD. Le post Claude Code : comment automatiser vos tâches avec le mode headless ? a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/claude-code-mode-headless/",
+    "date": "2026-11-17",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "NoisyTCP : cette faille du noyau Linux vieille de 11 ans permet de faire planter un serveur à distance",
+    "summary": "Des paquets TCP bien synchronisés, et tout le serveur tombe. NoisyTCP (CVE-2026-99288), une faille Linux vieille de 11 ans menace les serveurs Linux. Le post NoisyTCP : cette faille du noyau Linux vieille de 11 ans permet de faire planter un serveur à distance a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/noisytcp-cve-2026-99288-faille-noyau-linux-tcp/",
+    "date": "2026-11-17",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
     "title": "GTA 6 : la Nouvelle-Zélande jouera 12 heures avant la France, attention aux arnaques",
     "summary": "Envie de jouer à GTA 6 dès mercredi midi grâce à la Nouvelle-Zélande ? L’astuce a ses limites sur Xbox et PS5. Et les faux GTA 6 PC, eux, volent vos données. Le post GTA 6 : la Nouvelle-Zélande jouera 12 heures avant la France, attention aux arnaques a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/gta-6-heure-sortie-nouvelle-zelande-arnaques/",
@@ -24,33 +56,121 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Apple sera jugé en France pour obsolescence programmée en juin 2027 : que reproche-t-on à l’iPhone ?",
-    "summary": "Apple a-t-il volontairement empêché la réparation de ses iPhone ? C'est ce que tentera de déterminer le tribunal correctionnel de Paris en juin 2027 après la plainte de l'association HOP. La sérialisation, qui lie chaque pièce détachée au numéro de série de l'iPhone qui l'accueille, est dans le viseur de la justice.",
-    "url": "https://www.numerama.com/tech/2375939-apple-sera-juge-en-france-pour-obsolescence-programmee-en-juin-2027-que-reproche-t-on-a-liphone.html",
+    "title": "Panne Apple : iCloud, l’App Store et Apple Music ne fonctionnent plus, voici ce que l’on sait",
+    "summary": "De nombreux utilisateurs d’iPhone, d’iPad et de Mac ont été déconnectés de leur compte iCloud ce mardi 17 novembre sans pouvoir s’y reconnecter.",
+    "url": "https://www.numerama.com/tech/2377281-une-panne-icloud-prive-des-utilisateurs-de-leur-compte-apple-voici-ce-que-lon-sait.html",
     "date": "2026-11-17",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "Le responsable du piratage massif de GTA 6 plaide coupable",
-    "summary": "Ce lundi 16 novembre, trois jours avant la sortie de GTA 6, Arion Kurtaj, 21 ans, a plaidé coupable du piratage de Rockstar Games qu'il a commis en 2022. Jugé inapte à suivre un procès classique, il avait d'abord été placé dans un hôpital psychiatrique sécurisé.",
-    "url": "https://www.numerama.com/pop-culture/2375937-le-responsable-du-piratage-massif-de-gta-6-plaide-coupable.html",
+    "title": "« Je serais honoré de revenir » : Jensen Huang sort du silence après le scandale chez Nvidia",
+    "summary": "5 jours après avoir quitté Nvidia, Jensen Huang sort du silence dans une lettre publiée sur X. L'ancien patron de Nvidia s'excuse de nouveau et se dit prêt à reprendre les rênes si le conseil d'administration le lui demande. Une hypothèse pour l'instant écartée, mais qui a tout du scénario classique de la Silicon Valley.",
+    "url": "https://www.numerama.com/tech/2377211-je-serais-honore-de-revenir-jensen-huang-sort-du-silence-apres-le-scandale-chez-nvidia.html",
     "date": "2026-11-17",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "GTA 6 donne un aperçu de sa météo particulièrement réaliste avec six nouvelles images",
-    "summary": "À deux jours de sa sortie ce jeudi 19 novembre, GTA 6 s'offre une nouvelle série de captures inédites. Partagées par The Weather Channel, ces six images mettent en avant les conditions météorologiques dynamiques de Leonida, entre pluies torrentielles, brouillard marin et orages tropicaux.",
-    "url": "https://www.numerama.com/pop-culture/2375909-gta-6-devoile-six-nouvelles-images-et-donne-un-apercu-de-sa-meteo-particulierement-realiste.html",
+    "title": "GTA 6 depuis votre lit ? Le PlayStation Portal tombe en promo",
+    "summary": "[Deal du jour] À quelques jours de la sortie de GTA 6, voici de quoi jouer sans monopoliser la télé du salon. Le PlayStation Portal profite d’une petite remise chez Cdiscount, ce qui reste assez rare pour être signalé.",
+    "url": "https://www.numerama.com/pop-culture/2377153-gta-6-depuis-votre-lit-le-playstation-portal-tombe-en-promo.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "The Batman 3 menacé ? Robert Pattinson ne serait plus engagé pour la suite",
+    "summary": "Coup de tonnerre à Gotham City. Les retards à répétition de The Batman : Part II auraient libéré Robert Pattinson de son contrat, qui l'engageait pour un troisième film, selon le média américain The Wrap. Et James Bond ne va pas aider.",
+    "url": "https://www.numerama.com/pop-culture/2377129-the-batman-3-menace-robert-pattinson-ne-serait-plus-engage-pour-la-suite.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Plus rapides que les Perséides : comment observer les étoiles filantes des Léonides à 71 km/s cette nuit",
+    "summary": "C'est le retour des Léonides. En 2026, la meilleure opportunité pour observer ces étoiles filantes est dans la nuit du 17 au 18 novembre. D'où viennent ces météores ? Et dans quelle direction regarder ces étoiles filantes ?",
+    "url": "https://www.numerama.com/sciences/571549-comment-voir-lessaim-detoiles-filantes-des-leonides-cette-nuit.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Comment éviter les spoilers de GTA 6, la fin de l’histoire et le destin de Lucia et Jason ?",
+    "summary": "On ne plaisante pas avec les spoilers. GTA 6 sort le 19 novembre, et des vidéos volées du jeu circulent déjà : pour les fans de Rockstar, le web est devenu un champ de mines. Voici les outils pour passer entre les gouttes.",
+    "url": "https://www.numerama.com/pop-culture/791321-comment-eviter-les-spoilers-de-gta-6-la-fin-de-lhistoire-et-le-destin-de-lucia-et-jason.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Une panne frappe NSA Net, le réseau ultra-secret du renseignement américain : voici ce que l’on sait",
+    "summary": "Selon CNN, NSA Net, le réseau ultra-classifié qu’utilisent les agents de la National Security Agency pour communiquer entre eux, est en panne. Aucun indice ne pointe vers une attaque informatique à ce stade, mais l’agence a dû échelonner l’arrivée de son personnel.",
+    "url": "https://www.numerama.com/cyberguerre/2377121-nsa-net-le-reseau-interne-ultra-secret-du-renseignement-americain-est-hors-service-voici-ce-que-lon-sait.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Ce soir, la NASA vous demande de flasher votre lampe vers le ciel, et la raison est vertigineuse",
+    "summary": "La sonde Voyager 1 sera à un jour-lumière de la Terre le mercredi 18 novembre 2026, soit 25,9 milliards de kilomètres. La veille au soir, la NASA propose à tout le monde de lui faire signe en morse avec son smartphone.",
+    "url": "https://www.numerama.com/sciences/2374607-ce-soir-la-nasa-vous-demande-de-flasher-votre-lampe-vers-le-ciel-et-la-raison-est-vertigineuse.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday : moins de 700 € pour un vélo électrique pensé pour la ville",
+    "summary": "[Deal du jour] Le Black Friday, c'est aussi un événement qui permet de trouver des vélos électriques pour moins cher que d'habitude. Exemple avec ce modèle d'Intersport conçu pour la ville, qui baisse son prixde 500 €.",
+    "url": "https://www.numerama.com/vroom/2376725-black-friday-moins-de-700-e-pour-un-velo-electrique-pense-pour-la-ville.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Ce dessin vieux de 70 ans prouve que Robert Pattinson était fait pour le rôle de James Bond",
+    "summary": "Alors que certains détracteurs jugent Robert Pattinson trop éloigné de l’image traditionnelle de James Bond, un document d'époque plaide pourtant en sa faveur. Un croquis commandé par le créateur du personnage dans les années 1950 révèle une ressemblance troublante avec le comédien britannique.",
+    "url": "https://www.numerama.com/pop-culture/2376881-ce-dessin-vieux-de-70-ans-prouve-que-robert-pattinson-etait-fait-pour-le-role-de-james-bond.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday en direct : les promos s’accumulent déjà chez Amazon, Boulanger, Fnac ce mardi (EN DIRECT)",
+    "summary": "J-10 avant le Black Friday 2026. Avant même le coup d’envoi de la Black Friday Week d’Amazon, jeudi 19 novembre, les marchands multiplient les baisses de prix. Ce live recense les meilleures promos du jour, triées et vérifiées par la rédaction.",
+    "url": "https://www.numerama.com/tech/2374925-black-friday-en-direct-amazon-fnac-boulanger-accelerent-voici-les-meilleures-promos-de-ce-mardi.html",
     "date": "2026-11-17",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
     "title": "Sortie de GTA 6 en direct : toutes les informations, les astuces et les chiffres",
-    "summary": "GTA 6 sort ce jeudi 19 novembre sur PlayStation 5, Xbox Series S et Xbox Series X. Treize ans après GTA 5, Rockstar lance enfin son nouvel épisode. Suivez la sortie en direct.",
+    "summary": "GTA 6 sort ce jeudi 19 novembre 2026 sur PlayStation 5, Xbox Series S et Xbox Series X. Treize ans après GTA 5, Rockstar lance enfin son nouvel épisode. Suivez la sortie du jeu en direct.",
     "url": "https://www.numerama.com/pop-culture/2375431-sortie-de-gta-6-en-direct-toutes-les-informations-les-astuces-et-les-chiffres.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Tapez « Robert Pattinson » dans Google",
+    "summary": "Depuis que Robert Pattinson a été officialisé dans le rôle de James Bond, ce lundi 16 novembre 2026, taper son nom dans Google lance une petite animation : la page de résultats tremble, puis des zestes de citron tombent sur l'écran.",
+    "url": "https://www.numerama.com/pop-culture/2376779-tapez-robert-pattinson-dans-google.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Panne Microsoft : on sait enfin pourquoi Teams s’en est sorti alors qu’Outlook sombrait",
+    "summary": "Microsoft a publié le 15 novembre 2026 le rapport préliminaire de la panne mondiale qui a privé ses clients d’Outlook pendant près de 24 heures. Le document explique pourquoi Teams a résisté alors qu’Exchange Online est tombé.",
+    "url": "https://www.numerama.com/tech/2376825-panne-microsoft-on-sait-enfin-pourquoi-teams-sen-est-sorti-alors-quoutlook-sombrait.html",
+    "date": "2026-11-17",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Voyager 1 atteint un jour-lumière de la Terre : à 26 milliards de km de la Terre, cela aurait pris 28 250 ans en voiture",
+    "summary": "Ce mercredi 18 novembre 2026, la sonde Voyager 1 de la NASA sera à un jour-lumière de la Terre, soit environ 25,9 milliards de kilomètres. Lancée en 1977, elle a mis 49 ans à parcourir la distance que la lumière couvre en 24 heures.",
+    "url": "https://www.numerama.com/sciences/2376733-voyager-1-atteint-un-jour-lumiere-de-la-terre-a-26-milliards-de-km-de-la-terre-cela-aurait-pris-28-250-ans-en-voiture.html",
     "date": "2026-11-17",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -184,124 +304,76 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Entre Orange en octobre et SFR en novembre, la 2G disparaît de France en quelques semaines",
-    "summary": "SFR éteint son réseau 2G du 15 au 30 novembre 2026 dans les grandes agglomérations, puis du 1er au 15 décembre dans le reste de la métropole. L'opérateur prévoit aussi de couper sa 3G fin 2028, alors que ses trois concurrents pourraient l'avoir racheté d'ici là.",
-    "url": "https://www.numerama.com/tech/2375261-entre-orange-en-octobre-et-sfr-en-novembre-la-2g-disparait-de-france-en-quelques-semaines.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Apple change d’avis sur l’iPhone Duo : la reconnaissance faciale arrive",
-    "summary": "La deuxième bêta d'iOS 27.3 ajoute plusieurs nouvelle fonctionnalités exclusives à l'iPhone Duo, dont un nouveau mode « Déverrouiller avec le visage ». Apple, qui a remplacé Face ID (visage) par Touch ID (empreinte) avec son premier téléphone pliant, a décidé d'écouter les utilisateurs et de leur offrir une reconnaissance faciale moins sécurisée que Face ID s'ils le souhaitent. La nouveauté est optionnelle et vient avec plusieurs limites.",
-    "url": "https://www.numerama.com/tech/2374873-apple-change-davis-sur-liphone-duo-la-reconnaissance-faciale-arrive.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Fini les excès de vitesse, Tesla met à jour son FSD pour l’Europe",
-    "summary": "En Europe, le FSD de Tesla ne peut plus rouler qu'à 10 % au-dessus de la vitesse autorisée, contre 50 % jusqu'ici. Ce lundi 16 novembre, le régulateur néerlandais a validé de nouvelles contraintes, dont les mains sur le volant au-delà de 130 km/h.",
-    "url": "https://www.numerama.com/vroom/2375861-fini-les-exces-de-vitesse-tesla-met-a-jour-son-fsd-pour-leurope.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 plus dangereux que le Beaujolais nouveau ? Cette comparaison lunaire fait réagir",
-    "summary": "Alors que GTA 6 doit sortir ce jeudi 19 novembre, certains semblent avoir du mal à comprendre pourquoi le lancement du titre de Rockstar est davantage attendu que l'arrivée du Beaujolais nouveau. Sur les réseaux sociaux, une comparaison entre la violence supposée du jeu et la convivialité du vin fait grincer des dents les internautes.",
-    "url": "https://www.numerama.com/pop-culture/2375745-gta-6-plus-dangereux-que-le-beaujolais-nouveau-cette-comparaison-lunaire-fait-reagir.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "James Bond : pourquoi Robert Pattinson est le meilleur choix possible pour 007",
-    "summary": "Alors que l'officialisation de Robert Pattinson dans le rôle de 007 divise déjà certains puristes de la saga, l'acteur britannique possède en réalité tous les atouts pour réussir ce pari risqué. C'est même le meilleur acteur pour James Bond.",
-    "url": "https://www.numerama.com/pop-culture/2375739-james-bond-pourquoi-robert-pattinson-est-le-meilleur-choix-possible-pour-007.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Ni Model 3 ni Semi : Tesla va produire son Cybercab dans la gigafactory de Berlin",
-    "summary": "Tesla va investir 3 milliards d'euros pour agrandir son usine de Grünheide, près de Berlin. Le nouveau bâtiment pourra produire à terme jusqu'à un million de Cybercab, son robotaxi sans volant ni pédales.",
-    "url": "https://www.numerama.com/vroom/2375715-ni-model-3-ni-semi-tesla-parie-3-milliards-a-sa-gigafactory-de-berlin-sur-son-cybercab.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Black Friday : les deals immanquables ce lundi 16 novembre (EN DIRECT)",
-    "summary": "À onze jours du Black Friday 2026, le rythme s’accélère : Amazon lance sa Black Friday Week dès jeudi, la Fnac, Darty et Boulanger enchaînent les remises. Suivez en direct les meilleures promos.",
-    "url": "https://www.numerama.com/tech/2374925-black-friday-en-direct-les-meilleures-offres-ce-lundi-avant-la-black-week.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Il faut sauver le soldat Jensen Huang : une « war room » de la Silicon Valley veut le remettre à la tête de Nvidia",
-    "summary": "Jensen Huang, qui a démissionné de la direction de Nvidia le 12 novembre 2026, envisagerait déjà de revenir. Un de ses alliés monte une « war room » de dirigeants de la Silicon Valley pour faire pression sur le conseil d'administration. Mais le retour de l'ex-CEO à la tête du premier fournisseur de puces pour l'IA apparaît hautement incertain.",
-    "url": "https://www.numerama.com/tech/2375527-il-faut-sauver-le-soldat-jensen-huang-une-war-room-de-la-silicon-valley-veut-le-remettre-a-la-tete-de-nvidia.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Cette marque de moto vaut 1,2 milliard d’euros dans un secteur où les faillites se succèdent",
-    "summary": "Stark Future, le fabricant barcelonais de la moto électrique Varg, a levé au moins 150 millions d'euros sur la base d'une valorisation de 1,2 milliard d'euros. C'est la première marque européenne de moto électrique à devenir une licorne, alors qu'Energica et Cake ont fait faillite en 2024 et que LiveWire pourrait mettre la clé sous la porte.",
-    "url": "https://www.numerama.com/vroom/2375575-cette-marque-de-moto-vaut-12-milliard-deuros-dans-un-secteur-ou-les-faillites-se-succedent.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Mais, au fait, pourquoi la saga Grand Theft Auto s’appelle-t-elle GTA ?",
-    "summary": "Mais pourquoi la saga de Rockstar s'appelle-t-elle Grand Theft Auto ? Derrière ces trois mots (devenus les trois lettres de GTA) se cachent un projet initialement consacré aux policiers et un changement de direction qui a contribué à donner naissance à l'une des plus grandes franchises du jeu vidéo.",
-    "url": "https://www.numerama.com/pop-culture/2375493-mais-au-fait-pourquoi-la-saga-grand-theft-auto-sappelle-t-elle-gta.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Ce robot financé par le Pentagone a assemblé une structure dans l’espace sans aide humaine",
-    "summary": "Un robot conçu par Caltech et financé par la DARPA a assemblé une structure en orbite sans aucune aide humaine, une première annoncée le 5 novembre 2026. Par contre, il n'aura construit qu'un seul des 11 segments prévus avant la fin de sa mission, prévue pour décembre.",
-    "url": "https://www.numerama.com/sciences/2375541-ce-robot-finance-par-le-pentagone-a-assemble-une-structure-dans-lespace-sans-aide-humaine.html",
-    "date": "2026-11-16",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Passerelles Check Point piratées via PHP2Shell : une porte dérobée et un wiper pour VMware ESXi",
-    "summary": "PHP2Shell et une faille zero-day de Gaia OS ont permis de pirater des passerelles Check Point, avant le déploiement d'un wiper sur un hôte VMware ESXi. Le post Passerelles Check Point piratées via PHP2Shell : une porte dérobée et un wiper pour VMware ESXi a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/check-point-php2shell-wiper-esxi-tsga/",
-    "date": "2026-11-14",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Claude Code : revenir en arrière avec les checkpoints et /rewind",
-    "summary": "Ce tutoriel explique comment Claude Code vous permet de revenir en arrière à tout moment grâce à ses checkpoints automatiques et à la commande /rewind. Le post Claude Code : revenir en arrière avec les checkpoints et /rewind a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/claude-code-revenir-en-arriere-avec-les-checkpoints-et-rewind/",
+    "title": "Multiples vulnérabilités dans Progress Telerik (13 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Progress Telerik. Certaines d'entre elles permettent à un attaquant de provoquer un déni de service à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1533/",
     "date": "2026-11-13",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "Windows : les mises à jour de novembre 2026 provoquent des échecs d’activation, Microsoft confirme",
-    "summary": "Les mises à jour Windows de novembre 2026 font échouer l'activation via slmgr avec l'erreur 0x80041008. Microsoft confirme le bug et prépare un correctif. Le post Windows : les mises à jour de novembre 2026 provoquent des échecs d’activation, Microsoft confirme a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/windows-activation-slmgr-erreur-080041008/",
+    "title": "Multiples vulnérabilités dans les produits Check Point (13 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Check Point. Elles permettent à un attaquant de provoquer une élévation de privilèges et un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1529/",
     "date": "2026-11-13",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "Claude Meetings : Anthropic envoie son IA dans vos réunions Google Meet",
-    "summary": "Anthropic lance Claude Meetings en bêta : l'IA rejoint vos réunions Google Meet, prend des notes et crée des documents. Disponibilité, réglages et limites. Le post Claude Meetings : Anthropic envoie son IA dans vos réunions Google Meet a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/claude-meetings-anthropic-google-meet/",
+    "title": "Multiples vulnérabilités dans Apple HomeView Software (13 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Apple HomeView Software. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1526/",
     "date": "2026-11-13",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Vulnérabilité dans les produits Axis (13 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans les produits Axis. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1534/",
+    "date": "2026-11-13",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans Node.js (13 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans Node.js. Certaines d'entre elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données, un contournement de la politique de sécurité et un déni de service.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1531/",
+    "date": "2026-11-13",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans les produits Citrix (13 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Citrix. Certaines d'entre elles permettent à un attaquant de provoquer un déni de service à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1528/",
+    "date": "2026-11-13",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans le noyau Linux de Debian (13 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de Debian. Certaines d'entre elles permettent à un attaquant de provoquer une élévation de privilèges, une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1538/",
+    "date": "2026-11-13",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Vulnérabilité dans Opera Neon (13 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans Opera Neon. Elle permet à un attaquant de provoquer un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1532/",
+    "date": "2026-11-13",
+    "source": "CERT-FR",
+    "category": "Sécurité"
+  },
+  {
+    "title": "Multiples vulnérabilités dans VMware Tanzu Greenplum (13 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans VMware Tanzu Greenplum. Elles permettent à un attaquant de provoquer un problème de sécurité non spécifié par l'éditeur.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1527/",
+    "date": "2026-11-13",
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
     "title": "Rennes va accueillir un centre international dédié à l’IA de défense",
@@ -384,30 +456,6 @@ window.TSSR_NEWS = [
     "category": "Sécurité"
   },
   {
-    "title": "Multiples vulnérabilités dans Microsoft .Net (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft .Net. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1512/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Microsoft Azure (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Azure. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1514/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Microsoft Windows (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Windows. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1513/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
     "title": "Multiples vulnérabilités dans les produits Palo Alto Networks (12 novembre 2026)",
     "summary": "De multiples vulnérabilités ont été découvertes dans les produits Palo Alto Networks. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1521/",
@@ -419,14 +467,6 @@ window.TSSR_NEWS = [
     "title": "Multiples vulnérabilités dans Citrix Secure Access client (12 novembre 2026)",
     "summary": "De multiples vulnérabilités ont été découvertes dans Citrix Secure Access client. Elles permettent à un attaquant de provoquer une élévation de privilèges.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1519/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les processeurs Intel (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les processeurs Intel. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire, une élévation de privilèges et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1509/",
     "date": "2026-11-12",
     "source": "CERT-FR",
     "category": "Sécurité"
@@ -448,49 +488,9 @@ window.TSSR_NEWS = [
     "category": "Sécurité"
   },
   {
-    "title": "Multiples vulnérabilités dans Traefik (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Traefik. Certaines d'entre elles permettent à un attaquant de provoquer un déni de service à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1517/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits Microsoft (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Microsoft. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1515/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
     "title": "Multiples vulnérabilités dans Google Pixel (12 novembre 2026)",
     "summary": "De multiples vulnérabilités ont été découvertes dans Google Pixel. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à la confidentialité des données.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1525/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Microsoft Office (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Office. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à la confidentialité des données. Microsoft indique que la vulnérabilité...",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1511/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Microsoft Edge (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Edge. Elles permettent à un attaquant de provoquer un problème de sécurité non spécifié par l'éditeur.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1510/",
-    "date": "2026-11-12",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Mitel MiVoice MX-ONE (12 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Mitel MiVoice MX-ONE. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1516/",
     "date": "2026-11-12",
     "source": "CERT-FR",
     "category": "Sécurité"
