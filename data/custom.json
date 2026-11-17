@@ -19,13 +19,23 @@
     },
     {
       "id": "chapter:01:03",
-      "title": "Bases de Word",
       "kind": "cours",
+      "title": "Nortions de base de Word",
       "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
       "chapter": true,
-      "updatedAt": "2026-10-18T12:29:48.167Z",
-      "html": "",
-      "revisionExtracts": []
+      "readonly": false,
+      "updatedAt": "2026-11-17T17:30:58.970Z",
+      "html": "<h1>Microsoft Word — notions de base</h1>\n<h2>Objectifs</h2>\n<ul>\n<li>Se repérer dans l'interface de Word.</li>\n<li>Rédiger et structurer un document sans bricoler sa mise en page.</li>\n<li>Utiliser les styles, les retraits, les tabulations et les sauts.</li>\n<li>Générer une table des matières à partir des titres.</li>\n</ul>\n<h2>1. Découvrir l'interface</h2>\n<p>Au démarrage, Word permet d'ouvrir un <strong>document vierge</strong>, un <strong>modèle</strong> ou un <strong>document récent</strong>. Selon la licence Microsoft 365, une connexion au compte peut être nécessaire pour activer l'application.</p>\n<table>\n<thead>\n<tr>\n<th>Élément</th>\n<th>Où le trouver</th>\n<th>Rôle</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Barre de titre</td>\n<td>Tout en haut</td>\n<td>Nom du fichier et de l'application.</td>\n</tr>\n<tr>\n<td>Barre d'accès rapide</td>\n<td>En haut de la fenêtre</td>\n<td>Commandes fréquentes personnalisables.</td>\n</tr>\n<tr>\n<td>Ruban</td>\n<td>Sous la barre de titre</td>\n<td>Onglets <strong>Accueil</strong>, <strong>Insertion</strong>, <strong>Disposition/Mise en page</strong>, <strong>Références</strong>, <strong>Affichage</strong>.</td>\n</tr>\n<tr>\n<td>Zone utilisateur</td>\n<td>En haut</td>\n<td>Compte connecté et informations de licence.</td>\n</tr>\n<tr>\n<td>Règle</td>\n<td>Au-dessus et parfois à gauche de la page</td>\n<td>Retraits et taquets de tabulation.</td>\n</tr>\n<tr>\n<td>Zone de rédaction</td>\n<td>Au centre</td>\n<td>Saisie et mise en forme du document.</td>\n</tr>\n<tr>\n<td>Barres de défilement</td>\n<td>Bords de la zone de travail</td>\n<td>Déplacement dans le document.</td>\n</tr>\n<tr>\n<td>Barre d'état</td>\n<td>En bas</td>\n<td>Numéro de page, nombre de mots et autres informations.</td>\n</tr>\n</tbody></table>\n<p><strong>Repère visuel — organisation simplifiée de Word :</strong></p>\n<pre><code class=\"language-text\">┌────────────────────────────────────────────────────┐\n│ Barre de titre / accès rapide / compte utilisateur │\n├────────────────────────────────────────────────────┤\n│ Ruban : Accueil | Insertion | Disposition | ...     │\n├────────────────────────────────────────────────────┤\n│ Règle : retraits et tabulations                     │\n├────────────────────────────────────────────────────┤\n│                                                    │\n│               ZONE DE RÉDACTION                    │\n│                                                    │\n├────────────────────────────────────────────────────┤\n│ Barre d'état : page, mots...                       │\n└────────────────────────────────────────────────────┘\n</code></pre>\n<h2>2. Rédiger efficacement un document</h2>\n<ol>\n<li><strong>Rédiger au kilomètre</strong> : saisir le contenu sans le mettre en forme à chaque phrase.</li>\n<li><strong>Identifier la structure</strong> : titres, sous-titres, paragraphes, listes à puces ou numérotées.</li>\n<li><strong>Afficher les caractères non imprimables</strong> : <strong>Accueil → ¶</strong> pour voir notamment les marques de paragraphe, les espaces et les tabulations.</li>\n<li><strong>Appliquer des styles</strong> aux différents éléments du document.</li>\n<li><strong>Régler les espacements et les sauts</strong> plutôt que multiplier les touches Entrée.</li>\n<li><strong>Ajouter une page de garde et une table des matières</strong>, si nécessaire.</li>\n</ol>\n<p><strong>Enregistrement :</strong> enregistrer régulièrement le document. L'enregistrement automatique peut être disponible lorsque le fichier est stocké sur OneDrive ou SharePoint.</p>\n<h2>3. Mettre en forme les titres avec les styles</h2>\n<p>Un <strong>style</strong> regroupe des paramètres de mise en forme : police, taille, gras, alignement, retraits et espacements. Il permet d'obtenir une présentation homogène et de modifier plusieurs paragraphes en une seule opération.</p>\n<ul>\n<li><strong>Appliquer un style :</strong> sélectionner un titre → <strong>Accueil → Styles → Titre 1</strong>. Pour un sous-titre, utiliser <strong>Titre 2</strong>, puis <strong>Titre 3</strong>, etc.</li>\n<li><strong>Personnaliser un style :</strong> mettre un titre en forme, puis clic droit sur le style → <strong>Mettre à jour pour correspondre à la sélection</strong> ; ou choisir <strong>Modifier</strong>.</li>\n<li><strong>Hiérarchiser les titres :</strong> <strong>Accueil → Liste à plusieurs niveaux</strong>, puis associer les niveaux aux styles de titres. Exemple : <code>1</code>, <code>1.1</code>, <code>1.1.1</code>.</li>\n<li><strong>Ajuster les retraits :</strong> contrôler la position des numéros et l'espace entre numéro et texte après la numérotation.</li>\n<li><strong>Automatiser la suite :</strong> dans les paramètres du style, définir le <strong>style du paragraphe suivant</strong> ; après Entrée, Word peut appliquer automatiquement le bon style.</li>\n</ul>\n<p><strong>À comprendre :</strong> appliquer simplement du gras et une grande taille à un texte ne remplace pas l'utilisation d'un véritable style <strong>Titre 1</strong>. Les styles de titres servent aussi à construire la table des matières.</p>\n<h2>4. Paragraphes, alignement et espacement</h2>\n<p>Les paragraphes peuvent être alignés <strong>à gauche</strong>, <strong>au centre</strong>, <strong>à droite</strong> ou <strong>justifiés</strong> (alignement sur les deux bords).</p>\n<ul>\n<li><strong>Retraits :</strong> utiliser la règle ou les paramètres de paragraphe pour positionner précisément le texte.</li>\n<li><strong>Interligne :</strong> distance verticale entre les lignes d'un même paragraphe.</li>\n<li><strong>Espacement avant/après :</strong> distance entre deux paragraphes.</li>\n<li><strong>Réglage :</strong> <strong>Accueil → Interligne et espacement de paragraphe</strong> ou <strong>Paragraphe → Espacement</strong>.</li>\n<li><strong>Modification globale :</strong> clic droit sur un style → <strong>Modifier → Format → Paragraphe</strong> ; les paragraphes utilisant ce style sont mis à jour.</li>\n</ul>\n<p><strong>Erreur à éviter :</strong> ne pas ajouter des paragraphes vides avec plusieurs appuis sur Entrée pour créer de l'espace. Utiliser les paramètres d'espacement.</p>\n<h2>5. Tabulations : aligner correctement le texte</h2>\n<p>Une <strong>tabulation</strong> positionne le texte à un endroit défini sur la règle, sans aligner manuellement avec des espaces.</p>\n<table>\n<thead>\n<tr>\n<th>Taquet</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Gauche</td>\n<td>Le texte commence au niveau du taquet.</td>\n</tr>\n<tr>\n<td>Centré</td>\n<td>Le texte est centré sur le taquet.</td>\n</tr>\n<tr>\n<td>Droit</td>\n<td>Le texte se termine au niveau du taquet.</td>\n</tr>\n<tr>\n<td>Décimal</td>\n<td>Les nombres sont alignés sur leur séparateur décimal.</td>\n</tr>\n</tbody></table>\n<p><strong>Méthode :</strong> afficher la règle (<strong>Affichage → Règle</strong> si besoin), sélectionner le type de taquet, le placer sur la règle, puis utiliser <strong>Tab</strong> dans le texte. Les tabulations peuvent être intégrées à un style pour être réutilisées.</p>\n<h2>6. Sauts de page, de colonne et de section</h2>\n<table>\n<thead>\n<tr>\n<th>Type</th>\n<th>Utilisation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>Saut de page</strong></td>\n<td>Commencer une nouvelle page sans créer une nouvelle section.</td>\n</tr>\n<tr>\n<td><strong>Saut de colonne</strong></td>\n<td>Passer à la colonne suivante.</td>\n</tr>\n<tr>\n<td><strong>Saut de section — Page suivante</strong></td>\n<td>Commencer une nouvelle section sur une autre page. Permet de changer certains réglages de mise en page : orientation, en-têtes, pieds de page, numérotation.</td>\n</tr>\n<tr>\n<td><strong>Saut de section — Continu</strong></td>\n<td>Commencer une nouvelle section sur la même page, pour y appliquer une mise en page différente.</td>\n</tr>\n</tbody></table>\n<p><strong>Exemple :</strong> pour insérer une page en paysage au milieu de pages en portrait, isoler cette page dans une section distincte, puis modifier son orientation.</p>\n<p><strong>Où agir :</strong> <strong>Insertion → Saut de page</strong> ; pour les sauts de section et de colonne, utiliser les options <strong>Sauts</strong> de l'onglet <strong>Disposition/Mise en page</strong> (nom variable selon la version).</p>\n<h2>7. Créer une table des matières automatique</h2>\n<p>Une table des matières reprend les titres structurés avec les styles <strong>Titre 1</strong>, <strong>Titre 2</strong>, etc.</p>\n<ol>\n<li>Appliquer les bons styles aux titres du document.</li>\n<li>Placer le curseur à l'emplacement du sommaire (souvent après la page de garde).</li>\n<li>Aller dans <strong>Références → Table des matières</strong>.</li>\n<li>Choisir un modèle automatique ou une table personnalisée.</li>\n<li>En version personnalisée, régler le <strong>nombre de niveaux</strong>, la présentation et les <strong>caractères de suite</strong> (par exemple les points entre titre et page).</li>\n<li>Après modification du document, <strong>mettre à jour la table des matières</strong> pour actualiser les titres et les numéros de page.</li>\n</ol>\n<p><strong>Différence entre styles :</strong> les styles <strong>Titre 1, Titre 2...</strong> organisent les titres dans le document ; les styles de <strong>table des matières (TM 1, TM 2...)</strong> contrôlent leur présentation dans le sommaire.</p>\n<h2>8. Méthode complète à appliquer en TP</h2>\n<p><strong>Rédiger → identifier les titres → appliquer les styles → définir la numérotation à plusieurs niveaux → régler retraits, tabulations et espacements → insérer les sauts utiles → créer la table des matières → vérifier et actualiser → enregistrer.</strong></p>\n",
+      "revisionExtracts": [],
+      "order": 3,
+      "displayNumber": "03",
+      "art": "assets/icons-apps/word.svg",
+      "chapterIcon": "🐧",
+      "heroImage": "assets/tssr-banner-windows.webp",
+      "essentialsMarkdown": "- **Ruban :** regroupe les commandes par onglets.\n- **¶ :** affiche les caractères non imprimables et facilite le diagnostic de mise en page.\n- **Styles :** assurent une mise en forme cohérente et modifiable globalement.\n- **Titre 1 / Titre 2 :** structurent le document et alimentent la table des matières.\n- **Liste à plusieurs niveaux :** organise la numérotation hiérarchique des titres.\n- **Espacement avant/après :** remplace les lignes vides entre paragraphes.\n- **Tabulations :** remplacent les suites d'espaces pour aligner du texte.\n- **Saut de page :** nouvelle page, même section.\n- **Saut de section :** permet de modifier la mise en page d'une partie du document.\n- **Table des matières :** créée à partir des styles de titres, à mettre à jour après modification.",
+      "commandsMarkdown": "Ce chapitre porte sur les **commandes de l'interface Word**, pas sur Bash ou PowerShell.\n\n| Action | Chemin ou raccourci |\n|---|---|\n| Afficher les marques de mise en forme | **Accueil → ¶** |\n| Appliquer un style de titre | **Accueil → Styles → Titre 1 / Titre 2** |\n| Modifier un style | **Accueil → Styles → clic droit → Modifier** |\n| Créer une numérotation hiérarchique | **Accueil → Liste à plusieurs niveaux** |\n| Régler l'espacement | **Accueil → Interligne et espacement de paragraphe** |\n| Régler les retraits | **Règle** ou **Paragraphe → Retraits** |\n| Afficher la règle | **Affichage → Règle** |\n| Insérer un saut de page | **Insertion → Saut de page** ou **Ctrl + Entrée** |\n| Insérer un saut de section | **Disposition/Mise en page → Sauts** |\n| Insérer une table des matières | **Références → Table des matières** |\n| Aligner à l'aide d'un taquet | Positionner un taquet sur la règle, puis **Tab** |\n\n*Les intitulés des onglets peuvent varier légèrement selon la version de Word.*",
+      "revisionHtml": "<h1>Fiche de révision — Word, notions de base</h1>\n<h2>Identifier les outils</h2>\n<table>\n<thead>\n<tr>\n<th>Besoin</th>\n<th>Outil à utiliser</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Voir les marques de paragraphe et les tabulations</td>\n<td><strong>Accueil → ¶</strong></td>\n</tr>\n<tr>\n<td>Uniformiser tous les titres</td>\n<td><strong>Styles</strong></td>\n</tr>\n<tr>\n<td>Numéroter en 1 / 1.1 / 1.1.1</td>\n<td><strong>Liste à plusieurs niveaux</strong> liée aux styles de titres</td>\n</tr>\n<tr>\n<td>Espacer deux paragraphes</td>\n<td><strong>Espacement avant/après</strong></td>\n</tr>\n<tr>\n<td>Aligner des montants sur la virgule</td>\n<td><strong>Taquet décimal</strong></td>\n</tr>\n<tr>\n<td>Mettre une page en paysage au milieu d'un document</td>\n<td><strong>Sauts de section</strong></td>\n</tr>\n<tr>\n<td>Générer un sommaire</td>\n<td><strong>Styles de titres + Références → Table des matières</strong></td>\n</tr>\n</tbody></table>\n<h2>Les distinctions à maîtriser</h2>\n<ul>\n<li><strong>Mise en forme manuelle / style :</strong> la première agit sur la sélection ; le second permet une présentation cohérente et des modifications globales.</li>\n<li><strong>Retrait / tabulation :</strong> le retrait déplace le paragraphe ; la tabulation aligne un élément à un point défini.</li>\n<li><strong>Interligne / espacement :</strong> l'interligne concerne les lignes d'un paragraphe ; l'espacement concerne l'espace avant ou après celui-ci.</li>\n<li><strong>Saut de page / saut de section :</strong> seul le second crée une nouvelle section pour des paramètres de mise en page distincts.</li>\n<li><strong>Styles de titres / styles TM :</strong> les premiers structurent le document ; les seconds présentent le sommaire.</li>\n</ul>\n<h2>Mini-méthode d'examen</h2>\n<ol>\n<li>Identifier la fonction demandée : titre, retrait, tabulation, saut ou sommaire.</li>\n<li>Chercher l'onglet correspondant dans le ruban.</li>\n<li>Appliquer un réglage structuré (style, taquet, saut), plutôt que multiplier espaces ou retours à la ligne.</li>\n<li>Vérifier le résultat avec <strong>¶</strong>, la règle et l'aperçu du document.</li>\n</ol>\n",
+      "rawMarkdown": "MODULE : 01 — Outils collaboratifs\nCHAPITRE : Connaissances des notions de base Word\n\n=== COURS COMPLET ===\n\n# Microsoft Word — notions de base\n\n## Objectifs\n\n- Se repérer dans l'interface de Word.\n- Rédiger et structurer un document sans bricoler sa mise en page.\n- Utiliser les styles, les retraits, les tabulations et les sauts.\n- Générer une table des matières à partir des titres.\n\n## 1. Découvrir l'interface\n\nAu démarrage, Word permet d'ouvrir un **document vierge**, un **modèle** ou un **document récent**. Selon la licence Microsoft 365, une connexion au compte peut être nécessaire pour activer l'application.\n\n| Élément | Où le trouver | Rôle |\n|---|---|---|\n| Barre de titre | Tout en haut | Nom du fichier et de l'application. |\n| Barre d'accès rapide | En haut de la fenêtre | Commandes fréquentes personnalisables. |\n| Ruban | Sous la barre de titre | Onglets **Accueil**, **Insertion**, **Disposition/Mise en page**, **Références**, **Affichage**. |\n| Zone utilisateur | En haut | Compte connecté et informations de licence. |\n| Règle | Au-dessus et parfois à gauche de la page | Retraits et taquets de tabulation. |\n| Zone de rédaction | Au centre | Saisie et mise en forme du document. |\n| Barres de défilement | Bords de la zone de travail | Déplacement dans le document. |\n| Barre d'état | En bas | Numéro de page, nombre de mots et autres informations. |\n\n**Repère visuel — organisation simplifiée de Word :**\n\n```text\n┌────────────────────────────────────────────────────┐\n│ Barre de titre / accès rapide / compte utilisateur │\n├────────────────────────────────────────────────────┤\n│ Ruban : Accueil | Insertion | Disposition | ...     │\n├────────────────────────────────────────────────────┤\n│ Règle : retraits et tabulations                     │\n├────────────────────────────────────────────────────┤\n│                                                    │\n│               ZONE DE RÉDACTION                    │\n│                                                    │\n├────────────────────────────────────────────────────┤\n│ Barre d'état : page, mots...                       │\n└────────────────────────────────────────────────────┘\n```\n\n## 2. Rédiger efficacement un document\n\n1. **Rédiger au kilomètre** : saisir le contenu sans le mettre en forme à chaque phrase.\n2. **Identifier la structure** : titres, sous-titres, paragraphes, listes à puces ou numérotées.\n3. **Afficher les caractères non imprimables** : **Accueil → ¶** pour voir notamment les marques de paragraphe, les espaces et les tabulations.\n4. **Appliquer des styles** aux différents éléments du document.\n5. **Régler les espacements et les sauts** plutôt que multiplier les touches Entrée.\n6. **Ajouter une page de garde et une table des matières**, si nécessaire.\n\n**Enregistrement :** enregistrer régulièrement le document. L'enregistrement automatique peut être disponible lorsque le fichier est stocké sur OneDrive ou SharePoint.\n\n## 3. Mettre en forme les titres avec les styles\n\nUn **style** regroupe des paramètres de mise en forme : police, taille, gras, alignement, retraits et espacements. Il permet d'obtenir une présentation homogène et de modifier plusieurs paragraphes en une seule opération.\n\n- **Appliquer un style :** sélectionner un titre → **Accueil → Styles → Titre 1**. Pour un sous-titre, utiliser **Titre 2**, puis **Titre 3**, etc.\n- **Personnaliser un style :** mettre un titre en forme, puis clic droit sur le style → **Mettre à jour pour correspondre à la sélection** ; ou choisir **Modifier**.\n- **Hiérarchiser les titres :** **Accueil → Liste à plusieurs niveaux**, puis associer les niveaux aux styles de titres. Exemple : `1`, `1.1`, `1.1.1`.\n- **Ajuster les retraits :** contrôler la position des numéros et l'espace entre numéro et texte après la numérotation.\n- **Automatiser la suite :** dans les paramètres du style, définir le **style du paragraphe suivant** ; après Entrée, Word peut appliquer automatiquement le bon style.\n\n**À comprendre :** appliquer simplement du gras et une grande taille à un texte ne remplace pas l'utilisation d'un véritable style **Titre 1**. Les styles de titres servent aussi à construire la table des matières.\n\n## 4. Paragraphes, alignement et espacement\n\nLes paragraphes peuvent être alignés **à gauche**, **au centre**, **à droite** ou **justifiés** (alignement sur les deux bords).\n\n- **Retraits :** utiliser la règle ou les paramètres de paragraphe pour positionner précisément le texte.\n- **Interligne :** distance verticale entre les lignes d'un même paragraphe.\n- **Espacement avant/après :** distance entre deux paragraphes.\n- **Réglage :** **Accueil → Interligne et espacement de paragraphe** ou **Paragraphe → Espacement**.\n- **Modification globale :** clic droit sur un style → **Modifier → Format → Paragraphe** ; les paragraphes utilisant ce style sont mis à jour.\n\n**Erreur à éviter :** ne pas ajouter des paragraphes vides avec plusieurs appuis sur Entrée pour créer de l'espace. Utiliser les paramètres d'espacement.\n\n## 5. Tabulations : aligner correctement le texte\n\nUne **tabulation** positionne le texte à un endroit défini sur la règle, sans aligner manuellement avec des espaces.\n\n| Taquet | Fonction |\n|---|---|\n| Gauche | Le texte commence au niveau du taquet. |\n| Centré | Le texte est centré sur le taquet. |\n| Droit | Le texte se termine au niveau du taquet. |\n| Décimal | Les nombres sont alignés sur leur séparateur décimal. |\n\n**Méthode :** afficher la règle (**Affichage → Règle** si besoin), sélectionner le type de taquet, le placer sur la règle, puis utiliser **Tab** dans le texte. Les tabulations peuvent être intégrées à un style pour être réutilisées.\n\n## 6. Sauts de page, de colonne et de section\n\n| Type | Utilisation |\n|---|---|\n| **Saut de page** | Commencer une nouvelle page sans créer une nouvelle section. |\n| **Saut de colonne** | Passer à la colonne suivante. |\n| **Saut de section — Page suivante** | Commencer une nouvelle section sur une autre page. Permet de changer certains réglages de mise en page : orientation, en-têtes, pieds de page, numérotation. |\n| **Saut de section — Continu** | Commencer une nouvelle section sur la même page, pour y appliquer une mise en page différente. |\n\n**Exemple :** pour insérer une page en paysage au milieu de pages en portrait, isoler cette page dans une section distincte, puis modifier son orientation.\n\n**Où agir :** **Insertion → Saut de page** ; pour les sauts de section et de colonne, utiliser les options **Sauts** de l'onglet **Disposition/Mise en page** (nom variable selon la version).\n\n## 7. Créer une table des matières automatique\n\nUne table des matières reprend les titres structurés avec les styles **Titre 1**, **Titre 2**, etc.\n\n1. Appliquer les bons styles aux titres du document.\n2. Placer le curseur à l'emplacement du sommaire (souvent après la page de garde).\n3. Aller dans **Références → Table des matières**.\n4. Choisir un modèle automatique ou une table personnalisée.\n5. En version personnalisée, régler le **nombre de niveaux**, la présentation et les **caractères de suite** (par exemple les points entre titre et page).\n6. Après modification du document, **mettre à jour la table des matières** pour actualiser les titres et les numéros de page.\n\n**Différence entre styles :** les styles **Titre 1, Titre 2...** organisent les titres dans le document ; les styles de **table des matières (TM 1, TM 2...)** contrôlent leur présentation dans le sommaire.\n\n## 8. Méthode complète à appliquer en TP\n\n**Rédiger → identifier les titres → appliquer les styles → définir la numérotation à plusieurs niveaux → régler retraits, tabulations et espacements → insérer les sauts utiles → créer la table des matières → vérifier et actualiser → enregistrer.**\n\n=== POINTS ESSENTIELS ===\n\n- **Ruban :** regroupe les commandes par onglets.\n- **¶ :** affiche les caractères non imprimables et facilite le diagnostic de mise en page.\n- **Styles :** assurent une mise en forme cohérente et modifiable globalement.\n- **Titre 1 / Titre 2 :** structurent le document et alimentent la table des matières.\n- **Liste à plusieurs niveaux :** organise la numérotation hiérarchique des titres.\n- **Espacement avant/après :** remplace les lignes vides entre paragraphes.\n- **Tabulations :** remplacent les suites d'espaces pour aligner du texte.\n- **Saut de page :** nouvelle page, même section.\n- **Saut de section :** permet de modifier la mise en page d'une partie du document.\n- **Table des matières :** créée à partir des styles de titres, à mettre à jour après modification.\n\n=== COMMANDES À RETENIR ===\n\nCe chapitre porte sur les **commandes de l'interface Word**, pas sur Bash ou PowerShell.\n\n| Action | Chemin ou raccourci |\n|---|---|\n| Afficher les marques de mise en forme | **Accueil → ¶** |\n| Appliquer un style de titre | **Accueil → Styles → Titre 1 / Titre 2** |\n| Modifier un style | **Accueil → Styles → clic droit → Modifier** |\n| Créer une numérotation hiérarchique | **Accueil → Liste à plusieurs niveaux** |\n| Régler l'espacement | **Accueil → Interligne et espacement de paragraphe** |\n| Régler les retraits | **Règle** ou **Paragraphe → Retraits** |\n| Afficher la règle | **Affichage → Règle** |\n| Insérer un saut de page | **Insertion → Saut de page** ou **Ctrl + Entrée** |\n| Insérer un saut de section | **Disposition/Mise en page → Sauts** |\n| Insérer une table des matières | **Références → Table des matières** |\n| Aligner à l'aide d'un taquet | Positionner un taquet sur la règle, puis **Tab** |\n\n*Les intitulés des onglets peuvent varier légèrement selon la version de Word.*\n\n=== FICHE DE RÉVISION ===\n\n# Fiche de révision — Word, notions de base\n\n## Identifier les outils\n\n| Besoin | Outil à utiliser |\n|---|---|\n| Voir les marques de paragraphe et les tabulations | **Accueil → ¶** |\n| Uniformiser tous les titres | **Styles** |\n| Numéroter en 1 / 1.1 / 1.1.1 | **Liste à plusieurs niveaux** liée aux styles de titres |\n| Espacer deux paragraphes | **Espacement avant/après** |\n| Aligner des montants sur la virgule | **Taquet décimal** |\n| Mettre une page en paysage au milieu d'un document | **Sauts de section** |\n| Générer un sommaire | **Styles de titres + Références → Table des matières** |\n\n## Les distinctions à maîtriser\n\n- **Mise en forme manuelle / style :** la première agit sur la sélection ; le second permet une présentation cohérente et des modifications globales.\n- **Retrait / tabulation :** le retrait déplace le paragraphe ; la tabulation aligne un élément à un point défini.\n- **Interligne / espacement :** l'interligne concerne les lignes d'un paragraphe ; l'espacement concerne l'espace avant ou après celui-ci.\n- **Saut de page / saut de section :** seul le second crée une nouvelle section pour des paramètres de mise en page distincts.\n- **Styles de titres / styles TM :** les premiers structurent le document ; les seconds présentent le sommaire.\n\n## Mini-méthode d'examen\n\n1. Identifier la fonction demandée : titre, retrait, tabulation, saut ou sommaire.\n2. Chercher l'onglet correspondant dans le ruban.\n3. Appliquer un réglage structuré (style, taquet, saut), plutôt que multiplier espaces ou retours à la ligne.\n4. Vérifier le résultat avec **¶**, la règle et l'aperçu du document.\n\n=== QCM ===\n\n### Question 1\nQuelle partie de Word contient les onglets Accueil et Insertion ?\nA. La règle\nB. Le ruban\nC. La barre d'état\nD. La zone utilisateur\nRéponse : B\nExplication : Le ruban regroupe les commandes dans des onglets thématiques.\n\n### Question 2\nQuel bouton permet de voir les marques de paragraphe ?\nA. ¶\nB. Zoom\nC. Justifier\nD. Gras\nRéponse : A\nExplication : Le bouton ¶ affiche les caractères non imprimables.\n\n### Question 3\nQuelle méthode est conseillée pour un document long ?\nA. Tout mettre en forme à chaque phrase\nB. Ajouter des espaces pour aligner\nC. Rédiger puis structurer avec des styles\nD. Créer une page par paragraphe\nRéponse : C\nExplication : Rédiger d'abord permet de travailler ensuite sur une structure cohérente.\n\n### Question 4\nQuel style utiliser pour un titre principal ?\nA. Titre 1\nB. Normal\nC. TM 3\nD. Légende\nRéponse : A\nExplication : Titre 1 correspond au premier niveau de titre.\n\n### Question 5\nQuel outil permet une numérotation 1 / 1.1 / 1.1.1 ?\nA. Saut de page\nB. Liste à plusieurs niveaux\nC. Zoom\nD. Tabulation décimale\nRéponse : B\nExplication : La liste à plusieurs niveaux permet de hiérarchiser la numérotation.\n\n### Question 6\nQue se passe-t-il lorsqu'on modifie un style utilisé dans le document ?\nA. Les paragraphes associés sont mis à jour\nB. Seule la page courante change\nC. Tous les fichiers du PC changent\nD. Le document est supprimé\nRéponse : A\nExplication : Les paragraphes liés au style héritent de ses nouveaux paramètres.\n\n### Question 7\nQuel alignement ajuste le texte sur les deux bords ?\nA. Centré\nB. Justifié\nC. Droite\nD. Gauche\nRéponse : B\nExplication : L'alignement justifié ajuste le texte entre les marges gauche et droite.\n\n### Question 8\nPour espacer deux paragraphes, que faut-il privilégier ?\nA. Plusieurs touches Entrée\nB. Plusieurs espaces\nC. Les paramètres d'espacement avant/après\nD. Un saut de section\nRéponse : C\nExplication : Les paramètres d'espacement évitent les paragraphes vides.\n\n### Question 9\nQuel taquet permet d'aligner des nombres sur la virgule ?\nA. Décimal\nB. Gauche\nC. Centré\nD. Droit\nRéponse : A\nExplication : Le taquet décimal aligne les nombres sur leur séparateur décimal.\n\n### Question 10\nQuel outil permet d'aligner précisément plusieurs éléments de texte ?\nA. Une suite d'espaces\nB. Les tabulations\nC. Plusieurs retours à la ligne\nD. Les commentaires\nRéponse : B\nExplication : Les tabulations s'appuient sur des taquets positionnés sur la règle.\n\n### Question 11\nQuel saut commence une nouvelle page sans créer de nouvelle section ?\nA. Saut de colonne\nB. Saut de page\nC. Saut de section continu\nD. Tabulation\nRéponse : B\nExplication : Un saut de page passe à la page suivante dans la même section.\n\n### Question 12\nComment passer une seule page en paysage au milieu d'un document en portrait ?\nA. L'isoler dans une section distincte\nB. Insérer un saut de colonne\nC. Ajouter des espaces\nD. Modifier le style Normal\nRéponse : A\nExplication : Les sauts de section permettent d'appliquer une orientation différente à une partie du document.\n\n### Question 13\nDans quel onglet insérer une table des matières ?\nA. Accueil\nB. Affichage\nC. Références\nD. Révision\nRéponse : C\nExplication : La commande Table des matières se trouve dans l'onglet Références.\n\n### Question 14\nSur quoi repose une table des matières automatique ?\nA. Les styles de titres\nB. Les couleurs des paragraphes\nC. Les marges du document\nD. Les images\nRéponse : A\nExplication : Word utilise les niveaux de titres pour constituer la table des matières.\n\n### Question 15\nQue faire après avoir modifié les titres ou la pagination ?\nA. Ne rien faire\nB. Mettre à jour la table des matières\nC. Supprimer les styles\nD. Recréer tout le document\nRéponse : B\nExplication : La table des matières doit être actualisée pour refléter les modifications."
     },
     {
       "id": "chapter:01:04",
@@ -2091,6 +2101,179 @@
           ],
           "correct": 0,
           "explanation": "Azure Active Directory a été renommé Microsoft Entra ID."
+        }
+      ]
+    },
+    {
+      "id": "quiz-auto-chapter:01:03",
+      "title": "QCM — Nortions de base de Word",
+      "category": "01 — Microsoft 365 — Outils collaboratifs",
+      "chapterId": "chapter:01:03",
+      "questions": [
+        {
+          "question": "Quelle partie de Word contient les onglets Accueil et Insertion ?",
+          "answers": [
+            "La règle",
+            "Le ruban",
+            "La barre d'état",
+            "La zone utilisateur"
+          ],
+          "correct": 1,
+          "explanation": "Le ruban regroupe les commandes dans des onglets thématiques."
+        },
+        {
+          "question": "Quel bouton permet de voir les marques de paragraphe ?",
+          "answers": [
+            "¶",
+            "Zoom",
+            "Justifier",
+            "Gras"
+          ],
+          "correct": 0,
+          "explanation": "Le bouton ¶ affiche les caractères non imprimables."
+        },
+        {
+          "question": "Quelle méthode est conseillée pour un document long ?",
+          "answers": [
+            "Tout mettre en forme à chaque phrase",
+            "Ajouter des espaces pour aligner",
+            "Rédiger puis structurer avec des styles",
+            "Créer une page par paragraphe"
+          ],
+          "correct": 2,
+          "explanation": "Rédiger d'abord permet de travailler ensuite sur une structure cohérente."
+        },
+        {
+          "question": "Quel style utiliser pour un titre principal ?",
+          "answers": [
+            "Titre 1",
+            "Normal",
+            "TM 3",
+            "Légende"
+          ],
+          "correct": 0,
+          "explanation": "Titre 1 correspond au premier niveau de titre."
+        },
+        {
+          "question": "Quel outil permet une numérotation 1 / 1.1 / 1.1.1 ?",
+          "answers": [
+            "Saut de page",
+            "Liste à plusieurs niveaux",
+            "Zoom",
+            "Tabulation décimale"
+          ],
+          "correct": 1,
+          "explanation": "La liste à plusieurs niveaux permet de hiérarchiser la numérotation."
+        },
+        {
+          "question": "Que se passe-t-il lorsqu'on modifie un style utilisé dans le document ?",
+          "answers": [
+            "Les paragraphes associés sont mis à jour",
+            "Seule la page courante change",
+            "Tous les fichiers du PC changent",
+            "Le document est supprimé"
+          ],
+          "correct": 0,
+          "explanation": "Les paragraphes liés au style héritent de ses nouveaux paramètres."
+        },
+        {
+          "question": "Quel alignement ajuste le texte sur les deux bords ?",
+          "answers": [
+            "Centré",
+            "Justifié",
+            "Droite",
+            "Gauche"
+          ],
+          "correct": 1,
+          "explanation": "L'alignement justifié ajuste le texte entre les marges gauche et droite."
+        },
+        {
+          "question": "Pour espacer deux paragraphes, que faut-il privilégier ?",
+          "answers": [
+            "Plusieurs touches Entrée",
+            "Plusieurs espaces",
+            "Les paramètres d'espacement avant/après",
+            "Un saut de section"
+          ],
+          "correct": 2,
+          "explanation": "Les paramètres d'espacement évitent les paragraphes vides."
+        },
+        {
+          "question": "Quel taquet permet d'aligner des nombres sur la virgule ?",
+          "answers": [
+            "Décimal",
+            "Gauche",
+            "Centré",
+            "Droit"
+          ],
+          "correct": 0,
+          "explanation": "Le taquet décimal aligne les nombres sur leur séparateur décimal."
+        },
+        {
+          "question": "Quel outil permet d'aligner précisément plusieurs éléments de texte ?",
+          "answers": [
+            "Une suite d'espaces",
+            "Les tabulations",
+            "Plusieurs retours à la ligne",
+            "Les commentaires"
+          ],
+          "correct": 1,
+          "explanation": "Les tabulations s'appuient sur des taquets positionnés sur la règle."
+        },
+        {
+          "question": "Quel saut commence une nouvelle page sans créer de nouvelle section ?",
+          "answers": [
+            "Saut de colonne",
+            "Saut de page",
+            "Saut de section continu",
+            "Tabulation"
+          ],
+          "correct": 1,
+          "explanation": "Un saut de page passe à la page suivante dans la même section."
+        },
+        {
+          "question": "Comment passer une seule page en paysage au milieu d'un document en portrait ?",
+          "answers": [
+            "L'isoler dans une section distincte",
+            "Insérer un saut de colonne",
+            "Ajouter des espaces",
+            "Modifier le style Normal"
+          ],
+          "correct": 0,
+          "explanation": "Les sauts de section permettent d'appliquer une orientation différente à une partie du document."
+        },
+        {
+          "question": "Dans quel onglet insérer une table des matières ?",
+          "answers": [
+            "Accueil",
+            "Affichage",
+            "Références",
+            "Révision"
+          ],
+          "correct": 2,
+          "explanation": "La commande Table des matières se trouve dans l'onglet Références."
+        },
+        {
+          "question": "Sur quoi repose une table des matières automatique ?",
+          "answers": [
+            "Les styles de titres",
+            "Les couleurs des paragraphes",
+            "Les marges du document",
+            "Les images"
+          ],
+          "correct": 0,
+          "explanation": "Word utilise les niveaux de titres pour constituer la table des matières."
+        },
+        {
+          "question": "Que faire après avoir modifié les titres ou la pagination ?",
+          "answers": [
+            "Ne rien faire",
+            "Mettre à jour la table des matières",
+            "Supprimer les styles",
+            "Recréer tout le document"
+          ],
+          "correct": 1,
+          "explanation": "La table des matières doit être actualisée pour refléter les modifications."
         }
       ]
     }
