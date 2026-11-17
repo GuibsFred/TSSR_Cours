@@ -79,13 +79,20 @@
     },
     {
       "id": "chapter:01:06",
-      "title": "Utilisation de Teams et OneDrive",
       "kind": "cours",
+      "title": "Utilisation de Teams et OneDrive",
       "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
       "chapter": true,
-      "updatedAt": "2026-10-18T13:31:48.314Z",
-      "html": "",
-      "revisionExtracts": []
+      "readonly": false,
+      "updatedAt": "2026-11-17T17:44:30.256Z",
+      "html": "<h1>SharePoint, OneDrive et Teams — collaborer dans Microsoft 365</h1>\n<h2>Objectifs</h2>\n<ul>\n<li>Comprendre les rôles de SharePoint, OneDrive et Teams.</li>\n<li>Partager, synchroniser et restaurer des documents.</li>\n<li>Organiser une équipe, ses canaux, ses fichiers et ses réunions.</li>\n</ul>\n<h2>1. Trois outils complémentaires</h2>\n<table>\n<thead>\n<tr>\n<th>Outil</th>\n<th>Fonction principale</th>\n<th>Exemple</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>SharePoint</strong></td>\n<td>Sites et bibliothèques documentaires d'une organisation</td>\n<td>Intranet et documents d'un service</td>\n</tr>\n<tr>\n<td><strong>OneDrive Entreprise</strong></td>\n<td>Espace de fichiers associé à un utilisateur</td>\n<td>Brouillons et documents personnels de travail</td>\n</tr>\n<tr>\n<td><strong>Teams</strong></td>\n<td>Espace de communication et de collaboration</td>\n<td>Échanges, canaux et réunions d'une équipe</td>\n</tr>\n</tbody></table>\n<p>Ces outils sont liés : les fichiers partagés dans les <strong>canaux Teams</strong> reposent sur <strong>SharePoint</strong>. OneDrive permet notamment de synchroniser des bibliothèques SharePoint sur un poste.</p>\n<h2>2. SharePoint : centraliser les documents</h2>\n<ul>\n<li><strong>SharePoint Online</strong> : service cloud proposé dans Microsoft 365 (SaaS). L'infrastructure est gérée par Microsoft.</li>\n<li><strong>SharePoint Server</strong> : installation sur les serveurs de l'organisation (<em>on-premises</em>) ; maintenance et infrastructure à gérer localement.</li>\n<li><strong>SharePoint Designer</strong> : outil historique de conception et de flux de travail mentionné dans les supports ; à distinguer des outils de collaboration courants.</li>\n</ul>\n<p><strong>Utilisations :</strong> bibliothèques documentaires, partage, historique des versions (<em>versioning</em>), sites d'actualités/intranet, wiki et automatisation de processus métier.</p>\n<h3>Manipulation dans une bibliothèque</h3>\n<ol>\n<li>Ouvrir le site SharePoint et sa bibliothèque <strong>Documents</strong>.</li>\n<li>Choisir <strong>Nouveau</strong> pour créer un dossier ou un document Word/Excel.</li>\n<li>Modifier le document dans le navigateur ou l'application de bureau ; l'enregistrement peut être automatique.</li>\n<li>Utiliser le menu <strong>…</strong> d'un fichier pour le renommer, le copier ou accéder aux autres actions.</li>\n<li>Utiliser <strong>Historique des versions</strong> pour consulter ou restaurer une version antérieure.</li>\n</ol>\n<p><strong>Vigilance TSSR :</strong> synchroniser une bibliothèque sur plusieurs postes peut entraîner des conflits si plusieurs personnes modifient hors connexion les mêmes fichiers.</p>\n<h2>3. OneDrive : stockage et synchronisation</h2>\n<p>OneDrive Entreprise fournit un espace cloud associé à l'utilisateur. Le support présente <strong>1 To</strong> comme capacité de référence ; le quota réel dépend de la licence et des paramètres de l'organisation.</p>\n<p><strong>Accès :</strong> portail Microsoft 365, navigateur, application OneDrive sur PC/Mac ou mobile.</p>\n<h3>Partager un fichier</h3>\n<ol>\n<li>Sélectionner le fichier puis <strong>Partager</strong>.</li>\n<li>Choisir les destinataires ou copier un lien.</li>\n<li>Vérifier <strong>qui peut accéder</strong>, les droits de <strong>lecture ou modification</strong>, et les restrictions proposées (expiration, téléchargement, mot de passe selon configuration).</li>\n<li>Envoyer le lien ; éviter un accès plus large que nécessaire.</li>\n</ol>\n<h3>Synchronisation et icônes</h3>\n<table>\n<thead>\n<tr>\n<th>Indicateur</th>\n<th>Signification</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Nuage</td>\n<td>Fichier disponible uniquement en ligne</td>\n</tr>\n<tr>\n<td>Flèches circulaires</td>\n<td>Synchronisation en cours</td>\n</tr>\n<tr>\n<td>Croix rouge</td>\n<td>Erreur de synchronisation</td>\n</tr>\n<tr>\n<td>Symbole pause</td>\n<td>Synchronisation suspendue</td>\n</tr>\n<tr>\n<td>Coche verte</td>\n<td>Fichier disponible localement</td>\n</tr>\n<tr>\n<td>Cercle vert plein avec coche</td>\n<td>Fichier marqué « Toujours conserver sur cet appareil »</td>\n</tr>\n<tr>\n<td>Icône de partage</td>\n<td>Élément partagé avec d'autres utilisateurs</td>\n</tr>\n<tr>\n<td>Cadenas</td>\n<td>Restrictions d'accès ou de synchronisation selon le contexte</td>\n</tr>\n</tbody></table>\n<p>Le client OneDrive permet de <strong>choisir les dossiers synchronisés</strong> et d'ajuster certains paramètres de synchronisation.</p>\n<h3>Restaurer des données</h3>\n<ul>\n<li><strong>Corbeille OneDrive</strong> : retrouver un fichier supprimé et cliquer sur <strong>Restaurer</strong>.</li>\n<li><strong>Restaurer votre espace OneDrive</strong> : revenir à un état antérieur de l'espace si la fonctionnalité est disponible.</li>\n<li><strong>Historique des versions</strong> : retrouver une ancienne version d'un document sans perdre nécessairement les autres versions.</li>\n</ul>\n<p>Le cours évoque une fenêtre de restauration de <strong>30 jours</strong> pour l'espace OneDrive. Ne pas confondre cette fonction avec la durée de conservation d'un élément dans la corbeille, qui suit d'autres règles.</p>\n<h3>Coédition</h3>\n<p>Plusieurs utilisateurs peuvent modifier simultanément des fichiers <strong>.docx</strong>, <strong>.xlsx</strong> et <strong>.pptx</strong> hébergés dans un espace compatible. Les participants peuvent voir les modifications et les curseurs des autres collaborateurs.</p>\n<h2>4. Teams : communiquer et travailler en groupe</h2>\n<p>Teams réunit <strong>conversations, appels audio/vidéo, partage d'écran, réunions, calendrier, fichiers et applications</strong> sur ordinateur ou mobile.</p>\n<h3>Structure</h3>\n<pre><code class=\"language-text\">ÉQUIPE (propriétaires + membres)\n├── Canal Général\n│   ├── Publications / conversations\n│   ├── Fichiers\n│   └── Onglets et applications\n├── Canal Projet A\n└── Canal Projet B (éventuellement privé)\n</code></pre>\n<ul>\n<li><strong>Équipe</strong> : ensemble d'utilisateurs, de contenus et d'outils ; ses propriétaires gèrent les autorisations.</li>\n<li><strong>Canal</strong> : espace thématique à l'intérieur de l'équipe ; les canaux peuvent avoir des règles d'accès différentes.</li>\n<li><strong>Onglet</strong> : accès rapide à des publications, fichiers, notes ou applications.</li>\n<li><strong>@mention</strong> : attire l'attention d'une personne ou d'un groupe et génère une notification selon les réglages.</li>\n</ul>\n<h3>Création d'une équipe</h3>\n<p>La création d'une équipe Teams standard s'accompagne de ressources Microsoft 365 associées, notamment <strong>un groupe Microsoft 365</strong> et <strong>un site SharePoint</strong>. Les fichiers des canaux standards sont stockés dans SharePoint. Les canaux privés peuvent avoir des espaces SharePoint distincts.</p>\n<h3>Fichiers et conversations</h3>\n<ul>\n<li>Les fichiers d'un canal standard sont accessibles aux membres autorisés de l'équipe.</li>\n<li>Les fichiers peuvent être ouverts, partagés, modifiés en coédition et consultés via leur historique des versions.</li>\n<li>Une conversation privée n'a pas la même visibilité qu'une publication dans un canal.</li>\n<li>Un onglet peut donner un accès direct à un fichier ou une application.</li>\n</ul>\n<h2>5. Réunions Teams</h2>\n<p>Une réunion peut être <strong>planifiée</strong> ou lancée immédiatement, depuis Teams ou Outlook selon la configuration. Elle peut proposer le partage d'écran, de présentations PowerPoint et d'un tableau blanc.</p>\n<table>\n<thead>\n<tr>\n<th>Rôle</th>\n<th>Responsabilités</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>Organisateur</strong></td>\n<td>Crée la réunion et gère ses paramètres et autorisations</td>\n</tr>\n<tr>\n<td><strong>Présentateur</strong></td>\n<td>Peut présenter et gérer certaines interactions</td>\n</tr>\n<tr>\n<td><strong>Participant</strong></td>\n<td>Assiste et participe selon les autorisations accordées</td>\n</tr>\n</tbody></table>\n<p>La <strong>salle d'attente</strong> permet de contrôler l'admission. L'enregistrement dépend des autorisations et de la politique de l'organisation.</p>\n<p><strong>Attention :</strong> les nombres maximaux d'équipes, de canaux, de membres ou de participants cités dans les diapositives sont des valeurs de la version étudiée ; ils peuvent évoluer et ne doivent pas être considérés comme des limites permanentes.</p>\n<h2>6. Réflexes d'administration et de support</h2>\n<ol>\n<li><strong>Fichier inaccessible :</strong> vérifier le bon compte, le lien, les droits de partage et l'appartenance à l'équipe/canal.</li>\n<li><strong>Synchronisation bloquée :</strong> vérifier la connexion, l'état du client OneDrive, les erreurs signalées et les conflits de versions.</li>\n<li><strong>Document modifié par erreur :</strong> ouvrir l'historique des versions avant de remplacer le fichier.</li>\n<li><strong>Fichier supprimé :</strong> rechercher dans la corbeille appropriée avant toute recréation.</li>\n<li><strong>Données confidentielles :</strong> préférer un partage nominatif et les droits minimaux nécessaires.</li>\n</ol>\n",
+      "revisionExtracts": [],
+      "chapterIcon": "🐧",
+      "heroImage": "assets/tssr-banner-windows.webp",
+      "essentialsMarkdown": "- **SharePoint** : bibliothèques et sites collectifs ; **OneDrive** : espace utilisateur ; **Teams** : communication et travail en équipe.\n- Les **fichiers des canaux Teams** sont associés à **SharePoint**.\n- **Versioning** = historique des versions ; **coédition** = modification simultanée.\n- **Synchronisation** ≠ sauvegarde : une suppression ou une modification peut aussi être synchronisée.\n- **Nuage** = uniquement en ligne ; **flèches** = synchronisation ; **croix rouge** = erreur.\n- Vérifier les **droits de partage** avant d'envoyer un lien externe.\n- Une équipe contient des **canaux**, eux-mêmes organisés en **onglets**.\n- Les trois rôles de réunion : **organisateur, présentateur, participant**.",
+      "commandsMarkdown": "Ce chapitre porte sur des **actions dans l'interface**, pas sur des commandes Bash ou PowerShell.\n\n| Action | Où la trouver / quoi faire |\n|---|---|\n| Créer un fichier | SharePoint ou OneDrive → **Nouveau** |\n| Partager | Sélectionner un élément → **Partager** → définir les autorisations |\n| Voir les versions | Menu du fichier → **Historique des versions** |\n| Restaurer un fichier | OneDrive → **Corbeille** → **Restaurer** |\n| Restaurer l'espace | OneDrive web → **Paramètres** → **Restaurer votre espace OneDrive** (si disponible) |\n| Synchroniser une bibliothèque | SharePoint → bibliothèque → **Synchroniser** |\n| Choisir les dossiers synchronisés | Client OneDrive → **Paramètres** → choix des dossiers |\n| Conserver hors connexion | Explorateur → clic droit sur fichier OneDrive → **Toujours conserver sur cet appareil** |\n| Créer un canal | Teams → menu de l'équipe → **Ajouter un canal** |\n| Mentionner un collègue | Teams → saisir **@nom** dans une conversation ou publication |\n| Ajouter un onglet | Teams → canal → **+** (selon interface) |\n| Planifier une réunion | Teams → **Calendrier** → **Nouvelle réunion** |",
+      "revisionHtml": "<h1>Fiche mémo — SharePoint, OneDrive, Teams</h1>\n<h2>À distinguer en 10 secondes</h2>\n<table>\n<thead>\n<tr>\n<th>Question</th>\n<th>Réponse</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Où publier les procédures d'un service ?</td>\n<td>SharePoint</td>\n</tr>\n<tr>\n<td>Où stocker un document de travail personnel ?</td>\n<td>OneDrive Entreprise</td>\n</tr>\n<tr>\n<td>Où échanger avec une équipe projet ?</td>\n<td>Teams</td>\n</tr>\n<tr>\n<td>Où sont les fichiers d'un canal Teams standard ?</td>\n<td>SharePoint</td>\n</tr>\n<tr>\n<td>Comment revenir à un document antérieur ?</td>\n<td>Historique des versions</td>\n</tr>\n<tr>\n<td>Comment modifier un document à plusieurs ?</td>\n<td>Coédition</td>\n</tr>\n</tbody></table>\n<h2>Les cinq manipulations à savoir faire</h2>\n<ol>\n<li>Créer un dossier et un document dans une bibliothèque SharePoint.</li>\n<li>Partager un fichier OneDrive en lecture seule avec un destinataire précis.</li>\n<li>Identifier une erreur de synchronisation OneDrive et vérifier l'état du client.</li>\n<li>Restaurer un fichier supprimé ou une ancienne version.</li>\n<li>Créer une équipe/un canal Teams, puis organiser une réunion.</li>\n</ol>\n<h2>Pièges classiques</h2>\n<ul>\n<li>Un <strong>fichier synchronisé</strong> n'est pas automatiquement une <strong>sauvegarde indépendante</strong>.</li>\n<li>Un <strong>canal standard</strong> et un <strong>canal privé</strong> n'ont pas nécessairement les mêmes droits.</li>\n<li>Un lien « Toute personne disposant du lien » est plus exposé qu'un partage nominatif.</li>\n<li>Les <strong>quotas et limites chiffrées</strong> varient selon la version et la licence ; ne pas mémoriser des chiffres anciens comme des règles absolues.</li>\n<li>L'option « disponible hors connexion » consomme de l'espace disque local.</li>\n</ul>\n",
+      "rawMarkdown": "MODULE : 01 — Outils collaboratifs\nCHAPITRE : Exploiter Teams, SharePoint et OneDrive dans un contexte collaboratif\n\n=== COURS COMPLET ===\n\n# SharePoint, OneDrive et Teams — collaborer dans Microsoft 365\n\n## Objectifs\n- Comprendre les rôles de SharePoint, OneDrive et Teams.\n- Partager, synchroniser et restaurer des documents.\n- Organiser une équipe, ses canaux, ses fichiers et ses réunions.\n\n## 1. Trois outils complémentaires\n\n| Outil | Fonction principale | Exemple |\n|---|---|---|\n| **SharePoint** | Sites et bibliothèques documentaires d'une organisation | Intranet et documents d'un service |\n| **OneDrive Entreprise** | Espace de fichiers associé à un utilisateur | Brouillons et documents personnels de travail |\n| **Teams** | Espace de communication et de collaboration | Échanges, canaux et réunions d'une équipe |\n\nCes outils sont liés : les fichiers partagés dans les **canaux Teams** reposent sur **SharePoint**. OneDrive permet notamment de synchroniser des bibliothèques SharePoint sur un poste.\n\n## 2. SharePoint : centraliser les documents\n\n- **SharePoint Online** : service cloud proposé dans Microsoft 365 (SaaS). L'infrastructure est gérée par Microsoft.\n- **SharePoint Server** : installation sur les serveurs de l'organisation (*on-premises*) ; maintenance et infrastructure à gérer localement.\n- **SharePoint Designer** : outil historique de conception et de flux de travail mentionné dans les supports ; à distinguer des outils de collaboration courants.\n\n**Utilisations :** bibliothèques documentaires, partage, historique des versions (*versioning*), sites d'actualités/intranet, wiki et automatisation de processus métier.\n\n### Manipulation dans une bibliothèque\n1. Ouvrir le site SharePoint et sa bibliothèque **Documents**.\n2. Choisir **Nouveau** pour créer un dossier ou un document Word/Excel.\n3. Modifier le document dans le navigateur ou l'application de bureau ; l'enregistrement peut être automatique.\n4. Utiliser le menu **…** d'un fichier pour le renommer, le copier ou accéder aux autres actions.\n5. Utiliser **Historique des versions** pour consulter ou restaurer une version antérieure.\n\n**Vigilance TSSR :** synchroniser une bibliothèque sur plusieurs postes peut entraîner des conflits si plusieurs personnes modifient hors connexion les mêmes fichiers.\n\n## 3. OneDrive : stockage et synchronisation\n\nOneDrive Entreprise fournit un espace cloud associé à l'utilisateur. Le support présente **1 To** comme capacité de référence ; le quota réel dépend de la licence et des paramètres de l'organisation.\n\n**Accès :** portail Microsoft 365, navigateur, application OneDrive sur PC/Mac ou mobile.\n\n### Partager un fichier\n1. Sélectionner le fichier puis **Partager**.\n2. Choisir les destinataires ou copier un lien.\n3. Vérifier **qui peut accéder**, les droits de **lecture ou modification**, et les restrictions proposées (expiration, téléchargement, mot de passe selon configuration).\n4. Envoyer le lien ; éviter un accès plus large que nécessaire.\n\n### Synchronisation et icônes\n\n| Indicateur | Signification |\n|---|---|\n| Nuage | Fichier disponible uniquement en ligne |\n| Flèches circulaires | Synchronisation en cours |\n| Croix rouge | Erreur de synchronisation |\n| Symbole pause | Synchronisation suspendue |\n| Coche verte | Fichier disponible localement |\n| Cercle vert plein avec coche | Fichier marqué « Toujours conserver sur cet appareil » |\n| Icône de partage | Élément partagé avec d'autres utilisateurs |\n| Cadenas | Restrictions d'accès ou de synchronisation selon le contexte |\n\nLe client OneDrive permet de **choisir les dossiers synchronisés** et d'ajuster certains paramètres de synchronisation.\n\n### Restaurer des données\n- **Corbeille OneDrive** : retrouver un fichier supprimé et cliquer sur **Restaurer**.\n- **Restaurer votre espace OneDrive** : revenir à un état antérieur de l'espace si la fonctionnalité est disponible.\n- **Historique des versions** : retrouver une ancienne version d'un document sans perdre nécessairement les autres versions.\n\nLe cours évoque une fenêtre de restauration de **30 jours** pour l'espace OneDrive. Ne pas confondre cette fonction avec la durée de conservation d'un élément dans la corbeille, qui suit d'autres règles.\n\n### Coédition\nPlusieurs utilisateurs peuvent modifier simultanément des fichiers **.docx**, **.xlsx** et **.pptx** hébergés dans un espace compatible. Les participants peuvent voir les modifications et les curseurs des autres collaborateurs.\n\n## 4. Teams : communiquer et travailler en groupe\n\nTeams réunit **conversations, appels audio/vidéo, partage d'écran, réunions, calendrier, fichiers et applications** sur ordinateur ou mobile.\n\n### Structure\n\n```text\nÉQUIPE (propriétaires + membres)\n├── Canal Général\n│   ├── Publications / conversations\n│   ├── Fichiers\n│   └── Onglets et applications\n├── Canal Projet A\n└── Canal Projet B (éventuellement privé)\n```\n\n- **Équipe** : ensemble d'utilisateurs, de contenus et d'outils ; ses propriétaires gèrent les autorisations.\n- **Canal** : espace thématique à l'intérieur de l'équipe ; les canaux peuvent avoir des règles d'accès différentes.\n- **Onglet** : accès rapide à des publications, fichiers, notes ou applications.\n- **@mention** : attire l'attention d'une personne ou d'un groupe et génère une notification selon les réglages.\n\n### Création d'une équipe\nLa création d'une équipe Teams standard s'accompagne de ressources Microsoft 365 associées, notamment **un groupe Microsoft 365** et **un site SharePoint**. Les fichiers des canaux standards sont stockés dans SharePoint. Les canaux privés peuvent avoir des espaces SharePoint distincts.\n\n### Fichiers et conversations\n- Les fichiers d'un canal standard sont accessibles aux membres autorisés de l'équipe.\n- Les fichiers peuvent être ouverts, partagés, modifiés en coédition et consultés via leur historique des versions.\n- Une conversation privée n'a pas la même visibilité qu'une publication dans un canal.\n- Un onglet peut donner un accès direct à un fichier ou une application.\n\n## 5. Réunions Teams\n\nUne réunion peut être **planifiée** ou lancée immédiatement, depuis Teams ou Outlook selon la configuration. Elle peut proposer le partage d'écran, de présentations PowerPoint et d'un tableau blanc.\n\n| Rôle | Responsabilités |\n|---|---|\n| **Organisateur** | Crée la réunion et gère ses paramètres et autorisations |\n| **Présentateur** | Peut présenter et gérer certaines interactions |\n| **Participant** | Assiste et participe selon les autorisations accordées |\n\nLa **salle d'attente** permet de contrôler l'admission. L'enregistrement dépend des autorisations et de la politique de l'organisation.\n\n**Attention :** les nombres maximaux d'équipes, de canaux, de membres ou de participants cités dans les diapositives sont des valeurs de la version étudiée ; ils peuvent évoluer et ne doivent pas être considérés comme des limites permanentes.\n\n## 6. Réflexes d'administration et de support\n\n1. **Fichier inaccessible :** vérifier le bon compte, le lien, les droits de partage et l'appartenance à l'équipe/canal.\n2. **Synchronisation bloquée :** vérifier la connexion, l'état du client OneDrive, les erreurs signalées et les conflits de versions.\n3. **Document modifié par erreur :** ouvrir l'historique des versions avant de remplacer le fichier.\n4. **Fichier supprimé :** rechercher dans la corbeille appropriée avant toute recréation.\n5. **Données confidentielles :** préférer un partage nominatif et les droits minimaux nécessaires.\n\n=== POINTS ESSENTIELS ===\n\n- **SharePoint** : bibliothèques et sites collectifs ; **OneDrive** : espace utilisateur ; **Teams** : communication et travail en équipe.\n- Les **fichiers des canaux Teams** sont associés à **SharePoint**.\n- **Versioning** = historique des versions ; **coédition** = modification simultanée.\n- **Synchronisation** ≠ sauvegarde : une suppression ou une modification peut aussi être synchronisée.\n- **Nuage** = uniquement en ligne ; **flèches** = synchronisation ; **croix rouge** = erreur.\n- Vérifier les **droits de partage** avant d'envoyer un lien externe.\n- Une équipe contient des **canaux**, eux-mêmes organisés en **onglets**.\n- Les trois rôles de réunion : **organisateur, présentateur, participant**.\n\n=== COMMANDES À RETENIR ===\n\nCe chapitre porte sur des **actions dans l'interface**, pas sur des commandes Bash ou PowerShell.\n\n| Action | Où la trouver / quoi faire |\n|---|---|\n| Créer un fichier | SharePoint ou OneDrive → **Nouveau** |\n| Partager | Sélectionner un élément → **Partager** → définir les autorisations |\n| Voir les versions | Menu du fichier → **Historique des versions** |\n| Restaurer un fichier | OneDrive → **Corbeille** → **Restaurer** |\n| Restaurer l'espace | OneDrive web → **Paramètres** → **Restaurer votre espace OneDrive** (si disponible) |\n| Synchroniser une bibliothèque | SharePoint → bibliothèque → **Synchroniser** |\n| Choisir les dossiers synchronisés | Client OneDrive → **Paramètres** → choix des dossiers |\n| Conserver hors connexion | Explorateur → clic droit sur fichier OneDrive → **Toujours conserver sur cet appareil** |\n| Créer un canal | Teams → menu de l'équipe → **Ajouter un canal** |\n| Mentionner un collègue | Teams → saisir **@nom** dans une conversation ou publication |\n| Ajouter un onglet | Teams → canal → **+** (selon interface) |\n| Planifier une réunion | Teams → **Calendrier** → **Nouvelle réunion** |\n\n=== FICHE DE RÉVISION ===\n\n# Fiche mémo — SharePoint, OneDrive, Teams\n\n## À distinguer en 10 secondes\n\n| Question | Réponse |\n|---|---|\n| Où publier les procédures d'un service ? | SharePoint |\n| Où stocker un document de travail personnel ? | OneDrive Entreprise |\n| Où échanger avec une équipe projet ? | Teams |\n| Où sont les fichiers d'un canal Teams standard ? | SharePoint |\n| Comment revenir à un document antérieur ? | Historique des versions |\n| Comment modifier un document à plusieurs ? | Coédition |\n\n## Les cinq manipulations à savoir faire\n1. Créer un dossier et un document dans une bibliothèque SharePoint.\n2. Partager un fichier OneDrive en lecture seule avec un destinataire précis.\n3. Identifier une erreur de synchronisation OneDrive et vérifier l'état du client.\n4. Restaurer un fichier supprimé ou une ancienne version.\n5. Créer une équipe/un canal Teams, puis organiser une réunion.\n\n## Pièges classiques\n- Un **fichier synchronisé** n'est pas automatiquement une **sauvegarde indépendante**.\n- Un **canal standard** et un **canal privé** n'ont pas nécessairement les mêmes droits.\n- Un lien « Toute personne disposant du lien » est plus exposé qu'un partage nominatif.\n- Les **quotas et limites chiffrées** varient selon la version et la licence ; ne pas mémoriser des chiffres anciens comme des règles absolues.\n- L'option « disponible hors connexion » consomme de l'espace disque local.\n\n=== QCM ===\n\n### Question 1\nQuel service est principalement utilisé pour créer des sites et bibliothèques documentaires d'entreprise ?\nA. Teams\nB. SharePoint\nC. Outlook\nD. Word\nRéponse : B\nExplication : SharePoint centralise les sites, bibliothèques et documents collectifs.\n\n### Question 2\nQuelle différence distingue SharePoint Online de SharePoint Server ?\nA. Online est hébergé par Microsoft ; Server peut être installé localement\nB. Online fonctionne uniquement sans Internet\nC. Server est un client de messagerie\nD. Il n'existe aucune différence\nRéponse : A\nExplication : Le mode cloud et l'installation sur site n'impliquent pas la même gestion d'infrastructure.\n\n### Question 3\nQuel outil fournit un espace de fichiers associé à un utilisateur ?\nA. Teams uniquement\nB. Outlook\nC. OneDrive Entreprise\nD. PowerPoint\nRéponse : C\nExplication : OneDrive est l'espace de stockage lié au compte de l'utilisateur.\n\n### Question 4\nQue signifie le « versioning » ?\nA. Compresser un dossier\nB. Chiffrer un message\nC. Supprimer les fichiers en double\nD. Conserver l'historique des versions d'un document\nRéponse : D\nExplication : L'historique permet de consulter et de restaurer des versions antérieures.\n\n### Question 5\nQue signifie une croix rouge sur un élément OneDrive ?\nA. Le fichier est partagé\nB. Une erreur empêche sa synchronisation\nC. Il est toujours disponible hors connexion\nD. Le fichier est chiffré\nRéponse : B\nExplication : La croix rouge indique un problème à examiner dans le client OneDrive.\n\n### Question 6\nQuel symbole indique un fichier disponible uniquement en ligne ?\nA. Un nuage\nB. Une croix rouge\nC. Une corbeille\nD. Un cadenas systématiquement\nRéponse : A\nExplication : Le nuage indique que le contenu n'est pas nécessairement stocké localement.\n\n### Question 7\nÀ quoi sert la coédition ?\nA. À empêcher les autres d'ouvrir un fichier\nB. À convertir tous les fichiers en PDF\nC. À modifier un document à plusieurs simultanément\nD. À supprimer son historique\nRéponse : C\nExplication : La coédition permet le travail collaboratif en temps réel.\n\n### Question 8\nOù retrouver un fichier supprimé dans OneDrive ?\nA. Dans le calendrier\nB. Dans les conversations Teams\nC. Dans le gestionnaire de tâches\nD. Dans la corbeille OneDrive\nRéponse : D\nExplication : La corbeille est le premier emplacement à vérifier.\n\n### Question 9\nOù sont généralement stockés les fichiers d'un canal Teams standard ?\nA. Dans une bibliothèque SharePoint associée\nB. Dans les pièces jointes Outlook de chaque membre\nC. Uniquement sur le disque de l'organisateur\nD. Dans un fichier PST\nRéponse : A\nExplication : Les canaux standards s'appuient sur SharePoint pour les fichiers.\n\n### Question 10\nQu'est-ce qu'un canal Teams ?\nA. Un protocole réseau\nB. Un espace thématique de conversations, fichiers et outils\nC. Un dossier système Windows\nD. Une licence Microsoft 365\nRéponse : B\nExplication : Le canal structure les échanges et ressources d'une équipe.\n\n### Question 11\nQuel caractère permet de mentionner un utilisateur dans Teams ?\nA. #\nB. $\nC. @\nD. &\nRéponse : C\nExplication : Les mentions @ servent à attirer l'attention des personnes concernées.\n\n### Question 12\nQuel rôle possède les droits principaux sur l'organisation d'une réunion Teams ?\nA. Organisateur\nB. Participant\nC. Invité sans compte\nD. Lecteur\nRéponse : A\nExplication : L'organisateur contrôle les paramètres et autorisations de sa réunion.\n\n### Question 13\nQuelle pratique est la plus prudente pour un document confidentiel ?\nA. Envoyer un lien public sans restriction\nB. Donner la modification à tous les internautes\nC. Copier le fichier sur tous les postes\nD. Partager avec des personnes précises et les droits nécessaires\nRéponse : D\nExplication : Le partage nominatif et le principe du moindre privilège limitent l'exposition.\n\n### Question 14\nQuel risque existe si deux utilisateurs modifient hors connexion le même document synchronisé ?\nA. Le réseau passe automatiquement en IPv6\nB. Des conflits de versions peuvent apparaître\nC. Teams désinstalle SharePoint\nD. Le document devient obligatoirement un PDF\nRéponse : B\nExplication : La synchronisation différée peut produire des versions conflictuelles.\n\n### Question 15\nQuelle affirmation est correcte concernant la synchronisation OneDrive ?\nA. Elle remplace toujours une sauvegarde indépendante\nB. Elle interdit toute modification locale\nC. Elle répercute les modifications entre le poste et le cloud, selon les paramètres\nD. Elle ne fonctionne qu'avec les fichiers Word\nRéponse : C\nExplication : La synchronisation maintient des copies cohérentes ; elle ne constitue pas à elle seule une stratégie de sauvegarde."
     },
     {
       "id": "chapter:02:01",
@@ -2640,6 +2647,179 @@
           ],
           "correct": 1,
           "explanation": "Ces deux mécanismes ont des rôles de sécurité distincts."
+        }
+      ]
+    },
+    {
+      "id": "quiz-auto-chapter:01:06",
+      "title": "QCM — Utilisation de Teams et OneDrive",
+      "category": "01 — Microsoft 365 — Outils collaboratifs",
+      "chapterId": "chapter:01:06",
+      "questions": [
+        {
+          "question": "Quel service est principalement utilisé pour créer des sites et bibliothèques documentaires d'entreprise ?",
+          "answers": [
+            "Teams",
+            "SharePoint",
+            "Outlook",
+            "Word"
+          ],
+          "correct": 1,
+          "explanation": "SharePoint centralise les sites, bibliothèques et documents collectifs."
+        },
+        {
+          "question": "Quelle différence distingue SharePoint Online de SharePoint Server ?",
+          "answers": [
+            "Online est hébergé par Microsoft ; Server peut être installé localement",
+            "Online fonctionne uniquement sans Internet",
+            "Server est un client de messagerie",
+            "Il n'existe aucune différence"
+          ],
+          "correct": 0,
+          "explanation": "Le mode cloud et l'installation sur site n'impliquent pas la même gestion d'infrastructure."
+        },
+        {
+          "question": "Quel outil fournit un espace de fichiers associé à un utilisateur ?",
+          "answers": [
+            "Teams uniquement",
+            "Outlook",
+            "OneDrive Entreprise",
+            "PowerPoint"
+          ],
+          "correct": 2,
+          "explanation": "OneDrive est l'espace de stockage lié au compte de l'utilisateur."
+        },
+        {
+          "question": "Que signifie le « versioning » ?",
+          "answers": [
+            "Compresser un dossier",
+            "Chiffrer un message",
+            "Supprimer les fichiers en double",
+            "Conserver l'historique des versions d'un document"
+          ],
+          "correct": 3,
+          "explanation": "L'historique permet de consulter et de restaurer des versions antérieures."
+        },
+        {
+          "question": "Que signifie une croix rouge sur un élément OneDrive ?",
+          "answers": [
+            "Le fichier est partagé",
+            "Une erreur empêche sa synchronisation",
+            "Il est toujours disponible hors connexion",
+            "Le fichier est chiffré"
+          ],
+          "correct": 1,
+          "explanation": "La croix rouge indique un problème à examiner dans le client OneDrive."
+        },
+        {
+          "question": "Quel symbole indique un fichier disponible uniquement en ligne ?",
+          "answers": [
+            "Un nuage",
+            "Une croix rouge",
+            "Une corbeille",
+            "Un cadenas systématiquement"
+          ],
+          "correct": 0,
+          "explanation": "Le nuage indique que le contenu n'est pas nécessairement stocké localement."
+        },
+        {
+          "question": "À quoi sert la coédition ?",
+          "answers": [
+            "À empêcher les autres d'ouvrir un fichier",
+            "À convertir tous les fichiers en PDF",
+            "À modifier un document à plusieurs simultanément",
+            "À supprimer son historique"
+          ],
+          "correct": 2,
+          "explanation": "La coédition permet le travail collaboratif en temps réel."
+        },
+        {
+          "question": "Où retrouver un fichier supprimé dans OneDrive ?",
+          "answers": [
+            "Dans le calendrier",
+            "Dans les conversations Teams",
+            "Dans le gestionnaire de tâches",
+            "Dans la corbeille OneDrive"
+          ],
+          "correct": 3,
+          "explanation": "La corbeille est le premier emplacement à vérifier."
+        },
+        {
+          "question": "Où sont généralement stockés les fichiers d'un canal Teams standard ?",
+          "answers": [
+            "Dans une bibliothèque SharePoint associée",
+            "Dans les pièces jointes Outlook de chaque membre",
+            "Uniquement sur le disque de l'organisateur",
+            "Dans un fichier PST"
+          ],
+          "correct": 0,
+          "explanation": "Les canaux standards s'appuient sur SharePoint pour les fichiers."
+        },
+        {
+          "question": "Qu'est-ce qu'un canal Teams ?",
+          "answers": [
+            "Un protocole réseau",
+            "Un espace thématique de conversations, fichiers et outils",
+            "Un dossier système Windows",
+            "Une licence Microsoft 365"
+          ],
+          "correct": 1,
+          "explanation": "Le canal structure les échanges et ressources d'une équipe."
+        },
+        {
+          "question": "Quel caractère permet de mentionner un utilisateur dans Teams ?",
+          "answers": [
+            "#",
+            "$",
+            "@",
+            "&"
+          ],
+          "correct": 2,
+          "explanation": "Les mentions @ servent à attirer l'attention des personnes concernées."
+        },
+        {
+          "question": "Quel rôle possède les droits principaux sur l'organisation d'une réunion Teams ?",
+          "answers": [
+            "Organisateur",
+            "Participant",
+            "Invité sans compte",
+            "Lecteur"
+          ],
+          "correct": 0,
+          "explanation": "L'organisateur contrôle les paramètres et autorisations de sa réunion."
+        },
+        {
+          "question": "Quelle pratique est la plus prudente pour un document confidentiel ?",
+          "answers": [
+            "Envoyer un lien public sans restriction",
+            "Donner la modification à tous les internautes",
+            "Copier le fichier sur tous les postes",
+            "Partager avec des personnes précises et les droits nécessaires"
+          ],
+          "correct": 3,
+          "explanation": "Le partage nominatif et le principe du moindre privilège limitent l'exposition."
+        },
+        {
+          "question": "Quel risque existe si deux utilisateurs modifient hors connexion le même document synchronisé ?",
+          "answers": [
+            "Le réseau passe automatiquement en IPv6",
+            "Des conflits de versions peuvent apparaître",
+            "Teams désinstalle SharePoint",
+            "Le document devient obligatoirement un PDF"
+          ],
+          "correct": 1,
+          "explanation": "La synchronisation différée peut produire des versions conflictuelles."
+        },
+        {
+          "question": "Quelle affirmation est correcte concernant la synchronisation OneDrive ?",
+          "answers": [
+            "Elle remplace toujours une sauvegarde indépendante",
+            "Elle interdit toute modification locale",
+            "Elle répercute les modifications entre le poste et le cloud, selon les paramètres",
+            "Elle ne fonctionne qu'avec les fichiers Word"
+          ],
+          "correct": 2,
+          "explanation": "La synchronisation maintient des copies cohérentes ; elle ne constitue pas à elle seule une stratégie de sauvegarde."
         }
       ]
     }
