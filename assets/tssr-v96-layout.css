@@ -1,0 +1,50 @@
+/* V96 – Catalogue compact, ordre ENI inchangé, et panneaux de lecture adaptatifs */
+#view .tssr-catalog-toolbar{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:0 0 12px;}
+#view .tssr-catalog-toolbar .tssr-view-switch{display:inline-flex;gap:3px;padding:4px;border:1px solid #187d94;border-radius:10px;background:#082c3c;}
+#view .tssr-view-switch button{cursor:pointer;border:0;border-radius:7px;background:transparent;color:#d3edf4;padding:9px 15px;font:700 13px/1.2 inherit;}
+#view .tssr-view-switch button[aria-pressed="true"]{background:#08b8c9;color:#042636;box-shadow:0 1px 8px #03d4ed4a;}
+#view .course-library-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;}
+#view .course-library-grid .mg-module-tile{position:relative!important;min-width:0!important;}
+#view .course-library-grid .module-card{width:100%!important;min-height:114px!important;height:114px!important;display:grid!important;grid-template-columns:112px minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr) 25px!important;gap:0 12px!important;padding:11px 38px 10px 12px!important;border-radius:12px!important;background:linear-gradient(115deg,#0b3041,#061d2b)!important;border:1px solid #168ca4!important;box-shadow:0 3px 10px #00142045!important;text-align:left!important;overflow:hidden!important;}
+#view .course-library-grid .module-card:hover{transform:translateY(-1px)!important;border-color:#39d3e4!important;box-shadow:0 5px 15px #00142066!important;}
+#view .course-library-grid .module-card:before{display:none!important;}
+#view .course-library-grid .module-card-top{grid-column:1!important;grid-row:1/3!important;position:relative!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;width:112px!important;height:90px!important;margin:0!important;padding:0!important;}
+#view .course-library-grid .module-index{position:absolute!important;left:0!important;top:0!important;z-index:2!important;min-width:29px!important;width:auto!important;height:25px!important;padding:2px 5px!important;border:1px solid #13a6bd!important;border-radius:6px!important;background:#063a4d!important;color:#81edff!important;font-size:12px!important;font-weight:800!important;box-shadow:none!important;}
+#view .course-library-grid .module-art{width:110px!important;height:89px!important;display:flex!important;align-items:center!important;justify-content:center!important;margin:0!important;overflow:hidden!important;}
+#view .course-library-grid .module-art img{width:110px!important;height:89px!important;max-width:110px!important;max-height:89px!important;object-fit:contain!important;filter:none!important;}
+#view .course-library-grid .module-card h3{grid-column:2!important;grid-row:1!important;align-self:center!important;margin:0!important;padding:0!important;min-height:0!important;color:#f5fbff!important;font-size:clamp(13px,1.02vw,16px)!important;line-height:1.3!important;font-weight:800!important;letter-spacing:0!important;display:-webkit-box!important;-webkit-line-clamp:3!important;-webkit-box-orient:vertical!important;overflow:hidden!important;overflow-wrap:break-word!important;text-shadow:none!important;}
+#view .course-library-grid .module-card-footer{grid-column:2!important;grid-row:2!important;display:flex!important;align-items:center!important;justify-content:space-between!important;align-self:end!important;width:100%!important;padding:5px 0 0!important;margin:0!important;border-top:1px solid #2e637077!important;color:#b6d7e1!important;font-size:11px!important;}
+#view .course-library-grid .module-enter{position:static!important;width:22px!important;height:22px!important;min-width:22px!important;font-size:19px!important;border-radius:6px!important;background:#079eb6!important;color:white!important;}
+/* Les commandes d'administration existantes restent accessibles, sans couvrir le titre. */
+#view .course-library-grid .mg-module-edit,#view .course-library-grid .v54-module-remove,#view .course-library-grid .tssr-gold-admin{transform:scale(.83);transform-origin:top right;}
+/* Liste : même source de modules, même ordre, aucun doublon. */
+#view .course-library-grid.tssr-catalog-list{display:flex!important;flex-direction:column!important;gap:6px!important;}
+#view .course-library-grid.tssr-catalog-list .mg-module-tile{width:100%!important;}
+#view .course-library-grid.tssr-catalog-list .module-card{height:68px!important;min-height:68px!important;grid-template-columns:75px minmax(0,1fr) minmax(90px,155px)!important;grid-template-rows:1fr!important;padding:7px 100px 7px 9px!important;gap:12px!important;}
+#view .course-library-grid.tssr-catalog-list .module-card-top{grid-column:1!important;grid-row:1!important;width:75px!important;height:52px!important;}
+#view .course-library-grid.tssr-catalog-list .module-art,#view .course-library-grid.tssr-catalog-list .module-art img{width:72px!important;height:52px!important;max-width:72px!important;max-height:52px!important;}
+#view .course-library-grid.tssr-catalog-list .module-index{font-size:10px!important;min-width:22px!important;height:20px!important;}
+#view .course-library-grid.tssr-catalog-list .module-card h3{grid-column:2!important;grid-row:1!important;font-size:15px!important;-webkit-line-clamp:2!important;}
+#view .course-library-grid.tssr-catalog-list .module-card-footer{grid-column:3!important;grid-row:1!important;border:0!important;padding:0!important;align-self:center!important;font-size:12px!important;}
+#view .course-library-grid.tssr-catalog-list .module-enter{position:absolute!important;right:15px!important;top:23px!important;}
+@media(max-width:1300px){#view .course-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
+@media(max-width:740px){#view .course-library-grid{grid-template-columns:1fr!important;}#view .course-library-grid .module-card{min-height:108px!important;height:108px!important;}#view .course-library-grid.tssr-catalog-list .module-card{grid-template-columns:60px minmax(0,1fr)!important;padding-right:85px!important;}#view .course-library-grid.tssr-catalog-list .module-card-footer{display:none!important;}}
+/* Panneaux de droite : remplissent la hauteur utile si nécessaire, sans vide forcé. */
+@media(min-width:1161px){
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside{height:auto!important;max-height:calc(100dvh - 84px)!important;min-height:0!important;gap:10px!important;overflow:hidden!important;}
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside .tssr-plan{flex:0 1 auto!important;max-height:clamp(135px,23dvh,235px)!important;}
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside .tssr-plan-scroll{max-height:none!important;min-height:0!important;overflow-y:auto!important;}
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside .tssr-commands{flex:1 1 auto!important;display:flex!important;flex-direction:column!important;min-height:105px!important;max-height:min(49dvh,540px)!important;}
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside .tssr-essentials{flex:1 1 auto!important;display:flex!important;flex-direction:column!important;min-height:105px!important;max-height:min(38dvh,420px)!important;}
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside .tssr-v82-panel-scroll{flex:1 1 auto!important;max-height:none!important;min-height:0!important;overflow-y:auto!important;overscroll-behavior:contain!important;}
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside .tssr-v82-panel h3{flex:0 0 auto!important;}
+/* Peu de contenu : ne pas étirer artificiellement les blocs. */
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside:has(.tssr-commands .tssr-panel-empty) .tssr-commands{flex:0 0 auto!important;min-height:0!important;}
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside:has(.tssr-essentials .tssr-panel-empty) .tssr-essentials{flex:0 0 auto!important;min-height:0!important;}
+}
+@media(max-width:1160px){
+#view:has(.tssr-vfinal-layout) .tssr-v82-aside{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:start!important;gap:10px!important;max-height:none!important;overflow:visible!important;}
+#view:has(.tssr-vfinal-layout) .tssr-v82-panel{min-width:0!important;}
+#view:has(.tssr-vfinal-layout) .tssr-plan-scroll,#view:has(.tssr-vfinal-layout) .tssr-v82-panel-scroll{max-height:clamp(125px,28dvh,260px)!important;overflow-y:auto!important;}
+}
+@media(max-width:750px){#view:has(.tssr-vfinal-layout) .tssr-v82-aside{grid-template-columns:1fr!important;}#view:has(.tssr-vfinal-layout) .tssr-plan-scroll,#view:has(.tssr-vfinal-layout) .tssr-v82-panel-scroll{max-height:190px!important;}}
