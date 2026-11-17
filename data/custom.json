@@ -59,13 +59,23 @@
     },
     {
       "id": "chapter:01:05",
-      "title": "Utilisation et dépannage d’Outlook",
       "kind": "cours",
+      "title": "Utilisation et dépannage d’Outlook",
       "category": "01 — Microsoft 365 — Outils collaboratifs / Cours",
       "chapter": true,
-      "updatedAt": "2026-10-18T13:16:08.054Z",
-      "html": "",
-      "revisionExtracts": []
+      "readonly": false,
+      "updatedAt": "2026-11-17T17:42:23.392Z",
+      "html": "<h1>Microsoft Outlook — utilisation, configuration et dépannage</h1>\n<h2>Objectifs</h2>\n<ul>\n<li>Comprendre le trajet d'un courrier électronique et les protocoles associés.</li>\n<li>Configurer et utiliser Outlook, son calendrier et ses outils d'organisation.</li>\n<li>Diagnostiquer les problèmes de connexion, de profil et de fichiers de données.</li>\n</ul>\n<h2>1. Comment circule un courriel ?</h2>\n<p>Comme une lettre passe par plusieurs centres postaux, un courriel transite par des serveurs de messagerie.</p>\n<pre><code class=\"language-text\">Expéditeur (Outlook)\n       │ Soumission SMTP\n       ▼\nServeur de messagerie expéditeur\n       │ SMTP (transfert)\n       ▼\nServeur de messagerie destinataire\n       │ IMAP / POP3 / HTTPS / Exchange\n       ▼\nDestinataire (Outlook ou navigateur)\n</code></pre>\n<ul>\n<li><strong>SMTP</strong> : envoi des courriels et transfert entre serveurs.</li>\n<li><strong>IMAP</strong> : consultation et synchronisation des messages conservés sur le serveur.</li>\n<li><strong>POP3</strong> : récupération des messages par le client.</li>\n<li><strong>HTTPS / Exchange</strong> : accès aux services de messagerie, notamment via le web ou des clients compatibles.</li>\n</ul>\n<h3>Ports à connaître</h3>\n<table>\n<thead>\n<tr>\n<th>Usage</th>\n<th align=\"right\">Port</th>\n<th>Remarque</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>SMTP entre serveurs</td>\n<td align=\"right\">25</td>\n<td>Transport des courriels</td>\n</tr>\n<tr>\n<td>Soumission SMTP</td>\n<td align=\"right\">587</td>\n<td>Généralement avec STARTTLS</td>\n</tr>\n<tr>\n<td>SMTP avec TLS implicite</td>\n<td align=\"right\">465</td>\n<td>Utilisé selon le fournisseur</td>\n</tr>\n<tr>\n<td>POP3</td>\n<td align=\"right\">110</td>\n<td>Sans chiffrement implicite</td>\n</tr>\n<tr>\n<td>POP3S</td>\n<td align=\"right\">995</td>\n<td>Connexion chiffrée</td>\n</tr>\n<tr>\n<td>IMAP</td>\n<td align=\"right\">143</td>\n<td>STARTTLS possible</td>\n</tr>\n<tr>\n<td>IMAPS</td>\n<td align=\"right\">993</td>\n<td>Connexion chiffrée</td>\n</tr>\n<tr>\n<td>HTTP / HTTPS</td>\n<td align=\"right\">80 / 443</td>\n<td>Accès web ; HTTPS est chiffré</td>\n</tr>\n</tbody></table>\n<p><strong>En dépannage :</strong> vérifier le réseau, les paramètres du compte, la résolution DNS et les ports autorisés par le pare-feu.</p>\n<h2>2. Installer et configurer Outlook</h2>\n<ol>\n<li>Se connecter à son compte Microsoft 365 via le portail de l'organisation.</li>\n<li>Installer les applications Microsoft 365 si la licence le permet.</li>\n<li>Ouvrir Outlook et saisir l'adresse de messagerie professionnelle.</li>\n<li>Suivre les étapes de connexion et de vérification du compte.</li>\n</ol>\n<p><strong>Adresse de récupération et MFA :</strong> une adresse de récupération sert à retrouver l'accès au compte ; elle ne remplace pas l'authentification multifacteur (MFA). La MFA demande une preuve supplémentaire, par exemple via Microsoft Authenticator.</p>\n<h3>Autodiscover (découverte automatique)</h3>\n<p>Autodiscover permet à Outlook de retrouver automatiquement les paramètres nécessaires à la connexion au serveur de messagerie.</p>\n<pre><code class=\"language-text\">Adresse mail saisie → Recherche Autodiscover\n                    → Paramètres de configuration\n                    → Authentification\n                    → Connexion à la boîte Exchange\n</code></pre>\n<p>Dans <strong>Outlook classique pour Windows</strong>, maintenir <strong>Ctrl + clic droit</strong> sur l'icône Outlook de la zone de notification permet d'accéder, selon la version, à <strong>Tester la configuration automatique de la messagerie</strong> et <strong>État de la connexion</strong>.</p>\n<p><strong>Codes HTTP utiles :</strong> 1xx information ; 2xx succès ; 3xx redirection ; 4xx erreur côté client ; 5xx erreur côté serveur. Un code 200 signifie que la requête HTTP correspondante a réussi, pas nécessairement que toute la messagerie fonctionne.</p>\n<h2>3. Versions et interface</h2>\n<ul>\n<li><strong>Outlook classique pour Windows</strong> : logiciel installé, gestion des comptes, calendrier et fichiers de données locaux.</li>\n<li><strong>Outlook sur le web</strong> : utilisation depuis un navigateur, sans installation locale.</li>\n<li><strong>Outlook 2019</strong> : version à licence perpétuelle, distincte des applications Microsoft 365 régulièrement mises à jour.</li>\n</ul>\n<p>Les menus et certaines fonctions varient selon la version d'Outlook.</p>\n<pre><code class=\"language-text\">┌─────────────────────────────────────────────────────┐\n│ Barre de titre et ruban (Accueil, Affichage…)       │\n├───────────────┬─────────────────┬───────────────────┤\n│ Dossiers      │ Liste des mails │ Volet de lecture  │\n│ Réception     │ Expéditeurs     │ Message sélectionné│\n│ Envoyés       │ Objets          │                   │\n│ Brouillons    │ Dates           │                   │\n├───────────────┴─────────────────┴───────────────────┤\n│ Navigation : Courrier | Calendrier | Contacts | Tâches │\n└─────────────────────────────────────────────────────┘\n</code></pre>\n<p>Outlook gère les <strong>messages</strong>, <strong>contacts</strong>, <strong>rendez-vous</strong>, <strong>réunions</strong> et <strong>tâches</strong>.</p>\n<h2>4. Organiser sa messagerie</h2>\n<ul>\n<li><strong>Affichage en conversations</strong> : regroupe les messages d'un même échange ; dans Outlook classique, chercher <strong>Affichage &gt; Afficher en tant que conversations</strong>.</li>\n<li><strong>Réponses automatiques</strong> : informer les correspondants d'une absence, éventuellement avec dates de début et de fin.</li>\n<li><strong>Règles</strong> : automatiser un traitement selon le principe <strong>condition → action → exception éventuelle</strong> (déplacer, classer, transférer…).</li>\n<li><strong>Catégories</strong> : classer visuellement les messages, rendez-vous et tâches ; une règle peut parfois les attribuer automatiquement.</li>\n<li><strong>Rappel d'un message</strong> : tenter de retirer ou remplacer un message envoyé, sous conditions. Ce n'est <strong>pas garanti</strong> et dépend de l'environnement et de l'état du message.</li>\n<li><strong>Archivage</strong> : déplacer les anciens messages pour alléger la boîte. Attention aux archives locales : elles doivent être sauvegardées.</li>\n</ul>\n<h2>5. Calendrier et tâches</h2>\n<table>\n<thead>\n<tr>\n<th>Élément</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Rendez-vous</td>\n<td>Réserver un créneau dans son propre calendrier</td>\n</tr>\n<tr>\n<td>Réunion</td>\n<td>Inviter des personnes et éventuellement des ressources (salle, matériel)</td>\n</tr>\n<tr>\n<td>Événement sur la journée</td>\n<td>Signaler une date ou une période ; la disponibilité dépend de son paramétrage</td>\n</tr>\n<tr>\n<td>Groupe de calendriers</td>\n<td>Afficher plusieurs agendas ensemble</td>\n</tr>\n<tr>\n<td>Tâche</td>\n<td>Définir une action, une échéance, une priorité et son suivi</td>\n</tr>\n</tbody></table>\n<h2>6. Dépanner Outlook : méthode TSSR</h2>\n<p>Procéder du plus simple au plus complexe :</p>\n<ol>\n<li><strong>Qualifier la panne</strong> : Outlook ne démarre pas ? Pas d'envoi ? Pas de réception ? Lenteur ? Un seul utilisateur ou plusieurs ?</li>\n<li><strong>Vérifier la connexion</strong> : accès Internet, accès aux services Microsoft 365, état du réseau.</li>\n<li><strong>Tester la boîte dans Outlook sur le web</strong> : si le web fonctionne mais pas le logiciel, orienter les recherches vers le poste, le profil ou le client.</li>\n<li><strong>Vérifier Autodiscover et l'état de la connexion</strong> dans Outlook classique (Ctrl + clic droit sur l'icône de notification).</li>\n<li><strong>Tester le mode hors connexion</strong> : comparer le comportement avec et sans accès réseau.</li>\n<li><strong>Démarrer sans compléments</strong> avec <code>outlook.exe /safe</code> (Outlook classique sous Windows) ; si le problème disparaît, examiner les compléments.</li>\n<li><strong>Activer temporairement la journalisation</strong> si nécessaire, consulter les journaux, puis la désactiver.</li>\n<li><strong>Créer un nouveau profil</strong> si les paramètres du profil actuel semblent défectueux ; vérifier les données locales avant toute suppression.</li>\n<li><strong>Contrôler les fichiers de données</strong> et leur taille ; sauvegarder avant toute réparation.</li>\n</ol>\n<h3>Où chercher dans Outlook classique ?</h3>\n<table>\n<thead>\n<tr>\n<th>Besoin</th>\n<th>Emplacement ou action</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Tester Autodiscover</td>\n<td>Ctrl + clic droit sur l'icône Outlook &gt; Tester la configuration automatique</td>\n</tr>\n<tr>\n<td>État de connexion</td>\n<td>Ctrl + clic droit sur l'icône Outlook &gt; État de la connexion</td>\n</tr>\n<tr>\n<td>Journalisation</td>\n<td>Fichier &gt; Options &gt; Options avancées (selon version)</td>\n</tr>\n<tr>\n<td>Compléments</td>\n<td>Fichier &gt; Options &gt; Compléments</td>\n</tr>\n<tr>\n<td>Profils</td>\n<td>Panneau de configuration Windows &gt; Courrier &gt; Afficher les profils</td>\n</tr>\n<tr>\n<td>Mode sans échec</td>\n<td>Win + R &gt; <code>outlook.exe /safe</code></td>\n</tr>\n<tr>\n<td>Test de connectivité distant</td>\n<td><code>https://testconnectivity.microsoft.com/</code></td>\n</tr>\n</tbody></table>\n<h3>PST, OST et réparation</h3>\n<ul>\n<li><strong><code>.ost</code></strong> : copie locale synchronisée d'une boîte Exchange ou d'un compte compatible ; permet notamment le travail hors connexion.</li>\n<li><strong><code>.pst</code></strong> : fichier de données Outlook utilisé notamment pour l'archivage et certaines configurations locales ; <strong>à sauvegarder</strong>.</li>\n<li><strong><code>SCANPST.EXE</code></strong> : outil de réparation de fichiers de données Outlook, à utiliser avec précaution et après sauvegarde.</li>\n<li>Les supports mentionnent des seuils de <strong>50 Go</strong> (taille maximale par défaut de certains fichiers PST/OST Unicode) et <strong>47,5 Go</strong> (seuil d'avertissement). Ces valeurs dépendent de la version et de la configuration.</li>\n</ul>\n<p><strong>Attention :</strong> ne jamais supprimer un fichier PST ou un profil sans avoir identifié où se trouvent les données et réalisé les sauvegardes nécessaires.</p>\n",
+      "revisionExtracts": [],
+      "order": 5,
+      "displayNumber": "05",
+      "art": "assets/icons-apps/outlook.svg",
+      "chapterIcon": "🐧",
+      "heroImage": "assets/tssr-banner-windows.webp",
+      "essentialsMarkdown": "- **SMTP = envoyer/transférer**, **IMAP/POP3 = récupérer ou consulter** les courriels.\n- Ports à mémoriser : **25 SMTP**, **587 soumission**, **143/993 IMAP**, **110/995 POP3**, **443 HTTPS**.\n- **Autodiscover** configure automatiquement Outlook à partir de l'adresse mail.\n- **MFA** et **adresse de récupération** sont deux mécanismes différents.\n- Une règle Outlook suit : **condition → action → exception**.\n- **Rendez-vous** = créneau personnel ; **réunion** = invitations et éventuellement ressources.\n- **OST** = cache synchronisé ; **PST** = fichier de données local à protéger.\n- Pour dépanner : **web → connexion → Autodiscover → mode sans échec → profil → données**.\n- Le **rappel d'un mail** n'est pas garanti.\n- Les menus indiqués concernent surtout **Outlook classique pour Windows**.",
+      "commandsMarkdown": "| Commande, raccourci ou outil | Utilité |\n|---|---|\n| `outlook.exe /safe` | Démarrer Outlook classique sans les compléments habituels |\n| `SCANPST.EXE` | Analyser et réparer certains fichiers de données Outlook |\n| `Test-OutlookConnectivity` | Cmdlet de diagnostic Exchange dans les environnements compatibles, pas une commande PowerShell Windows universelle |\n| `Ctrl + clic droit` sur l'icône Outlook | Accéder aux tests Autodiscover et à l'état de connexion (Outlook classique) |\n| `Ctrl + Maj + M` | Nouveau message (Outlook classique) |\n| `Ctrl + Maj + A` | Nouveau rendez-vous |\n| `Ctrl + Maj + K` | Nouvelle tâche |\n| `Ctrl + 2` | Ouvrir le calendrier |\n| `Ctrl + E` ou `F3` | Rechercher |\n| `Ctrl + M` ou `F9` | Vérifier l'arrivée des messages |\n| `Échap` | Fermer une fenêtre ou un menu |\n| `https://testconnectivity.microsoft.com/` | Tests distants de connectivité Microsoft |\n\nLes raccourcis peuvent varier selon la version, notamment dans le nouvel Outlook et Outlook sur le web.",
+      "revisionHtml": "<h1>Révision express — Outlook</h1>\n<h2>Schéma à savoir refaire</h2>\n<p><code>Outlook expéditeur → SMTP soumission → serveur expéditeur → SMTP → serveur destinataire → IMAP/POP/HTTPS → Outlook destinataire</code></p>\n<h2>Tableau de mémorisation</h2>\n<table>\n<thead>\n<tr>\n<th>Question</th>\n<th>Réponse courte</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Envoyer un mail ?</td>\n<td>SMTP</td>\n</tr>\n<tr>\n<td>Synchroniser les messages avec le serveur ?</td>\n<td>IMAP</td>\n</tr>\n<tr>\n<td>Soumission sécurisée habituelle ?</td>\n<td>Port 587</td>\n</tr>\n<tr>\n<td>IMAP chiffré ?</td>\n<td>Port 993</td>\n</tr>\n<tr>\n<td>POP3 chiffré ?</td>\n<td>Port 995</td>\n</tr>\n<tr>\n<td>Web sécurisé ?</td>\n<td>HTTPS 443</td>\n</tr>\n<tr>\n<td>Paramétrage automatique Outlook ?</td>\n<td>Autodiscover</td>\n</tr>\n<tr>\n<td>Démarrage sans compléments ?</td>\n<td><code>outlook.exe /safe</code></td>\n</tr>\n<tr>\n<td>Cache de boîte Exchange ?</td>\n<td><code>.ost</code></td>\n</tr>\n<tr>\n<td>Archive locale Outlook ?</td>\n<td><code>.pst</code></td>\n</tr>\n<tr>\n<td>Réparer un PST ?</td>\n<td><code>SCANPST.EXE</code>, après sauvegarde</td>\n</tr>\n</tbody></table>\n<h2>Mini-cas de dépannage</h2>\n<p><strong>Cas 1 — Outlook refuse de démarrer.</strong> Essayer le mode sans échec. Si cela fonctionne, vérifier les compléments.</p>\n<p><strong>Cas 2 — Le webmail fonctionne, pas Outlook sur le PC.</strong> Examiner la configuration du client, Autodiscover, la connexion et le profil.</p>\n<p><strong>Cas 3 — Outlook est très lent.</strong> Comparer en ligne/hors connexion ; examiner compléments, taille de la boîte et fichiers de données.</p>\n<p><strong>Cas 4 — Un utilisateur a supprimé une archive PST.</strong> Vérifier les sauvegardes : un PST local peut contenir des données non présentes sur le serveur.</p>\n<p><strong>Cas 5 — Une connexion renvoie HTTP 401.</strong> Il s'agit d'un code 4xx : problème d'authentification ou d'autorisation à investiguer.</p>\n",
+      "rawMarkdown": "MODULE : 01 — Outils collaboratifs\nCHAPITRE : Exploiter Outlook et savoir le dépanner\n\n=== COURS COMPLET ===\n\n# Microsoft Outlook — utilisation, configuration et dépannage\n\n## Objectifs\n\n- Comprendre le trajet d'un courrier électronique et les protocoles associés.\n- Configurer et utiliser Outlook, son calendrier et ses outils d'organisation.\n- Diagnostiquer les problèmes de connexion, de profil et de fichiers de données.\n\n## 1. Comment circule un courriel ?\n\nComme une lettre passe par plusieurs centres postaux, un courriel transite par des serveurs de messagerie.\n\n```text\nExpéditeur (Outlook)\n       │ Soumission SMTP\n       ▼\nServeur de messagerie expéditeur\n       │ SMTP (transfert)\n       ▼\nServeur de messagerie destinataire\n       │ IMAP / POP3 / HTTPS / Exchange\n       ▼\nDestinataire (Outlook ou navigateur)\n```\n\n- **SMTP** : envoi des courriels et transfert entre serveurs.\n- **IMAP** : consultation et synchronisation des messages conservés sur le serveur.\n- **POP3** : récupération des messages par le client.\n- **HTTPS / Exchange** : accès aux services de messagerie, notamment via le web ou des clients compatibles.\n\n### Ports à connaître\n\n| Usage | Port | Remarque |\n|---|---:|---|\n| SMTP entre serveurs | 25 | Transport des courriels |\n| Soumission SMTP | 587 | Généralement avec STARTTLS |\n| SMTP avec TLS implicite | 465 | Utilisé selon le fournisseur |\n| POP3 | 110 | Sans chiffrement implicite |\n| POP3S | 995 | Connexion chiffrée |\n| IMAP | 143 | STARTTLS possible |\n| IMAPS | 993 | Connexion chiffrée |\n| HTTP / HTTPS | 80 / 443 | Accès web ; HTTPS est chiffré |\n\n**En dépannage :** vérifier le réseau, les paramètres du compte, la résolution DNS et les ports autorisés par le pare-feu.\n\n## 2. Installer et configurer Outlook\n\n1. Se connecter à son compte Microsoft 365 via le portail de l'organisation.\n2. Installer les applications Microsoft 365 si la licence le permet.\n3. Ouvrir Outlook et saisir l'adresse de messagerie professionnelle.\n4. Suivre les étapes de connexion et de vérification du compte.\n\n**Adresse de récupération et MFA :** une adresse de récupération sert à retrouver l'accès au compte ; elle ne remplace pas l'authentification multifacteur (MFA). La MFA demande une preuve supplémentaire, par exemple via Microsoft Authenticator.\n\n### Autodiscover (découverte automatique)\n\nAutodiscover permet à Outlook de retrouver automatiquement les paramètres nécessaires à la connexion au serveur de messagerie.\n\n```text\nAdresse mail saisie → Recherche Autodiscover\n                    → Paramètres de configuration\n                    → Authentification\n                    → Connexion à la boîte Exchange\n```\n\nDans **Outlook classique pour Windows**, maintenir **Ctrl + clic droit** sur l'icône Outlook de la zone de notification permet d'accéder, selon la version, à **Tester la configuration automatique de la messagerie** et **État de la connexion**.\n\n**Codes HTTP utiles :** 1xx information ; 2xx succès ; 3xx redirection ; 4xx erreur côté client ; 5xx erreur côté serveur. Un code 200 signifie que la requête HTTP correspondante a réussi, pas nécessairement que toute la messagerie fonctionne.\n\n## 3. Versions et interface\n\n- **Outlook classique pour Windows** : logiciel installé, gestion des comptes, calendrier et fichiers de données locaux.\n- **Outlook sur le web** : utilisation depuis un navigateur, sans installation locale.\n- **Outlook 2019** : version à licence perpétuelle, distincte des applications Microsoft 365 régulièrement mises à jour.\n\nLes menus et certaines fonctions varient selon la version d'Outlook.\n\n```text\n┌─────────────────────────────────────────────────────┐\n│ Barre de titre et ruban (Accueil, Affichage…)       │\n├───────────────┬─────────────────┬───────────────────┤\n│ Dossiers      │ Liste des mails │ Volet de lecture  │\n│ Réception     │ Expéditeurs     │ Message sélectionné│\n│ Envoyés       │ Objets          │                   │\n│ Brouillons    │ Dates           │                   │\n├───────────────┴─────────────────┴───────────────────┤\n│ Navigation : Courrier | Calendrier | Contacts | Tâches │\n└─────────────────────────────────────────────────────┘\n```\n\nOutlook gère les **messages**, **contacts**, **rendez-vous**, **réunions** et **tâches**.\n\n## 4. Organiser sa messagerie\n\n- **Affichage en conversations** : regroupe les messages d'un même échange ; dans Outlook classique, chercher **Affichage > Afficher en tant que conversations**.\n- **Réponses automatiques** : informer les correspondants d'une absence, éventuellement avec dates de début et de fin.\n- **Règles** : automatiser un traitement selon le principe **condition → action → exception éventuelle** (déplacer, classer, transférer…).\n- **Catégories** : classer visuellement les messages, rendez-vous et tâches ; une règle peut parfois les attribuer automatiquement.\n- **Rappel d'un message** : tenter de retirer ou remplacer un message envoyé, sous conditions. Ce n'est **pas garanti** et dépend de l'environnement et de l'état du message.\n- **Archivage** : déplacer les anciens messages pour alléger la boîte. Attention aux archives locales : elles doivent être sauvegardées.\n\n## 5. Calendrier et tâches\n\n| Élément | Fonction |\n|---|---|\n| Rendez-vous | Réserver un créneau dans son propre calendrier |\n| Réunion | Inviter des personnes et éventuellement des ressources (salle, matériel) |\n| Événement sur la journée | Signaler une date ou une période ; la disponibilité dépend de son paramétrage |\n| Groupe de calendriers | Afficher plusieurs agendas ensemble |\n| Tâche | Définir une action, une échéance, une priorité et son suivi |\n\n## 6. Dépanner Outlook : méthode TSSR\n\nProcéder du plus simple au plus complexe :\n\n1. **Qualifier la panne** : Outlook ne démarre pas ? Pas d'envoi ? Pas de réception ? Lenteur ? Un seul utilisateur ou plusieurs ?\n2. **Vérifier la connexion** : accès Internet, accès aux services Microsoft 365, état du réseau.\n3. **Tester la boîte dans Outlook sur le web** : si le web fonctionne mais pas le logiciel, orienter les recherches vers le poste, le profil ou le client.\n4. **Vérifier Autodiscover et l'état de la connexion** dans Outlook classique (Ctrl + clic droit sur l'icône de notification).\n5. **Tester le mode hors connexion** : comparer le comportement avec et sans accès réseau.\n6. **Démarrer sans compléments** avec `outlook.exe /safe` (Outlook classique sous Windows) ; si le problème disparaît, examiner les compléments.\n7. **Activer temporairement la journalisation** si nécessaire, consulter les journaux, puis la désactiver.\n8. **Créer un nouveau profil** si les paramètres du profil actuel semblent défectueux ; vérifier les données locales avant toute suppression.\n9. **Contrôler les fichiers de données** et leur taille ; sauvegarder avant toute réparation.\n\n### Où chercher dans Outlook classique ?\n\n| Besoin | Emplacement ou action |\n|---|---|\n| Tester Autodiscover | Ctrl + clic droit sur l'icône Outlook > Tester la configuration automatique |\n| État de connexion | Ctrl + clic droit sur l'icône Outlook > État de la connexion |\n| Journalisation | Fichier > Options > Options avancées (selon version) |\n| Compléments | Fichier > Options > Compléments |\n| Profils | Panneau de configuration Windows > Courrier > Afficher les profils |\n| Mode sans échec | Win + R > `outlook.exe /safe` |\n| Test de connectivité distant | `https://testconnectivity.microsoft.com/` |\n\n### PST, OST et réparation\n\n- **`.ost`** : copie locale synchronisée d'une boîte Exchange ou d'un compte compatible ; permet notamment le travail hors connexion.\n- **`.pst`** : fichier de données Outlook utilisé notamment pour l'archivage et certaines configurations locales ; **à sauvegarder**.\n- **`SCANPST.EXE`** : outil de réparation de fichiers de données Outlook, à utiliser avec précaution et après sauvegarde.\n- Les supports mentionnent des seuils de **50 Go** (taille maximale par défaut de certains fichiers PST/OST Unicode) et **47,5 Go** (seuil d'avertissement). Ces valeurs dépendent de la version et de la configuration.\n\n**Attention :** ne jamais supprimer un fichier PST ou un profil sans avoir identifié où se trouvent les données et réalisé les sauvegardes nécessaires.\n\n=== POINTS ESSENTIELS ===\n\n- **SMTP = envoyer/transférer**, **IMAP/POP3 = récupérer ou consulter** les courriels.\n- Ports à mémoriser : **25 SMTP**, **587 soumission**, **143/993 IMAP**, **110/995 POP3**, **443 HTTPS**.\n- **Autodiscover** configure automatiquement Outlook à partir de l'adresse mail.\n- **MFA** et **adresse de récupération** sont deux mécanismes différents.\n- Une règle Outlook suit : **condition → action → exception**.\n- **Rendez-vous** = créneau personnel ; **réunion** = invitations et éventuellement ressources.\n- **OST** = cache synchronisé ; **PST** = fichier de données local à protéger.\n- Pour dépanner : **web → connexion → Autodiscover → mode sans échec → profil → données**.\n- Le **rappel d'un mail** n'est pas garanti.\n- Les menus indiqués concernent surtout **Outlook classique pour Windows**.\n\n=== COMMANDES À RETENIR ===\n\n| Commande, raccourci ou outil | Utilité |\n|---|---|\n| `outlook.exe /safe` | Démarrer Outlook classique sans les compléments habituels |\n| `SCANPST.EXE` | Analyser et réparer certains fichiers de données Outlook |\n| `Test-OutlookConnectivity` | Cmdlet de diagnostic Exchange dans les environnements compatibles, pas une commande PowerShell Windows universelle |\n| `Ctrl + clic droit` sur l'icône Outlook | Accéder aux tests Autodiscover et à l'état de connexion (Outlook classique) |\n| `Ctrl + Maj + M` | Nouveau message (Outlook classique) |\n| `Ctrl + Maj + A` | Nouveau rendez-vous |\n| `Ctrl + Maj + K` | Nouvelle tâche |\n| `Ctrl + 2` | Ouvrir le calendrier |\n| `Ctrl + E` ou `F3` | Rechercher |\n| `Ctrl + M` ou `F9` | Vérifier l'arrivée des messages |\n| `Échap` | Fermer une fenêtre ou un menu |\n| `https://testconnectivity.microsoft.com/` | Tests distants de connectivité Microsoft |\n\nLes raccourcis peuvent varier selon la version, notamment dans le nouvel Outlook et Outlook sur le web.\n\n=== FICHE DE RÉVISION ===\n\n# Révision express — Outlook\n\n## Schéma à savoir refaire\n\n`Outlook expéditeur → SMTP soumission → serveur expéditeur → SMTP → serveur destinataire → IMAP/POP/HTTPS → Outlook destinataire`\n\n## Tableau de mémorisation\n\n| Question | Réponse courte |\n|---|---|\n| Envoyer un mail ? | SMTP |\n| Synchroniser les messages avec le serveur ? | IMAP |\n| Soumission sécurisée habituelle ? | Port 587 |\n| IMAP chiffré ? | Port 993 |\n| POP3 chiffré ? | Port 995 |\n| Web sécurisé ? | HTTPS 443 |\n| Paramétrage automatique Outlook ? | Autodiscover |\n| Démarrage sans compléments ? | `outlook.exe /safe` |\n| Cache de boîte Exchange ? | `.ost` |\n| Archive locale Outlook ? | `.pst` |\n| Réparer un PST ? | `SCANPST.EXE`, après sauvegarde |\n\n## Mini-cas de dépannage\n\n**Cas 1 — Outlook refuse de démarrer.** Essayer le mode sans échec. Si cela fonctionne, vérifier les compléments.\n\n**Cas 2 — Le webmail fonctionne, pas Outlook sur le PC.** Examiner la configuration du client, Autodiscover, la connexion et le profil.\n\n**Cas 3 — Outlook est très lent.** Comparer en ligne/hors connexion ; examiner compléments, taille de la boîte et fichiers de données.\n\n**Cas 4 — Un utilisateur a supprimé une archive PST.** Vérifier les sauvegardes : un PST local peut contenir des données non présentes sur le serveur.\n\n**Cas 5 — Une connexion renvoie HTTP 401.** Il s'agit d'un code 4xx : problème d'authentification ou d'autorisation à investiguer.\n\n=== QCM ===\n\n### Question 1\nQuel protocole est utilisé pour transférer les courriels entre serveurs ?\nA. IMAP\nB. SMTP\nC. POP3\nD. FTP\nRéponse : B\nExplication : SMTP assure le transfert des messages entre serveurs.\n\n### Question 2\nQuel port est couramment utilisé pour la soumission SMTP avec STARTTLS ?\nA. 110\nB. 143\nC. 587\nD. 993\nRéponse : C\nExplication : Le port 587 est le port habituel de soumission SMTP.\n\n### Question 3\nQuel port correspond à IMAP avec TLS implicite ?\nA. 25\nB. 80\nC. 995\nD. 993\nRéponse : D\nExplication : IMAPS utilise généralement le port 993.\n\n### Question 4\nÀ quoi sert Autodiscover ?\nA. Supprimer les spams\nB. Retrouver automatiquement les paramètres de connexion de messagerie\nC. Réparer les PST\nD. Créer des réunions\nRéponse : B\nExplication : Autodiscover facilite la configuration d'Outlook.\n\n### Question 5\nQuel code HTTP indique une erreur côté serveur ?\nA. 2xx\nB. 3xx\nC. 4xx\nD. 5xx\nRéponse : D\nExplication : Les codes 5xx correspondent aux erreurs serveur.\n\n### Question 6\nQuelle commande démarre Outlook classique en mode sans échec ?\nA. `outlook.exe /safe`\nB. `outlook.exe /resetall`\nC. `scanpst /start`\nD. `outlook /smtp`\nRéponse : A\nExplication : Le paramètre /safe lance Outlook sans les compléments habituels.\n\n### Question 7\nQuel fichier est généralement une copie locale synchronisée d'une boîte Exchange ?\nA. `.txt`\nB. `.ost`\nC. `.pdf`\nD. `.bat`\nRéponse : B\nExplication : OST sert notamment au cache hors connexion.\n\n### Question 8\nQuelle précaution prendre avant de réparer un fichier PST ?\nA. Le supprimer\nB. Couper le pare-feu\nC. En faire une sauvegarde\nD. Le renommer en OST\nRéponse : C\nExplication : Une sauvegarde protège les données en cas d'échec de réparation.\n\n### Question 9\nQuelle est la structure d'une règle de messagerie ?\nA. Adresse → mot de passe → licence\nB. Condition → action → exception éventuelle\nC. Calendrier → contact → pièce jointe\nD. SMTP → IMAP → POP\nRéponse : B\nExplication : Une règle applique une action si une condition est remplie, sauf exception définie.\n\n### Question 10\nQue permet une réunion Outlook, contrairement à un simple rendez-vous ?\nA. Inviter des participants et réserver éventuellement des ressources\nB. Réparer le profil\nC. Installer Office\nD. Modifier les ports SMTP\nRéponse : A\nExplication : Une réunion comporte des invitations et peut inclure des ressources.\n\n### Question 11\nQuel est le premier test utile si Outlook installé ne reçoit plus les messages ?\nA. Supprimer le profil immédiatement\nB. Effacer tous les OST\nC. Vérifier l'accès à la boîte via Outlook sur le web\nD. Réinstaller Windows\nRéponse : C\nExplication : Le webmail aide à distinguer un problème de compte/service d'un problème local.\n\n### Question 12\nÀ quoi sert le mode hors connexion dans le diagnostic ?\nA. À envoyer plus vite les mails\nB. À comparer le comportement avec et sans accès réseau\nC. À effacer les règles\nD. À réinitialiser le mot de passe\nRéponse : B\nExplication : Cette comparaison aide à identifier une cause réseau ou locale.\n\n### Question 13\nQuel outil est cité pour réparer certains fichiers de données Outlook ?\nA. DISM\nB. SCANPST.EXE\nC. CHKDSK /SMTP\nD. GPEDIT\nRéponse : B\nExplication : SCANPST.EXE est l'outil de réparation de fichiers de données Outlook.\n\n### Question 14\nLe rappel d'un message envoyé fonctionne-t-il à coup sûr ?\nA. Oui, même si le destinataire l'a lu\nB. Oui, pour tous les fournisseurs de messagerie\nC. Non, il dépend de plusieurs conditions\nD. Oui, si le port 587 est ouvert\nRéponse : C\nExplication : Le rappel dépend notamment de l'environnement de messagerie et de l'état du message.\n\n### Question 15\nQuelle différence existe entre MFA et adresse de récupération ?\nA. Ce sont exactement les mêmes fonctions\nB. La MFA ajoute une preuve d'identité ; l'adresse de récupération aide à retrouver l'accès\nC. La MFA sert uniquement à archiver\nD. L'adresse de récupération chiffre les mails\nRéponse : B\nExplication : Ces deux mécanismes ont des rôles de sécurité distincts."
     },
     {
       "id": "chapter:01:06",
@@ -2457,6 +2467,179 @@
           ],
           "correct": 0,
           "explanation": "L'historique permet de consulter et, selon les droits, de restaurer des versions précédentes."
+        }
+      ]
+    },
+    {
+      "id": "quiz-auto-chapter:01:05",
+      "title": "QCM — Utilisation et dépannage d’Outlook",
+      "category": "01 — Microsoft 365 — Outils collaboratifs",
+      "chapterId": "chapter:01:05",
+      "questions": [
+        {
+          "question": "Quel protocole est utilisé pour transférer les courriels entre serveurs ?",
+          "answers": [
+            "IMAP",
+            "SMTP",
+            "POP3",
+            "FTP"
+          ],
+          "correct": 1,
+          "explanation": "SMTP assure le transfert des messages entre serveurs."
+        },
+        {
+          "question": "Quel port est couramment utilisé pour la soumission SMTP avec STARTTLS ?",
+          "answers": [
+            "110",
+            "143",
+            "587",
+            "993"
+          ],
+          "correct": 2,
+          "explanation": "Le port 587 est le port habituel de soumission SMTP."
+        },
+        {
+          "question": "Quel port correspond à IMAP avec TLS implicite ?",
+          "answers": [
+            "25",
+            "80",
+            "995",
+            "993"
+          ],
+          "correct": 3,
+          "explanation": "IMAPS utilise généralement le port 993."
+        },
+        {
+          "question": "À quoi sert Autodiscover ?",
+          "answers": [
+            "Supprimer les spams",
+            "Retrouver automatiquement les paramètres de connexion de messagerie",
+            "Réparer les PST",
+            "Créer des réunions"
+          ],
+          "correct": 1,
+          "explanation": "Autodiscover facilite la configuration d'Outlook."
+        },
+        {
+          "question": "Quel code HTTP indique une erreur côté serveur ?",
+          "answers": [
+            "2xx",
+            "3xx",
+            "4xx",
+            "5xx"
+          ],
+          "correct": 3,
+          "explanation": "Les codes 5xx correspondent aux erreurs serveur."
+        },
+        {
+          "question": "Quelle commande démarre Outlook classique en mode sans échec ?",
+          "answers": [
+            "`outlook.exe /safe`",
+            "`outlook.exe /resetall`",
+            "`scanpst /start`",
+            "`outlook /smtp`"
+          ],
+          "correct": 0,
+          "explanation": "Le paramètre /safe lance Outlook sans les compléments habituels."
+        },
+        {
+          "question": "Quel fichier est généralement une copie locale synchronisée d'une boîte Exchange ?",
+          "answers": [
+            "`.txt`",
+            "`.ost`",
+            "`.pdf`",
+            "`.bat`"
+          ],
+          "correct": 1,
+          "explanation": "OST sert notamment au cache hors connexion."
+        },
+        {
+          "question": "Quelle précaution prendre avant de réparer un fichier PST ?",
+          "answers": [
+            "Le supprimer",
+            "Couper le pare-feu",
+            "En faire une sauvegarde",
+            "Le renommer en OST"
+          ],
+          "correct": 2,
+          "explanation": "Une sauvegarde protège les données en cas d'échec de réparation."
+        },
+        {
+          "question": "Quelle est la structure d'une règle de messagerie ?",
+          "answers": [
+            "Adresse → mot de passe → licence",
+            "Condition → action → exception éventuelle",
+            "Calendrier → contact → pièce jointe",
+            "SMTP → IMAP → POP"
+          ],
+          "correct": 1,
+          "explanation": "Une règle applique une action si une condition est remplie, sauf exception définie."
+        },
+        {
+          "question": "Que permet une réunion Outlook, contrairement à un simple rendez-vous ?",
+          "answers": [
+            "Inviter des participants et réserver éventuellement des ressources",
+            "Réparer le profil",
+            "Installer Office",
+            "Modifier les ports SMTP"
+          ],
+          "correct": 0,
+          "explanation": "Une réunion comporte des invitations et peut inclure des ressources."
+        },
+        {
+          "question": "Quel est le premier test utile si Outlook installé ne reçoit plus les messages ?",
+          "answers": [
+            "Supprimer le profil immédiatement",
+            "Effacer tous les OST",
+            "Vérifier l'accès à la boîte via Outlook sur le web",
+            "Réinstaller Windows"
+          ],
+          "correct": 2,
+          "explanation": "Le webmail aide à distinguer un problème de compte/service d'un problème local."
+        },
+        {
+          "question": "À quoi sert le mode hors connexion dans le diagnostic ?",
+          "answers": [
+            "À envoyer plus vite les mails",
+            "À comparer le comportement avec et sans accès réseau",
+            "À effacer les règles",
+            "À réinitialiser le mot de passe"
+          ],
+          "correct": 1,
+          "explanation": "Cette comparaison aide à identifier une cause réseau ou locale."
+        },
+        {
+          "question": "Quel outil est cité pour réparer certains fichiers de données Outlook ?",
+          "answers": [
+            "DISM",
+            "SCANPST.EXE",
+            "CHKDSK /SMTP",
+            "GPEDIT"
+          ],
+          "correct": 1,
+          "explanation": "SCANPST.EXE est l'outil de réparation de fichiers de données Outlook."
+        },
+        {
+          "question": "Le rappel d'un message envoyé fonctionne-t-il à coup sûr ?",
+          "answers": [
+            "Oui, même si le destinataire l'a lu",
+            "Oui, pour tous les fournisseurs de messagerie",
+            "Non, il dépend de plusieurs conditions",
+            "Oui, si le port 587 est ouvert"
+          ],
+          "correct": 2,
+          "explanation": "Le rappel dépend notamment de l'environnement de messagerie et de l'état du message."
+        },
+        {
+          "question": "Quelle différence existe entre MFA et adresse de récupération ?",
+          "answers": [
+            "Ce sont exactement les mêmes fonctions",
+            "La MFA ajoute une preuve d'identité ; l'adresse de récupération aide à retrouver l'accès",
+            "La MFA sert uniquement à archiver",
+            "L'adresse de récupération chiffre les mails"
+          ],
+          "correct": 1,
+          "explanation": "Ces deux mécanismes ont des rôles de sécurité distincts."
         }
       ]
     }
