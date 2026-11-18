@@ -1,5 +1,37 @@
 window.TSSR_NEWS = [
   {
+    "title": "Windows Server 2028 arrive en préversion : quelles sont les nouveautés ?",
+    "summary": "Windows Server 2028 est en préversion publique : Server Core durci, NVMe natif par défaut, Intune pour les serveurs et IA locale. Voici ce qu'il faut retenir. Le post Windows Server 2028 arrive en préversion : quelles sont les nouveautés ? a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/windows-server-2028-preversion-publique-nouveautes/",
+    "date": "2026-11-18",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Intune : Microsoft ouvre la gestion des machines Windows Server, en préversion",
+    "summary": "Microsoft ouvre l'inscription des serveurs Windows Server dans Intune en préversion : stratégies, mises à jour, accès conditionnel. Voici comment ça marche. Le post Intune : Microsoft ouvre la gestion des machines Windows Server, en préversion a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/intune-gerer-serveurs-windows-server-preversion/",
+    "date": "2026-11-18",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Mettez à jour votre PS5 si vous voulez jouer à GTA 6",
+    "summary": "Sony a annoncé ce mercredi 18 novembre aux propriétaires d'une PS5 qu'il faudra obligatoirement installer une mise à jour du système pour jouer à GTA 6, qui sort le lendemain.",
+    "url": "https://www.numerama.com/tech/2377327-mettez-a-jour-votre-ps5-si-vous-voulez-jouer-a-gta-6.html",
+    "date": "2026-11-18",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Le Flipper One est en précommande à 399 dollars sur Kickstarter",
+    "summary": "Le Flipper One, ordinateur Linux de poche de Flipper Devices, est sur Kickstarter à 399 dollars jusqu'au 17 décembre. Livraison prévue en juillet 2027. Le post Le Flipper One est en précommande à 399 dollars sur Kickstarter a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/flipper-one-kickstarter-399-dollars/",
+    "date": "2026-11-17",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
     "title": "Cyberattaque : Air France, IKEA, HSBC, Zoom… De nombreux sites ont servi du code malveillant à leurs visiteurs",
     "summary": "Un pirate a détourné les scripts Optimizely de 178 organisations, dont Ikea, Transavia, CNN, la BBC et Zoom, pour voler des cartes bancaires et des cryptos. Le post Cyberattaque : Air France, IKEA, HSBC, Zoom… De nombreux sites ont servi du code malveillant à leurs visiteurs a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/optimizely-pirate-scripts-malveillants-cnn-bbc-zoom/",
@@ -168,14 +200,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Voyager 1 atteint un jour-lumière de la Terre : à 26 milliards de km de la Terre, cela aurait pris 28 250 ans en voiture",
-    "summary": "Ce mercredi 18 novembre 2026, la sonde Voyager 1 de la NASA sera à un jour-lumière de la Terre, soit environ 25,9 milliards de kilomètres. Lancée en 1977, elle a mis 49 ans à parcourir la distance que la lumière couvre en 24 heures.",
-    "url": "https://www.numerama.com/sciences/2376733-voyager-1-atteint-un-jour-lumiere-de-la-terre-a-26-milliards-de-km-de-la-terre-cela-aurait-pris-28-250-ans-en-voiture.html",
-    "date": "2026-11-17",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Maileva (La Poste) : les noms et adresses de 22 millions de personnes dérobés lors d’une cyberattaque",
     "summary": "Maileva, filiale de La Poste, confirme le vol des noms et adresses de 22 millions de personnes. Relances, données des clients : voici ce que l'on sait. Le post Maileva (La Poste) : les noms et adresses de 22 millions de personnes dérobés lors d’une cyberattaque a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/maileva-la-poste-fuite-donnees-22-millions-personnes/",
@@ -211,30 +235,6 @@ window.TSSR_NEWS = [
     "title": "GTA 6 : comment 212 Go arrivent sur des millions de consoles sans saturer Internet ?",
     "summary": "GTA 6 pèse jusqu'à 212 Go et sort le 19 novembre. Préchargement, CDN, clé livrée au lancement : voici comment le réseau absorbe des millions de téléchargements. Le post GTA 6 : comment 212 Go arrivent sur des millions de consoles sans saturer Internet ? a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/gta-6-prechargement-cdn-chiffrement/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Bon plan Geekom : les meilleures offres sur les mini-PC avant même le Black Friday",
-    "summary": "Vente flash Geekom : économisez jusqu’à 200€ sur l’IT13 Max et l’A5 Pro jusqu'au 3 décembre 2026. Codes promo exclusifs et livraisons gratuites. Le post Bon plan Geekom : les meilleures offres sur les mini-PC avant même le Black Friday a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/bon-plan-geekom-les-meilleures-offres-sur-les-mini-pc-avant-meme-le-black-friday/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Nextcloud Office Desktop : l’application de bureau basée sur Euro-Office est disponible",
-    "summary": "Nextcloud Office Desktop, l'application de bureau gratuite basée sur Euro-Office, est disponible pour Windows, Linux et macOS. Voici ce qu'il faut retenir. Le post Nextcloud Office Desktop : l’application de bureau basée sur Euro-Office est disponible a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/nextcloud-office-desktop-euro-office-disponible/",
-    "date": "2026-11-16",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Linux 7.4 : pour Linus Torvalds, les correctifs assistés par l’IA sont devenus la norme",
-    "summary": "Dans l'annonce de Linux 7.4-rc2, Linus Torvalds tient les correctifs issus de l'IA pour acquis. Sur BPF, ils arriveraient plus vite que les rapports de bugs. Le post Linux 7.4 : pour Linus Torvalds, les correctifs assistés par l’IA sont devenus la norme a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/linux-7-4-correctifs-ia-norme-torvalds/",
     "date": "2026-11-16",
     "source": "IT-Connect",
     "category": "Infrastructures"
