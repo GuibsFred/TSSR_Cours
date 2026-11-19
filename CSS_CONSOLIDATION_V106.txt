@@ -1,0 +1,7 @@
+TSSR v106 — CSS nettoyés
+
+Les 20 CSS précédemment chargés par index.html ont été fusionnés dans assets/tssr-site.css, en conservant exactement leur ordre de cascade. Les anciennes feuilles actives ont été retirées. Les ressources, scripts, données, contenus et images restent présents.
+
+Ajustements de lecture : colonne de droite ~33 %, commandes 16px, descriptions 14px, points clés 15px, cours 16px, mise en page responsive.
+
+Avant publication : extraire le ZIP, tester index.html localement puis publier via GitHub Desktop. Ne pas déposer le ZIP lui-même sur GitHub.
