@@ -5254,9 +5254,12 @@
         "art": "assets/icons-premium/icon-097.svg"
       },
       "chapter:05:01": {
-        "title": "Caractéristiques générales des systèmes GNU/Linux",
+        "title": "introduction à Linux",
         "order": 1,
-        "displayNumber": "01"
+        "displayNumber": "01",
+        "category": "04 — Utilisation d’une distribution GNU / Linux / Cours",
+        "art": "assets/cours-c-linux.png",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:02": {
         "title": "Syntaxe des commandes",
