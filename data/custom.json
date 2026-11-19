@@ -113,13 +113,20 @@
     },
     {
       "id": "chapter:02:02",
-      "title": "Les unités informatiques",
       "kind": "cours",
+      "title": "Les unités informatiques",
       "category": "02 — Bases des réseaux / Cours",
       "chapter": true,
-      "updatedAt": "2026-10-26T00:54:38.204Z",
-      "html": "",
-      "revisionExtracts": []
+      "readonly": false,
+      "updatedAt": "2026-11-19T22:57:13.684Z",
+      "html": "<h1>Les unités informatiques et les bases de numération — TSSR</h1>\n<p><strong>Support : « Les unités informatiques » (18 pages).</strong> Les explications et exemples suivent le document fourni. Les corrections de calcul sont signalées explicitement. Les commandes Linux complémentaires sont indiquées comme telles et supposent une session root, sans sudo.</p>\n<h2>Objectifs</h2>\n<p>Comprendre les bases 2, 8, 10 et 16 ; convertir des nombres entre ces bases ; utiliser les puissances et les tableaux binaires ; distinguer bits, octets, préfixes décimaux et binaires ; interpréter les débits réseau.</p>\n<h1>1. Les quatre bases de numération</h1>\n<table>\n<thead>\n<tr>\n<th>Base</th>\n<th>Nom</th>\n<th>Symboles autorisés</th>\n<th>Usage informatique</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>2</td>\n<td>Binaire</td>\n<td>0, 1</td>\n<td>Représentation des données, bits, masques réseau</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Octale</td>\n<td>0 à 7</td>\n<td>Permissions Unix/Linux</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Décimale</td>\n<td>0 à 9</td>\n<td>Calculs et nombres usuels</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Hexadécimale</td>\n<td>0 à 9 et A à F</td>\n<td>IPv6, adresses MAC, représentation compacte du binaire</td>\n</tr>\n</tbody></table>\n<p>Un nombre dépend de sa <strong>base</strong>. Ainsi <code>10</code> vaut dix en base 10, deux en base 2, huit en base 8 et seize en base 16. Pour éviter l'ambiguïté, on peut écrire (10)₂, (10)₈, (10)₁₀ ou (10)₁₆.</p>\n<h2>1.1. Valeur de position et puissances</h2>\n<p>Chaque chiffre est multiplié par la puissance de sa base correspondant à sa position, en comptant de <strong>droite à gauche à partir de 0</strong>.</p>\n<p><strong>Décimal :</strong> 325 = 3×10² + 2×10¹ + 5×10⁰ = 300 + 20 + 5.</p>\n<p><strong>Binaire :</strong> 1011₂ = 1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 8 + 0 + 2 + 1 = 11₁₀.</p>\n<p><strong>Octal :</strong> 237₈ = 2×8² + 3×8¹ + 7×8⁰ = 128 + 24 + 7 = 159₁₀.</p>\n<p><strong>Hexadécimal :</strong> 2AF₁₆ = 2×16² + 10×16¹ + 15×16⁰ = 512 + 160 + 15 = 687₁₀.</p>\n<h2>1.2. Les puissances de 2 utiles en TSSR</h2>\n<p>| Puissance | 2⁰ | 2¹ | 2² | 2³ | 2⁴ | 2⁵ | 2⁶ | 2⁷ | 2⁸ | 2⁹ | 2¹⁰ |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| Valeur | 1 | 2 | 4 | 8 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 |</p>\n<p>Un <strong>octet</strong> contient 8 bits. Avec 8 bits non signés, on représente 2⁸ = 256 valeurs, de 0 à 255.</p>\n<h1>2. Convertir le décimal en binaire</h1>\n<h2>2.1. Méthode des divisions successives par 2</h2>\n<p>Diviser par 2, noter le reste (0 ou 1), recommencer avec le quotient entier jusqu'à 0, puis lire les restes <strong>de bas en haut</strong>.</p>\n<p><strong>Exemple : 25₁₀</strong></p>\n<table>\n<thead>\n<tr>\n<th>Division entière</th>\n<th align=\"right\">Quotient</th>\n<th align=\"right\">Reste</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>25 ÷ 2</td>\n<td align=\"right\">12</td>\n<td align=\"right\">1</td>\n</tr>\n<tr>\n<td>12 ÷ 2</td>\n<td align=\"right\">6</td>\n<td align=\"right\">0</td>\n</tr>\n<tr>\n<td>6 ÷ 2</td>\n<td align=\"right\">3</td>\n<td align=\"right\">0</td>\n</tr>\n<tr>\n<td>3 ÷ 2</td>\n<td align=\"right\">1</td>\n<td align=\"right\">1</td>\n</tr>\n<tr>\n<td>1 ÷ 2</td>\n<td align=\"right\">0</td>\n<td align=\"right\">1</td>\n</tr>\n</tbody></table>\n<p>Résultat : <strong>25₁₀ = 11001₂</strong> (sur 8 bits : <code>00011001</code>).</p>\n<h2>2.2. Méthode du tableau et des soustractions</h2>\n<p>Pour un octet, écrire les colonnes <code>128 64 32 16 8 4 2 1</code>. À chaque colonne, si la valeur est inférieure ou égale au reste, écrire 1 et la soustraire ; sinon écrire 0.</p>\n<p><strong>Exemple : 156₁₀</strong></p>\n<table>\n<thead>\n<tr>\n<th>Poids du bit</th>\n<th>128</th>\n<th>64</th>\n<th>32</th>\n<th>16</th>\n<th>8</th>\n<th>4</th>\n<th>2</th>\n<th>1</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Bit</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n</tr>\n</tbody></table>\n<p>Calcul : 156 − 128 = 28 ; 28 &lt; 64 et 28 &lt; 32 ; 28 − 16 = 12 ; 12 − 8 = 4 ; 4 − 4 = 0. Résultat <strong>10011100₂</strong>.</p>\n<p><strong>Correction explicite du support :</strong> la page 16 donne <code>10010100</code>, ce qui vaut <strong>148</strong>, pas 156. Le calcul ci-dessus est la version corrigée ; certaines soustractions et comparaisons intermédiaires des pages 15–16 sont également erronées.</p>\n<h2>2.3. Méthode du tableau et des additions</h2>\n<p>Toujours avec <code>128 64 32 16 8 4 2 1</code>, partir de zéro et ajouter chaque poids <strong>seulement si la somme reste inférieure ou égale au nombre recherché</strong>.</p>\n<p><strong>Exemple : 235₁₀</strong> : 128 (oui) → 192 après +64 (oui) → 224 après +32 (oui) → +16 ferait 240 (non) → 232 après +8 (oui) → +4 ferait 236 (non) → 234 après +2 (oui) → 235 après +1 (oui).</p>\n<table>\n<thead>\n<tr>\n<th>Poids du bit</th>\n<th>128</th>\n<th>64</th>\n<th>32</th>\n<th>16</th>\n<th>8</th>\n<th>4</th>\n<th>2</th>\n<th>1</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Bit</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>0</td>\n<td>1</td>\n<td>0</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody></table>\n<p><strong>235₁₀ = 11101011₂</strong>. Cette méthode est particulièrement pratique pour les exercices d'adressage IPv4.</p>\n<h1>3. Convertir le binaire en décimal</h1>\n<p>Attribuer aux bits les poids 1, 2, 4, 8, 16… depuis la droite, puis additionner les poids dont le bit vaut 1.</p>\n<p><strong>10110₂ = 1×16 + 0×8 + 1×4 + 1×2 + 0×1 = 22₁₀.</strong></p>\n<p><strong>Autre exemple TSSR :</strong> <code>11000000₂ = 128 + 64 = 192₁₀</code>. Un octet du masque <code>255.255.255.192</code> correspond donc à <code>11000000</code> en binaire.</p>\n<h1>4. La base octale (base 8)</h1>\n<p>Chaque chiffre vaut de 0 à 7. Un chiffre octal représente exactement <strong>3 bits</strong> (2³ = 8 possibilités).</p>\n<h2>4.1. Décimal → octal : divisions par 8</h2>\n<p>156 ÷ 8 = 19 reste 4 ; 19 ÷ 8 = 2 reste 3 ; 2 ÷ 8 = 0 reste 2. Lire les restes de bas en haut : <strong>156₁₀ = 234₈</strong>.</p>\n<h2>4.2. Octal → décimal : puissances de 8</h2>\n<p><strong>234₈ = 2×8² + 3×8¹ + 4×8⁰ = 128 + 24 + 4 = 156₁₀.</strong></p>\n<h2>4.3. Binaire ↔ octal : groupes de 3 bits</h2>\n<p><code>110110₂</code> → <code>110 110</code> → <code>6 6</code> → <strong>66₈</strong>. En sens inverse, <code>66₈</code> → <code>110 110₂</code>.</p>\n<h2>4.4. Application Linux : permissions</h2>\n<p>Les permissions se notent souvent en octal : lecture <code>r=4</code>, écriture <code>w=2</code>, exécution <code>x=1</code>. <code>7=4+2+1</code> (rwx), <code>5=4+1</code> (r-x), <code>4</code> (r--). Par exemple <code>755</code> signifie <code>rwxr-xr-x</code>, et <code>644</code> signifie <code>rw-r--r--</code>. Ces commandes sont un complément pratique au support.</p>\n<h1>5. La base hexadécimale (base 16)</h1>\n<p>Les symboles sont <code>0–9</code> et <code>A–F</code> : A=10, B=11, C=12, D=13, E=14, F=15. <strong>Un chiffre hexadécimal correspond à 4 bits</strong>, donc deux chiffres hexadécimaux représentent un octet.</p>\n<h2>5.1. Décimal → hexadécimal : divisions par 16</h2>\n<p>254 ÷ 16 = 15 reste 14 (<code>E</code>) ; 15 ÷ 16 = 0 reste 15 (<code>F</code>). Lire de bas en haut : <strong>254₁₀ = FE₁₆</strong>.</p>\n<h2>5.2. Hexadécimal → décimal : puissances de 16</h2>\n<p><strong>3F₁₆ = 3×16¹ + 15×16⁰ = 48 + 15 = 63₁₀.</strong></p>\n<h2>5.3. Binaire ↔ hexadécimal : groupes de 4 bits</h2>\n<p><code>10101111₂</code> → <code>1010 1111</code> → <code>A F</code> → <strong>AF₁₆</strong>. À l'inverse, <code>AF₁₆</code> → <code>1010 1111₂</code>.</p>\n<h2>5.4. Applications réseau et informatique</h2>\n<ul>\n<li><strong>IPv6</strong> : adresse de 128 bits, représentée par huit groupes de quatre chiffres hexadécimaux, par exemple <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>.</li>\n<li><strong>MAC</strong> : adresse courante de 48 bits représentée par six octets hexadécimaux, par exemple <code>00:1A:2B:3C:4D:5E</code>.</li>\n<li><strong>Couleurs web</strong> : <code>#FF5733</code> représente les composantes rouge (<code>FF</code>), vert (<code>57</code>) et bleu (<code>33</code>).</li>\n</ul>\n<h1>6. Les unités informatiques : bit et octet</h1>\n<ul>\n<li><strong>bit (b)</strong> : chiffre binaire, valant 0 ou 1.</li>\n<li><strong>octet (o), byte (B)</strong> : 8 bits.</li>\n<li>Attention : <strong>Mb</strong> (mégabits) et <strong>Mo</strong> (mégaoctets) ne sont pas la même unité. La casse compte.</li>\n</ul>\n<h2>6.1. Préfixes décimaux (base 10)</h2>\n<table>\n<thead>\n<tr>\n<th>Unité</th>\n<th>Symbole</th>\n<th align=\"right\">Valeur</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>kilooctet</td>\n<td>ko</td>\n<td align=\"right\">1 000 octets</td>\n</tr>\n<tr>\n<td>mégaoctet</td>\n<td>Mo</td>\n<td align=\"right\">1 000 000 octets</td>\n</tr>\n<tr>\n<td>gigaoctet</td>\n<td>Go</td>\n<td align=\"right\">1 000 000 000 octets</td>\n</tr>\n<tr>\n<td>téraoctet</td>\n<td>To</td>\n<td align=\"right\">1 000 000 000 000 octets</td>\n</tr>\n</tbody></table>\n<p>Chaque échelon est multiplié par <strong>1 000</strong>.</p>\n<h2>6.2. Préfixes binaires (base 2)</h2>\n<table>\n<thead>\n<tr>\n<th>Unité</th>\n<th>Symbole</th>\n<th align=\"right\">Valeur</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>kibioctet</td>\n<td>Kio</td>\n<td align=\"right\">1 024 octets</td>\n</tr>\n<tr>\n<td>mébioctet</td>\n<td>Mio</td>\n<td align=\"right\">1 048 576 octets</td>\n</tr>\n<tr>\n<td>gibioctet</td>\n<td>Gio</td>\n<td align=\"right\">1 073 741 824 octets</td>\n</tr>\n<tr>\n<td>tébioctet</td>\n<td>Tio</td>\n<td align=\"right\">1 099 511 627 776 octets</td>\n</tr>\n</tbody></table>\n<p>Chaque échelon est multiplié par <strong>1 024</strong>. Il existe aussi les multiples binaires des <strong>bits</strong> : Kibit, Mibit, Gibit, Tibit.</p>\n<h2>6.3. Pourquoi les capacités affichées diffèrent-elles ?</h2>\n<p>Un fabricant peut annoncer <strong>1 To = 1 000 000 000 000 octets</strong>. Exprimée en Tio, cette capacité vaut environ <strong>0,909 Tio</strong> (soit environ 931 Gio). Ce n'est pas nécessairement une perte de capacité : c'est une différence d'unité. S'ajoutent parfois des espaces réservés aux partitions et systèmes de fichiers.</p>\n<h1>7. Débits réseau : bits par seconde et octets par seconde</h1>\n<p>Le débit est généralement exprimé en <strong>bit/s</strong> (bps), kbit/s, Mbit/s ou Gbit/s. Dans le support, <code>Kbps</code>, <code>Mbps</code>, <code>Gbps</code> désignent les multiples décimaux de 1 000. Les notations normalisées <code>kbit/s</code>, <code>Mbit/s</code>, <code>Gbit/s</code> évitent l'ambiguïté.</p>\n<table>\n<thead>\n<tr>\n<th>Débit</th>\n<th align=\"right\">En bits/s</th>\n<th align=\"right\">Débit théorique en octets/s</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>10 Mbit/s</td>\n<td align=\"right\">10 000 000</td>\n<td align=\"right\">1,25 Mo/s</td>\n</tr>\n<tr>\n<td>100 Mbit/s</td>\n<td align=\"right\">100 000 000</td>\n<td align=\"right\">12,5 Mo/s</td>\n</tr>\n<tr>\n<td>1 Gbit/s</td>\n<td align=\"right\">1 000 000 000</td>\n<td align=\"right\">125 Mo/s</td>\n</tr>\n</tbody></table>\n<p><strong>Pour convertir bits → octets, diviser par 8.</strong> Les débits réellement mesurés sont généralement plus faibles à cause des protocoles, des équipements et des conditions de transmission.</p>\n<h1>8. Commandes Linux utiles (complément pratique TSSR)</h1>\n<p>Le document du formateur présente surtout des méthodes de calcul, <strong>pas de commandes terminal</strong>. Les commandes ci-dessous sont des compléments d'entraînement, à exécuter directement en session <code>root</code> conformément à la convention de tes cours.</p>\n<pre><code class=\"language-bash\">printf '%d\\n' \"$((2#11001))\"\nprintf '%x\\n' 254\nprintf '%o\\n' 156\nprintf '%d\\n' 0x3F\nstat -c '%a %n' /etc/passwd\nls -lh /var/log\nls -l --block-size=1 /etc/passwd\n</code></pre>\n<p><code>printf</code> est une commande shell d'affichage formaté. <code>%d</code> affiche en décimal, <code>%x</code> en hexadécimal et <code>%o</code> en octal. Pour la base 2, l’expansion arithmétique Bash <code>$((2#11001))</code> indique explicitement la base et donne 25.</p>\n<p><code>2#</code> indique la base 2. <code>0x3F</code> est une constante hexadécimale reconnue par Bash. <code>stat -c '%a %n'</code> affiche les permissions octales et le nom. <code>ls -lh</code> affiche des tailles lisibles, souvent en multiples de 1024 ; <code>--block-size=1</code> affiche la taille en octets. <strong>Ces commandes complémentaires ne figurent pas dans le support d'origine.</strong></p>\n<h1>9. Méthode de travail et exercices guidés</h1>\n<p><strong>Exercice A — binaire :</strong> convertir 45 en binaire. 45 = 32 + 8 + 4 + 1 → <code>00101101</code> sur 8 bits.</p>\n<p><strong>Exercice B — hexadécimal :</strong> convertir <code>7B</code> en décimal. 7×16 + 11 = <strong>123</strong>.</p>\n<p><strong>Exercice C — octal :</strong> convertir <code>101101₂</code> en octal. <code>101 101</code> → <strong>55₈</strong>.</p>\n<p><strong>Exercice D — débit :</strong> 80 Mbit/s = 10 Mo/s théoriques.</p>\n<p><strong>Exercice E — unités :</strong> 2 Gio = 2 × 1 073 741 824 = <strong>2 147 483 648 octets</strong>.</p>\n<h1>10. Synthèse</h1>\n<p>En TSSR, maîtriser les <strong>puissances de 2</strong> sert à comprendre les masques IPv4, les capacités mémoire et les unités. La base <strong>8</strong> est utile pour les droits Linux ; la base <strong>16</strong> pour IPv6 et MAC. Toujours distinguer <strong>bit/octet</strong>, <strong>base 10/base 2</strong>, <strong>taille/débit</strong> et <strong>valeur numérique/représentation</strong>.</p>\n",
+      "revisionExtracts": [],
+      "chapterIcon": "🐧",
+      "heroImage": "assets/tssr-banner-network.webp",
+      "essentialsMarkdown": "# À retenir — Bases et unités informatiques\n\n- **Base 2** : chiffres 0 et 1 ; chaque position est une puissance de 2.\n- **Base 8** : chiffres 0 à 7 ; 1 chiffre octal = 3 bits ; permissions Linux `755`, `644`.\n- **Base 10** : chiffres 0 à 9 ; chaque position est une puissance de 10.\n- **Base 16** : chiffres 0 à 9 et A à F ; 1 chiffre hexadécimal = 4 bits ; IPv6 et MAC.\n- **Décimal vers autre base** : divisions successives, lire les restes de bas en haut.\n- **Autre base vers décimal** : somme des chiffres × puissances de la base.\n- **Binaire vers octal/hexadécimal** : groupes de 3 ou 4 bits depuis la droite.\n- **Poids d'un octet** : `128 64 32 16 8 4 2 1`.\n- **1 octet = 8 bits** ; sur 8 bits non signés : 0 à 255.\n- **Décimal** : 1 ko = 1 000 o ; 1 Mo = 1 000 000 o ; 1 Go = 10⁹ o.\n- **Binaire** : 1 Kio = 1 024 o ; 1 Mio = 2²⁰ o ; 1 Gio = 2³⁰ o.\n- **Débit** : 1 Gbit/s = 125 Mo/s théoriques ; bits vers octets = ÷ 8.\n- **Attention au support** : 156₁₀ = **10011100₂** ; la valeur `10010100₂` indiquée dans le document correspond à 148₁₀.\n- **Convention de formation** : les éventuelles commandes Linux sont exécutées en `root`, sans `sudo`.",
+      "commandsMarkdown": "# Commandes essentielles — Bases et unités informatiques\n\n**Le support source n'enseigne aucune commande Linux particulière. Les commandes ci-dessous sont des compléments pratiques TSSR, en session root. Chaque entrée correspond à une commande ou à une variante utile, sans doublon exact.**\n\n`printf '%d\\n' \"$((2#11001))\"` — Convertir `11001` de la base 2 vers la base 10 : affiche `25`. `2#` indique la base binaire et `%d` le format décimal.\n\n`printf '%x\\n' 254` — Afficher 254 en hexadécimal : `fe`. `%x` produit des lettres minuscules ; `%X` produirait `FE`.\n\n`printf '%o\\n' 156` — Afficher 156 en octal : `234`. `%o` désigne le format octal.\n\n`printf '%d\\n' 0x3F` — Convertir la valeur hexadécimale `3F` en décimal : `63`. Le préfixe `0x` indique l'hexadécimal.\n\n`stat -c '%a %n' /etc/passwd` — Afficher les permissions en octal et le nom du fichier. `-c` choisit le format, `%a` affiche les permissions octales, `%n` le nom.\n\n`ls -lh /var/log` — Afficher les fichiers avec des tailles lisibles ; `-l` est le format détaillé, `-h` rend les tailles plus lisibles.\n\n`ls -l --block-size=1 /etc/passwd` — Afficher notamment la taille du fichier en octets ; `--block-size=1` fixe l'unité d'affichage.\n\n**À ne pas confondre :** les conversions par divisions, additions ou soustractions sont des **méthodes mathématiques**, pas des commandes Linux.",
+      "revisionHtml": "<h1>Fiche de révision — Bases de numération et unités</h1>\n<h2>Tableau des bases</h2>\n<table>\n<thead>\n<tr>\n<th>Base</th>\n<th>Symboles</th>\n<th>Équivalence</th>\n<th>Exemple</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>2</td>\n<td>0–1</td>\n<td>1 bit par chiffre</td>\n<td>11001₂ = 25₁₀</td>\n</tr>\n<tr>\n<td>8</td>\n<td>0–7</td>\n<td>3 bits par chiffre</td>\n<td>234₈ = 156₁₀</td>\n</tr>\n<tr>\n<td>10</td>\n<td>0–9</td>\n<td>Nombres usuels</td>\n<td>254₁₀ = FE₁₆</td>\n</tr>\n<tr>\n<td>16</td>\n<td>0–9, A–F</td>\n<td>4 bits par chiffre</td>\n<td>3F₁₆ = 63₁₀</td>\n</tr>\n</tbody></table>\n<h2>Tableau binaire indispensable</h2>\n<table>\n<thead>\n<tr>\n<th>Poids</th>\n<th>128</th>\n<th>64</th>\n<th>32</th>\n<th>16</th>\n<th>8</th>\n<th>4</th>\n<th>2</th>\n<th>1</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>156</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>235</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>0</td>\n<td>1</td>\n<td>0</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody></table>\n<h2>Conversion en 4 réflexes</h2>\n<ol>\n<li><strong>Décimal → base N</strong> : divisions par N, restes lus de bas en haut.</li>\n<li><strong>Base N → décimal</strong> : chiffres × puissances de N, puis addition.</li>\n<li><strong>Binaire → octal</strong> : regrouper par 3 depuis la droite.</li>\n<li><strong>Binaire → hexadécimal</strong> : regrouper par 4 depuis la droite.</li>\n</ol>\n<h2>Puissances à mémoriser</h2>\n<p><code>2⁰=1 ; 2¹=2 ; 2²=4 ; 2³=8 ; 2⁴=16 ; 2⁵=32 ; 2⁶=64 ; 2⁷=128 ; 2⁸=256 ; 2¹⁰=1024</code>.</p>\n<h2>Unités à ne jamais mélanger</h2>\n<table>\n<thead>\n<tr>\n<th>Unité</th>\n<th>Équivalence</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1 o</td>\n<td>8 bits</td>\n</tr>\n<tr>\n<td>1 ko</td>\n<td>1 000 o</td>\n</tr>\n<tr>\n<td>1 Kio</td>\n<td>1 024 o</td>\n</tr>\n<tr>\n<td>1 Mo</td>\n<td>1 000 000 o</td>\n</tr>\n<tr>\n<td>1 Mio</td>\n<td>1 048 576 o</td>\n</tr>\n<tr>\n<td>1 Go</td>\n<td>1 000 000 000 o</td>\n</tr>\n<tr>\n<td>1 Gio</td>\n<td>1 073 741 824 o</td>\n</tr>\n<tr>\n<td>1 Mbit/s</td>\n<td>0,125 Mo/s théoriques</td>\n</tr>\n<tr>\n<td>1 Gbit/s</td>\n<td>125 Mo/s théoriques</td>\n</tr>\n</tbody></table>\n<h2>Exemples flash</h2>\n<ul>\n<li><code>10110₂</code> = 22₁₀.</li>\n<li><code>10101111₂</code> = AF₁₆.</li>\n<li><code>110110₂</code> = 66₈.</li>\n<li><code>254₁₀</code> = FE₁₆.</li>\n<li><code>156₁₀</code> = <strong>10011100₂</strong> (correction de l'erreur du support).</li>\n<li><code>755</code> = <code>rwxr-xr-x</code> ; <code>644</code> = <code>rw-r--r--</code>.</li>\n<li><code>100 Mbit/s</code> = <code>12,5 Mo/s</code> théoriques.</li>\n</ul>\n<h2>Vérification avant l'examen</h2>\n<p>Savoir expliquer la différence entre une <strong>base</strong>, une <strong>unité de stockage</strong> et un <strong>débit</strong> ; justifier chaque bit d'une conversion ; reconnaître la casse <code>b/B</code> et les préfixes <code>Go/Gio</code> ; convertir rapidement un octet avec le tableau des puissances.</p>\n",
+      "rawMarkdown": "=== COURS COMPLET ===\n\n# Les unités informatiques et les bases de numération — TSSR\n\n**Support : « Les unités informatiques » (18 pages).** Les explications et exemples suivent le document fourni. Les corrections de calcul sont signalées explicitement. Les commandes Linux complémentaires sont indiquées comme telles et supposent une session root, sans sudo.\n\n## Objectifs\nComprendre les bases 2, 8, 10 et 16 ; convertir des nombres entre ces bases ; utiliser les puissances et les tableaux binaires ; distinguer bits, octets, préfixes décimaux et binaires ; interpréter les débits réseau.\n\n# 1. Les quatre bases de numération\n\n| Base | Nom | Symboles autorisés | Usage informatique |\n|---|---|---|---|\n| 2 | Binaire | 0, 1 | Représentation des données, bits, masques réseau |\n| 8 | Octale | 0 à 7 | Permissions Unix/Linux |\n| 10 | Décimale | 0 à 9 | Calculs et nombres usuels |\n| 16 | Hexadécimale | 0 à 9 et A à F | IPv6, adresses MAC, représentation compacte du binaire |\n\nUn nombre dépend de sa **base**. Ainsi `10` vaut dix en base 10, deux en base 2, huit en base 8 et seize en base 16. Pour éviter l'ambiguïté, on peut écrire (10)₂, (10)₈, (10)₁₀ ou (10)₁₆.\n\n## 1.1. Valeur de position et puissances\nChaque chiffre est multiplié par la puissance de sa base correspondant à sa position, en comptant de **droite à gauche à partir de 0**.\n\n**Décimal :** 325 = 3×10² + 2×10¹ + 5×10⁰ = 300 + 20 + 5.\n\n**Binaire :** 1011₂ = 1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 8 + 0 + 2 + 1 = 11₁₀.\n\n**Octal :** 237₈ = 2×8² + 3×8¹ + 7×8⁰ = 128 + 24 + 7 = 159₁₀.\n\n**Hexadécimal :** 2AF₁₆ = 2×16² + 10×16¹ + 15×16⁰ = 512 + 160 + 15 = 687₁₀.\n\n## 1.2. Les puissances de 2 utiles en TSSR\n\n| Puissance | 2⁰ | 2¹ | 2² | 2³ | 2⁴ | 2⁵ | 2⁶ | 2⁷ | 2⁸ | 2⁹ | 2¹⁰ |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| Valeur | 1 | 2 | 4 | 8 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 |\n\nUn **octet** contient 8 bits. Avec 8 bits non signés, on représente 2⁸ = 256 valeurs, de 0 à 255.\n\n# 2. Convertir le décimal en binaire\n\n## 2.1. Méthode des divisions successives par 2\nDiviser par 2, noter le reste (0 ou 1), recommencer avec le quotient entier jusqu'à 0, puis lire les restes **de bas en haut**.\n\n**Exemple : 25₁₀**\n\n| Division entière | Quotient | Reste |\n|---|---:|---:|\n| 25 ÷ 2 | 12 | 1 |\n| 12 ÷ 2 | 6 | 0 |\n| 6 ÷ 2 | 3 | 0 |\n| 3 ÷ 2 | 1 | 1 |\n| 1 ÷ 2 | 0 | 1 |\n\nRésultat : **25₁₀ = 11001₂** (sur 8 bits : `00011001`).\n\n## 2.2. Méthode du tableau et des soustractions\nPour un octet, écrire les colonnes `128 64 32 16 8 4 2 1`. À chaque colonne, si la valeur est inférieure ou égale au reste, écrire 1 et la soustraire ; sinon écrire 0.\n\n**Exemple : 156₁₀**\n\n| Poids du bit | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |\n|---|---|---|---|---|---|---|---|---|\n| Bit | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |\n\nCalcul : 156 − 128 = 28 ; 28 < 64 et 28 < 32 ; 28 − 16 = 12 ; 12 − 8 = 4 ; 4 − 4 = 0. Résultat **10011100₂**.\n\n**Correction explicite du support :** la page 16 donne `10010100`, ce qui vaut **148**, pas 156. Le calcul ci-dessus est la version corrigée ; certaines soustractions et comparaisons intermédiaires des pages 15–16 sont également erronées.\n\n## 2.3. Méthode du tableau et des additions\nToujours avec `128 64 32 16 8 4 2 1`, partir de zéro et ajouter chaque poids **seulement si la somme reste inférieure ou égale au nombre recherché**.\n\n**Exemple : 235₁₀** : 128 (oui) → 192 après +64 (oui) → 224 après +32 (oui) → +16 ferait 240 (non) → 232 après +8 (oui) → +4 ferait 236 (non) → 234 après +2 (oui) → 235 après +1 (oui).\n\n| Poids du bit | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |\n|---|---|---|---|---|---|---|---|---|\n| Bit | 1 | 1 | 1 | 0 | 1 | 0 | 1 | 1 |\n\n**235₁₀ = 11101011₂**. Cette méthode est particulièrement pratique pour les exercices d'adressage IPv4.\n\n# 3. Convertir le binaire en décimal\n\nAttribuer aux bits les poids 1, 2, 4, 8, 16… depuis la droite, puis additionner les poids dont le bit vaut 1.\n\n**10110₂ = 1×16 + 0×8 + 1×4 + 1×2 + 0×1 = 22₁₀.**\n\n**Autre exemple TSSR :** `11000000₂ = 128 + 64 = 192₁₀`. Un octet du masque `255.255.255.192` correspond donc à `11000000` en binaire.\n\n# 4. La base octale (base 8)\n\nChaque chiffre vaut de 0 à 7. Un chiffre octal représente exactement **3 bits** (2³ = 8 possibilités).\n\n## 4.1. Décimal → octal : divisions par 8\n156 ÷ 8 = 19 reste 4 ; 19 ÷ 8 = 2 reste 3 ; 2 ÷ 8 = 0 reste 2. Lire les restes de bas en haut : **156₁₀ = 234₈**.\n\n## 4.2. Octal → décimal : puissances de 8\n**234₈ = 2×8² + 3×8¹ + 4×8⁰ = 128 + 24 + 4 = 156₁₀.**\n\n## 4.3. Binaire ↔ octal : groupes de 3 bits\n`110110₂` → `110 110` → `6 6` → **66₈**. En sens inverse, `66₈` → `110 110₂`.\n\n## 4.4. Application Linux : permissions\nLes permissions se notent souvent en octal : lecture `r=4`, écriture `w=2`, exécution `x=1`. `7=4+2+1` (rwx), `5=4+1` (r-x), `4` (r--). Par exemple `755` signifie `rwxr-xr-x`, et `644` signifie `rw-r--r--`. Ces commandes sont un complément pratique au support.\n\n# 5. La base hexadécimale (base 16)\n\nLes symboles sont `0–9` et `A–F` : A=10, B=11, C=12, D=13, E=14, F=15. **Un chiffre hexadécimal correspond à 4 bits**, donc deux chiffres hexadécimaux représentent un octet.\n\n## 5.1. Décimal → hexadécimal : divisions par 16\n254 ÷ 16 = 15 reste 14 (`E`) ; 15 ÷ 16 = 0 reste 15 (`F`). Lire de bas en haut : **254₁₀ = FE₁₆**.\n\n## 5.2. Hexadécimal → décimal : puissances de 16\n**3F₁₆ = 3×16¹ + 15×16⁰ = 48 + 15 = 63₁₀.**\n\n## 5.3. Binaire ↔ hexadécimal : groupes de 4 bits\n`10101111₂` → `1010 1111` → `A F` → **AF₁₆**. À l'inverse, `AF₁₆` → `1010 1111₂`.\n\n## 5.4. Applications réseau et informatique\n- **IPv6** : adresse de 128 bits, représentée par huit groupes de quatre chiffres hexadécimaux, par exemple `2001:0db8:85a3:0000:0000:8a2e:0370:7334`.\n- **MAC** : adresse courante de 48 bits représentée par six octets hexadécimaux, par exemple `00:1A:2B:3C:4D:5E`.\n- **Couleurs web** : `#FF5733` représente les composantes rouge (`FF`), vert (`57`) et bleu (`33`).\n\n# 6. Les unités informatiques : bit et octet\n\n- **bit (b)** : chiffre binaire, valant 0 ou 1.\n- **octet (o), byte (B)** : 8 bits.\n- Attention : **Mb** (mégabits) et **Mo** (mégaoctets) ne sont pas la même unité. La casse compte.\n\n## 6.1. Préfixes décimaux (base 10)\n\n| Unité | Symbole | Valeur |\n|---|---|---:|\n| kilooctet | ko | 1 000 octets |\n| mégaoctet | Mo | 1 000 000 octets |\n| gigaoctet | Go | 1 000 000 000 octets |\n| téraoctet | To | 1 000 000 000 000 octets |\n\nChaque échelon est multiplié par **1 000**.\n\n## 6.2. Préfixes binaires (base 2)\n\n| Unité | Symbole | Valeur |\n|---|---|---:|\n| kibioctet | Kio | 1 024 octets |\n| mébioctet | Mio | 1 048 576 octets |\n| gibioctet | Gio | 1 073 741 824 octets |\n| tébioctet | Tio | 1 099 511 627 776 octets |\n\nChaque échelon est multiplié par **1 024**. Il existe aussi les multiples binaires des **bits** : Kibit, Mibit, Gibit, Tibit.\n\n## 6.3. Pourquoi les capacités affichées diffèrent-elles ?\nUn fabricant peut annoncer **1 To = 1 000 000 000 000 octets**. Exprimée en Tio, cette capacité vaut environ **0,909 Tio** (soit environ 931 Gio). Ce n'est pas nécessairement une perte de capacité : c'est une différence d'unité. S'ajoutent parfois des espaces réservés aux partitions et systèmes de fichiers.\n\n# 7. Débits réseau : bits par seconde et octets par seconde\n\nLe débit est généralement exprimé en **bit/s** (bps), kbit/s, Mbit/s ou Gbit/s. Dans le support, `Kbps`, `Mbps`, `Gbps` désignent les multiples décimaux de 1 000. Les notations normalisées `kbit/s`, `Mbit/s`, `Gbit/s` évitent l'ambiguïté.\n\n| Débit | En bits/s | Débit théorique en octets/s |\n|---|---:|---:|\n| 10 Mbit/s | 10 000 000 | 1,25 Mo/s |\n| 100 Mbit/s | 100 000 000 | 12,5 Mo/s |\n| 1 Gbit/s | 1 000 000 000 | 125 Mo/s |\n\n**Pour convertir bits → octets, diviser par 8.** Les débits réellement mesurés sont généralement plus faibles à cause des protocoles, des équipements et des conditions de transmission.\n\n# 8. Commandes Linux utiles (complément pratique TSSR)\n\nLe document du formateur présente surtout des méthodes de calcul, **pas de commandes terminal**. Les commandes ci-dessous sont des compléments d'entraînement, à exécuter directement en session `root` conformément à la convention de tes cours.\n\n```bash\nprintf '%d\\n' \"$((2#11001))\"\nprintf '%x\\n' 254\nprintf '%o\\n' 156\nprintf '%d\\n' 0x3F\nstat -c '%a %n' /etc/passwd\nls -lh /var/log\nls -l --block-size=1 /etc/passwd\n```\n\n`printf` est une commande shell d'affichage formaté. `%d` affiche en décimal, `%x` en hexadécimal et `%o` en octal. Pour la base 2, l’expansion arithmétique Bash `$((2#11001))` indique explicitement la base et donne 25.\n\n`2#` indique la base 2. `0x3F` est une constante hexadécimale reconnue par Bash. `stat -c '%a %n'` affiche les permissions octales et le nom. `ls -lh` affiche des tailles lisibles, souvent en multiples de 1024 ; `--block-size=1` affiche la taille en octets. **Ces commandes complémentaires ne figurent pas dans le support d'origine.**\n\n# 9. Méthode de travail et exercices guidés\n\n**Exercice A — binaire :** convertir 45 en binaire. 45 = 32 + 8 + 4 + 1 → `00101101` sur 8 bits.\n\n**Exercice B — hexadécimal :** convertir `7B` en décimal. 7×16 + 11 = **123**.\n\n**Exercice C — octal :** convertir `101101₂` en octal. `101 101` → **55₈**.\n\n**Exercice D — débit :** 80 Mbit/s = 10 Mo/s théoriques.\n\n**Exercice E — unités :** 2 Gio = 2 × 1 073 741 824 = **2 147 483 648 octets**.\n\n# 10. Synthèse\n\nEn TSSR, maîtriser les **puissances de 2** sert à comprendre les masques IPv4, les capacités mémoire et les unités. La base **8** est utile pour les droits Linux ; la base **16** pour IPv6 et MAC. Toujours distinguer **bit/octet**, **base 10/base 2**, **taille/débit** et **valeur numérique/représentation**.\n\n=== POINTS ESSENTIELS ===\n\n# À retenir — Bases et unités informatiques\n\n- **Base 2** : chiffres 0 et 1 ; chaque position est une puissance de 2.\n- **Base 8** : chiffres 0 à 7 ; 1 chiffre octal = 3 bits ; permissions Linux `755`, `644`.\n- **Base 10** : chiffres 0 à 9 ; chaque position est une puissance de 10.\n- **Base 16** : chiffres 0 à 9 et A à F ; 1 chiffre hexadécimal = 4 bits ; IPv6 et MAC.\n- **Décimal vers autre base** : divisions successives, lire les restes de bas en haut.\n- **Autre base vers décimal** : somme des chiffres × puissances de la base.\n- **Binaire vers octal/hexadécimal** : groupes de 3 ou 4 bits depuis la droite.\n- **Poids d'un octet** : `128 64 32 16 8 4 2 1`.\n- **1 octet = 8 bits** ; sur 8 bits non signés : 0 à 255.\n- **Décimal** : 1 ko = 1 000 o ; 1 Mo = 1 000 000 o ; 1 Go = 10⁹ o.\n- **Binaire** : 1 Kio = 1 024 o ; 1 Mio = 2²⁰ o ; 1 Gio = 2³⁰ o.\n- **Débit** : 1 Gbit/s = 125 Mo/s théoriques ; bits vers octets = ÷ 8.\n- **Attention au support** : 156₁₀ = **10011100₂** ; la valeur `10010100₂` indiquée dans le document correspond à 148₁₀.\n- **Convention de formation** : les éventuelles commandes Linux sont exécutées en `root`, sans `sudo`.\n\n=== COMMANDES À RETENIR ===\n\n# Commandes essentielles — Bases et unités informatiques\n\n**Le support source n'enseigne aucune commande Linux particulière. Les commandes ci-dessous sont des compléments pratiques TSSR, en session root. Chaque entrée correspond à une commande ou à une variante utile, sans doublon exact.**\n\n`printf '%d\\n' \"$((2#11001))\"` — Convertir `11001` de la base 2 vers la base 10 : affiche `25`. `2#` indique la base binaire et `%d` le format décimal.\n\n`printf '%x\\n' 254` — Afficher 254 en hexadécimal : `fe`. `%x` produit des lettres minuscules ; `%X` produirait `FE`.\n\n`printf '%o\\n' 156` — Afficher 156 en octal : `234`. `%o` désigne le format octal.\n\n`printf '%d\\n' 0x3F` — Convertir la valeur hexadécimale `3F` en décimal : `63`. Le préfixe `0x` indique l'hexadécimal.\n\n`stat -c '%a %n' /etc/passwd` — Afficher les permissions en octal et le nom du fichier. `-c` choisit le format, `%a` affiche les permissions octales, `%n` le nom.\n\n`ls -lh /var/log` — Afficher les fichiers avec des tailles lisibles ; `-l` est le format détaillé, `-h` rend les tailles plus lisibles.\n\n`ls -l --block-size=1 /etc/passwd` — Afficher notamment la taille du fichier en octets ; `--block-size=1` fixe l'unité d'affichage.\n\n**À ne pas confondre :** les conversions par divisions, additions ou soustractions sont des **méthodes mathématiques**, pas des commandes Linux.\n\n=== FICHE DE RÉVISION ===\n\n# Fiche de révision — Bases de numération et unités\n\n## Tableau des bases\n\n| Base | Symboles | Équivalence | Exemple |\n|---|---|---|---|\n| 2 | 0–1 | 1 bit par chiffre | 11001₂ = 25₁₀ |\n| 8 | 0–7 | 3 bits par chiffre | 234₈ = 156₁₀ |\n| 10 | 0–9 | Nombres usuels | 254₁₀ = FE₁₆ |\n| 16 | 0–9, A–F | 4 bits par chiffre | 3F₁₆ = 63₁₀ |\n\n## Tableau binaire indispensable\n\n| Poids | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |\n|---|---|---|---|---|---|---|---|---|\n| 156 | 1 | 0 | 0 | 1 | 1 | 1 | 0 | 0 |\n| 235 | 1 | 1 | 1 | 0 | 1 | 0 | 1 | 1 |\n\n## Conversion en 4 réflexes\n\n1. **Décimal → base N** : divisions par N, restes lus de bas en haut.\n2. **Base N → décimal** : chiffres × puissances de N, puis addition.\n3. **Binaire → octal** : regrouper par 3 depuis la droite.\n4. **Binaire → hexadécimal** : regrouper par 4 depuis la droite.\n\n## Puissances à mémoriser\n\n`2⁰=1 ; 2¹=2 ; 2²=4 ; 2³=8 ; 2⁴=16 ; 2⁵=32 ; 2⁶=64 ; 2⁷=128 ; 2⁸=256 ; 2¹⁰=1024`.\n\n## Unités à ne jamais mélanger\n\n| Unité | Équivalence |\n|---|---|\n| 1 o | 8 bits |\n| 1 ko | 1 000 o |\n| 1 Kio | 1 024 o |\n| 1 Mo | 1 000 000 o |\n| 1 Mio | 1 048 576 o |\n| 1 Go | 1 000 000 000 o |\n| 1 Gio | 1 073 741 824 o |\n| 1 Mbit/s | 0,125 Mo/s théoriques |\n| 1 Gbit/s | 125 Mo/s théoriques |\n\n## Exemples flash\n\n- `10110₂` = 22₁₀.\n- `10101111₂` = AF₁₆.\n- `110110₂` = 66₈.\n- `254₁₀` = FE₁₆.\n- `156₁₀` = **10011100₂** (correction de l'erreur du support).\n- `755` = `rwxr-xr-x` ; `644` = `rw-r--r--`.\n- `100 Mbit/s` = `12,5 Mo/s` théoriques.\n\n## Vérification avant l'examen\n\nSavoir expliquer la différence entre une **base**, une **unité de stockage** et un **débit** ; justifier chaque bit d'une conversion ; reconnaître la casse `b/B` et les préfixes `Go/Gio` ; convertir rapidement un octet avec le tableau des puissances.\n\n=== QCM ===\n\n# QCM — Bases de numération et unités informatiques\n\n**25 questions, une seule bonne réponse par question.**\n\n### Question 1\nQuels chiffres sont autorisés en base 2 ?\nA. 0 et 1\nB. 0 à 7\nC. 0 à 9\nD. 0 à F\n\nRéponse : A\n\n### Question 2\nCombien de bits contient un octet ?\nA. 4\nB. 8\nC. 10\nD. 16\n\nRéponse : B\n\n### Question 3\nQuelle valeur représente 2⁷ ?\nA. 64\nB. 256\nC. 128\nD. 512\n\nRéponse : C\n\n### Question 4\nQue vaut 1011₂ en décimal ?\nA. 9\nB. 10\nC. 12\nD. 11\n\nRéponse : D\n\n### Question 5\nQuelle méthode convertit un décimal en binaire ?\nA. Divisions successives par 2\nB. Multiplications par 10\nC. Divisions par 16\nD. Lecture des bits au hasard\n\nRéponse : A\n\n### Question 6\nQue vaut 25₁₀ en binaire ?\nA. 10101\nB. 11001\nC. 11100\nD. 10011\n\nRéponse : B\n\n### Question 7\nQue vaut 10110₂ en décimal ?\nA. 20\nB. 24\nC. 22\nD. 26\n\nRéponse : C\n\n### Question 8\nQuelle est la représentation correcte de 156₁₀ sur 8 bits ?\nA. 10010100\nB. 10111100\nC. 10011000\nD. 10011100\n\nRéponse : D\n\n### Question 9\nCombien de bits représente un chiffre octal ?\nA. 3\nB. 4\nC. 8\nD. 16\n\nRéponse : A\n\n### Question 10\nQue vaut 156₁₀ en octal ?\nA. 246\nB. 234\nC. 156\nD. 204\n\nRéponse : B\n\n### Question 11\nQue vaut 234₈ en décimal ?\nA. 148\nB. 154\nC. 156\nD. 164\n\nRéponse : C\n\n### Question 12\nQue vaut 110110₂ en octal ?\nA. 55\nB. 76\nC. 44\nD. 66\n\nRéponse : D\n\n### Question 13\nCombien de bits représente un chiffre hexadécimal ?\nA. 4\nB. 3\nC. 8\nD. 16\n\nRéponse : A\n\n### Question 14\nQue vaut F en hexadécimal ?\nA. 14\nB. 15\nC. 16\nD. 10\n\nRéponse : B\n\n### Question 15\nQue vaut 254₁₀ en hexadécimal ?\nA. EF\nB. FF\nC. FE\nD. EE\n\nRéponse : C\n\n### Question 16\nQue vaut 3F₁₆ en décimal ?\nA. 48\nB. 60\nC. 61\nD. 63\n\nRéponse : D\n\n### Question 17\nQuelle représentation est fréquente pour les adresses IPv6 ?\nA. Hexadécimale\nB. Octale\nC. Uniquement décimale\nD. Base 3\n\nRéponse : A\n\n### Question 18\nQue vaut 1 Kio ?\nA. 1000 octets\nB. 1024 octets\nC. 1024 bits\nD. 1000 bits\n\nRéponse : B\n\n### Question 19\nQue vaut 1 Go en notation décimale ?\nA. 1 024 000 octets\nB. 1 073 741 824 octets\nC. 1 000 000 000 octets\nD. 1 000 000 octets\n\nRéponse : C\n\n### Question 20\nQuel est le débit théorique en Mo/s de 1 Gbit/s ?\nA. 8\nB. 1000\nC. 1024\nD. 125\n\nRéponse : D\n\n### Question 21\nQuelle permission octale correspond à rwxr-xr-x ?\nA. 755\nB. 644\nC. 777\nD. 700\n\nRéponse : A\n\n### Question 22\nComment convertir du binaire vers l’hexadécimal ?\nA. Groupes de 3 bits\nB. Groupes de 4 bits depuis la droite\nC. Diviser par 10\nD. Additionner les chiffres\n\nRéponse : B\n\n### Question 23\nDans le tableau 128 64 32 16 8 4 2 1, quel est le poids du bit de gauche ?\nA. 1\nB. 64\nC. 128\nD. 256\n\nRéponse : C\n\n### Question 24\nQuelle notation désigne des mégabits par seconde ?\nA. Mo/s\nB. Mio\nC. Go\nD. Mbit/s\n\nRéponse : D\n\n### Question 25\nQue vaut 235₁₀ en binaire sur 8 bits ?\nA. 11101011\nB. 11101101\nC. 11001011\nD. 11111011\n\nRéponse : A"
     },
     {
       "id": "chapter:03:01",
@@ -4119,6 +4126,289 @@
             "Le LV peut encore nécessiter la création d'un système de fichiers et son montage"
           ],
           "correct": 3,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "id": "quiz-auto-chapter:02:02",
+      "title": "QCM — Les unités informatiques",
+      "category": "02 — Bases des réseaux",
+      "chapterId": "chapter:02:02",
+      "questions": [
+        {
+          "question": "Quels chiffres sont autorisés en base 2 ?",
+          "answers": [
+            "0 et 1",
+            "0 à 7",
+            "0 à 9",
+            "0 à F"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Combien de bits contient un octet ?",
+          "answers": [
+            "4",
+            "8",
+            "10",
+            "16"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle valeur représente 2⁷ ?",
+          "answers": [
+            "64",
+            "256",
+            "128",
+            "512"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 1011₂ en décimal ?",
+          "answers": [
+            "9",
+            "10",
+            "12",
+            "11"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle méthode convertit un décimal en binaire ?",
+          "answers": [
+            "Divisions successives par 2",
+            "Multiplications par 10",
+            "Divisions par 16",
+            "Lecture des bits au hasard"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 25₁₀ en binaire ?",
+          "answers": [
+            "10101",
+            "11001",
+            "11100",
+            "10011"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 10110₂ en décimal ?",
+          "answers": [
+            "20",
+            "24",
+            "22",
+            "26"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle est la représentation correcte de 156₁₀ sur 8 bits ?",
+          "answers": [
+            "10010100",
+            "10111100",
+            "10011000",
+            "10011100"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Combien de bits représente un chiffre octal ?",
+          "answers": [
+            "3",
+            "4",
+            "8",
+            "16"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 156₁₀ en octal ?",
+          "answers": [
+            "246",
+            "234",
+            "156",
+            "204"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 234₈ en décimal ?",
+          "answers": [
+            "148",
+            "154",
+            "156",
+            "164"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 110110₂ en octal ?",
+          "answers": [
+            "55",
+            "76",
+            "44",
+            "66"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Combien de bits représente un chiffre hexadécimal ?",
+          "answers": [
+            "4",
+            "3",
+            "8",
+            "16"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut F en hexadécimal ?",
+          "answers": [
+            "14",
+            "15",
+            "16",
+            "10"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 254₁₀ en hexadécimal ?",
+          "answers": [
+            "EF",
+            "FF",
+            "FE",
+            "EE"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 3F₁₆ en décimal ?",
+          "answers": [
+            "48",
+            "60",
+            "61",
+            "63"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle représentation est fréquente pour les adresses IPv6 ?",
+          "answers": [
+            "Hexadécimale",
+            "Octale",
+            "Uniquement décimale",
+            "Base 3"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 1 Kio ?",
+          "answers": [
+            "1000 octets",
+            "1024 octets",
+            "1024 bits",
+            "1000 bits"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 1 Go en notation décimale ?",
+          "answers": [
+            "1 024 000 octets",
+            "1 073 741 824 octets",
+            "1 000 000 000 octets",
+            "1 000 000 octets"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quel est le débit théorique en Mo/s de 1 Gbit/s ?",
+          "answers": [
+            "8",
+            "1000",
+            "1024",
+            "125"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle permission octale correspond à rwxr-xr-x ?",
+          "answers": [
+            "755",
+            "644",
+            "777",
+            "700"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Comment convertir du binaire vers l’hexadécimal ?",
+          "answers": [
+            "Groupes de 3 bits",
+            "Groupes de 4 bits depuis la droite",
+            "Diviser par 10",
+            "Additionner les chiffres"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Dans le tableau 128 64 32 16 8 4 2 1, quel est le poids du bit de gauche ?",
+          "answers": [
+            "1",
+            "64",
+            "128",
+            "256"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle notation désigne des mégabits par seconde ?",
+          "answers": [
+            "Mo/s",
+            "Mio",
+            "Go",
+            "Mbit/s"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Que vaut 235₁₀ en binaire sur 8 bits ?",
+          "answers": [
+            "11101011",
+            "11101101",
+            "11001011",
+            "11111011"
+          ],
+          "correct": 0,
           "explanation": ""
         }
       ]
