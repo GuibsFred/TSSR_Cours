@@ -266,13 +266,20 @@
     },
     {
       "id": "chapter:02:04",
-      "title": "La communication",
       "kind": "cours",
+      "title": "La communication",
       "category": "02 — Bases des réseaux / Cours",
       "chapter": true,
-      "updatedAt": "2026-11-08T13:27:33.293Z",
-      "html": "",
-      "revisionExtracts": []
+      "readonly": false,
+      "updatedAt": "2026-11-19T23:13:40.114Z",
+      "html": "<h1>Module 10 — Communication réseau : diffusion, routage et sur-réseaux</h1>\n<p><strong>Formation TSSR — Réseaux informatiques | Cours enrichi à partir du support « La communication » (11 pages)</strong></p>\n<h2>Objectifs pédagogiques</h2>\n<p>Comprendre la diffusion Ethernet, distinguer réseau local et réseau distant, suivre un ping et les échanges ARP, interpréter une table de routage, différencier routage statique et dynamique, puis calculer et vérifier une agrégation CIDR (supernetting).</p>\n<h1>1. Le domaine de diffusion (broadcast domain)</h1>\n<h2>1.1. Définition</h2>\n<p>Un <strong>domaine de diffusion</strong> est un ensemble d'interfaces réseau qui reçoivent les trames Ethernet envoyées à l'adresse MAC de diffusion <code>FF:FF:FF:FF:FF:FF</code>. Un équipement envoie un broadcast pour joindre tous les équipements du même domaine, sans connaître une adresse MAC individuelle.</p>\n<p>À distinguer :</p>\n<ul>\n<li><strong>Unicast</strong> : communication vers un seul destinataire.</li>\n<li><strong>Broadcast</strong> : diffusion vers toutes les interfaces d'un domaine de diffusion (en pratique, les équipements concernés reçoivent la trame).</li>\n<li><strong>Multicast</strong> : communication vers un groupe d'abonnés.</li>\n</ul>\n<p>En IPv4, l'adresse de diffusion dirigée d'un sous-réseau a tous les bits hôtes à 1. Exemple : <code>192.168.1.255</code> pour <code>192.168.1.0/24</code>. Attention : cette adresse dépend du masque ; elle n'est pas universelle.</p>\n<h2>1.2. ARP et DHCP : pourquoi diffuser ?</h2>\n<p><strong>ARP (Address Resolution Protocol)</strong> permet, sur un réseau IPv4 Ethernet, de connaître l'adresse MAC correspondant à une adresse IPv4 du réseau local. Une requête « Qui possède 192.168.1.10 ? » est diffusée ; le propriétaire répond normalement en unicast.</p>\n<p><strong>DHCP</strong> peut commencer par un message DHCPDISCOVER diffusé, car un client ne connaît pas encore son serveur DHCP ni sa propre configuration IP. Un relais DHCP peut ensuite transmettre les échanges à un serveur situé dans un autre réseau.</p>\n<h2>1.3. Switch, routeur et VLAN</h2>\n<ul>\n<li><strong>Switch de couche 2</strong> : diffuse les broadcasts sur les ports du même VLAN (sauf le port d'entrée et selon sa configuration).</li>\n<li><strong>VLAN</strong> : sépare logiquement les domaines de diffusion sur un ou plusieurs commutateurs ; deux VLAN distincts ne partagent pas leurs broadcasts.</li>\n<li><strong>Routeur / interface de couche 3</strong> : sépare les domaines de diffusion et permet, si configuré, le trafic entre sous-réseaux. Un routeur ne relaie normalement pas les broadcasts Ethernet d'un réseau vers l'autre.</li>\n</ul>\n<p>Exemple : dix PC sur le VLAN 10 partagent un domaine de diffusion. Cinq autres PC sur le VLAN 20 sont dans un autre domaine, même si les quinze PC sont raccordés au même switch administrable.</p>\n<h2>1.4. Pourquoi segmenter ?</h2>\n<p>Un domaine de diffusion trop étendu multiplie le trafic reçu par les machines. La segmentation en VLAN et sous-réseaux facilite les performances, l'organisation et l'application de règles de sécurité. Un VLAN seul n'est toutefois pas un pare-feu : contrôler les communications inter-VLAN exige des règles adaptées.</p>\n<h1>2. Communication entre deux ordinateurs : le cheminement d'un ping</h1>\n<h2>2.1. Les informations utilisées par le PC</h2>\n<p>Pour communiquer, un poste examine notamment son adresse IP, son masque, sa table de routage, la destination et, si besoin, sa passerelle par défaut. <code>ping</code> utilise ICMP (Echo Request / Echo Reply) pour tester une communication IP ; il ne teste pas directement les ports TCP ou UDP.</p>\n<p><strong>Schéma logique du support (pages 3 à 5)</strong> : deux PC dans le segment 1, deux PC dans le segment 2, avec un routeur entre les deux. Les illustrations suivent les adresses MAC et IP au cours de l'envoi d'un ping.</p>\n<h2>2.2. Même réseau : ARP direct puis ICMP</h2>\n<p>Exemple : poste A <code>192.168.1.10/24</code>, poste B <code>192.168.1.20/24</code>.</p>\n<ol>\n<li>A calcule son réseau : <code>192.168.1.0/24</code> ; B appartient au même réseau.</li>\n<li>A consulte son cache ARP. Si la MAC de B est inconnue, A diffuse une requête ARP pour <code>192.168.1.20</code>.</li>\n<li>B répond avec sa MAC ; A met à jour son cache.</li>\n<li>A envoie une trame Ethernet <strong>à la MAC de B</strong>, contenant un paquet IP de <code>192.168.1.10</code> vers <code>192.168.1.20</code> et une requête ICMP Echo.</li>\n<li>B peut renvoyer un ICMP Echo Reply.</li>\n</ol>\n<p><strong>À retenir :</strong> l'adresse IP sert à identifier la destination logique ; l'adresse MAC sert à acheminer la trame sur le lien local.</p>\n<h2>2.3. Réseaux différents : ARP de la passerelle puis routage</h2>\n<p>Exemple : A <code>192.168.1.10/24</code>, passerelle <code>192.168.1.254</code>, D <code>192.168.2.140/26</code>. Le réseau de D est <code>192.168.2.128/26</code> (adresses 128 à 191).</p>\n<ol>\n<li>A constate que D n'est pas dans <code>192.168.1.0/24</code>.</li>\n<li>A recherche une route vers la destination ; à défaut d'une route plus spécifique, il utilise sa <strong>route par défaut</strong> via <code>192.168.1.254</code>.</li>\n<li>A résout par ARP la <strong>MAC de la passerelle</strong>, et non celle de D.</li>\n<li>A envoie une trame à la MAC du routeur. <strong>L'IP de destination du paquet reste <code>192.168.2.140</code></strong> ; seule l'enveloppe Ethernet vise le prochain saut.</li>\n<li>Le routeur consulte sa table de routage et réémet le paquet sur l'interface de sortie adaptée, avec une nouvelle trame Ethernet. Il résout au besoin la MAC de D par ARP.</li>\n<li>La réponse suit une route de retour, qui doit elle aussi exister.</li>\n</ol>\n<p><strong>Point important :</strong> le routeur retire l'en-tête Ethernet reçu et construit un nouvel en-tête sur le lien suivant. Le TTL IP diminue à chaque routeur. Le routage classique ne change pas les IP source/destination (sauf fonctions particulières telles que NAT).</p>\n<h2>2.4. Si le ping échoue</h2>\n<p>Vérifier dans cet ordre : configuration IP et masque, interface active, passerelle, table de routage, ARP, VLAN, câblage, filtrage ICMP, puis route retour. Un échec de ping ne prouve pas toujours une panne : ICMP peut être bloqué.</p>\n<h1>3. Le routage</h1>\n<h2>3.1. Définition et rôle</h2>\n<p>Le <strong>routage</strong> est le choix d'un chemin pour acheminer les paquets IP vers leur destination, généralement entre plusieurs sous-réseaux. Il relève principalement de la <strong>couche 3 (réseau) du modèle OSI</strong>.</p>\n<p>Un routeur :</p>\n<ul>\n<li>lit l'adresse IP de destination ;</li>\n<li>consulte sa table de routage ;</li>\n<li>sélectionne une interface de sortie et, si nécessaire, un prochain saut (<em>next hop</em>) ;</li>\n<li>transmet le paquet si une route utilisable existe et si les règles le permettent.</li>\n</ul>\n<h2>3.2. La table de routage</h2>\n<p>Une route contient généralement un <strong>préfixe destination</strong>, une <strong>interface de sortie</strong>, éventuellement une <strong>passerelle</strong> et une <strong>métrique</strong>. Les réseaux directement connectés apparaissent aussi dans la table.</p>\n<p>Exemples pédagogiques :</p>\n<table>\n<thead>\n<tr>\n<th>Destination</th>\n<th>Prochain saut</th>\n<th>Interprétation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>192.168.1.0/24</code></td>\n<td>Interface locale</td>\n<td>Réseau directement connecté</td>\n</tr>\n<tr>\n<td><code>10.0.0.0/8</code></td>\n<td><code>192.168.1.254</code></td>\n<td>Réseau distant accessible par ce routeur</td>\n</tr>\n<tr>\n<td><code>0.0.0.0/0</code></td>\n<td><code>192.168.1.254</code></td>\n<td>Route par défaut</td>\n</tr>\n</tbody></table>\n<p><strong>Choix de route :</strong> le routeur privilégie d'abord la route correspondant au <strong>préfixe le plus long</strong> (<em>longest prefix match</em>). Entre plusieurs routes de même préfixe, d'autres critères, notamment la métrique, départagent les routes selon le système.</p>\n<p><strong>Nuance par rapport au support :</strong> s'il n'existe aucune route spécifique, le paquet n'est transmis par une passerelle par défaut <strong>que si une route par défaut est configurée</strong> ; sinon, le routeur ne peut pas l'acheminer.</p>\n<h2>3.3. Routage statique et routage dynamique</h2>\n<p><strong>Statique</strong> : l'administrateur saisit les routes manuellement. Simple et prévisible pour de petits réseaux, mais demande une maintenance en cas de changement.</p>\n<p><strong>Dynamique</strong> : les routeurs échangent des informations via des protocoles tels que RIP, OSPF ou BGP. Les routes peuvent évoluer avec la topologie, au prix d'une configuration et d'une supervision plus complexes. BGP sert notamment au routage entre systèmes autonomes sur Internet.</p>\n<h2>3.4. Exemple du formateur</h2>\n<p>Un PC <code>192.168.1.100/24</code> veut atteindre <code>10.0.0.1</code>. Comme <code>10.0.0.1</code> n'appartient pas à <code>192.168.1.0/24</code>, le PC envoie le paquet à sa passerelle (ex. <code>192.168.1.1</code>). Le routeur cherche une route vers <code>10.0.0.1</code>, éventuellement via <code>10.0.0.0/8</code>, puis transmet au prochain saut. La communication nécessite également un chemin de retour.</p>\n<h1>4. Sur-réseau (supernetting) et CIDR</h1>\n<h2>4.1. Principe</h2>\n<p>Le <strong>supernetting</strong> regroupe plusieurs réseaux contigus en un préfixe plus large afin de réduire le nombre de routes annoncées ou enregistrées. C'est l'opération inverse de la subdivision en sous-réseaux (<em>subnetting</em>).</p>\n<p>Le <strong>CIDR</strong> (Classless Inter-Domain Routing) représente un réseau par une adresse et une longueur de préfixe, par exemple <code>192.168.0.0/22</code>.</p>\n<h2>4.2. Exemple du support : quatre /24 vers un /22</h2>\n<table>\n<thead>\n<tr>\n<th>Réseau initial</th>\n<th>Plage</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>192.168.0.0/24</code></td>\n<td><code>192.168.0.0</code> à <code>192.168.0.255</code></td>\n</tr>\n<tr>\n<td><code>192.168.1.0/24</code></td>\n<td><code>192.168.1.0</code> à <code>192.168.1.255</code></td>\n</tr>\n<tr>\n<td><code>192.168.2.0/24</code></td>\n<td><code>192.168.2.0</code> à <code>192.168.2.255</code></td>\n</tr>\n<tr>\n<td><code>192.168.3.0/24</code></td>\n<td><code>192.168.3.0</code> à <code>192.168.3.255</code></td>\n</tr>\n</tbody></table>\n<p>Ces quatre réseaux sont contigus et correctement alignés. On peut donc les résumer par <strong><code>192.168.0.0/22</code></strong>, masque <strong><code>255.255.252.0</code></strong>, couvrant <strong><code>192.168.0.0</code> à <code>192.168.3.255</code></strong> (1024 adresses au total).</p>\n<p>Calcul : 4 réseaux de 256 adresses = 1024 = 2^10 adresses. Un préfixe IPv4 comporte 32 bits, donc 32 − 10 = <strong>22 bits réseau</strong>.</p>\n<h2>4.3. Vérification binaire</h2>\n<p>Troisième octet :</p>\n<pre><code class=\"language-text\">0 = 00000000\n1 = 00000001\n2 = 00000010\n3 = 00000011\n    ^^^^^^      six premiers bits communs\n</code></pre>\n<p>Les deux premiers octets sont entièrement communs (16 bits), auxquels s'ajoutent les six premiers bits du troisième octet : <strong>16 + 6 = /22</strong>.</p>\n<h2>4.4. Conditions et limites</h2>\n<p>Les plages doivent être <strong>contiguës et alignées</strong> sur la taille du bloc. Par exemple, les réseaux <code>192.168.1.0/24</code> à <code>192.168.4.0/24</code> ne forment pas un bloc unique exact de quatre /24 aligné sur /22.</p>\n<p>L'agrégation réduit la taille des tables de routage et peut améliorer leur lisibilité. Elle ne fusionne pas automatiquement les VLAN, les domaines de diffusion ou les réseaux physiques : <strong>une route résumée est une information de routage</strong>, pas une reconfiguration des machines. Une agrégation trop large peut annoncer des adresses non réellement accessibles et provoquer des erreurs de routage.</p>\n<h1>5. TP guidé : observer avant de modifier</h1>\n<p>Les commandes suivantes s'exécutent dans un <strong>terminal Linux en root</strong> (pas de <code>sudo</code> dans nos cours). Les exemples de configuration utilisent des interfaces fictives : remplacer <code>eth0</code>, les IP et la passerelle par celles de la VM. <strong>Ne pas modifier l'interface de gestion d'une machine distante sans accès de secours.</strong></p>\n<h2>TP A — Diagnostic non destructif</h2>\n<pre><code class=\"language-bash\">ip -br addr\nip route\nip route get 192.168.2.140\nip neigh show\nping -c 4 192.168.1.20\ntracepath 192.168.2.140\n</code></pre>\n<p>Observer les IP et masques, la route par défaut, le prochain saut choisi et les voisins ARP. <code>tracepath</code> peut ne pas être installé : <code>traceroute</code> est une alternative si disponible.</p>\n<h2>TP B — Comprendre ARP</h2>\n<ol>\n<li>Identifier une machine du même réseau.</li>\n<li>Afficher <code>ip neigh show</code>.</li>\n<li>Faire un <code>ping -c 2</code> vers la machine.</li>\n<li>Relire <code>ip neigh show</code> et rechercher la correspondance IP ↔ MAC.</li>\n<li>Refaire l'essai vers une machine d'un autre sous-réseau et constater que le voisin local pertinent est généralement la passerelle.</li>\n</ol>\n<h2>TP C — Observer une route, sans changer le réseau</h2>\n<pre><code class=\"language-bash\">ip route get 10.0.0.1\nip route show\n</code></pre>\n<p>Expliquer si le paquet est destiné à un réseau local ou doit passer par un routeur. Vérifier si une route par défaut existe.</p>\n<h2>TP D — Calculer un supernet</h2>\n<p>Partir des quatre réseaux <code>192.168.0.0/24</code> à <code>192.168.3.0/24</code>. Écrire leurs troisièmes octets en binaire, compter les bits communs et vérifier que le résumé est <code>192.168.0.0/22</code>. Puis expliquer pourquoi <code>192.168.1.0/22</code> n'est pas une adresse de réseau /22 alignée.</p>\n<h1>6. Synthèse du cours</h1>\n<p><strong>Broadcast</strong> : diffusion dans un domaine de couche 2 ; <strong>ARP</strong> : résolution IP→MAC locale ; <strong>VLAN</strong> : séparation des domaines de diffusion ; <strong>passerelle</strong> : prochain saut vers d'autres réseaux ; <strong>routage</strong> : acheminement selon les préfixes de destination ; <strong>supernetting</strong> : regroupement de routes CIDR contiguës et alignées. Un ping entre réseaux implique souvent ARP vers la passerelle, puis routage du paquet IP.</p>\n",
+      "revisionExtracts": [],
+      "chapterIcon": "🐧",
+      "heroImage": "assets/tssr-banner-network.webp",
+      "essentialsMarkdown": "# À retenir — Communication réseau\n\n## Diffusion et VLAN\n- Broadcast Ethernet : `FF:FF:FF:FF:FF:FF` ; en IPv4, adresse de diffusion dépendant du masque.\n- ARP : requête diffusée sur le réseau local pour découvrir une MAC ; réponse généralement unicast.\n- Switch : relaie la diffusion dans le même VLAN ; routeur : sépare les domaines de diffusion.\n- Un VLAN correspond à un domaine de diffusion distinct ; la communication entre VLAN nécessite du routage de couche 3.\n\n## Ping et passerelle\n- Même sous-réseau : ARP de la destination, puis trame Ethernet directement vers sa MAC.\n- Autre sous-réseau : ARP de la passerelle, puis paquet IP vers la destination via le routeur.\n- L'IP de destination reste celle de l'hôte distant ; la MAC de destination change à chaque saut Ethernet.\n- Un ping utilise ICMP ; un échec peut aussi provenir d'un filtrage.\n\n## Routage\n- Couche 3 OSI ; table de routage = préfixe, prochain saut, interface, métrique.\n- Priorité à la route au préfixe le plus long ; `0.0.0.0/0` = route par défaut.\n- Statique : saisie manuelle ; dynamique : protocoles RIP, OSPF, BGP.\n- Sans route utilisable (ni défaut), le routeur ne peut pas transmettre le paquet.\n\n## Supernetting\n- Regrouper des réseaux contigus **et alignés** ; notation CIDR.\n- `192.168.0.0/24` à `192.168.3.0/24` → `192.168.0.0/22`.\n- `/22` = masque `255.255.252.0` ; 1024 adresses, de `.0.0` à `.3.255`.\n- L'agrégation simplifie les routes, **pas** les VLAN ni la topologie physique.\n\n## Convention de formation\n- Les commandes Linux sont exécutées en **root** : pas de `sudo`.\n- Vérifier interface, IP, masque et routes avant toute modification.",
+      "commandsMarkdown": "# Commandes essentielles — Communication, ARP et routage\n\n**Une seule entrée par commande-type, sans doublon. Terminal Linux en root.** Les variantes et options sont décrites dans l'explication plutôt que dupliquées.\n\n## Interfaces et configuration IP\n\n`ip -br addr` — Afficher les interfaces et leurs adresses IP en résumé ; `-br` signifie « brief ». La variante `ip addr show` donne davantage de détails.\n\n`ip link show` — Afficher l'état des interfaces réseau de couche 2 (UP/DOWN, MAC, etc.).\n\n## Routage et diagnostic\n\n`ip route show` — Afficher la table de routage IPv4 ; `ip route` est une forme abrégée équivalente.\n\n`ip route get 192.168.2.140` — Afficher la route et l'interface que Linux choisirait pour atteindre cette destination, sans envoyer de ping.\n\n`ping -c 4 192.168.1.20` — Envoyer quatre requêtes ICMP Echo à un hôte ; `-c` fixe le nombre de requêtes.\n\n`tracepath 192.168.2.140` — Observer le chemin vers une destination si l'outil est installé ; `traceroute` est une alternative, pas un doublon de cette entrée.\n\n## ARP et résolution de voisinage\n\n`ip neigh show` — Afficher le cache de voisinage (ARP pour IPv4, NDP pour IPv6) et les correspondances IP/MAC connues.\n\n## Observer les trames en laboratoire\n\n`tcpdump -ni eth0 'arp or icmp'` — Capturer les trames ARP et paquets ICMP sur `eth0` si `tcpdump` est installé ; `-n` désactive la résolution des noms, `-i` choisit l'interface. À utiliser uniquement sur un réseau autorisé.\n\n## Administration (exemples complémentaires, à ne pas exécuter sans TP dédié)\n\n`ip route add 10.0.0.0/8 via 192.168.1.254` — Ajouter temporairement une route statique IPv4 via la passerelle indiquée ; la passerelle doit être joignable et la configuration adaptée au réseau.\n\n`ip route del 10.0.0.0/8 via 192.168.1.254` — Supprimer la route statique correspondante, si elle existe ; attention aux coupures réseau.\n\n`ip route add default via 192.168.1.254` — Ajouter une route par défaut uniquement si le contexte le nécessite ; risque de perte d'accès en cas d'erreur.\n\n**Important :** `ip` est l'outil Linux de référence présenté ici. Les commandes de configuration sont des compléments pratiques à la théorie du support et non des commandes explicitement données par le formateur dans ce document.",
+      "revisionHtml": "<h1>Fiche de révision — Diffusion, routage et supernetting</h1>\n<h2>1. Trois questions à se poser</h2>\n<ol>\n<li><strong>Même sous-réseau ?</strong> Comparer IP et masque, pas seulement les premiers octets.</li>\n<li><strong>Qui reçoit la trame Ethernet ?</strong> Destination locale = MAC de l'hôte ; destination distante = MAC du prochain saut (passerelle).</li>\n<li><strong>Quelle route ?</strong> Préfixe le plus long, puis critères de départage.</li>\n</ol>\n<h2>2. Schéma de communication</h2>\n<pre><code class=\"language-text\">Même réseau : PC A → [ARP de B] → switch/VLAN → PC B\nRéseau distant : PC A → [ARP passerelle] → routeur → [ARP de B si besoin] → PC B\n                         IP destination finale inchangée pendant le routage normal\n</code></pre>\n<h2>3. Tableau express</h2>\n<table>\n<thead>\n<tr>\n<th>Notion</th>\n<th>Couche / fonction</th>\n<th>À mémoriser</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Broadcast</td>\n<td>Ethernet, couche 2</td>\n<td>MAC FF:FF:FF:FF:FF:FF</td>\n</tr>\n<tr>\n<td>ARP</td>\n<td>Liaison IPv4↔MAC</td>\n<td>Requête diffusée, réponse habituellement unicast</td>\n</tr>\n<tr>\n<td>Switch</td>\n<td>Couche 2</td>\n<td>Diffusion dans un VLAN</td>\n</tr>\n<tr>\n<td>VLAN</td>\n<td>Segmentation L2</td>\n<td>Un domaine de diffusion par VLAN</td>\n</tr>\n<tr>\n<td>Routeur</td>\n<td>Couche 3</td>\n<td>Relie des sous-réseaux</td>\n</tr>\n<tr>\n<td>Passerelle</td>\n<td>Prochain saut</td>\n<td>Utilisée pour réseau distant selon les routes</td>\n</tr>\n<tr>\n<td>ICMP ping</td>\n<td>Diagnostic IP</td>\n<td>Echo Request / Echo Reply</td>\n</tr>\n<tr>\n<td>CIDR</td>\n<td>Préfixe IP</td>\n<td><code>/22</code> = 22 bits réseau</td>\n</tr>\n</tbody></table>\n<h2>4. Exemple d'examen : A vers D</h2>\n<p>A = <code>192.168.1.10/24</code> ; passerelle = <code>192.168.1.254</code> ; D = <code>192.168.2.140/26</code>.</p>\n<ul>\n<li>Réseau A : <code>192.168.1.0/24</code> ; réseau D : <code>192.168.2.128/26</code>.</li>\n<li>Réseaux différents : A envoie à sa passerelle.</li>\n<li>ARP initial : chercher la MAC de <code>192.168.1.254</code>, <strong>pas</strong> de D.</li>\n<li>IP destination du paquet : <code>192.168.2.140</code> ; MAC destination du premier saut : celle du routeur.</li>\n</ul>\n<h2>5. Calcul de supernetting à connaître</h2>\n<pre><code class=\"language-text\">192.168.0.0/24\n192.168.1.0/24\n192.168.2.0/24\n192.168.3.0/24\n----------------\n192.168.0.0/22 = masque 255.255.252.0\nPlage : 192.168.0.0 → 192.168.3.255\n</code></pre>\n<p>Méthode : vérifier contiguïté et alignement ; compter les bits communs ; déduire le préfixe ; contrôler la plage couverte.</p>\n<h2>6. Diagnostic rapide sous Linux root</h2>\n<pre><code class=\"language-bash\">ip -br addr\nip route show\nip route get 192.168.2.140\nip neigh show\nping -c 4 192.168.2.140\n</code></pre>\n<h2>7. Pièges fréquents</h2>\n<ul>\n<li>Croire que deux PC branchés sur le même switch sont nécessairement dans le même VLAN.</li>\n<li>Confondre adresse de diffusion IPv4 et adresse MAC de broadcast.</li>\n<li>Chercher la MAC du PC distant au lieu de celle de la passerelle.</li>\n<li>Croire qu'un routeur transmet les broadcasts Ethernet entre réseaux.</li>\n<li>Croire qu'une route par défaut existe systématiquement.</li>\n<li>Confondre route résumée /22 et fusion physique de quatre réseaux.</li>\n<li>Agréger des plages non contiguës ou non alignées.</li>\n</ul>\n",
+      "rawMarkdown": "=== COURS COMPLET ===\n\n# Module 10 — Communication réseau : diffusion, routage et sur-réseaux\n\n**Formation TSSR — Réseaux informatiques | Cours enrichi à partir du support « La communication » (11 pages)**\n\n## Objectifs pédagogiques\n\nComprendre la diffusion Ethernet, distinguer réseau local et réseau distant, suivre un ping et les échanges ARP, interpréter une table de routage, différencier routage statique et dynamique, puis calculer et vérifier une agrégation CIDR (supernetting).\n\n# 1. Le domaine de diffusion (broadcast domain)\n\n## 1.1. Définition\n\nUn **domaine de diffusion** est un ensemble d'interfaces réseau qui reçoivent les trames Ethernet envoyées à l'adresse MAC de diffusion `FF:FF:FF:FF:FF:FF`. Un équipement envoie un broadcast pour joindre tous les équipements du même domaine, sans connaître une adresse MAC individuelle.\n\nÀ distinguer :\n- **Unicast** : communication vers un seul destinataire.\n- **Broadcast** : diffusion vers toutes les interfaces d'un domaine de diffusion (en pratique, les équipements concernés reçoivent la trame).\n- **Multicast** : communication vers un groupe d'abonnés.\n\nEn IPv4, l'adresse de diffusion dirigée d'un sous-réseau a tous les bits hôtes à 1. Exemple : `192.168.1.255` pour `192.168.1.0/24`. Attention : cette adresse dépend du masque ; elle n'est pas universelle.\n\n## 1.2. ARP et DHCP : pourquoi diffuser ?\n\n**ARP (Address Resolution Protocol)** permet, sur un réseau IPv4 Ethernet, de connaître l'adresse MAC correspondant à une adresse IPv4 du réseau local. Une requête « Qui possède 192.168.1.10 ? » est diffusée ; le propriétaire répond normalement en unicast.\n\n**DHCP** peut commencer par un message DHCPDISCOVER diffusé, car un client ne connaît pas encore son serveur DHCP ni sa propre configuration IP. Un relais DHCP peut ensuite transmettre les échanges à un serveur situé dans un autre réseau.\n\n## 1.3. Switch, routeur et VLAN\n\n- **Switch de couche 2** : diffuse les broadcasts sur les ports du même VLAN (sauf le port d'entrée et selon sa configuration).\n- **VLAN** : sépare logiquement les domaines de diffusion sur un ou plusieurs commutateurs ; deux VLAN distincts ne partagent pas leurs broadcasts.\n- **Routeur / interface de couche 3** : sépare les domaines de diffusion et permet, si configuré, le trafic entre sous-réseaux. Un routeur ne relaie normalement pas les broadcasts Ethernet d'un réseau vers l'autre.\n\nExemple : dix PC sur le VLAN 10 partagent un domaine de diffusion. Cinq autres PC sur le VLAN 20 sont dans un autre domaine, même si les quinze PC sont raccordés au même switch administrable.\n\n## 1.4. Pourquoi segmenter ?\n\nUn domaine de diffusion trop étendu multiplie le trafic reçu par les machines. La segmentation en VLAN et sous-réseaux facilite les performances, l'organisation et l'application de règles de sécurité. Un VLAN seul n'est toutefois pas un pare-feu : contrôler les communications inter-VLAN exige des règles adaptées.\n\n# 2. Communication entre deux ordinateurs : le cheminement d'un ping\n\n## 2.1. Les informations utilisées par le PC\n\nPour communiquer, un poste examine notamment son adresse IP, son masque, sa table de routage, la destination et, si besoin, sa passerelle par défaut. `ping` utilise ICMP (Echo Request / Echo Reply) pour tester une communication IP ; il ne teste pas directement les ports TCP ou UDP.\n\n**Schéma logique du support (pages 3 à 5)** : deux PC dans le segment 1, deux PC dans le segment 2, avec un routeur entre les deux. Les illustrations suivent les adresses MAC et IP au cours de l'envoi d'un ping.\n\n## 2.2. Même réseau : ARP direct puis ICMP\n\nExemple : poste A `192.168.1.10/24`, poste B `192.168.1.20/24`.\n\n1. A calcule son réseau : `192.168.1.0/24` ; B appartient au même réseau.\n2. A consulte son cache ARP. Si la MAC de B est inconnue, A diffuse une requête ARP pour `192.168.1.20`.\n3. B répond avec sa MAC ; A met à jour son cache.\n4. A envoie une trame Ethernet **à la MAC de B**, contenant un paquet IP de `192.168.1.10` vers `192.168.1.20` et une requête ICMP Echo.\n5. B peut renvoyer un ICMP Echo Reply.\n\n**À retenir :** l'adresse IP sert à identifier la destination logique ; l'adresse MAC sert à acheminer la trame sur le lien local.\n\n## 2.3. Réseaux différents : ARP de la passerelle puis routage\n\nExemple : A `192.168.1.10/24`, passerelle `192.168.1.254`, D `192.168.2.140/26`. Le réseau de D est `192.168.2.128/26` (adresses 128 à 191).\n\n1. A constate que D n'est pas dans `192.168.1.0/24`.\n2. A recherche une route vers la destination ; à défaut d'une route plus spécifique, il utilise sa **route par défaut** via `192.168.1.254`.\n3. A résout par ARP la **MAC de la passerelle**, et non celle de D.\n4. A envoie une trame à la MAC du routeur. **L'IP de destination du paquet reste `192.168.2.140`** ; seule l'enveloppe Ethernet vise le prochain saut.\n5. Le routeur consulte sa table de routage et réémet le paquet sur l'interface de sortie adaptée, avec une nouvelle trame Ethernet. Il résout au besoin la MAC de D par ARP.\n6. La réponse suit une route de retour, qui doit elle aussi exister.\n\n**Point important :** le routeur retire l'en-tête Ethernet reçu et construit un nouvel en-tête sur le lien suivant. Le TTL IP diminue à chaque routeur. Le routage classique ne change pas les IP source/destination (sauf fonctions particulières telles que NAT).\n\n## 2.4. Si le ping échoue\n\nVérifier dans cet ordre : configuration IP et masque, interface active, passerelle, table de routage, ARP, VLAN, câblage, filtrage ICMP, puis route retour. Un échec de ping ne prouve pas toujours une panne : ICMP peut être bloqué.\n\n# 3. Le routage\n\n## 3.1. Définition et rôle\n\nLe **routage** est le choix d'un chemin pour acheminer les paquets IP vers leur destination, généralement entre plusieurs sous-réseaux. Il relève principalement de la **couche 3 (réseau) du modèle OSI**.\n\nUn routeur :\n- lit l'adresse IP de destination ;\n- consulte sa table de routage ;\n- sélectionne une interface de sortie et, si nécessaire, un prochain saut (*next hop*) ;\n- transmet le paquet si une route utilisable existe et si les règles le permettent.\n\n## 3.2. La table de routage\n\nUne route contient généralement un **préfixe destination**, une **interface de sortie**, éventuellement une **passerelle** et une **métrique**. Les réseaux directement connectés apparaissent aussi dans la table.\n\nExemples pédagogiques :\n\n| Destination | Prochain saut | Interprétation |\n|---|---|---|\n| `192.168.1.0/24` | Interface locale | Réseau directement connecté |\n| `10.0.0.0/8` | `192.168.1.254` | Réseau distant accessible par ce routeur |\n| `0.0.0.0/0` | `192.168.1.254` | Route par défaut |\n\n**Choix de route :** le routeur privilégie d'abord la route correspondant au **préfixe le plus long** (*longest prefix match*). Entre plusieurs routes de même préfixe, d'autres critères, notamment la métrique, départagent les routes selon le système.\n\n**Nuance par rapport au support :** s'il n'existe aucune route spécifique, le paquet n'est transmis par une passerelle par défaut **que si une route par défaut est configurée** ; sinon, le routeur ne peut pas l'acheminer.\n\n## 3.3. Routage statique et routage dynamique\n\n**Statique** : l'administrateur saisit les routes manuellement. Simple et prévisible pour de petits réseaux, mais demande une maintenance en cas de changement.\n\n**Dynamique** : les routeurs échangent des informations via des protocoles tels que RIP, OSPF ou BGP. Les routes peuvent évoluer avec la topologie, au prix d'une configuration et d'une supervision plus complexes. BGP sert notamment au routage entre systèmes autonomes sur Internet.\n\n## 3.4. Exemple du formateur\n\nUn PC `192.168.1.100/24` veut atteindre `10.0.0.1`. Comme `10.0.0.1` n'appartient pas à `192.168.1.0/24`, le PC envoie le paquet à sa passerelle (ex. `192.168.1.1`). Le routeur cherche une route vers `10.0.0.1`, éventuellement via `10.0.0.0/8`, puis transmet au prochain saut. La communication nécessite également un chemin de retour.\n\n# 4. Sur-réseau (supernetting) et CIDR\n\n## 4.1. Principe\n\nLe **supernetting** regroupe plusieurs réseaux contigus en un préfixe plus large afin de réduire le nombre de routes annoncées ou enregistrées. C'est l'opération inverse de la subdivision en sous-réseaux (*subnetting*).\n\nLe **CIDR** (Classless Inter-Domain Routing) représente un réseau par une adresse et une longueur de préfixe, par exemple `192.168.0.0/22`.\n\n## 4.2. Exemple du support : quatre /24 vers un /22\n\n| Réseau initial | Plage |\n|---|---|\n| `192.168.0.0/24` | `192.168.0.0` à `192.168.0.255` |\n| `192.168.1.0/24` | `192.168.1.0` à `192.168.1.255` |\n| `192.168.2.0/24` | `192.168.2.0` à `192.168.2.255` |\n| `192.168.3.0/24` | `192.168.3.0` à `192.168.3.255` |\n\nCes quatre réseaux sont contigus et correctement alignés. On peut donc les résumer par **`192.168.0.0/22`**, masque **`255.255.252.0`**, couvrant **`192.168.0.0` à `192.168.3.255`** (1024 adresses au total).\n\nCalcul : 4 réseaux de 256 adresses = 1024 = 2^10 adresses. Un préfixe IPv4 comporte 32 bits, donc 32 − 10 = **22 bits réseau**.\n\n## 4.3. Vérification binaire\n\nTroisième octet :\n\n```text\n0 = 00000000\n1 = 00000001\n2 = 00000010\n3 = 00000011\n    ^^^^^^      six premiers bits communs\n```\n\nLes deux premiers octets sont entièrement communs (16 bits), auxquels s'ajoutent les six premiers bits du troisième octet : **16 + 6 = /22**.\n\n## 4.4. Conditions et limites\n\nLes plages doivent être **contiguës et alignées** sur la taille du bloc. Par exemple, les réseaux `192.168.1.0/24` à `192.168.4.0/24` ne forment pas un bloc unique exact de quatre /24 aligné sur /22.\n\nL'agrégation réduit la taille des tables de routage et peut améliorer leur lisibilité. Elle ne fusionne pas automatiquement les VLAN, les domaines de diffusion ou les réseaux physiques : **une route résumée est une information de routage**, pas une reconfiguration des machines. Une agrégation trop large peut annoncer des adresses non réellement accessibles et provoquer des erreurs de routage.\n\n# 5. TP guidé : observer avant de modifier\n\nLes commandes suivantes s'exécutent dans un **terminal Linux en root** (pas de `sudo` dans nos cours). Les exemples de configuration utilisent des interfaces fictives : remplacer `eth0`, les IP et la passerelle par celles de la VM. **Ne pas modifier l'interface de gestion d'une machine distante sans accès de secours.**\n\n## TP A — Diagnostic non destructif\n\n```bash\nip -br addr\nip route\nip route get 192.168.2.140\nip neigh show\nping -c 4 192.168.1.20\ntracepath 192.168.2.140\n```\n\nObserver les IP et masques, la route par défaut, le prochain saut choisi et les voisins ARP. `tracepath` peut ne pas être installé : `traceroute` est une alternative si disponible.\n\n## TP B — Comprendre ARP\n\n1. Identifier une machine du même réseau.\n2. Afficher `ip neigh show`.\n3. Faire un `ping -c 2` vers la machine.\n4. Relire `ip neigh show` et rechercher la correspondance IP ↔ MAC.\n5. Refaire l'essai vers une machine d'un autre sous-réseau et constater que le voisin local pertinent est généralement la passerelle.\n\n## TP C — Observer une route, sans changer le réseau\n\n```bash\nip route get 10.0.0.1\nip route show\n```\n\nExpliquer si le paquet est destiné à un réseau local ou doit passer par un routeur. Vérifier si une route par défaut existe.\n\n## TP D — Calculer un supernet\n\nPartir des quatre réseaux `192.168.0.0/24` à `192.168.3.0/24`. Écrire leurs troisièmes octets en binaire, compter les bits communs et vérifier que le résumé est `192.168.0.0/22`. Puis expliquer pourquoi `192.168.1.0/22` n'est pas une adresse de réseau /22 alignée.\n\n# 6. Synthèse du cours\n\n**Broadcast** : diffusion dans un domaine de couche 2 ; **ARP** : résolution IP→MAC locale ; **VLAN** : séparation des domaines de diffusion ; **passerelle** : prochain saut vers d'autres réseaux ; **routage** : acheminement selon les préfixes de destination ; **supernetting** : regroupement de routes CIDR contiguës et alignées. Un ping entre réseaux implique souvent ARP vers la passerelle, puis routage du paquet IP.\n\n\n=== POINTS ESSENTIELS ===\n\n# À retenir — Communication réseau\n\n## Diffusion et VLAN\n- Broadcast Ethernet : `FF:FF:FF:FF:FF:FF` ; en IPv4, adresse de diffusion dépendant du masque.\n- ARP : requête diffusée sur le réseau local pour découvrir une MAC ; réponse généralement unicast.\n- Switch : relaie la diffusion dans le même VLAN ; routeur : sépare les domaines de diffusion.\n- Un VLAN correspond à un domaine de diffusion distinct ; la communication entre VLAN nécessite du routage de couche 3.\n\n## Ping et passerelle\n- Même sous-réseau : ARP de la destination, puis trame Ethernet directement vers sa MAC.\n- Autre sous-réseau : ARP de la passerelle, puis paquet IP vers la destination via le routeur.\n- L'IP de destination reste celle de l'hôte distant ; la MAC de destination change à chaque saut Ethernet.\n- Un ping utilise ICMP ; un échec peut aussi provenir d'un filtrage.\n\n## Routage\n- Couche 3 OSI ; table de routage = préfixe, prochain saut, interface, métrique.\n- Priorité à la route au préfixe le plus long ; `0.0.0.0/0` = route par défaut.\n- Statique : saisie manuelle ; dynamique : protocoles RIP, OSPF, BGP.\n- Sans route utilisable (ni défaut), le routeur ne peut pas transmettre le paquet.\n\n## Supernetting\n- Regrouper des réseaux contigus **et alignés** ; notation CIDR.\n- `192.168.0.0/24` à `192.168.3.0/24` → `192.168.0.0/22`.\n- `/22` = masque `255.255.252.0` ; 1024 adresses, de `.0.0` à `.3.255`.\n- L'agrégation simplifie les routes, **pas** les VLAN ni la topologie physique.\n\n## Convention de formation\n- Les commandes Linux sont exécutées en **root** : pas de `sudo`.\n- Vérifier interface, IP, masque et routes avant toute modification.\n\n\n=== COMMANDES À RETENIR ===\n\n# Commandes essentielles — Communication, ARP et routage\n\n**Une seule entrée par commande-type, sans doublon. Terminal Linux en root.** Les variantes et options sont décrites dans l'explication plutôt que dupliquées.\n\n## Interfaces et configuration IP\n\n`ip -br addr` — Afficher les interfaces et leurs adresses IP en résumé ; `-br` signifie « brief ». La variante `ip addr show` donne davantage de détails.\n\n`ip link show` — Afficher l'état des interfaces réseau de couche 2 (UP/DOWN, MAC, etc.).\n\n## Routage et diagnostic\n\n`ip route show` — Afficher la table de routage IPv4 ; `ip route` est une forme abrégée équivalente.\n\n`ip route get 192.168.2.140` — Afficher la route et l'interface que Linux choisirait pour atteindre cette destination, sans envoyer de ping.\n\n`ping -c 4 192.168.1.20` — Envoyer quatre requêtes ICMP Echo à un hôte ; `-c` fixe le nombre de requêtes.\n\n`tracepath 192.168.2.140` — Observer le chemin vers une destination si l'outil est installé ; `traceroute` est une alternative, pas un doublon de cette entrée.\n\n## ARP et résolution de voisinage\n\n`ip neigh show` — Afficher le cache de voisinage (ARP pour IPv4, NDP pour IPv6) et les correspondances IP/MAC connues.\n\n## Observer les trames en laboratoire\n\n`tcpdump -ni eth0 'arp or icmp'` — Capturer les trames ARP et paquets ICMP sur `eth0` si `tcpdump` est installé ; `-n` désactive la résolution des noms, `-i` choisit l'interface. À utiliser uniquement sur un réseau autorisé.\n\n## Administration (exemples complémentaires, à ne pas exécuter sans TP dédié)\n\n`ip route add 10.0.0.0/8 via 192.168.1.254` — Ajouter temporairement une route statique IPv4 via la passerelle indiquée ; la passerelle doit être joignable et la configuration adaptée au réseau.\n\n`ip route del 10.0.0.0/8 via 192.168.1.254` — Supprimer la route statique correspondante, si elle existe ; attention aux coupures réseau.\n\n`ip route add default via 192.168.1.254` — Ajouter une route par défaut uniquement si le contexte le nécessite ; risque de perte d'accès en cas d'erreur.\n\n**Important :** `ip` est l'outil Linux de référence présenté ici. Les commandes de configuration sont des compléments pratiques à la théorie du support et non des commandes explicitement données par le formateur dans ce document.\n\n\n=== FICHE DE RÉVISION ===\n\n# Fiche de révision — Diffusion, routage et supernetting\n\n## 1. Trois questions à se poser\n\n1. **Même sous-réseau ?** Comparer IP et masque, pas seulement les premiers octets.\n2. **Qui reçoit la trame Ethernet ?** Destination locale = MAC de l'hôte ; destination distante = MAC du prochain saut (passerelle).\n3. **Quelle route ?** Préfixe le plus long, puis critères de départage.\n\n## 2. Schéma de communication\n\n```text\nMême réseau : PC A → [ARP de B] → switch/VLAN → PC B\nRéseau distant : PC A → [ARP passerelle] → routeur → [ARP de B si besoin] → PC B\n                         IP destination finale inchangée pendant le routage normal\n```\n\n## 3. Tableau express\n\n| Notion | Couche / fonction | À mémoriser |\n|---|---|---|\n| Broadcast | Ethernet, couche 2 | MAC FF:FF:FF:FF:FF:FF |\n| ARP | Liaison IPv4↔MAC | Requête diffusée, réponse habituellement unicast |\n| Switch | Couche 2 | Diffusion dans un VLAN |\n| VLAN | Segmentation L2 | Un domaine de diffusion par VLAN |\n| Routeur | Couche 3 | Relie des sous-réseaux |\n| Passerelle | Prochain saut | Utilisée pour réseau distant selon les routes |\n| ICMP ping | Diagnostic IP | Echo Request / Echo Reply |\n| CIDR | Préfixe IP | `/22` = 22 bits réseau |\n\n## 4. Exemple d'examen : A vers D\n\nA = `192.168.1.10/24` ; passerelle = `192.168.1.254` ; D = `192.168.2.140/26`.\n\n- Réseau A : `192.168.1.0/24` ; réseau D : `192.168.2.128/26`.\n- Réseaux différents : A envoie à sa passerelle.\n- ARP initial : chercher la MAC de `192.168.1.254`, **pas** de D.\n- IP destination du paquet : `192.168.2.140` ; MAC destination du premier saut : celle du routeur.\n\n## 5. Calcul de supernetting à connaître\n\n```text\n192.168.0.0/24\n192.168.1.0/24\n192.168.2.0/24\n192.168.3.0/24\n----------------\n192.168.0.0/22 = masque 255.255.252.0\nPlage : 192.168.0.0 → 192.168.3.255\n```\n\nMéthode : vérifier contiguïté et alignement ; compter les bits communs ; déduire le préfixe ; contrôler la plage couverte.\n\n## 6. Diagnostic rapide sous Linux root\n\n```bash\nip -br addr\nip route show\nip route get 192.168.2.140\nip neigh show\nping -c 4 192.168.2.140\n```\n\n## 7. Pièges fréquents\n\n- Croire que deux PC branchés sur le même switch sont nécessairement dans le même VLAN.\n- Confondre adresse de diffusion IPv4 et adresse MAC de broadcast.\n- Chercher la MAC du PC distant au lieu de celle de la passerelle.\n- Croire qu'un routeur transmet les broadcasts Ethernet entre réseaux.\n- Croire qu'une route par défaut existe systématiquement.\n- Confondre route résumée /22 et fusion physique de quatre réseaux.\n- Agréger des plages non contiguës ou non alignées.\n\n\n=== QCM ===\n\n# QCM — Communication, broadcast, routage et supernetting\n\n**30 questions — une seule bonne réponse.**\n\n### Question 1\nQue désigne un domaine de diffusion ?\nA. Un ensemble d’interfaces recevant les trames broadcast du même domaine L2\nB. Tous les réseaux Internet\nC. Une table de routage\nD. Un serveur DNS\n\nRéponse : A\n\n### Question 2\nQuelle MAC représente un broadcast Ethernet ?\nA. 00:00:00:00:00:00\nB. FF:FF:FF:FF:FF:FF\nC. 255.255.255.255\nD. 192.168.1.255\n\nRéponse : B\n\n### Question 3\nQuelle est l’adresse de broadcast de 192.168.1.0/24 ?\nA. 192.168.1.0\nB. 192.168.0.255\nC. 192.168.1.255\nD. 192.168.255.255\n\nRéponse : C\n\n### Question 4\nQuel protocole résout une IPv4 locale en adresse MAC ?\nA. DNS\nB. ARP\nC. OSPF\nD. HTTP\n\nRéponse : B\n\n### Question 5\nUne requête ARP Ethernet IPv4 classique est généralement…\nA. diffusée dans le VLAN\nB. envoyée à tous les routeurs Internet\nC. un paquet TCP\nD. toujours chiffrée\n\nRéponse : A\n\n### Question 6\nQuel équipement délimite normalement les broadcasts entre réseaux ?\nA. Hub\nB. Câble\nC. Routeur\nD. Répéteur\n\nRéponse : C\n\n### Question 7\nDeux VLAN distincts sur un même switch forment…\nA. un seul domaine de diffusion\nB. deux domaines de diffusion\nC. un seul sous-réseau obligatoire\nD. un réseau sans adresse IP\n\nRéponse : B\n\n### Question 8\nLe routage IP opère principalement à quelle couche OSI ?\nA. 1\nB. 2\nC. 3\nD. 7\n\nRéponse : C\n\n### Question 9\nÀ quoi sert une passerelle par défaut ?\nA. À remplacer le masque\nB. À joindre les destinations sans route plus spécifique\nC. À attribuer une MAC\nD. À formater un disque\n\nRéponse : B\n\n### Question 10\nA=192.168.1.10/24 et B=192.168.1.20/24 : A résout en ARP…\nA. la MAC de B\nB. la MAC du serveur DNS distant\nC. la MAC d’un routeur Internet\nD. aucune adresse\n\nRéponse : A\n\n### Question 11\nA=192.168.1.10/24 et D=192.168.2.140/26 : A résout d’abord en ARP…\nA. la MAC de D à travers Internet\nB. la MAC de la passerelle locale\nC. l’adresse IP de D\nD. le masque de D\n\nRéponse : B\n\n### Question 12\nDans un routage IP classique sans NAT, l’IP de destination…\nA. change à chaque switch\nB. devient l’IP du routeur\nC. reste l’IP de l’hôte final\nD. devient une MAC\n\nRéponse : C\n\n### Question 13\nQu’est-ce qui change sur chaque lien Ethernet lors du routage ?\nA. Le préfixe CIDR de destination\nB. Les adresses MAC de la trame\nC. La taille de la RAM\nD. Le protocole applicatif\n\nRéponse : B\n\n### Question 14\nQuel protocole utilise la commande ping ?\nA. ICMP\nB. FTP\nC. SMTP\nD. SSH\n\nRéponse : A\n\n### Question 15\nQuelle commande Linux affiche les routes IPv4 ?\nA. lsblk\nB. ip route show\nC. pwd\nD. cat /etc/passwd\n\nRéponse : B\n\n### Question 16\nQuelle commande affiche les voisins ARP/NDP connus ?\nA. ip neigh show\nB. ip route add\nC. mkdir\nD. df -h\n\nRéponse : A\n\n### Question 17\nQuelle route est la route IPv4 par défaut ?\nA. 192.168.1.0/24\nB. 127.0.0.1/8\nC. 0.0.0.0/0\nD. 255.255.255.255/32\n\nRéponse : C\n\n### Question 18\nEntre deux routes compatibles, quelle règle est prioritaire ?\nA. Le plus petit numéro de carte\nB. Le préfixe le plus long\nC. L’ordre alphabétique\nD. La MAC la plus courte\n\nRéponse : B\n\n### Question 19\nUne route statique est…\nA. saisie manuellement\nB. toujours créée par BGP\nC. une diffusion ARP\nD. un VLAN\n\nRéponse : A\n\n### Question 20\nLequel est un protocole de routage dynamique ?\nA. ARP\nB. DHCP\nC. OSPF\nD. ICMP Echo\n\nRéponse : C\n\n### Question 21\nQuel est l’objectif du supernetting ?\nA. Augmenter les broadcasts\nB. Résumer plusieurs routes contiguës\nC. Créer un disque virtuel\nD. Modifier les MAC\n\nRéponse : B\n\n### Question 22\nQuel résumé couvre 192.168.0.0/24 à 192.168.3.0/24 ?\nA. 192.168.0.0/22\nB. 192.168.0.0/26\nC. 192.168.1.0/24\nD. 192.168.0.0/30\n\nRéponse : A\n\n### Question 23\nQuel masque correspond à /22 ?\nA. 255.255.255.0\nB. 255.255.0.0\nC. 255.255.252.0\nD. 255.255.255.252\n\nRéponse : C\n\n### Question 24\nCombien d’adresses IPv4 contient un bloc /22 ?\nA. 256\nB. 512\nC. 1024\nD. 2048\n\nRéponse : C\n\n### Question 25\nQuelle condition est nécessaire à une agrégation exacte ?\nA. Réseaux contigus et alignés\nB. Réseaux dans des VLAN identiques\nC. Tous les hôtes en DHCP\nD. Même adresse MAC\n\nRéponse : A\n\n### Question 26\nQue provoque une agrégation CIDR dans la table de routage ?\nA. Une fusion automatique des VLAN\nB. Une route résumée pour plusieurs préfixes\nC. Une désactivation d’ARP\nD. Une suppression de la passerelle\n\nRéponse : B\n\n### Question 27\nQuelle commande montre la route sélectionnée vers une IP ?\nA. ip route get 10.0.0.1\nB. ip link set down\nC. rm -rf /\nD. passwd\n\nRéponse : A\n\n### Question 28\nUn ping qui échoue signifie nécessairement…\nA. que le disque est plein\nB. que le réseau est physiquement coupé\nC. que le service ICMP peut être bloqué ou le chemin indisponible\nD. que le VLAN est supprimé\n\nRéponse : C\n\n### Question 29\nSans route correspondante et sans route par défaut, le routeur…\nA. transmet toujours au DNS\nB. ne peut pas acheminer le paquet vers la destination\nC. diffuse le paquet sur Internet\nD. crée automatiquement un tunnel\n\nRéponse : B\n\n### Question 30\nLa réduction du nombre de routes par supernetting…\nA. fusionne physiquement les LAN\nB. change les adresses MAC\nC. ne fusionne pas automatiquement les domaines de diffusion\nD. supprime les masques\n\nRéponse : C"
     },
     {
       "id": "chapter:02:05",
@@ -4409,6 +4416,344 @@
             "11111011"
           ],
           "correct": 0,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "id": "quiz-auto-chapter:02:04",
+      "title": "QCM — La communication",
+      "category": "02 — Bases des réseaux",
+      "chapterId": "chapter:02:04",
+      "questions": [
+        {
+          "question": "Que désigne un domaine de diffusion ?",
+          "answers": [
+            "Un ensemble d’interfaces recevant les trames broadcast du même domaine L2",
+            "Tous les réseaux Internet",
+            "Une table de routage",
+            "Un serveur DNS"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle MAC représente un broadcast Ethernet ?",
+          "answers": [
+            "00:00:00:00:00:00",
+            "FF:FF:FF:FF:FF:FF",
+            "255.255.255.255",
+            "192.168.1.255"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle est l’adresse de broadcast de 192.168.1.0/24 ?",
+          "answers": [
+            "192.168.1.0",
+            "192.168.0.255",
+            "192.168.1.255",
+            "192.168.255.255"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quel protocole résout une IPv4 locale en adresse MAC ?",
+          "answers": [
+            "DNS",
+            "ARP",
+            "OSPF",
+            "HTTP"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Une requête ARP Ethernet IPv4 classique est généralement…",
+          "answers": [
+            "diffusée dans le VLAN",
+            "envoyée à tous les routeurs Internet",
+            "un paquet TCP",
+            "toujours chiffrée"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel équipement délimite normalement les broadcasts entre réseaux ?",
+          "answers": [
+            "Hub",
+            "Câble",
+            "Routeur",
+            "Répéteur"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Deux VLAN distincts sur un même switch forment…",
+          "answers": [
+            "un seul domaine de diffusion",
+            "deux domaines de diffusion",
+            "un seul sous-réseau obligatoire",
+            "un réseau sans adresse IP"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Le routage IP opère principalement à quelle couche OSI ?",
+          "answers": [
+            "1",
+            "2",
+            "3",
+            "7"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "À quoi sert une passerelle par défaut ?",
+          "answers": [
+            "À remplacer le masque",
+            "À joindre les destinations sans route plus spécifique",
+            "À attribuer une MAC",
+            "À formater un disque"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "A=192.168.1.10/24 et B=192.168.1.20/24 : A résout en ARP…",
+          "answers": [
+            "la MAC de B",
+            "la MAC du serveur DNS distant",
+            "la MAC d’un routeur Internet",
+            "aucune adresse"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "A=192.168.1.10/24 et D=192.168.2.140/26 : A résout d’abord en ARP…",
+          "answers": [
+            "la MAC de D à travers Internet",
+            "la MAC de la passerelle locale",
+            "l’adresse IP de D",
+            "le masque de D"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Dans un routage IP classique sans NAT, l’IP de destination…",
+          "answers": [
+            "change à chaque switch",
+            "devient l’IP du routeur",
+            "reste l’IP de l’hôte final",
+            "devient une MAC"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Qu’est-ce qui change sur chaque lien Ethernet lors du routage ?",
+          "answers": [
+            "Le préfixe CIDR de destination",
+            "Les adresses MAC de la trame",
+            "La taille de la RAM",
+            "Le protocole applicatif"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quel protocole utilise la commande ping ?",
+          "answers": [
+            "ICMP",
+            "FTP",
+            "SMTP",
+            "SSH"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande Linux affiche les routes IPv4 ?",
+          "answers": [
+            "lsblk",
+            "ip route show",
+            "pwd",
+            "cat /etc/passwd"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande affiche les voisins ARP/NDP connus ?",
+          "answers": [
+            "ip neigh show",
+            "ip route add",
+            "mkdir",
+            "df -h"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle route est la route IPv4 par défaut ?",
+          "answers": [
+            "192.168.1.0/24",
+            "127.0.0.1/8",
+            "0.0.0.0/0",
+            "255.255.255.255/32"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Entre deux routes compatibles, quelle règle est prioritaire ?",
+          "answers": [
+            "Le plus petit numéro de carte",
+            "Le préfixe le plus long",
+            "L’ordre alphabétique",
+            "La MAC la plus courte"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Une route statique est…",
+          "answers": [
+            "saisie manuellement",
+            "toujours créée par BGP",
+            "une diffusion ARP",
+            "un VLAN"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Lequel est un protocole de routage dynamique ?",
+          "answers": [
+            "ARP",
+            "DHCP",
+            "OSPF",
+            "ICMP Echo"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quel est l’objectif du supernetting ?",
+          "answers": [
+            "Augmenter les broadcasts",
+            "Résumer plusieurs routes contiguës",
+            "Créer un disque virtuel",
+            "Modifier les MAC"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quel résumé couvre 192.168.0.0/24 à 192.168.3.0/24 ?",
+          "answers": [
+            "192.168.0.0/22",
+            "192.168.0.0/26",
+            "192.168.1.0/24",
+            "192.168.0.0/30"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel masque correspond à /22 ?",
+          "answers": [
+            "255.255.255.0",
+            "255.255.0.0",
+            "255.255.252.0",
+            "255.255.255.252"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Combien d’adresses IPv4 contient un bloc /22 ?",
+          "answers": [
+            "256",
+            "512",
+            "1024",
+            "2048"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle condition est nécessaire à une agrégation exacte ?",
+          "answers": [
+            "Réseaux contigus et alignés",
+            "Réseaux dans des VLAN identiques",
+            "Tous les hôtes en DHCP",
+            "Même adresse MAC"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que provoque une agrégation CIDR dans la table de routage ?",
+          "answers": [
+            "Une fusion automatique des VLAN",
+            "Une route résumée pour plusieurs préfixes",
+            "Une désactivation d’ARP",
+            "Une suppression de la passerelle"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande montre la route sélectionnée vers une IP ?",
+          "answers": [
+            "ip route get 10.0.0.1",
+            "ip link set down",
+            "rm -rf /",
+            "passwd"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Un ping qui échoue signifie nécessairement…",
+          "answers": [
+            "que le disque est plein",
+            "que le réseau est physiquement coupé",
+            "que le service ICMP peut être bloqué ou le chemin indisponible",
+            "que le VLAN est supprimé"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Sans route correspondante et sans route par défaut, le routeur…",
+          "answers": [
+            "transmet toujours au DNS",
+            "ne peut pas acheminer le paquet vers la destination",
+            "diffuse le paquet sur Internet",
+            "crée automatiquement un tunnel"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "La réduction du nombre de routes par supernetting…",
+          "answers": [
+            "fusionne physiquement les LAN",
+            "change les adresses MAC",
+            "ne fusionne pas automatiquement les domaines de diffusion",
+            "supprime les masques"
+          ],
+          "correct": 2,
           "explanation": ""
         }
       ]
