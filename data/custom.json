@@ -5262,9 +5262,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:02": {
-        "title": "Syntaxe des commandes",
+        "title": "Découverte du système d'exploitation Linux",
         "order": 2,
-        "displayNumber": "02"
+        "displayNumber": "02",
+        "category": "04 — Utilisation d’une distribution GNU / Linux / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:03": {
         "title": "Connexion à un terminal",
