@@ -1,5 +1,29 @@
 window.TSSR_NEWS = [
   {
+    "title": "Panne Microsoft 365 du 12 novembre 2026 : comment bénéficier d’un crédit de service ?",
+    "summary": "Panne Microsoft 365 du 12 novembre : le crédit SLA n'est pas automatique. Calcul, infos à fournir et démarche pour client direct ou CSP : agissez maintenant. Le post Panne Microsoft 365 du 12 novembre 2026 : comment bénéficier d’un crédit de service ? a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/panne-microsoft-365-credit-sla/",
+    "date": "2026-11-19",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "PHP va corriger au moins une faille critique ce jeudi : préparez-vous à mettre à jour PHP 8.2 à 8.5",
+    "summary": "Ce 19 novembre 2026, au moins une faille de sécurité critique sera corrigée dans les branches 8.2 à 8.5 de PHP, et sans doute la CVE-2026-115560. Le post PHP va corriger au moins une faille critique ce jeudi : préparez-vous à mettre à jour PHP 8.2 à 8.5 a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/mise-a-jour-php-faille-critique-19-novembre-2026/",
+    "date": "2026-11-19",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Dossier mobile et accoudoirs articulés : ce que propose cette chaise Sihoo à 385,39 euros pour le Black Friday [Sponso]",
+    "summary": "Cet article a été réalisé en collaboration avec Sihoo Un dossier mobile, un soutien lombaire réglable et des accoudoirs articulés : la Sihoo Doro C300 Pro V2 est conçue pour accompagner les changements de position au bureau. Pour le Black Friday, sa version noire sans repose-pieds passe à 385,39 euros avec le code SihooNM.",
+    "url": "https://www.numerama.com/tech/2366343-dossier-mobile-et-accoudoirs-articules-ce-que-propose-cette-chaise-sihoo-a-38539-euros-pour-le-black-friday.html",
+    "date": "2026-11-19",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "NGINX2Root : deux failles critiques permettent de prendre le contrôle d’un serveur NGINX",
     "summary": "Failles NGINX : CVE-2026-123007 et CVE-2026-123633 permettent d'exécuter du code à distance via HTTP/2. Voici les versions à installer et comment vous protéger. Le post NGINX2Root : deux failles critiques permettent de prendre le contrôle d’un serveur NGINX a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/nginx2root-failles-cve-2026-123007-rce/",
@@ -200,22 +224,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Sortie GTA 6 : les premiers joueurs arrivent dans Leonida (infos, images et premières astuces en direct)",
-    "summary": "GTA 6 est déjà jouable en Nouvelle-Zélande depuis midi, heure de Paris, et la presse l’a couronné d’un 99 sur Metacritic, à égalité avec Zelda: Ocarina of Time. Le jeu de Rockstar continue sa route fuseau après fuseau jusqu’à son arrivée en France, à minuit, sur PS5 et Xbox Series. Suivez toutes les infos sur le jeu ici, en direct.",
-    "url": "https://www.numerama.com/pop-culture/2375431-sortie-de-gta-6-en-direct.html",
-    "date": "2026-11-18",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Typo3 (17 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Typo3. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1553/",
-    "date": "2026-11-17",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
     "title": "Le Flipper One est en précommande à 399 dollars sur Kickstarter",
     "summary": "Le Flipper One, ordinateur Linux de poche de Flipper Devices, est sur Kickstarter à 399 dollars jusqu'au 17 décembre. Livraison prévue en juillet 2027. Le post Le Flipper One est en précommande à 399 dollars sur Kickstarter a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/flipper-one-kickstarter-399-dollars/",
@@ -246,86 +254,6 @@ window.TSSR_NEWS = [
     "date": "2026-11-17",
     "source": "IT-Connect",
     "category": "Infrastructures"
-  },
-  {
-    "title": "NoisyTCP : cette faille du noyau Linux vieille de 11 ans permet de faire planter un serveur à distance",
-    "summary": "Des paquets TCP bien synchronisés, et tout le serveur tombe. NoisyTCP (CVE-2026-99288), une faille Linux vieille de 11 ans menace les serveurs Linux. Le post NoisyTCP : cette faille du noyau Linux vieille de 11 ans permet de faire planter un serveur à distance a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/noisytcp-cve-2026-99288-faille-noyau-linux-tcp/",
-    "date": "2026-11-17",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "GTA 6 : la Nouvelle-Zélande jouera 12 heures avant la France, attention aux arnaques",
-    "summary": "Envie de jouer à GTA 6 dès mercredi midi grâce à la Nouvelle-Zélande ? L’astuce a ses limites sur Xbox et PS5. Et les faux GTA 6 PC, eux, volent vos données. Le post GTA 6 : la Nouvelle-Zélande jouera 12 heures avant la France, attention aux arnaques a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/gta-6-heure-sortie-nouvelle-zelande-arnaques/",
-    "date": "2026-11-17",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Bulletin d'actualité CERTFR-2026-ACT-048 (16 novembre 2026)",
-    "summary": "Ce bulletin d'actualité du CERT-FR revient sur les vulnérabilités significatives de la semaine passée pour souligner leurs criticités. Il ne remplace pas l'analyse de l'ensemble des avis et alertes publiés par le CERT-FR dans le cadre d'une analyse de risques pour prioriser l'application des...",
-    "url": "https://www.cert.cyber.gouv.fr/actualite/CERTFR-2026-ACT-048/",
-    "date": "2026-11-16",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Microsoft Edge (16 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Microsoft Edge. Elles permettent à un attaquant de provoquer un problème de sécurité non spécifié par l'éditeur.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1546/",
-    "date": "2026-11-16",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Kerberos (16 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Kerberos. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1540/",
-    "date": "2026-11-16",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans Citrix App Layering (16 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans Citrix App Layering. Elle permet à un attaquant de provoquer un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1545/",
-    "date": "2026-11-16",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans MongoDB (16 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans MongoDB. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1544/",
-    "date": "2026-11-16",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits Trend Micro (16 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Trend Micro. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1542/",
-    "date": "2026-11-16",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans Git (16 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans Git. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1541/",
-    "date": "2026-11-16",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans VMware Tanzu (16 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans VMware Tanzu. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1543/",
-    "date": "2026-11-16",
-    "source": "CERT-FR",
-    "category": "Sécurité"
   },
   {
     "title": "Alibaba lance Qwen4-Max, son nouveau modèle d’IA axé sur la performance et la sécurité",
@@ -392,70 +320,6 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Multiples vulnérabilités dans Progress Telerik (13 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Progress Telerik. Certaines d'entre elles permettent à un attaquant de provoquer un déni de service à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1533/",
-    "date": "2026-11-13",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans les produits Axis (13 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans les produits Axis. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1534/",
-    "date": "2026-11-13",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans le noyau Linux de Debian (13 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de Debian. Certaines d'entre elles permettent à un attaquant de provoquer une élévation de privilèges, une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1538/",
-    "date": "2026-11-13",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans Opera Neon (13 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans Opera Neon. Elle permet à un attaquant de provoquer un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1532/",
-    "date": "2026-11-13",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans le noyau Linux de Red Hat (13 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de Red Hat. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1536/",
-    "date": "2026-11-13",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans le noyau Linux d'Ubuntu (13 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux d'Ubuntu. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire, une atteinte à l'intégrité des données et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1537/",
-    "date": "2026-11-13",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans le noyau Linux de SUSE (13 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de SUSE. Certaines d'entre elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données, une atteinte à l'intégrité des données et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1535/",
-    "date": "2026-11-13",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits IBM (13 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits IBM. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1539/",
-    "date": "2026-11-13",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
     "title": "Rennes va accueillir un centre international dédié à l’IA de défense",
     "summary": "Prévu pour l’été 2027, l’International Center for Artificial Intelligence in Defence (ICAID) réunira plusieurs pays alliés pour travailler sur le développement, l’évaluation et l’interopérabilité des systèmes d’IA militaires.",
     "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/rennes-va-accueillir-un-centre-international-dedie",
@@ -518,13 +382,5 @@ window.TSSR_NEWS = [
     "date": "2026-11-13",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Citrix NetScaler ADC et Gateway (28 septembre 2026)",
-    "summary": "**[Mise à jour du 05 octobre 2026]** Le 4 octobre 2026, Citrix a publié un avis concernant une nouvelle vulnérabilité (CVE-2026-88779) permettant un déni de service à distance. La CISA indique que cette vulnérabilité est activement exploitée. **[Mise à jour du 30 septembre 2026]** Dans un billet...",
-    "url": "https://www.cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-011/",
-    "date": "2026-09-28",
-    "source": "CERT-FR",
-    "category": "Sécurité"
   }
 ];
