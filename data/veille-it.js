@@ -1,5 +1,21 @@
 window.TSSR_NEWS = [
   {
+    "title": "NAS Synology : une mise à jour DSM corrige deux failles critiques, dont NGINX2Root",
+    "summary": "Synology a publié deux bulletins critiques pour DSM : la faille NGINX2Root et une faille notée 9,8 sur 10 dans OAuth Service. Voici comment protéger votre NAS. Le post NAS Synology : une mise à jour DSM corrige deux failles critiques, dont NGINX2Root a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/nginx2root-synology-dsm-faille-oauth-cve-2026-120382/",
+    "date": "2026-11-20",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Black Friday Roborock : jusqu’à 500 € de réduction et des robots laveurs dès 299,99 € [Sponso]",
+    "summary": "Cet article a été réalisé en collaboration avec Roborock Roborock lance ses offres du Black Friday avec des remises qui atteignent 500 euros sur ses aspirateurs robots laveurs, du tout récent Saros 20 au Qrevo S Pro. Si vous attendiez le bon moment pour acheter un aspirateur robot, c'est maintenant.",
+    "url": "https://www.numerama.com/tech/2371093-black-friday-roborock-jusqua-500-e-de-reduction-et-des-robots-laveurs-des-29999-e.html",
+    "date": "2026-11-20",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "VMware vCenter : une faille critique exploitée comme zero-day depuis septembre 2026",
     "summary": "Broadcom a corrigé la CVE-2026-123890, une faille critique dans VMware vCenter exploitée comme zero-day dès septembre 2026 d'après Mandiant. Le post VMware vCenter : une faille critique exploitée comme zero-day depuis septembre 2026 a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/vmware-vcenter-cve-2026-123890-zero-day/",
@@ -192,14 +208,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Les Anneaux de pouvoir réinvente l’histoire du plus puissant dragon de Tolkien",
-    "summary": "Dans l'épisode 5 de la saison 3 des Anneaux de pouvoir, le nom d'un dragon apparaît lors d'une discussion impliquant Sauron. Chez Tolkien, il s'agit du plus puissant dragon de la Terre du Milieu. Et son histoire a été en partie réécrite pour la série.",
-    "url": "https://www.numerama.com/pop-culture/2378761-les-anneaux-de-pouvoir-reinvente-lhistoire-du-plus-puissant-dragon-de-tolkien.html",
-    "date": "2026-11-19",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Multiples vulnérabilités dans Oracle Java SE (18 novembre 2026)",
     "summary": "De multiples vulnérabilités ont été découvertes dans Oracle Java SE. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1562/",
@@ -283,14 +291,6 @@ window.TSSR_NEWS = [
     "title": "La faille Java4Shell (CVE-2026-114938) menace Keycloak, Jira, Jenkins, etc.",
     "summary": "La faille Java4Shell (CVE-2026-114938) menace Java 17 à 27 sur certains CPU, et elle permet une exécution de code à distance sans authentification. Le post La faille Java4Shell (CVE-2026-114938) menace Keycloak, Jira, Jenkins, etc. a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/java4shell-faille-critique-java-openjdk/",
-    "date": "2026-11-18",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Microsoft Perception : les agents IA spécialisés dans la cybersécurité sont disponibles !",
-    "summary": "Project Perception devient Microsoft Perception et passe en disponibilité générale : triage des alertes, pentest web, Intune, MCP. Voici l'essentiel à retenir. Le post Microsoft Perception : les agents IA spécialisés dans la cybersécurité sont disponibles ! a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/microsoft-perception-disponibilite-generale-ignite/",
     "date": "2026-11-18",
     "source": "IT-Connect",
     "category": "Infrastructures"
