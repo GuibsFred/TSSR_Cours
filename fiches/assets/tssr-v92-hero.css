@@ -1,0 +1,29 @@
+/* V92 — bannière panoramique par chapitre, jusqu'au bord du plan */
+#view:has(.tssr-vfinal-layout){position:relative}
+#view:has(.tssr-vfinal-layout) .tssr-chapter-badge{
+ position:absolute!important;top:0!important;right:0!important;width:min(43%,680px)!important;
+ height:185px!important;border:0!important;border-radius:0 13px 0 0!important;
+ overflow:hidden!important;display:block!important;pointer-events:none!important;
+ background:linear-gradient(115deg,#092c3c,#096476)!important;box-shadow:none!important;
+ z-index:0!important;
+}
+#view:has(.tssr-vfinal-layout) .tssr-chapter-badge::after{
+ content:"";position:absolute;inset:0;
+ background:linear-gradient(90deg,#062b3d 0%,rgba(6,43,61,.35) 26%,transparent 60%),linear-gradient(0deg,rgba(4,39,55,.28),transparent 65%);
+}
+#view:has(.tssr-vfinal-layout) .tssr-chapter-badge img{
+ display:block!important;width:100%!important;height:100%!important;
+ object-fit:cover!important;object-position:center!important;filter:saturate(1.12) contrast(1.05)!important;
+}
+#view:has(.tssr-vfinal-layout)>.tssr-course-tabs{position:relative;z-index:2}
+#view:has(.tssr-vfinal-layout)>.tssr-v82-layout{position:relative;z-index:2}
+.tssr-hero-picker{padding:14px;margin:12px 0;border:1px solid #3c9aaa;border-radius:12px;background:#10394a;color:#f1fcff}
+.tssr-hero-picker p,.tssr-hero-help{font-size:12px;color:#b9dbe4}
+.tssr-hero-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:9px;max-height:290px;overflow-y:auto;margin:10px 0}
+.tssr-hero-choice{display:grid;gap:5px;cursor:pointer;background:#092d3e;border:1px solid #337b8e;border-radius:9px;padding:6px;font-size:12px}
+.tssr-hero-choice:has(input:checked){border-color:#47dce9;box-shadow:0 0 0 2px #36c9db66}
+.tssr-hero-choice img{width:100%;height:66px;object-fit:cover;border-radius:6px}
+.tssr-hero-choice input{accent-color:#38d6e9}
+#tssrHeroPreview{display:block;width:100%;height:130px;object-fit:cover;margin:10px 0;border-radius:8px;border:1px solid #45a3b5}
+@media(max-width:950px){#view:has(.tssr-vfinal-layout) .tssr-chapter-badge{width:38%!important;height:130px!important}}
+@media(max-width:650px){#view:has(.tssr-vfinal-layout) .tssr-chapter-badge{width:32%!important;height:92px!important}}

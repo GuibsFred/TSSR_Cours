@@ -1,0 +1,10 @@
+/* V76 : lecture des cours structurés, sans altérer les contenus. */
+.content h1,.content h2,.content h3,.revision-extract h1,.revision-extract h2,.revision-extract h3{line-height:1.35;margin:1.5em 0 .65em;font-weight:750}
+.content p,.revision-extract p{line-height:1.75;margin:.65em 0 1em}
+.content table,.revision-extract table{border-collapse:collapse;display:block;max-width:100%;overflow-x:auto;margin:1.25em 0}
+.content th,.content td,.revision-extract th,.revision-extract td{padding:11px 14px;border:1px solid rgba(105,209,228,.28);text-align:left;white-space:normal}
+.content th,.revision-extract th{background:rgba(23,136,159,.22);color:#79e9f2}
+.content pre,.revision-extract pre{overflow:auto;padding:18px;border:1px solid #23657c;border-radius:12px;background:#061e2d;line-height:1.55}
+.content code,.revision-extract code{font-family:Consolas,Monaco,monospace}
+.content ul,.content ol,.revision-extract ul,.revision-extract ol{padding-left:1.7em;line-height:1.65}
+.tssr-import-panel textarea{tab-size:2}

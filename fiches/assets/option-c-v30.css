@@ -1,0 +1,31 @@
+/* V30 — Option C : composants éditoriaux, une seule direction artistique. */
+#view .course-library-grid .module-card{min-height:195px!important;background:radial-gradient(ellipse at 20% 0%,#13658b60,transparent 70%),linear-gradient(125deg,#08283c,#041625)!important;border:1px solid #168fa9!important}
+#view .course-library-grid .module-card:after{content:"";position:absolute;inset:auto 0 0;height:2px;background:linear-gradient(90deg,transparent,#26d8e8,transparent);opacity:.7}
+#view .course-library-grid .module-art img{width:126px!important;height:120px!important;filter:drop-shadow(0 9px 12px #0009)!important}
+#view .v83-chapters .v83-chapter{height:286px!important;min-height:286px!important;max-height:286px!important;padding:12px 14px 14px!important;background:linear-gradient(165deg,#0c344d,#051727 90%)!important}
+#view .v83-chapters .v231-chapter-art{height:151px!important;min-height:151px!important;max-height:151px!important;margin:5px -2px 8px!important;flex:0 0 151px!important;overflow:hidden!important}
+#view .v83-chapters .v231-chapter-art img{width:100%!important;height:151px!important;max-width:100%!important;max-height:151px!important;object-fit:cover!important;border-radius:11px!important;filter:none!important}
+#view .v83-chapters .v83-chapter strong{font-size:16px!important;line-height:1.32!important;min-height:42px!important;margin-bottom:2px!important}
+#view .v83-chapters .v83-chapter-top{height:30px!important;min-height:30px!important}
+#view .v83-chapters .v83-chapter-tag{opacity:.85!important}
+#view .v83-chapters .mg-card-actions{top:8px!important;right:8px!important;display:flex!important;gap:5px!important;z-index:10!important}
+#view .v83-chapters .mg-card-actions button{position:relative!important;transform:none!important;opacity:1!important;width:30px!important;height:30px!important;display:grid!important;place-items:center!important;border-radius:8px!important;background:#082b40!important;border:1px solid #2b7187!important;color:#dffaff!important;font-size:16px!important}
+#view .v83-chapters .tssr-written-label{top:18px!important;right:88px!important}
+#view .v83-chapters .v83-chapter-bottom{padding-top:6px!important}
+#view .cmdstudio{background:transparent!important;box-shadow:none!important;padding:14px 4px!important}
+#view .cmdstudio .cmd-card-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+#view .cmdstudio .cmd-card{display:grid!important;grid-template-columns:44px minmax(0,1fr)!important;grid-template-rows:auto auto auto!important;gap:5px 14px!important;min-height:144px!important;padding:15px 17px!important;border:1px solid #236079!important;border-left:3px solid #21cfe1!important;border-radius:13px!important;background:linear-gradient(120deg,#0c3048,#071e30)!important;box-shadow:0 5px 14px #00132166!important}
+#view .cmdstudio .cmd-card:before{display:none!important}
+#view .cmdstudio .cmd-card-art{grid-column:1!important;grid-row:1/4!important;display:flex!important;align-items:flex-start!important;justify-content:center!important;height:auto!important;min-height:0!important;padding-top:2px!important}
+#view .cmdstudio .cmd-os{font-size:22px!important;color:#57dce9!important}
+#view .cmdstudio .cmd-art-symbol{display:none!important}
+#view .cmdstudio .cmd-card h3{grid-column:2!important;grid-row:1!important;font-size:17px!important;margin:0!important;line-height:1.3!important}
+#view .cmdstudio .cmd-card-tag{grid-column:2!important;grid-row:2!important;font-size:10px!important;padding:2px 6px!important;width:max-content!important;max-width:100%!important}
+#view .cmdstudio .cmd-card p{grid-column:2!important;grid-row:3!important;min-height:0!important;max-height:38px!important;display:-webkit-box!important;-webkit-line-clamp:2!important;-webkit-box-orient:vertical!important;overflow:hidden!important;font-size:12px!important;margin:0!important;line-height:1.45!important}
+#view .cmdstudio .cmd-card-foot{grid-column:2!important;grid-row:4!important;min-width:0!important;margin-top:5px!important}
+#view .cmdstudio .cmd-card-foot small{display:block!important;white-space:normal!important;overflow-wrap:anywhere!important;font-size:11px!important;color:#b6e7ee!important;margin:0 0 7px!important}
+#view .cmdstudio .cmd-card-foot button{width:100%!important;background:#08384e!important;border-color:#237e94!important;text-align:left!important}
+#view .cmdstudio .cmd-card.powershell,#view .cmdstudio .cmd-card.linux,#view .cmdstudio .cmd-card.cisco{border-color:#236079!important;border-left-color:#21cfe1!important;box-shadow:0 5px 14px #00132166!important}
+#view .cmdstudio .cmd-category-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+@media(max-width:1000px){#view .cmdstudio .cmd-card-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){#view .v83-chapters .v83-chapter{height:270px!important;min-height:270px!important;max-height:270px!important}}

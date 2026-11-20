@@ -1,0 +1,45 @@
+/* V31: complete visual hierarchy and component corrections; appended last. */
+#view .course-library-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important}
+#view .course-library-grid .module-card{min-height:220px!important;padding:22px!important;border:1px solid #1c7894!important;border-radius:19px!important;background:linear-gradient(140deg,#0c344d 0%,#071c30 68%,#061728 100%)!important;box-shadow:0 14px 28px #00121b55,inset 0 1px #ffffff17!important}
+#view .course-library-grid .module-card:hover{border-color:#42e7f0!important;transform:translateY(-4px)!important}
+#view .course-library-grid .module-card-top{width:136px!important;height:145px!important}
+#view .course-library-grid .module-card{grid-template-columns:136px minmax(0,1fr)!important}
+#view .course-library-grid .module-art{width:132px!important;height:125px!important}
+#view .course-library-grid .module-art img{width:130px!important;height:124px!important;object-fit:contain!important}
+#view .course-library-grid .module-card h3{font-size:20px!important;letter-spacing:-.4px!important}
+#view .course-library-grid .mg-module-edit{z-index:5!important;top:12px!important;right:12px!important}
+#view .v83-module-intro{padding:16px 24px!important;background:linear-gradient(110deg,#103c57,#082337)!important}
+#view .v83-chapters{gap:20px!important}
+#view .v83-chapters .mg-course-tile{isolation:isolate!important}
+#view .v83-chapters .v83-chapter{height:318px!important;min-height:318px!important;max-height:318px!important;padding:14px 16px 15px!important;border:1px solid #1989a6!important;background:linear-gradient(160deg,#0b2d43,#061725)!important;border-radius:18px!important;overflow:hidden!important}
+#view .v83-chapters .v83-chapter-top{height:34px!important;min-height:34px!important}
+#view .v83-chapters .v231-chapter-art{display:block!important;width:calc(100% + 32px)!important;height:176px!important;min-height:176px!important;max-height:176px!important;flex:0 0 176px!important;margin:9px -16px 12px!important;border:0!important;overflow:hidden!important}
+#view .v83-chapters .v231-chapter-art img{display:block!important;width:100%!important;height:176px!important;max-width:none!important;max-height:none!important;object-fit:cover!important;border-radius:0!important;filter:none!important;opacity:1!important}
+#view .v83-chapters .v83-chapter strong{min-height:43px!important;font-size:17px!important;line-height:1.25!important;margin:0 0 4px!important}
+#view .v83-chapters .v83-chapter-bottom{margin-top:auto!important;padding-top:8px!important}
+#view .v83-chapters .mg-card-actions{position:absolute!important;right:10px!important;top:9px!important;z-index:20!important;display:flex!important;gap:6px!important;width:auto!important;height:auto!important;background:#041b2be8!important;padding:4px!important;border:1px solid #1a6b83!important;border-radius:10px!important;transform:none!important}
+#view .v83-chapters .mg-card-actions button{position:static!important;display:grid!important;place-items:center!important;transform:none!important;opacity:1!important;width:30px!important;height:30px!important;line-height:1!important;font-size:16px!important;background:#0a3950!important;border:1px solid #24758c!important;border-radius:7px!important;color:#e5faff!important}
+#view .v83-chapters .tssr-written-label{top:19px!important;right:104px!important;font-size:11px!important}
+#view .v83-chapters .v83-chapter-tag{display:none!important}
+#view .v81-qmodules{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}
+#view .v81-qmodule{height:230px!important;min-height:230px!important;max-height:230px!important;display:grid!important;grid-template-columns:105px minmax(0,1fr)!important;grid-template-rows:36px auto auto 12px auto!important;gap:7px 15px!important;padding:20px!important;text-align:left!important;background:linear-gradient(130deg,#0d3951,#071d2f)!important}
+#view .v81-qmodule .v81-qnumber{position:static!important;grid-column:1!important;grid-row:1!important;align-self:start!important}
+#view .v81-qmodule .v81-qicon{grid-column:1!important;grid-row:2/5!important;align-self:center!important;justify-self:center!important;width:100px!important;height:100px!important;margin:0!important}
+#view .v81-qmodule .v81-qicon img{width:95px!important;height:95px!important;object-fit:contain!important}
+#view .v81-qmodule b{grid-column:2!important;grid-row:2!important;font-size:18px!important;align-self:end!important}
+#view .v81-qmodule .v81-qcount{grid-column:2!important;grid-row:3!important}
+#view .v81-qmodule .v81-qtrack{grid-column:2!important;grid-row:4!important;margin:0!important}
+#view .v81-qmodule small{grid-column:2!important;grid-row:5!important;margin:0!important}
+#view .v81-qmodule .v81-qarrow{position:absolute!important;bottom:18px!important;right:18px!important}
+#view .v81-qitems{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+#view .v81-qitem{min-width:0!important;border:1px solid #22758c!important;border-radius:13px!important;background:linear-gradient(120deg,#10374d,#071e2e)!important;padding:14px!important}
+#view .v81-qitem button:first-child{min-width:0!important;text-align:left!important}
+#view .cmdstudio .cmd-category-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important}
+#view .cmdstudio .cmd-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+#view .cmdstudio .cmd-card{min-height:172px!important;border-radius:15px!important;padding:18px!important;grid-template-columns:52px minmax(0,1fr)!important;gap:8px 16px!important}
+#view .cmdstudio .cmd-card h3{font-size:19px!important;line-height:1.25!important}
+#view .cmdstudio .cmd-card p{font-size:13px!important;max-height:42px!important}
+#view .cmdstudio .cmd-card-foot small{font-size:12px!important}
+#view .cmdstudio .cmd-card-foot button{padding:10px!important}
+@media(max-width:1250px){#view .course-library-grid,#view .v83-chapters,#view .v81-qmodules{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:850px){#view .course-library-grid,#view .v83-chapters,#view .v81-qmodules,#view .v81-qitems,#view .cmdstudio .cmd-card-grid{grid-template-columns:1fr!important}#view .cmdstudio .cmd-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}

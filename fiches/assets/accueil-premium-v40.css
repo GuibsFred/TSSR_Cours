@@ -1,0 +1,33 @@
+/* V40 : accueil harmonisé avec les cartes Cours. Styles limités à l'accueil. */
+.v84-home.tssr-studio-home{--home-edge:#00bcd9;--home-ink:#061c2b;--home-gold:#e6b86b}
+.v84-home .tssr-live-stats{margin:18px 0 22px!important;min-height:46px!important;border:1px solid #195b70!important;border-radius:12px!important;background:linear-gradient(110deg,#061d2d,#0a3345 48%,#061d2d)!important;box-shadow:inset 0 1px #ffffff0b!important;gap:0!important}
+.v84-home .tssr-live-stats span{color:#b7d3e1!important;font-size:11px!important;flex:1!important;text-align:center!important;padding:9px 13px!important;border-color:#245266!important}
+.v84-home .tssr-live-stats b{color:#f2fbff!important}
+.v84-home .tssr-premium-quick{gap:16px!important;margin:0 0 24px!important}
+.v84-home .tssr-premium-tile,.v84-home .tssr-tile-cours,.v84-home .tssr-tile-fiches,.v84-home .tssr-tile-quiz,.v84-home .tssr-tile-tp{
+ background:radial-gradient(circle at 18% 30%,#14507175,transparent 60%),linear-gradient(145deg,#0a2d41,#041a2a 78%)!important;
+ border:1px solid #1786a1!important;border-radius:15px!important;min-height:112px!important;padding:15px 14px!important;
+ box-shadow:0 7px 22px #00101b5c,inset 0 1px #ffffff10!important;position:relative!important;overflow:hidden!important;
+ transition:transform .2s,border-color .2s,box-shadow .2s!important
+}
+.v84-home .tssr-premium-tile::before{content:"";position:absolute;left:0;top:17%;bottom:17%;width:2px;border-radius:3px;background:linear-gradient(transparent,#d9a95a,transparent);opacity:.9}
+.v84-home .tssr-premium-tile:hover{transform:translateY(-3px)!important;border-color:#48d6eb!important;box-shadow:0 12px 27px #00111e88,0 0 0 1px #2ad5ed33!important;filter:none!important}
+.v84-home .tssr-premium-tile img{width:77px!important;height:77px!important;max-width:29%!important;object-fit:contain!important;filter:drop-shadow(0 8px 10px #0007)!important}
+.v84-home .tssr-premium-tile b{font-size:15px!important;color:#f2faff!important;line-height:1.28!important}
+.v84-home .tssr-premium-tile small{color:#a9c7d7!important;font-size:11px!important;line-height:1.35!important}
+.v84-home .tssr-premium-tile i{background:#063c51!important;border:1px solid #1aa5c0!important;color:#9deefa!important;width:30px!important;height:30px!important;font-size:17px!important}
+.v84-home .v23-lower{gap:18px!important;margin-top:20px!important}
+.v84-home .v23-panel{background:linear-gradient(150deg,#092b3d,#051b2b 80%)!important;border:1px solid #1b6378!important;border-radius:15px!important;padding:21px!important;box-shadow:inset 0 1px #ffffff0c,0 9px 22px #00111c32!important}
+.v84-home .v23-panel h2{font-size:18px!important;font-weight:750!important;letter-spacing:-.25px!important;margin-bottom:17px!important;padding-bottom:13px!important;border-bottom:1px solid #205368!important}
+.v84-home .v23-recent{display:grid!important;gap:8px!important}
+.v84-home .v23-recent .v84-activity-item{background:#0b2b3e!important;border:1px solid #174f64!important;border-radius:10px!important;padding:12px!important;min-height:58px!important;transition:background .15s,border-color .15s!important}
+.v84-home .v23-recent .v84-activity-item:hover{background:#104056!important;border-color:#30bed7!important}
+.v84-home .v23-recent .v84-activity-item small{color:#9bbccc!important}
+.v84-home .v23-resources{gap:9px!important}
+.v84-home .v23-resources button{background:#0b2b3e!important;border:1px solid #17546b!important;border-radius:10px!important;padding:15px 13px!important;min-height:64px!important;transition:background .15s,border-color .15s!important}
+.v84-home .v23-resources button:hover{background:#104056!important;border-color:#2bc9e0!important}
+.v84-home .v23-resources button span{font-size:13px!important;color:#eaf8ff!important}
+.v84-home .v23-resources small{color:#9abccd!important}
+.v84-home .v23-more{margin-top:15px!important;font-weight:700!important;color:#65ddec!important}
+@media(max-width:1250px){.v84-home .tssr-premium-quick{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:680px){.v84-home .tssr-premium-quick{grid-template-columns:1fr!important;gap:10px!important}.v84-home .tssr-premium-tile{min-height:92px!important}.v84-home .tssr-premium-tile img{width:62px!important;height:62px!important}.v84-home .v23-panel{padding:14px!important}.v84-home .tssr-live-stats span{flex:1 1 45%!important;font-size:10px!important}}

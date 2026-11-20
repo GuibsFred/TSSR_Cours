@@ -1,0 +1,32 @@
+/* V84 — correction contrastes, proportions et suppression du bandeau redondant */
+#view:has(.tssr-v82-layout){position:relative!important;width:100%!important;max-width:none!important;min-width:0!important}
+#view:has(.tssr-v82-layout) .tssr-v82-layout{width:100%!important;max-width:none!important;grid-template-columns:minmax(0, 1.9fr) minmax(310px, 1fr)!important;gap:18px!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading{width:100%!important;min-width:0!important;background:#f6fbfc!important;border:2px solid #61b8c4!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body{background:#f6fbfc!important;color:#173341!important;padding:20px 25px!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body :is(p,li,div,span,td,th){color:#173341!important;opacity:1!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body :is(h1,h2,h3,h4){color:#fff!important;opacity:1!important;text-shadow:0 1px 2px #001f2c!important;background:linear-gradient(105deg,#052e42,#076d81 62%,#00a9ba)!important;border:1px solid #64d8df!important;box-shadow:inset 0 1px #b5ffff66,0 3px 7px #002d3a40!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body :is(h1,h2,h3,h4) :is(span,strong,em){color:#fff!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body strong{color:#92501b!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body :is(table,td,th){opacity:1!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body th{background:#09647b!important;color:#fff!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body td{background:#eef7f9!important;color:#193443!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body tbody tr:nth-child(even) td{background:#dceef3!important}
+#view:has(.tssr-v82-layout) .tssr-v82-reading-body pre,#view:has(.tssr-v82-layout) .tssr-v82-reading-body pre *{background:#092536!important;color:#e8f9ff!important}
+#view:has(.tssr-v82-layout) .tssr-v82-panel{background:#f6fbfc!important;color:#193443!important}
+#view:has(.tssr-v82-layout) .tssr-v82-panel-scroll :is(p,li){color:#193443!important}
+#view:has(.tssr-v82-layout) .tssr-v82-panel:has(footer) .tssr-v82-panel-scroll{background:#0b2636!important}
+#view:has(.tssr-v82-layout) .tssr-v82-panel:has(footer) .tssr-v82-command code{color:#fff!important}
+#view:has(.tssr-v82-layout) .tssr-v82-panel:has(footer) .tssr-syn-cmd{color:#38c9e5!important}
+#view:has(.tssr-v82-layout) .tssr-v82-panel:has(footer) .tssr-syn-opt{color:#d4a16c!important}
+#view:has(.tssr-v82-layout) .tssr-v82-panel:has(footer) .tssr-syn-arg{color:#f07580!important}
+/* The header title is already displayed by the site; the chapter illustration sits on its right. */
+#view:has(.tssr-v82-layout) > :first-child{padding-right:140px!important}
+.tssr-chapter-badge{position:absolute;right:24px;top:12px;width:108px;height:108px;z-index:2;display:grid;place-items:center;border-radius:22px;background:radial-gradient(circle at 35% 20%,#53c8dc66,transparent 65%),linear-gradient(135deg,#06354a,#0c6376);border:1px solid #45aebd;box-shadow:inset 0 1px #b7f9ff88,0 8px 25px #001b2b77}
+.tssr-chapter-badge img{width:84px;height:84px;object-fit:contain;filter:drop-shadow(0 7px 5px #00101d99)}
+#view:has(.tssr-v82-layout) .tssr-v82-aside{position:sticky!important;top:76px!important}
+/* Revision has the same readable surface in both themes. */
+.tssr-v82-revision,.tssr-v82-revision .content{background:#f6fbfc!important;color:#193443!important}
+.tssr-v82-revision .content :is(p,li,td){color:#193443!important;opacity:1!important}
+.tssr-v82-revision .content :is(h1,h2,h3){color:#fff!important;background:linear-gradient(110deg,#052e42,#08738a,#03aeba)!important;text-shadow:0 1px 2px #00212e!important}
+@media(max-width:1120px){#view:has(.tssr-v82-layout) .tssr-v82-layout{grid-template-columns:1fr!important}#view:has(.tssr-v82-layout) .tssr-v82-aside{position:static!important}}
+@media(max-width:700px){.tssr-chapter-badge{width:62px;height:62px;right:12px;top:8px}.tssr-chapter-badge img{width:49px;height:49px}#view:has(.tssr-v82-layout)>:first-child{padding-right:78px!important}}

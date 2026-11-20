@@ -1,0 +1,29 @@
+/* V28.1 — refonte visible des pages de cours. Les données et la logique d'édition restent intactes. */
+#view .course-library-grid{gap:18px!important}
+#view .course-library-grid .module-card{min-height:210px!important;grid-template-columns:158px minmax(0,1fr)!important;grid-template-rows:1fr auto!important;padding:18px 18px 16px!important;gap:8px 15px!important;border:1px solid #21c4e4!important;border-radius:18px!important;background:radial-gradient(ellipse at 22% 50%,#075779 0%,transparent 56%),linear-gradient(135deg,#10455e,#031a2b 90%)!important;box-shadow:inset 0 1px 0 #b8f8ff44,0 9px 22px #00152266!important}
+#view .course-library-grid .module-card::after{content:"";position:absolute;inset:auto 0 0;height:2px;background:linear-gradient(90deg,transparent,#00d6f0aa,transparent);pointer-events:none}
+#view .course-library-grid .module-card-top{grid-column:1!important;grid-row:1/3!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;width:150px!important;height:166px!important;gap:0!important}
+#view .course-library-grid .module-card[data-topic] .module-art{width:148px!important;height:142px!important;min-height:142px!important;display:grid!important;place-items:center!important;overflow:visible!important}
+#view .course-library-grid .module-card[data-topic] .module-art img{width:148px!important;height:138px!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;filter:drop-shadow(0 14px 14px #0009)!important}
+#view .course-library-grid .module-card h3{grid-column:2!important;grid-row:1!important;align-self:center!important;font-size:clamp(17px,1.12vw,21px)!important;line-height:1.3!important;text-shadow:0 2px 8px #0008!important}
+#view .course-library-grid .module-card-footer{grid-column:2!important;grid-row:2!important;align-self:end!important;display:flex!important;justify-content:space-between!important;border-top:1px solid #58b7d055!important;padding-top:11px!important;margin:0!important;font-size:13px!important}
+#view .course-library-grid .module-card:hover{transform:translateY(-4px)!important;box-shadow:0 13px 30px #00b6e32e,inset 0 1px 0 #b8f8ff66!important}
+/* Chapter layout: larger visual occupies left of card, with room for legible title. */
+#view .v83-chapters{gap:17px!important}
+#view .v83-chapter{min-height:205px!important;padding:16px!important;border-radius:17px!important;background:radial-gradient(ellipse at 24% 38%,#0a526c 0%,transparent 54%),linear-gradient(135deg,#0c344c,#031a2b)!important}
+#view .v83-chapter .v231-chapter-art{width:150px!important;min-width:150px!important;height:135px!important;min-height:135px!important;overflow:visible!important}
+#view .v83-chapter .v231-chapter-art img{width:145px!important;height:132px!important;max-width:145px!important;max-height:132px!important;object-fit:contain!important;filter:drop-shadow(0 10px 13px #0009)!important}
+#view .v83-chapter strong{font-size:clamp(15px,1vw,18px)!important;line-height:1.34!important;color:#fff!important;text-shadow:0 2px 7px #001724!important}
+#view .tssr-course-written .v83-chapter{border-color:#d5a642!important;box-shadow:inset 0 0 0 1px #d6a63d33,0 7px 22px #00131c55!important}
+#view .tssr-course-written .v83-chapter:hover{box-shadow:0 10px 25px #d3a33833!important}
+/* QCM: contain status and footer within each tile. */
+#view .v81-qmodules{align-items:stretch!important}
+#view .v81-qmodule{min-height:350px!important;padding:17px!important;gap:7px!important;overflow:hidden!important}
+#view .v81-qmodule .v81-qicon{height:125px!important;min-height:125px!important}
+#view .v81-qmodule .v81-qicon img{height:125px!important;width:160px!important}
+#view .v81-qmodule b{min-height:50px!important;margin:4px 0!important}
+#view .v81-qmodule .v81-qtrack{position:static!important;margin-top:auto!important;min-height:0!important}
+#view .v81-qmodule small,#view .v81-qmodule .v81-qarrow{position:static!important;display:block!important;margin:5px 0 0!important;line-height:1.4!important}
+/* At medium sizes preserve readable two-column grids. */
+@media(max-width:1250px){#view .course-library-grid .module-card{grid-template-columns:112px minmax(0,1fr)!important;min-height:185px!important}#view .course-library-grid .module-card-top{width:108px!important;height:140px!important}#view .course-library-grid .module-card[data-topic] .module-art,#view .course-library-grid .module-card[data-topic] .module-art img{width:108px!important;height:108px!important;min-height:0!important}}
+@media(max-width:700px){#view .course-library-grid .module-card{grid-template-columns:100px minmax(0,1fr)!important;min-height:160px!important;padding:12px!important}#view .course-library-grid .module-card-top{width:95px!important;height:125px!important}#view .course-library-grid .module-card[data-topic] .module-art,#view .course-library-grid .module-card[data-topic] .module-art img{width:95px!important;height:95px!important;min-height:0!important}#view .v83-chapter .v231-chapter-art{width:100px!important;min-width:100px!important;height:100px!important;min-height:100px!important}#view .v83-chapter .v231-chapter-art img{width:100px!important;height:100px!important}}

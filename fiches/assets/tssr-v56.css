@@ -1,0 +1,21 @@
+/* V56 : ajustements visuels, aucun changement des jeux ni des scores */
+.v54-hero{background-image:url('tssr-hero-v56.webp')!important;background-size:100% 100%!important;background-position:center!important;height:auto!important;min-height:0!important;aspect-ratio:1420/174;margin-bottom:13px!important}
+header.top .logo{gap:8px!important;display:flex!important;align-items:center!important;white-space:nowrap!important}
+header.top .logo .v54-logo{width:51px!important;height:51px!important;object-fit:contain!important;border-radius:50%!important;flex-shrink:0!important;margin:0 4px 0 0!important}
+header.top .logo strong{font-size:25px!important;line-height:1!important}
+header.top .logo span{font-size:11px!important;align-self:flex-start!important;position:relative!important;top:5px!important;margin-left:-3px!important;color:#57ecf6!important}
+.v54-middle{align-items:stretch!important}.v54-middle>.v54-panel{min-height:0!important}
+.v54-middle .v54-note{padding:5px 10px!important;margin:4px 0!important;min-height:35px!important}
+.v54-middle .v54-note b{font-size:13px!important}.v54-middle .v54-note small{font-size:10px!important}
+.v56-home-search{width:100%;margin-top:9px;box-sizing:border-box;height:34px;padding:6px 12px;border-radius:9px;border:1px solid #0bd8e9;background:#031f30;color:#eaffff;outline:none}
+.v56-home-search:focus{border-color:#66f8ff;box-shadow:0 0 0 2px #00d9f52c}
+.v56-home-search::placeholder{color:#8fb8c7}.v56-no-result{color:#b7d9e3;font-size:12px}
+.v54-resources{min-height:0!important;align-content:center!important;align-items:center!important;height:calc(100% - 40px)!important;margin:0!important}
+.v54-resources button{min-height:95px!important}
+.v54-revgroup{background:linear-gradient(125deg,#092e47,#071c32)!important;border-color:#12b4d0!important;box-shadow:inset 3px 0 #1acbdf,0 7px 20px #00152155}
+.v54-revgroup:nth-of-type(3n+2){box-shadow:inset 3px 0 #c86df3,0 7px 20px #00152155!important;border-color:#7256b4!important}
+.v54-revgroup:nth-of-type(3n){box-shadow:inset 3px 0 #27db9c,0 7px 20px #00152155!important;border-color:#147e8e!important}
+.v54-revlink{transition:transform .16s,background .16s,border-color .16s;background:linear-gradient(100deg,#0a3a52,#082a41)!important}
+.v54-revlink:hover{transform:translateY(-2px);background:#104e68!important;border-color:#36e8f4!important}
+#mainNav a,#mainNav button{transition:background .18s,color .18s}
+@media(max-width:650px){.v54-hero{aspect-ratio:1420/220!important}.v54-resources{height:auto!important}}

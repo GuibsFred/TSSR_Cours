@@ -1,0 +1,32 @@
+/* TSSR v81 — Habillage pédagogique inspiré du visuel fourni.
+   CSS UNIQUEMENT : aucun contenu, HTML généré ou comportement modifié. */
+body:not(.dark){--lesson-panel:#f7fcfe;--lesson-ink:#123747;--lesson-muted:#496878;--lesson-edge:#1aa3b8;--lesson-soft:#d9f2f6;--lesson-code:#092d3c;--lesson-code-ink:#eafcff;--lesson-shadow:rgba(4,67,85,.16)}
+body.dark{--lesson-panel:#112e3d;--lesson-ink:#e8f8fc;--lesson-muted:#b9d5df;--lesson-edge:#40b7c9;--lesson-soft:#183e4e;--lesson-code:#071d2a;--lesson-code-ink:#e9faff;--lesson-shadow:rgba(0,0,0,.27)}
+/* Cadres : seulement les pages pédagogiques et les fiches */
+.article:has(> .content),.tssr-fiche-section{color:var(--lesson-ink);border:1px solid var(--lesson-edge);border-radius:17px;background:var(--lesson-panel);box-shadow:0 8px 22px var(--lesson-shadow);overflow:hidden}
+.article:has(> .content)>.articlebar{background:linear-gradient(112deg,#05384b 0%,#08687b 56%,#09b4c4 86%,#074a62 100%);color:#fff;border-bottom:2px solid #39d9e4;padding:13px 20px;box-shadow:inset 0 1px rgba(255,255,255,.28)}
+.article:has(> .content)>.content{padding:22px 26px;color:var(--lesson-ink);background:var(--lesson-panel)}
+.article:has(> .content)>.content :is(h1,h2,h3),.revision-extract :is(h1,h2,h3),.tssr-fiche-section :is(h2,h3){color:var(--lesson-ink);font-family:Manrope,'DM Sans',sans-serif;letter-spacing:-.015em}
+.article:has(> .content)>.content h1,.revision-extract h1{font-size:clamp(1.45rem,2.1vw,2rem);padding:12px 17px;border-radius:11px;background:linear-gradient(105deg,#063d50,#087a8a 70%,#10b8c7);color:#fff!important;box-shadow:0 4px 13px var(--lesson-shadow);margin:0 0 1.1em}
+.article:has(> .content)>.content h2,.revision-extract h2,.tssr-fiche-section h2{font-size:1.23rem;padding:11px 15px 12px;border:1px solid rgba(43,195,210,.38);border-radius:11px;background:linear-gradient(100deg,#074455 0%,#0a8995 82%,#0ab6c4 100%);color:#fff!important;margin:1.65em 0 .9em;box-shadow:0 3px 11px var(--lesson-shadow)}
+.article:has(> .content)>.content h3,.revision-extract h3,.tssr-fiche-section h3{font-size:1.08rem;color:var(--lesson-ink)!important;border-left:4px solid #12b9c6;padding:5px 0 5px 12px;margin:1.3em 0 .65em}
+.article:has(> .content)>.content p,.revision-extract p,.tssr-fiche-section p{line-height:1.72;color:var(--lesson-ink)}
+.article:has(> .content)>.content :is(ul,ol),.revision-extract :is(ul,ol),.tssr-fiche-section :is(ul,ol){line-height:1.68;color:var(--lesson-ink)}
+.article:has(> .content)>.content :is(table),.revision-extract table,.tssr-fiche-section table{border-collapse:separate;border-spacing:0;width:100%;max-width:100%;border:1px solid var(--lesson-edge);border-radius:11px;overflow:auto;background:var(--lesson-panel);color:var(--lesson-ink);box-shadow:0 3px 10px var(--lesson-shadow)}
+.article:has(> .content)>.content th,.revision-extract th,.tssr-fiche-section th{background:#075568!important;color:#fff!important;font-weight:750;border-color:#168b9d!important}
+.article:has(> .content)>.content td,.revision-extract td,.tssr-fiche-section td{color:var(--lesson-ink);border-color:rgba(63,150,164,.24)!important}
+.article:has(> .content)>.content tr:nth-child(even) td,.revision-extract tr:nth-child(even) td,.tssr-fiche-section tr:nth-child(even) td{background:var(--lesson-soft)}
+.article:has(> .content)>.content pre,.revision-extract pre,.tssr-fiche-terminal{background:var(--lesson-code)!important;color:var(--lesson-code-ink)!important;border:1px solid #168ca2!important;border-radius:11px;box-shadow:0 4px 14px var(--lesson-shadow)}
+.article:has(> .content)>.content pre code,.revision-extract pre code{color:var(--lesson-code-ink)!important;background:transparent!important}
+.article:has(> .content)>.content :not(pre)>code,.revision-extract :not(pre)>code,.tssr-fiche-section :not(pre)>code{background:var(--lesson-soft);color:var(--lesson-ink);padding:2px 5px;border-radius:5px}
+.article:has(> .content)>.content blockquote,.revision-extract blockquote,.tssr-fiche-section blockquote{background:linear-gradient(105deg,rgba(225,164,20,.15),rgba(225,164,20,.055));border-left:5px solid #e8aa22;color:var(--lesson-ink);border-radius:9px;padding:13px 18px}
+.tssr-fiche-layout{max-width:1120px;gap:20px;color:var(--lesson-ink)}
+.tssr-fiche-section{padding:22px 25px;background:var(--lesson-panel)}
+.tssr-fiche-intro{border-top:4px solid #11c4d2}
+.tssr-fiche-intro>h1{color:var(--lesson-ink)!important}
+.tssr-fiche-terminal-head{background:#075568!important;color:#fff!important}
+.tssr-fiche-terminal pre{box-shadow:none!important}
+body:not(.dark) .revision-extract,body:not(.dark) .tssr-fiche-layout{color:#123747}
+body.dark .revision-extract,body.dark .tssr-fiche-layout{color:#e8f8fc}
+@media(max-width:700px){.article:has(> .content)>.content{padding:15px 13px}.tssr-fiche-section{padding:17px 15px}.article:has(> .content)>.content h2,.revision-extract h2{font-size:1.08rem}}
+@media(prefers-reduced-motion:reduce){.article:has(> .content),.tssr-fiche-section{transition:none!important}}

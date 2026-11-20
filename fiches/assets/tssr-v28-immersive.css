@@ -1,0 +1,51 @@
+/* V28 — refonte immersive, sans modifier les données et les ambiances existantes */
+/* Tous les contrôles d'écriture sont invisibles par défaut : seule une session validée les révèle. */
+body:not(.tssr-admin) :is(#newPage,#newBtn,#createModule,#restoreCourses,#addChapter,#newQuiz,#newCommand,#importCommands,#newCheat,[data-edit],[data-delete],[data-manage-course],[data-hide-course],[data-manage-module],[data-edit-cheat],[data-delete-cheat],[data-edit-quiz],[data-delete-quiz],[data-edit-command],[data-delete-command],[data-revision-edit],.mg-card-actions){display:none!important}
+body:not(.tssr-admin) #view .heading .actions:empty{display:none!important}
+/* Rich backgrounds limited to content sections, retaining sidebar and home */
+body:not(.home-network) #view{background:radial-gradient(ellipse 85% 250px at 77% 0%,rgba(0,168,218,.17),transparent 75%),linear-gradient(180deg,rgba(2,23,40,.28),transparent 440px);min-height:100%;}
+#view .heading{position:relative;padding:22px 4px 25px;margin-bottom:16px;border-bottom:1px solid rgba(77,194,220,.15)}
+#view .heading h1{letter-spacing:-.035em;text-shadow:0 3px 20px rgba(0,0,0,.18)}
+/* Module cards: three columns, larger icon and premium cyan edge */
+#view .course-library-grid{gap:17px!important;align-items:stretch}
+#view .mg-module-tile{min-width:0;position:relative}
+#view .module-card{position:relative;overflow:hidden;min-height:178px!important;border:1px solid rgba(46,200,231,.57)!important;border-radius:17px!important;background:linear-gradient(115deg,rgba(15,60,83,.95),rgba(3,29,48,.98))!important;box-shadow:inset 0 1px rgba(165,235,252,.12),0 7px 22px rgba(0,0,0,.16)!important;transition:transform .2s,box-shadow .2s,border-color .2s!important}
+#view .module-card:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 28% 44%,rgba(0,205,255,.11),transparent 55%);pointer-events:none}
+#view .module-card:hover{transform:translateY(-3px)!important;border-color:#57e8ff!important;box-shadow:0 12px 26px rgba(0,194,243,.17),inset 0 1px rgba(165,235,252,.18)!important}
+#view .module-art img{width:112px!important;height:100px!important;max-width:100%!important;object-fit:contain!important;filter:drop-shadow(0 9px 12px rgba(0,0,0,.34))}
+#view .module-card h3{font-size:17px!important;line-height:1.25!important;position:relative;z-index:1}
+#view .module-index{background:#063f5c!important;border:1px solid #39cfe8!important;color:#a1f4ff!important}
+/* Chapter cards: immersive large imagery, compact enough for three per row */
+#view .v83-chapters{gap:17px!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+#view .mg-course-tile{position:relative;min-width:0}
+#view .v83-chapter{position:relative;overflow:hidden;min-height:214px!important;border:1px solid rgba(53,192,220,.55)!important;border-radius:17px!important;background:linear-gradient(135deg,#103d57 0%,#071e31 88%)!important;box-shadow:inset 0 1px rgba(164,241,255,.12),0 8px 20px rgba(0,0,0,.18)!important;transition:transform .2s,box-shadow .2s!important}
+#view .v83-chapter:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(0,174,224,.15),transparent 65%);pointer-events:none}
+#view .v83-chapter:hover{transform:translateY(-3px)!important;box-shadow:0 13px 28px rgba(0,190,240,.15)!important}
+#view .v231-chapter-art{height:95px!important;min-height:95px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+#view .v231-chapter-art img{height:98px!important;max-width:155px!important;object-fit:contain!important;filter:drop-shadow(0 8px 12px rgba(0,0,0,.45))}
+#view .v83-chapter strong{position:relative;font-size:15px!important;line-height:1.3!important;z-index:1;min-height:unset!important}
+#view .v83-chapter-number{background:linear-gradient(145deg,#0cc9e7,#056f91)!important;border:1px solid #65eafa!important;color:#f4ffff!important;font-weight:800!important}
+#view .tssr-course-written .v83-chapter{border-color:rgba(224,179,74,.83)!important;box-shadow:inset 0 0 0 1px rgba(227,182,77,.16),0 8px 20px rgba(0,0,0,.18)!important}
+#view .tssr-course-written .v83-chapter-number{background:linear-gradient(145deg,#ffe29a,#bc811b)!important;color:#352200!important;border-color:#f7d17a!important}
+#view .tssr-written-label{color:#f2cb74!important}
+/* QCM: actual overflow fix + immersive four-card grid */
+#view .v81-qmodules{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:17px!important;align-items:stretch!important}
+#view .v81-qmodule{box-sizing:border-box!important;width:100%!important;min-width:0!important;min-height:310px!important;height:auto!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;padding:18px!important;border:1px solid rgba(44,204,233,.62)!important;border-radius:17px!important;background:linear-gradient(145deg,#104760,#082c45 70%,#061d32)!important;box-shadow:inset 0 1px rgba(177,241,255,.12),0 8px 22px rgba(0,0,0,.18)!important;transition:transform .2s,box-shadow .2s!important}
+#view .v81-qmodule:hover{transform:translateY(-3px)!important;box-shadow:0 13px 28px rgba(0,184,225,.17)!important}
+#view .v81-qmodule .v81-qicon{display:flex!important;align-items:center!important;justify-content:center!important;min-height:118px!important;height:118px!important;flex-shrink:0!important}
+#view .v81-qmodule .v81-qicon img{height:115px!important;width:155px!important;max-width:100%!important;object-fit:contain!important}
+#view .v81-qmodule b{display:block!important;overflow-wrap:anywhere!important;white-space:normal!important;line-height:1.3!important;min-height:44px!important;flex-shrink:0!important}
+#view .v81-qmodule :is(.v81-qcount,.v81-qtrack,small,.v81-qarrow){position:static!important;max-width:100%!important;box-sizing:border-box!important;flex-shrink:0!important}
+#view .v81-qmodule .v81-qtrack{margin-top:auto!important;width:100%!important}
+#view .v81-qmodule small{display:block!important;white-space:normal!important;line-height:1.4!important;margin-top:8px!important}
+#view .v81-qmodule .v81-qarrow{display:block!important;margin-top:9px!important;color:#67e6ff!important}
+/* Command cards preserve 12-color taxonomy but get compact, readable structure */
+#view .cmdstudio-v260{background:transparent!important}
+#view .cmdstudio-v260 [class*="cmd-card"]{transition:transform .2s,box-shadow .2s}
+#view .cmdstudio-v260 [class*="cmd-card"]:hover{transform:translateY(-2px)}
+/* Editing: one contextual overflow menu instead of two overlapping buttons */
+body.tssr-admin #view .mg-card-actions{display:flex!important;gap:6px!important;right:12px!important;top:10px!important}
+body.tssr-admin #view .mg-card-actions button{width:32px!important;height:32px!important;min-width:32px!important;border-radius:9px!important;background:#073047!important;border:1px solid #367d94!important}
+body.tssr-admin #view .mg-card-actions button:hover{border-color:#70e8fa!important;background:#10536d!important}
+@media(max-width:1150px){#view .v81-qmodules{grid-template-columns:repeat(2,minmax(0,1fr))!important}#view .v83-chapters{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:650px){#view .v81-qmodules,#view .v83-chapters{grid-template-columns:1fr!important}#view .module-art img{width:90px!important}}
