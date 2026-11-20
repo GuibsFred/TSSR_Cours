@@ -497,13 +497,13 @@
       "art": "",
       "heroImage": "assets/tssr-banner-linux.webp",
       "chapterIcon": "🐧",
-      "essentialsMarkdown": "# À retenir — Debian en mode maintenance\n\n- **GRUB** permet de modifier temporairement les paramètres de démarrage avec la touche `e`.\n- **Méthode 1 : `single`** — mode maintenance avec authentification root dans le scénario ENI.\n- **Méthode 2 : `init=/bin/bash`** — Bash lancé directement ; système minimal, sans démarrage normal des services.\n- **Méthode 3 : ISO Debian Rescue** — environnement de secours externe, utile lorsque le système installé est défaillant.\n- **`ro`** signifie lecture seule ; **`rw`** signifie lecture-écriture.\n- **`mount -o remount,rw /`** rend la racine modifiable dans la méthode Bash du support.\n- **`passwd`** modifie le mot de passe du compte courant ; en root, il modifie celui de root.\n- **`sync`** demande l'écriture des données en attente avant une fin d'intervention délicate.\n- **Ctrl+X / F10** démarre avec les paramètres édités dans GRUB ; **Ctrl+D** quitte le shell de maintenance selon le contexte.\n- **QWERTY** : attention aux caractères du mot de passe lors du démarrage.\n- **VMware** : vérifier l'ordre de démarrage et retirer l'ISO après une intervention Rescue.\n- **Sécurité** : ces procédures nécessitent une autorisation d'administration ; faire un instantané de la VM avant un TP.",
-      "commandsMarkdown": "`passwd` — Modifier le mot de passe root ou celui d'un utilisateur. Argument : nom_utilisateur (facultatif).\n\n`mount` — Monter ou remonter un système de fichiers. Option : -o. Exemple : mount -o remount,rw /.\n\n`sync` — Écrire sur disque les données en attente avant une interruption du système.\n\n`reboot` — Redémarrer Debian lorsque le système et son mode de maintenance le permettent.\n\n`cat` — Afficher le contenu d'un fichier texte. Exemple : cat /etc/passwd.\n\n`update-grub` — Régénérer la configuration de GRUB depuis un système Debian correctement monté, notamment lors d'une réparation depuis l'ISO.\n\n`shutdown` — Demander un arrêt ou un redémarrage propre lorsque le système d'initialisation fonctionne. Options : -h, -r.\n\n`init` — Changer de niveau ou de cible de fonctionnement selon l'initialisation disponible. Exemple historique : init 0. Ne pas l'utiliser dans le shell minimal init=/bin/bash.",
-      "html": "<blockquote>\n<p><strong>Objectif TSSR :</strong> réparer un système Debian qui ne démarre plus, intervenir sur un compte ou une configuration et savoir choisir une méthode de maintenance adaptée. Ce cours reprend les trois méthodes du support ENI : GRUB avec mot de passe root, GRUB avec shell direct et ISO Debian en mode Rescue. Les commandes Linux sont exécutées en <strong>root</strong>, sans <code>sudo</code>.</p>\n</blockquote>\n<h2>1. Pourquoi démarrer Debian en mode maintenance ?</h2>\n<p>Le mode maintenance permet d'intervenir lorsque le démarrage normal est impossible ou lorsque le système doit être réparé hors de sa session habituelle.</p>\n<table>\n<thead>\n<tr>\n<th>Situation rencontrée</th>\n<th>Objectif de l'intervention</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Mise à jour ou installation ayant perturbé le démarrage</td>\n<td>Examiner et réparer le système</td>\n</tr>\n<tr>\n<td>Mot de passe root oublié</td>\n<td>Retrouver un accès d'administration autorisé</td>\n</tr>\n<tr>\n<td>Configuration incorrecte</td>\n<td>Corriger les fichiers concernés</td>\n</tr>\n<tr>\n<td>Données à récupérer</td>\n<td>Accéder aux partitions depuis un environnement de secours</td>\n</tr>\n<tr>\n<td>GRUB ou amorçage endommagé</td>\n<td>Utiliser un support externe pour réparer le démarrage</td>\n</tr>\n</tbody></table>\n<blockquote>\n<p><strong>À retenir :</strong> le mode maintenance n'est pas un mode de travail quotidien. Sur une machine réelle, prévoir une sauvegarde ou un instantané de VM avant toute opération délicate. Les méthodes d'accès direct exigent un accès physique ou à la console et doivent être réservées aux systèmes que l'on administre.</p>\n</blockquote>\n<h2>2. Comprendre le démarrage : BIOS/UEFI, GRUB, noyau et système</h2>\n<h3>2.1. Les étapes du démarrage</h3>\n<ol>\n<li>Le firmware <strong>BIOS ou UEFI</strong> initialise le matériel et choisit un périphérique de démarrage.</li>\n<li><strong>GRUB</strong>, le gestionnaire d'amorçage, présente les entrées disponibles.</li>\n<li>GRUB charge le <strong>noyau Linux</strong> et l'<strong>initramfs</strong>, puis lui transmet des paramètres.</li>\n<li>Le noyau prépare le système et lance le processus d'initialisation (habituellement <code>systemd</code>).</li>\n<li>Les services et la session normale deviennent disponibles.</li>\n</ol>\n<h3>2.2. Les paramètres importants dans GRUB</h3>\n<p>Exemple pédagogique :</p>\n<pre><code class=\"language-text\">linux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro quiet\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Élément</th>\n<th>Signification</th>\n<th>Rôle</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>linux</code></td>\n<td>Directive GRUB</td>\n<td>Indique le noyau à lancer</td>\n</tr>\n<tr>\n<td><code>/vmlinuz-...</code></td>\n<td>Chemin du noyau</td>\n<td>Version à démarrer ; dépend de la machine</td>\n</tr>\n<tr>\n<td><code>root=/dev/mapper/...</code></td>\n<td>Paramètre du noyau</td>\n<td>Désigne le système de fichiers racine</td>\n</tr>\n<tr>\n<td><code>ro</code></td>\n<td>Read only</td>\n<td>Demande un montage initial en lecture seule</td>\n</tr>\n<tr>\n<td><code>quiet</code></td>\n<td>Silencieux</td>\n<td>Réduit les messages visibles au démarrage</td>\n</tr>\n<tr>\n<td><code>single</code></td>\n<td>Mode mono-utilisateur</td>\n<td>Demande un démarrage en mode maintenance / secours</td>\n</tr>\n<tr>\n<td><code>init=/bin/bash</code></td>\n<td>Initialisation alternative</td>\n<td>Demande de lancer Bash à la place du processus init habituel</td>\n</tr>\n</tbody></table>\n<p><strong>Important :</strong> les chemins de noyau et de volume logique affichés sont des exemples du support. Il faut modifier <strong>la ligne déjà présente sur la machine</strong>, sans recopier aveuglément le nom du noyau ou de la partition.</p>\n<h2>3. Méthode 1 — GRUB avec mot de passe root : <code>single</code></h2>\n<h3>3.1. Quand utiliser cette méthode ?</h3>\n<p>Elle convient lorsque GRUB est accessible et que le <strong>mot de passe du compte root est connu</strong>. Le support ENI précise qu'elle ne fonctionne pas dans sa démonstration si aucun mot de passe root utilisable n'est défini.</p>\n<h3>3.2. Procédure détaillée</h3>\n<ol>\n<li>Démarrer la machine et afficher le menu <strong>GRUB</strong>.</li>\n<li>Sélectionner l'entrée Debian voulue avec les flèches.</li>\n<li>Appuyer sur <strong><code>e</code></strong> pour éditer temporairement l'entrée.</li>\n<li>Repérer la ligne qui commence par <code>linux</code>.</li>\n<li>Remplacer <code>quiet</code> par <code>single</code> à la fin de cette ligne.</li>\n<li>Démarrer avec <strong>Ctrl+X</strong> ou <strong>F10</strong>.</li>\n<li>À l'invite, saisir le mot de passe <strong>root</strong>.</li>\n<li>Effectuer l'intervention nécessaire, puis quitter le mode maintenance selon le contexte.</li>\n</ol>\n<p><strong>Avant :</strong></p>\n<pre><code class=\"language-text\">linux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro quiet\n</code></pre>\n<p><strong>Après :</strong></p>\n<pre><code class=\"language-text\">linux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro single\n</code></pre>\n<blockquote>\n<p><strong>Attention au clavier :</strong> le support indique qu'au démarrage le clavier peut être en <strong>QWERTY (en_US)</strong>. Les caractères spéciaux de ton mot de passe peuvent ne pas correspondre aux touches AZERTY. Vérifier la disposition avant toute intervention.</p>\n</blockquote>\n<h3>3.3. Exemple de modification d'un mot de passe</h3>\n<p>Une fois authentifié dans l'environnement de maintenance :</p>\n<pre><code class=\"language-bash\">passwd\n</code></pre>\n<p><code>passwd</code> sans nom de compte modifie le mot de passe de l'utilisateur courant : ici <strong>root</strong>. Pour modifier un compte déterminé, on peut utiliser <code>passwd nom_utilisateur</code>.</p>\n<p>Selon le support, on peut ensuite relancer le système :</p>\n<pre><code class=\"language-bash\">reboot\n</code></pre>\n<p>La séquence <strong>Ctrl+D</strong> peut permettre de quitter le shell de maintenance et de poursuivre le démarrage vers l'étape prévue. Son effet dépend du mode exact de maintenance et de la configuration du système.</p>\n<blockquote>\n<p><strong>À retenir :</strong> <code>single</code> ne donne pas automatiquement un accès sans authentification. Il ne faut pas confondre cette méthode avec <code>init=/bin/bash</code>.</p>\n</blockquote>\n<h2>4. Méthode 2 — GRUB avec <code>init=/bin/bash</code></h2>\n<h3>4.1. Principe</h3>\n<p>Le support ENI présente cette méthode pour un accès à un shell root lorsque le mot de passe root n'est pas disponible. Au lieu de démarrer le processus d'initialisation habituel, le noyau reçoit <code>init=/bin/bash</code>.</p>\n<p>Cette procédure suppose un <strong>accès autorisé à la console</strong> et un GRUB modifiable. Elle peut être bloquée par une protection GRUB, le chiffrement du disque ou certaines configurations système.</p>\n<h3>4.2. Modifier la ligne de démarrage</h3>\n<ol>\n<li>Dans GRUB, sélectionner Debian puis appuyer sur <strong><code>e</code></strong>.</li>\n<li>Sur la ligne <code>linux</code>, remplacer <code>quiet</code> par <code>init=/bin/bash</code>.</li>\n<li>Conserver les autres paramètres, notamment <code>root=...</code> et <code>ro</code>.</li>\n<li>Valider avec <strong>Ctrl+X</strong> ou <strong>F10</strong>.</li>\n</ol>\n<pre><code class=\"language-text\">linux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro init=/bin/bash\n</code></pre>\n<p>Le shell Bash démarre directement en tant que root, mais <strong>le système n'est pas démarré normalement</strong> : les services habituels ne sont pas tous actifs.</p>\n<h3>4.3. Pourquoi le disque est-il en lecture seule ?</h3>\n<p>Le paramètre <code>ro</code> demande initialement le montage de la racine <code>/</code> en lecture seule. Il protège le système contre les écritures tant que la phase normale de démarrage n'a pas eu lieu.</p>\n<p>Pour effectuer des modifications, le support utilise :</p>\n<pre><code class=\"language-bash\">mount -o remount,rw /\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Partie</th>\n<th>Signification</th>\n<th>Explication</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>mount</code></td>\n<td>Commande de montage</td>\n<td>Gère les montages de systèmes de fichiers</td>\n</tr>\n<tr>\n<td><code>-o</code></td>\n<td>Options de montage</td>\n<td>Introduit une liste d'options</td>\n</tr>\n<tr>\n<td><code>remount</code></td>\n<td>Remonter</td>\n<td>Modifie les options d'un montage existant</td>\n</tr>\n<tr>\n<td><code>rw</code></td>\n<td>Read/write</td>\n<td>Autorise lecture et écriture</td>\n</tr>\n<tr>\n<td><code>/</code></td>\n<td>Racine du système</td>\n<td>Point de montage concerné</td>\n</tr>\n</tbody></table>\n<p><strong>Exemple d'intervention :</strong></p>\n<pre><code class=\"language-bash\">mount -o remount,rw /\npasswd\nsync\n</code></pre>\n<ol>\n<li><code>mount</code> rend la racine modifiable.</li>\n<li><code>passwd</code> change le mot de passe du compte root dans cet exemple.</li>\n<li><code>sync</code> demande l'écriture des données en attente vers les périphériques de stockage.</li>\n</ol>\n<h3>4.4. Fin d'intervention et précautions</h3>\n<p>Le support précise qu'avec <code>init=/bin/bash</code>, les mécanismes d'arrêt normaux ne sont pas disponibles comme lors d'un démarrage complet. Il recommande <code>sync</code> avant une extinction matérielle forcée.</p>\n<blockquote>\n<p><strong>Attention :</strong> une extinction forcée peut entraîner une corruption ou une perte de données. <code>sync</code> réduit le risque lié aux écritures en attente mais ne transforme pas un arrêt brutal en arrêt normal. En TP, suivre la procédure du formateur et éviter d'utiliser cette méthode sur une machine de production.</p>\n</blockquote>\n<h3>4.5. Comparaison des deux modes GRUB</h3>\n<table>\n<thead>\n<tr>\n<th>Critère</th>\n<th><code>single</code></th>\n<th><code>init=/bin/bash</code></th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Mot de passe root</td>\n<td>Demandé dans la démonstration ENI</td>\n<td>Non demandé dans la démonstration ENI</td>\n</tr>\n<tr>\n<td>Démarrage de l'environnement habituel</td>\n<td>Mode de secours encadré par l'initialisation</td>\n<td>Bash remplace le processus init habituel</td>\n</tr>\n<tr>\n<td>Racine accessible en écriture</td>\n<td>Selon configuration</td>\n<td>Généralement remonter avec <code>mount -o remount,rw /</code></td>\n</tr>\n<tr>\n<td>Fin de session</td>\n<td>Ctrl+D ou redémarrage selon le contexte</td>\n<td><code>sync</code>, puis procédure d'arrêt adaptée</td>\n</tr>\n<tr>\n<td>Risque</td>\n<td>Limité si intervention maîtrisée</td>\n<td>Plus élevé en raison du démarrage minimal</td>\n</tr>\n</tbody></table>\n<h2>5. Méthode 3 — Démarrer depuis une ISO Debian en mode Rescue</h2>\n<h3>5.1. Pourquoi choisir un support externe ?</h3>\n<p>Quand GRUB ou le système installé ne permet pas l'intervention, une <strong>ISO d'installation Debian</strong> peut lancer un environnement de secours indépendant.</p>\n<table>\n<thead>\n<tr>\n<th>Avantages indiqués par ENI</th>\n<th>Limites indiquées par ENI</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Choix de la langue française</td>\n<td>Il faut disposer d'une ISO, d'un CD ou d'une clé USB</td>\n</tr>\n<tr>\n<td>Le mot de passe root du système installé n'est pas nécessaire pour démarrer l'environnement de secours</td>\n<td>L'amorçage sur ISO peut être moins pratique dans une VM</td>\n</tr>\n<tr>\n<td>Possibilité de quitter proprement l'environnement de secours</td>\n<td>Il faut identifier correctement les partitions et volumes</td>\n</tr>\n</tbody></table>\n<p><strong>Précision :</strong> une partition chiffrée peut néanmoins nécessiter sa phrase secrète pour être ouverte.</p>\n<h3>5.2. Préparer le démarrage dans VMware</h3>\n<ol>\n<li>Connecter l'image <strong>ISO Debian</strong> au lecteur CD/DVD virtuel.</li>\n<li>Démarrer la VM et ouvrir son menu de démarrage ou son firmware <strong>BIOS/UEFI</strong>.</li>\n<li>Placer le lecteur CD/DVD avant le disque système dans l'ordre de démarrage, si nécessaire.</li>\n<li>Enregistrer les changements du firmware, puis démarrer sur l'ISO.</li>\n<li>Dans le menu Debian, choisir <strong>Advanced options</strong>, puis <strong>Rescue mode</strong> (ou <strong>Graphical rescue mode</strong>).</li>\n</ol>\n<blockquote>\n<p><strong>Astuce VMware du support :</strong> la touche Échap peut être difficile à envoyer au bon moment. Le menu de démarrage du firmware virtuel est souvent plus pratique. Les libellés exacts varient selon la version de VMware.</p>\n</blockquote>\n<h3>5.3. Identifier la bonne partition racine</h3>\n<p>L'environnement Rescue propose les partitions et volumes détectés. Il faut choisir la <strong>racine du système Debian installé</strong>, pas une partition au hasard.</p>\n<table>\n<thead>\n<tr>\n<th>Exemple</th>\n<th>Interprétation</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>/dev/sda1</code></td>\n<td>Partition 1 du disque <code>sda</code></td>\n</tr>\n<tr>\n<td><code>/dev/sda2</code></td>\n<td>Partition 2 du disque <code>sda</code></td>\n</tr>\n<tr>\n<td><code>/dev/mapper/debian--vg-LVRoot</code></td>\n<td>Volume logique LVM nommé <code>LVRoot</code> dans un groupe de volumes</td>\n</tr>\n<tr>\n<td><code>/boot</code></td>\n<td>Partition éventuelle des fichiers de démarrage</td>\n</tr>\n</tbody></table>\n<p>Le support recommande des noms LVM explicites, par exemple <strong>LVRoot</strong>, pour identifier rapidement la racine.</p>\n<h3>5.4. Monter <code>/boot</code> et ouvrir un shell</h3>\n<p>Le programme Rescue peut proposer de monter la partition <code>/boot</code>. C'est utile notamment lorsqu'il faut intervenir sur <strong>GRUB</strong>. Une fois le système identifié, il peut lancer un shell dans le contexte du système installé.</p>\n<p>Exemple de consultation :</p>\n<pre><code class=\"language-bash\">cat /etc/passwd\n</code></pre>\n<p><code>/etc/passwd</code> contient des informations sur les comptes locaux ; <strong>il ne contient pas les mots de passe en clair</strong>.</p>\n<p>Selon le besoin, le technicien peut modifier une configuration ou un mot de passe, puis quitter l'environnement de secours et redémarrer.</p>\n<h3>5.5. Revenir au démarrage normal</h3>\n<p>Après l'intervention, <strong>déconnecter l'ISO</strong> ou remettre le disque système en premier dans l'ordre de démarrage. Sinon, la VM risque de redémarrer encore sur le programme d'installation Debian.</p>\n<h2>6. Comprendre les commandes et paramètres du module</h2>\n<h3>6.1. Tableau de référence</h3>\n<table>\n<thead>\n<tr>\n<th>Commande / paramètre</th>\n<th>Type</th>\n<th>Utilité</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>passwd</code></td>\n<td>Commande Linux</td>\n<td>Modifier un mot de passe</td>\n</tr>\n<tr>\n<td><code>mount</code></td>\n<td>Commande Linux</td>\n<td>Monter ou remonter un système de fichiers</td>\n</tr>\n<tr>\n<td><code>sync</code></td>\n<td>Commande Linux</td>\n<td>Synchroniser les écritures en attente</td>\n</tr>\n<tr>\n<td><code>reboot</code></td>\n<td>Commande Linux</td>\n<td>Demander un redémarrage normal, si disponible</td>\n</tr>\n<tr>\n<td><code>cat</code></td>\n<td>Commande Linux</td>\n<td>Afficher le contenu d'un fichier texte</td>\n</tr>\n<tr>\n<td><code>single</code></td>\n<td>Paramètre de démarrage</td>\n<td>Demander le mode maintenance</td>\n</tr>\n<tr>\n<td><code>init=/bin/bash</code></td>\n<td>Paramètre de démarrage</td>\n<td>Utiliser Bash comme processus init</td>\n</tr>\n<tr>\n<td><code>ro</code> / <code>rw</code></td>\n<td>Paramètres / options</td>\n<td>Lecture seule / lecture-écriture</td>\n</tr>\n<tr>\n<td><code>quiet</code></td>\n<td>Paramètre de démarrage</td>\n<td>Réduire les messages de démarrage</td>\n</tr>\n</tbody></table>\n<p><strong>Ne pas confondre :</strong> <code>single</code>, <code>quiet</code>, <code>ro</code> et <code>init=/bin/bash</code> sont des <strong>paramètres de démarrage</strong>, pas des commandes à taper au prompt root. Ils sont expliqués dans le cours, mais ne doivent pas encombrer les « Commandes essentielles ».</p>\n<h3>6.2. <code>mount -o remount,rw /</code> décomposé</h3>\n<pre><code class=\"language-bash\">mount -o remount,rw /\n</code></pre>\n<ul>\n<li><strong>Commande :</strong> <code>mount</code></li>\n<li><strong>Option :</strong> <code>-o</code></li>\n<li><strong>Arguments de l'option :</strong> <code>remount,rw</code></li>\n<li><strong>Point de montage :</strong> <code>/</code></li>\n</ul>\n<blockquote>\n<p><strong>Point important :</strong> le <code>-o</code> contient la lettre <strong>o minuscule</strong>, et non le chiffre zéro. <code>remount,rw</code> est une liste d'options séparées par une virgule, sans espace.</p>\n</blockquote>\n<h2>7. TP guidé — Intervention sur une VM Debian de laboratoire</h2>\n<h3>TP A — Maintenance avec mot de passe root</h3>\n<p><strong>Préparation :</strong> disposer d'une VM Debian de test et connaître le mot de passe root.</p>\n<ol>\n<li>Prendre un instantané de la VM.</li>\n<li>Redémarrer, ouvrir GRUB et éditer l'entrée avec <code>e</code>.</li>\n<li>Remplacer <code>quiet</code> par <code>single</code>.</li>\n<li>Démarrer avec F10, puis saisir le mot de passe root.</li>\n<li>Vérifier l'accès au shell ; réaliser uniquement la modification prévue dans le TP.</li>\n<li>Quitter le mode maintenance et vérifier le démarrage normal.</li>\n</ol>\n<p><strong>Contrôle :</strong> le système redémarre et l'accès root fonctionne comme attendu.</p>\n<h3>TP B — Démarrage Bash minimal</h3>\n<ol>\n<li>Revenir à l'instantané de test si nécessaire.</li>\n<li>Dans GRUB, remplacer <code>quiet</code> par <code>init=/bin/bash</code>.</li>\n<li>Démarrer avec Ctrl+X.</li>\n<li>Remonter la racine en lecture-écriture.</li>\n<li>Effectuer la modification demandée par le formateur, puis synchroniser.</li>\n</ol>\n<pre><code class=\"language-bash\">mount -o remount,rw /\npasswd\nsync\n</code></pre>\n<p><strong>Contrôle :</strong> distinguer les trois commandes et expliquer pourquoi un arrêt normal n'est pas garanti dans ce mode.</p>\n<h3>TP C — ISO Debian Rescue</h3>\n<ol>\n<li>Connecter l'ISO Debian à la VM.</li>\n<li>Démarrer sur le CD/DVD virtuel via le BIOS/UEFI.</li>\n<li>Choisir <strong>Advanced options &gt; Rescue mode</strong>.</li>\n<li>Identifier la racine Debian (partition ou volume LVM).</li>\n<li>Monter <code>/boot</code> si le TP porte sur le démarrage.</li>\n<li>Ouvrir le shell de secours, vérifier la présence de <code>/etc/passwd</code>.</li>\n<li>Quitter, déconnecter l'ISO et redémarrer sur le disque.</li>\n</ol>\n<p><strong>Contrôle :</strong> savoir expliquer pourquoi le support externe reste utilisable lorsque le système installé ne démarre pas.</p>\n<h2>8. Erreurs fréquentes et dépannage</h2>\n<table>\n<thead>\n<tr>\n<th>Symptôme</th>\n<th>Cause possible</th>\n<th>Vérification / réaction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Impossible de saisir le mot de passe root</td>\n<td>Clavier QWERTY ou mot de passe inconnu</td>\n<td>Vérifier la disposition du clavier ; choisir une méthode autorisée adaptée</td>\n</tr>\n<tr>\n<td><code>passwd</code> ne peut pas enregistrer le changement</td>\n<td>Racine en lecture seule</td>\n<td>Vérifier le montage ; dans la méthode Bash, utiliser <code>mount -o remount,rw /</code></td>\n</tr>\n<tr>\n<td>La VM redémarre toujours sur l'ISO</td>\n<td>ISO toujours connectée ou priorité CD/DVD</td>\n<td>Déconnecter l'ISO ou rétablir l'ordre de démarrage</td>\n</tr>\n<tr>\n<td>Mauvaise partition sélectionnée</td>\n<td>Plusieurs disques/volumes LVM</td>\n<td>Identifier la racine avant de modifier quoi que ce soit</td>\n</tr>\n<tr>\n<td><code>reboot</code> ne fonctionne pas dans Bash minimal</td>\n<td>Services d'initialisation absents</td>\n<td>Suivre la procédure spécifique de fin de TP, après <code>sync</code></td>\n</tr>\n<tr>\n<td>Menu GRUB impossible à modifier</td>\n<td>GRUB protégé ou démarrage particulier</td>\n<td>Utiliser la procédure d'administration prévue et un support de secours autorisé</td>\n</tr>\n</tbody></table>\n<blockquote>\n<p><strong>Bilan :</strong> choisir d'abord la méthode la moins intrusive qui permet la réparation. La compréhension des paramètres de GRUB, des droits root et du montage en lecture-écriture est indispensable pour un TSSR.</p>\n</blockquote>\n",
-      "revisionHtml": "<h1>Fiche de révision — Debian en mode maintenance</h1>\n<h2>Choisir rapidement la méthode</h2>\n<table>\n<thead>\n<tr>\n<th>Situation</th>\n<th>Méthode ENI</th>\n<th>Point décisif</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>GRUB accessible, mot de passe root connu</td>\n<td>GRUB avec <code>single</code></td>\n<td>Authentification root</td>\n</tr>\n<tr>\n<td>GRUB accessible, besoin d'un shell minimal</td>\n<td>GRUB avec <code>init=/bin/bash</code></td>\n<td>Remonter <code>/</code> en écriture</td>\n</tr>\n<tr>\n<td>Système endommagé ou intervention externe</td>\n<td>ISO Debian <code>Rescue mode</code></td>\n<td>Identifier la partition racine</td>\n</tr>\n</tbody></table>\n<h2>Méthode 1 : <code>single</code></h2>\n<ol>\n<li>GRUB → <code>e</code>.</li>\n<li>Sur la ligne <code>linux</code>, remplacer <code>quiet</code> par <code>single</code>.</li>\n<li>Ctrl+X ou F10.</li>\n<li>Saisir le mot de passe root (attention au clavier QWERTY).</li>\n<li>Effectuer la maintenance, puis quitter le shell ou redémarrer selon le contexte.</li>\n</ol>\n<h2>Méthode 2 : <code>init=/bin/bash</code></h2>\n<ol>\n<li>GRUB → <code>e</code>.</li>\n<li>Sur la ligne <code>linux</code>, remplacer <code>quiet</code> par <code>init=/bin/bash</code>.</li>\n<li>Ctrl+X ou F10.</li>\n<li>Exécuter les commandes en root :</li>\n</ol>\n<pre><code class=\"language-bash\">mount -o remount,rw /\npasswd\nsync\n</code></pre>\n<ol start=\"5\">\n<li>Finir selon la procédure du TP : un arrêt normal n'est pas garanti dans cet environnement minimal.</li>\n</ol>\n<h2>Méthode 3 : ISO Rescue</h2>\n<ol>\n<li>Connecter l'ISO Debian à la VM.</li>\n<li>Démarrer sur le CD/DVD via BIOS/UEFI.</li>\n<li>Advanced options → Rescue mode.</li>\n<li>Sélectionner la racine correcte (partition ou LV LVM).</li>\n<li>Monter <code>/boot</code> si nécessaire, puis ouvrir un shell de secours.</li>\n<li>Réparer, quitter, retirer l'ISO et redémarrer.</li>\n</ol>\n<h2>Tableau mémoire des paramètres</h2>\n<table>\n<thead>\n<tr>\n<th>Élément</th>\n<th>Mémo</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>quiet</code></td>\n<td>Démarrage moins bavard</td>\n</tr>\n<tr>\n<td><code>single</code></td>\n<td>Mode maintenance</td>\n</tr>\n<tr>\n<td><code>init=/bin/bash</code></td>\n<td>Shell Bash comme init</td>\n</tr>\n<tr>\n<td><code>ro</code></td>\n<td>Read only</td>\n</tr>\n<tr>\n<td><code>rw</code></td>\n<td>Read/write</td>\n</tr>\n<tr>\n<td><code>root=...</code></td>\n<td>Indique la racine au noyau</td>\n</tr>\n<tr>\n<td><code>-o</code></td>\n<td>Options de <code>mount</code></td>\n</tr>\n<tr>\n<td><code>remount</code></td>\n<td>Changer les options du montage existant</td>\n</tr>\n<tr>\n<td><code>/</code></td>\n<td>Racine du système de fichiers</td>\n</tr>\n</tbody></table>\n<h2>Les 5 commandes à connaître</h2>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Exemple / usage</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>passwd</code></td>\n<td>Modifier un mot de passe</td>\n</tr>\n<tr>\n<td><code>mount</code></td>\n<td><code>mount -o remount,rw /</code></td>\n</tr>\n<tr>\n<td><code>sync</code></td>\n<td>Synchroniser les écritures</td>\n</tr>\n<tr>\n<td><code>reboot</code></td>\n<td>Redémarrer si disponible</td>\n</tr>\n<tr>\n<td><code>cat</code></td>\n<td><code>cat /etc/passwd</code></td>\n</tr>\n</tbody></table>\n<h2>Questions de révision orale</h2>\n<ul>\n<li>Pourquoi <code>init=/bin/bash</code> ne correspond-il pas à un démarrage normal ?</li>\n<li>Pourquoi faut-il remonter <code>/</code> en lecture-écriture avant de modifier le mot de passe ?</li>\n<li>Quel est le risque d'une extinction forcée ?</li>\n<li>Pourquoi l'ISO de secours peut-elle être utile si GRUB ne fonctionne plus ?</li>\n<li>Quelle différence existe entre une partition <code>/dev/sda2</code> et un volume logique LVM ?</li>\n</ul>\n",
+      "essentialsMarkdown": "# À retenir — Debian en mode maintenance\n\n1. GRUB est le gestionnaire d'amorçage : touche `e` pour modifier temporairement l'entrée, puis `Ctrl+X` ou `F10` pour démarrer.\n2. `single` demande un mode maintenance ; l'accès dépend notamment de l'authentification root.\n3. `init=/bin/bash` remplace le processus init normal par Bash et permet un shell root direct dans le scénario du cours.\n4. En shell direct, la racine est généralement en lecture seule : `mount -o remount,rw /` autorise l'écriture.\n5. `passwd` modifie un mot de passe ; `sync` demande l'écriture des données en attente.\n6. Un arrêt normal n'est pas garanti avec Bash comme PID 1 : la coupure forcée reste risquée.\n7. Le mode Rescue de l'ISO Debian permet d'intervenir depuis un système externe, sans le mot de passe root du système installé pour démarrer l'environnement.\n8. Toujours identifier le bon volume racine et, si besoin, monter `/boot`.\n9. Le clavier au démarrage peut être QWERTY ; attention aux caractères spéciaux.\n10. Les lignes `linux ... single` et `linux ... init=/bin/bash` sont des paramètres GRUB, pas des commandes Bash.",
+      "commandsMarkdown": "# Commandes essentielles — Debian en mode maintenance\n\n`passwd` — Modifier le mot de passe du compte courant ; en session root, celui de root. Sans option.\n\n`passwd utilisateur` — Modifier le mot de passe du compte indiqué. Argument utilisateur : nom du compte cible.\n\n`mount -o remount,rw /` — Remonter la racine en lecture-écriture. -o : options ; remount : modifier le montage ; rw : lecture-écriture ; / : racine.\n\n`sync` — Demander la synchronisation des écritures en attente vers le stockage. Sans option.\n\n`reboot` — Demander un redémarrage quand le système le permet. Sans option.\n\n`lsblk` — Lister disques, partitions et volumes logiques. Sans option.\n\n`cat /etc/passwd` — Afficher le fichier des comptes du système courant. Argument /etc/passwd : chemin du fichier.\n\n`update-grub` — Régénérer la configuration GRUB du système installé. Sans option.\n\n`shutdown -h now` — Demander un arrêt normal si init fonctionne. -h : arrêt ; now : immédiatement. Peut échouer avec init=/bin/bash.\n\n`init 0` — Demander le passage au niveau d’arrêt lorsque le système init est actif. 0 : arrêt ; non adapté au shell direct.\n\nParamètres GRUB à connaître (non exécutables dans Bash) : `single` : maintenance ; `init=/bin/bash` : shell direct ; `ro` : lecture seule ; `quiet` : messages réduits.",
+      "html": "<h2>Objectifs du module</h2>\n<p>Comprendre les situations qui nécessitent une maintenance Debian et maîtriser les trois méthodes étudiées par le formateur ENI : accès via GRUB avec le mot de passe root, accès via GRUB avec <code>init=/bin/bash</code>, et dépannage avec le support d'installation Debian en mode Rescue.</p>\n<p>Les exercices Linux sont réalisés en session root, sans préfixe d'élévation de privilèges. Les manipulations de démarrage se font sur une VM de laboratoire dont on possède l'autorisation d'administration.</p>\n<h2>1. Pourquoi utiliser le mode maintenance ?</h2>\n<p>Une mise à jour peut empêcher le démarrage, une configuration peut devenir incorrecte, le mot de passe root peut être perdu ou des données peuvent nécessiter une récupération. Le mode maintenance permet d'intervenir sans charger l'environnement habituel.</p>\n<table>\n<thead>\n<tr>\n<th>Situation</th>\n<th>Objectif</th>\n<th>Méthode envisageable</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Mot de passe root connu</td>\n<td>Réparer ou changer un mot de passe utilisateur</td>\n<td>GRUB avec <code>single</code></td>\n</tr>\n<tr>\n<td>Mot de passe root indisponible</td>\n<td>Accéder à un shell local de dépannage</td>\n<td>GRUB avec <code>init=/bin/bash</code>, si l'accès au démarrage est autorisé</td>\n</tr>\n<tr>\n<td>Système installé inaccessible</td>\n<td>Examiner les volumes depuis un système externe</td>\n<td>ISO Debian Rescue</td>\n</tr>\n<tr>\n<td>GRUB défaillant</td>\n<td>Réparer le démarrage depuis un support externe</td>\n<td>ISO Debian Rescue</td>\n</tr>\n</tbody></table>\n<h2>2. Comprendre les étapes du démarrage</h2>\n<h3>2.1. BIOS/UEFI, GRUB, noyau et init</h3>\n<ol>\n<li>Le firmware BIOS ou UEFI initialise la machine et choisit le périphérique d'amorçage.</li>\n<li>GRUB présente les entrées de démarrage et transmet les paramètres au noyau Linux.</li>\n<li>Le noyau initialise le matériel et monte le système de fichiers racine, éventuellement à l'aide de l'initramfs.</li>\n<li>Le processus d'initialisation (habituellement systemd) démarre les services et les cibles nécessaires.</li>\n</ol>\n<h3>2.2. Les paramètres importants de GRUB</h3>\n<table>\n<thead>\n<tr>\n<th>Élément</th>\n<th>Signification</th>\n<th>Utilité</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>linux</code></td>\n<td>Directive GRUB de chargement du noyau</td>\n<td>Ligne à éditer dans GRUB ; ce n'est pas une commande shell</td>\n</tr>\n<tr>\n<td><code>/vmlinuz-...</code></td>\n<td>Image du noyau</td>\n<td>Sa version varie selon l'installation</td>\n</tr>\n<tr>\n<td><code>root=/dev/mapper/...</code></td>\n<td>Emplacement de la racine</td>\n<td>Désigne le volume contenant <code>/</code></td>\n</tr>\n<tr>\n<td><code>ro</code></td>\n<td>Read-only</td>\n<td>Demande le montage initial en lecture seule</td>\n</tr>\n<tr>\n<td><code>quiet</code></td>\n<td>Mode de démarrage peu bavard</td>\n<td>Réduit les messages affichés</td>\n</tr>\n<tr>\n<td><code>single</code></td>\n<td>Mode maintenance / utilisateur unique</td>\n<td>Permet d'accéder au dépannage avec authentification root selon configuration</td>\n</tr>\n<tr>\n<td><code>init=/bin/bash</code></td>\n<td>Remplacement du processus init</td>\n<td>Démarre directement un shell Bash comme PID 1</td>\n</tr>\n</tbody></table>\n<p><strong>Attention :</strong> les lignes GRUB ci-dessous sont des exemples à modifier dans l'éditeur de démarrage, et non à taper dans le terminal Bash. Le nom du noyau et le chemin de la racine doivent correspondre à la VM.</p>\n<h2>3. Méthode 1 — GRUB avec mot de passe root (<code>single</code>)</h2>\n<h3>3.1. Conditions et principe</h3>\n<p>Cette méthode repose sur la disponibilité d'un mot de passe root utilisable pour l'authentification de maintenance. Sur un système où le compte root est verrouillé ou n'a pas de mot de passe défini, elle peut ne pas fonctionner.</p>\n<h3>3.2. Procédure pas à pas</h3>\n<ol>\n<li>Démarrer la VM et afficher le menu GRUB.</li>\n<li>Sélectionner l'entrée Debian puis appuyer sur <code>e</code> pour l'éditer.</li>\n<li>Repérer la ligne qui commence par <code>linux</code>.</li>\n<li>Remplacer le paramètre <code>quiet</code> par <code>single</code>, sans changer le reste de la ligne.</li>\n<li>Démarrer avec <code>Ctrl+X</code> ou <code>F10</code>.</li>\n<li>Saisir le mot de passe root demandé. Au démarrage, la disposition clavier peut être QWERTY.</li>\n<li>Effectuer l'intervention puis poursuivre le démarrage avec <code>Ctrl+D</code> si proposé, ou redémarrer proprement si le système le permet.</li>\n</ol>\n<p><strong>Exemple de ligne avant modification :</strong></p>\n<pre><code class=\"language-text\">linux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro quiet\n</code></pre>\n<p><strong>Exemple de ligne après modification :</strong></p>\n<pre><code class=\"language-text\">linux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro single\n</code></pre>\n<h3>3.3. Modifier un mot de passe en mode maintenance</h3>\n<pre><code class=\"language-bash\">passwd\nreboot\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Explication</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>passwd</code></td>\n<td>Modifie le mot de passe du compte courant : ici root</td>\n</tr>\n<tr>\n<td><code>passwd utilisateur</code></td>\n<td>Modifie le mot de passe du compte désigné, lorsque l'on est root</td>\n</tr>\n<tr>\n<td><code>reboot</code></td>\n<td>Demande un redémarrage, lorsque l'environnement d'initialisation le permet</td>\n</tr>\n</tbody></table>\n<p>Le support ENI utilise <code>passwd</code> puis <code>reboot</code> dans cette méthode. Vérifier que l'on a réellement ouvert le shell de maintenance attendu avant de modifier quoi que ce soit.</p>\n<h2>4. Méthode 2 — GRUB avec <code>init=/bin/bash</code></h2>\n<h3>4.1. Différence fondamentale</h3>\n<p>Au lieu de lancer le processus d'initialisation normal, le noyau démarre directement <code>/bin/bash</code>. On obtient un shell root sans passer par la séquence de services habituelle. Cette méthode nécessite un accès autorisé à la console et au menu GRUB ; des protections de démarrage ou le chiffrement peuvent l'empêcher.</p>\n<h3>4.2. Modifier les paramètres de démarrage</h3>\n<ol>\n<li>Ouvrir GRUB, sélectionner Debian et appuyer sur <code>e</code>.</li>\n<li>Repérer la ligne <code>linux</code> et remplacer <code>quiet</code> par <code>init=/bin/bash</code>.</li>\n<li>Démarrer avec <code>Ctrl+X</code> ou <code>F10</code>.</li>\n<li>Constater que la racine est généralement montée en lecture seule.</li>\n</ol>\n<pre><code class=\"language-text\">linux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro init=/bin/bash\n</code></pre>\n<h3>4.3. Remonter la racine en lecture-écriture</h3>\n<pre><code class=\"language-bash\">mount -o remount,rw /\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Élément</th>\n<th>Signification</th>\n<th>Effet</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>mount</code></td>\n<td>Commande de montage</td>\n<td>Gère les systèmes de fichiers montés</td>\n</tr>\n<tr>\n<td><code>-o</code></td>\n<td>Option de montage</td>\n<td>Introduit une liste d'options</td>\n</tr>\n<tr>\n<td><code>remount</code></td>\n<td>Remonter</td>\n<td>Modifie les options d'un montage existant</td>\n</tr>\n<tr>\n<td><code>rw</code></td>\n<td>Read-write</td>\n<td>Active lecture et écriture</td>\n</tr>\n<tr>\n<td><code>/</code></td>\n<td>Racine</td>\n<td>Point de montage concerné</td>\n</tr>\n</tbody></table>\n<p>Ne pas confondre <code>ro</code> (lecture seule) et <code>rw</code> (lecture-écriture). Le support dit parfois « démonter puis remonter » : ici, <code>remount</code> modifie le montage existant, sans démontage préalable.</p>\n<h3>4.4. Effectuer la réparation et synchroniser</h3>\n<pre><code class=\"language-bash\">mount -o remount,rw /\npasswd\nsync\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Rôle</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>mount -o remount,rw /</code></td>\n<td>Autoriser la modification du système de fichiers racine</td>\n</tr>\n<tr>\n<td><code>passwd</code></td>\n<td>Définir un nouveau mot de passe root dans l'exemple du formateur</td>\n</tr>\n<tr>\n<td><code>sync</code></td>\n<td>Demander l'écriture sur disque des données en attente</td>\n</tr>\n</tbody></table>\n<p><strong>Précaution :</strong> dans ce mode, Bash remplace le processus init normal. Les commandes <code>reboot</code>, <code>shutdown</code> ou <code>init 0</code> peuvent ne pas fonctionner comme dans une session normale. Le formateur prévoit une extinction matérielle après <code>sync</code>. Cette méthode reste un dernier recours ; une coupure forcée n'offre pas les garanties d'un arrêt normal. <code>sync</code> demande la synchronisation des écritures, mais ne garantit pas à lui seul l'intégrité d'une extinction forcée.</p>\n<h3>4.5. Pourquoi le clavier est-il parfois en QWERTY ?</h3>\n<p>Les paramètres de disposition française ne sont pas toujours chargés au début du démarrage. Le mot de passe et les caractères <code>/</code>, <code>=</code>, <code>-</code> doivent donc être saisis en tenant compte du clavier réellement actif. Le document ENI évoque <code>keyboard=fr</code> comme piste à étudier : ce n'est pas une solution universelle garantie sur toutes les versions de Debian.</p>\n<h2>5. Méthode 3 — Démarrer sur l'ISO Debian en mode Rescue</h2>\n<h3>5.1. Pourquoi un support externe ?</h3>\n<p>Le support d'installation démarre son propre environnement Linux. Il peut être utilisé lorsque le système installé ne démarre plus ou lorsque l'on souhaite intervenir sur les partitions depuis l'extérieur.</p>\n<table>\n<thead>\n<tr>\n<th>Avantages</th>\n<th>Limites</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Interface de secours et langue française possibles</td>\n<td>ISO ou support physique nécessaire</td>\n</tr>\n<tr>\n<td>Pas besoin du mot de passe root du système installé pour lancer l'environnement Rescue</td>\n<td>L'accès aux volumes chiffrés peut nécessiter une clé</td>\n</tr>\n<tr>\n<td>Possibilité d'arrêter normalement l'environnement de secours</td>\n<td>Ordre d'amorçage parfois difficile à régler dans une VM</td>\n</tr>\n<tr>\n<td>Accès aux partitions et aux volumes LVM</td>\n<td>Il faut identifier la bonne partition racine</td>\n</tr>\n</tbody></table>\n<h3>5.2. Procédure dans VMware</h3>\n<ol>\n<li>Connecter l'image ISO Debian au lecteur CD/DVD virtuel.</li>\n<li>Ouvrir le menu de démarrage ou le BIOS/UEFI de la VM.</li>\n<li>Placer le lecteur CD/DVD avant le disque dans l'ordre de démarrage, si nécessaire.</li>\n<li>Démarrer sur l'ISO, choisir <strong>Advanced options</strong>, puis <strong>Rescue mode</strong>.</li>\n<li>Choisir la langue et les paramètres demandés.</li>\n<li>Identifier la partition ou le volume logique contenant la racine Debian (par exemple <code>/dev/mapper/debian--vg-root</code>).</li>\n<li>Si proposé, monter <code>/boot</code> lorsque la réparation de GRUB le nécessite.</li>\n<li>Ouvrir un shell dans le système installé et réaliser l'intervention.</li>\n<li>Quitter le shell, terminer la procédure, retirer l'ISO ou rétablir l'ordre de démarrage, puis redémarrer sur le disque.</li>\n</ol>\n<h3>5.3. Vérifier le système sélectionné</h3>\n<pre><code class=\"language-bash\">lsblk\ncat /etc/passwd\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Utilité</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>lsblk</code></td>\n<td>Afficher les disques, partitions et volumes logiques visibles</td>\n</tr>\n<tr>\n<td><code>cat /etc/passwd</code></td>\n<td>Lire la liste des comptes du système correspondant au shell courant</td>\n</tr>\n</tbody></table>\n<p><strong>Important :</strong> dans un shell de l'installateur, <code>/etc/passwd</code> peut appartenir au système de secours. Vérifier que l'on a bien ouvert le shell dans la racine du système installé avant d'interpréter son contenu.</p>\n<h3>5.4. Réparer GRUB si nécessaire</h3>\n<p>Dans l'environnement de secours correctement configuré, le support illustre la commande :</p>\n<pre><code class=\"language-bash\">update-grub\n</code></pre>\n<p><code>update-grub</code> régénère la configuration de GRUB à partir des paramètres et noyaux détectés. Cela ne réinstalle pas automatiquement le chargeur d'amorçage sur un disque. Le montage de <code>/boot</code> peut être nécessaire si ce répertoire réside sur une partition distincte.</p>\n<h2>6. Comparaison des trois méthodes</h2>\n<table>\n<thead>\n<tr>\n<th>Critère</th>\n<th>GRUB <code>single</code></th>\n<th>GRUB <code>init=/bin/bash</code></th>\n<th>ISO Rescue</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Support externe</td>\n<td>Non</td>\n<td>Non</td>\n<td>Oui</td>\n</tr>\n<tr>\n<td>Mot de passe root</td>\n<td>Généralement requis</td>\n<td>Pas demandé par le shell direct</td>\n<td>Non requis pour lancer Rescue</td>\n</tr>\n<tr>\n<td>Initialisation normale</td>\n<td>Partielle, via systemd</td>\n<td>Non, Bash remplace init</td>\n<td>Environnement externe</td>\n</tr>\n<tr>\n<td>Racine modifiable</td>\n<td>Selon le montage</td>\n<td>Après <code>mount -o remount,rw /</code></td>\n<td>Selon montage et shell sélectionné</td>\n</tr>\n<tr>\n<td>Arrêt normal</td>\n<td>Souvent possible</td>\n<td>Non garanti</td>\n<td>Généralement possible</td>\n</tr>\n<tr>\n<td>Utilisation typique</td>\n<td>Intervention simple avec accès root</td>\n<td>Dépannage local lorsque root n'est pas accessible</td>\n<td>Réparation externe ou démarrage défaillant</td>\n</tr>\n</tbody></table>\n<h2>7. Travaux pratiques guidés</h2>\n<h3>TP A — Démarrage <code>single</code></h3>\n<ol>\n<li>Faire un instantané de la VM.</li>\n<li>Modifier <code>quiet</code> en <code>single</code> dans GRUB.</li>\n<li>Démarrer et vérifier la demande d'authentification root.</li>\n<li>Identifier le compte à modifier, puis utiliser <code>passwd</code> si demandé par le formateur.</li>\n<li>Revenir au démarrage normal et vérifier l'accès.</li>\n</ol>\n<p><strong>Contrôle :</strong> expliquer le rôle de <code>single</code>, de <code>Ctrl+X</code>, de <code>Ctrl+D</code> et du clavier QWERTY.</p>\n<h3>TP B — Démarrage <code>init=/bin/bash</code></h3>\n<ol>\n<li>Faire un instantané de la VM.</li>\n<li>Modifier la ligne GRUB avec <code>init=/bin/bash</code>.</li>\n<li>Démarrer le shell direct et constater le fonctionnement réduit du système.</li>\n<li>Remonter la racine en lecture-écriture.</li>\n<li>Réaliser uniquement la modification demandée par le formateur, puis synchroniser.</li>\n</ol>\n<pre><code class=\"language-bash\">mount -o remount,rw /\npasswd\nsync\n</code></pre>\n<p><strong>Contrôle :</strong> expliquer pourquoi <code>mount</code> et <code>sync</code> sont nécessaires et pourquoi l'arrêt normal n'est pas garanti.</p>\n<h3>TP C — ISO Debian Rescue</h3>\n<ol>\n<li>Connecter l'ISO Debian à la VM.</li>\n<li>Démarrer sur le lecteur virtuel et sélectionner <strong>Advanced options &gt; Rescue mode</strong>.</li>\n<li>Identifier la racine Debian parmi les partitions et volumes LVM.</li>\n<li>Monter <code>/boot</code> si nécessaire pour une réparation de GRUB.</li>\n<li>Ouvrir le shell dans le système installé et examiner <code>/etc/passwd</code>.</li>\n<li>Quitter, déconnecter l'ISO et redémarrer depuis le disque.</li>\n</ol>\n<p><strong>Contrôle :</strong> expliquer pourquoi un environnement externe reste utilisable lorsque le système installé ne démarre pas.</p>\n<h2>8. Erreurs fréquentes et dépannage</h2>\n<table>\n<thead>\n<tr>\n<th>Symptôme</th>\n<th>Cause possible</th>\n<th>Vérification / action</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Mot de passe root refusé</td>\n<td>Mauvaise disposition clavier</td>\n<td>Vérifier QWERTY et caractères spéciaux</td>\n</tr>\n<tr>\n<td><code>single</code> n'ouvre pas le shell</td>\n<td>Compte root verrouillé ou configuration de secours différente</td>\n<td>Utiliser une autre méthode autorisée</td>\n</tr>\n<tr>\n<td><code>passwd</code> ne peut pas enregistrer</td>\n<td>Racine en lecture seule</td>\n<td>En mode Bash direct : <code>mount -o remount,rw /</code></td>\n</tr>\n<tr>\n<td>La VM redémarre toujours sur l'ISO</td>\n<td>ISO toujours connecté ou ordre d'amorçage</td>\n<td>Déconnecter l'ISO / corriger l'ordre de boot</td>\n</tr>\n<tr>\n<td>Mauvais système modifié</td>\n<td>Mauvais volume racine sélectionné</td>\n<td>Identifier partitions et volumes LVM avant modification</td>\n</tr>\n<tr>\n<td><code>reboot</code> échoue en shell direct</td>\n<td>Initialisation normale absente</td>\n<td>Suivre la procédure de fin d'intervention adaptée au TP</td>\n</tr>\n<tr>\n<td><code>update-grub</code> ne trouve pas le noyau attendu</td>\n<td>Mauvaise racine ou <code>/boot</code> non monté</td>\n<td>Vérifier le système cible et le montage de <code>/boot</code></td>\n</tr>\n</tbody></table>\n<h2>9. Ce qu'un TSSR doit savoir expliquer</h2>\n<ul>\n<li>Pourquoi GRUB permet de modifier temporairement les paramètres du noyau.</li>\n<li>La différence entre <code>single</code> et <code>init=/bin/bash</code>.</li>\n<li>Le sens de <code>ro</code>, <code>rw</code>, <code>quiet</code>, <code>single</code>, <code>init</code> et <code>remount</code>.</li>\n<li>Le rôle de <code>passwd</code>, <code>mount</code>, <code>sync</code>, <code>reboot</code>, <code>lsblk</code>, <code>cat</code> et <code>update-grub</code>.</li>\n<li>Pourquoi le mode Rescue sur ISO est utile et comment retrouver le bon volume racine.</li>\n<li>Pourquoi il faut être particulièrement prudent avec les écritures et les extinctions forcées.</li>\n</ul>\n",
+      "revisionHtml": "<h1>Fiche mémo — Debian en mode maintenance</h1>\n<h2>Les trois méthodes</h2>\n<table>\n<thead>\n<tr>\n<th>Méthode</th>\n<th>Modification / action</th>\n<th>Mot de passe root</th>\n<th>Point d'attention</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>GRUB maintenance</td>\n<td>Remplacer <code>quiet</code> par <code>single</code></td>\n<td>Généralement oui</td>\n<td>Clavier parfois QWERTY</td>\n</tr>\n<tr>\n<td>GRUB shell direct</td>\n<td>Remplacer <code>quiet</code> par <code>init=/bin/bash</code></td>\n<td>Non dans le scénario du cours</td>\n<td>Racine initialement en lecture seule</td>\n</tr>\n<tr>\n<td>ISO Debian Rescue</td>\n<td>Advanced options &gt; Rescue mode</td>\n<td>Pas nécessaire pour lancer Rescue</td>\n<td>Sélectionner la bonne racine</td>\n</tr>\n</tbody></table>\n<h2>Commandes et paramètres à mémoriser</h2>\n<table>\n<thead>\n<tr>\n<th>Syntaxe</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>passwd</code></td>\n<td>Changer le mot de passe root en session root</td>\n</tr>\n<tr>\n<td><code>passwd utilisateur</code></td>\n<td>Changer celui d'un utilisateur donné</td>\n</tr>\n<tr>\n<td><code>mount -o remount,rw /</code></td>\n<td>Remonter <code>/</code> en lecture-écriture</td>\n</tr>\n<tr>\n<td><code>sync</code></td>\n<td>Synchroniser les écritures en attente</td>\n</tr>\n<tr>\n<td><code>reboot</code></td>\n<td>Redémarrer lorsque possible</td>\n</tr>\n<tr>\n<td><code>lsblk</code></td>\n<td>Identifier les disques et volumes</td>\n</tr>\n<tr>\n<td><code>cat /etc/passwd</code></td>\n<td>Afficher les comptes du système courant</td>\n</tr>\n<tr>\n<td><code>update-grub</code></td>\n<td>Régénérer la configuration de GRUB</td>\n</tr>\n<tr>\n<td><code>shutdown -h now</code></td>\n<td>Arrêter normalement si init est fonctionnel</td>\n</tr>\n<tr>\n<td><code>init 0</code></td>\n<td>Demander l'arrêt via le système d'initialisation, s'il fonctionne</td>\n</tr>\n</tbody></table>\n<h2>Décomposer <code>mount -o remount,rw /</code></h2>\n<ul>\n<li><code>mount</code> : gérer les montages.</li>\n<li><code>-o</code> : introduire des options.</li>\n<li><code>remount</code> : modifier un montage existant.</li>\n<li><code>rw</code> : autoriser lecture et écriture.</li>\n<li><code>/</code> : point de montage racine.</li>\n</ul>\n<h2>Méthode de dépannage à l'examen</h2>\n<ol>\n<li>Identifier le symptôme et choisir la méthode adaptée.</li>\n<li>Vérifier l'accès autorisé à la console ou à l'ISO.</li>\n<li>Identifier le système installé et son volume racine.</li>\n<li>Expliquer chaque paramètre avant de l'utiliser.</li>\n<li>Effectuer la modification minimale et vérifier le résultat.</li>\n<li>Synchroniser si nécessaire et choisir la procédure d'arrêt adaptée.</li>\n<li>Vérifier le redémarrage sur le bon disque, ISO retiré.</li>\n</ol>\n<h2>Pièges à éviter</h2>\n<ul>\n<li>Ne pas taper une ligne GRUB <code>linux ...</code> dans Bash.</li>\n<li>Ne pas confondre <code>ro</code> et <code>rw</code>.</li>\n<li>Ne pas oublier <code>mount -o remount,rw /</code> en shell Bash direct.</li>\n<li>Ne pas supposer que <code>reboot</code> fonctionne sans init normal.</li>\n<li>Ne pas modifier <code>/etc/passwd</code> de l'installateur en pensant agir sur Debian installé.</li>\n<li>Ne pas confondre <code>update-grub</code> avec une réinstallation de GRUB.</li>\n</ul>\n",
       "revisionExtracts": [],
-      "rawMarkdown": "=== COURS COMPLET ===\n\n> **Objectif TSSR :** réparer un système Debian qui ne démarre plus, intervenir sur un compte ou une configuration et savoir choisir une méthode de maintenance adaptée. Ce cours reprend les trois méthodes du support ENI : GRUB avec mot de passe root, GRUB avec shell direct et ISO Debian en mode Rescue. Les commandes Linux sont exécutées en **root**, sans `sudo`.\n\n## 1. Pourquoi démarrer Debian en mode maintenance ?\n\nLe mode maintenance permet d'intervenir lorsque le démarrage normal est impossible ou lorsque le système doit être réparé hors de sa session habituelle.\n\n| Situation rencontrée | Objectif de l'intervention |\n|---|---|\n| Mise à jour ou installation ayant perturbé le démarrage | Examiner et réparer le système |\n| Mot de passe root oublié | Retrouver un accès d'administration autorisé |\n| Configuration incorrecte | Corriger les fichiers concernés |\n| Données à récupérer | Accéder aux partitions depuis un environnement de secours |\n| GRUB ou amorçage endommagé | Utiliser un support externe pour réparer le démarrage |\n\n> **À retenir :** le mode maintenance n'est pas un mode de travail quotidien. Sur une machine réelle, prévoir une sauvegarde ou un instantané de VM avant toute opération délicate. Les méthodes d'accès direct exigent un accès physique ou à la console et doivent être réservées aux systèmes que l'on administre.\n\n## 2. Comprendre le démarrage : BIOS/UEFI, GRUB, noyau et système\n\n### 2.1. Les étapes du démarrage\n\n1. Le firmware **BIOS ou UEFI** initialise le matériel et choisit un périphérique de démarrage.\n2. **GRUB**, le gestionnaire d'amorçage, présente les entrées disponibles.\n3. GRUB charge le **noyau Linux** et l'**initramfs**, puis lui transmet des paramètres.\n4. Le noyau prépare le système et lance le processus d'initialisation (habituellement `systemd`).\n5. Les services et la session normale deviennent disponibles.\n\n### 2.2. Les paramètres importants dans GRUB\n\nExemple pédagogique :\n\n```text\nlinux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro quiet\n```\n\n| Élément | Signification | Rôle |\n|---|---|---|\n| `linux` | Directive GRUB | Indique le noyau à lancer |\n| `/vmlinuz-...` | Chemin du noyau | Version à démarrer ; dépend de la machine |\n| `root=/dev/mapper/...` | Paramètre du noyau | Désigne le système de fichiers racine |\n| `ro` | Read only | Demande un montage initial en lecture seule |\n| `quiet` | Silencieux | Réduit les messages visibles au démarrage |\n| `single` | Mode mono-utilisateur | Demande un démarrage en mode maintenance / secours |\n| `init=/bin/bash` | Initialisation alternative | Demande de lancer Bash à la place du processus init habituel |\n\n**Important :** les chemins de noyau et de volume logique affichés sont des exemples du support. Il faut modifier **la ligne déjà présente sur la machine**, sans recopier aveuglément le nom du noyau ou de la partition.\n\n## 3. Méthode 1 — GRUB avec mot de passe root : `single`\n\n### 3.1. Quand utiliser cette méthode ?\n\nElle convient lorsque GRUB est accessible et que le **mot de passe du compte root est connu**. Le support ENI précise qu'elle ne fonctionne pas dans sa démonstration si aucun mot de passe root utilisable n'est défini.\n\n### 3.2. Procédure détaillée\n\n1. Démarrer la machine et afficher le menu **GRUB**.\n2. Sélectionner l'entrée Debian voulue avec les flèches.\n3. Appuyer sur **`e`** pour éditer temporairement l'entrée.\n4. Repérer la ligne qui commence par `linux`.\n5. Remplacer `quiet` par `single` à la fin de cette ligne.\n6. Démarrer avec **Ctrl+X** ou **F10**.\n7. À l'invite, saisir le mot de passe **root**.\n8. Effectuer l'intervention nécessaire, puis quitter le mode maintenance selon le contexte.\n\n**Avant :**\n\n```text\nlinux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro quiet\n```\n\n**Après :**\n\n```text\nlinux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro single\n```\n\n> **Attention au clavier :** le support indique qu'au démarrage le clavier peut être en **QWERTY (en_US)**. Les caractères spéciaux de ton mot de passe peuvent ne pas correspondre aux touches AZERTY. Vérifier la disposition avant toute intervention.\n\n### 3.3. Exemple de modification d'un mot de passe\n\nUne fois authentifié dans l'environnement de maintenance :\n\n```bash\npasswd\n```\n\n`passwd` sans nom de compte modifie le mot de passe de l'utilisateur courant : ici **root**. Pour modifier un compte déterminé, on peut utiliser `passwd nom_utilisateur`.\n\nSelon le support, on peut ensuite relancer le système :\n\n```bash\nreboot\n```\n\nLa séquence **Ctrl+D** peut permettre de quitter le shell de maintenance et de poursuivre le démarrage vers l'étape prévue. Son effet dépend du mode exact de maintenance et de la configuration du système.\n\n> **À retenir :** `single` ne donne pas automatiquement un accès sans authentification. Il ne faut pas confondre cette méthode avec `init=/bin/bash`.\n\n## 4. Méthode 2 — GRUB avec `init=/bin/bash`\n\n### 4.1. Principe\n\nLe support ENI présente cette méthode pour un accès à un shell root lorsque le mot de passe root n'est pas disponible. Au lieu de démarrer le processus d'initialisation habituel, le noyau reçoit `init=/bin/bash`.\n\nCette procédure suppose un **accès autorisé à la console** et un GRUB modifiable. Elle peut être bloquée par une protection GRUB, le chiffrement du disque ou certaines configurations système.\n\n### 4.2. Modifier la ligne de démarrage\n\n1. Dans GRUB, sélectionner Debian puis appuyer sur **`e`**.\n2. Sur la ligne `linux`, remplacer `quiet` par `init=/bin/bash`.\n3. Conserver les autres paramètres, notamment `root=...` et `ro`.\n4. Valider avec **Ctrl+X** ou **F10**.\n\n```text\nlinux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro init=/bin/bash\n```\n\nLe shell Bash démarre directement en tant que root, mais **le système n'est pas démarré normalement** : les services habituels ne sont pas tous actifs.\n\n### 4.3. Pourquoi le disque est-il en lecture seule ?\n\nLe paramètre `ro` demande initialement le montage de la racine `/` en lecture seule. Il protège le système contre les écritures tant que la phase normale de démarrage n'a pas eu lieu.\n\nPour effectuer des modifications, le support utilise :\n\n```bash\nmount -o remount,rw /\n```\n\n| Partie | Signification | Explication |\n|---|---|---|\n| `mount` | Commande de montage | Gère les montages de systèmes de fichiers |\n| `-o` | Options de montage | Introduit une liste d'options |\n| `remount` | Remonter | Modifie les options d'un montage existant |\n| `rw` | Read/write | Autorise lecture et écriture |\n| `/` | Racine du système | Point de montage concerné |\n\n**Exemple d'intervention :**\n\n```bash\nmount -o remount,rw /\npasswd\nsync\n```\n\n1. `mount` rend la racine modifiable.\n2. `passwd` change le mot de passe du compte root dans cet exemple.\n3. `sync` demande l'écriture des données en attente vers les périphériques de stockage.\n\n### 4.4. Fin d'intervention et précautions\n\nLe support précise qu'avec `init=/bin/bash`, les mécanismes d'arrêt normaux ne sont pas disponibles comme lors d'un démarrage complet. Il recommande `sync` avant une extinction matérielle forcée.\n\n> **Attention :** une extinction forcée peut entraîner une corruption ou une perte de données. `sync` réduit le risque lié aux écritures en attente mais ne transforme pas un arrêt brutal en arrêt normal. En TP, suivre la procédure du formateur et éviter d'utiliser cette méthode sur une machine de production.\n\n### 4.5. Comparaison des deux modes GRUB\n\n| Critère | `single` | `init=/bin/bash` |\n|---|---|---|\n| Mot de passe root | Demandé dans la démonstration ENI | Non demandé dans la démonstration ENI |\n| Démarrage de l'environnement habituel | Mode de secours encadré par l'initialisation | Bash remplace le processus init habituel |\n| Racine accessible en écriture | Selon configuration | Généralement remonter avec `mount -o remount,rw /` |\n| Fin de session | Ctrl+D ou redémarrage selon le contexte | `sync`, puis procédure d'arrêt adaptée |\n| Risque | Limité si intervention maîtrisée | Plus élevé en raison du démarrage minimal |\n\n## 5. Méthode 3 — Démarrer depuis une ISO Debian en mode Rescue\n\n### 5.1. Pourquoi choisir un support externe ?\n\nQuand GRUB ou le système installé ne permet pas l'intervention, une **ISO d'installation Debian** peut lancer un environnement de secours indépendant.\n\n| Avantages indiqués par ENI | Limites indiquées par ENI |\n|---|---|\n| Choix de la langue française | Il faut disposer d'une ISO, d'un CD ou d'une clé USB |\n| Le mot de passe root du système installé n'est pas nécessaire pour démarrer l'environnement de secours | L'amorçage sur ISO peut être moins pratique dans une VM |\n| Possibilité de quitter proprement l'environnement de secours | Il faut identifier correctement les partitions et volumes |\n\n**Précision :** une partition chiffrée peut néanmoins nécessiter sa phrase secrète pour être ouverte.\n\n### 5.2. Préparer le démarrage dans VMware\n\n1. Connecter l'image **ISO Debian** au lecteur CD/DVD virtuel.\n2. Démarrer la VM et ouvrir son menu de démarrage ou son firmware **BIOS/UEFI**.\n3. Placer le lecteur CD/DVD avant le disque système dans l'ordre de démarrage, si nécessaire.\n4. Enregistrer les changements du firmware, puis démarrer sur l'ISO.\n5. Dans le menu Debian, choisir **Advanced options**, puis **Rescue mode** (ou **Graphical rescue mode**).\n\n> **Astuce VMware du support :** la touche Échap peut être difficile à envoyer au bon moment. Le menu de démarrage du firmware virtuel est souvent plus pratique. Les libellés exacts varient selon la version de VMware.\n\n### 5.3. Identifier la bonne partition racine\n\nL'environnement Rescue propose les partitions et volumes détectés. Il faut choisir la **racine du système Debian installé**, pas une partition au hasard.\n\n| Exemple | Interprétation |\n|---|---|\n| `/dev/sda1` | Partition 1 du disque `sda` |\n| `/dev/sda2` | Partition 2 du disque `sda` |\n| `/dev/mapper/debian--vg-LVRoot` | Volume logique LVM nommé `LVRoot` dans un groupe de volumes |\n| `/boot` | Partition éventuelle des fichiers de démarrage |\n\nLe support recommande des noms LVM explicites, par exemple **LVRoot**, pour identifier rapidement la racine.\n\n### 5.4. Monter `/boot` et ouvrir un shell\n\nLe programme Rescue peut proposer de monter la partition `/boot`. C'est utile notamment lorsqu'il faut intervenir sur **GRUB**. Une fois le système identifié, il peut lancer un shell dans le contexte du système installé.\n\nExemple de consultation :\n\n```bash\ncat /etc/passwd\n```\n\n`/etc/passwd` contient des informations sur les comptes locaux ; **il ne contient pas les mots de passe en clair**.\n\nSelon le besoin, le technicien peut modifier une configuration ou un mot de passe, puis quitter l'environnement de secours et redémarrer.\n\n### 5.5. Revenir au démarrage normal\n\nAprès l'intervention, **déconnecter l'ISO** ou remettre le disque système en premier dans l'ordre de démarrage. Sinon, la VM risque de redémarrer encore sur le programme d'installation Debian.\n\n## 6. Comprendre les commandes et paramètres du module\n\n### 6.1. Tableau de référence\n\n| Commande / paramètre | Type | Utilité |\n|---|---|---|\n| `passwd` | Commande Linux | Modifier un mot de passe |\n| `mount` | Commande Linux | Monter ou remonter un système de fichiers |\n| `sync` | Commande Linux | Synchroniser les écritures en attente |\n| `reboot` | Commande Linux | Demander un redémarrage normal, si disponible |\n| `cat` | Commande Linux | Afficher le contenu d'un fichier texte |\n| `single` | Paramètre de démarrage | Demander le mode maintenance |\n| `init=/bin/bash` | Paramètre de démarrage | Utiliser Bash comme processus init |\n| `ro` / `rw` | Paramètres / options | Lecture seule / lecture-écriture |\n| `quiet` | Paramètre de démarrage | Réduire les messages de démarrage |\n\n**Ne pas confondre :** `single`, `quiet`, `ro` et `init=/bin/bash` sont des **paramètres de démarrage**, pas des commandes à taper au prompt root. Ils sont expliqués dans le cours, mais ne doivent pas encombrer les « Commandes essentielles ».\n\n### 6.2. `mount -o remount,rw /` décomposé\n\n```bash\nmount -o remount,rw /\n```\n\n- **Commande :** `mount`\n- **Option :** `-o`\n- **Arguments de l'option :** `remount,rw`\n- **Point de montage :** `/`\n\n> **Point important :** le `-o` contient la lettre **o minuscule**, et non le chiffre zéro. `remount,rw` est une liste d'options séparées par une virgule, sans espace.\n\n## 7. TP guidé — Intervention sur une VM Debian de laboratoire\n\n### TP A — Maintenance avec mot de passe root\n\n**Préparation :** disposer d'une VM Debian de test et connaître le mot de passe root.\n\n1. Prendre un instantané de la VM.\n2. Redémarrer, ouvrir GRUB et éditer l'entrée avec `e`.\n3. Remplacer `quiet` par `single`.\n4. Démarrer avec F10, puis saisir le mot de passe root.\n5. Vérifier l'accès au shell ; réaliser uniquement la modification prévue dans le TP.\n6. Quitter le mode maintenance et vérifier le démarrage normal.\n\n**Contrôle :** le système redémarre et l'accès root fonctionne comme attendu.\n\n### TP B — Démarrage Bash minimal\n\n1. Revenir à l'instantané de test si nécessaire.\n2. Dans GRUB, remplacer `quiet` par `init=/bin/bash`.\n3. Démarrer avec Ctrl+X.\n4. Remonter la racine en lecture-écriture.\n5. Effectuer la modification demandée par le formateur, puis synchroniser.\n\n```bash\nmount -o remount,rw /\npasswd\nsync\n```\n\n**Contrôle :** distinguer les trois commandes et expliquer pourquoi un arrêt normal n'est pas garanti dans ce mode.\n\n### TP C — ISO Debian Rescue\n\n1. Connecter l'ISO Debian à la VM.\n2. Démarrer sur le CD/DVD virtuel via le BIOS/UEFI.\n3. Choisir **Advanced options > Rescue mode**.\n4. Identifier la racine Debian (partition ou volume LVM).\n5. Monter `/boot` si le TP porte sur le démarrage.\n6. Ouvrir le shell de secours, vérifier la présence de `/etc/passwd`.\n7. Quitter, déconnecter l'ISO et redémarrer sur le disque.\n\n**Contrôle :** savoir expliquer pourquoi le support externe reste utilisable lorsque le système installé ne démarre pas.\n\n## 8. Erreurs fréquentes et dépannage\n\n| Symptôme | Cause possible | Vérification / réaction |\n|---|---|---|\n| Impossible de saisir le mot de passe root | Clavier QWERTY ou mot de passe inconnu | Vérifier la disposition du clavier ; choisir une méthode autorisée adaptée |\n| `passwd` ne peut pas enregistrer le changement | Racine en lecture seule | Vérifier le montage ; dans la méthode Bash, utiliser `mount -o remount,rw /` |\n| La VM redémarre toujours sur l'ISO | ISO toujours connectée ou priorité CD/DVD | Déconnecter l'ISO ou rétablir l'ordre de démarrage |\n| Mauvaise partition sélectionnée | Plusieurs disques/volumes LVM | Identifier la racine avant de modifier quoi que ce soit |\n| `reboot` ne fonctionne pas dans Bash minimal | Services d'initialisation absents | Suivre la procédure spécifique de fin de TP, après `sync` |\n| Menu GRUB impossible à modifier | GRUB protégé ou démarrage particulier | Utiliser la procédure d'administration prévue et un support de secours autorisé |\n\n> **Bilan :** choisir d'abord la méthode la moins intrusive qui permet la réparation. La compréhension des paramètres de GRUB, des droits root et du montage en lecture-écriture est indispensable pour un TSSR.\n\n\n=== POINTS ESSENTIELS ===\n\n# À retenir — Debian en mode maintenance\n\n- **GRUB** permet de modifier temporairement les paramètres de démarrage avec la touche `e`.\n- **Méthode 1 : `single`** — mode maintenance avec authentification root dans le scénario ENI.\n- **Méthode 2 : `init=/bin/bash`** — Bash lancé directement ; système minimal, sans démarrage normal des services.\n- **Méthode 3 : ISO Debian Rescue** — environnement de secours externe, utile lorsque le système installé est défaillant.\n- **`ro`** signifie lecture seule ; **`rw`** signifie lecture-écriture.\n- **`mount -o remount,rw /`** rend la racine modifiable dans la méthode Bash du support.\n- **`passwd`** modifie le mot de passe du compte courant ; en root, il modifie celui de root.\n- **`sync`** demande l'écriture des données en attente avant une fin d'intervention délicate.\n- **Ctrl+X / F10** démarre avec les paramètres édités dans GRUB ; **Ctrl+D** quitte le shell de maintenance selon le contexte.\n- **QWERTY** : attention aux caractères du mot de passe lors du démarrage.\n- **VMware** : vérifier l'ordre de démarrage et retirer l'ISO après une intervention Rescue.\n- **Sécurité** : ces procédures nécessitent une autorisation d'administration ; faire un instantané de la VM avant un TP.\n\n\n=== COMMANDES À RETENIR ===\n\n`passwd` — Modifier le mot de passe root ou celui d'un utilisateur. Argument : nom_utilisateur (facultatif).\n\n`mount` — Monter ou remonter un système de fichiers. Option : -o. Exemple : mount -o remount,rw /.\n\n`sync` — Écrire sur disque les données en attente avant une interruption du système.\n\n`reboot` — Redémarrer Debian lorsque le système et son mode de maintenance le permettent.\n\n`cat` — Afficher le contenu d'un fichier texte. Exemple : cat /etc/passwd.\n\n`update-grub` — Régénérer la configuration de GRUB depuis un système Debian correctement monté, notamment lors d'une réparation depuis l'ISO.\n\n`shutdown` — Demander un arrêt ou un redémarrage propre lorsque le système d'initialisation fonctionne. Options : -h, -r.\n\n`init` — Changer de niveau ou de cible de fonctionnement selon l'initialisation disponible. Exemple historique : init 0. Ne pas l'utiliser dans le shell minimal init=/bin/bash.\n\n=== FICHE DE RÉVISION ===\n\n# Fiche de révision — Debian en mode maintenance\n\n## Choisir rapidement la méthode\n\n| Situation | Méthode ENI | Point décisif |\n|---|---|---|\n| GRUB accessible, mot de passe root connu | GRUB avec `single` | Authentification root |\n| GRUB accessible, besoin d'un shell minimal | GRUB avec `init=/bin/bash` | Remonter `/` en écriture |\n| Système endommagé ou intervention externe | ISO Debian `Rescue mode` | Identifier la partition racine |\n\n## Méthode 1 : `single`\n\n1. GRUB → `e`.\n2. Sur la ligne `linux`, remplacer `quiet` par `single`.\n3. Ctrl+X ou F10.\n4. Saisir le mot de passe root (attention au clavier QWERTY).\n5. Effectuer la maintenance, puis quitter le shell ou redémarrer selon le contexte.\n\n## Méthode 2 : `init=/bin/bash`\n\n1. GRUB → `e`.\n2. Sur la ligne `linux`, remplacer `quiet` par `init=/bin/bash`.\n3. Ctrl+X ou F10.\n4. Exécuter les commandes en root :\n\n```bash\nmount -o remount,rw /\npasswd\nsync\n```\n\n5. Finir selon la procédure du TP : un arrêt normal n'est pas garanti dans cet environnement minimal.\n\n## Méthode 3 : ISO Rescue\n\n1. Connecter l'ISO Debian à la VM.\n2. Démarrer sur le CD/DVD via BIOS/UEFI.\n3. Advanced options → Rescue mode.\n4. Sélectionner la racine correcte (partition ou LV LVM).\n5. Monter `/boot` si nécessaire, puis ouvrir un shell de secours.\n6. Réparer, quitter, retirer l'ISO et redémarrer.\n\n## Tableau mémoire des paramètres\n\n| Élément | Mémo |\n|---|---|\n| `quiet` | Démarrage moins bavard |\n| `single` | Mode maintenance |\n| `init=/bin/bash` | Shell Bash comme init |\n| `ro` | Read only |\n| `rw` | Read/write |\n| `root=...` | Indique la racine au noyau |\n| `-o` | Options de `mount` |\n| `remount` | Changer les options du montage existant |\n| `/` | Racine du système de fichiers |\n\n## Les 5 commandes à connaître\n\n| Commande | Exemple / usage |\n|---|---|\n| `passwd` | Modifier un mot de passe |\n| `mount` | `mount -o remount,rw /` |\n| `sync` | Synchroniser les écritures |\n| `reboot` | Redémarrer si disponible |\n| `cat` | `cat /etc/passwd` |\n\n## Questions de révision orale\n\n- Pourquoi `init=/bin/bash` ne correspond-il pas à un démarrage normal ?\n- Pourquoi faut-il remonter `/` en lecture-écriture avant de modifier le mot de passe ?\n- Quel est le risque d'une extinction forcée ?\n- Pourquoi l'ISO de secours peut-elle être utile si GRUB ne fonctionne plus ?\n- Quelle différence existe entre une partition `/dev/sda2` et un volume logique LVM ?\n\n\n=== QCM ===\n\n# QCM — Debian en mode maintenance\n\n**30 questions — une seule bonne réponse par question.**\n\n### Question 1\nQuel est le rôle de GRUB ?\nA. Afficher les fichiers personnels\nB. Choisir et lancer un système au démarrage\nC. Attribuer une adresse IP\nD. Compresser les sauvegardes\n\nRéponse : B\n\n### Question 2\nQuelle touche permet d’éditer une entrée GRUB ?\nA. e\nB. p\nC. d\nD. s\n\nRéponse : A\n\n### Question 3\nQuelle combinaison démarre avec la ligne GRUB modifiée ?\nA. Ctrl+C\nB. Alt+F4\nC. Ctrl+X\nD. Ctrl+Z\n\nRéponse : C\n\n### Question 4\nQuel paramètre remplace quiet dans la méthode 1 ?\nA. rw\nB. single\nC. init=/bin/bash\nD. nomodeset\n\nRéponse : B\n\n### Question 5\nDans la méthode 1 du support, que faut-il connaître ?\nA. Le mot de passe Wi-Fi\nB. Le mot de passe BIOS\nC. Le mot de passe root\nD. Le mot de passe du serveur DNS\n\nRéponse : C\n\n### Question 6\nQue signifie ro dans la ligne du noyau ?\nA. Read only\nB. Run once\nC. Restart option\nD. Root open\n\nRéponse : A\n\n### Question 7\nQue signifie rw ?\nA. Remote web\nB. Read/write\nC. Reset window\nD. Route writable\n\nRéponse : B\n\n### Question 8\nQuel paramètre lance Bash à la place du processus init habituel ?\nA. single\nB. quiet\nC. root=/\nD. init=/bin/bash\n\nRéponse : D\n\n### Question 9\nDans la méthode 2, quel est généralement l’état initial du montage racine ?\nA. Lecture seule\nB. Toujours chiffré\nC. Démonté\nD. Lecture-écriture uniquement\n\nRéponse : A\n\n### Question 10\nQuelle commande remonte / en lecture-écriture ?\nA. mount /home\nB. mount -o remount,rw /\nC. sync /\nD. passwd -o /\n\nRéponse : B\n\n### Question 11\nDans mount -o remount,rw /, que signifie -o ?\nA. Afficher la version\nB. Changer de noyau\nC. Introduire les options de montage\nD. Ouvrir GRUB\n\nRéponse : C\n\n### Question 12\nDans cette commande, que désigne / ?\nA. Le répertoire personnel\nB. Le point de montage racine\nC. Une adresse IP\nD. Le lecteur CD\n\nRéponse : B\n\n### Question 13\nQue fait passwd lancé par root sans argument ?\nA. Affiche les groupes\nB. Répare GRUB\nC. Change le mot de passe root\nD. Supprime le compte root\n\nRéponse : C\n\n### Question 14\nQue permet sync ?\nA. Écrire les données en attente vers les disques\nB. Démarrer le réseau\nC. Lister les utilisateurs\nD. Modifier GRUB\n\nRéponse : A\n\n### Question 15\nPourquoi un arrêt forcé est-il risqué ?\nA. Il modifie l’adresse MAC\nB. Il peut provoquer une perte de données\nC. Il efface systématiquement l’ISO\nD. Il désactive le clavier\n\nRéponse : B\n\n### Question 16\nQuel mode du support permet de démarrer sur un support Debian externe ?\nA. Live Wallpaper\nB. Rescue mode\nC. DHCP mode\nD. Single Ethernet\n\nRéponse : B\n\n### Question 17\nOù se trouve généralement Rescue mode sur le support Debian ?\nA. Advanced options\nB. Paramètres du navigateur\nC. Gestionnaire de tâches\nD. Menu des utilisateurs\n\nRéponse : A\n\n### Question 18\nQuel est un avantage du mode Rescue sur ISO ?\nA. Il n’a jamais besoin de disque\nB. Il donne accès à un environnement externe de secours\nC. Il supprime toutes les partitions\nD. Il désactive le firmware\n\nRéponse : B\n\n### Question 19\nQuel élément faut-il identifier correctement dans Rescue ?\nA. Le fond d’écran\nB. La partition racine du système installé\nC. Le navigateur par défaut\nD. Le port USB du clavier\n\nRéponse : B\n\n### Question 20\nPourquoi des noms de volumes LVM explicites sont-ils utiles ?\nA. Ils accélèrent le processeur\nB. Ils permettent de repérer la racine plus facilement\nC. Ils remplacent GRUB\nD. Ils évitent toute sauvegarde\n\nRéponse : B\n\n### Question 21\nPourquoi monter /boot peut-il être utile en Rescue ?\nA. Pour reconstruire ou réparer le démarrage\nB. Pour configurer la souris\nC. Pour mesurer le ping\nD. Pour changer le fuseau horaire\n\nRéponse : A\n\n### Question 22\nQue contient /etc/passwd ?\nA. Les mots de passe en clair\nB. Des informations sur les comptes locaux\nC. La configuration GRUB complète\nD. Les paquets réseau\n\nRéponse : B\n\n### Question 23\nQuelle commande affiche le contenu de /etc/passwd ?\nA. cat /etc/passwd\nB. sync /etc/passwd\nC. mount /etc/passwd\nD. reboot /etc/passwd\n\nRéponse : A\n\n### Question 24\nPourquoi vérifier le clavier au démarrage ?\nA. Le clavier peut être en QWERTY\nB. Les lettres sont toujours en majuscules\nC. Le clavier est désactivé en root\nD. Les chiffres sont interdits\n\nRéponse : A\n\n### Question 25\nQuelle action évite de redémarrer sur l’ISO après le dépannage ?\nA. Changer l’adresse IP\nB. Retirer l’ISO ou rétablir l’ordre de démarrage\nC. Supprimer le volume LVM\nD. Effacer /boot\n\nRéponse : B\n\n### Question 26\nQuel élément est un paramètre GRUB et non une commande shell ?\nA. passwd\nB. mount\nC. single\nD. cat\n\nRéponse : C\n\n### Question 27\nQue fait quiet ?\nA. Réduit les messages de démarrage\nB. Supprime les fichiers temporaires\nC. Répare le réseau\nD. Passe la racine en écriture\n\nRéponse : A\n\n### Question 28\nQuel est l’intérêt d’un instantané de VM avant le TP ?\nA. Accélérer le réseau\nB. Revenir à un état antérieur si nécessaire\nC. Installer automatiquement Debian\nD. Empêcher les mots de passe\n\nRéponse : B\n\n### Question 29\nQuelle méthode démarre sans les services normaux dans le scénario ENI ?\nA. ISO Rescue\nB. GRUB avec single\nC. GRUB avec init=/bin/bash\nD. Démarrage normal\n\nRéponse : C\n\n### Question 30\nQuelle est la bonne attitude sur un serveur de production ?\nA. Modifier GRUB sans sauvegarde\nB. Appliquer toutes les méthodes en même temps\nC. Utiliser uniquement une intervention autorisée et préparée\nD. Forcer systématiquement l’extinction\n\nRéponse : C",
-      "updatedAt": "2026-11-20T07:56:24.768Z"
+      "rawMarkdown": "=== COURS COMPLET ===\n\n\n## Objectifs du module\n\nComprendre les situations qui nécessitent une maintenance Debian et maîtriser les trois méthodes étudiées par le formateur ENI : accès via GRUB avec le mot de passe root, accès via GRUB avec `init=/bin/bash`, et dépannage avec le support d'installation Debian en mode Rescue.\n\nLes exercices Linux sont réalisés en session root, sans préfixe d'élévation de privilèges. Les manipulations de démarrage se font sur une VM de laboratoire dont on possède l'autorisation d'administration.\n\n## 1. Pourquoi utiliser le mode maintenance ?\n\nUne mise à jour peut empêcher le démarrage, une configuration peut devenir incorrecte, le mot de passe root peut être perdu ou des données peuvent nécessiter une récupération. Le mode maintenance permet d'intervenir sans charger l'environnement habituel.\n\n| Situation | Objectif | Méthode envisageable |\n|---|---|---|\n| Mot de passe root connu | Réparer ou changer un mot de passe utilisateur | GRUB avec `single` |\n| Mot de passe root indisponible | Accéder à un shell local de dépannage | GRUB avec `init=/bin/bash`, si l'accès au démarrage est autorisé |\n| Système installé inaccessible | Examiner les volumes depuis un système externe | ISO Debian Rescue |\n| GRUB défaillant | Réparer le démarrage depuis un support externe | ISO Debian Rescue |\n\n## 2. Comprendre les étapes du démarrage\n\n### 2.1. BIOS/UEFI, GRUB, noyau et init\n\n1. Le firmware BIOS ou UEFI initialise la machine et choisit le périphérique d'amorçage.\n2. GRUB présente les entrées de démarrage et transmet les paramètres au noyau Linux.\n3. Le noyau initialise le matériel et monte le système de fichiers racine, éventuellement à l'aide de l'initramfs.\n4. Le processus d'initialisation (habituellement systemd) démarre les services et les cibles nécessaires.\n\n### 2.2. Les paramètres importants de GRUB\n\n| Élément | Signification | Utilité |\n|---|---|---|\n| `linux` | Directive GRUB de chargement du noyau | Ligne à éditer dans GRUB ; ce n'est pas une commande shell |\n| `/vmlinuz-...` | Image du noyau | Sa version varie selon l'installation |\n| `root=/dev/mapper/...` | Emplacement de la racine | Désigne le volume contenant `/` |\n| `ro` | Read-only | Demande le montage initial en lecture seule |\n| `quiet` | Mode de démarrage peu bavard | Réduit les messages affichés |\n| `single` | Mode maintenance / utilisateur unique | Permet d'accéder au dépannage avec authentification root selon configuration |\n| `init=/bin/bash` | Remplacement du processus init | Démarre directement un shell Bash comme PID 1 |\n\n**Attention :** les lignes GRUB ci-dessous sont des exemples à modifier dans l'éditeur de démarrage, et non à taper dans le terminal Bash. Le nom du noyau et le chemin de la racine doivent correspondre à la VM.\n\n## 3. Méthode 1 — GRUB avec mot de passe root (`single`)\n\n### 3.1. Conditions et principe\n\nCette méthode repose sur la disponibilité d'un mot de passe root utilisable pour l'authentification de maintenance. Sur un système où le compte root est verrouillé ou n'a pas de mot de passe défini, elle peut ne pas fonctionner.\n\n### 3.2. Procédure pas à pas\n\n1. Démarrer la VM et afficher le menu GRUB.\n2. Sélectionner l'entrée Debian puis appuyer sur `e` pour l'éditer.\n3. Repérer la ligne qui commence par `linux`.\n4. Remplacer le paramètre `quiet` par `single`, sans changer le reste de la ligne.\n5. Démarrer avec `Ctrl+X` ou `F10`.\n6. Saisir le mot de passe root demandé. Au démarrage, la disposition clavier peut être QWERTY.\n7. Effectuer l'intervention puis poursuivre le démarrage avec `Ctrl+D` si proposé, ou redémarrer proprement si le système le permet.\n\n**Exemple de ligne avant modification :**\n\n```text\nlinux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro quiet\n```\n\n**Exemple de ligne après modification :**\n\n```text\nlinux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro single\n```\n\n### 3.3. Modifier un mot de passe en mode maintenance\n\n```bash\npasswd\nreboot\n```\n\n| Commande | Explication |\n|---|---|\n| `passwd` | Modifie le mot de passe du compte courant : ici root |\n| `passwd utilisateur` | Modifie le mot de passe du compte désigné, lorsque l'on est root |\n| `reboot` | Demande un redémarrage, lorsque l'environnement d'initialisation le permet |\n\nLe support ENI utilise `passwd` puis `reboot` dans cette méthode. Vérifier que l'on a réellement ouvert le shell de maintenance attendu avant de modifier quoi que ce soit.\n\n## 4. Méthode 2 — GRUB avec `init=/bin/bash`\n\n### 4.1. Différence fondamentale\n\nAu lieu de lancer le processus d'initialisation normal, le noyau démarre directement `/bin/bash`. On obtient un shell root sans passer par la séquence de services habituelle. Cette méthode nécessite un accès autorisé à la console et au menu GRUB ; des protections de démarrage ou le chiffrement peuvent l'empêcher.\n\n### 4.2. Modifier les paramètres de démarrage\n\n1. Ouvrir GRUB, sélectionner Debian et appuyer sur `e`.\n2. Repérer la ligne `linux` et remplacer `quiet` par `init=/bin/bash`.\n3. Démarrer avec `Ctrl+X` ou `F10`.\n4. Constater que la racine est généralement montée en lecture seule.\n\n```text\nlinux /vmlinuz-6.1.0-33-amd64 root=/dev/mapper/debian--vg-root ro init=/bin/bash\n```\n\n### 4.3. Remonter la racine en lecture-écriture\n\n```bash\nmount -o remount,rw /\n```\n\n| Élément | Signification | Effet |\n|---|---|---|\n| `mount` | Commande de montage | Gère les systèmes de fichiers montés |\n| `-o` | Option de montage | Introduit une liste d'options |\n| `remount` | Remonter | Modifie les options d'un montage existant |\n| `rw` | Read-write | Active lecture et écriture |\n| `/` | Racine | Point de montage concerné |\n\nNe pas confondre `ro` (lecture seule) et `rw` (lecture-écriture). Le support dit parfois « démonter puis remonter » : ici, `remount` modifie le montage existant, sans démontage préalable.\n\n### 4.4. Effectuer la réparation et synchroniser\n\n```bash\nmount -o remount,rw /\npasswd\nsync\n```\n\n| Commande | Rôle |\n|---|---|\n| `mount -o remount,rw /` | Autoriser la modification du système de fichiers racine |\n| `passwd` | Définir un nouveau mot de passe root dans l'exemple du formateur |\n| `sync` | Demander l'écriture sur disque des données en attente |\n\n**Précaution :** dans ce mode, Bash remplace le processus init normal. Les commandes `reboot`, `shutdown` ou `init 0` peuvent ne pas fonctionner comme dans une session normale. Le formateur prévoit une extinction matérielle après `sync`. Cette méthode reste un dernier recours ; une coupure forcée n'offre pas les garanties d'un arrêt normal. `sync` demande la synchronisation des écritures, mais ne garantit pas à lui seul l'intégrité d'une extinction forcée.\n\n### 4.5. Pourquoi le clavier est-il parfois en QWERTY ?\n\nLes paramètres de disposition française ne sont pas toujours chargés au début du démarrage. Le mot de passe et les caractères `/`, `=`, `-` doivent donc être saisis en tenant compte du clavier réellement actif. Le document ENI évoque `keyboard=fr` comme piste à étudier : ce n'est pas une solution universelle garantie sur toutes les versions de Debian.\n\n## 5. Méthode 3 — Démarrer sur l'ISO Debian en mode Rescue\n\n### 5.1. Pourquoi un support externe ?\n\nLe support d'installation démarre son propre environnement Linux. Il peut être utilisé lorsque le système installé ne démarre plus ou lorsque l'on souhaite intervenir sur les partitions depuis l'extérieur.\n\n| Avantages | Limites |\n|---|---|\n| Interface de secours et langue française possibles | ISO ou support physique nécessaire |\n| Pas besoin du mot de passe root du système installé pour lancer l'environnement Rescue | L'accès aux volumes chiffrés peut nécessiter une clé |\n| Possibilité d'arrêter normalement l'environnement de secours | Ordre d'amorçage parfois difficile à régler dans une VM |\n| Accès aux partitions et aux volumes LVM | Il faut identifier la bonne partition racine |\n\n### 5.2. Procédure dans VMware\n\n1. Connecter l'image ISO Debian au lecteur CD/DVD virtuel.\n2. Ouvrir le menu de démarrage ou le BIOS/UEFI de la VM.\n3. Placer le lecteur CD/DVD avant le disque dans l'ordre de démarrage, si nécessaire.\n4. Démarrer sur l'ISO, choisir **Advanced options**, puis **Rescue mode**.\n5. Choisir la langue et les paramètres demandés.\n6. Identifier la partition ou le volume logique contenant la racine Debian (par exemple `/dev/mapper/debian--vg-root`).\n7. Si proposé, monter `/boot` lorsque la réparation de GRUB le nécessite.\n8. Ouvrir un shell dans le système installé et réaliser l'intervention.\n9. Quitter le shell, terminer la procédure, retirer l'ISO ou rétablir l'ordre de démarrage, puis redémarrer sur le disque.\n\n### 5.3. Vérifier le système sélectionné\n\n```bash\nlsblk\ncat /etc/passwd\n```\n\n| Commande | Utilité |\n|---|---|\n| `lsblk` | Afficher les disques, partitions et volumes logiques visibles |\n| `cat /etc/passwd` | Lire la liste des comptes du système correspondant au shell courant |\n\n**Important :** dans un shell de l'installateur, `/etc/passwd` peut appartenir au système de secours. Vérifier que l'on a bien ouvert le shell dans la racine du système installé avant d'interpréter son contenu.\n\n### 5.4. Réparer GRUB si nécessaire\n\nDans l'environnement de secours correctement configuré, le support illustre la commande :\n\n```bash\nupdate-grub\n```\n\n`update-grub` régénère la configuration de GRUB à partir des paramètres et noyaux détectés. Cela ne réinstalle pas automatiquement le chargeur d'amorçage sur un disque. Le montage de `/boot` peut être nécessaire si ce répertoire réside sur une partition distincte.\n\n## 6. Comparaison des trois méthodes\n\n| Critère | GRUB `single` | GRUB `init=/bin/bash` | ISO Rescue |\n|---|---|---|---|\n| Support externe | Non | Non | Oui |\n| Mot de passe root | Généralement requis | Pas demandé par le shell direct | Non requis pour lancer Rescue |\n| Initialisation normale | Partielle, via systemd | Non, Bash remplace init | Environnement externe |\n| Racine modifiable | Selon le montage | Après `mount -o remount,rw /` | Selon montage et shell sélectionné |\n| Arrêt normal | Souvent possible | Non garanti | Généralement possible |\n| Utilisation typique | Intervention simple avec accès root | Dépannage local lorsque root n'est pas accessible | Réparation externe ou démarrage défaillant |\n\n## 7. Travaux pratiques guidés\n\n### TP A — Démarrage `single`\n\n1. Faire un instantané de la VM.\n2. Modifier `quiet` en `single` dans GRUB.\n3. Démarrer et vérifier la demande d'authentification root.\n4. Identifier le compte à modifier, puis utiliser `passwd` si demandé par le formateur.\n5. Revenir au démarrage normal et vérifier l'accès.\n\n**Contrôle :** expliquer le rôle de `single`, de `Ctrl+X`, de `Ctrl+D` et du clavier QWERTY.\n\n### TP B — Démarrage `init=/bin/bash`\n\n1. Faire un instantané de la VM.\n2. Modifier la ligne GRUB avec `init=/bin/bash`.\n3. Démarrer le shell direct et constater le fonctionnement réduit du système.\n4. Remonter la racine en lecture-écriture.\n5. Réaliser uniquement la modification demandée par le formateur, puis synchroniser.\n\n```bash\nmount -o remount,rw /\npasswd\nsync\n```\n\n**Contrôle :** expliquer pourquoi `mount` et `sync` sont nécessaires et pourquoi l'arrêt normal n'est pas garanti.\n\n### TP C — ISO Debian Rescue\n\n1. Connecter l'ISO Debian à la VM.\n2. Démarrer sur le lecteur virtuel et sélectionner **Advanced options > Rescue mode**.\n3. Identifier la racine Debian parmi les partitions et volumes LVM.\n4. Monter `/boot` si nécessaire pour une réparation de GRUB.\n5. Ouvrir le shell dans le système installé et examiner `/etc/passwd`.\n6. Quitter, déconnecter l'ISO et redémarrer depuis le disque.\n\n**Contrôle :** expliquer pourquoi un environnement externe reste utilisable lorsque le système installé ne démarre pas.\n\n## 8. Erreurs fréquentes et dépannage\n\n| Symptôme | Cause possible | Vérification / action |\n|---|---|---|\n| Mot de passe root refusé | Mauvaise disposition clavier | Vérifier QWERTY et caractères spéciaux |\n| `single` n'ouvre pas le shell | Compte root verrouillé ou configuration de secours différente | Utiliser une autre méthode autorisée |\n| `passwd` ne peut pas enregistrer | Racine en lecture seule | En mode Bash direct : `mount -o remount,rw /` |\n| La VM redémarre toujours sur l'ISO | ISO toujours connecté ou ordre d'amorçage | Déconnecter l'ISO / corriger l'ordre de boot |\n| Mauvais système modifié | Mauvais volume racine sélectionné | Identifier partitions et volumes LVM avant modification |\n| `reboot` échoue en shell direct | Initialisation normale absente | Suivre la procédure de fin d'intervention adaptée au TP |\n| `update-grub` ne trouve pas le noyau attendu | Mauvaise racine ou `/boot` non monté | Vérifier le système cible et le montage de `/boot` |\n\n## 9. Ce qu'un TSSR doit savoir expliquer\n\n- Pourquoi GRUB permet de modifier temporairement les paramètres du noyau.\n- La différence entre `single` et `init=/bin/bash`.\n- Le sens de `ro`, `rw`, `quiet`, `single`, `init` et `remount`.\n- Le rôle de `passwd`, `mount`, `sync`, `reboot`, `lsblk`, `cat` et `update-grub`.\n- Pourquoi le mode Rescue sur ISO est utile et comment retrouver le bon volume racine.\n- Pourquoi il faut être particulièrement prudent avec les écritures et les extinctions forcées.\n\n\n=== POINTS ESSENTIELS ===\n\n# À retenir — Debian en mode maintenance\n\n1. GRUB est le gestionnaire d'amorçage : touche `e` pour modifier temporairement l'entrée, puis `Ctrl+X` ou `F10` pour démarrer.\n2. `single` demande un mode maintenance ; l'accès dépend notamment de l'authentification root.\n3. `init=/bin/bash` remplace le processus init normal par Bash et permet un shell root direct dans le scénario du cours.\n4. En shell direct, la racine est généralement en lecture seule : `mount -o remount,rw /` autorise l'écriture.\n5. `passwd` modifie un mot de passe ; `sync` demande l'écriture des données en attente.\n6. Un arrêt normal n'est pas garanti avec Bash comme PID 1 : la coupure forcée reste risquée.\n7. Le mode Rescue de l'ISO Debian permet d'intervenir depuis un système externe, sans le mot de passe root du système installé pour démarrer l'environnement.\n8. Toujours identifier le bon volume racine et, si besoin, monter `/boot`.\n9. Le clavier au démarrage peut être QWERTY ; attention aux caractères spéciaux.\n10. Les lignes `linux ... single` et `linux ... init=/bin/bash` sont des paramètres GRUB, pas des commandes Bash.\n\n\n=== COMMANDES À RETENIR ===\n\n# Commandes essentielles — Debian en mode maintenance\n\n`passwd` — Modifier le mot de passe du compte courant ; en session root, celui de root. Sans option.\n\n`passwd utilisateur` — Modifier le mot de passe du compte indiqué. Argument utilisateur : nom du compte cible.\n\n`mount -o remount,rw /` — Remonter la racine en lecture-écriture. -o : options ; remount : modifier le montage ; rw : lecture-écriture ; / : racine.\n\n`sync` — Demander la synchronisation des écritures en attente vers le stockage. Sans option.\n\n`reboot` — Demander un redémarrage quand le système le permet. Sans option.\n\n`lsblk` — Lister disques, partitions et volumes logiques. Sans option.\n\n`cat /etc/passwd` — Afficher le fichier des comptes du système courant. Argument /etc/passwd : chemin du fichier.\n\n`update-grub` — Régénérer la configuration GRUB du système installé. Sans option.\n\n`shutdown -h now` — Demander un arrêt normal si init fonctionne. -h : arrêt ; now : immédiatement. Peut échouer avec init=/bin/bash.\n\n`init 0` — Demander le passage au niveau d’arrêt lorsque le système init est actif. 0 : arrêt ; non adapté au shell direct.\n\nParamètres GRUB à connaître (non exécutables dans Bash) : `single` : maintenance ; `init=/bin/bash` : shell direct ; `ro` : lecture seule ; `quiet` : messages réduits.\n\n\n=== FICHE DE RÉVISION ===\n\n# Fiche mémo — Debian en mode maintenance\n\n## Les trois méthodes\n\n| Méthode | Modification / action | Mot de passe root | Point d'attention |\n|---|---|---|---|\n| GRUB maintenance | Remplacer `quiet` par `single` | Généralement oui | Clavier parfois QWERTY |\n| GRUB shell direct | Remplacer `quiet` par `init=/bin/bash` | Non dans le scénario du cours | Racine initialement en lecture seule |\n| ISO Debian Rescue | Advanced options > Rescue mode | Pas nécessaire pour lancer Rescue | Sélectionner la bonne racine |\n\n## Commandes et paramètres à mémoriser\n\n| Syntaxe | Fonction |\n|---|---|\n| `passwd` | Changer le mot de passe root en session root |\n| `passwd utilisateur` | Changer celui d'un utilisateur donné |\n| `mount -o remount,rw /` | Remonter `/` en lecture-écriture |\n| `sync` | Synchroniser les écritures en attente |\n| `reboot` | Redémarrer lorsque possible |\n| `lsblk` | Identifier les disques et volumes |\n| `cat /etc/passwd` | Afficher les comptes du système courant |\n| `update-grub` | Régénérer la configuration de GRUB |\n| `shutdown -h now` | Arrêter normalement si init est fonctionnel |\n| `init 0` | Demander l'arrêt via le système d'initialisation, s'il fonctionne |\n\n## Décomposer `mount -o remount,rw /`\n\n- `mount` : gérer les montages.\n- `-o` : introduire des options.\n- `remount` : modifier un montage existant.\n- `rw` : autoriser lecture et écriture.\n- `/` : point de montage racine.\n\n## Méthode de dépannage à l'examen\n\n1. Identifier le symptôme et choisir la méthode adaptée.\n2. Vérifier l'accès autorisé à la console ou à l'ISO.\n3. Identifier le système installé et son volume racine.\n4. Expliquer chaque paramètre avant de l'utiliser.\n5. Effectuer la modification minimale et vérifier le résultat.\n6. Synchroniser si nécessaire et choisir la procédure d'arrêt adaptée.\n7. Vérifier le redémarrage sur le bon disque, ISO retiré.\n\n## Pièges à éviter\n\n- Ne pas taper une ligne GRUB `linux ...` dans Bash.\n- Ne pas confondre `ro` et `rw`.\n- Ne pas oublier `mount -o remount,rw /` en shell Bash direct.\n- Ne pas supposer que `reboot` fonctionne sans init normal.\n- Ne pas modifier `/etc/passwd` de l'installateur en pensant agir sur Debian installé.\n- Ne pas confondre `update-grub` avec une réinstallation de GRUB.\n\n\n=== QCM ===\n\n# QCM — Debian en mode maintenance\n\n30 questions — une seule bonne réponse par question.\n\n### Question 1\nQuel est le rôle de GRUB ?\nA. Formater les partitions\nB. Gérer le démarrage du système\nC. Attribuer les adresses IP\nD. Créer les utilisateurs\n\nRéponse : B\n\n### Question 2\nQuelle touche permet d’éditer une entrée GRUB ?\nA. e\nB. q\nC. p\nD. s\n\nRéponse : A\n\n### Question 3\nQuelle combinaison démarre l’entrée GRUB modifiée ?\nA. Ctrl+C\nB. Alt+F4\nC. Ctrl+X\nD. Ctrl+Z\n\nRéponse : C\n\n### Question 4\nQuel paramètre est remplacé par single dans le TP ?\nA. root=\nB. quiet\nC. ro\nD. initrd\n\nRéponse : B\n\n### Question 5\nQue signifie single dans ce cours ?\nA. Mode maintenance\nB. Mode graphique\nC. Mode réseau\nD. Mode RAID\n\nRéponse : A\n\n### Question 6\nLa méthode GRUB single du support demande généralement…\nA. Une ISO\nB. Un serveur DHCP\nC. Le mot de passe root\nD. Un compte invité\n\nRéponse : C\n\n### Question 7\nQuelle disposition clavier peut être active au démarrage ?\nA. Dvorak\nB. QWERTY\nC. BÉPO obligatoirement\nD. AZERTY toujours\n\nRéponse : B\n\n### Question 8\nQuel paramètre lance Bash directement ?\nA. bash=init\nB. root=/bin/bash\nC. quiet=bash\nD. init=/bin/bash\n\nRéponse : D\n\n### Question 9\nDans init=/bin/bash, Bash remplace…\nA. Le BIOS\nB. Le processus init normal\nC. Le disque\nD. Le noyau\n\nRéponse : B\n\n### Question 10\nDans le scénario init=/bin/bash, la racine est initialement…\nA. En lecture seule\nB. Toujours en lecture-écriture\nC. Démontée obligatoirement\nD. Formatée\n\nRéponse : A\n\n### Question 11\nQuelle commande remonte la racine en écriture ?\nA. mount -a\nB. mount /boot\nC. mount -o remount,rw /\nD. lsblk -f\n\nRéponse : C\n\n### Question 12\nQue signifie -o dans mount ?\nA. Ordre\nB. Options\nC. Ouverture\nD. Octal\n\nRéponse : B\n\n### Question 13\nQue signifie remount ?\nA. Créer une partition\nB. Supprimer un volume\nC. Installer GRUB\nD. Modifier un montage existant\n\nRéponse : D\n\n### Question 14\nQue signifie rw ?\nA. Lecture-écriture\nB. Lecture seule\nC. Réseau sans fil\nD. Redémarrage\n\nRéponse : A\n\n### Question 15\nQuel argument désigne la racine dans mount -o remount,rw / ?\nA. rw\nB. -o\nC. /\nD. remount\n\nRéponse : C\n\n### Question 16\nQuelle commande modifie le mot de passe root en session root ?\nA. cat\nB. passwd\nC. sync\nD. lsblk\n\nRéponse : B\n\n### Question 17\nQuelle syntaxe change le mot de passe d’un compte précis ?\nA. passwd utilisateur\nB. sync utilisateur\nC. lsblk utilisateur\nD. reboot utilisateur\n\nRéponse : A\n\n### Question 18\nQuelle commande demande l’écriture des données en attente ?\nA. mount\nB. reboot\nC. sync\nD. init\n\nRéponse : C\n\n### Question 19\nPourquoi l’arrêt normal est-il problématique en mode init=/bin/bash ?\nA. Le clavier est français\nB. La carte réseau manque\nC. La partition est FAT32\nD. Le système init normal ne fonctionne pas\n\nRéponse : D\n\n### Question 20\nQuelle méthode utilise un environnement externe ?\nA. GRUB single\nB. ISO Rescue\nC. init=/bin/bash\nD. quiet\n\nRéponse : B\n\n### Question 21\nDans l’ISO Debian, quel menu propose Rescue mode ?\nA. Advanced options\nB. Disk cleanup\nC. Network settings\nD. User manager\n\nRéponse : A\n\n### Question 22\nQuel avantage présente l’ISO Rescue selon le support ?\nA. Aucun support nécessaire\nB. Accès réseau obligatoire\nC. Mot de passe root installé non nécessaire pour lancer Rescue\nD. GRUB automatiquement réinstallé\n\nRéponse : C\n\n### Question 23\nQuel risque existe lors de la sélection de la partition racine ?\nA. Trop de mémoire\nB. Modifier le mauvais système\nC. Désactiver le BIOS\nD. Changer la carte réseau\n\nRéponse : B\n\n### Question 24\nPourquoi monter /boot en Rescue ?\nA. Pour changer l’IP\nB. Pour créer des comptes\nC. Pour modifier le clavier\nD. Pour intervenir sur GRUB si /boot est distinct\n\nRéponse : D\n\n### Question 25\nQuelle commande affiche disques et volumes ?\nA. lsblk\nB. passwd\nC. sync\nD. reboot\n\nRéponse : A\n\n### Question 26\nQuelle commande affiche le contenu de /etc/passwd ?\nA. mount /etc/passwd\nB. cat /etc/passwd\nC. sync /etc/passwd\nD. update-grub /etc/passwd\n\nRéponse : B\n\n### Question 27\nQue fait update-grub ?\nA. Formate /boot\nB. Crée un utilisateur\nC. Régénère la configuration GRUB\nD. Réinstalle automatiquement le chargeur sur disque\n\nRéponse : C\n\n### Question 28\nQue signifie ro sur la ligne du noyau ?\nA. Lecture seule\nB. Lecture-écriture\nC. Redémarrage\nD. Réseau ouvert\n\nRéponse : A\n\n### Question 29\nQue faut-il faire si la VM redémarre toujours sur l’ISO ?\nA. Modifier passwd\nB. Effacer GRUB\nC. Reformater le disque\nD. Déconnecter l’ISO ou corriger l’ordre de boot\n\nRéponse : D\n\n### Question 30\nQuelle précaution est adaptée avant un TP de dépannage ?\nA. Supprimer les journaux\nB. Créer un instantané de VM\nC. Désactiver les sauvegardes\nD. Changer le matériel\n\nRéponse : B",
+      "updatedAt": "2026-11-20T08:19:29.506Z"
     },
     {
       "id": "chapter:06:07",
@@ -4971,344 +4971,6 @@
       ]
     },
     {
-      "id": "quiz-auto-chapter:06:03",
-      "title": "QCM — Debian en mode maintenance",
-      "category": "06 — Administration GNU",
-      "chapterId": "chapter:06:03",
-      "questions": [
-        {
-          "question": "Quel est le rôle de GRUB ?",
-          "answers": [
-            "Afficher les fichiers personnels",
-            "Choisir et lancer un système au démarrage",
-            "Attribuer une adresse IP",
-            "Compresser les sauvegardes"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Quelle touche permet d’éditer une entrée GRUB ?",
-          "answers": [
-            "e",
-            "p",
-            "d",
-            "s"
-          ],
-          "correct": 0,
-          "explanation": ""
-        },
-        {
-          "question": "Quelle combinaison démarre avec la ligne GRUB modifiée ?",
-          "answers": [
-            "Ctrl+C",
-            "Alt+F4",
-            "Ctrl+X",
-            "Ctrl+Z"
-          ],
-          "correct": 2,
-          "explanation": ""
-        },
-        {
-          "question": "Quel paramètre remplace quiet dans la méthode 1 ?",
-          "answers": [
-            "rw",
-            "single",
-            "init=/bin/bash",
-            "nomodeset"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Dans la méthode 1 du support, que faut-il connaître ?",
-          "answers": [
-            "Le mot de passe Wi-Fi",
-            "Le mot de passe BIOS",
-            "Le mot de passe root",
-            "Le mot de passe du serveur DNS"
-          ],
-          "correct": 2,
-          "explanation": ""
-        },
-        {
-          "question": "Que signifie ro dans la ligne du noyau ?",
-          "answers": [
-            "Read only",
-            "Run once",
-            "Restart option",
-            "Root open"
-          ],
-          "correct": 0,
-          "explanation": ""
-        },
-        {
-          "question": "Que signifie rw ?",
-          "answers": [
-            "Remote web",
-            "Read/write",
-            "Reset window",
-            "Route writable"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Quel paramètre lance Bash à la place du processus init habituel ?",
-          "answers": [
-            "single",
-            "quiet",
-            "root=/",
-            "init=/bin/bash"
-          ],
-          "correct": 3,
-          "explanation": ""
-        },
-        {
-          "question": "Dans la méthode 2, quel est généralement l’état initial du montage racine ?",
-          "answers": [
-            "Lecture seule",
-            "Toujours chiffré",
-            "Démonté",
-            "Lecture-écriture uniquement"
-          ],
-          "correct": 0,
-          "explanation": ""
-        },
-        {
-          "question": "Quelle commande remonte / en lecture-écriture ?",
-          "answers": [
-            "mount /home",
-            "mount -o remount,rw /",
-            "sync /",
-            "passwd -o /"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Dans mount -o remount,rw /, que signifie -o ?",
-          "answers": [
-            "Afficher la version",
-            "Changer de noyau",
-            "Introduire les options de montage",
-            "Ouvrir GRUB"
-          ],
-          "correct": 2,
-          "explanation": ""
-        },
-        {
-          "question": "Dans cette commande, que désigne / ?",
-          "answers": [
-            "Le répertoire personnel",
-            "Le point de montage racine",
-            "Une adresse IP",
-            "Le lecteur CD"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Que fait passwd lancé par root sans argument ?",
-          "answers": [
-            "Affiche les groupes",
-            "Répare GRUB",
-            "Change le mot de passe root",
-            "Supprime le compte root"
-          ],
-          "correct": 2,
-          "explanation": ""
-        },
-        {
-          "question": "Que permet sync ?",
-          "answers": [
-            "Écrire les données en attente vers les disques",
-            "Démarrer le réseau",
-            "Lister les utilisateurs",
-            "Modifier GRUB"
-          ],
-          "correct": 0,
-          "explanation": ""
-        },
-        {
-          "question": "Pourquoi un arrêt forcé est-il risqué ?",
-          "answers": [
-            "Il modifie l’adresse MAC",
-            "Il peut provoquer une perte de données",
-            "Il efface systématiquement l’ISO",
-            "Il désactive le clavier"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Quel mode du support permet de démarrer sur un support Debian externe ?",
-          "answers": [
-            "Live Wallpaper",
-            "Rescue mode",
-            "DHCP mode",
-            "Single Ethernet"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Où se trouve généralement Rescue mode sur le support Debian ?",
-          "answers": [
-            "Advanced options",
-            "Paramètres du navigateur",
-            "Gestionnaire de tâches",
-            "Menu des utilisateurs"
-          ],
-          "correct": 0,
-          "explanation": ""
-        },
-        {
-          "question": "Quel est un avantage du mode Rescue sur ISO ?",
-          "answers": [
-            "Il n’a jamais besoin de disque",
-            "Il donne accès à un environnement externe de secours",
-            "Il supprime toutes les partitions",
-            "Il désactive le firmware"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Quel élément faut-il identifier correctement dans Rescue ?",
-          "answers": [
-            "Le fond d’écran",
-            "La partition racine du système installé",
-            "Le navigateur par défaut",
-            "Le port USB du clavier"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Pourquoi des noms de volumes LVM explicites sont-ils utiles ?",
-          "answers": [
-            "Ils accélèrent le processeur",
-            "Ils permettent de repérer la racine plus facilement",
-            "Ils remplacent GRUB",
-            "Ils évitent toute sauvegarde"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Pourquoi monter /boot peut-il être utile en Rescue ?",
-          "answers": [
-            "Pour reconstruire ou réparer le démarrage",
-            "Pour configurer la souris",
-            "Pour mesurer le ping",
-            "Pour changer le fuseau horaire"
-          ],
-          "correct": 0,
-          "explanation": ""
-        },
-        {
-          "question": "Que contient /etc/passwd ?",
-          "answers": [
-            "Les mots de passe en clair",
-            "Des informations sur les comptes locaux",
-            "La configuration GRUB complète",
-            "Les paquets réseau"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Quelle commande affiche le contenu de /etc/passwd ?",
-          "answers": [
-            "cat /etc/passwd",
-            "sync /etc/passwd",
-            "mount /etc/passwd",
-            "reboot /etc/passwd"
-          ],
-          "correct": 0,
-          "explanation": ""
-        },
-        {
-          "question": "Pourquoi vérifier le clavier au démarrage ?",
-          "answers": [
-            "Le clavier peut être en QWERTY",
-            "Les lettres sont toujours en majuscules",
-            "Le clavier est désactivé en root",
-            "Les chiffres sont interdits"
-          ],
-          "correct": 0,
-          "explanation": ""
-        },
-        {
-          "question": "Quelle action évite de redémarrer sur l’ISO après le dépannage ?",
-          "answers": [
-            "Changer l’adresse IP",
-            "Retirer l’ISO ou rétablir l’ordre de démarrage",
-            "Supprimer le volume LVM",
-            "Effacer /boot"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Quel élément est un paramètre GRUB et non une commande shell ?",
-          "answers": [
-            "passwd",
-            "mount",
-            "single",
-            "cat"
-          ],
-          "correct": 2,
-          "explanation": ""
-        },
-        {
-          "question": "Que fait quiet ?",
-          "answers": [
-            "Réduit les messages de démarrage",
-            "Supprime les fichiers temporaires",
-            "Répare le réseau",
-            "Passe la racine en écriture"
-          ],
-          "correct": 0,
-          "explanation": ""
-        },
-        {
-          "question": "Quel est l’intérêt d’un instantané de VM avant le TP ?",
-          "answers": [
-            "Accélérer le réseau",
-            "Revenir à un état antérieur si nécessaire",
-            "Installer automatiquement Debian",
-            "Empêcher les mots de passe"
-          ],
-          "correct": 1,
-          "explanation": ""
-        },
-        {
-          "question": "Quelle méthode démarre sans les services normaux dans le scénario ENI ?",
-          "answers": [
-            "ISO Rescue",
-            "GRUB avec single",
-            "GRUB avec init=/bin/bash",
-            "Démarrage normal"
-          ],
-          "correct": 2,
-          "explanation": ""
-        },
-        {
-          "question": "Quelle est la bonne attitude sur un serveur de production ?",
-          "answers": [
-            "Modifier GRUB sans sauvegarde",
-            "Appliquer toutes les méthodes en même temps",
-            "Utiliser uniquement une intervention autorisée et préparée",
-            "Forcer systématiquement l’extinction"
-          ],
-          "correct": 2,
-          "explanation": ""
-        }
-      ]
-    },
-    {
       "id": "quiz-auto-chapter:06:08",
       "title": "QCM — Gestion des espaces de stockage - File System",
       "category": "06 — Administration GNU",
@@ -5980,6 +5642,344 @@
             "chown g+s dossier"
           ],
           "correct": 2,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "id": "quiz-auto-chapter:06:03",
+      "title": "QCM — Debian en mode maintenance",
+      "category": "06 — Administration GNU",
+      "chapterId": "chapter:06:03",
+      "questions": [
+        {
+          "question": "Quel est le rôle de GRUB ?",
+          "answers": [
+            "Formater les partitions",
+            "Gérer le démarrage du système",
+            "Attribuer les adresses IP",
+            "Créer les utilisateurs"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle touche permet d’éditer une entrée GRUB ?",
+          "answers": [
+            "e",
+            "q",
+            "p",
+            "s"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle combinaison démarre l’entrée GRUB modifiée ?",
+          "answers": [
+            "Ctrl+C",
+            "Alt+F4",
+            "Ctrl+X",
+            "Ctrl+Z"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quel paramètre est remplacé par single dans le TP ?",
+          "answers": [
+            "root=",
+            "quiet",
+            "ro",
+            "initrd"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que signifie single dans ce cours ?",
+          "answers": [
+            "Mode maintenance",
+            "Mode graphique",
+            "Mode réseau",
+            "Mode RAID"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "La méthode GRUB single du support demande généralement…",
+          "answers": [
+            "Une ISO",
+            "Un serveur DHCP",
+            "Le mot de passe root",
+            "Un compte invité"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle disposition clavier peut être active au démarrage ?",
+          "answers": [
+            "Dvorak",
+            "QWERTY",
+            "BÉPO obligatoirement",
+            "AZERTY toujours"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quel paramètre lance Bash directement ?",
+          "answers": [
+            "bash=init",
+            "root=/bin/bash",
+            "quiet=bash",
+            "init=/bin/bash"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Dans init=/bin/bash, Bash remplace…",
+          "answers": [
+            "Le BIOS",
+            "Le processus init normal",
+            "Le disque",
+            "Le noyau"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Dans le scénario init=/bin/bash, la racine est initialement…",
+          "answers": [
+            "En lecture seule",
+            "Toujours en lecture-écriture",
+            "Démontée obligatoirement",
+            "Formatée"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande remonte la racine en écriture ?",
+          "answers": [
+            "mount -a",
+            "mount /boot",
+            "mount -o remount,rw /",
+            "lsblk -f"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Que signifie -o dans mount ?",
+          "answers": [
+            "Ordre",
+            "Options",
+            "Ouverture",
+            "Octal"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que signifie remount ?",
+          "answers": [
+            "Créer une partition",
+            "Supprimer un volume",
+            "Installer GRUB",
+            "Modifier un montage existant"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Que signifie rw ?",
+          "answers": [
+            "Lecture-écriture",
+            "Lecture seule",
+            "Réseau sans fil",
+            "Redémarrage"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel argument désigne la racine dans mount -o remount,rw / ?",
+          "answers": [
+            "rw",
+            "-o",
+            "/",
+            "remount"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande modifie le mot de passe root en session root ?",
+          "answers": [
+            "cat",
+            "passwd",
+            "sync",
+            "lsblk"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle syntaxe change le mot de passe d’un compte précis ?",
+          "answers": [
+            "passwd utilisateur",
+            "sync utilisateur",
+            "lsblk utilisateur",
+            "reboot utilisateur"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande demande l’écriture des données en attente ?",
+          "answers": [
+            "mount",
+            "reboot",
+            "sync",
+            "init"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Pourquoi l’arrêt normal est-il problématique en mode init=/bin/bash ?",
+          "answers": [
+            "Le clavier est français",
+            "La carte réseau manque",
+            "La partition est FAT32",
+            "Le système init normal ne fonctionne pas"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle méthode utilise un environnement externe ?",
+          "answers": [
+            "GRUB single",
+            "ISO Rescue",
+            "init=/bin/bash",
+            "quiet"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Dans l’ISO Debian, quel menu propose Rescue mode ?",
+          "answers": [
+            "Advanced options",
+            "Disk cleanup",
+            "Network settings",
+            "User manager"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel avantage présente l’ISO Rescue selon le support ?",
+          "answers": [
+            "Aucun support nécessaire",
+            "Accès réseau obligatoire",
+            "Mot de passe root installé non nécessaire pour lancer Rescue",
+            "GRUB automatiquement réinstallé"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Quel risque existe lors de la sélection de la partition racine ?",
+          "answers": [
+            "Trop de mémoire",
+            "Modifier le mauvais système",
+            "Désactiver le BIOS",
+            "Changer la carte réseau"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Pourquoi monter /boot en Rescue ?",
+          "answers": [
+            "Pour changer l’IP",
+            "Pour créer des comptes",
+            "Pour modifier le clavier",
+            "Pour intervenir sur GRUB si /boot est distinct"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande affiche disques et volumes ?",
+          "answers": [
+            "lsblk",
+            "passwd",
+            "sync",
+            "reboot"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande affiche le contenu de /etc/passwd ?",
+          "answers": [
+            "mount /etc/passwd",
+            "cat /etc/passwd",
+            "sync /etc/passwd",
+            "update-grub /etc/passwd"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que fait update-grub ?",
+          "answers": [
+            "Formate /boot",
+            "Crée un utilisateur",
+            "Régénère la configuration GRUB",
+            "Réinstalle automatiquement le chargeur sur disque"
+          ],
+          "correct": 2,
+          "explanation": ""
+        },
+        {
+          "question": "Que signifie ro sur la ligne du noyau ?",
+          "answers": [
+            "Lecture seule",
+            "Lecture-écriture",
+            "Redémarrage",
+            "Réseau ouvert"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que faut-il faire si la VM redémarre toujours sur l’ISO ?",
+          "answers": [
+            "Modifier passwd",
+            "Effacer GRUB",
+            "Reformater le disque",
+            "Déconnecter l’ISO ou corriger l’ordre de boot"
+          ],
+          "correct": 3,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle précaution est adaptée avant un TP de dépannage ?",
+          "answers": [
+            "Supprimer les journaux",
+            "Créer un instantané de VM",
+            "Désactiver les sauvegardes",
+            "Changer le matériel"
+          ],
+          "correct": 1,
           "explanation": ""
         }
       ]
