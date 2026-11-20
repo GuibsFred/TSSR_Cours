@@ -1,4 +1,4 @@
-/* Commandes extraites des cours : descriptions/options selon les supports disponibles. */
+/* TSSR V4 : sources et références signalées. */
 window.TSSR_COMMANDES_INTEGREES = [
   {
     "id": "extracted-bash-alias",
@@ -42,7 +42,8 @@ window.TSSR_COMMANDES_INTEGREES = [
       "arp -a",
       "arp -s 192.168.1.200 00-14-22-01-23-45",
       "arp -d 192.168.1.200",
-      "arp -n"
+      "arp -n",
+      "arp"
     ],
     "options": [
       {
@@ -560,6 +561,10 @@ window.TSSR_COMMANDES_INTEGREES = [
       {
         "flag": "-li",
         "meaning": "Option présente dans un exemple du cours ; consulter le contexte du module."
+      },
+      {
+        "flag": "--block-size",
+        "meaning": "Afficher notamment la taille du fichier en octets ; `--block-size=1` fixe l'unité d'affichage."
       }
     ],
     "notes": "Cours : Bibliothèque intégrée, Droits sur les fichiers et répertoires, Démarrage d'une distrubution Linux, Gestion avancée des espaces de stockage - LVM, Gestion des alias avec Bash",
@@ -895,7 +900,8 @@ window.TSSR_COMMANDES_INTEGREES = [
       "ping -c 4 192.168.2.140",
       "ping -c 4 8.8.8.8",
       "ping -c 4 www.google.com",
-      "ping -c 4 127.0.0.1"
+      "ping -c 4 127.0.0.1",
+      "ping"
     ]
   },
   {
@@ -1290,6 +1296,14 @@ window.TSSR_COMMANDES_INTEGREES = [
       {
         "flag": "--name=/dev/sda",
         "meaning": "Option présente dans un exemple du cours ; consulter le contexte du module."
+      },
+      {
+        "flag": "--query",
+        "meaning": "Identifie le chemin du périphérique `/dev/sda` dans sysfs. `--query` et `--name` sont des options longues."
+      },
+      {
+        "flag": "--name",
+        "meaning": "Identifie le chemin du périphérique `/dev/sda` dans sysfs. `--query` et `--name` sont des options longues."
       }
     ],
     "notes": "Cours : Gestion avancée des espaces de stockage - LVM, Gestion des espaces de stockage"
@@ -1522,7 +1536,8 @@ window.TSSR_COMMANDES_INTEGREES = [
       "apt install openssh-server",
       "apt install curl vim",
       "apt remove openssh-server",
-      "apt purge openssh-server"
+      "apt purge openssh-server",
+      "apt"
     ]
   },
   {
@@ -1695,7 +1710,8 @@ window.TSSR_COMMANDES_INTEGREES = [
       "dpkg -l 'ftp'",
       "dpkg -L openssh-client",
       "dpkg -S /usr/bin/scp",
-      "dpkg -l"
+      "dpkg -l",
+      "dpkg -l '*ftp*'"
     ],
     "options": [
       {
@@ -1783,23 +1799,15 @@ window.TSSR_COMMANDES_INTEGREES = [
       },
       {
         "flag": "addr",
-        "meaning": "Gérer les adresses"
+        "meaning": "Objet : gérer les adresses IP (ce n’est pas une option)."
       },
       {
         "flag": "link",
-        "meaning": "Gérer les interfaces"
+        "meaning": "Objet : gérer les interfaces réseau (ce n’est pas une option)."
       },
       {
         "flag": "route",
-        "meaning": "Gérer la table de routage"
-      },
-      {
-        "flag": "show",
-        "meaning": "Afficher"
-      },
-      {
-        "flag": "add/del",
-        "meaning": "Ajouter ou supprimer"
+        "meaning": "Objet : gérer les routes IP (ce n’est pas une option)."
       }
     ],
     "notes": "Cours : Bibliothèque intégrée",
@@ -1809,7 +1817,15 @@ window.TSSR_COMMANDES_INTEGREES = [
       "diagnostic"
     ],
     "examples": [
-      "ip -br addr show"
+      "ip -br addr show",
+      "ip -br addr",
+      "ip link show",
+      "ip route show",
+      "ip route get 192.168.2.140",
+      "ip neigh show",
+      "ip route add 10.0.0.0/8 via 192.168.1.254",
+      "ip route del 10.0.0.0/8 via 192.168.1.254",
+      "ip route add default via 192.168.1.254"
     ]
   },
   {
@@ -2042,7 +2058,8 @@ window.TSSR_COMMANDES_INTEGREES = [
       "comptes"
     ],
     "examples": [
-      "passwd utilisateur"
+      "passwd utilisateur",
+      "passwd"
     ]
   },
   {
@@ -2165,7 +2182,8 @@ window.TSSR_COMMANDES_INTEGREES = [
     "examples": [
       "ss -tulnp",
       "ss -tuln",
-      "ss -tan"
+      "ss -tan",
+      "ss"
     ]
   },
   {
@@ -2677,5 +2695,341 @@ window.TSSR_COMMANDES_INTEGREES = [
     ],
     "options": [],
     "notes": "Cours : Gestion des alias avec Bash, Gestion des paquets logiciels, Gestion du réseau"
+  },
+  {
+    "id": "verified-course-ipconfig",
+    "name": "ipconfig",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "theme": "Commandes étudiées en formation TSSR",
+    "description": "Consulter la configuration IP, DNS et DHCP sous Windows. Options : /all, /release, /renew, /displaydns, /flushdns, /registerdns.",
+    "syntax": "ipconfig",
+    "example": "ipconfig",
+    "examples": [
+      "ipconfig"
+    ],
+    "options": [],
+    "notes": "Source : 11 (cours TSSR)"
+  },
+  {
+    "id": "verified-course-netstat",
+    "name": "netstat",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "theme": "Commandes étudiées en formation TSSR",
+    "description": "Examiner les connexions, ports et statistiques réseau. Linux : -a, -n, -t, -u, -l, -p, -r, -i. Windows : -a, -n, -o, -r, -e, -s.",
+    "syntax": "netstat",
+    "example": "netstat",
+    "examples": [
+      "netstat"
+    ],
+    "options": [],
+    "notes": "Source : 11 (cours TSSR)"
+  },
+  {
+    "id": "verified-course-vi",
+    "name": "vi",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "theme": "Commandes étudiées en formation TSSR",
+    "description": "Ouvrir le fichier des montages automatiques pour édition. Argument : chemin du fichier.",
+    "syntax": "vi /etc/fstab",
+    "example": "vi /etc/fstab",
+    "examples": [
+      "vi /etc/fstab"
+    ],
+    "options": [],
+    "notes": "Source : 13 (cours TSSR)"
+  },
+  {
+    "id": "verified-course-vim",
+    "name": "vim",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "theme": "Commandes étudiées en formation TSSR",
+    "description": "Éditer la configuration traditionnelle des dépôts. Chemin : fichier à modifier avec prudence.",
+    "syntax": "vim /etc/apt/sources.list",
+    "example": "vim /etc/apt/sources.list",
+    "examples": [
+      "vim /etc/apt/sources.list"
+    ],
+    "options": [],
+    "notes": "Source : 16 (cours TSSR)"
+  },
+  {
+    "id": "supplement-ps-Remove-Item",
+    "name": "Remove-Item",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Supprimer un fichier ou un répertoire.",
+    "syntax": "Remove-Item -Path C:\\Temp\\test.txt -Force",
+    "example": "Remove-Item -Path C:\\Temp\\test.txt -Force",
+    "examples": [
+      "Remove-Item -Path C:\\Temp\\test.txt -Force"
+    ],
+    "options": [
+      {
+        "flag": "-Path",
+        "meaning": "Chemin de l’élément à supprimer."
+      },
+      {
+        "flag": "-Recurse",
+        "meaning": "Supprimer également le contenu des dossiers."
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Inclure les éléments protégés ou masqués selon le contexte."
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler l’action sans l’exécuter."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
+  },
+  {
+    "id": "supplement-ps-Remove-LocalUser",
+    "name": "Remove-LocalUser",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Supprimer un compte utilisateur local.",
+    "syntax": "Remove-LocalUser -Name stagiaire",
+    "example": "Remove-LocalUser -Name stagiaire",
+    "examples": [
+      "Remove-LocalUser -Name stagiaire"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom du compte local."
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant de sécurité du compte."
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler la suppression."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
+  },
+  {
+    "id": "supplement-ps-New-Item",
+    "name": "New-Item",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Créer un fichier ou un répertoire.",
+    "syntax": "New-Item -Path C:\\Temp\\test -ItemType Directory",
+    "example": "New-Item -Path C:\\Temp\\test -ItemType Directory",
+    "examples": [
+      "New-Item -Path C:\\Temp\\test -ItemType Directory"
+    ],
+    "options": [
+      {
+        "flag": "-Path",
+        "meaning": "Chemin de l’élément."
+      },
+      {
+        "flag": "-ItemType",
+        "meaning": "Type : File ou Directory."
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Forcer la création lorsque cela est possible."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
+  },
+  {
+    "id": "supplement-ps-Set-Location",
+    "name": "Set-Location",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Changer de répertoire courant.",
+    "syntax": "Set-Location -Path C:\\Windows",
+    "example": "Set-Location -Path C:\\Windows",
+    "examples": [
+      "Set-Location -Path C:\\Windows"
+    ],
+    "options": [
+      {
+        "flag": "-Path",
+        "meaning": "Chemin du dossier cible."
+      },
+      {
+        "flag": "-LiteralPath",
+        "meaning": "Chemin traité sans caractères génériques."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
+  },
+  {
+    "id": "supplement-ps-Copy-Item",
+    "name": "Copy-Item",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Copier un fichier ou un dossier.",
+    "syntax": "Copy-Item -Path .\\source.txt -Destination .\\copie.txt",
+    "example": "Copy-Item -Path .\\source.txt -Destination .\\copie.txt",
+    "examples": [
+      "Copy-Item -Path .\\source.txt -Destination .\\copie.txt"
+    ],
+    "options": [
+      {
+        "flag": "-Path",
+        "meaning": "Élément source."
+      },
+      {
+        "flag": "-Destination",
+        "meaning": "Destination."
+      },
+      {
+        "flag": "-Recurse",
+        "meaning": "Inclure les sous-dossiers."
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Forcer la copie lorsque cela est possible."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
+  },
+  {
+    "id": "supplement-ps-Move-Item",
+    "name": "Move-Item",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Déplacer un fichier ou un dossier.",
+    "syntax": "Move-Item -Path .\\source.txt -Destination C:\\Temp",
+    "example": "Move-Item -Path .\\source.txt -Destination C:\\Temp",
+    "examples": [
+      "Move-Item -Path .\\source.txt -Destination C:\\Temp"
+    ],
+    "options": [
+      {
+        "flag": "-Path",
+        "meaning": "Élément source."
+      },
+      {
+        "flag": "-Destination",
+        "meaning": "Chemin de destination."
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Forcer le déplacement lorsque cela est possible."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
+  },
+  {
+    "id": "supplement-ps-Get-Process",
+    "name": "Get-Process",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Afficher les processus en cours.",
+    "syntax": "Get-Process -Name explorer",
+    "example": "Get-Process -Name explorer",
+    "examples": [
+      "Get-Process -Name explorer"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Filtrer par nom de processus."
+      },
+      {
+        "flag": "-Id",
+        "meaning": "Filtrer par identifiant du processus."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
+  },
+  {
+    "id": "supplement-ps-Stop-Process",
+    "name": "Stop-Process",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Arrêter un processus.",
+    "syntax": "Stop-Process -Name notepad",
+    "example": "Stop-Process -Name notepad",
+    "examples": [
+      "Stop-Process -Name notepad"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom du processus."
+      },
+      {
+        "flag": "-Id",
+        "meaning": "Identifiant du processus."
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Forcer l’arrêt."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
+  },
+  {
+    "id": "supplement-ps-Get-Content",
+    "name": "Get-Content",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Lire le contenu d’un fichier.",
+    "syntax": "Get-Content -Path .\\journal.log -Tail 20",
+    "example": "Get-Content -Path .\\journal.log -Tail 20",
+    "examples": [
+      "Get-Content -Path .\\journal.log -Tail 20"
+    ],
+    "options": [
+      {
+        "flag": "-Path",
+        "meaning": "Chemin du fichier."
+      },
+      {
+        "flag": "-Tail",
+        "meaning": "Afficher les dernières lignes."
+      },
+      {
+        "flag": "-Wait",
+        "meaning": "Suivre les nouvelles lignes."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
+  },
+  {
+    "id": "supplement-ps-Set-ExecutionPolicy",
+    "name": "Set-ExecutionPolicy",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "theme": "Référence complémentaire PowerShell",
+    "description": "Configurer la stratégie d’exécution des scripts.",
+    "syntax": "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser",
+    "example": "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser",
+    "examples": [
+      "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser"
+    ],
+    "options": [
+      {
+        "flag": "-ExecutionPolicy",
+        "meaning": "Politique à appliquer."
+      },
+      {
+        "flag": "-Scope",
+        "meaning": "Portée de la configuration."
+      }
+    ],
+    "notes": "Complément de référence : commande non attestée dans les cours actuellement accessibles du ZIP."
   }
 ];

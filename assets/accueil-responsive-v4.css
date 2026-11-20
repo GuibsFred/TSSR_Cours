@@ -1,0 +1,11 @@
+/* TSSR V4 : accueil responsive sans toucher aux autres vues */
+body.home-network #main,body.home-network #view{min-width:0;max-width:100%;box-sizing:border-box}
+body.home-network .v84-home,body.home-network .v47-dashboard,body.home-network .v47-featured{max-width:100%;min-width:0;box-sizing:border-box}
+body.home-network .v47-quick-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;min-width:0!important}
+body.home-network .v47-quick{min-width:0!important;overflow:hidden!important}
+body.home-network .v47-quick-copy{min-width:0!important;max-width:70%!important}
+body.home-network .v47-quick img{max-width:43%!important;height:auto!important;object-fit:contain!important}
+@media(min-width:1600px){body.home-network .v47-quick-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(max-width:1050px){body.home-network .v47-dashboard,body.home-network .v47-featured{width:100%!important;max-width:100%!important}body.home-network .v47-quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:700px){body.home-network .v47-quick-grid{grid-template-columns:minmax(0,1fr)!important}body.home-network .v47-quick{min-height:150px!important}body.home-network .v47-quick img{width:105px!important;max-width:38%!important}body.home-network .v47-quick-copy{max-width:64%!important}body.home-network .v84-home{padding-inline:8px!important}}
+@media(max-width:430px){body.home-network .v47-quick img{width:90px!important}body.home-network .v47-quick-copy b{font-size:16px!important}}
