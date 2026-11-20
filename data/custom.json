@@ -437,13 +437,13 @@
       "art": "",
       "heroImage": "assets/tssr-banner-linux.webp",
       "chapterIcon": "🐧",
-      "essentialsMarkdown": "- **Stable** est la branche Debian à privilégier en production.\n- Les dépôts fournissent les logiciels et leurs mises à jour.\n- `/etc/apt/sources.list` contient traditionnellement la configuration principale des dépôts.\n- `main`, `contrib`, `non-free` et `non-free-firmware` désignent différentes sections.\n- `apt update` actualise les listes, tandis que `apt upgrade` met à jour les logiciels.\n- `apt full-upgrade` peut supprimer des paquets pour résoudre les dépendances.\n- `apt remove` conserve normalement la configuration ; `apt purge` la supprime également.\n- APT gère les dépendances, contrairement à dpkg utilisé seul.\n- `dpkg -L` liste les fichiers d'un paquet.\n- `dpkg -S` identifie le paquet propriétaire d'un fichier.\n- Les journaux APT et dpkg permettent de retrouver les opérations effectuées.\n- Une compilation classique peut suivre : `./configure` → `make` → `make install`.",
-      "commandsMarkdown": "```bash\napt update\n```\nActualiser le catalogue des paquets.\n\n```bash\napt upgrade\n```\nMettre à jour les paquets installés sans suppression de paquets.\n\n```bash\napt full-upgrade\n```\nEffectuer une mise à jour complète avec suppressions éventuelles.\n\n```bash\napt install vim\n```\nInstaller le paquet Vim.\n\n```bash\napt install vim terminator\n```\nInstaller plusieurs logiciels.\n\n```bash\napt remove vim\n```\nSupprimer Vim en conservant normalement sa configuration.\n\n```bash\napt purge vim\n```\nSupprimer Vim et ses fichiers de configuration gérés par le paquet.\n\n```bash\napt clean\n```\nNettoyer les archives téléchargées.\n\n```bash\napt search vim\n```\nRechercher un paquet.\n\n```bash\napt show vim\n```\nAfficher les informations d'un paquet.\n\n```bash\ndpkg -l\n```\nConsulter les paquets connus.\n\n```bash\ndpkg -l \"*ftp*\"\n```\nFiltrer les paquets par motif.\n\n```bash\ndpkg -L telnet\n```\nAfficher les fichiers installés par un paquet.\n\n```bash\ndpkg -S /usr/bin/scp\n```\nIdentifier le paquet propriétaire d'un fichier.\n\n```bash\nvi /etc/apt/sources.list\n```\nModifier la configuration des dépôts avec les droits nécessaires.\n\n```bash\n./configure\nmake\nmake install\n```\nPréparer, compiler et installer un logiciel depuis ses sources lorsque le projet utilise cette méthode.",
-      "html": "<h1>Gestion des paquets logiciels sous Debian GNU/Linux</h1>\n<h2>Objectifs du chapitre</h2>\n<p>À la fin de ce chapitre, tu dois être capable de :</p>\n<ul>\n<li>Comprendre les différentes branches de Debian.</li>\n<li>Identifier et configurer les dépôts logiciels.</li>\n<li>Mettre à jour Debian et ses paquets.</li>\n<li>Installer, rechercher et désinstaller des logiciels.</li>\n<li>Utiliser APT et dpkg.</li>\n<li>Consulter les journaux d'installation.</li>\n<li>Comprendre les principales étapes d'une installation depuis les sources.</li>\n</ul>\n<h2>1. Les branches du projet Debian</h2>\n<h3>1.1. Qu'est-ce qu'une release ?</h3>\n<p>Une release désigne une version publiée de Debian. Le projet utilise également différentes branches pour organiser le développement et la distribution des logiciels.</p>\n<table>\n<thead>\n<tr>\n<th>Branche</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Stable</td>\n<td>Version officielle privilégiant la stabilité.</td>\n</tr>\n<tr>\n<td>Testing</td>\n<td>Future version Stable, contenant des paquets en cours de validation.</td>\n</tr>\n<tr>\n<td>Unstable (Sid)</td>\n<td>Branche de développement recevant continuellement des modifications.</td>\n</tr>\n<tr>\n<td>Oldstable</td>\n<td>Version Stable précédente.</td>\n</tr>\n<tr>\n<td>Oldoldstable</td>\n<td>Version encore antérieure.</td>\n</tr>\n<tr>\n<td>Experimental</td>\n<td>Ensemble de paquets expérimentaux, ne constituant pas une distribution complète.</td>\n</tr>\n</tbody></table>\n<h3>1.2. Fonctionnement des branches</h3>\n<p><strong>Unstable (Sid)</strong> reçoit régulièrement de nouveaux logiciels et des mises à jour. Elle évolue continuellement, selon le principe de Rolling Release.</p>\n<p><strong>Testing</strong> reçoit des paquets provenant d'Unstable lorsqu'ils remplissent les conditions de migration.</p>\n<p><strong>Stable</strong> correspond à une version officiellement publiée. Elle privilégie la fiabilité et bénéficie de mises à jour de sécurité et de maintenance.</p>\n<p>Pour un serveur en production, on privilégie généralement Debian Stable.</p>\n<h2>2. Les dépôts logiciels</h2>\n<h3>2.1. Définition</h3>\n<p>Un dépôt, également appelé repository, est un emplacement contenant des paquets logiciels accessibles au système.</p>\n<p>Il permet de télécharger des logiciels, de les installer, de récupérer leurs mises à jour et de gérer leurs dépendances.</p>\n<p>Une <strong>dépendance</strong> est un logiciel ou une bibliothèque nécessaire au fonctionnement d'un autre programme.</p>\n<p>APT peut installer automatiquement les dépendances nécessaires à un logiciel.</p>\n<h3>2.2. Configuration des dépôts</h3>\n<p>Le fichier traditionnel de configuration est :</p>\n<p><code>/etc/apt/sources.list</code></p>\n<p>Des fichiers supplémentaires peuvent être présents dans :</p>\n<p><code>/etc/apt/sources.list.d/</code></p>\n<p>Exemple avec Debian 12 Bookworm :</p>\n<pre><code class=\"language-bash\">deb http://ftp.fr.debian.org/debian/ bookworm main contrib non-free\n</code></pre>\n<p>Cette ligne contient plusieurs éléments :</p>\n<table>\n<thead>\n<tr>\n<th>Élément</th>\n<th>Signification</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>deb</td>\n<td>Dépôt de paquets binaires.</td>\n</tr>\n<tr>\n<td>Adresse HTTP</td>\n<td>Emplacement du dépôt.</td>\n</tr>\n<tr>\n<td>bookworm</td>\n<td>Nom de la version Debian.</td>\n</tr>\n<tr>\n<td>main contrib non-free</td>\n<td>Sections de logiciels accessibles.</td>\n</tr>\n</tbody></table>\n<p>Les principales sections sont :</p>\n<ul>\n<li><strong>main</strong> : logiciels libres.</li>\n<li><strong>contrib</strong> : logiciels libres dépendant de composants non libres.</li>\n<li><strong>non-free</strong> : logiciels non libres.</li>\n<li><strong>non-free-firmware</strong> : micrologiciels non libres, section distincte depuis Debian 12.</li>\n</ul>\n<p>La directive <code>deb-src</code> permet d'indiquer un dépôt contenant les sources des logiciels.</p>\n<p>Une ligne commençant par <code>#</code> est commentée et n'est pas prise en compte.</p>\n<h3>2.3. Modifier les dépôts</h3>\n<p>La modification des fichiers système nécessite des privilèges administrateur.</p>\n<p>Exemple :</p>\n<pre><code class=\"language-bash\">vi /etc/apt/sources.list\n</code></pre>\n<p>Après modification, il faut actualiser le catalogue des paquets :</p>\n<pre><code class=\"language-bash\">apt update\n</code></pre>\n<p>Cette opération permet à Debian de prendre en compte les dépôts configurés.</p>\n<h2>3. Les outils de gestion des paquets</h2>\n<p>Debian dispose de plusieurs outils complémentaires.</p>\n<table>\n<thead>\n<tr>\n<th>Outil</th>\n<th>Fonction</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>apt</td>\n<td>Gestion courante des logiciels et des dépendances.</td>\n</tr>\n<tr>\n<td>apt-get</td>\n<td>Interface historique, également utilisée dans les scripts.</td>\n</tr>\n<tr>\n<td>apt-cache</td>\n<td>Recherche et consultation d'informations sur les paquets.</td>\n</tr>\n<tr>\n<td>dpkg</td>\n<td>Gestion locale des paquets Debian.</td>\n</tr>\n</tbody></table>\n<p>APT utilise notamment dpkg pour effectuer les installations et les suppressions.</p>\n<p>La différence principale est qu'APT sait résoudre les dépendances à partir des dépôts configurés, contrairement à dpkg utilisé seul.</p>\n<h2>4. Mettre à jour Debian</h2>\n<h3>4.1. Actualiser la liste des paquets</h3>\n<pre><code class=\"language-bash\">apt update\n</code></pre>\n<p>Cette commande télécharge les informations sur les paquets disponibles dans les dépôts.</p>\n<p>Elle ne met pas à jour les logiciels installés.</p>\n<h3>4.2. Installer les mises à jour</h3>\n<pre><code class=\"language-bash\">apt upgrade\n</code></pre>\n<p>Cette commande met à jour les paquets installés sans supprimer de paquets existants.</p>\n<h3>4.3. Effectuer une mise à jour complète</h3>\n<pre><code class=\"language-bash\">apt full-upgrade\n</code></pre>\n<p>Cette commande peut modifier davantage les dépendances et supprimer certains paquets si nécessaire.</p>\n<p>Sur un serveur, il faut examiner les modifications proposées avant de confirmer.</p>\n<h2>5. Installer et désinstaller des logiciels</h2>\n<h3>5.1. Installer un paquet</h3>\n<pre><code class=\"language-bash\">apt install vim\n</code></pre>\n<p>Cette commande installe l'éditeur Vim ainsi que ses éventuelles dépendances.</p>\n<p>Il est possible d'installer plusieurs logiciels simultanément :</p>\n<pre><code class=\"language-bash\">apt install vim terminator\n</code></pre>\n<p>Terminator est un émulateur de terminal graphique permettant notamment d'afficher plusieurs terminaux dans une même fenêtre.</p>\n<h3>5.2. Supprimer un paquet</h3>\n<pre><code class=\"language-bash\">apt remove vim\n</code></pre>\n<p>Cette commande supprime le logiciel, mais conserve normalement ses fichiers de configuration système.</p>\n<p>Pour supprimer également les fichiers de configuration gérés par le paquet :</p>\n<pre><code class=\"language-bash\">apt purge vim\n</code></pre>\n<h3>5.3. Nettoyer le cache</h3>\n<pre><code class=\"language-bash\">apt clean\n</code></pre>\n<p>Cette commande supprime les archives de paquets téléchargées et conservées dans le cache local d'APT.</p>\n<h3>5.4. Rechercher un logiciel</h3>\n<pre><code class=\"language-bash\">apt search vim\n</code></pre>\n<p>Recherche les paquets correspondant au terme indiqué.</p>\n<p>Pour afficher les informations détaillées :</p>\n<pre><code class=\"language-bash\">apt show vim\n</code></pre>\n<p>Cette commande fournit notamment la description, la version et les dépendances du paquet.</p>\n<h2>6. Utiliser dpkg</h2>\n<h3>6.1. Présentation</h3>\n<p>dpkg constitue la base du système de gestion des paquets Debian.</p>\n<p>Il permet d'installer, de supprimer et d'interroger les paquets Debian, mais ne résout pas automatiquement les dépendances comme APT.</p>\n<h3>6.2. Consulter les paquets</h3>\n<pre><code class=\"language-bash\">dpkg -l\n</code></pre>\n<p>Affiche les informations sur les paquets connus du système.</p>\n<p>Pour filtrer les paquets contenant <code>ftp</code> :</p>\n<pre><code class=\"language-bash\">dpkg -l \"*ftp*\"\n</code></pre>\n<h3>6.3. Afficher les fichiers d'un paquet</h3>\n<pre><code class=\"language-bash\">dpkg -L telnet\n</code></pre>\n<p>Affiche les fichiers installés par le paquet telnet, lorsqu'il est installé.</p>\n<h3>6.4. Identifier le paquet propriétaire d'un fichier</h3>\n<pre><code class=\"language-bash\">dpkg -S /usr/bin/scp\n</code></pre>\n<p>Permet de retrouver le paquet auquel appartient ce fichier.</p>\n<p>Exemple de résultat :</p>\n<pre><code class=\"language-text\">openssh-client: /usr/bin/scp\n</code></pre>\n<h2>7. Consulter les journaux</h2>\n<p>Debian conserve un historique des opérations effectuées sur les paquets.</p>\n<table>\n<thead>\n<tr>\n<th>Fichier</th>\n<th>Utilité</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>/var/log/apt/history.log</td>\n<td>Historique des opérations réalisées avec APT.</td>\n</tr>\n<tr>\n<td>/var/log/dpkg.log</td>\n<td>Journal des opérations effectuées par dpkg.</td>\n</tr>\n</tbody></table>\n<p>Ces journaux sont utiles pour comprendre les modifications apportées au système ou rechercher l'origine d'un problème après une installation.</p>\n<h2>8. Installer un logiciel depuis ses sources</h2>\n<h3>8.1. Principe</h3>\n<p>Un logiciel peut être installé à partir de son code source plutôt que depuis un paquet disponible dans les dépôts.</p>\n<p>Cette méthode nécessite généralement davantage de préparation et dépend du système de compilation utilisé par le projet.</p>\n<h3>8.2. Préparer l'environnement</h3>\n<p>Avant toute compilation, il faut vérifier la présence des outils et des bibliothèques nécessaires.</p>\n<p>Les fichiers README et INSTALL fournissent normalement les instructions propres au logiciel.</p>\n<h3>8.3. Les étapes classiques</h3>\n<p><strong>Étape 1 — Préparation</strong></p>\n<pre><code class=\"language-bash\">./configure\n</code></pre>\n<p>Lorsqu'il existe, ce script vérifie l'environnement et prépare généralement les fichiers nécessaires à la compilation.</p>\n<p><strong>Étape 2 — Compilation</strong></p>\n<pre><code class=\"language-bash\">make\n</code></pre>\n<p>Cette commande compile le programme à partir des instructions du Makefile.</p>\n<p><strong>Étape 3 — Installation</strong></p>\n<pre><code class=\"language-bash\">make install\n</code></pre>\n<p>Cette commande installe les fichiers compilés. Des privilèges administrateur peuvent être nécessaires pour écrire dans les répertoires système.</p>\n<p>Tous les projets n'utilisent pas obligatoirement ces trois commandes.</p>\n<h2>Conclusion</h2>\n<p>La gestion des paquets est une compétence essentielle pour administrer Debian.</p>\n<p>APT permet de gérer les logiciels, leurs dépendances et leurs mises à jour. dpkg intervient au niveau des paquets locaux et fournit des informations détaillées.</p>\n<p>La maîtrise des dépôts, des journaux et des commandes d'installation permet de maintenir un système Debian opérationnel et sécurisé.</p>\n",
-      "revisionHtml": "<h1>Gestion des paquets Debian — Fiche mémo</h1>\n<h2>1. Branches Debian</h2>\n<table>\n<thead>\n<tr>\n<th>Branche</th>\n<th>À mémoriser</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Stable</td>\n<td>Production et stabilité.</td>\n</tr>\n<tr>\n<td>Testing</td>\n<td>Future Stable.</td>\n</tr>\n<tr>\n<td>Unstable / Sid</td>\n<td>Développement continu.</td>\n</tr>\n<tr>\n<td>Oldstable</td>\n<td>Ancienne Stable.</td>\n</tr>\n<tr>\n<td>Experimental</td>\n<td>Paquets expérimentaux.</td>\n</tr>\n</tbody></table>\n<h2>2. Dépôts</h2>\n<p><strong>Fichier principal :</strong> <code>/etc/apt/sources.list</code></p>\n<p><strong>Dépôts supplémentaires :</strong> <code>/etc/apt/sources.list.d/</code></p>\n<p><strong>Structure :</strong> type → adresse → version → sections.</p>\n<ul>\n<li><code>deb</code> : paquets binaires.</li>\n<li><code>deb-src</code> : paquets sources.</li>\n<li><code>main</code> : libre.</li>\n<li><code>contrib</code> : libre avec dépendances non libres.</li>\n<li><code>non-free</code> : non libre.</li>\n<li><code>non-free-firmware</code> : micrologiciels non libres.</li>\n<li><code>#</code> : commentaire.</li>\n</ul>\n<h2>3. APT : commandes à connaître</h2>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Action</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>apt update</code></td>\n<td>Actualiser les listes.</td>\n</tr>\n<tr>\n<td><code>apt upgrade</code></td>\n<td>Mettre à jour les logiciels.</td>\n</tr>\n<tr>\n<td><code>apt full-upgrade</code></td>\n<td>Mise à jour complète.</td>\n</tr>\n<tr>\n<td><code>apt install</code></td>\n<td>Installer.</td>\n</tr>\n<tr>\n<td><code>apt remove</code></td>\n<td>Désinstaller.</td>\n</tr>\n<tr>\n<td><code>apt purge</code></td>\n<td>Désinstaller avec configuration.</td>\n</tr>\n<tr>\n<td><code>apt clean</code></td>\n<td>Nettoyer le cache.</td>\n</tr>\n<tr>\n<td><code>apt search</code></td>\n<td>Rechercher.</td>\n</tr>\n<tr>\n<td><code>apt show</code></td>\n<td>Consulter les informations.</td>\n</tr>\n</tbody></table>\n<h2>4. dpkg</h2>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Action</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>dpkg -l</code></td>\n<td>Informations sur les paquets.</td>\n</tr>\n<tr>\n<td><code>dpkg -L paquet</code></td>\n<td>Fichiers du paquet.</td>\n</tr>\n<tr>\n<td><code>dpkg -S fichier</code></td>\n<td>Propriétaire du fichier.</td>\n</tr>\n</tbody></table>\n<p><strong>Différence fondamentale :</strong> APT résout les dépendances à partir des dépôts ; dpkg utilisé seul ne le fait pas automatiquement.</p>\n<h2>5. Journaux</h2>\n<ul>\n<li><code>/var/log/apt/history.log</code> : historique APT.</li>\n<li><code>/var/log/dpkg.log</code> : historique dpkg.</li>\n</ul>\n<h2>6. Compilation</h2>\n<ol>\n<li>Lire README ou INSTALL.</li>\n<li><code>./configure</code> : préparer.</li>\n<li><code>make</code> : compiler.</li>\n<li><code>make install</code> : installer.</li>\n</ol>\n<p><strong>À savoir pour l'examen :</strong> ne pas confondre actualisation des listes, mise à jour des logiciels et installation d'un nouveau paquet.</p>\n",
+      "essentialsMarkdown": "# Les points essentiels — Gestion des paquets Debian\n\n| Notion | À retenir |\n|---|---|\n| Stable / Testing / Sid | Stable = production ; Testing = prochaine stable ; Sid = Unstable |\n| Dépôts | Sources déclarées dans `sources.list` et/ou `sources.list.d` |\n| `apt update` | Actualise la liste des paquets, **pas les logiciels** |\n| `apt upgrade` | Met à jour les logiciels sans supprimer de paquets installés |\n| `apt full-upgrade` | **ROUGE :** peut supprimer des paquets |\n| `apt install` | Installe des logiciels et gère leurs dépendances |\n| `apt remove` / `apt purge` | Supprimer le logiciel / supprimer aussi sa configuration gérée |\n| `apt search` / `apt show` | Chercher / consulter les informations |\n| `dpkg -l` / `-L` / `-S` | Paquets connus localement / fichiers d'un paquet / propriétaire d'un fichier |\n| Logs | `/var/log/apt/history.log` et `/var/log/dpkg.log` |\n| Sources | `README`, `./configure`, `make`, `make install` si le projet suit ce modèle |\n\n**Trois erreurs classiques :** croire que `apt update` installe les mises à jour ; utiliser `apt-get search` (invalide) ; exécuter `full-upgrade` ou `purge` sans lire les suppressions proposées.",
+      "commandsMarkdown": "# Commandes essentielles — Répertoire complet, avec syntaxe et couleurs\n\n**Charte obligatoire pour l’affichage sur le site :** 🔵 **BLEU** = nom de commande / outil ; 🟠 **ORANGE** = sous-commande, option, argument, nom de paquet, chemin ; 🔴 **ROUGE** = suppression ou opération sensible. Le code couleur doit être appliqué **dans les commandes elles-mêmes** par le moteur d’affichage, et pas uniquement dans cette légende.\n\n| Commande complète | Utilité | Décomposition / arguments | Attention |\n|---|---|---|---|\n| `apt update` | Actualiser les index des dépôts | apt = outil ; update = action | Aucune installation de mises à jour |\n| `apt-get update` | Même objectif avec apt-get | apt-get = outil ; update = action | Alternative historique |\n| `apt upgrade` | Mettre à jour les paquets installés | upgrade = action | Pas de suppression de paquets installés |\n| `apt-get upgrade` | Mettre à jour via apt-get | upgrade = action | Peut conserver certains paquets si de nouvelles dépendances sont requises |\n| `apt full-upgrade` | Effectuer une mise à niveau complète | full-upgrade = action | ROUGE : suppressions possibles |\n| `apt-get dist-upgrade` | Équivalent historique de mise à niveau complète | dist-upgrade = action | ROUGE : suppressions possibles |\n| `apt install curl` | Installer un paquet | install = action ; curl = paquet à adapter | Modification système |\n| `apt-get install curl` | Installer via apt-get | install = action ; curl = paquet à adapter | Modification système |\n| `apt install curl vim` | Installer plusieurs paquets | curl et vim = paquets | Séparer les noms par des espaces |\n| `apt remove curl` | Désinstaller un paquet | remove = action ; curl = paquet | ROUGE : logiciel supprimé |\n| `apt-get remove curl` | Désinstaller via apt-get | remove = action ; curl = paquet | ROUGE : logiciel supprimé |\n| `apt purge curl` | Désinstaller et purger la configuration gérée | purge = action ; curl = paquet | ROUGE : configuration supprimée |\n| `apt-get purge curl` | Purger via apt-get | purge = action ; curl = paquet | ROUGE : configuration supprimée |\n| `apt autoremove` | Retirer des dépendances devenues inutiles | autoremove = action | ROUGE : lire la liste des suppressions |\n| `apt clean` | Nettoyer le cache des archives | clean = action | Ne désinstalle pas les paquets |\n| `apt-get clean` | Nettoyer le cache avec apt-get | clean = action | Ne désinstalle pas les paquets |\n| `apt search openssh` | Rechercher un paquet | search = action ; openssh = terme recherché | Ne pas écrire apt-get search |\n| `apt-cache search openssh` | Rechercher avec apt-cache | search = action ; openssh = terme | Alternative valide |\n| `apt show openssh-server` | Afficher la fiche d’un paquet | show = action ; openssh-server = paquet | Lecture seule |\n| `apt-cache show openssh-server` | Afficher la fiche avec apt-cache | show = action ; openssh-server = paquet | Lecture seule |\n| `dpkg -l` | Lister les paquets de la base locale | -l = liste | Ne liste pas tout le dépôt |\n| `dpkg -l '*ftp*'` | Filtrer les paquets locaux par motif | -l = liste ; *ftp* = motif | Apostrophes utiles pour préserver le motif |\n| `dpkg -L openssh-client` | Lister les fichiers installés par le paquet | -L = fichiers ; openssh-client = paquet | Paquet installé nécessaire |\n| `dpkg -S /usr/bin/scp` | Trouver le paquet propriétaire du fichier | -S = recherche ; /usr/bin/scp = chemin | Fichier connu de dpkg nécessaire |\n| `cat /etc/apt/sources.list` | Lire la configuration traditionnelle des dépôts | cat = affichage ; chemin = fichier | Peut ne pas être utilisé sur une installation récente |\n| `ls /etc/apt/sources.list.d/` | Lister les fichiers de dépôts additionnels | ls = lister ; chemin = répertoire | Inclut potentiellement des fichiers .sources |\n| `vim /etc/apt/sources.list` | Éditer les sources APT | vim = éditeur ; chemin = fichier | ROUGE : sauvegarder et vérifier la branche |\n| `less /var/log/apt/history.log` | Lire l’historique APT | less = lecteur ; chemin = journal | Lecture seule |\n| `less /var/log/dpkg.log` | Lire l’historique dpkg | less = lecteur ; chemin = journal | Lecture seule |\n| `tail -n 30 /var/log/apt/history.log` | Afficher les 30 dernières lignes | -n = nombre de lignes ; 30 = valeur | Commande complémentaire |\n| `grep ' install ' /var/log/dpkg.log` | Rechercher les installations dans le journal | motif = install ; chemin = journal | Commande complémentaire |\n| `./configure` | Préparer une compilation traditionnelle | ./ = script du répertoire courant | Seulement si le projet fournit configure |\n| `make` | Compiler depuis un Makefile | make = outil de compilation | N’installe pas encore le logiciel |\n| `make install` | Installer le logiciel compilé | install = cible du Makefile | ROUGE : peut écrire dans le système |\n| `curl --version` | Vérifier la version de curl | --version = option | Commande complémentaire |\n\n## Directives et chemins à connaître (pas des commandes shell)\n\n| Élément | Sens |\n|---|---|\n| `deb` | Dépôt de paquets binaires |\n| `deb-src` | Dépôt de paquets sources |\n| `main`, `contrib`, `non-free` | Composants de dépôt |\n| `/etc/apt/sources.list` | Configuration classique des dépôts |\n| `/etc/apt/sources.list.d/` | Dépôts dans des fichiers séparés |\n| `/var/log/apt/history.log` | Journal des actions APT |\n| `/var/log/dpkg.log` | Journal des actions dpkg |\n\n**Note de fiabilité :** `apt-get search` figurant dans le PDF est une erreur ; la commande correcte est `apt-cache search`. `dpkg -l` travaille sur la base locale, pas sur le catalogue complet des dépôts.",
+      "html": "<h1>Module 16 — Gestion des paquets logiciels sous Debian GNU/Linux</h1>\n<h2>Objectifs</h2>\n<p>Comprendre les branches Debian, identifier et gérer les dépôts, mettre à jour le système, installer et supprimer des logiciels, utiliser <code>apt</code>, <code>apt-get</code>, <code>apt-cache</code> et <code>dpkg</code>, consulter les journaux et comprendre les étapes d'une installation depuis les sources.</p>\n<blockquote>\n<p>Repère de présentation pour le site : <strong>BLEU = commande / outil</strong>, <strong>ORANGE = argument, option, chemin ou valeur à adapter</strong>, <strong>ROUGE = suppression, modification sensible, risque ou vigilance</strong>. Appliquer ce code couleur à chaque bloc de commande et dans les tableaux, sans ajouter d'encadrés jaunes en ouverture. Les exemples du PDF ENI avec « buster » et « bookworm » sont des exemples historiques : ne pas les copier aveuglément dans les dépôts d'une machine actuelle.</p>\n</blockquote>\n<h2>1. Comprendre les branches (releases) Debian</h2>\n<p>Une distribution Debian existe dans plusieurs branches, qui n'ont pas le même objectif. Le choix de la branche a un impact direct sur la stabilité et la fréquence des changements.</p>\n<table>\n<thead>\n<tr>\n<th>Branche</th>\n<th>Signification</th>\n<th>Usage TSSR</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><strong>Stable</strong></td>\n<td>Version officiellement stabilisée</td>\n<td>Choix habituel pour un serveur de production</td>\n</tr>\n<tr>\n<td><strong>Testing</strong></td>\n<td>Future branche stable en préparation</td>\n<td>Essais, validation, pas le choix par défaut pour un serveur critique</td>\n</tr>\n<tr>\n<td><strong>Unstable (Sid)</strong></td>\n<td>Branche évoluant en permanence</td>\n<td>Développement et tests avancés</td>\n</tr>\n<tr>\n<td><strong>Oldstable</strong></td>\n<td>Branche stable précédente</td>\n<td>Maintien temporaire de systèmes plus anciens</td>\n</tr>\n<tr>\n<td><strong>Oldoldstable</strong></td>\n<td>Deux générations avant Stable</td>\n<td>Systèmes anciens, attention au cycle de support</td>\n</tr>\n<tr>\n<td><strong>Experimental</strong></td>\n<td>Dépôt expérimental, pas une distribution complète</td>\n<td>Essais spécifiques pour utilisateurs avertis</td>\n</tr>\n</tbody></table>\n<p><strong>Situation professionnelle :</strong> un serveur applicatif d'hôpital doit privilégier une branche maintenue et éprouvée. On ne passe pas en Testing simplement pour obtenir une version plus récente d'un logiciel.</p>\n<h2>2. Dépôts : d'où viennent les logiciels ?</h2>\n<p>Un <strong>dépôt</strong> (repository) est une source de paquets, accessible notamment par Internet. Le gestionnaire de paquets consulte les dépôts déclarés pour connaître les versions disponibles, leurs dépendances et les mises à jour.</p>\n<table>\n<thead>\n<tr>\n<th>Élément</th>\n<th>Rôle</th>\n<th>Emplacement ou exemple</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Dépôt</td>\n<td>Serveur ou emplacement proposant des paquets</td>\n<td><code>https://deb.debian.org/debian/</code> (exemple complémentaire)</td>\n</tr>\n<tr>\n<td>Fichier traditionnel</td>\n<td>Déclaration des dépôts au format <code>deb</code></td>\n<td><code>/etc/apt/sources.list</code></td>\n</tr>\n<tr>\n<td>Répertoire complémentaire</td>\n<td>Fichiers de dépôts séparés</td>\n<td><code>/etc/apt/sources.list.d/</code></td>\n</tr>\n<tr>\n<td>Fichiers <code>.sources</code></td>\n<td>Format moderne Deb822, selon l'installation</td>\n<td><code>/etc/apt/sources.list.d/*.sources</code> (complément)</td>\n</tr>\n<tr>\n<td>Index APT</td>\n<td>Informations locales sur les paquets disponibles</td>\n<td>Mis à jour par <code>apt update</code></td>\n</tr>\n</tbody></table>\n<h3>2.1. Lire une ligne de dépôt</h3>\n<p>Exemple du support ENI (illustratif, non destiné à être recopié sur un système actuel) :</p>\n<pre><code class=\"language-text\">deb http://ftp.fr.debian.org/debian/ bookworm main contrib\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Partie</th>\n<th>Valeur</th>\n<th>Ce qu'elle signifie</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Type</td>\n<td><code>deb</code></td>\n<td>Paquets binaires prêts à installer</td>\n</tr>\n<tr>\n<td>Adresse</td>\n<td><code>http://ftp.fr.debian.org/debian/</code></td>\n<td>Localisation du dépôt</td>\n</tr>\n<tr>\n<td>Suite</td>\n<td><code>bookworm</code></td>\n<td>Version Debian ciblée par la ligne</td>\n</tr>\n<tr>\n<td>Composant</td>\n<td><code>main</code></td>\n<td>Paquets libres de la distribution</td>\n</tr>\n<tr>\n<td>Composant</td>\n<td><code>contrib</code></td>\n<td>Paquets libres dépendant de composants non libres</td>\n</tr>\n</tbody></table>\n<p>Autres éléments du support : <code>deb-src</code> désigne les paquets sources ; <code>non-free</code> concerne les paquets non libres ; les sources peuvent aussi être locales ou sur un média. <strong>Ne jamais mélanger au hasard les branches</strong> : une ligne de dépôt incorrecte peut rendre une mise à jour incohérente.</p>\n<h3>2.2. Lire et modifier la configuration</h3>\n<pre><code class=\"language-bash\">cat /etc/apt/sources.list\nls /etc/apt/sources.list.d/\nvim /etc/apt/sources.list\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Action</th>\n<th>Précaution</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>cat /etc/apt/sources.list</code></td>\n<td>Lire les sources classiques</td>\n<td>Lecture seule</td>\n</tr>\n<tr>\n<td><code>ls /etc/apt/sources.list.d/</code></td>\n<td>Voir les autres déclarations</td>\n<td>Vérifier aussi les fichiers <code>.sources</code></td>\n</tr>\n<tr>\n<td><code>vim /etc/apt/sources.list</code></td>\n<td>Modifier le fichier</td>\n<td><strong>ROUGE :</strong> sauvegarder et contrôler la version Debian avant toute modification</td>\n</tr>\n</tbody></table>\n<h2>3. Comprendre APT, apt-get, apt-cache et dpkg</h2>\n<table>\n<thead>\n<tr>\n<th>Outil</th>\n<th>Niveau</th>\n<th>Utilité principale</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>apt</code></td>\n<td>Haut niveau</td>\n<td>Interface pratique : chercher, installer, supprimer, mettre à jour</td>\n</tr>\n<tr>\n<td><code>apt-get</code></td>\n<td>Haut niveau</td>\n<td>Opérations APT historiques, utiles notamment dans les scripts</td>\n</tr>\n<tr>\n<td><code>apt-cache</code></td>\n<td>Consultation</td>\n<td>Interroger les métadonnées des paquets</td>\n</tr>\n<tr>\n<td><code>dpkg</code></td>\n<td>Bas niveau</td>\n<td>Installer des <code>.deb</code> locaux, interroger les paquets présents et leurs fichiers</td>\n</tr>\n</tbody></table>\n<p><strong>À retenir :</strong> <code>apt</code> et <code>apt-get</code> s'appuient sur <code>dpkg</code> pour les opérations d'installation. <code>dpkg</code> ne résout pas automatiquement les dépendances comme APT. Les commandes de lecture peuvent souvent être lancées en utilisateur standard ; les modifications nécessitent les droits administrateur (session root dans les exemples ENI, ou <code>sudo</code> si configuré).</p>\n<h2>4. Mettre à jour les paquets</h2>\n<h3>4.1. Rafraîchir la liste des versions disponibles</h3>\n<pre><code class=\"language-bash\">apt update\napt-get update\n</code></pre>\n<p>Ces commandes <strong>actualisent les index</strong> des dépôts ; elles n'installent pas les nouvelles versions des programmes.</p>\n<h3>4.2. Installer les mises à jour compatibles</h3>\n<pre><code class=\"language-bash\">apt upgrade\napt-get upgrade\n</code></pre>\n<p><code>apt upgrade</code> met à niveau les paquets installés selon les règles d'APT ; selon l'outil utilisé, le comportement exact vis-à-vis de nouvelles dépendances peut différer. <strong>Attention :</strong> <code>apt upgrade</code> et <code>apt-get upgrade</code> ne sont pas rigoureusement identiques dans tous les cas. Le point clé est qu'une mise à niveau simple évite la suppression de paquets installés.</p>\n<h3>4.3. Mise à niveau complète</h3>\n<pre><code class=\"language-bash\">apt full-upgrade\napt-get dist-upgrade\n</code></pre>\n<p><strong>ROUGE — À surveiller :</strong> ces commandes peuvent installer de nouvelles dépendances <strong>et supprimer des paquets</strong> pour résoudre les changements de dépendances. Toujours lire le résumé proposé avant validation, surtout sur un serveur de production. Ce n'est pas, à elle seule, une procédure de migration garantie vers une nouvelle version majeure de Debian.</p>\n<table>\n<thead>\n<tr>\n<th>Action</th>\n<th>Commande</th>\n<th>Impact</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Actualiser les listes</td>\n<td><code>apt update</code></td>\n<td>Pas d'installation de mises à jour</td>\n</tr>\n<tr>\n<td>Mettre à jour les paquets</td>\n<td><code>apt upgrade</code></td>\n<td>Met à jour sans suppression de paquets installés</td>\n</tr>\n<tr>\n<td>Mise à niveau complète</td>\n<td><code>apt full-upgrade</code></td>\n<td><strong>ROUGE :</strong> suppressions possibles</td>\n</tr>\n</tbody></table>\n<p><strong>Routine de technicien :</strong> identifier le système et ses dépôts, lancer <code>apt update</code>, examiner les paquets proposés, choisir la stratégie de mise à jour autorisée, puis vérifier les services concernés.</p>\n<h2>5. Rechercher, consulter et installer un paquet</h2>\n<h3>5.1. Chercher un logiciel</h3>\n<pre><code class=\"language-bash\">apt search openssh\napt-cache search openssh\n</code></pre>\n<p><code>openssh</code> est le mot recherché, à remplacer par le sujet du besoin. <strong>Correction technique par rapport à une coquille du PDF :</strong> <code>apt-get search</code> n'est pas une sous-commande valide ; utiliser <code>apt search</code> ou <code>apt-cache search</code>.</p>\n<h3>5.2. Voir les informations d'un paquet</h3>\n<pre><code class=\"language-bash\">apt show openssh-server\napt-cache show openssh-server\n</code></pre>\n<p>Lire notamment la description, la version, les dépendances et la taille du paquet.</p>\n<h3>5.3. Installer</h3>\n<pre><code class=\"language-bash\">apt install openssh-server\napt-get install openssh-server\napt install curl vim\n</code></pre>\n<p><strong>BLEU</strong> <code>apt</code> : outil ; <strong>ORANGE</strong> <code>install</code> : action ; <strong>ORANGE</strong> <code>openssh-server</code>, <code>curl</code>, <code>vim</code> : noms des paquets. Plusieurs noms peuvent suivre <code>install</code>, séparés par des espaces. Dans le PDF, <code>&lt;paquet2&gt;</code> représente un deuxième nom facultatif : ne pas saisir littéralement les chevrons.</p>\n<h2>6. Supprimer des paquets et nettoyer</h2>\n<pre><code class=\"language-bash\">apt remove openssh-server\napt purge openssh-server\napt autoremove\napt clean\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Effet</th>\n<th>Vigilance</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>apt remove paquet</code></td>\n<td>Désinstalle le paquet</td>\n<td><strong>ROUGE :</strong> le logiciel cesse d'être disponible ; des fichiers de configuration peuvent subsister</td>\n</tr>\n<tr>\n<td><code>apt purge paquet</code></td>\n<td>Supprime le paquet et ses fichiers de configuration gérés par le paquet</td>\n<td><strong>ROUGE :</strong> risque de perte de configuration ; ne supprime pas nécessairement toutes les données utilisateur</td>\n</tr>\n<tr>\n<td><code>apt autoremove</code></td>\n<td>Retire les dépendances installées automatiquement devenues inutiles</td>\n<td><strong>ROUGE :</strong> contrôler la liste des suppressions proposées</td>\n</tr>\n<tr>\n<td><code>apt clean</code></td>\n<td>Vide le cache local des archives de paquets téléchargées</td>\n<td>Ne désinstalle pas les logiciels</td>\n</tr>\n</tbody></table>\n<p><strong>Exemple :</strong> <code>remove</code> est adapté quand on veut éventuellement réinstaller plus tard en conservant certaines configurations ; <code>purge</code> sert à repartir plus proprement, après avoir sauvegardé les réglages utiles. <code>autoremove</code> est un complément pratique absent de la liste principale du PDF.</p>\n<h2>7. Utiliser dpkg pour enquêter sur les logiciels installés</h2>\n<p><code>dpkg</code> est utile lorsqu'on veut savoir <strong>quel paquet est installé</strong>, <strong>quels fichiers il contient</strong>, ou <strong>quel paquet a installé un fichier</strong>.</p>\n<pre><code class=\"language-bash\">dpkg -l\ndpkg -l '*ftp*'\ndpkg -L openssh-client\ndpkg -S /usr/bin/scp\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Commande</th>\n<th>Question à laquelle elle répond</th>\n<th>Remarque</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>dpkg -l</code></td>\n<td>Quels paquets sont connus localement ?</td>\n<td>Affiche les statuts des paquets</td>\n</tr>\n<tr>\n<td><code>dpkg -l '*ftp*'</code></td>\n<td>Quels paquets locaux correspondent au motif ?</td>\n<td>Le motif est entre apostrophes pour éviter l'expansion par le shell</td>\n</tr>\n<tr>\n<td><code>dpkg -L openssh-client</code></td>\n<td>Quels fichiers sont installés par ce paquet ?</td>\n<td>Le paquet doit être présent</td>\n</tr>\n<tr>\n<td><code>dpkg -S /usr/bin/scp</code></td>\n<td>Quel paquet possède ce fichier ?</td>\n<td>Exemple ENI : <code>openssh-client</code></td>\n</tr>\n</tbody></table>\n<p><strong>Correction importante :</strong> la commande <code>dpkg -l '*ftp*'</code> n'interroge <strong>pas tous les paquets disponibles sur les dépôts</strong> : elle interroge la base locale de <code>dpkg</code>.</p>\n<h3>7.1. Comprendre les états dpkg</h3>\n<table>\n<thead>\n<tr>\n<th>État courant</th>\n<th>Sens</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>ii</code></td>\n<td>Paquet souhaité installé, et effectivement installé</td>\n</tr>\n<tr>\n<td><code>rc</code></td>\n<td>Paquet supprimé, fichiers de configuration encore présents</td>\n</tr>\n<tr>\n<td><code>un</code></td>\n<td>Paquet non installé / état inconnu selon la sortie</td>\n</tr>\n</tbody></table>\n<h2>8. Consulter les journaux d'installation</h2>\n<table>\n<thead>\n<tr>\n<th>Fichier</th>\n<th>Contenu</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>/var/log/apt/history.log</code></td>\n<td>Historique des opérations APT</td>\n</tr>\n<tr>\n<td><code>/var/log/dpkg.log</code></td>\n<td>Historique détaillé des opérations dpkg</td>\n</tr>\n</tbody></table>\n<pre><code class=\"language-bash\">less /var/log/apt/history.log\nless /var/log/dpkg.log\ntail -n 30 /var/log/apt/history.log\ngrep ' install ' /var/log/dpkg.log\n</code></pre>\n<p>Les deux premières commandes permettent de lire les fichiers ; les deux dernières sont des compléments pratiques pour une investigation TSSR. Sur une machine ayant effectué des rotations de journaux, les événements anciens peuvent se trouver dans des fichiers archivés.</p>\n<h2>9. Installation à partir des sources</h2>\n<p>Le support ENI présente la méthode traditionnelle <code>./configure</code>, <code>make</code>, <code>make install</code>. <strong>Ce n'est pas la méthode de toutes les applications Linux</strong> : il faut d'abord lire le <code>README</code> ou <code>INSTALL</code> du projet.</p>\n<table>\n<thead>\n<tr>\n<th>Étape</th>\n<th>Commande illustrative</th>\n<th>Ce qui se passe</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1. Préparer</td>\n<td>Lire <code>README</code> / <code>INSTALL</code></td>\n<td>Comprendre les dépendances et la procédure</td>\n</tr>\n<tr>\n<td>2. Configurer</td>\n<td><code>./configure</code></td>\n<td>Vérifier l'environnement et préparer un <code>Makefile</code>, si le projet utilise ce système</td>\n</tr>\n<tr>\n<td>3. Compiler</td>\n<td><code>make</code></td>\n<td>Construire les binaires à partir des sources</td>\n</tr>\n<tr>\n<td>4. Installer</td>\n<td><code>make install</code></td>\n<td><strong>ROUGE :</strong> copie potentielle de fichiers dans des répertoires système, droits administrateur parfois nécessaires</td>\n</tr>\n</tbody></table>\n<p><strong>Bonne pratique ENI :</strong> compiler dans un répertoire de travail accessible à un utilisateur ordinaire, et n'élever les privilèges que pour l'étape d'installation si elle le nécessite. Une installation depuis les sources peut ne pas être suivie par <code>dpkg</code> : attention à la maintenance et à la désinstallation.</p>\n<h2>10. Dépannage : situations réelles TSSR</h2>\n<table>\n<thead>\n<tr>\n<th>Symptôme</th>\n<th>Hypothèse à vérifier</th>\n<th>Première action</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>Unable to locate package</code></td>\n<td>Index non actualisé, nom erroné, dépôt absent</td>\n<td><code>apt update</code>, puis <code>apt search</code></td>\n</tr>\n<tr>\n<td>Erreur de téléchargement</td>\n<td>Réseau, DNS, proxy ou miroir inaccessible</td>\n<td>Vérifier la connectivité et les sources APT</td>\n</tr>\n<tr>\n<td>Conflit de dépendances</td>\n<td>Versions ou dépôts incompatibles</td>\n<td>Lire les messages APT ; ne pas forcer aveuglément</td>\n</tr>\n<tr>\n<td>Installation interrompue</td>\n<td>Paquets non configurés</td>\n<td>Vérifier <code>dpkg</code> et ses journaux</td>\n</tr>\n<tr>\n<td>Un logiciel a disparu</td>\n<td>Suppression lors d'une mise à niveau</td>\n<td>Lire <code>/var/log/apt/history.log</code></td>\n</tr>\n</tbody></table>\n<h2>11. Travaux pratiques guidés</h2>\n<h3>TP 1 — Audit des dépôts (sans modification)</h3>\n<ol>\n<li>Identifier les fichiers de dépôts déclarés.</li>\n<li>Lire <code>/etc/apt/sources.list</code> s'il existe et les fichiers du répertoire <code>/etc/apt/sources.list.d/</code>.</li>\n<li>Identifier le type, l'URL, la branche et les composants.</li>\n<li>Expliquer pourquoi un dépôt d'une autre version Debian ne doit pas être ajouté au hasard.</li>\n</ol>\n<h3>TP 2 — Rechercher puis installer un outil de test</h3>\n<ol>\n<li>Exécuter <code>apt update</code>.</li>\n<li>Chercher <code>curl</code> avec <code>apt search curl</code>.</li>\n<li>Lire <code>apt show curl</code>.</li>\n<li>Installer avec <code>apt install curl</code> sur une VM de laboratoire.</li>\n<li>Vérifier la présence du programme avec <code>curl --version</code>.</li>\n</ol>\n<h3>TP 3 — Désinstallation contrôlée</h3>\n<ol>\n<li>Vérifier que <code>curl</code> a été installé pour ce TP.</li>\n<li>Observer la liste proposée par <code>apt remove curl</code> avant validation.</li>\n<li>Expliquer la différence entre <code>remove</code> et <code>purge</code>.</li>\n<li>Consulter <code>/var/log/apt/history.log</code>.</li>\n</ol>\n<h3>TP 4 — Trouver l'origine d'un fichier</h3>\n<ol>\n<li>Exécuter <code>dpkg -S /usr/bin/scp</code> si ce fichier existe.</li>\n<li>Identifier le paquet propriétaire.</li>\n<li>Exécuter <code>dpkg -L openssh-client</code> si installé.</li>\n<li>Expliquer la différence entre lister des fichiers et rechercher leur paquet d'origine.</li>\n</ol>\n<h2>12. Résumé professionnel</h2>\n<p>Pour un TSSR, la gestion des paquets n'est pas seulement « installer un programme ». Il faut savoir <strong>choisir la bonne branche</strong>, <strong>vérifier les dépôts</strong>, <strong>mettre à jour sans casser les dépendances</strong>, <strong>maîtriser les suppressions</strong>, <strong>retracer les opérations</strong> et <strong>justifier ses choix de maintenance</strong>.</p>\n",
+      "revisionHtml": "<h1>Fiche de révision — APT et dpkg</h1>\n<h2>Le circuit d'installation</h2>\n<p><strong>Dépôts déclarés</strong> → <code>apt update</code> (index actualisés) → <code>apt search</code> / <code>apt show</code> (choix du paquet) → <code>apt install</code> (résolution des dépendances et installation via dpkg) → vérification → consultation des logs en cas de problème.</p>\n<h2>Tableau « quelle commande choisir ? »</h2>\n<table>\n<thead>\n<tr>\n<th>Je veux…</th>\n<th>Je tape…</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Actualiser les informations des dépôts</td>\n<td><code>apt update</code></td>\n</tr>\n<tr>\n<td>Mettre à jour les paquets</td>\n<td><code>apt upgrade</code></td>\n</tr>\n<tr>\n<td>Autoriser une réorganisation plus profonde des dépendances</td>\n<td><code>apt full-upgrade</code> (<strong>ROUGE</strong>)</td>\n</tr>\n<tr>\n<td>Trouver un logiciel</td>\n<td><code>apt search mot</code></td>\n</tr>\n<tr>\n<td>Lire la fiche d'un logiciel</td>\n<td><code>apt show paquet</code></td>\n</tr>\n<tr>\n<td>Installer</td>\n<td><code>apt install paquet</code></td>\n</tr>\n<tr>\n<td>Supprimer</td>\n<td><code>apt remove paquet</code> (<strong>ROUGE</strong>)</td>\n</tr>\n<tr>\n<td>Supprimer aussi les configurations gérées</td>\n<td><code>apt purge paquet</code> (<strong>ROUGE</strong>)</td>\n</tr>\n<tr>\n<td>Trouver le paquet propriétaire d'un fichier</td>\n<td><code>dpkg -S /chemin/fichier</code></td>\n</tr>\n<tr>\n<td>Voir les fichiers installés par un paquet</td>\n<td><code>dpkg -L paquet</code></td>\n</tr>\n<tr>\n<td>Retrouver une installation passée</td>\n<td><code>less /var/log/apt/history.log</code></td>\n</tr>\n</tbody></table>\n<h2>À expliquer à l'oral</h2>\n<ol>\n<li><code>update</code> n'est pas <code>upgrade</code> : l'un actualise la liste, l'autre met à niveau les logiciels.</li>\n<li><code>remove</code> n'est pas <code>purge</code> : <code>purge</code> supprime également les fichiers de configuration gérés par le paquet.</li>\n<li><code>apt</code> gère les dépôts et dépendances ; <code>dpkg</code> gère les paquets à un niveau plus bas.</li>\n<li><code>full-upgrade</code> peut supprimer des paquets : on vérifie le plan avant d'accepter.</li>\n<li>Les dépôts doivent correspondre à la version Debian utilisée.</li>\n</ol>\n<h2>Mini-scénario TSSR</h2>\n<p>Un collègue indique : « Après une maintenance, mon outil SSH a disparu. » Consulter l'historique APT, identifier les suppressions et les mises à jour, vérifier le paquet concerné et les dépendances, puis proposer une correction autorisée. Ne jamais réinstaller au hasard sur un serveur de production.</p>\n",
       "revisionExtracts": [],
-      "rawMarkdown": "MODULE : 06 — Administration GNU/Linux\nCHAPITRE : Gestion des paquets logiciels sous Debian GNU/Linux\n\n=== COURS COMPLET ===\n\n# Gestion des paquets logiciels sous Debian GNU/Linux\n\n## Objectifs du chapitre\n\nÀ la fin de ce chapitre, tu dois être capable de :\n\n- Comprendre les différentes branches de Debian.\n- Identifier et configurer les dépôts logiciels.\n- Mettre à jour Debian et ses paquets.\n- Installer, rechercher et désinstaller des logiciels.\n- Utiliser APT et dpkg.\n- Consulter les journaux d'installation.\n- Comprendre les principales étapes d'une installation depuis les sources.\n\n## 1. Les branches du projet Debian\n\n### 1.1. Qu'est-ce qu'une release ?\n\nUne release désigne une version publiée de Debian. Le projet utilise également différentes branches pour organiser le développement et la distribution des logiciels.\n\n| Branche | Description |\n|---|---|\n| Stable | Version officielle privilégiant la stabilité. |\n| Testing | Future version Stable, contenant des paquets en cours de validation. |\n| Unstable (Sid) | Branche de développement recevant continuellement des modifications. |\n| Oldstable | Version Stable précédente. |\n| Oldoldstable | Version encore antérieure. |\n| Experimental | Ensemble de paquets expérimentaux, ne constituant pas une distribution complète. |\n\n### 1.2. Fonctionnement des branches\n\n**Unstable (Sid)** reçoit régulièrement de nouveaux logiciels et des mises à jour. Elle évolue continuellement, selon le principe de Rolling Release.\n\n**Testing** reçoit des paquets provenant d'Unstable lorsqu'ils remplissent les conditions de migration.\n\n**Stable** correspond à une version officiellement publiée. Elle privilégie la fiabilité et bénéficie de mises à jour de sécurité et de maintenance.\n\nPour un serveur en production, on privilégie généralement Debian Stable.\n\n## 2. Les dépôts logiciels\n\n### 2.1. Définition\n\nUn dépôt, également appelé repository, est un emplacement contenant des paquets logiciels accessibles au système.\n\nIl permet de télécharger des logiciels, de les installer, de récupérer leurs mises à jour et de gérer leurs dépendances.\n\nUne **dépendance** est un logiciel ou une bibliothèque nécessaire au fonctionnement d'un autre programme.\n\nAPT peut installer automatiquement les dépendances nécessaires à un logiciel.\n\n### 2.2. Configuration des dépôts\n\nLe fichier traditionnel de configuration est :\n\n`/etc/apt/sources.list`\n\nDes fichiers supplémentaires peuvent être présents dans :\n\n`/etc/apt/sources.list.d/`\n\nExemple avec Debian 12 Bookworm :\n\n```bash\ndeb http://ftp.fr.debian.org/debian/ bookworm main contrib non-free\n```\n\nCette ligne contient plusieurs éléments :\n\n| Élément | Signification |\n|---|---|\n| deb | Dépôt de paquets binaires. |\n| Adresse HTTP | Emplacement du dépôt. |\n| bookworm | Nom de la version Debian. |\n| main contrib non-free | Sections de logiciels accessibles. |\n\nLes principales sections sont :\n\n- **main** : logiciels libres.\n- **contrib** : logiciels libres dépendant de composants non libres.\n- **non-free** : logiciels non libres.\n- **non-free-firmware** : micrologiciels non libres, section distincte depuis Debian 12.\n\nLa directive `deb-src` permet d'indiquer un dépôt contenant les sources des logiciels.\n\nUne ligne commençant par `#` est commentée et n'est pas prise en compte.\n\n### 2.3. Modifier les dépôts\n\nLa modification des fichiers système nécessite des privilèges administrateur.\n\nExemple :\n\n```bash\nvi /etc/apt/sources.list\n```\n\nAprès modification, il faut actualiser le catalogue des paquets :\n\n```bash\napt update\n```\n\nCette opération permet à Debian de prendre en compte les dépôts configurés.\n\n## 3. Les outils de gestion des paquets\n\nDebian dispose de plusieurs outils complémentaires.\n\n| Outil | Fonction |\n|---|---|\n| apt | Gestion courante des logiciels et des dépendances. |\n| apt-get | Interface historique, également utilisée dans les scripts. |\n| apt-cache | Recherche et consultation d'informations sur les paquets. |\n| dpkg | Gestion locale des paquets Debian. |\n\nAPT utilise notamment dpkg pour effectuer les installations et les suppressions.\n\nLa différence principale est qu'APT sait résoudre les dépendances à partir des dépôts configurés, contrairement à dpkg utilisé seul.\n\n## 4. Mettre à jour Debian\n\n### 4.1. Actualiser la liste des paquets\n\n```bash\napt update\n```\n\nCette commande télécharge les informations sur les paquets disponibles dans les dépôts.\n\nElle ne met pas à jour les logiciels installés.\n\n### 4.2. Installer les mises à jour\n\n```bash\napt upgrade\n```\n\nCette commande met à jour les paquets installés sans supprimer de paquets existants.\n\n### 4.3. Effectuer une mise à jour complète\n\n```bash\napt full-upgrade\n```\n\nCette commande peut modifier davantage les dépendances et supprimer certains paquets si nécessaire.\n\nSur un serveur, il faut examiner les modifications proposées avant de confirmer.\n\n## 5. Installer et désinstaller des logiciels\n\n### 5.1. Installer un paquet\n\n```bash\napt install vim\n```\n\nCette commande installe l'éditeur Vim ainsi que ses éventuelles dépendances.\n\nIl est possible d'installer plusieurs logiciels simultanément :\n\n```bash\napt install vim terminator\n```\n\nTerminator est un émulateur de terminal graphique permettant notamment d'afficher plusieurs terminaux dans une même fenêtre.\n\n### 5.2. Supprimer un paquet\n\n```bash\napt remove vim\n```\n\nCette commande supprime le logiciel, mais conserve normalement ses fichiers de configuration système.\n\nPour supprimer également les fichiers de configuration gérés par le paquet :\n\n```bash\napt purge vim\n```\n\n### 5.3. Nettoyer le cache\n\n```bash\napt clean\n```\n\nCette commande supprime les archives de paquets téléchargées et conservées dans le cache local d'APT.\n\n### 5.4. Rechercher un logiciel\n\n```bash\napt search vim\n```\n\nRecherche les paquets correspondant au terme indiqué.\n\nPour afficher les informations détaillées :\n\n```bash\napt show vim\n```\n\nCette commande fournit notamment la description, la version et les dépendances du paquet.\n\n## 6. Utiliser dpkg\n\n### 6.1. Présentation\n\ndpkg constitue la base du système de gestion des paquets Debian.\n\nIl permet d'installer, de supprimer et d'interroger les paquets Debian, mais ne résout pas automatiquement les dépendances comme APT.\n\n### 6.2. Consulter les paquets\n\n```bash\ndpkg -l\n```\n\nAffiche les informations sur les paquets connus du système.\n\nPour filtrer les paquets contenant `ftp` :\n\n```bash\ndpkg -l \"*ftp*\"\n```\n\n### 6.3. Afficher les fichiers d'un paquet\n\n```bash\ndpkg -L telnet\n```\n\nAffiche les fichiers installés par le paquet telnet, lorsqu'il est installé.\n\n### 6.4. Identifier le paquet propriétaire d'un fichier\n\n```bash\ndpkg -S /usr/bin/scp\n```\n\nPermet de retrouver le paquet auquel appartient ce fichier.\n\nExemple de résultat :\n\n```text\nopenssh-client: /usr/bin/scp\n```\n\n## 7. Consulter les journaux\n\nDebian conserve un historique des opérations effectuées sur les paquets.\n\n| Fichier | Utilité |\n|---|---|\n| /var/log/apt/history.log | Historique des opérations réalisées avec APT. |\n| /var/log/dpkg.log | Journal des opérations effectuées par dpkg. |\n\nCes journaux sont utiles pour comprendre les modifications apportées au système ou rechercher l'origine d'un problème après une installation.\n\n## 8. Installer un logiciel depuis ses sources\n\n### 8.1. Principe\n\nUn logiciel peut être installé à partir de son code source plutôt que depuis un paquet disponible dans les dépôts.\n\nCette méthode nécessite généralement davantage de préparation et dépend du système de compilation utilisé par le projet.\n\n### 8.2. Préparer l'environnement\n\nAvant toute compilation, il faut vérifier la présence des outils et des bibliothèques nécessaires.\n\nLes fichiers README et INSTALL fournissent normalement les instructions propres au logiciel.\n\n### 8.3. Les étapes classiques\n\n**Étape 1 — Préparation**\n\n```bash\n./configure\n```\n\nLorsqu'il existe, ce script vérifie l'environnement et prépare généralement les fichiers nécessaires à la compilation.\n\n**Étape 2 — Compilation**\n\n```bash\nmake\n```\n\nCette commande compile le programme à partir des instructions du Makefile.\n\n**Étape 3 — Installation**\n\n```bash\nmake install\n```\n\nCette commande installe les fichiers compilés. Des privilèges administrateur peuvent être nécessaires pour écrire dans les répertoires système.\n\nTous les projets n'utilisent pas obligatoirement ces trois commandes.\n\n## Conclusion\n\nLa gestion des paquets est une compétence essentielle pour administrer Debian.\n\nAPT permet de gérer les logiciels, leurs dépendances et leurs mises à jour. dpkg intervient au niveau des paquets locaux et fournit des informations détaillées.\n\nLa maîtrise des dépôts, des journaux et des commandes d'installation permet de maintenir un système Debian opérationnel et sécurisé.\n\n=== POINTS ESSENTIELS ===\n\n- **Stable** est la branche Debian à privilégier en production.\n- Les dépôts fournissent les logiciels et leurs mises à jour.\n- `/etc/apt/sources.list` contient traditionnellement la configuration principale des dépôts.\n- `main`, `contrib`, `non-free` et `non-free-firmware` désignent différentes sections.\n- `apt update` actualise les listes, tandis que `apt upgrade` met à jour les logiciels.\n- `apt full-upgrade` peut supprimer des paquets pour résoudre les dépendances.\n- `apt remove` conserve normalement la configuration ; `apt purge` la supprime également.\n- APT gère les dépendances, contrairement à dpkg utilisé seul.\n- `dpkg -L` liste les fichiers d'un paquet.\n- `dpkg -S` identifie le paquet propriétaire d'un fichier.\n- Les journaux APT et dpkg permettent de retrouver les opérations effectuées.\n- Une compilation classique peut suivre : `./configure` → `make` → `make install`.\n\n=== COMMANDES À RETENIR ===\n\n```bash\napt update\n```\nActualiser le catalogue des paquets.\n\n```bash\napt upgrade\n```\nMettre à jour les paquets installés sans suppression de paquets.\n\n```bash\napt full-upgrade\n```\nEffectuer une mise à jour complète avec suppressions éventuelles.\n\n```bash\napt install vim\n```\nInstaller le paquet Vim.\n\n```bash\napt install vim terminator\n```\nInstaller plusieurs logiciels.\n\n```bash\napt remove vim\n```\nSupprimer Vim en conservant normalement sa configuration.\n\n```bash\napt purge vim\n```\nSupprimer Vim et ses fichiers de configuration gérés par le paquet.\n\n```bash\napt clean\n```\nNettoyer les archives téléchargées.\n\n```bash\napt search vim\n```\nRechercher un paquet.\n\n```bash\napt show vim\n```\nAfficher les informations d'un paquet.\n\n```bash\ndpkg -l\n```\nConsulter les paquets connus.\n\n```bash\ndpkg -l \"*ftp*\"\n```\nFiltrer les paquets par motif.\n\n```bash\ndpkg -L telnet\n```\nAfficher les fichiers installés par un paquet.\n\n```bash\ndpkg -S /usr/bin/scp\n```\nIdentifier le paquet propriétaire d'un fichier.\n\n```bash\nvi /etc/apt/sources.list\n```\nModifier la configuration des dépôts avec les droits nécessaires.\n\n```bash\n./configure\nmake\nmake install\n```\nPréparer, compiler et installer un logiciel depuis ses sources lorsque le projet utilise cette méthode.\n\n=== FICHE DE RÉVISION ===\n\n# Gestion des paquets Debian — Fiche mémo\n\n## 1. Branches Debian\n\n| Branche | À mémoriser |\n|---|---|\n| Stable | Production et stabilité. |\n| Testing | Future Stable. |\n| Unstable / Sid | Développement continu. |\n| Oldstable | Ancienne Stable. |\n| Experimental | Paquets expérimentaux. |\n\n## 2. Dépôts\n\n**Fichier principal :** `/etc/apt/sources.list`\n\n**Dépôts supplémentaires :** `/etc/apt/sources.list.d/`\n\n**Structure :** type → adresse → version → sections.\n\n- `deb` : paquets binaires.\n- `deb-src` : paquets sources.\n- `main` : libre.\n- `contrib` : libre avec dépendances non libres.\n- `non-free` : non libre.\n- `non-free-firmware` : micrologiciels non libres.\n- `#` : commentaire.\n\n## 3. APT : commandes à connaître\n\n| Commande | Action |\n|---|---|\n| `apt update` | Actualiser les listes. |\n| `apt upgrade` | Mettre à jour les logiciels. |\n| `apt full-upgrade` | Mise à jour complète. |\n| `apt install` | Installer. |\n| `apt remove` | Désinstaller. |\n| `apt purge` | Désinstaller avec configuration. |\n| `apt clean` | Nettoyer le cache. |\n| `apt search` | Rechercher. |\n| `apt show` | Consulter les informations. |\n\n## 4. dpkg\n\n| Commande | Action |\n|---|---|\n| `dpkg -l` | Informations sur les paquets. |\n| `dpkg -L paquet` | Fichiers du paquet. |\n| `dpkg -S fichier` | Propriétaire du fichier. |\n\n**Différence fondamentale :** APT résout les dépendances à partir des dépôts ; dpkg utilisé seul ne le fait pas automatiquement.\n\n## 5. Journaux\n\n- `/var/log/apt/history.log` : historique APT.\n- `/var/log/dpkg.log` : historique dpkg.\n\n## 6. Compilation\n\n1. Lire README ou INSTALL.\n2. `./configure` : préparer.\n3. `make` : compiler.\n4. `make install` : installer.\n\n**À savoir pour l'examen :** ne pas confondre actualisation des listes, mise à jour des logiciels et installation d'un nouveau paquet.\n\n=== QCM ===\n\n# QCM — Gestion des paquets Debian\n\n**15 questions — Une seule bonne réponse par question.**\n\n## Question 1\n\nQuelle branche Debian est privilégiée pour un serveur en production ?\n\nA. Unstable  \nB. Stable  \nC. Experimental  \nD. Testing  \n\n**Réponse : B**  \nExplication : Stable privilégie la fiabilité et les mises à jour de sécurité.\n\n## Question 2\n\nQuel est le nom permanent de la branche Unstable ?\n\nA. Bookworm  \nB. Buster  \nC. Sid  \nD. Main  \n\n**Réponse : C**  \nExplication : Sid est le nom permanent de la branche de développement Unstable.\n\n## Question 3\n\nQuel fichier contient traditionnellement la configuration principale des dépôts APT ?\n\nA. `/var/log/dpkg.log`  \nB. `/etc/apt/sources.list`  \nC. `/etc/passwd`  \nD. `/boot/grub/grub.cfg`  \n\n**Réponse : B**  \nExplication : sources.list est le fichier traditionnel de configuration des dépôts APT.\n\n## Question 4\n\nQue désigne deb-src dans la configuration d'un dépôt ?\n\nA. Un dépôt de paquets sources  \nB. Un dépôt de paquets binaires  \nC. Un dépôt de sauvegarde  \nD. Un dépôt désactivé  \n\n**Réponse : A**  \nExplication : deb-src désigne un dépôt contenant les sources des logiciels.\n\n## Question 5\n\nQuelle section contient des micrologiciels non libres ?\n\nA. main  \nB. contrib  \nC. non-free-firmware  \nD. testing  \n\n**Réponse : C**  \nExplication : non-free-firmware est la section dédiée aux micrologiciels non libres depuis Debian 12.\n\n## Question 6\n\nQuelle commande actualise la liste des paquets disponibles ?\n\nA. `apt upgrade`  \nB. `apt clean`  \nC. `apt update`  \nD. `apt purge`  \n\n**Réponse : C**  \nExplication : apt update actualise le catalogue des paquets sans mettre à jour les logiciels installés.\n\n## Question 7\n\nQuelle commande peut supprimer des paquets lors d'une mise à jour ?\n\nA. `apt show`  \nB. `apt full-upgrade`  \nC. `apt search`  \nD. `dpkg -L`  \n\n**Réponse : B**  \nExplication : full-upgrade peut supprimer des paquets pour gérer les changements de dépendances.\n\n## Question 8\n\nQuelle commande installe le paquet Vim ?\n\nA. `apt install vim`  \nB. `apt update vim`  \nC. `apt search vim`  \nD. `dpkg -S vim`  \n\n**Réponse : A**  \nExplication : apt install permet d'installer un paquet et ses dépendances.\n\n## Question 9\n\nQuelle commande supprime également les fichiers de configuration gérés par un paquet ?\n\nA. `apt remove`  \nB. `apt clean`  \nC. `apt purge`  \nD. `apt update`  \n\n**Réponse : C**  \nExplication : purge supprime le paquet et ses fichiers de configuration gérés par le gestionnaire de paquets.\n\n## Question 10\n\nQuelle commande recherche un logiciel dans les dépôts ?\n\nA. `apt show`  \nB. `apt search`  \nC. `apt clean`  \nD. `apt upgrade`  \n\n**Réponse : B**  \nExplication : apt search recherche les paquets correspondant au terme indiqué.\n\n## Question 11\n\nQuelle commande affiche les fichiers installés par un paquet ?\n\nA. `dpkg -S`  \nB. `dpkg -L`  \nC. `apt update`  \nD. `apt clean`  \n\n**Réponse : B**  \nExplication : dpkg -L liste les fichiers installés par un paquet.\n\n## Question 12\n\nQuelle commande identifie le paquet propriétaire d'un fichier ?\n\nA. `dpkg -S`  \nB. `dpkg -L`  \nC. `apt install`  \nD. `apt purge`  \n\n**Réponse : A**  \nExplication : dpkg -S recherche le paquet propriétaire d'un chemin.\n\n## Question 13\n\nQuel fichier conserve l'historique des opérations APT ?\n\nA. `/etc/apt/sources.list`  \nB. `/var/log/apt/history.log`  \nC. `/etc/passwd`  \nD. `/etc/apt/history.log`  \n\n**Réponse : B**  \nExplication : history.log conserve l'historique des opérations réalisées avec APT.\n\n## Question 14\n\nQuelle commande compile un programme à partir d'un Makefile ?\n\nA. `make install`  \nB. `./configure`  \nC. `make`  \nD. `apt search`  \n\n**Réponse : C**  \nExplication : make exécute les instructions de compilation définies dans le Makefile.\n\n## Question 15\n\nQuelle commande installe généralement les fichiers après compilation ?\n\nA. `apt update`  \nB. `./configure`  \nC. `make`  \nD. `make install`  \n\n**Réponse : D**  \nExplication : make install installe les fichiers compilés lorsque le projet utilise cette procédure.",
-      "updatedAt": "2026-11-17T10:53:43.813Z"
+      "rawMarkdown": "=== COURS COMPLET ===\n\n# Module 16 — Gestion des paquets logiciels sous Debian GNU/Linux\n\n## Objectifs\n\nComprendre les branches Debian, identifier et gérer les dépôts, mettre à jour le système, installer et supprimer des logiciels, utiliser `apt`, `apt-get`, `apt-cache` et `dpkg`, consulter les journaux et comprendre les étapes d'une installation depuis les sources.\n\n> Repère de présentation pour le site : **BLEU = commande / outil**, **ORANGE = argument, option, chemin ou valeur à adapter**, **ROUGE = suppression, modification sensible, risque ou vigilance**. Appliquer ce code couleur à chaque bloc de commande et dans les tableaux, sans ajouter d'encadrés jaunes en ouverture. Les exemples du PDF ENI avec « buster » et « bookworm » sont des exemples historiques : ne pas les copier aveuglément dans les dépôts d'une machine actuelle.\n\n## 1. Comprendre les branches (releases) Debian\n\nUne distribution Debian existe dans plusieurs branches, qui n'ont pas le même objectif. Le choix de la branche a un impact direct sur la stabilité et la fréquence des changements.\n\n| Branche | Signification | Usage TSSR |\n|---|---|---|\n| **Stable** | Version officiellement stabilisée | Choix habituel pour un serveur de production |\n| **Testing** | Future branche stable en préparation | Essais, validation, pas le choix par défaut pour un serveur critique |\n| **Unstable (Sid)** | Branche évoluant en permanence | Développement et tests avancés |\n| **Oldstable** | Branche stable précédente | Maintien temporaire de systèmes plus anciens |\n| **Oldoldstable** | Deux générations avant Stable | Systèmes anciens, attention au cycle de support |\n| **Experimental** | Dépôt expérimental, pas une distribution complète | Essais spécifiques pour utilisateurs avertis |\n\n**Situation professionnelle :** un serveur applicatif d'hôpital doit privilégier une branche maintenue et éprouvée. On ne passe pas en Testing simplement pour obtenir une version plus récente d'un logiciel.\n\n## 2. Dépôts : d'où viennent les logiciels ?\n\nUn **dépôt** (repository) est une source de paquets, accessible notamment par Internet. Le gestionnaire de paquets consulte les dépôts déclarés pour connaître les versions disponibles, leurs dépendances et les mises à jour.\n\n| Élément | Rôle | Emplacement ou exemple |\n|---|---|---|\n| Dépôt | Serveur ou emplacement proposant des paquets | `https://deb.debian.org/debian/` (exemple complémentaire) |\n| Fichier traditionnel | Déclaration des dépôts au format `deb` | `/etc/apt/sources.list` |\n| Répertoire complémentaire | Fichiers de dépôts séparés | `/etc/apt/sources.list.d/` |\n| Fichiers `.sources` | Format moderne Deb822, selon l'installation | `/etc/apt/sources.list.d/*.sources` (complément) |\n| Index APT | Informations locales sur les paquets disponibles | Mis à jour par `apt update` |\n\n### 2.1. Lire une ligne de dépôt\n\nExemple du support ENI (illustratif, non destiné à être recopié sur un système actuel) :\n\n```text\ndeb http://ftp.fr.debian.org/debian/ bookworm main contrib\n```\n\n| Partie | Valeur | Ce qu'elle signifie |\n|---|---|---|\n| Type | `deb` | Paquets binaires prêts à installer |\n| Adresse | `http://ftp.fr.debian.org/debian/` | Localisation du dépôt |\n| Suite | `bookworm` | Version Debian ciblée par la ligne |\n| Composant | `main` | Paquets libres de la distribution |\n| Composant | `contrib` | Paquets libres dépendant de composants non libres |\n\nAutres éléments du support : `deb-src` désigne les paquets sources ; `non-free` concerne les paquets non libres ; les sources peuvent aussi être locales ou sur un média. **Ne jamais mélanger au hasard les branches** : une ligne de dépôt incorrecte peut rendre une mise à jour incohérente.\n\n### 2.2. Lire et modifier la configuration\n\n```bash\ncat /etc/apt/sources.list\nls /etc/apt/sources.list.d/\nvim /etc/apt/sources.list\n```\n\n| Commande | Action | Précaution |\n|---|---|---|\n| `cat /etc/apt/sources.list` | Lire les sources classiques | Lecture seule |\n| `ls /etc/apt/sources.list.d/` | Voir les autres déclarations | Vérifier aussi les fichiers `.sources` |\n| `vim /etc/apt/sources.list` | Modifier le fichier | **ROUGE :** sauvegarder et contrôler la version Debian avant toute modification |\n\n## 3. Comprendre APT, apt-get, apt-cache et dpkg\n\n| Outil | Niveau | Utilité principale |\n|---|---|---|\n| `apt` | Haut niveau | Interface pratique : chercher, installer, supprimer, mettre à jour |\n| `apt-get` | Haut niveau | Opérations APT historiques, utiles notamment dans les scripts |\n| `apt-cache` | Consultation | Interroger les métadonnées des paquets |\n| `dpkg` | Bas niveau | Installer des `.deb` locaux, interroger les paquets présents et leurs fichiers |\n\n**À retenir :** `apt` et `apt-get` s'appuient sur `dpkg` pour les opérations d'installation. `dpkg` ne résout pas automatiquement les dépendances comme APT. Les commandes de lecture peuvent souvent être lancées en utilisateur standard ; les modifications nécessitent les droits administrateur (session root dans les exemples ENI, ou `sudo` si configuré).\n\n## 4. Mettre à jour les paquets\n\n### 4.1. Rafraîchir la liste des versions disponibles\n\n```bash\napt update\napt-get update\n```\n\nCes commandes **actualisent les index** des dépôts ; elles n'installent pas les nouvelles versions des programmes.\n\n### 4.2. Installer les mises à jour compatibles\n\n```bash\napt upgrade\napt-get upgrade\n```\n\n`apt upgrade` met à niveau les paquets installés selon les règles d'APT ; selon l'outil utilisé, le comportement exact vis-à-vis de nouvelles dépendances peut différer. **Attention :** `apt upgrade` et `apt-get upgrade` ne sont pas rigoureusement identiques dans tous les cas. Le point clé est qu'une mise à niveau simple évite la suppression de paquets installés.\n\n### 4.3. Mise à niveau complète\n\n```bash\napt full-upgrade\napt-get dist-upgrade\n```\n\n**ROUGE — À surveiller :** ces commandes peuvent installer de nouvelles dépendances **et supprimer des paquets** pour résoudre les changements de dépendances. Toujours lire le résumé proposé avant validation, surtout sur un serveur de production. Ce n'est pas, à elle seule, une procédure de migration garantie vers une nouvelle version majeure de Debian.\n\n| Action | Commande | Impact |\n|---|---|---|\n| Actualiser les listes | `apt update` | Pas d'installation de mises à jour |\n| Mettre à jour les paquets | `apt upgrade` | Met à jour sans suppression de paquets installés |\n| Mise à niveau complète | `apt full-upgrade` | **ROUGE :** suppressions possibles |\n\n**Routine de technicien :** identifier le système et ses dépôts, lancer `apt update`, examiner les paquets proposés, choisir la stratégie de mise à jour autorisée, puis vérifier les services concernés.\n\n## 5. Rechercher, consulter et installer un paquet\n\n### 5.1. Chercher un logiciel\n\n```bash\napt search openssh\napt-cache search openssh\n```\n\n`openssh` est le mot recherché, à remplacer par le sujet du besoin. **Correction technique par rapport à une coquille du PDF :** `apt-get search` n'est pas une sous-commande valide ; utiliser `apt search` ou `apt-cache search`.\n\n### 5.2. Voir les informations d'un paquet\n\n```bash\napt show openssh-server\napt-cache show openssh-server\n```\n\nLire notamment la description, la version, les dépendances et la taille du paquet.\n\n### 5.3. Installer\n\n```bash\napt install openssh-server\napt-get install openssh-server\napt install curl vim\n```\n\n**BLEU** `apt` : outil ; **ORANGE** `install` : action ; **ORANGE** `openssh-server`, `curl`, `vim` : noms des paquets. Plusieurs noms peuvent suivre `install`, séparés par des espaces. Dans le PDF, `<paquet2>` représente un deuxième nom facultatif : ne pas saisir littéralement les chevrons.\n\n## 6. Supprimer des paquets et nettoyer\n\n```bash\napt remove openssh-server\napt purge openssh-server\napt autoremove\napt clean\n```\n\n| Commande | Effet | Vigilance |\n|---|---|---|\n| `apt remove paquet` | Désinstalle le paquet | **ROUGE :** le logiciel cesse d'être disponible ; des fichiers de configuration peuvent subsister |\n| `apt purge paquet` | Supprime le paquet et ses fichiers de configuration gérés par le paquet | **ROUGE :** risque de perte de configuration ; ne supprime pas nécessairement toutes les données utilisateur |\n| `apt autoremove` | Retire les dépendances installées automatiquement devenues inutiles | **ROUGE :** contrôler la liste des suppressions proposées |\n| `apt clean` | Vide le cache local des archives de paquets téléchargées | Ne désinstalle pas les logiciels |\n\n**Exemple :** `remove` est adapté quand on veut éventuellement réinstaller plus tard en conservant certaines configurations ; `purge` sert à repartir plus proprement, après avoir sauvegardé les réglages utiles. `autoremove` est un complément pratique absent de la liste principale du PDF.\n\n## 7. Utiliser dpkg pour enquêter sur les logiciels installés\n\n`dpkg` est utile lorsqu'on veut savoir **quel paquet est installé**, **quels fichiers il contient**, ou **quel paquet a installé un fichier**.\n\n```bash\ndpkg -l\ndpkg -l '*ftp*'\ndpkg -L openssh-client\ndpkg -S /usr/bin/scp\n```\n\n| Commande | Question à laquelle elle répond | Remarque |\n|---|---|---|\n| `dpkg -l` | Quels paquets sont connus localement ? | Affiche les statuts des paquets |\n| `dpkg -l '*ftp*'` | Quels paquets locaux correspondent au motif ? | Le motif est entre apostrophes pour éviter l'expansion par le shell |\n| `dpkg -L openssh-client` | Quels fichiers sont installés par ce paquet ? | Le paquet doit être présent |\n| `dpkg -S /usr/bin/scp` | Quel paquet possède ce fichier ? | Exemple ENI : `openssh-client` |\n\n**Correction importante :** la commande `dpkg -l '*ftp*'` n'interroge **pas tous les paquets disponibles sur les dépôts** : elle interroge la base locale de `dpkg`.\n\n### 7.1. Comprendre les états dpkg\n\n| État courant | Sens |\n|---|---|\n| `ii` | Paquet souhaité installé, et effectivement installé |\n| `rc` | Paquet supprimé, fichiers de configuration encore présents |\n| `un` | Paquet non installé / état inconnu selon la sortie |\n\n## 8. Consulter les journaux d'installation\n\n| Fichier | Contenu |\n|---|---|\n| `/var/log/apt/history.log` | Historique des opérations APT |\n| `/var/log/dpkg.log` | Historique détaillé des opérations dpkg |\n\n```bash\nless /var/log/apt/history.log\nless /var/log/dpkg.log\ntail -n 30 /var/log/apt/history.log\ngrep ' install ' /var/log/dpkg.log\n```\n\nLes deux premières commandes permettent de lire les fichiers ; les deux dernières sont des compléments pratiques pour une investigation TSSR. Sur une machine ayant effectué des rotations de journaux, les événements anciens peuvent se trouver dans des fichiers archivés.\n\n## 9. Installation à partir des sources\n\nLe support ENI présente la méthode traditionnelle `./configure`, `make`, `make install`. **Ce n'est pas la méthode de toutes les applications Linux** : il faut d'abord lire le `README` ou `INSTALL` du projet.\n\n| Étape | Commande illustrative | Ce qui se passe |\n|---|---|---|\n| 1. Préparer | Lire `README` / `INSTALL` | Comprendre les dépendances et la procédure |\n| 2. Configurer | `./configure` | Vérifier l'environnement et préparer un `Makefile`, si le projet utilise ce système |\n| 3. Compiler | `make` | Construire les binaires à partir des sources |\n| 4. Installer | `make install` | **ROUGE :** copie potentielle de fichiers dans des répertoires système, droits administrateur parfois nécessaires |\n\n**Bonne pratique ENI :** compiler dans un répertoire de travail accessible à un utilisateur ordinaire, et n'élever les privilèges que pour l'étape d'installation si elle le nécessite. Une installation depuis les sources peut ne pas être suivie par `dpkg` : attention à la maintenance et à la désinstallation.\n\n## 10. Dépannage : situations réelles TSSR\n\n| Symptôme | Hypothèse à vérifier | Première action |\n|---|---|---|\n| `Unable to locate package` | Index non actualisé, nom erroné, dépôt absent | `apt update`, puis `apt search` |\n| Erreur de téléchargement | Réseau, DNS, proxy ou miroir inaccessible | Vérifier la connectivité et les sources APT |\n| Conflit de dépendances | Versions ou dépôts incompatibles | Lire les messages APT ; ne pas forcer aveuglément |\n| Installation interrompue | Paquets non configurés | Vérifier `dpkg` et ses journaux |\n| Un logiciel a disparu | Suppression lors d'une mise à niveau | Lire `/var/log/apt/history.log` |\n\n## 11. Travaux pratiques guidés\n\n### TP 1 — Audit des dépôts (sans modification)\n\n1. Identifier les fichiers de dépôts déclarés.\n2. Lire `/etc/apt/sources.list` s'il existe et les fichiers du répertoire `/etc/apt/sources.list.d/`.\n3. Identifier le type, l'URL, la branche et les composants.\n4. Expliquer pourquoi un dépôt d'une autre version Debian ne doit pas être ajouté au hasard.\n\n### TP 2 — Rechercher puis installer un outil de test\n\n1. Exécuter `apt update`.\n2. Chercher `curl` avec `apt search curl`.\n3. Lire `apt show curl`.\n4. Installer avec `apt install curl` sur une VM de laboratoire.\n5. Vérifier la présence du programme avec `curl --version`.\n\n### TP 3 — Désinstallation contrôlée\n\n1. Vérifier que `curl` a été installé pour ce TP.\n2. Observer la liste proposée par `apt remove curl` avant validation.\n3. Expliquer la différence entre `remove` et `purge`.\n4. Consulter `/var/log/apt/history.log`.\n\n### TP 4 — Trouver l'origine d'un fichier\n\n1. Exécuter `dpkg -S /usr/bin/scp` si ce fichier existe.\n2. Identifier le paquet propriétaire.\n3. Exécuter `dpkg -L openssh-client` si installé.\n4. Expliquer la différence entre lister des fichiers et rechercher leur paquet d'origine.\n\n## 12. Résumé professionnel\n\nPour un TSSR, la gestion des paquets n'est pas seulement « installer un programme ». Il faut savoir **choisir la bonne branche**, **vérifier les dépôts**, **mettre à jour sans casser les dépendances**, **maîtriser les suppressions**, **retracer les opérations** et **justifier ses choix de maintenance**.\n\n=== POINTS ESSENTIELS ===\n\n# Les points essentiels — Gestion des paquets Debian\n\n| Notion | À retenir |\n|---|---|\n| Stable / Testing / Sid | Stable = production ; Testing = prochaine stable ; Sid = Unstable |\n| Dépôts | Sources déclarées dans `sources.list` et/ou `sources.list.d` |\n| `apt update` | Actualise la liste des paquets, **pas les logiciels** |\n| `apt upgrade` | Met à jour les logiciels sans supprimer de paquets installés |\n| `apt full-upgrade` | **ROUGE :** peut supprimer des paquets |\n| `apt install` | Installe des logiciels et gère leurs dépendances |\n| `apt remove` / `apt purge` | Supprimer le logiciel / supprimer aussi sa configuration gérée |\n| `apt search` / `apt show` | Chercher / consulter les informations |\n| `dpkg -l` / `-L` / `-S` | Paquets connus localement / fichiers d'un paquet / propriétaire d'un fichier |\n| Logs | `/var/log/apt/history.log` et `/var/log/dpkg.log` |\n| Sources | `README`, `./configure`, `make`, `make install` si le projet suit ce modèle |\n\n**Trois erreurs classiques :** croire que `apt update` installe les mises à jour ; utiliser `apt-get search` (invalide) ; exécuter `full-upgrade` ou `purge` sans lire les suppressions proposées.\n\n=== COMMANDES À RETENIR ===\n\n# Commandes essentielles — Répertoire complet, avec syntaxe et couleurs\n\n**Charte obligatoire pour l’affichage sur le site :** 🔵 **BLEU** = nom de commande / outil ; 🟠 **ORANGE** = sous-commande, option, argument, nom de paquet, chemin ; 🔴 **ROUGE** = suppression ou opération sensible. Le code couleur doit être appliqué **dans les commandes elles-mêmes** par le moteur d’affichage, et pas uniquement dans cette légende.\n\n| Commande complète | Utilité | Décomposition / arguments | Attention |\n|---|---|---|---|\n| `apt update` | Actualiser les index des dépôts | apt = outil ; update = action | Aucune installation de mises à jour |\n| `apt-get update` | Même objectif avec apt-get | apt-get = outil ; update = action | Alternative historique |\n| `apt upgrade` | Mettre à jour les paquets installés | upgrade = action | Pas de suppression de paquets installés |\n| `apt-get upgrade` | Mettre à jour via apt-get | upgrade = action | Peut conserver certains paquets si de nouvelles dépendances sont requises |\n| `apt full-upgrade` | Effectuer une mise à niveau complète | full-upgrade = action | ROUGE : suppressions possibles |\n| `apt-get dist-upgrade` | Équivalent historique de mise à niveau complète | dist-upgrade = action | ROUGE : suppressions possibles |\n| `apt install curl` | Installer un paquet | install = action ; curl = paquet à adapter | Modification système |\n| `apt-get install curl` | Installer via apt-get | install = action ; curl = paquet à adapter | Modification système |\n| `apt install curl vim` | Installer plusieurs paquets | curl et vim = paquets | Séparer les noms par des espaces |\n| `apt remove curl` | Désinstaller un paquet | remove = action ; curl = paquet | ROUGE : logiciel supprimé |\n| `apt-get remove curl` | Désinstaller via apt-get | remove = action ; curl = paquet | ROUGE : logiciel supprimé |\n| `apt purge curl` | Désinstaller et purger la configuration gérée | purge = action ; curl = paquet | ROUGE : configuration supprimée |\n| `apt-get purge curl` | Purger via apt-get | purge = action ; curl = paquet | ROUGE : configuration supprimée |\n| `apt autoremove` | Retirer des dépendances devenues inutiles | autoremove = action | ROUGE : lire la liste des suppressions |\n| `apt clean` | Nettoyer le cache des archives | clean = action | Ne désinstalle pas les paquets |\n| `apt-get clean` | Nettoyer le cache avec apt-get | clean = action | Ne désinstalle pas les paquets |\n| `apt search openssh` | Rechercher un paquet | search = action ; openssh = terme recherché | Ne pas écrire apt-get search |\n| `apt-cache search openssh` | Rechercher avec apt-cache | search = action ; openssh = terme | Alternative valide |\n| `apt show openssh-server` | Afficher la fiche d’un paquet | show = action ; openssh-server = paquet | Lecture seule |\n| `apt-cache show openssh-server` | Afficher la fiche avec apt-cache | show = action ; openssh-server = paquet | Lecture seule |\n| `dpkg -l` | Lister les paquets de la base locale | -l = liste | Ne liste pas tout le dépôt |\n| `dpkg -l '*ftp*'` | Filtrer les paquets locaux par motif | -l = liste ; *ftp* = motif | Apostrophes utiles pour préserver le motif |\n| `dpkg -L openssh-client` | Lister les fichiers installés par le paquet | -L = fichiers ; openssh-client = paquet | Paquet installé nécessaire |\n| `dpkg -S /usr/bin/scp` | Trouver le paquet propriétaire du fichier | -S = recherche ; /usr/bin/scp = chemin | Fichier connu de dpkg nécessaire |\n| `cat /etc/apt/sources.list` | Lire la configuration traditionnelle des dépôts | cat = affichage ; chemin = fichier | Peut ne pas être utilisé sur une installation récente |\n| `ls /etc/apt/sources.list.d/` | Lister les fichiers de dépôts additionnels | ls = lister ; chemin = répertoire | Inclut potentiellement des fichiers .sources |\n| `vim /etc/apt/sources.list` | Éditer les sources APT | vim = éditeur ; chemin = fichier | ROUGE : sauvegarder et vérifier la branche |\n| `less /var/log/apt/history.log` | Lire l’historique APT | less = lecteur ; chemin = journal | Lecture seule |\n| `less /var/log/dpkg.log` | Lire l’historique dpkg | less = lecteur ; chemin = journal | Lecture seule |\n| `tail -n 30 /var/log/apt/history.log` | Afficher les 30 dernières lignes | -n = nombre de lignes ; 30 = valeur | Commande complémentaire |\n| `grep ' install ' /var/log/dpkg.log` | Rechercher les installations dans le journal | motif = install ; chemin = journal | Commande complémentaire |\n| `./configure` | Préparer une compilation traditionnelle | ./ = script du répertoire courant | Seulement si le projet fournit configure |\n| `make` | Compiler depuis un Makefile | make = outil de compilation | N’installe pas encore le logiciel |\n| `make install` | Installer le logiciel compilé | install = cible du Makefile | ROUGE : peut écrire dans le système |\n| `curl --version` | Vérifier la version de curl | --version = option | Commande complémentaire |\n\n## Directives et chemins à connaître (pas des commandes shell)\n\n| Élément | Sens |\n|---|---|\n| `deb` | Dépôt de paquets binaires |\n| `deb-src` | Dépôt de paquets sources |\n| `main`, `contrib`, `non-free` | Composants de dépôt |\n| `/etc/apt/sources.list` | Configuration classique des dépôts |\n| `/etc/apt/sources.list.d/` | Dépôts dans des fichiers séparés |\n| `/var/log/apt/history.log` | Journal des actions APT |\n| `/var/log/dpkg.log` | Journal des actions dpkg |\n\n**Note de fiabilité :** `apt-get search` figurant dans le PDF est une erreur ; la commande correcte est `apt-cache search`. `dpkg -l` travaille sur la base locale, pas sur le catalogue complet des dépôts.\n\n=== FICHE DE RÉVISION ===\n\n# Fiche de révision — APT et dpkg\n\n## Le circuit d'installation\n\n**Dépôts déclarés** → `apt update` (index actualisés) → `apt search` / `apt show` (choix du paquet) → `apt install` (résolution des dépendances et installation via dpkg) → vérification → consultation des logs en cas de problème.\n\n## Tableau « quelle commande choisir ? »\n\n| Je veux… | Je tape… |\n|---|---|\n| Actualiser les informations des dépôts | `apt update` |\n| Mettre à jour les paquets | `apt upgrade` |\n| Autoriser une réorganisation plus profonde des dépendances | `apt full-upgrade` (**ROUGE**) |\n| Trouver un logiciel | `apt search mot` |\n| Lire la fiche d'un logiciel | `apt show paquet` |\n| Installer | `apt install paquet` |\n| Supprimer | `apt remove paquet` (**ROUGE**) |\n| Supprimer aussi les configurations gérées | `apt purge paquet` (**ROUGE**) |\n| Trouver le paquet propriétaire d'un fichier | `dpkg -S /chemin/fichier` |\n| Voir les fichiers installés par un paquet | `dpkg -L paquet` |\n| Retrouver une installation passée | `less /var/log/apt/history.log` |\n\n## À expliquer à l'oral\n\n1. `update` n'est pas `upgrade` : l'un actualise la liste, l'autre met à niveau les logiciels.\n2. `remove` n'est pas `purge` : `purge` supprime également les fichiers de configuration gérés par le paquet.\n3. `apt` gère les dépôts et dépendances ; `dpkg` gère les paquets à un niveau plus bas.\n4. `full-upgrade` peut supprimer des paquets : on vérifie le plan avant d'accepter.\n5. Les dépôts doivent correspondre à la version Debian utilisée.\n\n## Mini-scénario TSSR\n\nUn collègue indique : « Après une maintenance, mon outil SSH a disparu. » Consulter l'historique APT, identifier les suppressions et les mises à jour, vérifier le paquet concerné et les dépendances, puis proposer une correction autorisée. Ne jamais réinstaller au hasard sur un serveur de production.\n\n=== QCM ===\n\n# QCM — 30 questions corrigées\n\n### Question 1\n\n**Quelle branche Debian est recommandée en production ?**\n\nA. Stable\nB. Unstable\nC. Experimental\nD. Une branche Debian réservée aux pilotes matériels\n\n**Réponse : A**\n\n*Explication : Stable privilégie la fiabilité.*\n\n### Question 2\n\n**Quel nom porte toujours la branche Unstable ?**\n\nA. Bookworm\nB. Sid\nC. Main\nD. Le nom d’un serveur DNS\n\n**Réponse : B**\n\n*Explication : Unstable est appelée Sid.*\n\n### Question 3\n\n**Que représente Testing ?**\n\nA. La future Stable\nB. Une distribution sans paquets\nC. Un journal\nD. Un format de partition Linux\n\n**Réponse : A**\n\n*Explication : Testing prépare la prochaine stable.*\n\n### Question 4\n\n**Quel fichier traditionnel déclare les dépôts ?**\n\nA. /etc/hosts\nB. /etc/apt/sources.list\nC. /var/log/dpkg.log\nD. Un fichier de configuration SSH\n\n**Réponse : B**\n\n*Explication : sources.list déclare les sources APT.*\n\n### Question 5\n\n**Que signifie deb dans une source ?**\n\nA. Paquets binaires\nB. Paquets source uniquement\nC. Journal\nD. Une commande de gestion des utilisateurs\n\n**Réponse : A**\n\n*Explication : deb désigne des paquets binaires.*\n\n### Question 6\n\n**Que signifie deb-src ?**\n\nA. Dépôt de sources\nB. Dépôt de journaux\nC. Dépôt supprimé\nD. Un protocole de routage\n\n**Réponse : A**\n\n*Explication : deb-src désigne les sources.*\n\n### Question 7\n\n**Que signifie main ?**\n\nA. Paquets libres standards\nB. Paquets non libres seulement\nC. Branche de test\nD. Une archive de sauvegarde\n\n**Réponse : A**\n\n*Explication : main contient les paquets libres standards.*\n\n### Question 8\n\n**Quelle commande rafraîchit les index ?**\n\nA. apt upgrade\nB. apt update\nC. dpkg -S\nD. Une adresse IP locale\n\n**Réponse : B**\n\n*Explication : update met à jour les listes.*\n\n### Question 9\n\n**apt update installe-t-il les mises à jour ?**\n\nA. Oui\nB. Non\nC. Seulement les noyaux\nD. Une interface réseau virtuelle\n\n**Réponse : B**\n\n*Explication : Il rafraîchit les index.*\n\n### Question 10\n\n**Quelle commande met à niveau les paquets ?**\n\nA. apt upgrade\nB. apt show\nC. apt search\nD. Un type de système de fichiers\n\n**Réponse : A**\n\n*Explication : upgrade effectue la mise à niveau.*\n\n### Question 11\n\n**Quelle commande peut supprimer des paquets pour résoudre des dépendances ?**\n\nA. apt update\nB. apt full-upgrade\nC. apt show\nD. Un journal du noyau\n\n**Réponse : B**\n\n*Explication : full-upgrade peut supprimer des paquets.*\n\n### Question 12\n\n**Quelle commande installe curl ?**\n\nA. apt install curl\nB. apt show curl\nC. dpkg -S curl\nD. Un gestionnaire de fenêtres\n\n**Réponse : A**\n\n*Explication : install installe le paquet.*\n\n### Question 13\n\n**Comment chercher un paquet ?**\n\nA. apt search ssh\nB. apt-get search ssh\nC. dpkg -L ssh\nD. Un fichier de mots de passe\n\n**Réponse : A**\n\n*Explication : apt search est valide.*\n\n### Question 14\n\n**Quel équivalent historique permet une recherche ?**\n\nA. apt-get search\nB. apt-cache search\nC. apt-get find\nD. Une option de chiffrement\n\n**Réponse : B**\n\n*Explication : apt-cache search est valide.*\n\n### Question 15\n\n**Comment voir la description d’un paquet ?**\n\nA. apt show paquet\nB. apt purge paquet\nC. apt clean paquet\nD. Une commande de montage\n\n**Réponse : A**\n\n*Explication : show affiche les métadonnées.*\n\n### Question 16\n\n**Quelle commande désinstalle sans purger les configurations gérées ?**\n\nA. apt remove paquet\nB. apt purge paquet\nC. apt update\nD. Un service de synchronisation horaire\n\n**Réponse : A**\n\n*Explication : remove conserve potentiellement les configurations.*\n\n### Question 17\n\n**Quelle commande supprime aussi les configurations gérées ?**\n\nA. apt search\nB. apt purge paquet\nC. apt update\nD. Une méthode de partitionnement\n\n**Réponse : B**\n\n*Explication : purge retire les configurations gérées.*\n\n### Question 18\n\n**Que fait apt clean ?**\n\nA. Vide le cache des archives\nB. Supprime tous les logiciels\nC. Met à jour les dépôts\nD. Un nom de machine\n\n**Réponse : A**\n\n*Explication : clean vide le cache.*\n\n### Question 19\n\n**Que fait apt autoremove ?**\n\nA. Retire des dépendances devenues inutiles\nB. Liste les dépôts\nC. Compile un programme\nD. Un port TCP\n\n**Réponse : A**\n\n*Explication : autoremove propose des suppressions à vérifier.*\n\n### Question 20\n\n**Quel outil bas niveau gère les paquets Debian ?**\n\nA. dpkg\nB. systemctl\nC. ip\nD. Une commande de diagnostic réseau\n\n**Réponse : A**\n\n*Explication : dpkg gère les paquets Debian.*\n\n### Question 21\n\n**Que fait dpkg -l ?**\n\nA. Liste les paquets connus localement\nB. Liste tous les paquets des dépôts\nC. Liste les routes\nD. Une variable d’environnement\n\n**Réponse : A**\n\n*Explication : dpkg consulte la base locale.*\n\n### Question 22\n\n**Que fait dpkg -L paquet ?**\n\nA. Liste les fichiers installés par le paquet\nB. Supprime le paquet\nC. Cherche les dépôts\nD. Un type de lien symbolique\n\n**Réponse : A**\n\n*Explication : -L liste les fichiers.*\n\n### Question 23\n\n**Que fait dpkg -S /usr/bin/scp ?**\n\nA. Trouve le paquet propriétaire\nB. Supprime scp\nC. Démarre scp\nD. Un outil de compression\n\n**Réponse : A**\n\n*Explication : -S cherche le paquet propriétaire.*\n\n### Question 24\n\n**Quel fichier retrace les actions APT ?**\n\nA. /var/log/apt/history.log\nB. /etc/passwd\nC. /etc/resolv.conf\nD. Un compte utilisateur\n\n**Réponse : A**\n\n*Explication : history.log conserve l’historique APT.*\n\n### Question 25\n\n**Quel fichier journalise les actions dpkg ?**\n\nA. /var/log/dpkg.log\nB. /etc/apt/sources.list\nC. /home/dpkg\nD. Un service de démarrage\n\n**Réponse : A**\n\n*Explication : dpkg.log trace les opérations.*\n\n### Question 26\n\n**Quelle commande prépare souvent un Makefile ?**\n\nA. ./configure\nB. apt clean\nC. dpkg -S\nD. Un système de permissions\n\n**Réponse : A**\n\n*Explication : configure prépare la construction si le projet le prévoit.*\n\n### Question 27\n\n**Que fait make ?**\n\nA. Compile selon le Makefile\nB. Installe toujours les fichiers système\nC. Supprime les dépôts\nD. Un outil de surveillance réseau\n\n**Réponse : A**\n\n*Explication : make construit le logiciel.*\n\n### Question 28\n\n**Quelle étape peut demander des droits administrateur ?**\n\nA. make install\nB. cat README\nC. apt search\nD. Un éditeur graphique\n\n**Réponse : A**\n\n*Explication : make install peut écrire dans les répertoires système.*\n\n### Question 29\n\n**Faut-il recopier un dépôt buster sur n’importe quelle Debian ?**\n\nA. Oui\nB. Non\nC. Seulement en VM\nD. Une commande de redémarrage\n\n**Réponse : B**\n\n*Explication : La version des dépôts doit être cohérente avec la machine.*\n\n### Question 30\n\n**Que faire avant de valider une suppression ?**\n\nA. Lire les paquets concernés\nB. Appuyer systématiquement sur Y\nC. Éteindre la VM\nD. Un nom de groupe Linux\n\n**Réponse : A**\n\n*Explication : Toujours contrôler la liste proposée.*",
+      "updatedAt": "2026-11-20T08:32:19.914Z"
     },
     {
       "id": "chapter:06:06",
@@ -1712,179 +1712,6 @@
           ],
           "correct": 0,
           "explanation": "shutdown -c annule une opération shutdown programmée qui n'a pas encore été exécutée."
-        }
-      ]
-    },
-    {
-      "id": "quiz-auto-chapter:06:05",
-      "title": "QCM — Gestion des paquets logiciels",
-      "category": "06 — Administration GNU",
-      "chapterId": "chapter:06:05",
-      "questions": [
-        {
-          "question": "Quelle branche Debian est privilégiée pour un serveur en production ?",
-          "answers": [
-            "Unstable",
-            "Stable",
-            "Experimental",
-            "Testing"
-          ],
-          "correct": 1,
-          "explanation": "Stable privilégie la fiabilité et les mises à jour de sécurité."
-        },
-        {
-          "question": "Quel est le nom permanent de la branche Unstable ?",
-          "answers": [
-            "Bookworm",
-            "Buster",
-            "Sid",
-            "Main"
-          ],
-          "correct": 2,
-          "explanation": "Sid est le nom permanent de la branche de développement Unstable."
-        },
-        {
-          "question": "Quel fichier contient traditionnellement la configuration principale des dépôts APT ?",
-          "answers": [
-            "`/var/log/dpkg.log`",
-            "`/etc/apt/sources.list`",
-            "`/etc/passwd`",
-            "`/boot/grub/grub.cfg`"
-          ],
-          "correct": 1,
-          "explanation": "sources.list est le fichier traditionnel de configuration des dépôts APT."
-        },
-        {
-          "question": "Que désigne deb-src dans la configuration d'un dépôt ?",
-          "answers": [
-            "Un dépôt de paquets sources",
-            "Un dépôt de paquets binaires",
-            "Un dépôt de sauvegarde",
-            "Un dépôt désactivé"
-          ],
-          "correct": 0,
-          "explanation": "deb-src désigne un dépôt contenant les sources des logiciels."
-        },
-        {
-          "question": "Quelle section contient des micrologiciels non libres ?",
-          "answers": [
-            "main",
-            "contrib",
-            "non-free-firmware",
-            "testing"
-          ],
-          "correct": 2,
-          "explanation": "non-free-firmware est la section dédiée aux micrologiciels non libres depuis Debian 12."
-        },
-        {
-          "question": "Quelle commande actualise la liste des paquets disponibles ?",
-          "answers": [
-            "`apt upgrade`",
-            "`apt clean`",
-            "`apt update`",
-            "`apt purge`"
-          ],
-          "correct": 2,
-          "explanation": "apt update actualise le catalogue des paquets sans mettre à jour les logiciels installés."
-        },
-        {
-          "question": "Quelle commande peut supprimer des paquets lors d'une mise à jour ?",
-          "answers": [
-            "`apt show`",
-            "`apt full-upgrade`",
-            "`apt search`",
-            "`dpkg -L`"
-          ],
-          "correct": 1,
-          "explanation": "full-upgrade peut supprimer des paquets pour gérer les changements de dépendances."
-        },
-        {
-          "question": "Quelle commande installe le paquet Vim ?",
-          "answers": [
-            "`apt install vim`",
-            "`apt update vim`",
-            "`apt search vim`",
-            "`dpkg -S vim`"
-          ],
-          "correct": 0,
-          "explanation": "apt install permet d'installer un paquet et ses dépendances."
-        },
-        {
-          "question": "Quelle commande supprime également les fichiers de configuration gérés par un paquet ?",
-          "answers": [
-            "`apt remove`",
-            "`apt clean`",
-            "`apt purge`",
-            "`apt update`"
-          ],
-          "correct": 2,
-          "explanation": "purge supprime le paquet et ses fichiers de configuration gérés par le gestionnaire de paquets."
-        },
-        {
-          "question": "Quelle commande recherche un logiciel dans les dépôts ?",
-          "answers": [
-            "`apt show`",
-            "`apt search`",
-            "`apt clean`",
-            "`apt upgrade`"
-          ],
-          "correct": 1,
-          "explanation": "apt search recherche les paquets correspondant au terme indiqué."
-        },
-        {
-          "question": "Quelle commande affiche les fichiers installés par un paquet ?",
-          "answers": [
-            "`dpkg -S`",
-            "`dpkg -L`",
-            "`apt update`",
-            "`apt clean`"
-          ],
-          "correct": 1,
-          "explanation": "dpkg -L liste les fichiers installés par un paquet."
-        },
-        {
-          "question": "Quelle commande identifie le paquet propriétaire d'un fichier ?",
-          "answers": [
-            "`dpkg -S`",
-            "`dpkg -L`",
-            "`apt install`",
-            "`apt purge`"
-          ],
-          "correct": 0,
-          "explanation": "dpkg -S recherche le paquet propriétaire d'un chemin."
-        },
-        {
-          "question": "Quel fichier conserve l'historique des opérations APT ?",
-          "answers": [
-            "`/etc/apt/sources.list`",
-            "`/var/log/apt/history.log`",
-            "`/etc/passwd`",
-            "`/etc/apt/history.log`"
-          ],
-          "correct": 1,
-          "explanation": "history.log conserve l'historique des opérations réalisées avec APT."
-        },
-        {
-          "question": "Quelle commande compile un programme à partir d'un Makefile ?",
-          "answers": [
-            "`make install`",
-            "`./configure`",
-            "`make`",
-            "`apt search`"
-          ],
-          "correct": 2,
-          "explanation": "make exécute les instructions de compilation définies dans le Makefile."
-        },
-        {
-          "question": "Quelle commande installe généralement les fichiers après compilation ?",
-          "answers": [
-            "`apt update`",
-            "`./configure`",
-            "`make`",
-            "`make install`"
-          ],
-          "correct": 3,
-          "explanation": "make install installe les fichiers compilés lorsque le projet utilise cette procédure."
         }
       ]
     },
@@ -6090,6 +5917,344 @@
             "10.1.255.254/32"
           ],
           "correct": 1,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "id": "quiz-auto-chapter:06:05",
+      "title": "QCM — Gestion des paquets logiciels",
+      "category": "06 — Administration GNU",
+      "chapterId": "chapter:06:05",
+      "questions": [
+        {
+          "question": "Quelle branche Debian est recommandée en production ?",
+          "answers": [
+            "Stable",
+            "Unstable",
+            "Experimental",
+            "Une branche Debian réservée aux pilotes matériels"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel nom porte toujours la branche Unstable ?",
+          "answers": [
+            "Bookworm",
+            "Sid",
+            "Main",
+            "Le nom d’un serveur DNS"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que représente Testing ?",
+          "answers": [
+            "La future Stable",
+            "Une distribution sans paquets",
+            "Un journal",
+            "Un format de partition Linux"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel fichier traditionnel déclare les dépôts ?",
+          "answers": [
+            "/etc/hosts",
+            "/etc/apt/sources.list",
+            "/var/log/dpkg.log",
+            "Un fichier de configuration SSH"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que signifie deb dans une source ?",
+          "answers": [
+            "Paquets binaires",
+            "Paquets source uniquement",
+            "Journal",
+            "Une commande de gestion des utilisateurs"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que signifie deb-src ?",
+          "answers": [
+            "Dépôt de sources",
+            "Dépôt de journaux",
+            "Dépôt supprimé",
+            "Un protocole de routage"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que signifie main ?",
+          "answers": [
+            "Paquets libres standards",
+            "Paquets non libres seulement",
+            "Branche de test",
+            "Une archive de sauvegarde"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande rafraîchit les index ?",
+          "answers": [
+            "apt upgrade",
+            "apt update",
+            "dpkg -S",
+            "Une adresse IP locale"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "apt update installe-t-il les mises à jour ?",
+          "answers": [
+            "Oui",
+            "Non",
+            "Seulement les noyaux",
+            "Une interface réseau virtuelle"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande met à niveau les paquets ?",
+          "answers": [
+            "apt upgrade",
+            "apt show",
+            "apt search",
+            "Un type de système de fichiers"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande peut supprimer des paquets pour résoudre des dépendances ?",
+          "answers": [
+            "apt update",
+            "apt full-upgrade",
+            "apt show",
+            "Un journal du noyau"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande installe curl ?",
+          "answers": [
+            "apt install curl",
+            "apt show curl",
+            "dpkg -S curl",
+            "Un gestionnaire de fenêtres"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Comment chercher un paquet ?",
+          "answers": [
+            "apt search ssh",
+            "apt-get search ssh",
+            "dpkg -L ssh",
+            "Un fichier de mots de passe"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel équivalent historique permet une recherche ?",
+          "answers": [
+            "apt-get search",
+            "apt-cache search",
+            "apt-get find",
+            "Une option de chiffrement"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Comment voir la description d’un paquet ?",
+          "answers": [
+            "apt show paquet",
+            "apt purge paquet",
+            "apt clean paquet",
+            "Une commande de montage"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande désinstalle sans purger les configurations gérées ?",
+          "answers": [
+            "apt remove paquet",
+            "apt purge paquet",
+            "apt update",
+            "Un service de synchronisation horaire"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande supprime aussi les configurations gérées ?",
+          "answers": [
+            "apt search",
+            "apt purge paquet",
+            "apt update",
+            "Une méthode de partitionnement"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que fait apt clean ?",
+          "answers": [
+            "Vide le cache des archives",
+            "Supprime tous les logiciels",
+            "Met à jour les dépôts",
+            "Un nom de machine"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que fait apt autoremove ?",
+          "answers": [
+            "Retire des dépendances devenues inutiles",
+            "Liste les dépôts",
+            "Compile un programme",
+            "Un port TCP"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel outil bas niveau gère les paquets Debian ?",
+          "answers": [
+            "dpkg",
+            "systemctl",
+            "ip",
+            "Une commande de diagnostic réseau"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que fait dpkg -l ?",
+          "answers": [
+            "Liste les paquets connus localement",
+            "Liste tous les paquets des dépôts",
+            "Liste les routes",
+            "Une variable d’environnement"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que fait dpkg -L paquet ?",
+          "answers": [
+            "Liste les fichiers installés par le paquet",
+            "Supprime le paquet",
+            "Cherche les dépôts",
+            "Un type de lien symbolique"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que fait dpkg -S /usr/bin/scp ?",
+          "answers": [
+            "Trouve le paquet propriétaire",
+            "Supprime scp",
+            "Démarre scp",
+            "Un outil de compression"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel fichier retrace les actions APT ?",
+          "answers": [
+            "/var/log/apt/history.log",
+            "/etc/passwd",
+            "/etc/resolv.conf",
+            "Un compte utilisateur"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quel fichier journalise les actions dpkg ?",
+          "answers": [
+            "/var/log/dpkg.log",
+            "/etc/apt/sources.list",
+            "/home/dpkg",
+            "Un service de démarrage"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle commande prépare souvent un Makefile ?",
+          "answers": [
+            "./configure",
+            "apt clean",
+            "dpkg -S",
+            "Un système de permissions"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Que fait make ?",
+          "answers": [
+            "Compile selon le Makefile",
+            "Installe toujours les fichiers système",
+            "Supprime les dépôts",
+            "Un outil de surveillance réseau"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Quelle étape peut demander des droits administrateur ?",
+          "answers": [
+            "make install",
+            "cat README",
+            "apt search",
+            "Un éditeur graphique"
+          ],
+          "correct": 0,
+          "explanation": ""
+        },
+        {
+          "question": "Faut-il recopier un dépôt buster sur n’importe quelle Debian ?",
+          "answers": [
+            "Oui",
+            "Non",
+            "Seulement en VM",
+            "Une commande de redémarrage"
+          ],
+          "correct": 1,
+          "explanation": ""
+        },
+        {
+          "question": "Que faire avant de valider une suppression ?",
+          "answers": [
+            "Lire les paquets concernés",
+            "Appuyer systématiquement sur Y",
+            "Éteindre la VM",
+            "Un nom de groupe Linux"
+          ],
+          "correct": 0,
           "explanation": ""
         }
       ]
