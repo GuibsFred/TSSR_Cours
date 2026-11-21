@@ -589,25 +589,70 @@ if(section==='commandes'){
  const items=[...merged.values()].sort((a,b)=>a.name.localeCompare(b.name,'fr'));
  const colorCode=(s,group='')=>{
   const raw=String(s||'');
+  const actions=new Set('update upgrade dist-upgrade full-upgrade install reinstall remove purge autoremove autoclean clean download source build-dep check satisfy show search list policy depends rdepends start stop restart reload enable disable status mask unmask daemon-reload link addr address route neigh neighbour add del delete replace get set up down flush edit create config help version'.split(' '));
   const tokens=raw.match(/(?:"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\S+)/g)||[];
-  const actions=new Set('update upgrade dist-upgrade full-upgrade install remove purge autoremove autoclean clean download source build-dep check satisfy show search list policy depends rdepends start stop restart reload enable disable status mask unmask daemon-reload link addr address route neigh neighbour add del delete replace get set up down flush list-users list-units list-unit-files'.split(' '));
-  const placeholders=/^(?:\[?(?:options?|opts?|flags?|option\(s\)|arguments?|argument\(s\)|args?|param[eè]tres?)\]?|<[^>]+>|\[[^\]]+\]|[A-Z_][A-Z0-9_]*(?:\.{3})?)$/i;
-  const pieces=t=>{let cls='cmdref-arg';if(/^--?[A-Za-z][\w-]*(?:=.*)?$/.test(t)||/^\[--?[A-Za-z]/.test(t)||/^\[?options?\]?$/i.test(t)||actions.has(t.toLowerCase())||/^:[a-z]/i.test(t))cls='cmdref-opt';return '<span class="'+cls+'">'+escapeText(t)+'</span>'};
-  if(group==='Vim')return '<span class="cmdref-cmd">'+escapeText(raw)+'</span>';
   return tokens.map((t,i)=>{
-   if(i===0)return '<span class="cmdref-cmd">'+escapeText(t)+'</span>';
-   if(/^\[?(?:options?|option\(s\)|flags?)\]?$/i.test(t)||/^--?[\w-]+(?:=.*)?$/.test(t)||actions.has(t.toLowerCase()))return '<span class="cmdref-opt">'+escapeText(t)+'</span>';
-   return '<span class="cmdref-arg">'+escapeText(t)+'</span>';
+   let cls='cmdref-arg';
+   if(i===0)cls='cmdref-cmd';
+   else if(/^--?[\w-]+/.test(t)||/^\[--?[\w-]+/.test(t)||/^\[?(?:options?|option\(s\)|flags?)\]?$/i.test(t)||actions.has(t.toLowerCase())||/^:[a-z]/i.test(t))cls='cmdref-opt';
+   else if(/^\[?\/?(?:[a-z][a-z0-9_-]*\/)+/i.test(t))cls='cmdref-arg';
+   return '<span class="'+cls+'">'+escapeText(t)+'</span>';
   }).join(' ');
  };
+ const optionTokens=x=>String(x||'').trim().split(/\s+/).filter(Boolean);
+ const explainExample=(sample,entry)=>{
+  const words=optionTokens(sample),expl=[];
+  const first=words[0]||'';
+  if(!first)return '';
+  const matched=(entry.options||[]).filter(o=>{
+   const flag=String(o.flag||'').trim();if(!flag)return false;
+   if(words.includes(flag))return true;
+   if(/^-[a-zA-Z]$/.test(flag))return words.some(w=>/^-[a-zA-Z]{2,}$/.test(w)&&w.slice(1).includes(flag.slice(1)));
+   return false;
+  }).slice(0,3);
+  for(const opt of matched){const meaning=String(opt.meaning||'').trim();if(meaning&&!expl.includes(meaning))expl.push(meaning.replace(/[.;]$/,''));}
+  if(expl.length)return 'Effet des options : '+expl.join(' ; ')+'.';
+  return 'Exemple de syntaxe à adapter à votre environnement ; consulter les options ci-dessus pour les effets précis.';
+ };
+ const displayExamples=x=>{
+  const unique=[];for(const e of x.examples||[]){const sample=String(e||'').trim();if(!sample||sample.length>180||sample.includes('\n')||unique.includes(sample))continue;unique.push(sample)}
+  const substantial=unique.filter(e=>e!==x.name&&e.split(/\s+/).length>1);
+  return (substantial.length?substantial:unique).slice(0,5);
+ };
+ const extractArgs=syntax=>{
+  const out=[];const found=String(syntax||'').match(/<[^>]+>|\[(?:chemin|fichier|répertoire|repertoire|nom|utilisateur|groupe|paquet|adresse|destination|source|argument(?:s)?|paramètre(?:s)?|parametre(?:s)?)[^\]]*\]/gi)||[];
+  for(const a of found){if(!out.includes(a))out.push(a)}return out.slice(0,8);
+ };
+ const argMeaning=a=>{
+  const t=a.toLowerCase();if(/chemin|répertoire|repertoire|destination|source/.test(t))return 'Chemin vers le fichier ou répertoire concerné, selon la commande.';
+  if(/fichier/.test(t))return 'Nom ou chemin du fichier concerné.';
+  if(/utilisateur|nom/.test(t))return 'Nom de l’utilisateur ou de l’élément concerné.';
+  if(/groupe/.test(t))return 'Nom du groupe concerné.';
+  if(/paquet/.test(t))return 'Nom du paquet à traiter.';
+  if(/adresse/.test(t))return 'Adresse à renseigner selon le contexte.';
+  return 'Valeur à fournir à la commande ; sa signification dépend de la syntaxe.';
+ };
+ const caution=x=>{
+  const name=String(x.name||'').toLowerCase();
+  if(/^(rm|rmdir|mkfs|fdisk|parted|dd|wipefs)$/.test(name))return 'Attention : certaines utilisations modifient ou suppriment des données. Vérifier les arguments et la cible avant exécution.';
+  if(/^(userdel|groupdel|deluser|delgroup)$/.test(name))return 'Attention : cette commande peut supprimer un compte ou un groupe. Vérifier l’identité de la cible et les conséquences.';
+  if(/^(chmod|chown|setfacl)$/.test(name))return 'Attention : une modification des permissions peut bloquer l’accès aux fichiers ou exposer des données.';
+  return '';
+ };
  v.innerHTML=`<div class="cmdref"><div class="cmdref-top"><div><h1>⌘ &nbsp;Commandes</h1><p>La référence des commandes étudiées en formation TSSR</p></div><div class="cmdref-topmark">&gt;_</div></div><div class="cmdref-search"><span>⌕</span><input id="cmdrefSearch" type="search" placeholder="Rechercher une commande, une option, une fonction…" autocomplete="off" aria-label="Rechercher dans les commandes"><span id="cmdrefCount"></span></div><div class="cmdref-filters" id="cmdrefFilters">${groups.map((g,i)=>`<button data-group="${escapeText(g)}" class="${i===0?'active':''}">${escapeText(g)}</button>`).join('')}</div><div class="cmdref-layout"><aside class="cmdref-list"><div class="cmdref-listhead">COMMANDES <span id="cmdrefListCount"></span></div><div id="cmdrefItems"></div></aside><section class="cmdref-detail" id="cmdrefDetail" aria-live="polite"></section></div></div>`;
- let active='Toutes',query='',selected=items[0]?.name||'';
+ let active='Toutes',query='',selected=items[0]?(items[0].group+'|'+items[0].name):'';
  const matches=x=>active==='Toutes'||x.group===active;
  const search=x=>{const synonyms=/^(suppr|effac|delete|retir)/i.test(query)?' supprimer suppression remove delete effacer effacement retirer purge ':'';const hay=[x.name,x.description,x.syntax,x.category,x.theme,x.notes,...(x.options||[]).flatMap(o=>[o.flag,o.meaning]),...(x.examples||[])].join(' ').toLocaleLowerCase('fr');return hay.includes(query.toLocaleLowerCase('fr'))||(!!synonyms&&/remove|delete|purge|supprim|effac/i.test(hay))};
  const paint=()=>{const filtered=items.filter(x=>matches(x)&&search(x));const current=filtered.find(x=>x.group+'|'+x.name===selected)||filtered[0];selected=current?current.group+'|'+current.name:'';$('#cmdrefCount').textContent=filtered.length+' résultat'+(filtered.length>1?'s':'');$('#cmdrefListCount').textContent=filtered.length;$('#cmdrefItems').innerHTML=filtered.map(x=>`<button class="cmdref-item ${selected===x.group+'|'+x.name?'active':''}" data-ref="${escapeText(x.group+'|'+x.name)}"><strong>${escapeText(x.name)}</strong><small>${escapeText(x.description||x.theme||'Commande TSSR')}</small><em>${escapeText(x.group)}</em></button>`).join('')||'<p class="cmdref-empty">Aucune commande trouvée.</p>';
  if(!current){$('#cmdrefDetail').innerHTML='<div class="cmdref-empty">Choisis une commande dans la liste.</div>';return}
- const opts=current.options||[],examples=current.examples||[];
- $('#cmdrefDetail').innerHTML=`<div class="cmdref-detailhead"><div><div class="cmdref-eyebrow">FICHE DE COMMANDE · ${escapeText(current.group)}</div><h2>${escapeText(current.name)}</h2><p>${escapeText(current.description||'Commande présente dans les supports TSSR.')}</p></div><span class="cmdref-tag">${escapeText(current.group)}</span></div><h3>Syntaxe générale</h3><div class="cmdref-legend"><span class="cmdref-cmd">● Commande</span><span class="cmdref-opt">● Option / action</span><span class="cmdref-arg">● Argument</span></div><div class="cmdref-code"><code>${colorCode(current.syntax||current.name+' [options] [arguments]',current.group)}</code><button data-copy="syntax">Copier</button></div><h3>Options et actions expliquées <span class="cmdref-muted">${opts.length}</span></h3>${opts.length?`<div class="cmdref-tablewrap"><table><thead><tr><th>Option</th><th>Rôle et explication</th></tr></thead><tbody>${opts.map(o=>`<tr><td class="cmdref-opt">${escapeText(o.flag)}</td><td>${escapeText(o.meaning||o.description||'')}</td></tr>`).join('')}</tbody></table></div>`:'<p class="cmdref-muted">Aucune option spécifique documentée pour cette commande. Consulter les exemples et le cours associé.</p>'}<h3>Exemples d’utilisation</h3>${examples.length?examples.map((e,i)=>`<div class="cmdref-code cmdref-example"><code>${colorCode(e,current.group)}</code><button data-copy="example" data-index="${i}">Copier</button></div>`).join(''):'<p class="cmdref-muted">Aucun exemple disponible pour cette commande.</p>'}${current.notes?`<div class="cmdref-note"><strong>À savoir</strong><p>${escapeText(current.notes)}</p></div>`:''}`;
+ const opts=current.options||[],examples=displayExamples(current),args=extractArgs(current.syntax),warning=caution(current);
+ const safeOption=f=>String(f||'').split(/\s+/).map(t=>/^--?/.test(t)?'<span class="cmdref-opt">'+escapeText(t)+'</span>':'<span class="cmdref-arg">'+escapeText(t)+'</span>').join(' ');
+ $('#cmdrefDetail').innerHTML=`<div class="cmdref-detailhead"><div><div class="cmdref-eyebrow">FICHE DE COMMANDE · ${escapeText(current.group)}</div><h2>${escapeText(current.name)}</h2><p>${escapeText(current.description||'Commande présente dans les supports TSSR.')}</p></div><span class="cmdref-tag">${escapeText(current.group)}</span></div>
+ <h3>Syntaxe générale</h3><div class="cmdref-legend"><span class="cmdref-cmd">● Commande</span><span class="cmdref-opt">● Option / action</span><span class="cmdref-arg">● Argument</span></div><div class="cmdref-code"><code>${colorCode(current.syntax||current.name+' [options] [arguments]',current.group)}</code><button data-copy="syntax">Copier</button></div>
+ <div class="cmdref-knowledge"><section><h3>Options et actions expliquées <span class="cmdref-muted">(${opts.length})</span></h3>${opts.length?`<div class="cmdref-tablewrap"><table><thead><tr><th>Option / action</th><th>Rôle et résultat</th></tr></thead><tbody>${opts.map(o=>`<tr><td>${safeOption(o.flag)}</td><td>${escapeText(o.meaning||o.description||'')}</td></tr>`).join('')}</tbody></table></div>`:'<p class="cmdref-muted">Aucune option documentée dans les données actuelles de cette fiche.</p>'}</section>
+ <section><h3>Arguments</h3>${args.length?`<div class="cmdref-tablewrap"><table><thead><tr><th>Argument</th><th>Description</th></tr></thead><tbody>${args.map(a=>`<tr><td><span class="cmdref-arg">${escapeText(a)}</span></td><td>${escapeText(argMeaning(a))}</td></tr>`).join('')}</tbody></table></div>`:'<p class="cmdref-muted">Aucun argument explicitement indiqué dans la syntaxe enregistrée.</p>'}
+ <h3>Exemples d’utilisation (${examples.length})</h3>${examples.length?examples.map((e,i)=>`<div class="cmdref-examplebox"><div class="cmdref-code cmdref-example"><code>${colorCode(e,current.group)}</code><button data-copy="example" data-index="${i}">Copier</button></div><p class="cmdref-effect">${escapeText(explainExample(e,current))}</p></div>`).join(''):'<p class="cmdref-muted">Aucun exemple disponible pour cette commande.</p>'}</section></div>
+ <div class="cmdref-bottom"><div class="cmdref-retain"><strong>ⓘ À retenir</strong><p>${escapeText(current.description||'Se référer à la documentation du système.')}</p>${current.notes?`<p>${escapeText(current.notes)}</p>`:''}</div>${warning?`<div class="cmdref-warning"><strong>⚠ Points de vigilance</strong><p>${escapeText(warning)}</p></div>`:''}</div>`;
  $('#cmdrefItems').querySelectorAll('[data-ref]').forEach(b=>b.onclick=()=>{selected=b.dataset.ref;paint()});$('#cmdrefDetail').querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>{const val=b.dataset.copy==='syntax'?(current.syntax||current.name):examples[Number(b.dataset.index)];navigator.clipboard.writeText(val||'').then(()=>toast('Commande copiée')).catch(()=>toast('Copie impossible'))})};
  $('#cmdrefSearch').addEventListener('input',e=>{query=e.target.value;paint()});$('#cmdrefFilters').querySelectorAll('button').forEach(b=>b.onclick=()=>{active=b.dataset.group;$('#cmdrefFilters').querySelectorAll('button').forEach(z=>z.classList.toggle('active',z===b));paint()});paint();return;
 }

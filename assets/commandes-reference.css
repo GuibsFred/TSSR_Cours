@@ -23,3 +23,25 @@
 .cmdref-code code{white-space:pre-wrap;overflow-wrap:anywhere}
 .cmdref-tablewrap{overflow-x:auto}
 @media(max-width:600px){.cmdref-legend{gap:10px;font-size:11px}}
+
+/* V11 — fiches de commandes professionnelles, sans changement des autres pages */
+.cmdref .cmdref-cmd{color:#39caff!important}
+.cmdref .cmdref-opt{color:#ff5d6d!important}
+.cmdref .cmdref-arg{color:#ff9c18!important}
+.cmdref .cmdref-legend{display:flex;gap:18px;flex-wrap:wrap;margin:-3px 0 9px;font-size:12px;font-weight:700}
+.cmdref .cmdref-knowledge{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:22px;align-items:start}
+.cmdref .cmdref-knowledge section{min-width:0}
+.cmdref .cmdref-knowledge h3{margin:18px 0 10px}
+.cmdref .cmdref-detail td:first-child{white-space:normal;overflow-wrap:anywhere}
+.cmdref .cmdref-detail table{line-height:1.55}
+.cmdref .cmdref-examplebox{background:#071e30;border:1px solid #1b6482;border-radius:9px;margin:0 0 9px;overflow:hidden}
+.cmdref .cmdref-examplebox .cmdref-code{margin:0;border:0;border-radius:0;background:transparent;padding:10px 12px}
+.cmdref .cmdref-effect{border-top:1px solid #1a4359;color:#c3dbe7;margin:0;padding:8px 12px;font-size:12px;line-height:1.55}
+.cmdref .cmdref-bottom{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin-top:20px}
+.cmdref .cmdref-retain{border:1px solid #00b9ed;border-radius:10px;background:#082c43;padding:14px;color:#d7eff8}
+.cmdref .cmdref-retain strong{color:#36d0ff;font-size:17px}
+.cmdref .cmdref-retain p,.cmdref .cmdref-warning p{margin:8px 0 0;line-height:1.6}
+.cmdref .cmdref-warning{border:1px solid #e8a21b;border-radius:10px;background:#322a16;padding:14px;color:#fff0cf}
+.cmdref .cmdref-warning strong{color:#ffb72e;font-size:17px}
+@media(max-width:1150px){.cmdref .cmdref-knowledge{grid-template-columns:1fr;gap:4px}}
+@media(max-width:760px){.cmdref .cmdref-legend{gap:10px}.cmdref .cmdref-detail table{font-size:12px}.cmdref .cmdref-detail td,.cmdref .cmdref-detail th{padding:9px}}
