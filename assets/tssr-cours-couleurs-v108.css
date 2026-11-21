@@ -1,0 +1,17 @@
+/* TSSR — Couleurs pédagogiques V108. Uniquement la lecture des cours. */
+#view .tssr-vfinal-layout .tssr-v82-reading-body.tssr-editorial { --tssr-teal:#086c80; --tssr-orange:#e87620; }
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll {border:1px solid #8dc5d2!important; border-radius:10px!important; overflow-x:auto!important; box-shadow:0 5px 15px rgba(4,77,100,.12)!important; background:#fff!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll table {border-collapse:separate!important; border-spacing:0!important; width:100%!important; min-width:460px!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll thead th {background:linear-gradient(110deg,#07546c,#087b8c)!important; color:#fff!important; font-weight:800!important; border-color:#166a7c!important; padding:11px 13px!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody tr:nth-child(4n+1) td {background:#e8f6fa!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody tr:nth-child(4n+2) td {background:#f6fbfd!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody tr:nth-child(4n+3) td {background:#eaf6f0!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody tr:nth-child(4n) td {background:#fff8ed!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody td {color:#183747!important; border-bottom:1px solid #d3e6ec!important; padding:10px 13px!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody tr:hover td {background:#d8f0f5!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody td:first-child {font-weight:750!important; color:#075b73!important; border-left:3px solid #28a3b4!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody tr:nth-child(4n+3) td:first-child {border-left-color:#28a27c!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody tr:nth-child(4n) td:first-child {border-left-color:#e58a30!important;}
+#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll tbody td code {background:#d8eaf2!important;color:#075b73!important;border:1px solid #b9d7e4!important;font-weight:750!important;}
+#view .tssr-vfinal-layout .tssr-editorial :is(h3,h4) code {background:#d9f2f6!important;color:#07546b!important;border:1px solid #9bd4dd!important; opacity:1!important; -webkit-text-fill-color:#07546b!important;}
+@media(max-width:680px){#view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll {width:100%!important;max-width:100%!important;} #view .tssr-vfinal-layout .tssr-editorial .tssr-ed-table-scroll table {width:100%!important;min-width:460px!important;}}
