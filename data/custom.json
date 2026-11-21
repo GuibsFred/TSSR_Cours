@@ -7194,9 +7194,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:06": {
-        "title": "Comprendre l’arborescence",
+        "title": "Spécificités du shell Bash",
         "order": 6,
-        "displayNumber": "06"
+        "displayNumber": "06",
+        "category": "04 — Utilisation d’une distribution GNU / Linux / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:07": {
         "title": "Gérer les fichiers",
