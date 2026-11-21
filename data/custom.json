@@ -7186,9 +7186,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:05": {
-        "title": "Utiliser l’aide",
+        "title": "Utiliser des fichiers sous Linux",
         "order": 5,
-        "displayNumber": "05"
+        "displayNumber": "05",
+        "category": "04 — Utilisation d’une distribution GNU / Linux / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:06": {
         "title": "Comprendre l’arborescence",
