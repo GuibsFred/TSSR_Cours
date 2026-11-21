@@ -7178,9 +7178,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:04": {
-        "title": "Le Shell Bash",
+        "title": "Fichiers et dossiers sous Linux",
         "order": 4,
-        "displayNumber": "04"
+        "displayNumber": "04",
+        "category": "04 — Utilisation d’une distribution GNU / Linux / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:05": {
         "title": "Utiliser l’aide",
