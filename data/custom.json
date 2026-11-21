@@ -7202,9 +7202,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:07": {
-        "title": "Gérer les fichiers",
+        "title": "Editer du texte sous Linux",
         "order": 7,
-        "displayNumber": "07"
+        "displayNumber": "07",
+        "category": "04 — Utilisation d’une distribution GNU / Linux / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:08": {
         "title": "Les expressions régulières",
