@@ -1,5 +1,109 @@
 window.TSSR_NEWS = [
   {
+    "title": "Sysinternals : Autoruns arrive sur Linux et Process Explorer sur macOS",
+    "summary": "Vous utilisez Autoruns sous Windows ? L'outil Sysinternals a désormais une version Linux, et Process Explorer débarque sur macOS. Voici ce qu'il faut retenir. Le post Sysinternals : Autoruns arrive sur Linux et Process Explorer sur macOS a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/sysinternals-autoruns-linux-process-explorer-macos/",
+    "date": "2026-11-21",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "James Bond : on a classé les films de Daniel Craig du pire au meilleur pour célébrer Robert Pattinson",
+    "summary": "Alors que Robert Pattinson s’apprête à enfiler le costume de 007 sous la direction de Denis Villeneuve, avec une approche du personnage de James Bond annoncée comme bien plus froide et brutale, l’heure est au bilan définitif pour son prédécesseur. En 15 ans et 5 films, Daniel Craig a dynamité les codes de la saga, entre coups d’éclat magistraux et sorties de route franchement agaçantes.",
+    "url": "https://www.numerama.com/pop-culture/2379985-james-bond-on-a-classe-les-films-de-daniel-craig-du-pire-au-meilleur-film-pour-feter-robert-pattinson.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Deux Tesla en FSD bloquées, les mauvais élèves du contrôle technique allemand et les freins à l’achat : le récap Vroom de la semaine",
+    "summary": "À la une sur Vroom cette semaine : le FSD fait des miracles mais échoue parfois aussi, MG ne fait pas mieux que Tesla au contrôle technique allemand et la désinformation freine les achats d'électriques.",
+    "url": "https://www.numerama.com/vroom/2380109-deux-tesla-en-fsd-bloquees-les-mauvais-eleves-du-controle-technique-allemand-et-les-freins-a-lachat-le-recap-vroom-de-la-semaine.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Robots tueurs autonomes : ce que les armées délèguent vraiment aux machines",
+    "summary": "Du 16 au 20 novembre, l’ONU tient une conférence sur l’encadrement des armes autonomes. L’autonomie militaire existe déjà à toutes les étapes de la chaîne d’engagement : observation, identification, sélection et frappe des cibles. L’enjeu est de préserver le contrôle humain sur les décisions létales. L’automatisation accélère les opérations, mais augmente les risques d’erreur et de frappes illégales, notamment dans les situations ambiguës.",
+    "url": "https://www.numerama.com/tech/2379739-robots-tueurs-autonomes-ou-en-sommes-nous-vraiment.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Faut-il mettre fin à Dragon Quest sans Akira Toriyama ?",
+    "summary": "Yasunori Mitsuda, le compositeur de Chrono Trigger, estime que la disparition d’Akira Toriyama pose une question difficile pour l’avenir de Dragon Quest : la saga peut-elle vraiment continuer sans l’un de ses piliers historiques ?",
+    "url": "https://www.numerama.com/pop-culture/2377107-faut-il-mettre-fin-a-dragon-quest-sans-akira-toriyama.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Les Anneaux de pouvoir saison 3 : les petits secrets du générique, qui délaisse les énigmes cachées",
+    "summary": "Depuis l'épisode 2 de la saison 3, mis en ligne le 11 novembre 2026 sur Prime Video, Les Anneaux de pouvoir a un nouveau générique, beaucoup plus sombre. Ses créateurs ont cette fois renoncé aux symboles cachés que les fans décortiquaient depuis 2022.",
+    "url": "https://www.numerama.com/pop-culture/2376969-les-anneaux-de-pouvoir-saison-3-les-petits-secrets-du-generique-qui-abandonne-les-enigmes-cachees.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 : ça commence, accusé d’être woke, le jeu se fait torpiller par des milliers d’avis négatifs",
+    "summary": "À peine quarante-huit heures après sa sortie triomphale, ce jeudi 19 novembre sur PS5 et Xbox Series X/S, GTA 6 n'échappe pas au rituel toxique des grosses sorties vidéoludiques. La page Metacritic du jeu est déjà prise d'assaut par des milliers d'avis négatifs, dont une large partie dénonce un virage « woke ».",
+    "url": "https://www.numerama.com/pop-culture/2380577-gta-6-ca-commence-accuse-detre-woke-le-jeu-se-fait-torpiller-par-des-milliers-davis-negatifs.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Amazon brade d’énormes sets Lego pour le Black Friday : voici notre top 5",
+    "summary": "[Deal du jour] Des répliques géantes de vaisseaux de Star Wars et Star Trek, aux monuments emblématiques du cinéma, en passant par les univers de Marvel, Harry Potter ou encore Nintendo, Lego propose des sets spectaculaires issues de la pop culture. Le Black Friday est l’occasion de mettre la main sur ces Lego XXL à prix réduit.",
+    "url": "https://www.numerama.com/pop-culture/2379973-amazon-brade-denormes-sets-lego-pour-le-black-friday.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Maman, j’ai raté l’avion : 34 ans après, Macaulay Culkin accepte enfin un nouveau film, c’est officiel",
+    "summary": "Plus de trente ans après son dernier film dans la saga, Macaulay Culkin devrait retrouver au cinéma son rôle culte de Kevin McCallister. L’acteur de 46 ans développe officiellement chez Disney un nouveau volet de Maman, j’ai raté l’avion !, épaulé par le duo Seth Rogen et Evan Goldberg.",
+    "url": "https://www.numerama.com/pop-culture/2380567-maman-jai-rate-lavion-34-ans-apres-macaulay-culkin-accepte-enfin-un-nouveau-film-cest-officiel.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "L’humain contre-attaque sur l’hypothèse de Riemann : un chercheur aurait craqué l’énigme avant l’IA Claude",
+    "summary": "Deux démonstrations concurrentes de l’hypothèse de Riemann, l’un des problèmes ouverts les plus célèbres des mathématiques, ont été rendues publiques ce vendredi 20 novembre. Quelques heures après celle d’Anthropic, le président de l’American Mathematical Society a publié le brouillon d’un jeune chercheur de Stanford, écrit sans IA.",
+    "url": "https://www.numerama.com/sciences/2380525-lhumain-contre-attaque-sur-lhypothese-de-riemann-un-chercheur-aurait-craque-lenigme-avant-lia-claude.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 : guides, astuces et trouvailles, tout savoir sur le jeu (EN DIRECT)",
+    "summary": "Treize ans d’attente, à peine deux jours de jeu, et déjà des centaines de découvertes. Grand Theft Auto 6 (GTA 6) n’a pas fini de livrer ses secrets. Astuces pour bien démarrer, easter eggs, records et réactions, suivez en direct tout ce qu'il faut savoir sur Leonida.",
+    "url": "https://www.numerama.com/pop-culture/2375431-lancement-de-gta-6-en-direct-guides-astuces-secrets.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 : tétraplégique, il joue sans manette uniquement par la pensée",
+    "summary": "Moins de 48 heures après la sortie mondiale de GTA 6, la société d’Elon Musk s’offre une vitrine médiatique spectaculaire. Dans une vidéo publiée ce vendredi 20 novembre sur X, Neuralink montre l’un des participants à ses essais cliniques en train d’y jouer par la pensée.",
+    "url": "https://www.numerama.com/pop-culture/2380513-gta-6-tetraplegique-il-joue-sans-manette-uniquement-par-la-pensee.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Couper le chauffage ou allumer la chambre : la domotique Shelly lance son Black Friday avec 10 offres [Sponso]",
+    "summary": "Cet article a été réalisé en collaboration avec Shelly Le spécialiste des objets connectés Shelly prépare son Black Friday avec une liste de dix produits en promotion de ce jeudi 19 novembre au mercredi 2 décembre. Parmi eux, certains sont tournés vers la sécurité et le contrôle domotique.",
+    "url": "https://www.numerama.com/tech/2376187-couper-le-chauffage-ou-allumer-la-chambre-la-domotique-shelly-lance-son-black-friday-avec-10-offres.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Windows 11 KB5132057 : la nouvelle fonction de recherche exécute des actions !",
     "summary": "KB5132057 : nouvelle recherche Windows 11, boîte Exécuter modernisée et connexion web sur les postes hybrides. Voici l'essentiel à savoir sur cette mise à jour. Le post Windows 11 KB5132057 : la nouvelle fonction de recherche exécute des actions ! a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/windows-11-kb5132057-nouvelle-recherche-connexion-web/",
@@ -107,102 +211,6 @@ window.TSSR_NEWS = [
     "title": "Ce purificateur change de couleur en fonction de la qualité de l’air, et il baisse de prix pour le Black Friday",
     "summary": "[Deal du jour] Après sa présentation à l’IFA de Berlin en septembre 2026, le purificateur d’air connecté Dreo 530S est déjà en promotion. Amazon le propose à 99,27 € au lieu de 139,99 €.",
     "url": "https://www.numerama.com/tech/2340843-ce-nouveau-purificateur-change-de-couleur-selon-la-qualite-de-lair-que-vous-respirez-et-son-prix-baisse-deja.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 : 25 millions de ventes, 2,36 milliards de dollars… les chiffres fous de son lancement",
-    "summary": "Au lendemain de sa sortie, GTA 6 accumule déjà les records. Ventes records, millions de spectateurs sur Twitch, trafic Internet sous tension et 35 000 élèves absents en Angleterre : voici les premiers chiffres du lancement du jeu de Rockstar.",
-    "url": "https://www.numerama.com/pop-culture/2380025-gta-6-25-millions-de-ventes-236-milliards-de-dollars-les-chiffres-fous-de-son-lancement.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Un Graal des maths vacille : un chercheur d’Anthropic revendique avoir résolu l’hypothèse de Riemann avec l’IA Claude",
-    "summary": "Un problème à un million de dollars, ouvert depuis 1859, résolu avec une IA ? Levent Alpöge, mathématicien employé par Anthropic, affirme ce vendredi 20 novembre avoir démontré l'hypothèse de Riemann avec Claude. Pour toute preuve, il livre quatorze archives de code que personne n'a encore vérifiées, au lendemain de l'entrée en Bourse de son employeur.",
-    "url": "https://www.numerama.com/tech/2380265-un-graal-des-maths-tombe-un-chercheur-danthropic-revendique-avoir-resolu-lhypothese-de-riemann-avec-lia-claude.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Black Friday : les meilleures offres de ce vendredi (EN DIRECT)",
-    "summary": "Black Friday 2026 : Amazon, Boulanger et la Fnac ont déjà lancé leurs promos. Nous trions en direct celles qui valent vraiment le coup.",
-    "url": "https://www.numerama.com/tech/2374925-black-friday-les-meilleures-offres-en-direct.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Album GTA 6 : les CD et vinyles de la bande originale sont sortis, voici où les trouver",
-    "summary": "GTA 6 tourne enfin sur vos consoles, et sa musique peut désormais aussi tourner sur votre platine ou votre lecteur de disque. L’album officiel sort aujourd’hui en CD et en vinyle : voici où l’acheter.",
-    "url": "https://www.numerama.com/pop-culture/2334979-album-gta-6-les-cd-et-vinyles-de-la-bande-originale-sont-sortis-voici-ou-les-trouver.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Où écouter la bande originale de GTA 6 en streaming avec Justice et Dua Lipa ?",
-    "summary": "Grand Theft Auto VI : The Album, la bande originale officielle de GTA 6, est disponible en streaming depuis ce vendredi 20 novembre 2026. L'album réunit 34 morceaux inédits, signés Justice, Dua Lipa, Lana Del Rey ou Travis Scott.",
-    "url": "https://www.numerama.com/pop-culture/2380051-ou-ecouter-la-bande-originale-de-gta-6-en-streaming-avec-justice-et-dua-lipa.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "On ne verra jamais les scènes coupées de L’Odyssée",
-    "summary": "Comme tous les films, L'Odyssée a des scènes qui ont été coupées. Mais, contrairement à beaucoup de films, on ne les verra jamais. Le réalisateur Christopher Nolan a expliqué pourquoi cette semaine, au moment où le film sort en DVD, Blu-ray et 4K.",
-    "url": "https://www.numerama.com/pop-culture/2379933-pourquoi-on-ne-verra-jamais-les-scenes-coupees-de-lodyssee.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Les Anneaux de pouvoir : c’est quoi le Thangorodrim, ces volcans de Tolkien où tout a mal tourné pour Galadriel",
-    "summary": "L'épisode 5 de la saison 3 des Anneaux de pouvoir, revient sur le passé de Celeborn et Galadriel au Thangorodrim. Chez J. R. R. Tolkien, ces trois volcans bâtis par Morgoth s'effondrent à la fin du Premier Âge.",
-    "url": "https://www.numerama.com/pop-culture/2379923-les-anneaux-de-pouvoir-cest-quoi-le-thangorodrim-ces-volcans-de-tolkien-ou-tout-a-mal-tourne-pour-galadriel.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "La Fnac fait baisser le Nothing Phone 4a de 50 € pour le Black Friday, coque et lanière comprises",
-    "summary": "[Deal du jour] Le Black Friday de la Fnac touche aussi le milieu de gamme Android. Le Nothing Phone 4a, vendu en pack avec une coque, une lanière et des stickers, passe à 399 € au lieu de 452 €.",
-    "url": "https://www.numerama.com/tech/2379693-la-fnac-fait-baisser-le-nothing-phone-4a-de-50-e-pour-le-black-friday-coque-et-laniere-comprises.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Alerte sur Mars : Perseverance est en panne et son principal relais n’a plus que 2 mois de vie",
-    "summary": "La Nasa a mis en pause les activités scientifiques du rover Perseverance, car ses deux radios qui envoient les données vers l'orbite de Mars sont en panne. L'orbiteur Odyssey, l'un de ses relais, est lui aussi en mauvaise posture.",
-    "url": "https://www.numerama.com/sciences/2379549-alerte-sur-mars-perseverance-est-en-panne-et-son-principal-relais-na-plus-que-2-mois-de-vie.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Que se passe-t-il si on n’a pas l’édition ultime de GTA 6 ?",
-    "summary": "Au format numérique, GTA 6 est disponible en deux éditions : standard à 80 € et ultime à 100 €. La plus chère propose du contenu bonus, notamment l'accès à certaines boutiques. Comment la distinction est-elle gérée dans le jeu ?",
-    "url": "https://www.numerama.com/pop-culture/2379649-que-se-passe-t-il-si-on-na-pas-ledition-ultime-de-gta-6.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "L’Italie autorise le FSD de Tesla, pendant que la France fait de la résistance",
-    "summary": "Tesla a annoncé ce vendredi 20 novembre 2026 que l'Italie autorisait son FSD supervisé. C'est le douzième pays de l'Union européenne à dire oui, et le premier grand marché automobile du lot.",
-    "url": "https://www.numerama.com/vroom/2379809-litalie-autorise-le-fsd-de-tesla-pendant-que-la-france-fait-de-la-resistance.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Votre PC passera-t-il le test ? Windows 11 pourra bientôt bloquer vos applications s’il est jugé mal protégé : voici les conditions",
-    "summary": "Microsoft lance Windows Baseline Protection, une fonctionnalité qui offre aux logiciels un moyen de vérifier qu’un PC respecte 8 protections de sécurité.",
-    "url": "https://www.numerama.com/cyberguerre/2379689-votre-pc-passera-t-il-le-test-windows-11-pourra-bientot-bloquer-vos-applications-sil-est-juge-mal-protege-voici-les-conditions.html",
     "date": "2026-11-20",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -414,14 +422,6 @@ window.TSSR_NEWS = [
     "date": "2026-11-18",
     "source": "CERT-FR",
     "category": "Sécurité"
-  },
-  {
-    "title": "NGINX2Root : deux failles critiques permettent de prendre le contrôle d’un serveur NGINX",
-    "summary": "Failles NGINX : CVE-2026-123007 et CVE-2026-123633 permettent d'exécuter du code à distance via HTTP/2. Voici les versions à installer et comment vous protéger. Le post NGINX2Root : deux failles critiques permettent de prendre le contrôle d’un serveur NGINX a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/nginx2root-failles-cve-2026-123007-rce/",
-    "date": "2026-11-18",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
   },
   {
     "title": "IA en entreprise : Databricks révèle l’essor des modèles ouverts et du multi-fournisseur",
