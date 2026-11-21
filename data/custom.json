@@ -7210,9 +7210,12 @@
         "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:08": {
-        "title": "Les expressions régulières",
+        "title": "Mécanismes avancés de Linux et Bash",
         "order": 8,
-        "displayNumber": "08"
+        "displayNumber": "08",
+        "category": "04 — Utilisation d’une distribution GNU / Linux / Cours",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       },
       "chapter:05:09": {
         "title": "Les commandes de recherche",
