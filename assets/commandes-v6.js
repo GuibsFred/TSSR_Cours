@@ -1,4 +1,4 @@
-/* TSSR V8 — fiches de référence enrichies ; options expliquées. */
+/* Bibliothèque V10 : commandes et raccourcis vérifiés ; sources du site préservées. */
 window.TSSR_COMMANDES_V6 = [
   {
     "id": "v6-linux-administration-ip",
@@ -2331,56 +2331,137 @@ window.TSSR_COMMANDES_V6 = [
     "name": "apt-get",
     "environment": "Linux — Administration",
     "category": "Linux — Administration",
-    "description": "Mettre à niveau en autorisant des changements de dépendances et des suppressions nécessaires.",
-    "syntax": "apt-get [options] [arguments]",
+    "description": "Gestionnaire de paquets APT pour Debian et Ubuntu : actualiser les index, installer, mettre à niveau, supprimer et nettoyer les paquets et leurs dépendances.",
+    "syntax": "apt-get [options] sous-commande [paquet ...]",
     "examples": [
       "apt-get update",
       "apt-get upgrade",
-      "apt-get dist-upgrade",
-      "apt-get install curl",
-      "apt-get remove curl",
-      "apt-get purge curl",
-      "apt-get clean"
+      "apt-get -s dist-upgrade",
+      "apt-get install nginx",
+      "apt-get install --no-install-recommends git curl",
+      "apt-get install --reinstall openssh-client",
+      "apt-get remove nginx",
+      "apt-get purge nginx",
+      "apt-get autoremove",
+      "apt-get clean",
+      "apt-get download nginx",
+      "apt-get check"
     ],
     "options": [
       {
         "flag": "update",
-        "meaning": "Actualiser les index des dépôts"
+        "meaning": "Actualiser les index des dépôts ; ne met pas les paquets installés à niveau."
       },
       {
         "flag": "upgrade",
-        "meaning": "Mettre à niveau les paquets"
+        "meaning": "Mettre à niveau les paquets sans supprimer de paquets installés."
       },
       {
         "flag": "dist-upgrade",
-        "meaning": "Mettre à niveau avec gestion des dépendances et suppressions éventuelles"
+        "meaning": "Mettre à niveau en autorisant les changements de dépendances, y compris des suppressions."
       },
       {
         "flag": "install",
-        "meaning": "Installer un paquet"
+        "meaning": "Installer les paquets indiqués."
       },
       {
         "flag": "remove",
-        "meaning": "Supprimer un paquet"
+        "meaning": "Supprimer les paquets en conservant généralement leurs fichiers de configuration."
       },
       {
         "flag": "purge",
-        "meaning": "Purger un paquet"
+        "meaning": "Supprimer les paquets et leurs fichiers de configuration gérés par dpkg."
       },
       {
         "flag": "autoremove",
-        "meaning": "Nettoyer les dépendances inutiles"
+        "meaning": "Supprimer les dépendances installées automatiquement et devenues inutiles."
+      },
+      {
+        "flag": "autoclean",
+        "meaning": "Supprimer du cache les archives devenues indisponibles au téléchargement."
       },
       {
         "flag": "clean",
-        "meaning": "Vider le cache des archives"
+        "meaning": "Vider le cache local des archives téléchargées."
       },
       {
-        "flag": "-y",
-        "meaning": "Accepter automatiquement les confirmations"
+        "flag": "download",
+        "meaning": "Télécharger un paquet binaire sans l’installer."
+      },
+      {
+        "flag": "source",
+        "meaning": "Récupérer les sources d’un paquet (dépôts sources nécessaires)."
+      },
+      {
+        "flag": "build-dep",
+        "meaning": "Installer les dépendances de compilation d’un paquet source."
+      },
+      {
+        "flag": "check",
+        "meaning": "Vérifier l’état des dépendances."
+      },
+      {
+        "flag": "satisfy",
+        "meaning": "Satisfaire des expressions de dépendances indiquées."
+      },
+      {
+        "flag": "-y, --yes, --assume-yes",
+        "meaning": "Répondre oui automatiquement aux confirmations, sauf opérations jugées dangereuses."
+      },
+      {
+        "flag": "-s, --simulate",
+        "meaning": "Simuler les opérations sans modifier les paquets."
+      },
+      {
+        "flag": "-d, --download-only",
+        "meaning": "Télécharger les archives sans les installer."
+      },
+      {
+        "flag": "--reinstall",
+        "meaning": "Réinstaller les paquets déjà installés avec install."
+      },
+      {
+        "flag": "--no-install-recommends",
+        "meaning": "Ne pas installer automatiquement les paquets seulement recommandés."
+      },
+      {
+        "flag": "-f, --fix-broken",
+        "meaning": "Tenter de corriger les dépendances cassées."
+      },
+      {
+        "flag": "-q, --quiet",
+        "meaning": "Réduire la verbosité de la sortie."
+      },
+      {
+        "flag": "-V, --verbose-versions",
+        "meaning": "Afficher les versions complètes des paquets."
+      },
+      {
+        "flag": "--assume-no",
+        "meaning": "Répondre non automatiquement aux confirmations."
+      },
+      {
+        "flag": "-o CLE=VALEUR",
+        "meaning": "Définir une option de configuration APT."
+      },
+      {
+        "flag": "-t DISTRIBUTION",
+        "meaning": "Définir une distribution cible pour la résolution des versions."
+      },
+      {
+        "flag": "--purge",
+        "meaning": "Purger les fichiers de configuration lors des suppressions appropriées."
+      },
+      {
+        "flag": "--no-upgrade",
+        "meaning": "Ne pas mettre à niveau les paquets déjà installés avec install."
+      },
+      {
+        "flag": "--only-upgrade",
+        "meaning": "Mettre à niveau uniquement les paquets déjà installés."
       }
     ],
-    "notes": "Gestion des paquets logiciels"
+    "notes": "update actualise les index, upgrade met à niveau les paquets ; les sous-commandes ne sont pas des options. Vérifier les changements annoncés avant une opération de suppression ou de mise à niveau."
   },
   {
     "id": "v6-linux-administration-apt-cache",
@@ -6917,5 +6998,1726 @@ window.TSSR_COMMANDES_V6 = [
       }
     ],
     "notes": "Simulateur terminal"
+  },
+  {
+    "id": "v10-vim-221",
+    "name": "i",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Passer en insertion avant le curseur",
+    "syntax": "i",
+    "examples": [
+      "i"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; insertion à la position du curseur."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-222",
+    "name": "I",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Insérer au début de la ligne",
+    "syntax": "I",
+    "examples": [
+      "I"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; insertion au premier caractère non blanc."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-223",
+    "name": "a",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Insérer après le curseur",
+    "syntax": "a",
+    "examples": [
+      "a"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; insertion juste après le curseur."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-224",
+    "name": "A",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Insérer à la fin de la ligne",
+    "syntax": "A",
+    "examples": [
+      "A"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; insertion à la fin de la ligne."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-225",
+    "name": "o",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Ouvrir une ligne en dessous",
+    "syntax": "o",
+    "examples": [
+      "o"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; crée une ligne sous la ligne courante et passe en insertion."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-226",
+    "name": "O",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Ouvrir une ligne au-dessus",
+    "syntax": "O",
+    "examples": [
+      "O"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; crée une ligne au-dessus et passe en insertion."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-227",
+    "name": "Esc",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Revenir au mode normal",
+    "syntax": "Esc",
+    "examples": [
+      "Esc"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Quitte le mode insertion, visuel ou une commande en cours."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-228",
+    "name": "h",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Déplacer le curseur à gauche",
+    "syntax": "h",
+    "examples": [
+      "h"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; déplacement d’un caractère à gauche."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-229",
+    "name": "j",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Déplacer le curseur vers le bas",
+    "syntax": "j",
+    "examples": [
+      "j"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; déplacement d’une ligne vers le bas."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-230",
+    "name": "k",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Déplacer le curseur vers le haut",
+    "syntax": "k",
+    "examples": [
+      "k"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; déplacement d’une ligne vers le haut."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-231",
+    "name": "l",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Déplacer le curseur à droite",
+    "syntax": "l",
+    "examples": [
+      "l"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; déplacement d’un caractère à droite."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-232",
+    "name": "w",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Aller au mot suivant",
+    "syntax": "w",
+    "examples": [
+      "w"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; aller au début du mot suivant."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-233",
+    "name": "b",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Revenir au mot précédent",
+    "syntax": "b",
+    "examples": [
+      "b"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; aller au début du mot précédent."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-234",
+    "name": "e",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Aller à la fin du mot",
+    "syntax": "e",
+    "examples": [
+      "e"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; positionner le curseur à la fin du mot."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-235",
+    "name": "0",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Aller au début physique de la ligne",
+    "syntax": "0",
+    "examples": [
+      "0"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; se placer en colonne zéro."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-236",
+    "name": "^",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Aller au premier caractère non blanc",
+    "syntax": "^",
+    "examples": [
+      "^"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; ignorer les espaces initiaux."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-237",
+    "name": "$",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Aller à la fin de la ligne",
+    "syntax": "$",
+    "examples": [
+      "$"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; se placer au dernier caractère de la ligne."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-238",
+    "name": "gg",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Aller au début du fichier",
+    "syntax": "gg",
+    "examples": [
+      "gg"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; première ligne."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-239",
+    "name": "G",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Aller à la fin du fichier",
+    "syntax": "G",
+    "examples": [
+      "G"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; dernière ligne."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-240",
+    "name": "nG",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Aller à la ligne n",
+    "syntax": "42G",
+    "examples": [
+      "42G"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; remplacer 42 par le numéro de ligne."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-241",
+    "name": "Ctrl+f",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Descendre d’une page",
+    "syntax": "Ctrl+f",
+    "examples": [
+      "Ctrl+f"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; défilement d’un écran vers le bas."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-242",
+    "name": "Ctrl+b",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Remonter d’une page",
+    "syntax": "Ctrl+b",
+    "examples": [
+      "Ctrl+b"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; défilement d’un écran vers le haut."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-243",
+    "name": "x",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Supprimer le caractère sous le curseur",
+    "syntax": "x",
+    "examples": [
+      "x"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; supprime le caractère courant."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-244",
+    "name": "X",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Supprimer le caractère précédent",
+    "syntax": "X",
+    "examples": [
+      "X"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; supprime le caractère avant le curseur."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-245",
+    "name": "dd",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Supprimer la ligne courante",
+    "syntax": "dd",
+    "examples": [
+      "dd"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; la ligne supprimée est placée dans un registre."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-246",
+    "name": "3dd",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Supprimer trois lignes",
+    "syntax": "3dd",
+    "examples": [
+      "3dd"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; le nombre avant dd indique combien de lignes supprimer."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-247",
+    "name": "dw",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Supprimer jusqu’au début du mot suivant",
+    "syntax": "dw",
+    "examples": [
+      "dw"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; supprimer depuis le curseur jusqu’au début du mot suivant."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-248",
+    "name": "d$",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Supprimer jusqu’à la fin de la ligne",
+    "syntax": "d$",
+    "examples": [
+      "d$"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; supprimer du curseur à la fin de la ligne."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-249",
+    "name": "D",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Supprimer jusqu’à la fin de la ligne",
+    "syntax": "D",
+    "examples": [
+      "D"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; équivalent à d$."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-250",
+    "name": "yy",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Copier la ligne courante",
+    "syntax": "yy",
+    "examples": [
+      "yy"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; copie la ligne dans un registre."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-251",
+    "name": "3yy",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Copier trois lignes",
+    "syntax": "3yy",
+    "examples": [
+      "3yy"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; le nombre indique combien de lignes copier."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-252",
+    "name": "yw",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Copier jusqu’au mot suivant",
+    "syntax": "yw",
+    "examples": [
+      "yw"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; copie depuis le curseur jusqu’au début du mot suivant."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-253",
+    "name": "p",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Coller après le curseur",
+    "syntax": "p",
+    "examples": [
+      "p"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; colle après le curseur ou sous la ligne."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-254",
+    "name": "P",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Coller avant le curseur",
+    "syntax": "P",
+    "examples": [
+      "P"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; colle avant le curseur ou au-dessus de la ligne."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-255",
+    "name": "u",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Annuler la dernière modification",
+    "syntax": "u",
+    "examples": [
+      "u"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; annule une modification."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-256",
+    "name": "Ctrl+r",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Rétablir une modification annulée",
+    "syntax": "Ctrl+r",
+    "examples": [
+      "Ctrl+r"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; rétablit une action annulée avec u."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-257",
+    "name": ".",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Répéter la dernière modification",
+    "syntax": ".",
+    "examples": [
+      "."
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; rejoue la dernière commande de modification."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-258",
+    "name": "r",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Remplacer un caractère",
+    "syntax": "rX",
+    "examples": [
+      "rX"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; r suivi du caractère de remplacement."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-259",
+    "name": "R",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Activer le mode remplacement",
+    "syntax": "R",
+    "examples": [
+      "R"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; saisie en écrasant les caractères existants."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-260",
+    "name": "cc",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Changer toute la ligne",
+    "syntax": "cc",
+    "examples": [
+      "cc"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; efface le contenu de la ligne et passe en insertion."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-261",
+    "name": "cw",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Changer un mot",
+    "syntax": "cw",
+    "examples": [
+      "cw"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; supprime jusqu’au mot suivant et passe en insertion."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-262",
+    "name": "v",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Activer la sélection visuelle",
+    "syntax": "v",
+    "examples": [
+      "v"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; sélection caractère par caractère."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-263",
+    "name": "V",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Sélectionner des lignes",
+    "syntax": "V",
+    "examples": [
+      "V"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; sélection par lignes complètes."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-264",
+    "name": "Ctrl+v",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Sélectionner un bloc rectangulaire",
+    "syntax": "Ctrl+v",
+    "examples": [
+      "Ctrl+v"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; sélection en colonnes (mode visuel bloc)."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-265",
+    "name": ":w",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Enregistrer le fichier",
+    "syntax": ":w",
+    "examples": [
+      ":w"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; enregistre les modifications."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-266",
+    "name": ":q",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Quitter Vim",
+    "syntax": ":q",
+    "examples": [
+      ":q"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; quitte si aucune modification non enregistrée."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-267",
+    "name": ":q!",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Quitter sans enregistrer",
+    "syntax": ":q!",
+    "examples": [
+      ":q!"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; abandonne les modifications non enregistrées."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-268",
+    "name": ":wq",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Enregistrer et quitter",
+    "syntax": ":wq",
+    "examples": [
+      ":wq"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; sauvegarde puis quitte."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-269",
+    "name": ":x",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Enregistrer si nécessaire et quitter",
+    "syntax": ":x",
+    "examples": [
+      ":x"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; écrit si le fichier a été modifié puis quitte."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-270",
+    "name": ":w fichier",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Enregistrer sous un autre nom",
+    "syntax": ":w copie.txt",
+    "examples": [
+      ":w copie.txt"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; écrit le contenu dans le fichier indiqué."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-271",
+    "name": ":e fichier",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Ouvrir un fichier",
+    "syntax": ":e /etc/hosts",
+    "examples": [
+      ":e /etc/hosts"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; édite le fichier indiqué."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-272",
+    "name": ":set number",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Afficher les numéros de ligne",
+    "syntax": ":set number",
+    "examples": [
+      ":set number"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; active la numérotation."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-273",
+    "name": ":set nonumber",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Masquer les numéros de ligne",
+    "syntax": ":set nonumber",
+    "examples": [
+      ":set nonumber"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; désactive la numérotation."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-274",
+    "name": ":set autoindent",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Activer l’indentation automatique",
+    "syntax": ":set autoindent",
+    "examples": [
+      ":set autoindent"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; reprend l’indentation de la ligne précédente."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-275",
+    "name": ":set paste",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Activer le mode collage",
+    "syntax": ":set paste",
+    "examples": [
+      ":set paste"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; limite l’auto-indentation pendant le collage."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-276",
+    "name": ":set nopaste",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Désactiver le mode collage",
+    "syntax": ":set nopaste",
+    "examples": [
+      ":set nopaste"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; restaure le comportement normal."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-277",
+    "name": ":syntax on",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Activer la coloration syntaxique",
+    "syntax": ":syntax on",
+    "examples": [
+      ":syntax on"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; active la coloration syntaxique."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-278",
+    "name": ":set ignorecase",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Ignorer la casse lors des recherches",
+    "syntax": ":set ignorecase",
+    "examples": [
+      ":set ignorecase"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; rend la recherche insensible à la casse."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-279",
+    "name": ":set hlsearch",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Surligner les résultats de recherche",
+    "syntax": ":set hlsearch",
+    "examples": [
+      ":set hlsearch"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; surligne les correspondances."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-280",
+    "name": "/motif",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Rechercher vers l’avant",
+    "syntax": "/erreur",
+    "examples": [
+      "/erreur"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; / suivi du texte ou motif à chercher."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-281",
+    "name": "?motif",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Rechercher vers l’arrière",
+    "syntax": "?erreur",
+    "examples": [
+      "?erreur"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; ? suivi du motif recherché."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-282",
+    "name": "n",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Résultat suivant",
+    "syntax": "n",
+    "examples": [
+      "n"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; répète la recherche dans le même sens."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-283",
+    "name": "N",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Résultat précédent",
+    "syntax": "N",
+    "examples": [
+      "N"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode normal ; répète la recherche dans le sens opposé."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-284",
+    "name": ":%s/ancien/nouveau/g",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Remplacer toutes les occurrences",
+    "syntax": ":%s/ancien/nouveau/g",
+    "examples": [
+      ":%s/ancien/nouveau/g"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; % = toutes les lignes, g = toutes les occurrences par ligne."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-285",
+    "name": ":%s/ancien/nouveau/gc",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Remplacer avec confirmation",
+    "syntax": ":%s/ancien/nouveau/gc",
+    "examples": [
+      ":%s/ancien/nouveau/gc"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; c demande confirmation pour chaque remplacement."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-286",
+    "name": ":g/motif/d",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Supprimer les lignes correspondant à un motif",
+    "syntax": ":g/^#/d",
+    "examples": [
+      ":g/^#/d"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; supprime toutes les lignes correspondant au motif."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-vim-287",
+    "name": ":help",
+    "environment": "Vim",
+    "category": "Vim",
+    "description": "Ouvrir l’aide de Vim",
+    "syntax": ":help",
+    "examples": [
+      ":help"
+    ],
+    "options": [
+      {
+        "flag": "Mode et utilisation",
+        "meaning": "Mode commande ; :help sujet affiche la documentation du sujet."
+      }
+    ],
+    "notes": "Raccourci interne de Vim : à saisir dans le mode indiqué, sans lancer de commande shell."
+  },
+  {
+    "id": "v10-curated-htop",
+    "name": "htop",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Afficher et gérer les processus de façon interactive",
+    "syntax": "htop [options]",
+    "examples": [
+      "htop",
+      "htop -u root"
+    ],
+    "options": [
+      {
+        "flag": "-d DIXIEMES",
+        "meaning": "Définir le délai de rafraîchissement en dixièmes de seconde."
+      },
+      {
+        "flag": "-u UTILISATEUR",
+        "meaning": "Afficher uniquement les processus de cet utilisateur."
+      },
+      {
+        "flag": "-p PID1,PID2",
+        "meaning": "Limiter la vue aux PID indiqués."
+      },
+      {
+        "flag": "-s COLONNE",
+        "meaning": "Trier sur la colonne indiquée."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-pkill",
+    "name": "pkill",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Envoyer un signal aux processus correspondant à un nom ou motif",
+    "syntax": "pkill [options] motif",
+    "examples": [
+      "pkill -f mon_script.py",
+      "pkill -TERM nginx"
+    ],
+    "options": [
+      {
+        "flag": "-f",
+        "meaning": "Faire correspondre le motif à la ligne de commande complète."
+      },
+      {
+        "flag": "-u UTILISATEUR",
+        "meaning": "Limiter aux processus de cet utilisateur."
+      },
+      {
+        "flag": "-SIGNAL",
+        "meaning": "Choisir le signal envoyé ; TERM par défaut."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-killall",
+    "name": "killall",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Envoyer un signal aux processus portant un nom donné",
+    "syntax": "killall [options] nom",
+    "examples": [
+      "killall -s TERM firefox"
+    ],
+    "options": [
+      {
+        "flag": "-s SIGNAL",
+        "meaning": "Envoyer le signal indiqué."
+      },
+      {
+        "flag": "-i",
+        "meaning": "Demander confirmation avant chaque signal."
+      },
+      {
+        "flag": "-u UTILISATEUR",
+        "meaning": "Limiter aux processus de cet utilisateur."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-nice",
+    "name": "nice",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Lancer un processus avec une priorité d’ordonnancement ajustée",
+    "syntax": "nice [-n AJUSTEMENT] commande",
+    "examples": [
+      "nice -n 10 tar -cf archive.tar /var/log"
+    ],
+    "options": [
+      {
+        "flag": "-n AJUSTEMENT",
+        "meaning": "Appliquer une valeur de nice relative (priorité CPU) ; valeur par défaut 10."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-renice",
+    "name": "renice",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Modifier la valeur de nice d’un processus existant",
+    "syntax": "renice -n PRIORITE -p PID",
+    "examples": [
+      "renice -n 10 -p 1234"
+    ],
+    "options": [
+      {
+        "flag": "-n PRIORITE",
+        "meaning": "Définir la nouvelle valeur de nice."
+      },
+      {
+        "flag": "-p PID",
+        "meaning": "Cibler un identifiant de processus."
+      },
+      {
+        "flag": "-u UTILISATEUR",
+        "meaning": "Cibler les processus d’un utilisateur."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-jobs",
+    "name": "jobs",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Lister les tâches gérées par le shell courant",
+    "syntax": "jobs [options]",
+    "examples": [
+      "jobs",
+      "jobs -l"
+    ],
+    "options": [
+      {
+        "flag": "-l",
+        "meaning": "Afficher également les PID."
+      },
+      {
+        "flag": "-p",
+        "meaning": "Afficher seulement les PID des tâches."
+      },
+      {
+        "flag": "-r",
+        "meaning": "Afficher uniquement les tâches en cours."
+      },
+      {
+        "flag": "-s",
+        "meaning": "Afficher uniquement les tâches suspendues."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-fg",
+    "name": "fg",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Ramener une tâche en avant-plan",
+    "syntax": "fg [%numero]",
+    "examples": [
+      "fg %1"
+    ],
+    "options": [
+      {
+        "flag": "%numero",
+        "meaning": "Identifier le numéro de tâche affiché par jobs ; sans argument, tâche courante."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-bg",
+    "name": "bg",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Reprendre une tâche suspendue en arrière-plan",
+    "syntax": "bg [%numero]",
+    "examples": [
+      "bg %1"
+    ],
+    "options": [
+      {
+        "flag": "%numero",
+        "meaning": "Identifier la tâche à reprendre en arrière-plan."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-nohup",
+    "name": "nohup",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Lancer une commande en ignorant le signal SIGHUP",
+    "syntax": "nohup commande [arguments]",
+    "examples": [
+      "nohup ./sauvegarde.sh > sauvegarde.log 2>&1 &"
+    ],
+    "options": [
+      {
+        "flag": "commande",
+        "meaning": "Programme à lancer ; la sortie peut être redirigée vers nohup.out."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-unset",
+    "name": "unset",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Supprimer une variable ou une fonction du shell",
+    "syntax": "unset [options] nom",
+    "examples": [
+      "unset MA_VARIABLE",
+      "unset -f ma_fonction"
+    ],
+    "options": [
+      {
+        "flag": "-v",
+        "meaning": "Supprimer une variable shell."
+      },
+      {
+        "flag": "-f",
+        "meaning": "Supprimer une fonction shell."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-sleep",
+    "name": "sleep",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Suspendre l’exécution pendant une durée",
+    "syntax": "sleep DUREE[SUFFIXE]",
+    "examples": [
+      "sleep 5",
+      "sleep 2m"
+    ],
+    "options": [
+      {
+        "flag": "s",
+        "meaning": "Secondes (valeur par défaut)."
+      },
+      {
+        "flag": "m",
+        "meaning": "Minutes."
+      },
+      {
+        "flag": "h",
+        "meaning": "Heures."
+      },
+      {
+        "flag": "d",
+        "meaning": "Jours."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-shopt",
+    "name": "shopt",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Afficher ou modifier les options spécifiques de Bash",
+    "syntax": "shopt [-s|-u|-p] [option]",
+    "examples": [
+      "shopt -s nullglob",
+      "shopt -p globstar"
+    ],
+    "options": [
+      {
+        "flag": "-s",
+        "meaning": "Activer l’option spécifiée."
+      },
+      {
+        "flag": "-u",
+        "meaning": "Désactiver l’option spécifiée."
+      },
+      {
+        "flag": "-p",
+        "meaning": "Afficher les options sous une forme réutilisable dans un script."
+      },
+      {
+        "flag": "nullglob",
+        "meaning": "Motif sans correspondance remplacé par une liste vide."
+      },
+      {
+        "flag": "globstar",
+        "meaning": "Activer ** pour parcourir récursivement les répertoires."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-logname",
+    "name": "logname",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Afficher le nom de connexion initial de la session",
+    "syntax": "logname",
+    "examples": [
+      "logname"
+    ],
+    "options": [],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-tty",
+    "name": "tty",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Afficher le terminal associé à l’entrée standard",
+    "syntax": "tty [options]",
+    "examples": [
+      "tty"
+    ],
+    "options": [
+      {
+        "flag": "-s",
+        "meaning": "Mode silencieux ; le code de retour indique si l’entrée est un terminal."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-env",
+    "name": "env",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Afficher l’environnement ou exécuter une commande avec un environnement modifié",
+    "syntax": "env [options] [NOM=VALEUR] [commande]",
+    "examples": [
+      "env",
+      "env LANG=C date"
+    ],
+    "options": [
+      {
+        "flag": "-i",
+        "meaning": "Démarrer avec un environnement vide."
+      },
+      {
+        "flag": "-u NOM",
+        "meaning": "Supprimer une variable de l’environnement transmis."
+      },
+      {
+        "flag": "NOM=VALEUR",
+        "meaning": "Définir temporairement une variable pour la commande."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-cal",
+    "name": "cal",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Afficher un calendrier dans le terminal",
+    "syntax": "cal [options] [mois] [annee]",
+    "examples": [
+      "cal",
+      "cal -y 2026"
+    ],
+    "options": [
+      {
+        "flag": "-3",
+        "meaning": "Afficher le mois précédent, courant et suivant."
+      },
+      {
+        "flag": "-y",
+        "meaning": "Afficher toute l’année."
+      },
+      {
+        "flag": "-m",
+        "meaning": "Commencer la semaine le lundi sur les versions compatibles."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-logout",
+    "name": "logout",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Fermer un shell de connexion",
+    "syntax": "logout",
+    "examples": [
+      "logout"
+    ],
+    "options": [],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-readlink",
+    "name": "readlink",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Afficher la cible d’un lien symbolique ou résoudre un chemin",
+    "syntax": "readlink [options] chemin",
+    "examples": [
+      "readlink /bin/sh",
+      "readlink -f /bin/sh"
+    ],
+    "options": [
+      {
+        "flag": "-f",
+        "meaning": "Résoudre récursivement les liens symboliques et normaliser le chemin."
+      },
+      {
+        "flag": "-e",
+        "meaning": "Exiger que tous les composants du chemin existent."
+      },
+      {
+        "flag": "-n",
+        "meaning": "Ne pas ajouter de saut de ligne final."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-dos2unix",
+    "name": "dos2unix",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Convertir les fins de ligne CRLF Windows vers LF Unix",
+    "syntax": "dos2unix [options] fichier",
+    "examples": [
+      "dos2unix script.sh"
+    ],
+    "options": [
+      {
+        "flag": "-n SOURCE DESTINATION",
+        "meaning": "Écrire le résultat dans un nouveau fichier."
+      },
+      {
+        "flag": "-k",
+        "meaning": "Conserver la date du fichier d’origine."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-unix2dos",
+    "name": "unix2dos",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Convertir les fins de ligne LF Unix vers CRLF Windows",
+    "syntax": "unix2dos [options] fichier",
+    "examples": [
+      "unix2dos fichier.txt"
+    ],
+    "options": [
+      {
+        "flag": "-n SOURCE DESTINATION",
+        "meaning": "Écrire le résultat dans un nouveau fichier."
+      },
+      {
+        "flag": "-k",
+        "meaning": "Conserver la date du fichier d’origine."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-wall",
+    "name": "wall",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Envoyer un message aux utilisateurs connectés",
+    "syntax": "wall [options] [fichier]",
+    "examples": [
+      "echo \"Maintenance à 22 h\" | wall"
+    ],
+    "options": [
+      {
+        "flag": "-n",
+        "meaning": "Ne pas afficher la bannière de diffusion."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "v10-curated-lsb_release",
+    "name": "lsb_release",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Afficher les informations de la distribution Linux",
+    "syntax": "lsb_release [options]",
+    "examples": [
+      "lsb_release -a"
+    ],
+    "options": [
+      {
+        "flag": "-a",
+        "meaning": "Afficher toutes les informations disponibles."
+      },
+      {
+        "flag": "-d",
+        "meaning": "Afficher la description."
+      },
+      {
+        "flag": "-r",
+        "meaning": "Afficher la version."
+      }
+    ],
+    "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
   }
 ];

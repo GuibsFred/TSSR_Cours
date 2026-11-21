@@ -14,3 +14,12 @@
 @media(max-width:1100px){.cmdref-layout{grid-template-columns:minmax(190px,35%) minmax(0,1fr)}.cmdref-detail{padding:16px}.cmdref-item{padding:12px 12px 32px}.cmdref-item em{top:auto;bottom:7px;right:9px}.cmdref-detailhead{flex-wrap:wrap}}
 @media(max-width:760px){.cmdref{padding:10px 4px 24px}.cmdref-top{padding:8px 0 16px}.cmdref-top h1{font-size:27px}.cmdref-layout{grid-template-columns:minmax(0,1fr);gap:12px}.cmdref-list{max-height:260px}.cmdref-detail{max-height:none;padding:16px}.cmdref-item{padding:11px 92px 11px 12px}.cmdref-item em{top:12px;bottom:auto}.cmdref-detail h2{font-size:28px}.cmdref-detailhead{flex-wrap:wrap}.cmdref-code{align-items:flex-start}.cmdref-code button{align-self:flex-start}.cmdref-search{padding:10px}.cmdref-search input{font-size:14px}.cmdref-search>span:last-child{white-space:nowrap;font-size:10px}}
 @media(max-width:420px){.cmdref-search>span:last-child{display:none}.cmdref-filters button{padding:8px 11px}.cmdref-detail th,.cmdref-detail td{padding:9px 8px}.cmdref-detail td:first-child{white-space:normal}.cmdref-code{flex-wrap:wrap}.cmdref-code button{margin-left:auto}}
+
+/* V10 — légende et coloration sémantique validée : commande bleu, option/action rouge, argument jaune. */
+.cmdref .cmdref-cmd{color:#4acbff!important;font-weight:700}
+.cmdref .cmdref-opt,.cmdref td.cmdref-opt{color:#ff6478!important;font-weight:650}
+.cmdref .cmdref-arg{color:#ffd65a!important;font-weight:650}
+.cmdref-legend{display:flex;gap:18px;flex-wrap:wrap;font:600 12px/1.5 system-ui,sans-serif;margin:0 0 9px;opacity:.95}
+.cmdref-code code{white-space:pre-wrap;overflow-wrap:anywhere}
+.cmdref-tablewrap{overflow-x:auto}
+@media(max-width:600px){.cmdref-legend{gap:10px;font-size:11px}}
