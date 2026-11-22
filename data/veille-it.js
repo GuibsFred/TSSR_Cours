@@ -8,6 +8,14 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
+    "title": "Solution aux satellites fantômes, échec de la fusée Vulcan Centaur, nouvelle navette spatiale – le récap’ sciences de la semaine",
+    "summary": "Foundational Space a validé un mini-miroir permettant de localiser des satellites en panne. L'échec de la fusée Vulcan Centaur pourrait avoir des implications pour d'autres fusées américaines. La navette spatiale Dream Chaser vient d'obtenir le feu vert pour atterrir en Californie. C'est l'heure du récap' scientifique de la semaine sur Numerama !",
+    "url": "https://www.numerama.com/sciences/2380261-solution-aux-satellites-fantomes-echec-de-la-fusee-vulcan-centaur-nouvelle-navette-spatiale-le-recap-sciences-de-la-semaine.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "James Bond : on a classé les films de Daniel Craig du pire au meilleur pour célébrer Robert Pattinson",
     "summary": "Alors que Robert Pattinson s’apprête à enfiler le costume de 007 sous la direction de Denis Villeneuve, avec une approche du personnage de James Bond annoncée comme bien plus froide et brutale, l’heure est au bilan définitif pour son prédécesseur. En 15 ans et 5 films, Daniel Craig a dynamité les codes de la saga, entre coups d’éclat magistraux et sorties de route franchement agaçantes.",
     "url": "https://www.numerama.com/pop-culture/2379985-james-bond-on-a-classe-les-films-de-daniel-craig-du-pire-au-meilleur-film-pour-feter-robert-pattinson.html",
@@ -203,14 +211,6 @@ window.TSSR_NEWS = [
     "title": "Comment El Niño bouleverse le climat : les explications d’un climatologue (VIDÉO)",
     "summary": "Alors que l'épisode El Niño bouscule les moyennes thermiques globales, le climatologue Éric Guilyardi décrypte auprès de Numerama le fonctionnement de cette anomalie océanique majeure.",
     "url": "https://www.numerama.com/sciences/2380449-comment-el-nino-bouleverse-le-climat-les-explications-dun-climatologue-video.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Ce purificateur change de couleur en fonction de la qualité de l’air, et il baisse de prix pour le Black Friday",
-    "summary": "[Deal du jour] Après sa présentation à l’IFA de Berlin en septembre 2026, le purificateur d’air connecté Dreo 530S est déjà en promotion. Amazon le propose à 99,27 € au lieu de 139,99 €.",
-    "url": "https://www.numerama.com/tech/2340843-ce-nouveau-purificateur-change-de-couleur-selon-la-qualite-de-lair-que-vous-respirez-et-son-prix-baisse-deja.html",
     "date": "2026-11-20",
     "source": "Numerama",
     "category": "Cybersécurité"
