@@ -1,11 +1,91 @@
 window.TSSR_NEWS = [
   {
+    "title": "Grok dévoile l’entreprise que la CNIL n’avait pas nommée, Microsoft détaille sa panne géante, la Commission européenne piratée avec ARTEX : on vous raconte la semaine Cyberguerre",
+    "summary": "Trois actualités à retenir cette semaine dans le cyberespace, une sanction de la CNIL dont l’entreprise visée est restée anonyme moins d’une heure, la panne mondiale de Microsoft dont le rapport préliminaire explique pourquoi Teams a tenu pendant qu’Outlook tombait, et une cyberattaque contre la Commission européenne menée avec un outil de piratage piloté par des agents IA.",
+    "url": "https://www.numerama.com/cyberguerre/2380113-grok-devoile-lentreprise-que-la-cnil-navait-pas-nommee-microsoft-detaille-sa-panne-geante-la-commission-europeenne-piratee-avec-artex-on-vous-raconte-la-semaine-cyberguerre.html",
+    "date": "2026-11-22",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Lancement de GTA 6, Codes de triches, série Harry Potter qui se fait humilier, le recap Pop Culture de la semaine",
+    "summary": "Impossible d’y échapper cette semaine : le raz-de-marée GTA 6 écrase toute l’actualité pop culture sur son passage. Entre sa sortie événement sur consoles, les premières astuces pour arpenter Leonida et la liste complète des 61 codes de triche déjà dénichés par les joueurs, le mastodonte de Rockstar monopolise l’attention, laissant tout juste un peu de place au nouveau faux pas de HBO, dont le dernier extrait de la série Harry Potter se fait étriller sur les réseaux sociaux.",
+    "url": "https://www.numerama.com/tech/2380111-lancement-de-gta-6-codes-de-triches-serie-harry-potter-qui-se-fait-humilier-le-recap-pop-culture-de-la-semaine.html",
+    "date": "2026-11-22",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "On a ouvert Règne Delta, l’extension Pokémon qui fait du bien après la folie des 30 ans",
+    "summary": "Sortie le 6 novembre, l'extension Méga-Évolution – Règne Delta avait la lourde tâche de passer après la tornade des 30 ans de Pokémon. Avec Méga-Rayquaza en tête d'affiche, 141 cartes et une vraie envie de remettre le jeu au centre de la table, elle réussit son pari sans faire de bruit. Et ça fait du bien.",
+    "url": "https://www.numerama.com/pop-culture/2378763-on-a-ouvert-regne-delta-lextension-pokemon-qui-fait-du-bien-apres-la-folie-des-30-ans.html",
+    "date": "2026-11-22",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "« Internet cessera de fonctionner sans explication » : attention, le service Quad9 coupe en France ce mardi, vérifiez si vous l’utilisez",
+    "summary": "À partir du mardi 24 novembre 2026, le résolveur DNS gratuit Quad9 ne répondra plus aux internautes situés en France. Si vous l’avez configuré sur votre box, votre téléphone ou votre navigateur, puis oublié, il vous reste quelques jours pour le vérifier et le remplacer.",
+    "url": "https://www.numerama.com/tech/2379931-internet-cessera-de-fonctionner-sans-explication-attention-le-service-quad9-coupe-en-france-ce-mardi-verifiez-si-vous-lutilisez.html",
+    "date": "2026-11-22",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "C’est quoi Stryx AI, cette start-up française qui veut intercepter les drones ?",
+    "summary": "Qu’est-ce que Stryx AI ? Une start-up française, fondée en 2025 par Armand Thiberge, le créateur de Brevo, qui conçoit des drones chargés d’en intercepter d’autres. Elle vient de lever 7,7 millions d’euros pour les produire en France. Son argument est de rendre l’interception presque aussi bon marché que la cible. Mais le prix de son intercepteur reste inconnu.",
+    "url": "https://www.numerama.com/tech/2379779-cest-quoi-stryx-ai-cette-start-up-francaise-qui-veut-intercepter-les-drones.html",
+    "date": "2026-11-22",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Florence Pugh, Kristen Stewart… Quelle James Bond girl pour accompagner Robert Pattinson ?",
+    "summary": "Amazon MGM Studios a officialisé ce lundi 16 novembre le choix de Robert Pattinson pour succéder à Daniel Craig dans le rôle de James Bond. Un autre casting est désormais attendu : celui de l'actrice qui incarnera la James Bond girl.",
+    "url": "https://www.numerama.com/pop-culture/2380049-quelle-james-bond-girl-pour-accompagner-robert-pattinson.html",
+    "date": "2026-11-22",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Piratage de GTA 6, IPO d’Anthropic et Face Unlock sur iPhone Duo — le récap tech de la semaine",
+    "summary": "Cette semaine, GTA 6 était sur toutes les lèvres. Le jeu vidéo de Rockstar Games est enfin arrivé après 13 ans d'attente… et la communauté de l'émulation se bat désormais pour le pirater. En parallèle, la grosse actualité est l'entrée en bourse d'Anthropic, premier géant de l'IA coté à Wall Street. Enfin, Apple a surpris tout le monde en ajoutant de la reconnaisance faciale à l'iPhone Duo.",
+    "url": "https://www.numerama.com/pop-culture/2380403-piratage-de-gta-6-ipo-danthropic-et-face-unlock-sur-iphone-duo-le-recap-tech-de-la-semaine.html",
+    "date": "2026-11-22",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Les ambitions de DS et Alpine se heurtent au mur de la réalité",
+    "summary": "Les grandes ambitions, c’est bien. Mais l'autonomie avait un prix. DS et Alpine viennent de recevoir la facture. Les deux marques françaises sont au cœur de l'édito de la newsletter Watt Else du 19 novembre 2026.",
+    "url": "https://www.numerama.com/vroom/2379123-les-ambitions-de-ds-et-alpine-se-heurtent-au-mur-de-la-realite.html",
+    "date": "2026-11-22",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Suivez en direct le 10e vol de la fusée Ariane 6 dans sa version surpuissante pour lancer 36 satellites d’un coup",
+    "summary": "Ariane 6 doit emporter 36 satellites Amazon Leo pour son 10e vol, le lundi 23 novembre au plus tôt. Le tir arrive huit jours après la perte de 40 satellites de la même constellation sur une fusée américaine Vulcan, et il se suivra en direct.",
+    "url": "https://www.numerama.com/sciences/2375399-suivez-en-direct-le-10e-vol-de-la-fusee-ariane-6-dans-sa-version-surpuissante-pour-lancer-36-satellites-dun-coup.html",
+    "date": "2026-11-22",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Sysinternals : Autoruns arrive sur Linux et Process Explorer sur macOS",
     "summary": "Vous utilisez Autoruns sous Windows ? L'outil Sysinternals a désormais une version Linux, et Process Explorer débarque sur macOS. Voici ce qu'il faut retenir. Le post Sysinternals : Autoruns arrive sur Linux et Process Explorer sur macOS a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/sysinternals-autoruns-linux-process-explorer-macos/",
     "date": "2026-11-21",
     "source": "IT-Connect",
     "category": "Infrastructures"
+  },
+  {
+    "title": "Solution aux satellites fantômes, échec de la fusée Vulcan Centaur, nouvelle navette spatiale – le récap’ sciences de la semaine",
+    "summary": "Foundational Space a validé un mini-miroir permettant de localiser des satellites en panne. L'échec de la fusée Vulcan Centaur pourrait avoir des implications pour d'autres fusées américaines. La navette spatiale Dream Chaser vient d'obtenir le feu vert pour atterrir en Californie. C'est l'heure du récap' scientifique de la semaine sur Numerama !",
+    "url": "https://www.numerama.com/sciences/2380261-solution-aux-satellites-fantomes-echec-de-la-fusee-vulcan-centaur-nouvelle-navette-spatiale-le-recap-sciences-de-la-semaine.html",
+    "date": "2026-11-21",
+    "source": "Numerama",
+    "category": "Cybersécurité"
   },
   {
     "title": "James Bond : on a classé les films de Daniel Craig du pire au meilleur pour célébrer Robert Pattinson",
@@ -43,62 +123,6 @@ window.TSSR_NEWS = [
     "title": "Les Anneaux de pouvoir saison 3 : les petits secrets du générique, qui délaisse les énigmes cachées",
     "summary": "Depuis l'épisode 2 de la saison 3, mis en ligne le 11 novembre 2026 sur Prime Video, Les Anneaux de pouvoir a un nouveau générique, beaucoup plus sombre. Ses créateurs ont cette fois renoncé aux symboles cachés que les fans décortiquaient depuis 2022.",
     "url": "https://www.numerama.com/pop-culture/2376969-les-anneaux-de-pouvoir-saison-3-les-petits-secrets-du-generique-qui-abandonne-les-enigmes-cachees.html",
-    "date": "2026-11-21",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 : ça commence, accusé d’être woke, le jeu se fait torpiller par des milliers d’avis négatifs",
-    "summary": "À peine quarante-huit heures après sa sortie triomphale, ce jeudi 19 novembre sur PS5 et Xbox Series X/S, GTA 6 n'échappe pas au rituel toxique des grosses sorties vidéoludiques. La page Metacritic du jeu est déjà prise d'assaut par des milliers d'avis négatifs, dont une large partie dénonce un virage « woke ».",
-    "url": "https://www.numerama.com/pop-culture/2380577-gta-6-ca-commence-accuse-detre-woke-le-jeu-se-fait-torpiller-par-des-milliers-davis-negatifs.html",
-    "date": "2026-11-21",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Amazon brade d’énormes sets Lego pour le Black Friday : voici notre top 5",
-    "summary": "[Deal du jour] Des répliques géantes de vaisseaux de Star Wars et Star Trek, aux monuments emblématiques du cinéma, en passant par les univers de Marvel, Harry Potter ou encore Nintendo, Lego propose des sets spectaculaires issues de la pop culture. Le Black Friday est l’occasion de mettre la main sur ces Lego XXL à prix réduit.",
-    "url": "https://www.numerama.com/pop-culture/2379973-amazon-brade-denormes-sets-lego-pour-le-black-friday.html",
-    "date": "2026-11-21",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Maman, j’ai raté l’avion : 34 ans après, Macaulay Culkin accepte enfin un nouveau film, c’est officiel",
-    "summary": "Plus de trente ans après son dernier film dans la saga, Macaulay Culkin devrait retrouver au cinéma son rôle culte de Kevin McCallister. L’acteur de 46 ans développe officiellement chez Disney un nouveau volet de Maman, j’ai raté l’avion !, épaulé par le duo Seth Rogen et Evan Goldberg.",
-    "url": "https://www.numerama.com/pop-culture/2380567-maman-jai-rate-lavion-34-ans-apres-macaulay-culkin-accepte-enfin-un-nouveau-film-cest-officiel.html",
-    "date": "2026-11-21",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "L’humain contre-attaque sur l’hypothèse de Riemann : un chercheur aurait craqué l’énigme avant l’IA Claude",
-    "summary": "Deux démonstrations concurrentes de l’hypothèse de Riemann, l’un des problèmes ouverts les plus célèbres des mathématiques, ont été rendues publiques ce vendredi 20 novembre. Quelques heures après celle d’Anthropic, le président de l’American Mathematical Society a publié le brouillon d’un jeune chercheur de Stanford, écrit sans IA.",
-    "url": "https://www.numerama.com/sciences/2380525-lhumain-contre-attaque-sur-lhypothese-de-riemann-un-chercheur-aurait-craque-lenigme-avant-lia-claude.html",
-    "date": "2026-11-21",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 : guides, astuces et trouvailles, tout savoir sur le jeu (EN DIRECT)",
-    "summary": "Treize ans d’attente, à peine deux jours de jeu, et déjà des centaines de découvertes. Grand Theft Auto 6 (GTA 6) n’a pas fini de livrer ses secrets. Astuces pour bien démarrer, easter eggs, records et réactions, suivez en direct tout ce qu'il faut savoir sur Leonida.",
-    "url": "https://www.numerama.com/pop-culture/2375431-lancement-de-gta-6-en-direct-guides-astuces-secrets.html",
-    "date": "2026-11-21",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 : tétraplégique, il joue sans manette uniquement par la pensée",
-    "summary": "Moins de 48 heures après la sortie mondiale de GTA 6, la société d’Elon Musk s’offre une vitrine médiatique spectaculaire. Dans une vidéo publiée ce vendredi 20 novembre sur X, Neuralink montre l’un des participants à ses essais cliniques en train d’y jouer par la pensée.",
-    "url": "https://www.numerama.com/pop-culture/2380513-gta-6-tetraplegique-il-joue-sans-manette-uniquement-par-la-pensee.html",
-    "date": "2026-11-21",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Couper le chauffage ou allumer la chambre : la domotique Shelly lance son Black Friday avec 10 offres [Sponso]",
-    "summary": "Cet article a été réalisé en collaboration avec Shelly Le spécialiste des objets connectés Shelly prépare son Black Friday avec une liste de dix produits en promotion de ce jeudi 19 novembre au mercredi 2 décembre. Parmi eux, certains sont tournés vers la sécurité et le contrôle domotique.",
-    "url": "https://www.numerama.com/tech/2376187-couper-le-chauffage-ou-allumer-la-chambre-la-domotique-shelly-lance-son-black-friday-avec-10-offres.html",
     "date": "2026-11-21",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -190,30 +214,6 @@ window.TSSR_NEWS = [
     "date": "2026-11-20",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
-  },
-  {
-    "title": "Mario + Lapins Crétins Sparks of Hope devient très abordable sur Switch",
-    "summary": "Le Black Friday fait baisser le prix de Mario + The Lapins Crétins Sparks of Hope sur Switch. Un jeu de stratégie qui ne se prend jamais au sérieux (mais qui l'est !), et qui a de quoi séduire toute la famille.",
-    "url": "https://www.numerama.com/pop-culture/2380241-mario-lapins-cretins-sparks-of-hope-devient-tres-abordable-sur-switch.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Comment El Niño bouleverse le climat : les explications d’un climatologue (VIDÉO)",
-    "summary": "Alors que l'épisode El Niño bouscule les moyennes thermiques globales, le climatologue Éric Guilyardi décrypte auprès de Numerama le fonctionnement de cette anomalie océanique majeure.",
-    "url": "https://www.numerama.com/sciences/2380449-comment-el-nino-bouleverse-le-climat-les-explications-dun-climatologue-video.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Ce purificateur change de couleur en fonction de la qualité de l’air, et il baisse de prix pour le Black Friday",
-    "summary": "[Deal du jour] Après sa présentation à l’IFA de Berlin en septembre 2026, le purificateur d’air connecté Dreo 530S est déjà en promotion. Amazon le propose à 99,27 € au lieu de 139,99 €.",
-    "url": "https://www.numerama.com/tech/2340843-ce-nouveau-purificateur-change-de-couleur-selon-la-qualite-de-lair-que-vous-respirez-et-son-prix-baisse-deja.html",
-    "date": "2026-11-20",
-    "source": "Numerama",
-    "category": "Cybersécurité"
   },
   {
     "title": "Multiples vulnérabilités dans les produits Mitel (19 novembre 2026)",
