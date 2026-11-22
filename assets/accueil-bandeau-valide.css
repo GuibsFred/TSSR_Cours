@@ -1,0 +1,17 @@
+/* Bandeau personnel TSSR validé — styles strictement limités à l'accueil. */
+body.home-network .industrial-home .industrial-hero {
+  display:block!important;position:relative!important;
+  width:100%!important;min-height:0!important;height:auto!important;
+  aspect-ratio:2172 / 360!important;
+  padding:0!important;margin:0!important;
+  border:0!important;border-radius:0!important;
+  background: url('tssr-bandeau-personnel-valide.webp') center center / 100% 100% no-repeat!important;
+  box-shadow:none!important;overflow:hidden!important;
+}
+body.home-network .industrial-home .industrial-hero::before,
+body.home-network .industrial-home .industrial-hero::after {content:none!important;display:none!important}
+body.home-network .industrial-home .industrial-hero-copy,
+body.home-network .industrial-home .industrial-hero-stamp {display:none!important}
+@media (max-width:750px){
+ body.home-network .industrial-home .industrial-hero{aspect-ratio:2172 / 360!important;min-height:0!important}
+}
