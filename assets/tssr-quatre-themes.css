@@ -1,0 +1,42 @@
+/* TSSR — Habillages visuels globaux, aucune modification de la structure ni des données. */
+:root[data-tssr-skin="graphite"]{--skin-bg:#151b20;--skin-panel:#242e35;--skin-panel2:#1b252c;--skin-line:#526775;--skin-accent:#94b6c8;--skin-soft:#a9bac3;--skin-text:#e5edf1;--skin-shadow:rgba(0,0,0,.27);--skin-photo:grayscale(.32) saturate(.65) brightness(.78);--skin-overlay:rgba(24,35,43,.16);--skin-hue:0deg}
+:root[data-tssr-skin="atelier"]{--skin-bg:#1b1917;--skin-panel:#2c2824;--skin-panel2:#24211e;--skin-line:#77634e;--skin-accent:#d0a070;--skin-soft:#c4ad95;--skin-text:#f1e9dd;--skin-shadow:rgba(0,0,0,.32);--skin-photo:sepia(.23) saturate(.72) brightness(.75);--skin-overlay:rgba(55,32,13,.13);--skin-hue:0deg}
+:root[data-tssr-skin="mat"]{--skin-bg:#101c25;--skin-panel:#1b2c38;--skin-panel2:#142631;--skin-line:#3e687b;--skin-accent:#84b5c9;--skin-soft:#a7c7d2;--skin-text:#e6f0f4;--skin-shadow:rgba(0,0,0,.25);--skin-photo:saturate(.7) brightness(.82);--skin-overlay:rgba(8,29,44,.10);--skin-hue:0deg}
+:root[data-tssr-skin="retro"]{--skin-bg:#22251c;--skin-panel:#343a2b;--skin-panel2:#292f23;--skin-line:#77805d;--skin-accent:#d1ba75;--skin-soft:#c5c7a0;--skin-text:#ede8cc;--skin-shadow:rgba(0,0,0,.32);--skin-photo:sepia(.48) hue-rotate(21deg) saturate(.55) brightness(.68);--skin-overlay:rgba(45,49,23,.19);--skin-hue:0deg}
+/* Le sélecteur se place au centre du bandeau supérieur, à côté de la recherche. */
+header.top{position:relative!important}
+#tssr-skin-control{position:absolute;left:52%;top:50%;transform:translate(-50%,-50%);z-index:500;isolation:isolate;font-family:inherit}
+#tssr-skin-btn{border:1px solid var(--skin-line,#546978);border-radius:9px;padding:10px 15px;background:var(--skin-panel,#26323c);color:var(--skin-text,#fff);font:600 13px inherit;white-space:nowrap;cursor:pointer;box-shadow:0 3px 10px #0003}
+#tssr-skin-btn:hover,#tssr-skin-btn:focus-visible{border-color:var(--skin-accent);outline-offset:2px}
+#tssr-skin-menu{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);width:295px;max-width:calc(100vw - 20px);padding:12px;background:var(--skin-panel2);border:1px solid var(--skin-line);border-radius:12px;box-shadow:0 18px 45px #0009;color:var(--skin-text)}
+#tssr-skin-menu[hidden]{display:none!important}
+#tssr-skin-menu>strong{display:block;margin:3px 8px 10px;font-size:14px}
+#tssr-skin-menu button{display:flex;align-items:center;gap:12px;width:100%;padding:10px;border:1px solid transparent;border-radius:8px;text-align:left;background:transparent;color:var(--skin-text);cursor:pointer}
+#tssr-skin-menu button:hover,#tssr-skin-menu button[aria-checked="true"]{background:var(--skin-panel);border-color:var(--skin-line)}
+#tssr-skin-menu button i{width:17px;height:17px;flex:none;border-radius:4px;border:1px solid #ffffff45}
+#tssr-skin-menu button span{font-size:13px;font-weight:700}#tssr-skin-menu button small{display:block;font-size:11px;font-weight:400;color:var(--skin-soft);margin-top:3px}
+/* Habillage transversal, sans toucher aux grilles, dimensions, contenus et interactions. */
+html[data-tssr-skin] body{background:var(--skin-bg)!important;color:var(--skin-text)}
+html[data-tssr-skin] header.top,html[data-tssr-skin] aside.side{background:var(--skin-panel2)!important;border-color:var(--skin-line)!important;box-shadow:3px 0 15px var(--skin-shadow)}
+html[data-tssr-skin] #main,html[data-tssr-skin] #view{color:var(--skin-text)}
+html[data-tssr-skin] :is(.card,.panel,.module-card,.studio-card,.v83-chapter,.v83-chapters .mg-course-tile,.tssr-weather,.v23-coffee,.course-card,.stat-card,.v57-news-card,.news-card,.cmd-card,.command-card,.quiz-card,.revision-card){background-color:var(--skin-panel)!important;border-color:var(--skin-line)!important;box-shadow:0 5px 16px var(--skin-shadow)!important;color:var(--skin-text)}
+html[data-tssr-skin] :is(.card,.panel,.module-card,.studio-card,.course-card,.news-card,.cmd-card,.command-card,.quiz-card):hover{border-color:var(--skin-accent)!important;box-shadow:0 8px 22px var(--skin-shadow)!important}
+html[data-tssr-skin] :is(h1,h2,h3,h4,.sidecap,.card-title,.panel-title){text-shadow:none!important}
+html[data-tssr-skin] :is(.topbtn,.icon,button,.btn){text-shadow:none!important}
+html[data-tssr-skin] :is(table,thead,tbody,tr,td,th){border-color:var(--skin-line)!important}
+html[data-tssr-skin] :is(th,thead){background-color:var(--skin-panel2)!important}
+html[data-tssr-skin] :is(input,select,textarea){border-color:var(--skin-line);box-shadow:none}
+html[data-tssr-skin] :is(.progress,.progress-bar,.module-progress){box-shadow:none!important}
+html[data-tssr-skin] :is(.studio-hero,.v54-hero,.v81-hero,.course-hero,.catalogue-hero){box-shadow:0 8px 24px var(--skin-shadow)!important;border-color:var(--skin-line)!important}
+html[data-tssr-skin] :is(.studio-hero,.v54-hero,.v81-hero,.course-hero,.catalogue-hero)::after{opacity:.40!important}
+/* Photographies décoratives et visuels des modules : traitement adapté au thème. */
+html[data-tssr-skin] :is(.module-art img,.module-card img,.course-library-grid img,.v83-chapters img,.studio-scene img){filter:var(--skin-photo)!important;transition:filter .2s ease}
+html[data-tssr-skin] :is(.module-art img,.module-card img,.course-library-grid img):hover{filter:brightness(.95) saturate(.85)!important}
+html[data-tssr-skin="retro"] :is(.module-card,.panel,.card){border-radius:5px!important}
+html[data-tssr-skin="retro"] :is(.module-card,.panel,.card){background-image:repeating-linear-gradient(0deg,transparent 0,transparent 5px,#c6bd8010 6px)!important}
+html[data-tssr-skin="atelier"] :is(.module-card,.panel,.card){background-image:linear-gradient(145deg,#ffffff07,transparent 45%)!important}
+html[data-tssr-skin="graphite"] :is(.module-card,.panel,.card){background-image:linear-gradient(155deg,#ffffff09,transparent 50%)!important}
+/* Ne pas altérer les couleurs sémantiques du code et des commandes. */
+@media(max-width:1250px){#tssr-skin-control{position:static;transform:none;margin-left:auto}header.top{flex-wrap:wrap}#tssr-skin-menu{left:auto;right:0;transform:none}}
+@media(max-width:650px){#tssr-skin-btn{font-size:0;padding:9px 11px}#tssr-skin-btn::after{content:'⚙ Thèmes';font-size:12px}#tssr-skin-menu{right:-15px}}
+@media(prefers-reduced-motion:reduce){html[data-tssr-skin] *{transition-duration:0s!important}}
