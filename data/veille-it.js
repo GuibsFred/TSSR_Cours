@@ -1,5 +1,13 @@
 window.TSSR_NEWS = [
   {
+    "title": "Pourquoi des mini-jeux comme les fléchettes ont disparu de GTA 6 ?",
+    "summary": "Les fléchettes et le bowling, présents dans les précédents GTA, manquent à l'appel dans GTA 6. Le 19 novembre, Rockstar Games a expliqué pourquoi ces mini-jeux ont été sacrifiés.",
+    "url": "https://www.numerama.com/pop-culture/2382241-pourquoi-des-mini-jeux-comme-les-flechettes-ont-disparu-de-gta-6.html",
+    "date": "2026-11-23",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Grok dévoile l’entreprise que la CNIL n’avait pas nommée, Microsoft détaille sa panne géante, la Commission européenne piratée avec ARTEX : on vous raconte la semaine Cyberguerre",
     "summary": "Trois actualités à retenir cette semaine dans le cyberespace, une sanction de la CNIL dont l’entreprise visée est restée anonyme moins d’une heure, la panne mondiale de Microsoft dont le rapport préliminaire explique pourquoi Teams a tenu pendant qu’Outlook tombait, et une cyberattaque contre la Commission européenne menée avec un outil de piratage piloté par des agents IA.",
     "url": "https://www.numerama.com/cyberguerre/2380113-grok-devoile-lentreprise-que-la-cnil-navait-pas-nommee-microsoft-detaille-sa-panne-geante-la-commission-europeenne-piratee-avec-artex-on-vous-raconte-la-semaine-cyberguerre.html",
@@ -115,14 +123,6 @@ window.TSSR_NEWS = [
     "title": "Faut-il mettre fin à Dragon Quest sans Akira Toriyama ?",
     "summary": "Yasunori Mitsuda, le compositeur de Chrono Trigger, estime que la disparition d’Akira Toriyama pose une question difficile pour l’avenir de Dragon Quest : la saga peut-elle vraiment continuer sans l’un de ses piliers historiques ?",
     "url": "https://www.numerama.com/pop-culture/2377107-faut-il-mettre-fin-a-dragon-quest-sans-akira-toriyama.html",
-    "date": "2026-11-21",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Les Anneaux de pouvoir saison 3 : les petits secrets du générique, qui délaisse les énigmes cachées",
-    "summary": "Depuis l'épisode 2 de la saison 3, mis en ligne le 11 novembre 2026 sur Prime Video, Les Anneaux de pouvoir a un nouveau générique, beaucoup plus sombre. Ses créateurs ont cette fois renoncé aux symboles cachés que les fans décortiquaient depuis 2022.",
-    "url": "https://www.numerama.com/pop-culture/2376969-les-anneaux-de-pouvoir-saison-3-les-petits-secrets-du-generique-qui-abandonne-les-enigmes-cachees.html",
     "date": "2026-11-21",
     "source": "Numerama",
     "category": "Cybersécurité"
