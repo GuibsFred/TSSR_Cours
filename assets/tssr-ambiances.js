@@ -1,18 +1,15 @@
 (()=>{'use strict';
-const KEY='tssr-personnalise-site-v1';
-const themes=[['graphite','◈','Graphite & Acier','Acier froid et graphite','#8faebc'],['atelier','⚙','Atelier technologique','Cuivre, bronze et charbon','#c28b58'],['mat','▦','Industriel mat','Identité actuelle adoucie','#729ba7'],['retro','▤','Rétrofuturiste','Olive, ambre et métal patiné','#b8a16c']];
-let current='mat';try{current=localStorage.getItem(KEY)||'mat'}catch(e){}if(!themes.some(t=>t[0]===current))current='mat';
-function apply(id){current=id;document.documentElement.setAttribute('data-tssr-skin',id);try{localStorage.setItem(KEY,id)}catch(e){}document.querySelectorAll('#tssr-skin-menu [data-skin]').forEach(b=>b.setAttribute('aria-checked',String(b.dataset.skin===id)));}
-apply(current);
-function init(){const top=document.querySelector('header.top');if(!top||document.getElementById('tssr-skin-btn'))return;
-const box=document.createElement('div');box.id='tssr-skin-control';
-const button=document.createElement('button');button.type='button';button.id='tssr-skin-btn';button.textContent='⚙ Personnaliser le site';button.setAttribute('aria-haspopup','true');button.setAttribute('aria-expanded','false');
-const menu=document.createElement('div');menu.id='tssr-skin-menu';menu.hidden=true;menu.setAttribute('role','menu');
-const h=document.createElement('strong');h.textContent='Apparence du site';menu.append(h);
-for(const [id,icon,name,description,color] of themes){const b=document.createElement('button');b.type='button';b.dataset.skin=id;b.setAttribute('role','menuitemradio');b.setAttribute('aria-checked',String(current===id));const sw=document.createElement('i');sw.style.background=color;const label=document.createElement('span');label.textContent=icon+' '+name;const desc=document.createElement('small');desc.textContent=description;label.append(desc);b.append(sw,label);b.addEventListener('click',()=>{apply(id);close()});menu.append(b)}
-function close(){menu.hidden=true;button.setAttribute('aria-expanded','false')}
-button.addEventListener('click',()=>{menu.hidden=!menu.hidden;button.setAttribute('aria-expanded',String(!menu.hidden))});document.addEventListener('click',e=>{if(!box.contains(e.target))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-box.append(button,menu);top.append(box);
+const key='tssr-ambiance-v1',choices=[['chalet','☕','Montagne / Café','Lumières orange chaleureuses','#ffab49'],['cyber','💠','Moderne / Cyan','Éclairage bleu technologique','#37dcff'],['gaming','🔴','Cybersécurité / Rouge','Rouge intense','#ff3434'],['studio','🌙','Datacenter / Sombre','Éclairage sobre et professionnel','#d5e1ef']];
+let chosen='chalet';try{chosen=localStorage.getItem(key)||'chalet'}catch(e){}if(!choices.some(c=>c[0]===chosen))chosen='chalet';document.documentElement.dataset.tssrAmbiance=chosen;
+function init(){const top=document.querySelector('header.top');if(!top||document.getElementById('tssr-amb-btn'))return;
+const btn=document.createElement('button');btn.type='button';btn.id='tssr-amb-btn';btn.textContent='💡 Ambiance';btn.setAttribute('aria-label','Choisir une ambiance lumineuse');btn.setAttribute('aria-expanded','false');
+const menu=document.createElement('section');menu.id='tssr-amb-menu';menu.hidden=true;menu.setAttribute('aria-label','Ambiances du bureau');
+const title=document.createElement('h3');title.textContent='💡 Éclairage du bureau';menu.append(title);
+for(const [id,emoji,name,desc,color] of choices){const option=document.createElement('button');option.type='button';option.dataset.amb=id;const sw=document.createElement('span');sw.className='swatch';sw.style.background=color;option.append(sw,document.createTextNode(emoji+' '+name));const small=document.createElement('small');small.textContent=desc;option.append(small);option.addEventListener('click',()=>{chosen=id;document.documentElement.dataset.tssrAmbiance=id;try{localStorage.setItem(key,id)}catch(e){}refresh();menu.hidden=true;btn.setAttribute('aria-expanded','false')});menu.append(option)}
+const info=document.createElement('p');info.textContent='Le bandeau change réellement de décor lumineux. Votre choix est mémorisé.';menu.append(info);
+function refresh(){menu.querySelectorAll('button[data-amb]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.amb===chosen)))}refresh();
+const anchor=top.querySelector('#themeBtn');if(anchor)anchor.after(btn);else top.append(btn);document.body.append(menu);
+btn.addEventListener('click',()=>{menu.hidden=!menu.hidden;btn.setAttribute('aria-expanded',String(!menu.hidden))});document.addEventListener('click',e=>{if(!menu.hidden&&!menu.contains(e.target)&&!btn.contains(e.target)){menu.hidden=true;btn.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.hidden=true;btn.setAttribute('aria-expanded','false')}})
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
