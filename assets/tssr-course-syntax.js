@@ -10,6 +10,21 @@ function tokens(s){return s.match(/"(?:\\.|[^"\\])*"|'[^']*'|\s+|[^\s]+/g)||[]}
 function flags(s){return s.match(/(?:^|\s|\/)(--?[\w-]+)(?=\s|$|\/)/g)?.map(x=>x.trim().replace(/^\//,''))||[]}
 for(const row of rows){const code=row.querySelector('code');if(!code)continue;const cmd=code.textContent.trim().split(/\s+/)[0];known.add(cmd);const kind=/\[Cours\]\s*$/i.test(row.textContent)?'course':'extra';const prefix=row.textContent.split(code.textContent)[0];for(const f of flags(prefix))status.set(cmd+' '+f,kind);row.classList.add('ts110-row');const li=row.closest('li');if(li)li.classList.add('ts110-row');const walker=document.createTreeWalker(row,NodeFilter.SHOW_TEXT);let n,last;while(n=walker.nextNode())if(n.textContent.trim())last=n;if(last)last.textContent=last.textContent.replace(/\s*\[(Cours|Complément)\]\s*$/i,'');for(const el of row.querySelectorAll('strong,b')){if(/^\s*-/.test(el.textContent)){el.classList.add('ts110-'+kind);paint(el,kind);if(el.parentElement.tagName==='SPAN')paint(el.parentElement,kind)}} }
 for(const code of body.querySelectorAll('code')){if(code.closest('pre,table'))continue;const raw=code.textContent;const first=raw.trim().split(/\s+/)[0];if(!known.has(first)&&!/^\.\/[\w.-]+$/.test(first))continue;code.classList.add('ts110-code');for(const [k,v] of Object.entries({background:'transparent',border:'0',padding:'0','box-shadow':'none','border-radius':'0'}))code.style.setProperty(k,v,'important');let index=0;code.replaceChildren();for(const t of tokens(raw)){if(/^\s+$/.test(t)){code.append(document.createTextNode(t));continue}let cls='arg';if(index===0||(first==='sudo'&&index===1&&known.has(t)))cls='cmd';else if(/^--?[A-Za-z0-9]/.test(t)||t==='-'){cls=status.get(first+' '+t)||'opt';if(cls==='opt'&&/^-[A-Za-z]{2,}$/.test(t)){const parts=[...t.slice(1)].map(c=>status.get(first+' -'+c));if(parts.every(x=>x&&x===parts[0]))cls=parts[0];else if(parts.some(Boolean)){code.append(span('opt','-'));for(let i=0;i<parts.length;i++)code.append(span(parts[i]||'opt',t[i+1]));index++;continue}}}else if(t==='[options]')cls='opt';code.append(span(cls,t));index++}}
+// Build display-only grids from tagged option rows, preserving the original code tokens.
+for(const row of rows){
+ const code=row.querySelector('code.ts110-code'); if(!code)continue;
+ const range=document.createRange();range.selectNodeContents(row);range.setEndBefore(code);
+ const prefix=range.toString().trim();
+ const m=prefix.match(/^\s*(--?[\w-]+|-)\s*(?:\/\s*(--[\w-]+))?\s*[—–:-]?\s*$/);if(!m)continue;
+ const after=document.createRange();after.selectNodeContents(row);after.setStartAfter(code);
+ const desc=after.toString().replace(/^\s*[—–:]\s*/, '').trim();
+ const cmd=code.textContent.trim().split(/\s+/)[0];const kind=status.get(cmd+' '+m[1])||'course';
+ const option=span(kind,m[1]);option.classList.add('ts112-short');
+ const long=document.createElement('span');long.className='ts112-long';long.textContent=m[2]?'['+m[2].slice(2)+']':'';
+ const example=document.createElement('span');example.className='ts112-example';example.append(code.cloneNode(true));
+ const explanation=document.createElement('span');explanation.className='ts112-desc';explanation.textContent=desc;
+ row.replaceChildren(option,long,example,explanation);row.classList.add('ts112-grid');
+}
 body.dataset.ts110='1';
 }
 window.tssrEnhanceCourseSyntax=enhance;
