@@ -1,0 +1,4 @@
+V200 — refonte à partir de V114. Aucun changement aux fichiers de données.
+Accueil : reprise, compteurs existants, journal, commandes, progression, question quotidienne (4 questions tournantes), accès rapides. Nouveau thème Bleu pétrole par défaut ; anciens thèmes disponibles.
+Attention : avant de remplacer les fichiers du dépôt, conserver data/custom.json et les autres données éventuellement modifiées depuis V114. Aucun push effectué.
+Contrôle syntaxique JavaScript effectué ; navigateur bloqué par la politique de l'environnement, validation visuelle et fonctionnelle en conditions réelles non effectuée.
