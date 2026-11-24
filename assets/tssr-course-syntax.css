@@ -1,0 +1,9 @@
+/* Scoped to course reading, not editor, homepage, or revision extraction. */
+#view .tssr-vfinal-layout .tssr-v82-reading-body .ts110-heading{color:#329fc1!important;-webkit-text-fill-color:#329fc1!important}
+#view .tssr-vfinal-layout .tssr-v82-reading-body code.ts110-code{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;border-radius:0!important;white-space:normal!important;font-weight:700!important}
+#view .tssr-vfinal-layout .tssr-v82-reading-body .ts110-cmd{color:#329fc1!important;-webkit-text-fill-color:#329fc1!important}
+#view .tssr-vfinal-layout .tssr-v82-reading-body .ts110-course{color:#e05c68!important;-webkit-text-fill-color:#e05c68!important}
+#view .tssr-vfinal-layout .tssr-v82-reading-body .ts110-extra{color:#a38713!important;-webkit-text-fill-color:#a38713!important}
+#view .tssr-vfinal-layout .tssr-v82-reading-body .ts110-arg{color:#b66a20!important;-webkit-text-fill-color:#b66a20!important}
+#view .tssr-vfinal-layout .tssr-v82-reading-body .ts110-opt{color:inherit!important;-webkit-text-fill-color:currentColor!important}
+#view .tssr-vfinal-layout .tssr-v82-reading-body li.ts110-row{list-style:none!important;margin:5px 0!important;padding:0!important}
