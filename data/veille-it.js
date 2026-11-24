@@ -1,5 +1,165 @@
 window.TSSR_NEWS = [
   {
+    "title": "Black Friday 2026 chez UGREEN : notre sélection de chargeurs, batteries et NAS en promotion",
+    "summary": "Black Friday UGREEN : chargeurs Nexode, batterie externe, traceurs, webcam et NAS en promotion. Notre sélection des meilleures offres jusqu'au 30 novembre. Le post Black Friday 2026 chez UGREEN : notre sélection de chargeurs, batteries et NAS en promotion a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/black-friday-2026-chez-ugreen-notre-selection-de-chargeurs-batteries-et-nas-en-promotion/",
+    "date": "2026-11-24",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "privacyIDEA : un serveur MFA open source pour sécuriser Windows et l’Active Directory",
+    "summary": "Tuto privacyIDEA : installez un serveur MFA open source, connectez-le à l’Active Directory et ajoutez le MFA à l’ouverture de session Windows. Le post privacyIDEA : un serveur MFA open source pour sécuriser Windows et l’Active Directory a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/tuto-privacyidea-serveur-mfa-open-source/",
+    "date": "2026-11-24",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "RDMA over USB4 : Windows va permettre de relier plusieurs PC pour faire tourner de gros modèles d’IA",
+    "summary": "Microsoft prépare RDMA over USB4, une nouveauté Windows permettant de relier plusieurs PC en USB4 pour y répartir un gros modèle d'IA. Le post RDMA over USB4 : Windows va permettre de relier plusieurs PC pour faire tourner de gros modèles d’IA a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/rdma-over-usb4-windows-cluster-ia-locale/",
+    "date": "2026-11-24",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Neutralisé en 2019 par la gendarmerie, le ver USB Retadup revient pour distribuer CoffeeLoader",
+    "summary": "Démantelé en 2019 par la gendarmerie, le botnet du ver USB Retadup a été réactivé via ses anciens domaines. Il distribue désormais le loader CoffeeLoader. Le post Neutralisé en 2019 par la gendarmerie, le ver USB Retadup revient pour distribuer CoffeeLoader a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/retadup-ver-usb-coffeeloader/",
+    "date": "2026-11-24",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "rust-anything : cet outil open source aide les agents IA à réécrire vos applications en Rust",
+    "summary": "Grâce à rust-anything, vous pouvez piloter un agent IA pour réécrire en Rust une application, tout en vérifiant chaque étape pour vous assurer du résultat. Le post rust-anything : cet outil open source aide les agents IA à réécrire vos applications en Rust a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/rust-anything-reecrire-application-rust-agents-ia/",
+    "date": "2026-11-24",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Entra Connect Health : une faille exploitée a exposé les e-mails des admins de tenants Microsoft",
+    "summary": "Une faille dans l'API d'Entra Connect Health a été exploitée pour lire les métadonnées de tenants, dont les e-mails des admins. Voici ce qu'il faut savoir. Le post Entra Connect Health : une faille exploitée a exposé les e-mails des admins de tenants Microsoft a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/entra-connect-health-faille-exploitee-metadonnees-tenants/",
+    "date": "2026-11-24",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Règlementation : les entreprises doivent intégrer les contraintes dès la conception de leurs systèmes IT",
+    "summary": "Avec l'accumulation des réglementations européennes, de l'IA Act à NIS 2 en passant par le RGPD et DORA, la conformité devient un enjeu structurant pour les directions IT. Lors d'une conférence organisée au TechShow Paris le 18 novembre, trois intervenants ont plaidé pour une approche intégrée dès la conception des systèmes, tout en alertant sur la complexité du cadre réglementaire européen.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/reglementation-les-entreprises-doivent-integrer-les-contraintes-des-la-conception-de-leurs-systemes-it",
+    "date": "2026-11-24",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Le Skoda Elroq détrône le Tesla Model Y en Europe, mais le répit sera de courte durée",
+    "summary": "Avec 9 384 immatriculations, le Skoda Elroq a été la voiture électrique la plus vendue en Europe en octobre 2026, devant le Tesla Model Y, relégué à la quatrième place. Le SUV tchèque avait déjà réussi le même coup en juillet.",
+    "url": "https://www.numerama.com/vroom/2383341-le-skoda-elroq-detrone-le-tesla-model-y-en-europe-mais-le-repit-sera-de-courte-duree.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 : Rockstar a caché un portail secret qui plaira aux fans des vieux GTA",
+    "summary": "Cinq jours seulement après sa sortie, GTA 6 n’a pas fini de révéler ce qu’il cache sous le capot. Au milieu des clins d’œil disséminés dans Vice City, un youtubeur australien vient de mettre la main sur un easter egg d’une tout autre ampleur : un portail secret qui fait basculer le jeu dans les graphismes PS2 de 2002, au cœur du mythique Malibu Club.",
+    "url": "https://www.numerama.com/pop-culture/2383323-gta-6-rockstar-a-cache-un-portail-secret-qui-plaira-aux-fans-des-vieux-gta.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "L’alternative à la clim Midea Portasplit, qui chauffe aussi l’hiver, se trouve pour 500 € de moins pendant le Black Friday",
+    "summary": "[Deal du jour] Le Midea Portasplit n'est pas le seul climatiseur mobile à unité extérieure. Le Trotec PAC-S 3510 SH reprend la même architecture split, chauffe aussi l'hiver et coûte envrion 300 € de moins que la star de l'été.",
+    "url": "https://www.numerama.com/tech/2383101-lalternative-a-la-clim-midea-portasplit-qui-chauffe-aussi-lhiver-se-trouve-pour-500-e-de-moins-pendant-le-black-friday.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Ladybird, le navigateur qui veut affranchir le web de Google, est enfin là. Et son créateur veut qu’on le pirate",
+    "summary": "Le navigateur indépendant Ladybird est disponible en version d'essai depuis le 23 novembre 2026. Son créateur demande aux hackers d'y chercher des failles pour l'aider à le renforcer.",
+    "url": "https://www.numerama.com/tech/2383303-ladybird-le-navigateur-qui-veut-affranchir-le-web-de-google-est-enfin-la-et-son-createur-veut-quon-le-pirate.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 est déjà jouable sur PlayStation Portal sans PS5",
+    "summary": "Jouer en cloud gaming à GTA 6 n'est déjà plus une exclusivité Xbox. La PlayStation 5 et, surtout, le PlayStation Portal ont désormais accès à la technologie. Les abonnés PlayStation Plus Premium peuvent en profiter.",
+    "url": "https://www.numerama.com/pop-culture/2383295-gta-6-est-deja-jouable-sur-playstation-portal-sans-ps5.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Free Mobile lance un service de traduction des appels avec des résumés IA par SMS",
+    "summary": "Free lance Traduction Live, un service de traduction vocale instantanée intégré directement à son réseau mobile. Il s'agit d'une nouveauté du forfait Free Max, qui traduit les appels dans 10 langues et peut envoyer après coup un résumé de la conversation rédigé par une IA. Un service de clonage de la voix est même au programme.",
+    "url": "https://www.numerama.com/tech/2383301-free-mobile-lance-un-service-de-traduction-des-appels-avec-des-resumes-ia-par-sms.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 sur PC : le principal projet est abandonné, mais le jeu commence à démarrer",
+    "summary": "Quelques heures après la publication de l'exécutable de GTA 6 par Cyberleek, les premiers portages pirates ont commencé à faire tourner le jeu sur PC. Mais dans la nuit du lundi 23 au mardi 24 novembre 2026, Leonida, le projet le plus suivi, a disparu de GitHub et de Discord, et son créateur a jeté l'éponge. D'autres projets avancent rapidement grâce à l'IA.",
+    "url": "https://www.numerama.com/pop-culture/2383269-gta-6-sur-pc-le-principal-projet-est-abandonne-mais-le-jeu-commence-a-demarrer.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday 2026 : les offres à ne pas manquer ce mardi 24 novembre (EN DIRECT)",
+    "summary": "Avant le 27 novembre, les promotions continue d'arriver en lot chez Amazon, Fnac, Darty, Boulanger, Cdiscount et bien d'autres... Numerama fait le tri ici des meilleures affaires repérées chez les e-commerçants.",
+    "url": "https://www.numerama.com/tech/2382555-black-friday-week-les-meilleures-promos-en-direct.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "« Cyberpunk 2 est annulé », les développeurs d’autres studios sont en admiration devant GTA 6",
+    "summary": "Après avoir pulvérisé les records de ventes et signé le plus grand lancement de l'histoire de PlayStation, GTA 6 impressionne aussi ses pairs. Des développeurs d'autres studios ne cachent pas leur admiration devant le travail accompli par Rockstar.",
+    "url": "https://www.numerama.com/pop-culture/2383273-cyberpunk-2-est-annule-les-developpeurs-dautres-studios-sont-en-admiration-devant-gta-6.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Suivez en direct le 10e tir de la fusée Ariane 6 dans sa version surpuissante pour lancer 36 satellites d’un coup",
+    "summary": "Ariane 6 doit emporter 36 satellites Amazon Leo pour son 10e vol, désormais prévu ce mardi 24 novembre 2026, après l’arrêt du compte à rebours la veille à cause d'un problème technique au sol. Le tir arrive quelques jours après la perte de 40 satellites de la même constellation sur une fusée américaine Vulcan, et il sera à suivre en direct.",
+    "url": "https://www.numerama.com/sciences/2375399-suivez-en-direct-le-10e-tir-de-la-fusee-ariane-6-dans-sa-version-surpuissante-pour-lancer-36-satellites-dun-coup.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Uber s’attaque à SNCF Connect : les trains débarquent dans l’application (avec de belles remises)",
+    "summary": "À partir du 30 novembre, Uber proposera dans son application des billets TGV INOUI, TER, Intercités, OUIGO, Eurostar, Trenitalia, Renfe et Lyria. Le service Uber Trains concurrence directement SNCF Connect et Trainline avec une politique tarifaire agressive : au lancement, Uber permet de récupérer 10 % de ses dépenses en crédits Uber, valables sur ses autres services.",
+    "url": "https://www.numerama.com/tech/2383125-uber-sattaque-a-sncf-connect-les-trains-debarquent-dans-lapplication-avec-de-belles-remises.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Vous connaissez déjà la femme de Kratos dans la série God of War",
+    "summary": "Nouveau casting pour la série God of War à venir sur Amazon Prime Video. Comme c'est déjà le cas dans les jeux vidéo, Deborah Ann Woll interprétera Faye dans l'adaptation, aux côtés de Dave Bautista.",
+    "url": "https://www.numerama.com/pop-culture/2383263-vous-connaissez-deja-la-femme-de-kratos-dans-la-serie-god-of-war.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 a réalisé le plus grand lancement de l’histoire de PlayStation",
+    "summary": "Sony a annoncé dans un communiqué rempli de chiffres que GTA 6 avait réalisé le plus grand lancement de l'histoire de PlayStation. Le titre de Rockstar Games a fait mieux que cinq générations de jeux.",
+    "url": "https://www.numerama.com/pop-culture/2383253-gta-6-a-realise-le-plus-grand-lancement-de-lhistoire-de-playstation.html",
+    "date": "2026-11-24",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Kudu, FluentCleaner, BleachBit, etc… Lequel choisir pour remplacer CCleaner ?",
     "summary": "Par quoi remplacer CCleaner ? Kudu, FluentCleaner, BleachBit, PrivaZer, Glary Utilities et PC Manager comparés, avec la vidéo de démonstration. Le post Kudu, FluentCleaner, BleachBit, etc… Lequel choisir pour remplacer CCleaner ? a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/alternative-ccleaner-logiciels-nettoyage/",
@@ -168,118 +328,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "GTA 6 : pourquoi vos armes disparaissent (et la règle d’or pour ne plus jamais les perdre)",
-    "summary": "Fini l'arsenal sans fond des anciens GTA où le héros sortait un lance-roquettes de sa poche arrière. Dans GTA 6, Rockstar reprend une logique héritée de Red Dead Redemption 2 : tout ce que vous possédez vraiment ne se perd jamais, mais tout ce que vous « empruntez » dans la rue disparaît avec vous.",
-    "url": "https://www.numerama.com/pop-culture/2383153-gta-6-pourquoi-vos-armes-disparaissent-et-la-regle-dor-pour-ne-plus-jamais-les-perdre.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Pas d’usine, des dettes et du maïs : le fiasco de la supercar chinoise Hongqi S9",
-    "summary": "Cinq ans après sa présentation au salon de Shanghai, la supercar Hongqi S9, affichée à 1,45 million de dollars (environ 1,3 million d'euros), n'a pas été livrée comme prévu. Le projet se termine en liquidations judiciaires, en dettes impayées et en soupçons de fraude.",
-    "url": "https://www.numerama.com/vroom/2382947-pas-dusine-des-dettes-et-du-mais-le-fiasco-de-la-supercar-chinoise-hongqi-s9.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 reçoit sa première mise à jour depuis son lancement : quelles sont les nouveautés ?",
-    "summary": "Moins d'une semaine après son lancement, GTA 6 reçoit déjà une première mise à jour sur PS5, Xbox Series S et Xbox Series X. Aucune nouveauté à signaler, mais des bugs corrigés.",
-    "url": "https://www.numerama.com/pop-culture/2383017-gta-6-recoit-sa-premiere-mise-a-jour-depuis-son-lancement-quelles-sont-les-nouveautes.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 : nudistes, klaxons et pélicans : un ornithologue raconte sa traque des 60 espèces d’oiseaux",
-    "summary": "Oubliez les fusillades en boîte de nuit et les courses-poursuites à cinq (maintenant 6) étoiles : dès la sortie de GTA 6, un ornithologue amateur bien réel a détourné le blockbuster de Rockstar pour le transformer en simulateur de randonnée naturaliste. Eh oui, le jeu est plus chill qu'on peut le penser.",
-    "url": "https://www.numerama.com/pop-culture/2382919-gta-6-nudistes-klaxons-et-pelicans-un-ornithologue-raconte-sa-traque-des-60-especes-doiseaux.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Les regards se tournent vers P vs NP : après Riemann, l’IA s’attaque à une autre énigme à un million de dollars",
-    "summary": "Le 20 novembre 2026, un mathématicien d’Anthropic a annoncé avoir démontré avec Claude l’hypothèse de Riemann, l’une des énigmes les plus célèbres des mathématiques. À peine l’annonce faite, les regards se tournent vers P vs NP.",
-    "url": "https://www.numerama.com/tech/2382757-les-regards-se-tournent-vers-p-vs-np-apres-riemann-lia-sattaque-a-une-autre-enigme-a-un-million-de-dollars.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 sur PC : une version pirate est en ligne, mais le jeu ne se lance pas encore",
-    "summary": "Le leaker Cyberleek a tenu parole : l'exécutable manquant de la build Xbox de GTA 6 est en ligne depuis le lundi 23 novembre. En moins de deux heures, le projet open source Leonida a commencé à le faire tourner sur PC. Le jeu n'affiche encore aucune image, mais la course au portage pirate est lancée.",
-    "url": "https://www.numerama.com/tech/2382377-gta-6-sur-pc-une-version-pirate-des-aujourdhui.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Black Friday 2026 en direct : on a fouillé les promos pour ne garder que celles qui méritent votre argent",
-    "summary": "Le Black Friday tombe ce vendredi 27 novembre, mais les promotions, elles, ont commencé depuis des semaines. Parmi le grand lot de proudits remisés toutes ne se valent pas. Dans ce live, on ne retient que les offres qu'on a vérifiées et qui méritent votre argent, en vérifiant l'historique des prix.",
-    "url": "https://www.numerama.com/tech/2382555-black-friday-week-les-meilleures-promos-en-direct.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 : ne vous précipitez pas, vous pourriez le regretter",
-    "summary": "Des joueuses et des joueurs souffrent déjà d'une drôle de nostalgie sur GTA 6 après avoir terminé le premier chapitre. Ils regrettent leur petite vie tranquille dans les Keys, les habitudes de Jason et les doux moments passés avec Lucia. Un sentiment qui pousse même certains à envisager de recommencer l'aventure.",
-    "url": "https://www.numerama.com/pop-culture/2382855-gta-6-ne-vous-precipitez-pas-vous-pourriez-le-regretter.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "La carte Avantage de la SNCF tombe en promo dès aujourd’hui pour le Black Friday",
-    "summary": "La carte Avantage de la SNCF est rarement remisée, et c'est justement ce qui rend cette offre intéressante. Trainline la remet en promotion dès aujourd'hui pour le Black Friday.",
-    "url": "https://www.numerama.com/vroom/2382351-la-carte-avantage-de-la-sncf-tombe-en-promo-des-aujourdhui-pour-le-black-friday.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Un bug permet de jouer à GTA 6 à 60 fps (mais ne testez pas)",
-    "summary": "Sur Xbox Series X et Series S, GTA 6 permet une manipulation qui débloque le framerate, au-delà des 30 images par seconde. On a testé, et on ne recommande pas du tout.",
-    "url": "https://www.numerama.com/pop-culture/2382573-un-bug-permet-de-jouer-a-gta-6-a-60-fps-mais-ne-testez-pas.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Immense rebondissement : Jensen Huang redevient le patron de Nvidia",
-    "summary": "À la surprise générale, le conseil d'administration de Nvidia a annoncé le 23 novembre réintégrer Jensen Huang comme CEO, président et membre du conseil d'administration. Deux semaines seulement après ses aveux et 11 jours après sa démission, l'emblématique fondateur de Nvidia est de retour.",
-    "url": "https://www.numerama.com/tech/2382845-immense-rebondissement-jensen-huang-redevient-le-patron-de-nvidia.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "AirPods Pro 3 : Amazon brade les meilleurs écouteurs d’Apple pour le Black Friday",
-    "summary": "[Deal du jour] Pour la Black Friday Week et à quelques jours du jour-J, Amazon fait baisser le prix des AirPods Pro 3. Les écouteurs d'Apple, lancés à 249 €, passent à 188 €.",
-    "url": "https://www.numerama.com/tech/2382741-airpods-pro-3-amazon-brade-les-meilleurs-ecouteurs-dapple-pour-le-black-friday.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Il y a une nouvelle bande-annonce pour Avengers Doomsday : voici la vidéo",
-    "summary": "À moins d’un mois de sa sortie en salles, Avengers: Doomsday a droit à une nouvelle bande-annonce. Marvel Studios l’a mise en ligne pour le film qui marque le retour des frères Russo à la réalisation, et celui de Robert Downey Jr., cette fois dans le costume du Docteur Doom.",
-    "url": "https://www.numerama.com/pop-culture/2382751-il-y-a-une-nouvelle-bande-annonce-pour-avengers-doomsday-voici-la-video.html",
-    "date": "2026-11-23",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Sysinternals : Autoruns arrive sur Linux et Process Explorer sur macOS",
-    "summary": "Vous utilisez Autoruns sous Windows ? L'outil Sysinternals a désormais une version Linux, et Process Explorer débarque sur macOS. Voici ce qu'il faut retenir. Le post Sysinternals : Autoruns arrive sur Linux et Process Explorer sur macOS a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/sysinternals-autoruns-linux-process-explorer-macos/",
-    "date": "2026-11-21",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
     "title": "Multiples vulnérabilités dans les produits VMware (20 novembre 2026)",
     "summary": "De multiples vulnérabilités ont été découvertes dans les produits VMware. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et une injection SQL (SQLi). Google et Mandiant indiquent que la vulnérabilité...",
     "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1598/",
@@ -326,46 +374,6 @@ window.TSSR_NEWS = [
     "date": "2026-11-20",
     "source": "CERT-FR",
     "category": "Sécurité"
-  },
-  {
-    "title": "Windows 11 KB5132057 : la nouvelle fonction de recherche exécute des actions !",
-    "summary": "KB5132057 : nouvelle recherche Windows 11, boîte Exécuter modernisée et connexion web sur les postes hybrides. Voici l'essentiel à savoir sur cette mise à jour. Le post Windows 11 KB5132057 : la nouvelle fonction de recherche exécute des actions ! a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/windows-11-kb5132057-nouvelle-recherche-connexion-web/",
-    "date": "2026-11-20",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Intune : les fenêtres de maintenance pour Windows Update arrivent enfin !",
-    "summary": "Intune prend enfin en charge les fenêtres de maintenance pour Windows Update, un an après leur annonce à Ignite 2025. Voici ce qu'il faut savoir. Le post Intune : les fenêtres de maintenance pour Windows Update arrivent enfin ! a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/intune-fenetres-de-maintenance-windows-update/",
-    "date": "2026-11-20",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Black Friday 2026 : Office 2024 Pro Plus à 21.27€ et Windows 11 Pro à 12.25€",
-    "summary": "Pour le Black Friday 2026, notre partenaire GoDeal24 propose une nouvelle salve de promotions sur les licences de produits Microsoft (Windows, Office, etc.) et d'autres logiciels. Le post Black Friday 2026 : Office 2024 Pro Plus à 21.27€ et Windows 11 Pro à 12.25€ a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/bon-plan-les-licences-office-2021-et-windows-11-en-promotion/",
-    "date": "2026-11-20",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Mon top 5 des commandes Nmap que vous devez connaître",
-    "summary": "Découverte d’hôtes, détection de versions, audit SMB et HTTP, scan complet : 5 commandes Nmap pour cartographier et auditer un réseau comme un pentester. Le post Mon top 5 des commandes Nmap que vous devez connaître a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/mon-top-5-des-commandes-nmap-que-vous-devez-connaitre/",
-    "date": "2026-11-20",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "FastUnlock : une faille zero-day Windows 11 contourne l’écran de verrouillage et menace BitLocker",
-    "summary": "FastUnlock, nouvelle zero-day publiée par Nightmare Eclipse, contourne l'écran de verrouillage de Windows 11 via le Narrateur et menace BitLocker. Le post FastUnlock : une faille zero-day Windows 11 contourne l’écran de verrouillage et menace BitLocker a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/fastunlock-zero-day-windows-11-bitlocker-narrateur/",
-    "date": "2026-11-20",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
   },
   {
     "title": "IA au travail : l’usage fait l’adhésion, pas la confiance",
@@ -516,14 +524,6 @@ window.TSSR_NEWS = [
     "summary": "À l’approche de l’élection présidentielle de 2027, Numeum présente cinq propositions pour faire de la France et de l’Europe une puissance industrielle numérique. Le syndicat professionnel appelle notamment à porter les dépenses de recherche et développement à 4 % du PIB d’ici 2035, à mobiliser davantage la commande publique en faveur des entreprises technologiques et à renforcer la compétitivité européenne.",
     "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/presidentielle-2027-numeum-propose-cinq-mesures-pour-renforcer-la-souverainete-numerique-francaise",
     "date": "2026-11-19",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "IA en entreprise : Databricks révèle l’essor des modèles ouverts et du multi-fournisseur",
-    "summary": "Databricks dévoile son AI Index, un observatoire consacré à l’adoption, aux performances et aux coûts des modèles d’intelligence artificielle en entreprise. Fondée sur les données anonymisées de plus de 10 000 organisations utilisant Unity Gateway, cette étude met en évidence une diversification des fournisseurs et une progression des modèles à poids ouverts. Elle souligne également les écarts importants entre les coûts d’utilisation des différentes solutions d’IA.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/ia-en-entreprise-databricks-revele-l-essor-des-mod",
-    "date": "2026-11-18",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
   }
