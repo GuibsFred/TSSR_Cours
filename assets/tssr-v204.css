@@ -1,0 +1,28 @@
+/* V204 — dashboard only, independent of the course layout */
+html[data-tssr-design=petrole] body.home-network #view .industrial-home{--dash-gap:20px;--dash-line:#cbdbe3;--dash-card:#fff;--dash-inner:#edf4f7;--dash-accent:#087e89;--dash-bg:#eaf1f5;background:var(--dash-bg)!important;}
+html[data-tssr-design=petrole] body.dark.home-network #view .industrial-home{--dash-line:#3c5867;--dash-card:#203541;--dash-inner:#172d39;--dash-accent:#65d1d7;--dash-bg:#14232e;}
+html[data-tssr-design=petrole] body.home-network #view .v204-title{display:flex;align-items:center;gap:9px;margin:20px 0 10px;font-size:19px;font-weight:750;color:var(--ds-text)}
+.v204-title svg{width:24px;height:24px;color:var(--dash-accent)}
+html[data-tssr-design=petrole] body.home-network #view .v200-metrics{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:0!important;padding:14px 0!important;margin:0 0 20px!important;background:var(--dash-card)!important;border:1px solid var(--dash-line)!important;border-radius:12px!important;}
+html[data-tssr-design=petrole] body.home-network #view .v200-metrics>div{display:grid!important;grid-template-columns:44px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:12px!important;row-gap:4px!important;align-content:center;padding:6px 16px!important;border-left:1px solid var(--dash-line)!important;min-width:0;}
+html[data-tssr-design=petrole] body.home-network #view .v200-metrics>div:first-child{border-left:0!important}
+html[data-tssr-design=petrole] body.home-network #view .v200-metrics .metric-icon{width:42px!important;height:42px!important;color:var(--dash-accent)!important;}
+html[data-tssr-design=petrole] body.home-network #view .v200-metrics b{font-size:27px!important;line-height:1.05!important;color:var(--ds-text)!important;white-space:nowrap}
+html[data-tssr-design=petrole] body.home-network #view .v200-metrics .metric-label{font-size:12px!important;color:var(--ds-muted)!important;overflow-wrap:anywhere}
+html[data-tssr-design=petrole] body.home-network #view .industrial-workspace{gap:var(--dash-gap)!important;align-items:stretch!important;background:transparent!important;border:0!important;box-shadow:none!important;margin-top:0!important;padding:0!important;}
+html[data-tssr-design=petrole] body.home-network #view .industrial-workspace>.v54-panel{align-self:stretch!important;background:var(--dash-card)!important;border:1px solid var(--dash-line)!important;border-radius:14px!important;padding:18px!important;box-shadow:0 3px 9px #00000012!important;}
+html[data-tssr-design=petrole] body.home-network #view .industrial-workspace .v54-heading,html[data-tssr-design=petrole] body.home-network #view .industrial-workspace>section>h2{border-bottom:1px solid var(--dash-line)!important;padding:0 0 12px!important;margin:0 0 12px!important;min-height:38px;}
+html[data-tssr-design=petrole] body.home-network #view .industrial-workspace h2{display:flex;align-items:center;gap:8px;font-size:18px!important;line-height:1.25!important;}
+.v204-panel-icon{width:24px;height:24px;flex:none;color:var(--dash-accent)}
+html[data-tssr-design=petrole] body.home-network #view .v200-resume-body{background:var(--dash-inner)!important;border:0!important;border-radius:9px!important;margin:0!important;padding:14px!important;gap:12px!important;}
+html[data-tssr-design=petrole] body.home-network #view .v200-resume-body img{width:80px!important;height:80px!important;flex:none;object-fit:contain!important;}
+html[data-tssr-design=petrole] body.home-network #view .v203-recent button{background:transparent!important;border:0!important;border-bottom:1px solid var(--dash-line)!important;border-radius:0!important;padding:10px 2px!important;}
+html[data-tssr-design=petrole] body.home-network #view .industrial-journal .v57-article{border:0!important;border-bottom:1px solid var(--dash-line)!important;border-radius:0!important;background:transparent!important;grid-template-columns:66px minmax(0,1fr)!important;padding:9px 0!important;gap:10px!important;}
+html[data-tssr-design=petrole] body.home-network #view .industrial-journal .v57-news-icon{width:66px!important;height:58px!important;background:var(--dash-inner)!important;}
+html[data-tssr-design=petrole] body.home-network #view .industrial-journal .v57-news-icon img{width:58px;height:52px;}
+html[data-tssr-design=petrole] body.home-network #view .industrial-journal .v57-news-body h3{font-size:13px!important;line-height:1.35!important;}
+html[data-tssr-design=petrole] body.home-network #view .industrial-command-note{font-size:12px!important;line-height:1.6!important;background:transparent!important;}
+html[data-tssr-design=petrole] body.dark.home-network #view .industrial-command-note .v200-extra{color:#75d39b!important}
+html[data-tssr-design=petrole] body.dark.home-network #view .industrial-command-note .industrial-syntax-argument{color:#ffad69!important}
+@media(max-width:1250px){html[data-tssr-design=petrole] body.home-network #view .v200-metrics{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:12px!important}}
+@media(max-width:650px){html[data-tssr-design=petrole] body.home-network #view .v200-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}html[data-tssr-design=petrole] body.home-network #view .v200-metrics>div{grid-template-columns:30px minmax(0,1fr)!important;padding:6px 10px!important;gap:6px!important}html[data-tssr-design=petrole] body.home-network #view .v200-metrics .metric-icon{width:28px!important;height:28px!important}html[data-tssr-design=petrole] body.home-network #view .v200-metrics b{font-size:21px!important}}
