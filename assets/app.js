@@ -276,17 +276,19 @@ function tssrV82Reading(course,html){
   const level=Number(h.tagName.slice(1));
   return {id,label:h.textContent.trim(),level};
  });
- const tocMarkup=toc.length?'<div class="tssr-plan-scroll">'+toc.map((x,i)=>'<button type="button" class="tssr-plan-link '+(i===0?'active ':'')+'tssr-plan-level-'+x.level+'" data-tssr-anchor="'+x.id+'" title="'+esc(x.label)+'">'+esc(x.label)+'</button>').join('')+'</div>':'<p class="tssr-panel-empty">Le plan apparaîtra avec les titres du cours.</p>';
+ const tocMarkup=toc.length?'<div class="tssr-plan-scroll" id="tssr-plan-content">'+toc.map((x,i)=>'<button type="button" class="tssr-plan-link '+(i===0?'active ':'')+'tssr-plan-level-'+x.level+'" data-tssr-anchor="'+x.id+'" title="'+esc(x.label)+'">'+esc(x.label)+'</button>').join('')+'</div>':'<p class="tssr-panel-empty">Le plan apparaîtra avec les titres du cours.</p>';
  const commandMarkup=commands?tssrV82CommandMarkup(commands):'<p class="tssr-panel-empty">Les commandes à retenir apparaîtront ici après import.</p>';
  const essentialMarkup=essentials?DOMPurify.sanitize(marked.parse(essentials)):'<p class="tssr-panel-empty">Les points essentiels apparaîtront ici après import.</p>';
- const aside='<aside class="tssr-v82-aside"><section class="tssr-v82-panel tssr-plan"><h3>▤ Plan du cours</h3>'+tocMarkup+'</section><section class="tssr-v82-panel tssr-commands"><h3>⌘ Commandes essentielles</h3><div class="tssr-v82-panel-scroll">'+commandMarkup+'</div></section><section class="tssr-v82-panel tssr-essentials"><h3>✦ Points clés à retenir</h3><div class="tssr-v82-panel-scroll">'+essentialMarkup+'</div></section></aside>';
+ const aside='<aside class="tssr-v82-aside"><section class="tssr-v82-panel tssr-plan"><h3><button type="button" class="tssr-plan-toggle" aria-expanded="true" aria-controls="tssr-plan-content">▤ Plan du cours <span aria-hidden="true">▾</span></button></h3>'+tocMarkup+'</section><section class="tssr-v82-panel tssr-commands"><h3>⌘ Commandes essentielles</h3><div class="tssr-v82-panel-scroll">'+commandMarkup+'</div></section><section class="tssr-v82-panel tssr-essentials"><h3>✦ Points clés à retenir</h3><div class="tssr-v82-panel-scroll">'+essentialMarkup+'</div></section></aside>';
  return '<div class="tssr-v82-layout tssr-vfinal-layout"><section class="tssr-v82-reading"><div class="tssr-v82-reading-body">'+root.innerHTML+'</div></section>'+aside+'</div>';
 }
 function tssrActivatePlan(){
  const container=document.querySelector('.tssr-vfinal-layout');if(!container)return;
  const links=[...container.querySelectorAll('[data-tssr-anchor]')];
  const reading=container.querySelector('.tssr-v82-reading');
- const plan=container.querySelector('.tssr-plan'), heading=plan?.querySelector('h3');if(heading){heading.tabIndex=0;heading.setAttribute('role','button');heading.setAttribute('aria-expanded','true');const toggle=()=>{const closed=plan.classList.toggle('is-collapsed');heading.setAttribute('aria-expanded',String(!closed))};heading.addEventListener('click',toggle);heading.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}})}
+ const plan=container.querySelector('.tssr-plan'), toggle=plan?.querySelector('.tssr-plan-toggle'), list=plan?.querySelector('.tssr-plan-scroll');
+ if(toggle&&list){toggle.addEventListener('click',()=>{list.hidden=!list.hidden;toggle.setAttribute('aria-expanded',String(!list.hidden));toggle.querySelector('span').textContent=list.hidden?'▸':'▾';});}else if(toggle){toggle.disabled=true;}
+
  links.forEach(btn=>btn.addEventListener('click',()=>{
   const target=document.getElementById(btn.dataset.tssrAnchor);if(!target)return;
   target.scrollIntoView({behavior:'smooth',block:'start'});
