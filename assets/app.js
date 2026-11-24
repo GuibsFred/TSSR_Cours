@@ -17,7 +17,7 @@ const v57SortedNotes=notes=>{const u=v57Usage();return [...notes].sort((a,b)=>(u
 const v57Bookmarks=()=>v57Read('tssr-v57-bookmarks',[]);
 const v57SafeUrl=url=>/^https:\/\/[^\s]+$/i.test(String(url||''))?String(url):'#';
 const v57Icons={'Sécurité':'🛡️','Cybersécurité':'🔐','Infrastructures':'🖥️','Linux':'🐧','Réseaux':'🌐','Microsoft':'🪟','Windows':'🪟','Cloud':'☁️'};
-const v57NewsIcon=n=>v57Icons[n.category]||'📰';
+const v57NewsIcon=n=>{const t=(n.title||'')+' '+(n.category||'');const f=/Windows|Microsoft|Active Directory/i.test(t)?'windows':/Linux|Debian|Ubuntu/i.test(t)?'linux':/sécurité|MFA|cyber/i.test(t)?'security':/USB|NAS|stockage|chargeur/i.test(t)?'backup':/réseau|RDMA|routeur/i.test(t)?'network':'monitor';return `<img src="assets/icon3d-${f}.png" alt="">`};
 const v58CleanSummary=n=>{
  let summary=String(n.summary||'').trim();
  // Suppression uniquement des phrases automatiques ajoutées par notre collecteur.
@@ -526,7 +526,7 @@ if(section==='accueil'){
  let lastCourse=null;try{lastCourse=all().find(x=>x.id===localStorage.getItem('tssr-last-course-id')&&x.kind==='cours')}catch(e){}
  const news=(window.TSSR_NEWS||[]).slice(0,3);
  const groups=[['Linux','linux'],['PowerShell','powershell'],['CMD','cmd'],['Réseau','reseau']];
- const cmdExamples={linux:[['ip','a',''],['ip','r',''],['cat','','/etc/resolv.conf'],['systemctl','restart','nom.service'],['journalctl','-u','nom.service -f']],powershell:[['Get-Service','',''],['Get-Process','',''],['Test-Connection','-ComputerName','localhost']],cmd:[['ipconfig','/all',''],['ping','','127.0.0.1'],['netstat','-ano','']],reseau:[['ping','-c','4 8.8.8.8'],['traceroute','','8.8.8.8'],['nslookup','','example.org']]};
+ const cmdExamples={linux:[['ip','','a'],['ip','','r'],['cat','','/etc/resolv.conf'],['systemctl','','restart nom.service'],['journalctl','-u','nom.service -f']],powershell:[['Get-Service','',''],['Get-Process','',''],['Test-Connection','-ComputerName','localhost']],cmd:[['ipconfig','/all',''],['ping','','127.0.0.1'],['netstat','-ano','']],reseau:[['ping','-c','4 8.8.8.8'],['traceroute','','8.8.8.8'],['nslookup','','example.org']]};
  const cmdRows=Object.entries(cmdExamples).map(([key,items])=>`<div class="industrial-cmd-list" data-command-group="${key}" ${key==='linux'?'':'hidden'}>${items.map(([command,option,arg])=>`<div class="industrial-command"><code><span class="industrial-syntax-command">${esc(command)}</span> ${option?`<span class="industrial-syntax-option">${esc(option)}</span>`:''} ${arg?`<span class="industrial-syntax-argument">${esc(arg)}</span>`:''}</code><button type="button" class="industrial-copy" data-copy-command="${esc([command,option,arg].filter(Boolean).join(' '))}" title="Copier la commande">⧉</button></div>`).join('')}</div>`).join('');
  const roots200=[...new Set([...a.filter(x=>x.kind==='cours').map(x=>rootCategory(x.category)),...(management().folders||[]).map(f=>f.name)])];
  const qs200=(custom.quizzes||[]).filter(x=>x.questions?.length);let hist200={};try{hist200=JSON.parse(localStorage.getItem('tssr-quiz-history-v81')||'{}')}catch(e){}const done200=qs200.filter(x=>hist200[x.id]).length, finished200=roots200.filter(root=>moduleFinished(a.filter(x=>x.kind==='cours'&&rootCategory(x.category)===root),root)).length;
