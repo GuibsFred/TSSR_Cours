@@ -302,6 +302,7 @@ function tssrActivatePlan(){
 function tssrSetReading(course,html){
  const el=document.getElementById('articleContent');if(!el)return;
  el.innerHTML=tssrV82Reading(course,html);
+ if(window.tssrEnhanceCourseSyntax)window.tssrEnhanceCourseSyntax(el.querySelector('.tssr-v82-reading-body'));
  tssrActivatePlan();
 }
 
