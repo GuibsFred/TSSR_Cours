@@ -1,5 +1,117 @@
 window.TSSR_NEWS = [
   {
+    "title": "Rudder : une solution de gestion de configuration open source contre la dérive de vos serveurs",
+    "summary": "Rudder, outil open source de gestion de configuration : installation sur Linux, Audit puis Enforce, correction de la dérive et comparaison avec Ansible. Le post Rudder : une solution de gestion de configuration open source contre la dérive de vos serveurs a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/tuto-rudder-gestion-de-configuration/",
+    "date": "2026-11-25",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Bon plan IA : Mistral Vibe Pro est gratuit pendant 1 mois avec ce code promo",
+    "summary": "Mistral offre un mois de Vibe Pro aux Européens avec le code MISTRALVIBE. Une formule à 17,99 € par mois pour coder avec l'IA dans le terminal et VS Code. Le post Bon plan IA : Mistral Vibe Pro est gratuit pendant 1 mois avec ce code promo a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/bon-plan-mistral-vibe-pro-gratuit-1-mois/",
+    "date": "2026-11-25",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Cyberattaque Commission européenne : les noms et adresses e-mail des utilisateurs d’EU Academy ont fuité",
+    "summary": "La Commission européenne confirme que la cyberattaque assistée par l'IA a touché EU Academy : noms et e-mails des utilisateurs ont fuité. Le post Cyberattaque Commission européenne : les noms et adresses e-mail des utilisateurs d’EU Academy ont fuité a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/eu-academy-fuite-donnees-cyberattaque-commission-europeenne/",
+    "date": "2026-11-25",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "VMware vCenter et ESX : trois nouvelles failles critiques, cinq jours après la faille zero-day",
+    "summary": "Cinq jours après la zero-day CVE-2026-123890, Broadcom corrige 23 failles VMware, dont la CVE-2026-123903 dans vCenter et deux failles critiques dans ESX. Le post VMware vCenter et ESX : trois nouvelles failles critiques, cinq jours après la faille zero-day a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/vmware-vcenter-esx-cve-2026-123903-failles-novembre/",
+    "date": "2026-11-25",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Trois cofondateurs de xAI lancent Epochal, une start-up spécialisée dans l’IA prédictive",
+    "summary": "Guodong Zhang, Zihang Dai et Manuel Kroiss, trois cofondateurs de xAI, ont annoncé le 24 novembre 2026 le lancement d’Epochal, une start-up spécialisée dans les modèles d’intelligence artificielle capables d’anticiper des événements futurs. Son premier produit, Time Portal, permet aux agents IA d’accéder à une archive du Web couvrant près de trente ans, afin de s’entraîner à formuler des prévisions sans connaître à l’avance l’issue des événements étudiés.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/trois-cofondateurs-de-xai-lancent-epochal-une-start-up-specialisee-dans-l-ia-predictive",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Oracle envisage jusqu’à 1 390 suppressions de postes supplémentaires en Europe",
+    "summary": "Oracle préparerait une troisième vague de suppressions de postes en Europe en douze mois. Selon une note attribuée à son comité d’entreprise européen, révélée le 24 novembre 2026, l’éditeur américain envisagerait de supprimer jusqu’à 1 390 emplois supplémentaires dans l’Espace économique européen. Cette nouvelle restructuration s’inscrirait dans la réorientation du groupe vers les infrastructures cloud et l’intelligence artificielle. Les représentants des salariés demandent des preuves concrètes des gains de productivité avancés pour justifier ces réductions d’effectifs.",
+    "url": "https://www.lemondeinformatique.fr/it-direction/oracle-envisage-jusqu-a-1-390-suppressions-de-postes-supplementaires-en-europe",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "SpaceX-Tesla : cinq administrateurs négocient une fusion potentielle à 3 500 milliards de dollars",
+    "summary": "SpaceX et Tesla ont désigné cinq administrateurs pour négocier les conditions d'une éventuelle fusion qui pourrait valoriser l'ensemble à 3 500 milliards de dollars. Selon le Financial Times, les deux entreprises dirigées par Elon Musk visent un accord avant la fin de l'année 2026. Les discussions portent notamment sur la répartition du capital, la gouvernance du futur groupe et les complémentarités entre leurs activités dans l'intelligence artificielle, les infrastructures spatiales et la robotique. Aucun accord définitif n'a toutefois été annoncé.",
+    "url": "https://www.lemondeinformatique.fr/it-direction/spacex-tesla-cinq-administrateurs-negocient-une-fusion-potentielle-a-3-500-milliards-de-dollars",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Cyberattaques dopées à l’IA : IBM appelle les entreprises à anticiper les défaillances",
+    "summary": "Face à l’accélération des cyberattaques liée à l’intelligence artificielle, les entreprises doivent revoir leurs stratégies de cybersécurité. Pour Mark Hughes, responsable mondial des services de cybersécurité d’IBM Consulting, les attaquants exploitent désormais les vulnérabilités à une vitesse que les équipes de défense peinent à suivre. Dans un entretien accordé à The Next Web le 24 novembre 2026, le dirigeant appelle les organisations à se préparer aux défaillances de leurs systèmes plutôt qu’à miser uniquement sur leur prévention.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/cyberattaques-dopees-a-l-ia-ibm-appelle-les-entreprises-a-anticiper-les-defaillances",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Microsoft déclenche un « Code Red » après une panne majeure de Microsoft 365",
+    "summary": "Microsoft a déclenché une procédure d’urgence baptisée « Code Red » après la panne mondiale qui a affecté Exchange Online, Outlook, Teams et Copilot les 12 et 13 novembre 2026. Selon des notes internes consultées par Reuters, le groupe entend revoir ses méthodes de gestion des incidents et ramener à moins d’une heure le délai de résolution des futures interruptions majeures de ses services cloud.",
+    "url": "https://www.lemondeinformatique.fr/applications-developpement/microsoft-declenche-un-code-red-apres-une-panne-majeure-de-microsoft-365",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Cyberattaque contre Ipsos : le groupe Qilin revendique un vol de données sensibles",
+    "summary": "Le groupe de cybercriminels Qilin revendique une attaque contre Ipsos et affirme détenir des documents commerciaux appartenant au spécialiste français des études de marché. Plusieurs extraits de fichiers, qui mentionneraient notamment Roblox, KPMG et Ferrero, ont été publiés sur son site de divulgation. Ipsos avait reconnu, quelques jours auparavant, une intrusion dans l’un de ses systèmes informatiques internes, sans constater de perturbation de ses activités. L’ampleur de l’éventuelle fuite de données reste à déterminer.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/cyberattaque-contre-ipsos-le-groupe-qilin-revendique-un-vol-de-donnees-sensibles",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Collectivités territoriales : la cybersécurité passe par la mutualisation des moyens",
+    "summary": "Les petites communes peinent encore à disposer des compétences et des ressources nécessaires pour protéger leurs systèmes d'information. Devant une commission du Sénat, l'ANSSI et le GIP ACYMA ont plaidé pour un accompagnement de proximité et une meilleure mise en commun des moyens.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/collectivites-territoriales-la-cybersecurite-passe-par-la-mutualisation-des-moyens",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Anthropic lance Claude Ship pour automatiser la revue et la validation du code",
+    "summary": "Anthropic a dévoilé le 23 novembre 2026 Claude Ship, une suite d’agents d’intelligence artificielle destinée à automatiser la revue, la correction et l’approbation des modifications de code sur GitHub. Disponible en version bêta pour les entreprises abonnées aux offres Claude Team et Enterprise, cette solution vise à accélérer les cycles de développement logiciel tout en laissant aux équipes la maîtrise des règles de validation et des interventions humaines.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/anthropic-lance-claude-ship-pour-automatiser-la-revue-et-la-validation-du-code",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Sony a menti sur la version PS5 de GTA 6",
+    "summary": "Pendant toute la campagne marketing de GTA 6, Sony, partenaire de Rockstar Games, a martelé que la PS5 offrait la meilleure version. L'analyse de Digital Foundry montre pourtant que GTA 6 tourne mieux sur Xbox Series X que sur PS5 standard.",
+    "url": "https://www.numerama.com/pop-culture/2384141-sony-a-menti-sur-la-version-ps5-de-gta-6.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "La saison 3 des Anneaux de pouvoir se termine par une excellente nouvelle",
+    "summary": "Amazon MGM Studios a confirmé qu'il y aura bien une quatrième saison pour Le Seigneur des anneaux : Les Anneaux de pouvoir. La saison 3 vient tout juste de se terminer.",
+    "url": "https://www.numerama.com/pop-culture/2384133-la-saison-3-des-anneaux-de-pouvoir-se-termine-par-une-excellente-nouvelle.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "ElixirOffice : une suite bureautique open source qui s’adresse aux habitués de Microsoft Office",
     "summary": "ElixirOffice, la suite libre de Gaël Duval basée sur Euro-Office, reprend le ruban, les menus et les raccourcis de Microsoft Office. Voici ce qu'il faut savoir. Le post ElixirOffice : une suite bureautique open source qui s’adresse aux habitués de Microsoft Office a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/elixiroffice-suite-bureautique-libre-microsoft-office/",
@@ -176,7 +288,7 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Bientôt des BYD « made in France » ? Le géant chinois veut racheter l’usine des 4×4 Ineos",
+    "title": "BYD en passe d’acheter une usine en France : le Chinois choisit la Moselle pour s’installer en Europe",
     "summary": "BYD a confirmé être entré en négociations exclusives avec Ineos Automotive pour racheter son usine de Hambach, en Moselle. Inauguré en 1997 pour fabriquer la Smart, le site assemble aujourd'hui moins de 10 000 véhicules par an.",
     "url": "https://www.numerama.com/vroom/2383677-bientot-des-byd-made-in-france-le-geant-chinois-veut-racheter-lusine-des-4x4-ineos.html",
     "date": "2026-11-24",
@@ -209,7 +321,7 @@ window.TSSR_NEWS = [
   },
   {
     "title": "Auchan, Leclerc, Lidl : pourquoi ces pommes de terre sont devenues naturellement toxiques",
-    "summary": "Des pommes de terre rouges vendues dans toute la France chez Auchan, E.Leclerc et Lidl sont rappelées depuis le samedi 21 novembre 2026, à cause d'une teneur trop élevée en glycoalcaloïdes. Ce n'est pas un perticide. Ces substances toxiques sont en fait fabriquées par la pomme de terre elle-même.",
+    "summary": "Des pommes de terre rouges vendues dans toute la France chez Auchan, E.Leclerc et Lidl sont rappelées depuis le samedi 21 novembre 2026, à cause d'une teneur trop élevée en glycoalcaloïdes. Ce n'est pas un pesticide. Ces substances toxiques sont en fait fabriquées par la pomme de terre elle-même.",
     "url": "https://www.numerama.com/sciences/2383753-auchan-leclerc-lidl-pourquoi-ces-pommes-de-terre-sont-devenues-naturellement-toxiques.html",
     "date": "2026-11-24",
     "source": "Numerama",
@@ -219,22 +331,6 @@ window.TSSR_NEWS = [
     "title": "L’iPhone 17 Pro Max est aujourd’hui à un prix rarement vu pour le Black Friday",
     "summary": "[Deal du jour] Le modèle Pro Max de l'iPhone 17 bénéficie en ce moment pour le Black Friday d'une belle baisse de prix. Le smartphone haut de gamme d'Apple est à moins de 1 200 €.",
     "url": "https://www.numerama.com/tech/2212189-liphone-17-pro-max-est-aujourdhui-a-un-prix-rarement-vu-pour-le-black-friday.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Ils ont plié l’iPhone Duo 634 000 fois en un mois, voici son état",
-    "summary": "Pendant un mois, une machine a ouvert et refermé un iPhone Duo sans jamais s'arrêter. 634 000 pliages plus tard, voici ce qu'il reste du smartphone d'Apple.",
-    "url": "https://www.numerama.com/tech/2383601-ils-ont-plie-liphone-duo-634-000-fois-en-un-mois-voici-son-etat.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Voici les 10 meilleurs films à voir en famille sur Netflix, pendant les fêtes de 2026",
-    "summary": "Vous cherchez des long-métrages pour occuper vos soirées d'hiver ou vos vacances en compagnie de vos enfants et ados ? Alors voici le guide idéal, réunissant les 10 meilleurs films à découvrir en famille, sur Netflix.",
-    "url": "https://www.numerama.com/pop-culture/1874540-les-meilleurs-films-a-regarder-en-famille-sur-netflix.html",
     "date": "2026-11-24",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -251,38 +347,6 @@ window.TSSR_NEWS = [
     "title": "Windows Admin Center vMode : la migration de VMware ESXi vers Hyper-V arrive en préversion privée",
     "summary": "Microsoft intègre VM Conversion à Windows Admin Center vMode pour migrer des VM VMware ESXi vers Hyper-V. Une préversion privée qui change l'architecture. Le post Windows Admin Center vMode : la migration de VMware ESXi vers Hyper-V arrive en préversion privée a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/windows-admin-center-vmode-vm-conversion-vmware-hyper-v/",
-    "date": "2026-11-23",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Microsoft Edge : avec le Lockdown Mode, Microsoft veut bloquer les attaques",
-    "summary": "Microsoft teste dans Edge Canary un Lockdown Mode qui bloque WebGL et WebGPU pour contrer les attaques ciblées. Voici ce qu'il faut savoir sur ce mode. Le post Microsoft Edge : avec le Lockdown Mode, Microsoft veut bloquer les attaques a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/edge-lockdown-mode-webgl-webgpu/",
-    "date": "2026-11-23",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Black Friday GEEKOM : notre sélection d’offres sur les mini-PC, jusqu’à 30 % de réduction",
-    "summary": "GEEKOM profite du Black Friday 2026 pour proposer des offres sur sa gamme de mini PC, des modèles du quotidien jusqu'aux machines les plus performantes. Le post Black Friday GEEKOM : notre sélection d’offres sur les mini-PC, jusqu’à 30 % de réduction a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/black-friday-geekom-notre-selection-doffres-sur-les-mini-pc-jusqua-30-de-reduction/",
-    "date": "2026-11-23",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "GTA 6 sur PC : le projet Leonida tente de recompiler la version Xbox qui a fuité",
-    "summary": "Le projet open source Leonida veut faire tourner sous Windows la version Xbox de GTA 6 diffusée par Cyberleek. Mais le jeu ne démarre pas encore. Le post GTA 6 sur PC : le projet Leonida tente de recompiler la version Xbox qui a fuité a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/gta-6-pc-leonida-fuite-xbox-cyberleek/",
-    "date": "2026-11-23",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Black Friday Week : Mac mini M6, AirPods Pro 3, Alienware 15… le top des offres sur Amazon",
-    "summary": "Black Friday Week sur Amazon : Mac mini M6 à 889 €, Alienware 15 à 969 €, AirPods Pro 3 à 188 €... Voici les bons plans du lundi 23 novembre 2026. Le post Black Friday Week : Mac mini M6, AirPods Pro 3, Alienware 15… le top des offres sur Amazon a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/bon-plan-black-friday-week-amazon-2026/",
     "date": "2026-11-23",
     "source": "IT-Connect",
     "category": "Infrastructures"
@@ -315,54 +379,6 @@ window.TSSR_NEWS = [
     "title": "OpenAI propose des limites communes pour encadrer le développement des modèles d’IA",
     "summary": "Jakub Pachocki, directeur scientifique d’OpenAI, appelle les principaux laboratoires d’intelligence artificielle à définir des limites communes au développement de leurs modèles les plus puissants. Dans un essai publié le 22 novembre 2026, il propose de s’appuyer sur des indicateurs techniques partagés et de conditionner le franchissement de certains seuils à l’amélioration des outils de surveillance et de compréhension des systèmes d’IA.",
     "url": "https://www.lemondeinformatique.fr/donnees-ia/openai-propose-des-limites-communes-pour-encadrer-le-developpement-des-modeles-d-ia",
-    "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Cyberattaque : la Banque Delubac & Cie déjoue une tentative de fraude mais subit une fuite de données",
-    "summary": "La Banque Delubac & Cie a été victime d'une intrusion dans ses systèmes d'information, détectée le vendredi 20 novembre. Selon l'établissement ardéchois, les attaquants ont tenté de réaliser des opérations financières frauduleuses, sans y parvenir. L'intrusion a toutefois entraîné une fuite de données concernant une partie de sa clientèle, dont l'étendue n'est pas encore connue.",
-    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/cyberattaque-la-banque-delubac-cie-dejoue-une-tentative-de-fraude-mais-subit-une-fuite-de-donnees",
-    "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Comment La Poste, AXA et Keolis intègrent l’IA dans leurs organisations",
-    "summary": "Lors du Tech Show, Fatiha Gas (La Poste), Sandrine Girszyn (AXA) et Myriem Remal (Keolis) ont partagé leurs expériences sur l’intégration de l’IA en entreprise. Pour elles, l’enjeu est de faire évoluer les métiers sans remplacer l’humain ni oublier la responsabilité sociale des entreprises.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/comment-la-poste-axa-et-keolis-integrent-l-ia-dans-leurs-organisations",
-    "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Mourad Jaakou (Axway) : « L’API Management ne suffit plus à sécuriser les agents IA »",
-    "summary": "Avec la montée en puissance des agents IA autonomes dans les entreprises, les DSI font face à de nouveaux défis en matière de sécurité, de gouvernance et de maîtrise des coûts. Les dispositifs traditionnels d’API Management montrent désormais leurs limites face à ces nouveaux usages. Dans un entretien accordé au Monde Informatique, Mourad Jaakou, VP et General Manager d’Amplify chez Axway, revient sur les risques liés à l’IA agentique, les moyens de contrôler les actions des agents et les évolutions nécessaires des architectures informatiques pour accompagner leur industrialisation.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/mourad-jaakou-axway-l-api-management-ne-suffit-plus-a-securiser-les-agents-ia",
-    "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Anthropic atteint 1 600 Md$ de valorisation après son introduction en Bourse",
-    "summary": "Une semaine après son arrivée sur le Nasdaq, Anthropic affiche une valorisation de 1 600 milliards de dollars, sur une base entièrement diluée. L'éditeur du modèle Claude a réalisé une introduction en Bourse historique, accompagnée d'un placement privé auprès de plusieurs géants technologiques. Si l'opération constitue une manne financière pour ses premiers investisseurs, la volatilité du titre témoigne des interrogations qui entourent les valorisations du secteur de l'IA.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/anthropic-atteint-1-600-md-de-valorisation-apres-son-introduction-en-bourse",
-    "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Trump menace de taxer les datacenters américains construits à l'étranger",
-    "summary": "Donald Trump veut dissuader les entreprises américaines de construire des datacenters hors des États-Unis. Lors d'une conférence de presse à la Maison-Blanche, le 20 novembre 2026, le président américain a évoqué de lourdes sanctions fiscales pour les groupes qui investissent dans des infrastructures informatiques à l'étranger. Une menace qui pourrait compliquer les stratégies internationales des hyperscalers, notamment en Europe, même si aucun dispositif précis n'a encore été présenté.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/trump-menace-de-taxer-les-datacenters-americains-construits-a-l-etranger",
-    "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Bending Spoons rachète Mailchimp pour 3,68 Md$, cinq ans après son acquisition par Intuit",
-    "summary": "Le groupe italien Bending Spoons poursuit sa stratégie d'acquisitions dans les logiciels avec le rachat annoncé de Mailchimp pour 3,68 milliards de dollars. Une opération qui intervient cinq ans après l'acquisition de la plateforme d'email marketing par Intuit pour environ 12 milliards de dollars. Malgré une nette amélioration de sa rentabilité, Mailchimp doit composer avec l'érosion de sa clientèle payante.",
-    "url": "https://www.lemondeinformatique.fr/applications-developpement/bending-spoons-rachete-mailchimp-pour-3-68-md-cinq-ans-apres-son-acquisition-par-intuit",
     "date": "2026-11-23",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
@@ -470,22 +486,6 @@ window.TSSR_NEWS = [
     "date": "2026-11-20",
     "source": "CERT-FR",
     "category": "Sécurité"
-  },
-  {
-    "title": "IA au travail : l’usage fait l’adhésion, pas la confiance",
-    "summary": "Les salariés qui utilisent souvent l’IA en perçoivent plus nettement les bénéfices, mais ne lui accordent pas pour autant leur confiance. Dans son étude sur l’acceptabilité sociale de l’IA au travail, AlterNego met aussi en évidence le poids de l’accompagnement collectif et de règles d’usage explicites.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/ia-au-travail-l-usage-fait-l-adhesion-pas-la-confiance",
-    "date": "2026-11-20",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Mistral AI installe à Singapour son siège Asie-Pacifique, tourné vers l’IA souveraine",
-    "summary": "Mistral AI ouvre à Singapour son siège Asie-Pacifique. Conçu comme une extension de son hub scientifique, ce nouveau site sera consacré au développement de modèles d’IA souveraine pour les administrations, l’industrie de haute technologie et la robotique.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/mistral-ai-installe-a-singapour-son-siege-asie-pacifique-tourne-vers-l-ia-souveraine",
-    "date": "2026-11-20",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
   },
   {
     "title": "Multiples vulnérabilités dans PHP (19 novembre 2026)",
