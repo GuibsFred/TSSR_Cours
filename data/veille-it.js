@@ -1,5 +1,29 @@
 window.TSSR_NEWS = [
   {
+    "title": "Proxmox VE 9.3 est disponible : le SAN se gère désormais depuis l’interface web",
+    "summary": "Proxmox VE 9.3 est disponible : multipath et LVM partagé sur SAN se configurent depuis l'interface web, et les snapshots LVM passent en production. Le post Proxmox VE 9.3 est disponible : le SAN se gère désormais depuis l’interface web a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/proxmox-ve-9-3-nouveautes/",
+    "date": "2026-11-25",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Black Friday : le mini-PC VZMORE iX9 Max profite de 26 % de remise et atteint son prix le plus bas",
+    "summary": "Black Friday : le mini PC VZMORE iX9 Max (Core Ultra 9 185H, 24 Go, 1 To) passe à 839,16 € avec un code promo, soit jusqu'à 26 % de réduction sur Amazon. Le post Black Friday : le mini-PC VZMORE iX9 Max profite de 26 % de remise et atteint son prix le plus bas a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/bon-plan-vzmore-ix9-max-black-friday-2026/",
+    "date": "2026-11-25",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Panne Microsoft 365 : des e-mails jamais remis, Microsoft promet des changements",
+    "summary": "Panne Microsoft 365 : le rapport reconnaît que certains e-mails n'ont jamais été remis et Microsoft dévoile sa feuille de route pour éviter de futurs incidents. Le post Panne Microsoft 365 : des e-mails jamais remis, Microsoft promet des changements a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/panne-microsoft-365-rapport-final/",
+    "date": "2026-11-25",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
     "title": "Rudder : une solution de gestion de configuration open source contre la dérive de vos serveurs",
     "summary": "Rudder, outil open source de gestion de configuration : installation sur Linux, Audit puis Enforce, correction de la dérive et comparaison avec Ansible. Le post Rudder : une solution de gestion de configuration open source contre la dérive de vos serveurs a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/tuto-rudder-gestion-de-configuration/",
@@ -29,6 +53,54 @@ window.TSSR_NEWS = [
     "url": "https://www.it-connect.fr/vmware-vcenter-esx-cve-2026-123903-failles-novembre/",
     "date": "2026-11-25",
     "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Black Friday : les cybermenaces dopées à l'IA mettent les distributeurs sous pression",
+    "summary": "À l'approche du Black Friday, les enseignes doivent se préparer à une hausse des attaques visant leurs sites, leurs comptes clients et leurs infrastructures de paiement. L'IA accélère les capacités des attaquants, tandis qu'une part importante des petits et moyens distributeurs reste dépourvue d'assurance cyber.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/black-friday-les-cybermenaces-dopees-a-l-ia-mettent-les-distributeurs-sous-pression",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "ETIX investit 100 M€ dans ses data centers de proximité en France",
+    "summary": "À l'occasion du sommet Choose France – Édition France, organisé le 23 novembre 2026, l'opérateur français ETIX a annoncé un programme d'investissement de 100 millions d'euros pour développer ses centres de données de proximité. Ce plan doit permettre d'ajouter 12 MW de capacité informatique à son réseau grâce à quatre opérations réparties entre l'Île-de-France, les Hauts-de-France et l'Occitanie. L'investissement, financé par refinancement bancaire et fonds propres, vise à renforcer les infrastructures numériques destinées aux entreprises et aux acteurs publics régionaux.",
+    "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/etix-investit-100-m-dans-ses-data-centers-de-proximite-en-france",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "CrowdStrike et Zscaler veulent un kill switch unifié pour les agents IA",
+    "summary": "Le rachat de Zscaler par CrowdStrike doit permettre d'étendre au réseau le dispositif de coupure des agents IA malveillants ou incontrôlés, aujourd'hui limité aux terminaux. Annoncé le 23 novembre 2026, cet accord, qui valorise Zscaler à 43,9 Md$, vise à réunir détection, contrôle des accès et neutralisation au sein d'une même plateforme de sécurité.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/crowdstrike-et-zscaler-veulent-un-kill-switch-unifie-pour-les-agents-ia",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Yann LeCun accuse le patron d’Anthropic de vouloir freiner les modèles d’IA ouverts",
+    "summary": "Yann LeCun, pionnier de l’intelligence artificielle, professeur à l’université de New York et cofondateur d’Advanced Machine Intelligence Labs, s’en prend à Dario Amodei, directeur général d’Anthropic, qu’il accuse d’exagérer les dangers des modèles ouverts pour préserver son contrôle sur le secteur. Dans un message publié sur X le 22 novembre 2026, le chercheur dénonce une forme d’« obscurantisme médiéval ». Dans un billet publié en juillet, Dario Amodei affirmait au contraire ne pas défendre l’interdiction des modèles à poids ouverts, tout en réclamant des contrôles de sécurité pour les systèmes les plus puissants.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/yann-lecun-accuse-le-patron-d-anthropic-de-vouloir-freiner-les-modeles-d-ia-ouverts",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "L'IA générative risque d'amplifier l'infobésité au travail",
+    "summary": "Capable de synthétiser des documents et d'accélérer la rédaction, l'IA générative est présentée comme un moyen de réduire la surcharge informationnelle. Mais ces gains peuvent aussi alimenter une intensification du travail et réduire les interactions entre collaborateurs, alerte l'Observatoire de l'infobésité et de la collaboration numérique (OICN).",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/l-ia-generative-risque-d-amplifier-l-infobesite-au-travail",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Quantum Act : l’UE veut soutenir son industrie quantique avec un fonds souverain",
+    "summary": "La Commission européenne a présenté le 25 novembre 2026 son projet de Quantum Act, destiné à renforcer la recherche, la production et la sécurité des technologies quantiques dans l’Union européenne. Bruxelles souhaite notamment privilégier les fournisseurs européens dans certains marchés publics et faciliter le financement des entreprises du secteur. Le texte pose également les bases juridiques d’un Sovereign Tech Equity Fund, qui pourrait mobiliser jusqu’à 50 milliards d’euros selon le Financial Times et Reuters. Aucun montant officiel n’a toutefois été arrêté.",
+    "url": "https://www.lemondeinformatique.fr/it-direction/quantum-act-l-ue-veut-soutenir-son-industrie-quantique-avec-un-fonds-souverain",
+    "date": "2026-11-25",
+    "source": "Le Monde Informatique",
     "category": "Infrastructures"
   },
   {
@@ -96,17 +168,121 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Sony a menti sur la version PS5 de GTA 6",
-    "summary": "Pendant toute la campagne marketing de GTA 6, Sony, partenaire de Rockstar Games, a martelé que la PS5 offrait la meilleure version. L'analyse de Digital Foundry montre pourtant que GTA 6 tourne mieux sur Xbox Series X que sur PS5 standard.",
-    "url": "https://www.numerama.com/pop-culture/2384141-sony-a-menti-sur-la-version-ps5-de-gta-6.html",
+    "title": "Décollage d’Ariane 6 : que s’est-il passé avec l’incendie déclenché par la fusée et qui a approché une cuve d’hydrogène ?",
+    "summary": "Le décollage d'Ariane 6, ce mardi 24 novembre à Kourou, a mis le feu à environ cinq hectares de végétation autour du pas de tir. Avant d'être éteintes, les flammes se sont approchées d'une cuve de propane et d'hydrogène liquide.",
+    "url": "https://www.numerama.com/sciences/2385057-decollage-dariane-6-que-sest-il-passe-avec-lincendie-declenche-non-loin-dune-cuve-dhydrogene.html",
     "date": "2026-11-25",
     "source": "Numerama",
     "category": "Cybersécurité"
   },
   {
-    "title": "La saison 3 des Anneaux de pouvoir se termine par une excellente nouvelle",
-    "summary": "Amazon MGM Studios a confirmé qu'il y aura bien une quatrième saison pour Le Seigneur des anneaux : Les Anneaux de pouvoir. La saison 3 vient tout juste de se terminer.",
-    "url": "https://www.numerama.com/pop-culture/2384133-la-saison-3-des-anneaux-de-pouvoir-se-termine-par-une-excellente-nouvelle.html",
+    "title": "C’est quoi cette explosion qui panique les USA et les réseaux sociaux ?",
+    "summary": "À la veille de Thanksgiving, l’armée américaine va faire sauter 5 tonnes d’explosifs instables dans l’Iowa malgré les recours en justice et la crainte d’un nuage toxique chargé de plomb. Une opération à haut risque, qui a fait paniquer l'Iowa et les États voisins.",
+    "url": "https://www.numerama.com/tech/2384153-usa-cest-quoi-cette-explosion-qui-panique-liowa-et-les-reseaux-sociaux.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Pourquoi le premier jour rouge Tempo d’EDF tombe si tôt cette année, dès le 26 novembre ?",
+    "summary": "Ce jeudi 26 novembre 2026 sera le premier jour rouge Tempo de l'hiver, avec un kWh à 0,7295 € entre 6 heures et 22 heures. RTE n'en avait jamais placé un aussi tôt depuis qu'il choisit les couleurs, en 2014.",
+    "url": "https://www.numerama.com/sciences/2384971-pourquoi-le-premier-jour-rouge-tempo-dedf-tombe-si-tot-cette-annee-des-le-26-novembre.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "GTA 6 fait flamber les ventes de PS5 d’occasion, et les escrocs de Vinted en profitent",
+    "summary": "Alors que la sortie de GTA 6, le jeudi 19 novembre 2026, provoque une ruée sur les consoles et vide les rayons de PS5, les escrocs sautent sur l’occasion. Depuis quelques jours, une vieille arnaque particulièrement sournoise se propage sur Vinted.",
+    "url": "https://www.numerama.com/tech/2384719-gta-6-fait-flamber-les-ventes-de-ps5-doccasion-et-les-escrocs-de-vinted-en-profitent.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday : AirPods Pro 3, MacBook Air M5, AirTag 2… les offres Apple qui valent le coup avant Noël",
+    "summary": "Après une année marquée par les hausses de prix, le Black Friday permet enfin de rattraper quelques produits Apple à un tarif intéressant, des AirPods Pro 3 au Mac Studio M5 Max. Voici notre sélection des meilleures offres Apple.",
+    "url": "https://www.numerama.com/tech/2384687-black-friday-airpods-pro-3-macbook-air-m5-airtag-2-les-offres-apple-qui-valent-le-coup-avant-noel.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Pour Cyberpunk 2, CD Projekt Red ne veut pas nous faire attendre une éternité",
+    "summary": "CD Projekt Red a fait le point sur le développement de Cyberpunk 2, la suite de Cyberpunk 2077. Le studio polonais se veut rassurant : il a l'intention de moins faire attendre les joueuses et les joueurs.",
+    "url": "https://www.numerama.com/pop-culture/2384437-pour-cyberpunk-2-cd-projekt-red-ne-veut-pas-nous-faire-attendre-une-eternite.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "À J-2 du Black Friday, quelles sont les meilleures offres d’Amazon, Fnac et de Boulanger ?",
+    "summary": "J-2 avant le Black Friday 2026 : Amazon, la Fnac, Boulanger et Cdiscount multiplient les baisses de prix pendant la Black Friday Week. Nous trions en direct les meilleures offres tech, gaming et loisir.",
+    "url": "https://www.numerama.com/tech/2382555-black-friday-2026-les-meilleures-offres-en-direct-ce-mercredi-25-novembre.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "SNCF Intercités : pourquoi vous ne pouvez toujours pas réserver vos trajets en train pour le printemps",
+    "summary": "Les billets Intercités pour les trajets du 1er avril au 2 juillet 2027 seront mis en vente le 27 janvier, a indiqué SNCF Voyageurs à Numerama. Les TGV INOUI de la même période sont pourtant réservables depuis le 12 novembre. Pourquoi ce délai ?",
+    "url": "https://www.numerama.com/vroom/2384713-sncf-intercites-pourquoi-vous-ne-pouvez-toujours-pas-reserver-vos-trajets-en-train-pour-le-printemps.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Le Grand Rex ouvre une salle unique au monde, avec un détail qui change tout",
+    "summary": "Connu pour abriter la plus grande salle de cinéma d’Europe, le Grand Rex à Paris a ouvert le 18 novembre 2026 la Salle Émeraude, sa salle la plus intime. Ses 71 places sont entourées d’enceintes Devialet Phantom Ultimate en son surround. Selon le Grand Rex et Devialet, aucun cinéma n’en avait encore installé dans le monde.",
+    "url": "https://www.numerama.com/pop-culture/2384669-le-grand-rex-ouvre-une-salle-unique-au-monde-avec-un-detail-qui-change-tout.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday : mon astuce pour dénicher les meilleurs vélos électriques reconditionnés sur Upway",
+    "summary": "Depuis six ans, je recommande Upway à mes potes et à mes collègues, toujours avec à peu près le même lien de recherche. Cette année, j'ai enfin suivi mon propre conseil et acheté un vélo. Voici le filtre qui fait le tri à votre place, et pourquoi il fonctionne particulièrement bien pendant le Black Friday.",
+    "url": "https://www.numerama.com/vroom/2384709-black-friday-mon-astuce-pour-denicher-les-meilleurs-velos-electriques-reconditionnes-sur-upway.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Dans combien de bâtiments de GTA 6 peut-on vraiment entrer ?",
+    "summary": "D'après le décompte d'un joueur de GTA 6, on peut entrer dans plus de 1 500 bâtiments, soit près de 28 % du total. C'est plus du double des 700 intérieurs qu'annonçait une fuite en 2025.",
+    "url": "https://www.numerama.com/pop-culture/2384667-dans-combien-de-batiments-de-gta-6-peut-on-vraiment-entrer.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Sur le modèle de l’ISS, la Chine accueille son tout premier astronaute international",
+    "summary": "La station spatiale chinoise a accueilli son premier astronaute originaire d’un autre pays. Le pakistanais Zeeshan Ali a fait son arrivée dans Tiangong après le dernier vol habité Shenzhou-24.",
+    "url": "https://www.numerama.com/sciences/2384395-sur-le-modele-de-liss-la-chine-accueille-son-tout-premier-astronaute-international.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Le Black Friday permet de jouer sur smartphone comme sur console avec la manette Razer Kishi V3 Pro à prix réduit",
+    "summary": "[Deal du jour] La semaine du Black Friday commence tôt pour les joueuses et les joueurs sur mobile. Amazon affiche la Razer Kishi V3 Pro, une manette qui se branche en USB-C sur un smartphone ou une mini-tablette, à 132,09 € au lieu de 170 €.",
+    "url": "https://www.numerama.com/tech/2384205-le-black-friday-permet-de-jouer-sur-smartphone-comme-sur-console-avec-la-manette-razer-kishi-v3-pro-a-prix-reduit.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Quand les héros de GTA 6 deviennent de vrais mannequins sur les réseaux sociaux",
+    "summary": "Quelques jours seulement après son lancement sur consoles, GTA 6 ne se contente pas d’écraser les records vidéoludiques. Sur les réseaux sociaux, une tendance inattendue prend une ampleur folle : les joueurs utilisent la personnalisation ainsi que le mode photo pour transformer les rues en podium de haute couture.",
+    "url": "https://www.numerama.com/pop-culture/2384555-quand-les-heros-de-gta-6-deviennent-de-vrais-mannequins-sur-les-reseaux-sociaux.html",
+    "date": "2026-11-25",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "La menace s’étend : le système OSINT de la CIA piraté, probablement par le même outil IA que la Commission européenne",
+    "summary": "Selon le New York Times, des pirates ont compromis un système d'analyse en sources ouvertes de la CIA. Deux autres agences de renseignement américaines auraient été touchées.",
+    "url": "https://www.numerama.com/cyberguerre/2384431-la-menace-setend-le-systeme-osint-de-la-cia-pirate-probablement-par-le-meme-outil-ia-que-la-commission-europeenne.html",
     "date": "2026-11-25",
     "source": "Numerama",
     "category": "Cybersécurité"
@@ -176,14 +352,6 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Entra Connect Health : une faille exploitée a exposé les e-mails des admins de tenants Microsoft",
-    "summary": "Une faille dans l'API d'Entra Connect Health a été exploitée pour lire les métadonnées de tenants, dont les e-mails des admins. Voici ce qu'il faut savoir. Le post Entra Connect Health : une faille exploitée a exposé les e-mails des admins de tenants Microsoft a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/entra-connect-health-faille-exploitee-metadonnees-tenants/",
-    "date": "2026-11-24",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
     "title": "Free intègre la traduction des appels téléphoniques à son réseau mobile",
     "summary": "Avec Traduction Live, Free propose à ses abonnés haut de gamme de traduire en temps réel leurs conversations téléphoniques dans dix langues. Intégrée directement à son réseau mobile, cette solution s'appuie sur l'IA et ne nécessite pas de smartphone récent.",
     "url": "https://www.lemondeinformatique.fr/applications-developpement/free-integre-la-traduction-des-appels-telephoniques-a-son-reseau-mobile",
@@ -216,172 +384,36 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "Puces IA : Washington place Megaspeed et une filiale d'Alibaba sur liste noire",
-    "summary": "Le département américain du Commerce a inscrit Megaspeed, partenaire cloud de Nvidia basé à Singapour, ainsi qu'Apex Enterprise Solutions, une filiale d'Alibaba, sur sa liste noire commerciale le 23 novembre 2026. Cette décision intervient dans le cadre d'une enquête portant sur de possibles transferts de puces d'intelligence artificielle vers la Chine, en violation des restrictions américaines à l'exportation. Plusieurs sociétés liées à Megaspeed sont également visées.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/puces-ia-washington-place-megaspeed-et-une-filiale-d-alibaba-sur-liste-noire",
-    "date": "2026-11-24",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Règlementation : les entreprises doivent intégrer les contraintes dès la conception de leurs systèmes IT",
-    "summary": "Avec l'accumulation des réglementations européennes, de l'IA Act à NIS 2 en passant par le RGPD et DORA, la conformité devient un enjeu structurant pour les directions IT. Lors d'une conférence organisée au TechShow Paris le 18 novembre, trois intervenants ont plaidé pour une approche intégrée dès la conception des systèmes, tout en alertant sur la complexité du cadre réglementaire européen.",
-    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/reglementation-les-entreprises-doivent-integrer-les-contraintes-des-la-conception-de-leurs-systemes-it",
-    "date": "2026-11-24",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "6 bonnes raisons de donner sa chance à Blade Runner 2099, au même niveau que les films ?",
-    "summary": "Chef-d’œuvre SF des années 80, Blade Runner et son univers dystopique se déclinent dans une mini-série élégante. Portée par Michelle Yeoh et Hunter Schafer, Blade Runner 2099 débarque le 25 novembre sur Prime Video. Voici six bonnes raisons de ne pas la rater.",
-    "url": "https://www.numerama.com/pop-culture/2383635-6-bonnes-raisons-de-donner-sa-chance-a-blade-runner-2099-au-meme-niveau-que-les-films.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Black Friday : les offres inratables chez Amazon, Fnac, Boulanger à J-3 du grand jour",
-    "summary": "Les centres de données de l'IA ont englouti une bonne partie de la mémoire produite sur la planète, et la note a fini par atterrir dans nos rayons : smartphones, PC et même les consoles ont pris des euros cette année. À trois jours du Black Friday, nous fouillons les catalogues d'Amazon, de la Fnac, de Boulanger ou de Cdiscount pour repérer les bonne affaires. La tech d'abord, évidemment, mais aussi le gaming, les jeux de société, la maison et la mobilité.",
-    "url": "https://www.numerama.com/tech/2382555-black-friday-2026-les-meilleures-offres-en-direct.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Quelle était la grande promesse cyber du mois dernier ? Cyberguerre lance sa newsletter pour voir ce qu’il en reste",
-    "summary": "Depuis dix ans, Numerama promet de « comprendre le présent pour anticiper l'avenir ». Sa rubrique Cyberguerre lance une newsletter qui prend le chemin inverse, avec pour devise « Regarder en arrière pour mieux analyser le présent ». Elle paraîtra tous les quinze jours à partir du 25 novembre.",
-    "url": "https://www.numerama.com/cyberguerre/2384009-quelle-etait-la-grande-promesse-cyber-du-mois-dernier-cyberguerre-lance-sa-newsletter-pour-voir-ce-quil-en-reste.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Moins de 3 secondes de 0 à 100 km/h et faux son de 6 cylindres : la Porsche 718 Boxster électrique promet des sensations fortes",
-    "summary": "Porsche a publié les premiers chiffres du 718 Boxster 100 % électrique : moins de 3 secondes de 0 à 100 km/h et plus de 250 km/h en pointe. Le roadster de série sera présenté au premier trimestre 2027.",
-    "url": "https://www.numerama.com/vroom/2383907-moins-de-3-secondes-de-0-a-100-km-h-et-faux-son-de-6-cylindres-la-porsche-718-boxster-electrique-promet-des-sensations-fortes.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 : Rockstar a caché un très gros secret qui vient d’être découvert par les joueurs",
-    "summary": "Cinq jours seulement après sa sortie, GTA 6 n’a pas fini de révéler ce qu’il cache sous le capot. Au milieu des clins d’œil disséminés dans Vice City, un youtubeur australien vient de mettre la main sur un easter egg d’une tout autre ampleur : un portail secret qui fait basculer le jeu dans les graphismes PS2 de 2002, au cœur du mythique Malibu Club.",
-    "url": "https://www.numerama.com/pop-culture/2383323-gta-6-rockstar-a-cache-un-portail-secret-qui-plaira-aux-fans-des-vieux-gta.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Cet accessoire PlayStation vous permet de jouer à GTA 6 sans PS5 et il tombe en promo pour le Black Friday",
-    "summary": "[Deal du jour] Depuis lundi, GTA 6 se joue en streaming cloud sur le PlayStation Portal, sans PS5 à la maison. Ça tombe bien : l'accessoire de Sony profite d'une petite remise chez Cdiscount pour le Black Friday.",
-    "url": "https://www.numerama.com/tech/2383905-cet-accessoire-playstation-vous-permet-de-jouer-a-gta-6-sans-ps5-et-il-tombe-en-promo-pour-le-black-friday.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "GTA 6 : grâce à la radio de Vice City, Sylvie Vartan voit ses écoutes Spotify exploser de 2 500 %",
-    "summary": "Plus de 40 ans après sa sortie, Danse ta vie de Sylvie Vartan connaît un retour inattendu. Depuis son arrivée improbable dans la bande-son de GTA 6, le morceau a vu ses écoutes bondir de plus de 2 500 % sur Spotify. Comme quoi, le jeu de la décennie a également le pouvoir de ressusciter des tubes oubliés.",
-    "url": "https://www.numerama.com/pop-culture/2383783-gta-6-grace-a-la-radio-de-vice-city-sylvie-vartan-voit-ses-ecoutes-spotify-exploser-de-2-500.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "BYD en passe d’acheter une usine en France : le Chinois choisit la Moselle pour s’installer en Europe",
-    "summary": "BYD a confirmé être entré en négociations exclusives avec Ineos Automotive pour racheter son usine de Hambach, en Moselle. Inauguré en 1997 pour fabriquer la Smart, le site assemble aujourd'hui moins de 10 000 véhicules par an.",
-    "url": "https://www.numerama.com/vroom/2383677-bientot-des-byd-made-in-france-le-geant-chinois-veut-racheter-lusine-des-4x4-ineos.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "La fusée Ariane 6 livre enfin les 36 satellites d’Amazon : voici les plus belles images du décollage",
-    "summary": "Ariane 6 a décollé de Kourou ce mardi 24 novembre 2026 à 8h14, heure locale, avec 36 satellites Amazon Leo à bord. Le tir est parti à la dernière minute de la fenêtre de lancement, au lendemain d'un report.",
-    "url": "https://www.numerama.com/sciences/2383831-la-fusee-ariane-6-livre-enfin-les-36-satellites-damazon-voici-les-plus-belles-images-du-decollage.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Un coup de pouce à 1 670 km/h : le secret de la Guyane française pour envoyer des fusées en orbite",
-    "summary": "La Guyane française est depuis les années 1960 la principale base spatiale de la France et de l'Europe. Un emplacement lointain par rapport au Vieux Continent, mais qui ne doit rien au hasard. Plusieurs atouts de la région ont pesé dans la balance.",
-    "url": "https://www.numerama.com/sciences/2085685-un-coup-de-pouce-a-1-670-km-h-le-secret-de-la-guyane-francaise-pour-envoyer-des-fusees-en-orbite.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Ariane 6 capable d’envoyer des astronautes européens d’ici 2036 : le plan existe, et la décision est pour bientôt",
-    "summary": "Des astronautes européens au sommet d'une Ariane 6 vers 2036 ? Interrogé pendant la campagne du vol VA271, le directeur du programme Ariane de l'ESA renvoie la décision aux ministres, qui seront réunis à Rome le 15 décembre 2026.",
-    "url": "https://www.numerama.com/sciences/2382731-ariane-6-capable-denvoyer-des-astronautes-europeens-dici-2036-le-plan-existe-et-la-decision-est-pour-bientot.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Auchan, Leclerc, Lidl : pourquoi ces pommes de terre sont devenues naturellement toxiques",
-    "summary": "Des pommes de terre rouges vendues dans toute la France chez Auchan, E.Leclerc et Lidl sont rappelées depuis le samedi 21 novembre 2026, à cause d'une teneur trop élevée en glycoalcaloïdes. Ce n'est pas un pesticide. Ces substances toxiques sont en fait fabriquées par la pomme de terre elle-même.",
-    "url": "https://www.numerama.com/sciences/2383753-auchan-leclerc-lidl-pourquoi-ces-pommes-de-terre-sont-devenues-naturellement-toxiques.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "L’iPhone 17 Pro Max est aujourd’hui à un prix rarement vu pour le Black Friday",
-    "summary": "[Deal du jour] Le modèle Pro Max de l'iPhone 17 bénéficie en ce moment pour le Black Friday d'une belle baisse de prix. Le smartphone haut de gamme d'Apple est à moins de 1 200 €.",
-    "url": "https://www.numerama.com/tech/2212189-liphone-17-pro-max-est-aujourdhui-a-un-prix-rarement-vu-pour-le-black-friday.html",
-    "date": "2026-11-24",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Kudu, FluentCleaner, BleachBit, etc… Lequel choisir pour remplacer CCleaner ?",
-    "summary": "Par quoi remplacer CCleaner ? Kudu, FluentCleaner, BleachBit, PrivaZer, Glary Utilities et PC Manager comparés, avec la vidéo de démonstration. Le post Kudu, FluentCleaner, BleachBit, etc… Lequel choisir pour remplacer CCleaner ? a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/alternative-ccleaner-logiciels-nettoyage/",
+    "title": "Bulletin d'actualité CERTFR-2026-ACT-049 (23 novembre 2026)",
+    "summary": "Ce bulletin d'actualité du CERT-FR revient sur les vulnérabilités significatives de la semaine passée pour souligner leurs criticités. Il ne remplace pas l'analyse de l'ensemble des avis et alertes publiés par le CERT-FR dans le cadre d'une analyse de risques pour prioriser l'application des...",
+    "url": "https://www.cert.cyber.gouv.fr/actualite/CERTFR-2026-ACT-049/",
     "date": "2026-11-23",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "Windows Admin Center vMode : la migration de VMware ESXi vers Hyper-V arrive en préversion privée",
-    "summary": "Microsoft intègre VM Conversion à Windows Admin Center vMode pour migrer des VM VMware ESXi vers Hyper-V. Une préversion privée qui change l'architecture. Le post Windows Admin Center vMode : la migration de VMware ESXi vers Hyper-V arrive en préversion privée a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/windows-admin-center-vmode-vm-conversion-vmware-hyper-v/",
+    "title": "Multiples vulnérabilités dans SPIP (23 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans SPIP. Elles permettent à un attaquant de provoquer une injection de code indirecte à distance (XSS) et une injection de requêtes illégitimes par rebond (CSRF).",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1599/",
     "date": "2026-11-23",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "Nvidia réinstalle Jensen Huang au poste de CEO",
-    "summary": "Après avoir accepté sa démission, le conseil d’administration de Nvidia revient sur sa décision et réinstalle son cofondateur Jensen Huang à la tête du groupe.",
-    "url": "https://www.lemondeinformatique.fr/it-direction/nvidia-reinstalle-jensen-huang-au-poste-de-ceo",
+    "title": "Multiples vulnérabilités dans MongoDB (23 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans MongoDB. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1606/",
     "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
-    "title": "Amazon proche d'un accord pour acquérir la start-up israélienne Decart",
-    "summary": "Amazon serait proche d'un accord pour acquérir Decart, une jeune pousse spécialisée dans l'optimisation de l'exécution des modèles IA. Estimée à environ 7,5 Md$, l'opération permettrait à AWS de renforcer son offre de calcul IA et de mieux concurrencer Nvidia.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/amazon-proche-d-un-accord-pour-acquerir-la-start-up-israelienne-decart",
+    "title": "Vulnérabilité dans Microsoft Office (23 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans Microsoft Office. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1604/",
     "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Cloud souverain : l’Europe cherche à réduire sa dépendance aux géants américains",
-    "summary": "Face aux enjeux de souveraineté numérique, les entreprises et administrations européennes se tournent davantage vers les fournisseurs locaux de cloud. Mais AWS, Microsoft et Google restent largement dominants sur le marché européen.",
-    "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/cloud-souverain-l-europe-cherche-a-reduire-sa-dependance-aux-geants-americains",
-    "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "OpenAI propose des limites communes pour encadrer le développement des modèles d’IA",
-    "summary": "Jakub Pachocki, directeur scientifique d’OpenAI, appelle les principaux laboratoires d’intelligence artificielle à définir des limites communes au développement de leurs modèles les plus puissants. Dans un essai publié le 22 novembre 2026, il propose de s’appuyer sur des indicateurs techniques partagés et de conditionner le franchissement de certains seuils à l’amélioration des outils de surveillance et de compréhension des systèmes d’IA.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/openai-propose-des-limites-communes-pour-encadrer-le-developpement-des-modeles-d-ia",
-    "date": "2026-11-23",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
+    "source": "CERT-FR",
+    "category": "Sécurité"
   },
   {
     "title": "Multiples vulnérabilités dans les produits VMware (20 novembre 2026)",
@@ -464,58 +496,26 @@ window.TSSR_NEWS = [
     "category": "Sécurité"
   },
   {
-    "title": "Vulnérabilité dans Metabase (20 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans Metabase. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1585/",
+    "title": "Vulnérabilité dans KeyCloak (20 novembre 2026)",
+    "summary": "Une vulnérabilité a été découverte dans KeyCloak. Elle permet à un attaquant de provoquer un contournement de la politique de sécurité.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1586/",
     "date": "2026-11-20",
     "source": "CERT-FR",
     "category": "Sécurité"
   },
   {
-    "title": "Multiples vulnérabilités dans Moodle (20 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Moodle. Elles permettent à un attaquant de provoquer une atteinte à la confidentialité des données et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1581/",
+    "title": "Multiples vulnérabilités dans le noyau Linux de Debian LTS (20 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans le noyau Linux de Debian LTS. Elles permettent à un attaquant de provoquer une élévation de privilèges, une atteinte à la confidentialité des données et un déni de service.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1595/",
     "date": "2026-11-20",
     "source": "CERT-FR",
     "category": "Sécurité"
   },
   {
-    "title": "Multiples vulnérabilités dans Tenable Security Center (20 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Tenable Security Center. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une injection SQL (SQLi) et un contournement de la politique de sécurité.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1583/",
+    "title": "Multiples vulnérabilités dans les produits Moxa (20 novembre 2026)",
+    "summary": "De multiples vulnérabilités ont été découvertes dans les produits Moxa. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, un déni de service à distance et une atteinte à la confidentialité des données.",
+    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1589/",
     "date": "2026-11-20",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans PHP (19 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans PHP. Certaines d'entre elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance, une élévation de privilèges et un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1580/",
-    "date": "2026-11-19",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans Drupal (19 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans Drupal. Elles permettent à un attaquant de provoquer une exécution de code arbitraire à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1579/",
-    "date": "2026-11-19",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Vulnérabilité dans les produits Elastic (19 novembre 2026)",
-    "summary": "Une vulnérabilité a été découverte dans les produits Elastic. Elle permet à un attaquant de provoquer une exécution de code arbitraire à distance et un déni de service à distance.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1578/",
-    "date": "2026-11-19",
-    "source": "CERT-FR",
-    "category": "Sécurité"
-  },
-  {
-    "title": "Multiples vulnérabilités dans les produits NetApp (19 novembre 2026)",
-    "summary": "De multiples vulnérabilités ont été découvertes dans les produits NetApp. Elles permettent à un attaquant de provoquer un déni de service à distance, une atteinte à la confidentialité des données et une atteinte à l'intégrité des données.",
-    "url": "https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1577/",
-    "date": "2026-11-19",
     "source": "CERT-FR",
     "category": "Sécurité"
   },
