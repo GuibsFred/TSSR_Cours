@@ -1,5 +1,69 @@
 window.TSSR_NEWS = [
   {
+    "title": "Cyberattaque 1Password : devez-vous vous inquiéter pour vos mots de passe ?",
+    "summary": "1Password confirme une cyberattaque : des données clients volées sur des serveurs suite à la compromission du compte GitHub d'un salarié. Le post Cyberattaque 1Password : devez-vous vous inquiéter pour vos mots de passe ? a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/cyberattaque-1password-novembre-2026/",
+    "date": "2026-11-26",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Signature NTLM : les mises à jour de novembre 2026 perturbent l’authentification sur Windows",
+    "summary": "Depuis les mises à jour Windows de novembre 2026, l'authentification NTLM peut échouer dans certains cas, notamment avec les proxys et certains SSO. Le post Signature NTLM : les mises à jour de novembre 2026 perturbent l’authentification sur Windows a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/windows-novembre-2026-echec-authentification-ntlm-proxy-sso/",
+    "date": "2026-11-26",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Agents IA : Anthropic mesure les risques de sortie des sandbox avec Siren",
+    "summary": "Dans une étude publiée le 24 novembre 2026, l’équipe Safeguards d’Anthropic révèle que ses modèles d’intelligence artificielle les plus récents ont tenté d’accéder à des ressources situées hors de leur environnement isolé dans 21 % à 32 % des scénarios testés. Les usages manifestement non autorisés restent toutefois limités à 0,6 % à 1,6 % des cas, contre 12,7 % à 25,8 % pour deux modèles plus anciens. Baptisée Siren, cette évaluation montre également que certaines instructions incitant les agents à être particulièrement exhaustifs augmentent leur propension à franchir les limites de sécurité.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/agents-ia-anthropic-mesure-les-risques-de-sortie-des-sandbox-avec-siren",
+    "date": "2026-11-26",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Dell défend la solidité de ses 132,3 milliards de dollars de commandes de serveurs IA",
+    "summary": "Dell Technologies a terminé son troisième trimestre fiscal 2027 avec un carnet de commandes record de 132,3 milliards de dollars pour ses serveurs destinés à l'intelligence artificielle, contre 95 milliards au trimestre précédent. Le constructeur a enregistré 60,2 milliards de dollars de nouvelles commandes, tandis que le chiffre d'affaires de cette activité a atteint 22 milliards de dollars, en hausse de 291 % sur un an. Face aux interrogations sur le financement des infrastructures d'IA, Dell assure vérifier la solvabilité de ses clients et la disponibilité des installations destinées à accueillir ses équipements.",
+    "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/dell-defend-la-solidite-de-ses-132-3-milliards-de-dollars-de-commandes-de-serveurs-ia",
+    "date": "2026-11-26",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Google imagine une chaîne TV générée par IA où le téléspectateur devient acteur",
+    "summary": "Dans une demande de brevet publiée le 19 novembre, Google détaille My Channel, une chaîne de télévision qui produirait des vidéos adaptées aux goûts de chaque utilisateur, jusqu'à le mettre en scène à partir de son image et de sa voix. Ce projet reste théorique, mais illustre une nouvelle étape dans la personnalisation des contenus audiovisuels.",
+    "url": "https://www.lemondeinformatique.fr/applications-developpement/google-imagine-une-chaine-tv-generee-par-ia-ou-le-telespectateur-devient-acteur",
+    "date": "2026-11-26",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Artex : les cyberattaquants intensifient l'utilisation d'agents IA offensifs",
+    "summary": "L’utilisation d’Artex, un framework de tests d’intrusion piloté par des agents d’intelligence artificielle, progresse dans les campagnes malveillantes. Selon Microsoft Threat Intelligence, plusieurs groupes liés à des États et des acteurs cybercriminels l’exploitent pour automatiser la reconnaissance de réseaux, les attaques contre les identifiants et la recherche de vulnérabilités. Dans certaines intrusions, les attaquants ont obtenu un accès privilégié moins de trois heures après le ciblage initial. L’outil aurait également été utilisé lors d’une cyberattaque visant la Commission européenne, confirmée le 19 novembre 2026.",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/artex-les-cyberattaquants-intensifient-l-utilisation-d-agents-ia-offensifs",
+    "date": "2026-11-26",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Ce que disent les paramètres graphiques de GTA 6 sur PS5 et Xbox",
+    "summary": "Un dataminer a révélé les paramètres graphiques de GTA 6, choisis par Rockstar Games sur les différentes consoles. Déjà très détaillé sur console, le jeu garde de la marge pour une version PC, qui n'a pas encore été officialisée.",
+    "url": "https://www.numerama.com/pop-culture/2385115-ce-que-disent-les-parametres-graphiques-de-gta-6-sur-ps5-et-xbox.html",
+    "date": "2026-11-26",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "PlayStation Plus : les 3 jeux offerts en décembre 2026",
+    "summary": "Sony a officialisé la dernière sélection de jeux qui seront offerts aux abonnés PlayStation Plus en 2026.",
+    "url": "https://www.numerama.com/pop-culture/2385097-playstation-plus-les-3-jeux-offerts-en-decembre-2026.html",
+    "date": "2026-11-26",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Proxmox VE 9.3 est disponible : le SAN se gère désormais depuis l’interface web",
     "summary": "Proxmox VE 9.3 est disponible : multipath et LVM partagé sur SAN se configurent depuis l'interface web, et les snapshots LVM passent en production. Le post Proxmox VE 9.3 est disponible : le SAN se gère désormais depuis l’interface web a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/proxmox-ve-9-3-nouveautes/",
@@ -272,22 +336,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Quand les héros de GTA 6 deviennent de vrais mannequins sur les réseaux sociaux",
-    "summary": "Quelques jours seulement après son lancement sur consoles, GTA 6 ne se contente pas d’écraser les records vidéoludiques. Sur les réseaux sociaux, une tendance inattendue prend une ampleur folle : les joueurs utilisent la personnalisation ainsi que le mode photo pour transformer les rues en podium de haute couture.",
-    "url": "https://www.numerama.com/pop-culture/2384555-quand-les-heros-de-gta-6-deviennent-de-vrais-mannequins-sur-les-reseaux-sociaux.html",
-    "date": "2026-11-25",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "La menace s’étend : le système OSINT de la CIA piraté, probablement par le même outil IA que la Commission européenne",
-    "summary": "Selon le New York Times, des pirates ont compromis un système d'analyse en sources ouvertes de la CIA. Deux autres agences de renseignement américaines auraient été touchées.",
-    "url": "https://www.numerama.com/cyberguerre/2384431-la-menace-setend-le-systeme-osint-de-la-cia-pirate-probablement-par-le-meme-outil-ia-que-la-commission-europeenne.html",
-    "date": "2026-11-25",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "ElixirOffice : une suite bureautique open source qui s’adresse aux habitués de Microsoft Office",
     "summary": "ElixirOffice, la suite libre de Gaël Duval basée sur Euro-Office, reprend le ruban, les menus et les raccourcis de Microsoft Office. Voici ce qu'il faut savoir. Le post ElixirOffice : une suite bureautique open source qui s’adresse aux habitués de Microsoft Office a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/elixiroffice-suite-bureautique-libre-microsoft-office/",
@@ -333,54 +381,6 @@ window.TSSR_NEWS = [
     "url": "https://www.it-connect.fr/rdma-over-usb4-windows-cluster-ia-locale/",
     "date": "2026-11-24",
     "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Neutralisé en 2019 par la gendarmerie, le ver USB Retadup revient pour distribuer CoffeeLoader",
-    "summary": "Démantelé en 2019 par la gendarmerie, le botnet du ver USB Retadup a été réactivé via ses anciens domaines. Il distribue désormais le loader CoffeeLoader. Le post Neutralisé en 2019 par la gendarmerie, le ver USB Retadup revient pour distribuer CoffeeLoader a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/retadup-ver-usb-coffeeloader/",
-    "date": "2026-11-24",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "rust-anything : cet outil open source aide les agents IA à réécrire vos applications en Rust",
-    "summary": "Grâce à rust-anything, vous pouvez piloter un agent IA pour réécrire en Rust une application, tout en vérifiant chaque étape pour vous assurer du résultat. Le post rust-anything : cet outil open source aide les agents IA à réécrire vos applications en Rust a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/rust-anything-reecrire-application-rust-agents-ia/",
-    "date": "2026-11-24",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Free intègre la traduction des appels téléphoniques à son réseau mobile",
-    "summary": "Avec Traduction Live, Free propose à ses abonnés haut de gamme de traduire en temps réel leurs conversations téléphoniques dans dix langues. Intégrée directement à son réseau mobile, cette solution s'appuie sur l'IA et ne nécessite pas de smartphone récent.",
-    "url": "https://www.lemondeinformatique.fr/applications-developpement/free-integre-la-traduction-des-appels-telephoniques-a-son-reseau-mobile",
-    "date": "2026-11-24",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Cybersécurité : des failles Bluetooth permettent de contrôler à distance les freins de remorques",
-    "summary": "Des chercheurs en cybersécurité ont découvert plusieurs vulnérabilités critiques dans les contrôleurs de freinage Bluetooth du fabricant australien Elecbrakes. Ces failles permettent à une personne située à portée du signal radio d'activer ou de modifier la puissance de freinage d'une remorque sans authentification préalable. Deux modèles ont reçu des correctifs, mais un équipement plus ancien reste exposé. L'agence américaine CISA a publié une alerte concernant trois vulnérabilités, dont deux présentent un niveau de criticité de 9,6 sur 10.",
-    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/cybersecurite-des-failles-bluetooth-permettent-de-controler-a-distance-les-freins-de-remorques",
-    "date": "2026-11-24",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "IA et Cybersécurité : les entreprises contraintes de revoir leur priorités",
-    "summary": "Face au renchérissement des infrastructures et à la multiplication des projets d'IA, les entreprises doivent revoir leurs arbitrages numériques. Lors d'une table ronde organisée au TechShow Paris le 18 novembre, trois intervenants ont plaidé pour des investissements guidés par les besoins métiers, la maîtrise des compétences et la continuité d'activité.",
-    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/la-bataille-des-priorites-dans-les-budgets-it",
-    "date": "2026-11-24",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "ISAGRI déploie Claude auprès de ses 3 300 collaborateurs",
-    "summary": "L'éditeur français de logiciels ISAGRI annonce la généralisation de Claude, l'assistant IA d'Anthropic, auprès de ses 3 300 salariés. Le groupe prévoit d'utiliser l'outil dans plusieurs fonctions, notamment le développement logiciel, les tests, le support et la vente.",
-    "url": "https://www.lemondeinformatique.fr/applications-developpement/isagri-deploie-claude-aupres-de-ses-3-300-collaborateurs",
-    "date": "2026-11-24",
-    "source": "Le Monde Informatique",
     "category": "Infrastructures"
   },
   {
