@@ -9595,6 +9595,14 @@
         "displayNumber": "07",
         "art": "",
         "heroImage": "assets/tssr-banner-servers.webp"
+      },
+      "chapter:03:08": {
+        "title": "la sécurité NTFS et les ACL",
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 8,
+        "displayNumber": "08",
+        "art": "",
+        "heroImage": "assets/tssr-banner-servers.webp"
       }
     },
     "hidden": [
