@@ -1,5 +1,101 @@
 window.TSSR_NEWS = [
   {
+    "title": "GLPI 12 : voici les nouveautés de cette nouvelle version majeure",
+    "summary": "GLPI 12 refond la base de connaissances, contrôle les sessions et crée des OLA par groupe. Voici nos tests et les points à vérifier avant de migrer. Le post GLPI 12 : voici les nouveautés de cette nouvelle version majeure a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/glpi-12-nouveautes/",
+    "date": "2026-11-27",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Drupal : après Fail2Install, une nouvelle faille critique déjà exploitée (CVE-2026-136716)",
+    "summary": "Une semaine après Fail2Install, Drupal a corrigé la CVE-2026-136716, une faille critique de son installeur déjà exploitée. Voici ce qu'il faut savoir. Le post Drupal : après Fail2Install, une nouvelle faille critique déjà exploitée (CVE-2026-136716) a été publié sur IT-Connect .",
+    "url": "https://www.it-connect.fr/drupal-fail2install-cve-2026-136716-faille-exploitee/",
+    "date": "2026-11-27",
+    "source": "IT-Connect",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "IA : de 5 milliards de tokens par seconde en 2026 à 317 milliards en 2030, selon Sandisk",
+    "summary": "Selon une étude prospective publiée par Sandisk, les infrastructures mondiales d'intelligence artificielle pourraient produire jusqu'à 317 milliards de tokens par seconde en 2030, contre environ 5 milliards en 2026. Cette multiplication par 63 du rythme de production nécessiterait des progrès dans les capacités de calcul, la mémoire, les réseaux et le stockage. Le fabricant estime notamment que l'essor des agents IA pourrait renforcer le rôle des SSD dans les centres de données. Le chiffre de 317 milliards correspond toutefois à un plafond théorique de production, et non à une prévision de la demande. Il repose sur un modèle interne dont Sand",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/ia-de-5-milliards-de-tokens-par-seconde-en-2026-a-317-milliards-en-2030-selon-sandisk",
+    "date": "2026-11-27",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "MiniMax visé par des soupçons d'exposition de données, Apple retire Talkie de l'App Store",
+    "summary": "Le groupe chinois MiniMax fait face à deux affaires distinctes. Selon une enquête de Dragos révélée par Reuters le 26 novembre 2026, des liens confidentiels transmis à ses modèles d'intelligence artificielle auraient été consultés par des parties non identifiées, malgré des demandes de non-conservation des données. Parallèlement, Apple a retiré l'application de compagnons virtuels Talkie de son App Store à l'échelle mondiale le 25 novembre, en invoquant la présence de contenu sexuel, après une enquête journalistique faisant état d'échanges sexualisés entre des personnages IA et des mineurs. Aucun lien technique entre ces deux affaires n'a été",
+    "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/minimax-vise-par-des-soupcons-d-exposition-de-donnees-apple-retire-talkie-de-l-app-store",
+    "date": "2026-11-27",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "OpenAI fusionne Chat et Work, avec des quotas partagés dès décembre",
+    "summary": "OpenAI commence à réunir les fonctions conversationnelles de ChatGPT et les capacités agentiques de Work dans une même interface. À partir de décembre 2026, les conversations avec les modèles avancés partageront leurs quotas avec Work et Codex pour les abonnés Plus, Pro et Business. Si la majorité des utilisateurs ne devrait pas être affectée, les plus intensifs pourraient atteindre leurs limites plus rapidement. OpenAI n'a toutefois pas précisé la taille des nouvelles enveloppes.",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/openai-fusionne-chat-et-work-avec-des-quotas-partages-des-decembre",
+    "date": "2026-11-27",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "Perplexity lance Time Machine pour faire explorer le Web passé aux agents IA",
+    "summary": "Perplexity a lancé le 25 novembre 2026 Time Machine, une fonction de ses API Search et Context permettant aux agents d'intelligence artificielle d'interroger le Web tel qu'il existait à une date donnée. Le service vise notamment l'entraînement, l'évaluation et les simulations historiques, en évitant que les modèles accèdent à des informations publiées après les événements qu'ils doivent analyser. Disponible sur une fenêtre rétrospective de 365 jours, il s'appuie sur les copies de pages conservées par Perplexity. L'entreprise met en avant des résultats de tests favorables face à Exa Snapshot, tandis que la jeune société Epochal développe une a",
+    "url": "https://www.lemondeinformatique.fr/donnees-ia/perplexity-lance-time-machine-pour-faire-explorer-le-web-passe-aux-agents-ia",
+    "date": "2026-11-27",
+    "source": "Le Monde Informatique",
+    "category": "Infrastructures"
+  },
+  {
+    "title": "GTA 6 a failli avoir un parc d’attractions inspiré de Disney World",
+    "summary": "Dans une interview, Rob Nelson, producteur de GTA 6 et codirecteur du studio Rockstar North, a expliqué pourquoi Rockstar Games a dû abandonner l'idée de reproduire Disney World dans sa Floride fictive. Une question de ressources, mais aussi de narration.",
+    "url": "https://www.numerama.com/pop-culture/2385841-gta-6-a-failli-avoir-un-parc-dattractions-inspire-de-disney-world.html",
+    "date": "2026-11-27",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Victime d’une cyberattaque, l’Agence France-Presse ferme brutalement l’accès à une de ses plateformes : voici ce que l’on sait",
+    "summary": "L'Agence France-Presse a été la cible d'une cyberattaque dans la nuit du 25 au 26 novembre 2026. Par précaution, elle a coupé l'accès à AFP Forum, la plateforme où ses clients récupèrent dépêches, photos et vidéos.",
+    "url": "https://www.numerama.com/cyberguerre/2385847-victime-dune-cyberattaque-lagence-france-presse-ferme-brutalement-lacces-a-une-de-ses-plateformes-voici-ce-que-lon-sait.html",
+    "date": "2026-11-27",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Le Black Friday c’est maintenant : on a trié les 100 meilleures offres de l’évènement et on continue d’en ajouter en direct",
+    "summary": "Le Black Friday 2026, c'est aujourd'hui. Après plusieurs semaines de promos, Amazon, la Fnac, Boulanger et Cdiscount abattent leurs dernières cartes : voici, en direct, les meilleures offres du jour.",
+    "url": "https://www.numerama.com/tech/2385563-black-friday-on-a-trie-les-100-meilleures-offres-de-levenement-et-on-continue-den-ajouter-en-direct.html",
+    "date": "2026-11-27",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Les profils criminels de GTA 6 font jaser, et Rockstar le savait",
+    "summary": "Rockstar Games savait pertinemment que les profils criminels de GTA 6, qui dépendent de vos actions dans le jeu, ne feraient pas l'unanimité.",
+    "url": "https://www.numerama.com/pop-culture/2385817-les-profils-criminels-de-gta-6-font-jaser-et-rockstar-le-savait.html",
+    "date": "2026-11-27",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday Dyson : l’aspirateur balai V16 Piston Animal perd 250 euros, le haut de gamme enfin accessible [Sponso]",
+    "summary": "Cet article a été réalisé en collaboration avec Dyson Pour le Black Friday, Dyson baisse le prix de trois appareils : l’aspirateur balai V16 Piston Animal passe à 599 euros au lieu de 849 euros, le V16 Piston Animal Submarine à 599 euros au lieu de 999 euros et le lisseur séchant Airstrait à 299 euros au lieu de 399 euros. Le code exclusif NUMERAMA ajoute 5 % de réduction supplémentaire.",
+    "url": "https://www.numerama.com/tech/2380169-black-friday-dyson-laspirateur-balai-v16-piston-animal-perd-250-euros-le-haut-de-gamme-enfin-accessible.html",
+    "date": "2026-11-27",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
+    "title": "Black Friday d’Amazon : le TOP 10 des offres à prix cassés",
+    "summary": "Le Black Friday tombe ce vendredi 27 novembre, mais la Black Friday Week d'Amazon tourne depuis le 19. Depuis, nous avons passé au crible des dizaines d'offres du marchand dans notre live. Voici les dix que nous retiendrions, de la Switch 2 aux AirPods Pro 3.",
+    "url": "https://www.numerama.com/tech/2385399-black-friday-damazon-le-top-10-des-offres-a-prix-casses.html",
+    "date": "2026-11-27",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "Black Friday TerraMaster : jusqu’à 30 % de remise sur les NAS et boîtiers de stockage sur Amazon",
     "summary": "Black Friday TerraMaster : jusqu'au 30 novembre, NAS et boîtiers de stockage jusqu'à -30 % sur Amazon.fr. Le NAS F2-425 passe à 255,99 € au lieu de 319,99 €. Le post Black Friday TerraMaster : jusqu’à 30 % de remise sur les NAS et boîtiers de stockage sur Amazon a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/bon-plan-terramaster-black-friday-2026/",
@@ -232,54 +328,6 @@ window.TSSR_NEWS = [
     "category": "Cybersécurité"
   },
   {
-    "title": "Après Riemann, ce chercheur de renom est « quasiment certain » que l’IA a trouvé autre chose, et ça concerne vos données",
-    "summary": "Hypothèse de Riemann, multiplication de matrices… Dans un billet survolté publié le 25 novembre 2026, l'informaticien Scott Aaronson raconte une semaine de percées mathématiques signées par l'IA. Avant de lâcher une phrase qui fait trembler la tech et les cryptos : les labos détiendraient aussi de quoi menacer nos systèmes de chiffrement.",
-    "url": "https://www.numerama.com/tech/2385329-apres-riemann-ce-chercheur-de-renom-est-quasiment-certain-que-lia-a-trouve-autre-chose-et-ca-concerne-vos-donnees.html",
-    "date": "2026-11-26",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "« Le véhicule autonome n’a aucun avenir » et ne ferait pas « 3 mètres dans Paris » : non, c’est faux (on a testé)",
-    "summary": "Invité sur le plateau de LCI, un chroniqueur automobile a affirmé avec aplomb que « le véhicule autonome n’a aucun avenir » et ne saurait même pas faire « 3 mètres dans le Marais » à Paris. Une sortie devenue virale sur X, que nos propres essais dans Paris contredisent.",
-    "url": "https://www.numerama.com/vroom/2385409-le-vehicule-autonome-na-aucun-avenir-et-ne-ferait-pas-3-metres-dans-paris-non-cest-faux-on-a-teste.html",
-    "date": "2026-11-26",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Vous trouvez la conduite de GTA 6 particulièrement pointue ? C’est normal",
-    "summary": "Rockstar Games a fait travailler un ancien finaliste mondial de Gran Turismo sur la physique des véhicules de GTA 6. D'où cette conduite pointue, et un peu punitive.",
-    "url": "https://www.numerama.com/pop-culture/2385185-vous-trouvez-la-conduite-de-gta-6-particulierement-pointue-cest-normal.html",
-    "date": "2026-11-26",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Avengers: Doomsday affole déjà les compteurs",
-    "summary": "À trois semaines de sa sortie en salles, le prochain mastodonte de Marvel Studios affole déjà les compteurs. Selon les informations de Deadline, Avengers: Doomsday a dépassé les 100 millions de dollars de préventes aux États-Unis.",
-    "url": "https://www.numerama.com/pop-culture/2385397-avengers-doomsday-affole-deja-les-compteurs.html",
-    "date": "2026-11-26",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Le Black Friday rend enfin l’OLED abordable : l’écran MSI PRO MAX de 34″ passe sous les 700 €",
-    "summary": "[Deal du jour] Pendant le Black Friday, PC Componentes affiche l'écran MSI PRO MAX 341QPXW14G à 693,22 €. C'est un moniteur de 34 pouces au format panoramique, avec une dalle QD-OLED plate, aussi à l'aise sur la bureautique que pour le jeu.",
-    "url": "https://www.numerama.com/tech/2385263-le-black-friday-rend-enfin-loled-abordable-lecran-msi-pro-max-de-34-passe-sous-les-700-e.html",
-    "date": "2026-11-26",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Version deux places et aileron de F1 : la Xiaomi SU7 Ultra se transforme en pistarde radicale",
-    "summary": "Le ministère chinois de l'Industrie a publié l'homologation de la Xiaomi SU7 Ultra 2027, avec des pneus avant élargis à 295 millimètres et une série d'options aérodynamiques en carbone. La puissance reste fixée à 1 548 ch.",
-    "url": "https://www.numerama.com/vroom/2385217-version-deux-places-et-aileron-de-f1-la-xiaomi-su7-ultra-se-transforme-en-pistarde-radicale.html",
-    "date": "2026-11-26",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
     "title": "Proxmox VE 9.3 est disponible : le SAN se gère désormais depuis l’interface web",
     "summary": "Proxmox VE 9.3 est disponible : multipath et LVM partagé sur SAN se configurent depuis l'interface web, et les snapshots LVM passent en production. Le post Proxmox VE 9.3 est disponible : le SAN se gère désormais depuis l’interface web a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/proxmox-ve-9-3-nouveautes/",
@@ -328,49 +376,9 @@ window.TSSR_NEWS = [
     "category": "Infrastructures"
   },
   {
-    "title": "VMware vCenter et ESX : trois nouvelles failles critiques, cinq jours après la faille zero-day",
-    "summary": "Cinq jours après la zero-day CVE-2026-123890, Broadcom corrige 23 failles VMware, dont la CVE-2026-123903 dans vCenter et deux failles critiques dans ESX. Le post VMware vCenter et ESX : trois nouvelles failles critiques, cinq jours après la faille zero-day a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/vmware-vcenter-esx-cve-2026-123903-failles-novembre/",
-    "date": "2026-11-25",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
-  },
-  {
     "title": "Black Friday : les cybermenaces dopées à l'IA mettent les distributeurs sous pression",
     "summary": "À l'approche du Black Friday, les enseignes doivent se préparer à une hausse des attaques visant leurs sites, leurs comptes clients et leurs infrastructures de paiement. L'IA accélère les capacités des attaquants, tandis qu'une part importante des petits et moyens distributeurs reste dépourvue d'assurance cyber.",
     "url": "https://www.lemondeinformatique.fr/cybersecurite-conformite/black-friday-les-cybermenaces-dopees-a-l-ia-mettent-les-distributeurs-sous-pression",
-    "date": "2026-11-25",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "ETIX investit 100 M€ dans ses data centers de proximité en France",
-    "summary": "À l'occasion du sommet Choose France – Édition France, organisé le 23 novembre 2026, l'opérateur français ETIX a annoncé un programme d'investissement de 100 millions d'euros pour développer ses centres de données de proximité. Ce plan doit permettre d'ajouter 12 MW de capacité informatique à son réseau grâce à quatre opérations réparties entre l'Île-de-France, les Hauts-de-France et l'Occitanie. L'investissement, financé par refinancement bancaire et fonds propres, vise à renforcer les infrastructures numériques destinées aux entreprises et aux acteurs publics régionaux.",
-    "url": "https://www.lemondeinformatique.fr/infrastructure-cloud/etix-investit-100-m-dans-ses-data-centers-de-proximite-en-france",
-    "date": "2026-11-25",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "CrowdStrike et Zscaler veulent un kill switch unifié pour les agents IA",
-    "summary": "Le rachat de Zscaler par CrowdStrike doit permettre d'étendre au réseau le dispositif de coupure des agents IA malveillants ou incontrôlés, aujourd'hui limité aux terminaux. Annoncé le 23 novembre 2026, cet accord, qui valorise Zscaler à 43,9 Md$, vise à réunir détection, contrôle des accès et neutralisation au sein d'une même plateforme de sécurité.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/crowdstrike-et-zscaler-veulent-un-kill-switch-unifie-pour-les-agents-ia",
-    "date": "2026-11-25",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "Yann LeCun accuse le patron d’Anthropic de vouloir freiner les modèles d’IA ouverts",
-    "summary": "Yann LeCun, pionnier de l’intelligence artificielle, professeur à l’université de New York et cofondateur d’Advanced Machine Intelligence Labs, s’en prend à Dario Amodei, directeur général d’Anthropic, qu’il accuse d’exagérer les dangers des modèles ouverts pour préserver son contrôle sur le secteur. Dans un message publié sur X le 22 novembre 2026, le chercheur dénonce une forme d’« obscurantisme médiéval ». Dans un billet publié en juillet, Dario Amodei affirmait au contraire ne pas défendre l’interdiction des modèles à poids ouverts, tout en réclamant des contrôles de sécurité pour les systèmes les plus puissants.",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/yann-lecun-accuse-le-patron-d-anthropic-de-vouloir-freiner-les-modeles-d-ia-ouverts",
-    "date": "2026-11-25",
-    "source": "Le Monde Informatique",
-    "category": "Infrastructures"
-  },
-  {
-    "title": "L'IA générative risque d'amplifier l'infobésité au travail",
-    "summary": "Capable de synthétiser des documents et d'accélérer la rédaction, l'IA générative est présentée comme un moyen de réduire la surcharge informationnelle. Mais ces gains peuvent aussi alimenter une intensification du travail et réduire les interactions entre collaborateurs, alerte l'Observatoire de l'infobésité et de la collaboration numérique (OICN).",
-    "url": "https://www.lemondeinformatique.fr/donnees-ia/l-ia-generative-risque-d-amplifier-l-infobesite-au-travail",
     "date": "2026-11-25",
     "source": "Le Monde Informatique",
     "category": "Infrastructures"
@@ -382,14 +390,6 @@ window.TSSR_NEWS = [
     "date": "2026-11-24",
     "source": "CERT-FR",
     "category": "Sécurité"
-  },
-  {
-    "title": "ElixirOffice : une suite bureautique open source qui s’adresse aux habitués de Microsoft Office",
-    "summary": "ElixirOffice, la suite libre de Gaël Duval basée sur Euro-Office, reprend le ruban, les menus et les raccourcis de Microsoft Office. Voici ce qu'il faut savoir. Le post ElixirOffice : une suite bureautique open source qui s’adresse aux habitués de Microsoft Office a été publié sur IT-Connect .",
-    "url": "https://www.it-connect.fr/elixiroffice-suite-bureautique-libre-microsoft-office/",
-    "date": "2026-11-24",
-    "source": "IT-Connect",
-    "category": "Infrastructures"
   },
   {
     "title": "Bulletin d'actualité CERTFR-2026-ACT-049 (23 novembre 2026)",
