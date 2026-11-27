@@ -9294,10 +9294,12 @@
   "management": {
     "overrides": {
       "chapter:03:09": {
-        "title": "Gestion du réseau et du pare-feu",
-        "category": "03 — Systèmes clients Microsoft (1 / 2) / Cours",
-        "order": 0,
-        "art": ""
+        "title": "La gestion du réseau et du pare-feu",
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 9,
+        "art": "",
+        "displayNumber": "09",
+        "heroImage": "assets/tssr-banner-network.webp"
       },
       "chapter:03:10": {
         "title": "Le partage de ressources",
