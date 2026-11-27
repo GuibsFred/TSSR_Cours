@@ -8815,6 +8815,14 @@
         "displayNumber": "02",
         "art": "",
         "heroImage": "assets/tssr-banner-servers.webp"
+      },
+      "chapter:08:03": {
+        "title": "Maintenir et exploiter un serveur Linux",
+        "category": "08 — Mise en situation — Systèmes clients / Cours",
+        "order": 3,
+        "displayNumber": "03",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       }
     },
     "hidden": [
