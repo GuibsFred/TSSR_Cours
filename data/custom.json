@@ -9303,9 +9303,11 @@
       },
       "chapter:03:10": {
         "title": "Le partage de ressources",
-        "category": "03 — Systèmes clients Microsoft (1 / 2) / Cours",
-        "order": 0,
-        "art": ""
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 10,
+        "art": "",
+        "displayNumber": "10",
+        "heroImage": "assets/tssr-banner-servers.webp"
       },
       "chapter:03:04": {
         "title": "Installation  de Windows 10",
