@@ -9345,11 +9345,12 @@
         "heroImage": "assets/tssr-banner-servers.webp"
       },
       "chapter:03:03": {
-        "title": "Installation de Windows Client",
+        "title": "Plus loin avec PowerShell",
         "category": "03 — Systèmes clients Microsoft / 2) / Cours",
         "order": 11,
         "displayNumber": "11",
-        "art": ""
+        "art": "",
+        "heroImage": "assets/tssr-banner-servers.webp"
       },
       "chapter:01:03": {
         "title": "Nortions de base de Word",
