@@ -9587,6 +9587,14 @@
         "displayNumber": "06",
         "art": "",
         "heroImage": "assets/tssr-banner-servers.webp"
+      },
+      "chapter:03:07": {
+        "title": "Les utilisateurs et les groupes",
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 7,
+        "displayNumber": "07",
+        "art": "",
+        "heroImage": "assets/tssr-banner-servers.webp"
       }
     },
     "hidden": [
