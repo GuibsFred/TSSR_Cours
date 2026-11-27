@@ -8799,6 +8799,14 @@
         "title": "Historique de Debian / Branches et Version",
         "order": 1,
         "displayNumber": "01"
+      },
+      "chapter:08:01": {
+        "title": "Lettre eb service un equipement numérique",
+        "category": "08 — Mise en situation — Systèmes clients / Cours",
+        "order": 1,
+        "displayNumber": "01",
+        "art": "",
+        "heroImage": "assets/tssr-banner-network.webp"
       }
     },
     "hidden": [
