@@ -8807,6 +8807,14 @@
         "displayNumber": "01",
         "art": "",
         "heroImage": "assets/tssr-banner-network.webp"
+      },
+      "chapter:08:02": {
+        "title": "Maintenir et exploiter un domaine Active Directory et les serveurs Windows",
+        "category": "08 — Mise en situation — Systèmes clients / Cours",
+        "order": 2,
+        "displayNumber": "02",
+        "art": "",
+        "heroImage": "assets/tssr-banner-servers.webp"
       }
     },
     "hidden": [
