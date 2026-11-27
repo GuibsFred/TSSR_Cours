@@ -9306,10 +9306,12 @@
         "art": ""
       },
       "chapter:03:04": {
-        "title": "Tour d’horizon du système",
+        "title": "Installation  de Windows 10",
         "category": "03 — Systèmes clients Microsoft / 2) / Cours",
-        "order": 20,
-        "art": ""
+        "order": 4,
+        "art": "",
+        "displayNumber": "04",
+        "heroImage": "assets/tssr-banner-servers.webp"
       },
       "chapter:03:01": {
         "title": "Les systèmes d'exploitation et Microsoft  Windows 10",
