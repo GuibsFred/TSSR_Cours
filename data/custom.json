@@ -803,6 +803,17 @@
       "displayNumber": "12",
       "html": "",
       "revisionHtml": ""
+    },
+    {
+      "id": "chapter:1795787551668:12:2lb3nt",
+      "kind": "cours",
+      "chapter": true,
+      "title": "Les stratégies de groupe local",
+      "category": "03 — Systèmes clients Microsoft / Cours",
+      "order": 13,
+      "displayNumber": "13",
+      "html": "",
+      "revisionHtml": ""
     }
   ],
   "quizzes": [
@@ -9628,6 +9639,11 @@
         "displayNumber": "09",
         "art": "",
         "heroImage": "assets/tssr-banner-servers.webp"
+      },
+      "chapter:1795787513381:11:9thzgd": {
+        "title": "introduction à la capture et au deploiement d'images",
+        "order": 12,
+        "displayNumber": "12"
       }
     },
     "hidden": [
