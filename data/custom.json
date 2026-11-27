@@ -9312,10 +9312,12 @@
         "art": ""
       },
       "chapter:03:01": {
-        "title": "Présentation du matériel et initiation à VMware Workstation",
+        "title": "Les systèmes d'exploitation et Microsoft  Windows 10",
         "category": "03 — Systèmes clients Microsoft / 2) / Cours",
-        "order": 5,
-        "art": ""
+        "order": 1,
+        "art": "",
+        "displayNumber": "01",
+        "heroImage": "assets/tssr-banner-servers.webp"
       },
       "chapter:03:02": {
         "title": "Présentation de l’écosystème Microsoft",
