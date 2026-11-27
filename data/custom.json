@@ -9571,6 +9571,14 @@
         "displayNumber": "03",
         "art": "",
         "heroImage": "assets/tssr-banner-linux.webp"
+      },
+      "chapter:03:05": {
+        "title": "Intreragir avec Windows 10",
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 5,
+        "displayNumber": "05",
+        "art": "",
+        "heroImage": "assets/tssr-banner-linux.webp"
       }
     },
     "hidden": [
