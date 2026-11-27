@@ -9607,6 +9607,14 @@
         "displayNumber": "08",
         "art": "",
         "heroImage": "assets/tssr-banner-servers.webp"
+      },
+      "chapter:03:11": {
+        "title": "Les pilotes et les imprimantes",
+        "category": "03 — Systèmes clients Microsoft / 2) / Cours",
+        "order": 11,
+        "displayNumber": "11",
+        "art": "",
+        "heroImage": "assets/tssr-banner-servers.webp"
       }
     },
     "hidden": [
