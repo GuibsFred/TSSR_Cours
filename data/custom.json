@@ -9326,11 +9326,12 @@
         "heroImage": "assets/tssr-banner-servers.webp"
       },
       "chapter:03:02": {
-        "title": "Présentation de l’écosystème Microsoft",
+        "title": "maintenance du système",
         "category": "03 — Systèmes clients Microsoft / 2) / Cours",
-        "order": 0,
+        "order": 21,
         "displayNumber": "21",
-        "art": ""
+        "art": "",
+        "heroImage": "assets/tssr-banner-servers.webp"
       },
       "chapter:03:03": {
         "title": "Installation de Windows Client",
