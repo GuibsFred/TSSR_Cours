@@ -1,5 +1,13 @@
 window.TSSR_NEWS = [
   {
+    "title": "Black Friday : les meilleures offres du week-end, avant le Cyber Monday (EN DIRECT)",
+    "summary": "Le Black Friday continue tout le week-end. Amazon, la Fnac, Boulanger et Cdiscount gardent la plupart de leurs promos en ligne jusqu'au Cyber Monday du 30 novembre : voici, en direct, les meilleures offres du week-end.",
+    "url": "https://www.numerama.com/tech/2385563-black-friday-on-a-trie-les-100-meilleures-offres-de-levenement-et-on-continue-den-ajouter-en-direct.html",
+    "date": "2026-11-28",
+    "source": "Numerama",
+    "category": "Cybersécurité"
+  },
+  {
     "title": "VMware ESXi et Proxmox VE : des ransomwares déployés avec des identifiants mal protégés",
     "summary": "BlackNevas et The Gentlemen ont frappé des hyperviseurs VMware ESXi et Proxmox VE avec de simples identifiants volés ou stockés au mauvais endroit. Le post VMware ESXi et Proxmox VE : des ransomwares déployés avec des identifiants mal protégés a été publié sur IT-Connect .",
     "url": "https://www.it-connect.fr/blacknevas-ransomware-vmware-esxi-vcenter/",
@@ -187,14 +195,6 @@ window.TSSR_NEWS = [
     "title": "Les Anneaux de pouvoir : pourquoi Sauron a-t-il pris cette décision surprise à la fin de la saison 3 ?",
     "summary": "Dans le final de la saison 3 des Anneaux de pouvoir, mis en ligne ce mercredi 25 novembre sur Prime Video, Sauron retire l'Anneau unique qu'il vient de forger et s'agenouille devant Ar-Pharazôn, roi de Númenor. Cette reddition vient tout droit de Tolkien, chez qui elle conduit à l'engloutissement de l'île.",
     "url": "https://www.numerama.com/pop-culture/2386767-les-anneaux-de-pouvoir-pourquoi-sauron-a-t-il-pris-cette-decision-surprise-a-la-fin-de-la-saison-3.html",
-    "date": "2026-11-27",
-    "source": "Numerama",
-    "category": "Cybersécurité"
-  },
-  {
-    "title": "Black Friday : les 100 deals à ne pas rater chez Amazon, Fnac, Boulanger et Cdiscount (EN DIRECT)",
-    "summary": "La journée s'achève, mais pas le Black Friday. Amazon, la Fnac, Boulanger et Cdiscount prolongent la plupart de leurs promos tout le week-end. Nous avons déjà trié plus de 120 offres, et nous continuons d'en ajouter en direct jusqu'au Cyber Monday du 30 novembre.",
-    "url": "https://www.numerama.com/tech/2385563-black-friday-on-a-trie-les-100-meilleures-offres-de-levenement-et-on-continue-den-ajouter-en-direct.html",
     "date": "2026-11-27",
     "source": "Numerama",
     "category": "Cybersécurité"
