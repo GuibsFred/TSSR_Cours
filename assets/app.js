@@ -247,7 +247,7 @@ function tssrV82CommandMarkup(src){
   const words=String(syntax).trim().split(/\s+/);
   const executable=words[0]==='sudo'&&words[1]&&!words[1].startsWith('-')?2:1;
   return words.map((word,i)=>{
-   const cls=word.startsWith('-')?'tssr-syn-opt':i<executable?'tssr-syn-cmd':'tssr-syn-arg';
+   const cls=/^(?:[|;]|&&|\|\|)$/.test(word)?'tssr-syn-sep':(i<executable||/^(?:[|;]|&&|\|\|)$/.test(words[i-1]||''))?'tssr-syn-cmd':/^(?:--?[\w]|\/[A-Za-z][\w-]*(?::.*)?$)/.test(word)?'tssr-syn-opt':'tssr-syn-arg';
    return '<span class="'+cls+'">'+esc(word)+'</span>';
   }).join(' ');
  };

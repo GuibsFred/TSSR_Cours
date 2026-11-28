@@ -31,3 +31,9 @@
 #view .tssr-vfinal-layout .tssr-v82-aside .tssr-plan .tssr-plan-scroll {display:block!important;box-sizing:border-box!important;height:auto!important;max-height:clamp(150px,35vh,340px)!important;overflow-y:scroll!important;overflow-x:hidden!important;overscroll-behavior-y:contain!important;scrollbar-width:auto!important;touch-action:pan-y!important;}
 #view .tssr-vfinal-layout .tssr-v82-aside .tssr-plan .tssr-plan-scroll[hidden] {display:none!important;}
 #view .tssr-vfinal-layout .tssr-plan-toggle {display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer;padding:0;}
+
+/* V205 — essential commands only */
+#view .tssr-vfinal-layout .tssr-v82-command code .tssr-syn-cmd{color:#40E0D0!important;-webkit-text-fill-color:#40E0D0!important}
+#view .tssr-vfinal-layout .tssr-v82-command code .tssr-syn-opt{color:#FF4757!important;-webkit-text-fill-color:#FF4757!important}
+#view .tssr-vfinal-layout .tssr-v82-command code .tssr-syn-arg{color:#FFA32B!important;-webkit-text-fill-color:#FFA32B!important}
+#view .tssr-vfinal-layout .tssr-v82-command code .tssr-syn-sep{color:#E5E7EB!important;-webkit-text-fill-color:#E5E7EB!important}

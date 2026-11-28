@@ -1,4 +1,4 @@
-/* Bibliothèque V10 : commandes et raccourcis vérifiés ; sources du site préservées. */
+/* Bibliothèque V11 : ajouts TSSR, paramètres usuels. */
 window.TSSR_COMMANDES_V6 = [
   {
     "id": "v6-linux-administration-ip",
@@ -8719,5 +8719,3119 @@ window.TSSR_COMMANDES_V6 = [
       }
     ],
     "notes": "Commande documentée pour la révision TSSR. Les options disponibles peuvent varier selon la version installée."
+  },
+  {
+    "id": "audit-ps-get-command",
+    "name": "Get-Command",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Rechercher les commandes disponibles",
+    "syntax": "Get-Command [paramètres]",
+    "examples": [
+      "Get-Command -Name Get-*"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom ou motif"
+      },
+      {
+        "flag": "-Module",
+        "meaning": "Module source"
+      },
+      {
+        "flag": "-CommandType",
+        "meaning": "Type de commande"
+      },
+      {
+        "flag": "-Syntax",
+        "meaning": "Afficher la syntaxe"
+      },
+      {
+        "flag": "-All",
+        "meaning": "Inclure les commandes masquées"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-Command -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-member",
+    "name": "Get-Member",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Examiner les membres d’un objet",
+    "syntax": "Get-Member [paramètres]",
+    "examples": [
+      "Get-Service | Get-Member"
+    ],
+    "options": [
+      {
+        "flag": "-InputObject",
+        "meaning": "Objet à examiner"
+      },
+      {
+        "flag": "-Name",
+        "meaning": "Nom du membre"
+      },
+      {
+        "flag": "-MemberType",
+        "meaning": "Type de membre"
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Inclure les membres masqués"
+      },
+      {
+        "flag": "-Static",
+        "meaning": "Membres statiques"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-Member -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-verb",
+    "name": "Get-Verb",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les verbes approuvés",
+    "syntax": "Get-Verb [paramètres]",
+    "examples": [
+      "Get-Verb -Verb Get"
+    ],
+    "options": [
+      {
+        "flag": "-Verb",
+        "meaning": "Filtrer les verbes"
+      },
+      {
+        "flag": "-Group",
+        "meaning": "Filtrer les groupes"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-Verb -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-item",
+    "name": "Get-Item",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Récupérer un élément",
+    "syntax": "Get-Item [paramètres]",
+    "examples": [
+      "Get-Item -Path C:\\Windows"
+    ],
+    "options": [
+      {
+        "flag": "-Path",
+        "meaning": "Chemin avec motifs"
+      },
+      {
+        "flag": "-LiteralPath",
+        "meaning": "Chemin littéral"
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Inclure les éléments masqués"
+      },
+      {
+        "flag": "-Filter",
+        "meaning": "Filtre du fournisseur"
+      },
+      {
+        "flag": "-Include",
+        "meaning": "Motifs inclus"
+      },
+      {
+        "flag": "-Exclude",
+        "meaning": "Motifs exclus"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-Item -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-computerinfo",
+    "name": "Get-ComputerInfo",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Consulter les informations système",
+    "syntax": "Get-ComputerInfo [paramètres]",
+    "examples": [
+      "Get-ComputerInfo -Property OsName,OsVersion"
+    ],
+    "options": [
+      {
+        "flag": "-Property",
+        "meaning": "Propriétés à afficher"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-ComputerInfo -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-timezone",
+    "name": "Get-TimeZone",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Consulter les fuseaux horaires",
+    "syntax": "Get-TimeZone [paramètres]",
+    "examples": [
+      "Get-TimeZone -ListAvailable"
+    ],
+    "options": [
+      {
+        "flag": "-Id",
+        "meaning": "Identifiant du fuseau"
+      },
+      {
+        "flag": "-Name",
+        "meaning": "Nom du fuseau"
+      },
+      {
+        "flag": "-ListAvailable",
+        "meaning": "Tous les fuseaux disponibles"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-TimeZone -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-select-object",
+    "name": "Select-Object",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Sélectionner des objets ou propriétés",
+    "syntax": "Select-Object [paramètres]",
+    "examples": [
+      "Get-Service | Select-Object -First 5"
+    ],
+    "options": [
+      {
+        "flag": "-Property",
+        "meaning": "Propriétés à sélectionner"
+      },
+      {
+        "flag": "-ExcludeProperty",
+        "meaning": "Propriétés exclues"
+      },
+      {
+        "flag": "-ExpandProperty",
+        "meaning": "Développer une propriété"
+      },
+      {
+        "flag": "-First",
+        "meaning": "Premiers objets"
+      },
+      {
+        "flag": "-Last",
+        "meaning": "Derniers objets"
+      },
+      {
+        "flag": "-Skip",
+        "meaning": "Objets à ignorer"
+      },
+      {
+        "flag": "-Unique",
+        "meaning": "Éliminer les doublons"
+      },
+      {
+        "flag": "-Index",
+        "meaning": "Indices des objets"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Select-Object -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-where-object",
+    "name": "Where-Object",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Filtrer les objets",
+    "syntax": "Where-Object [paramètres]",
+    "examples": [
+      "Get-Service | Where-Object Status -EQ Running"
+    ],
+    "options": [
+      {
+        "flag": "-FilterScript",
+        "meaning": "Bloc de condition"
+      },
+      {
+        "flag": "-Property",
+        "meaning": "Propriété à comparer"
+      },
+      {
+        "flag": "-Value",
+        "meaning": "Valeur comparée"
+      },
+      {
+        "flag": "-EQ",
+        "meaning": "Égalité"
+      },
+      {
+        "flag": "-NE",
+        "meaning": "Différence"
+      },
+      {
+        "flag": "-GT",
+        "meaning": "Supérieur"
+      },
+      {
+        "flag": "-LT",
+        "meaning": "Inférieur"
+      },
+      {
+        "flag": "-Like",
+        "meaning": "Motif générique"
+      },
+      {
+        "flag": "-Match",
+        "meaning": "Expression régulière"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Where-Object -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-sort-object",
+    "name": "Sort-Object",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Trier les objets",
+    "syntax": "Sort-Object [paramètres]",
+    "examples": [
+      "Get-Service | Sort-Object -Property Name"
+    ],
+    "options": [
+      {
+        "flag": "-Property",
+        "meaning": "Clé de tri"
+      },
+      {
+        "flag": "-Descending",
+        "meaning": "Ordre décroissant"
+      },
+      {
+        "flag": "-Unique",
+        "meaning": "Valeurs uniques"
+      },
+      {
+        "flag": "-CaseSensitive",
+        "meaning": "Respecter la casse"
+      },
+      {
+        "flag": "-Culture",
+        "meaning": "Culture de comparaison"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Sort-Object -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-format-table",
+    "name": "Format-Table",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Afficher un tableau",
+    "syntax": "Format-Table [paramètres]",
+    "examples": [
+      "Get-TimeZone | Format-Table -Property *"
+    ],
+    "options": [
+      {
+        "flag": "-Property",
+        "meaning": "Colonnes"
+      },
+      {
+        "flag": "-AutoSize",
+        "meaning": "Ajuster les largeurs"
+      },
+      {
+        "flag": "-Wrap",
+        "meaning": "Retour à la ligne"
+      },
+      {
+        "flag": "-GroupBy",
+        "meaning": "Regrouper"
+      },
+      {
+        "flag": "-HideTableHeaders",
+        "meaning": "Masquer les en-têtes"
+      },
+      {
+        "flag": "-View",
+        "meaning": "Vue prédéfinie"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Format-Table -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-format-list",
+    "name": "Format-List",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Afficher les propriétés en liste",
+    "syntax": "Format-List [paramètres]",
+    "examples": [
+      "Get-Service | Format-List -Property *"
+    ],
+    "options": [
+      {
+        "flag": "-Property",
+        "meaning": "Propriétés"
+      },
+      {
+        "flag": "-GroupBy",
+        "meaning": "Regrouper"
+      },
+      {
+        "flag": "-View",
+        "meaning": "Vue prédéfinie"
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Forcer la mise en forme"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Format-List -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-format-wide",
+    "name": "Format-Wide",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Afficher une propriété en colonnes",
+    "syntax": "Format-Wide [paramètres]",
+    "examples": [
+      "Get-Service | Format-Wide -Property Name"
+    ],
+    "options": [
+      {
+        "flag": "-Property",
+        "meaning": "Propriété"
+      },
+      {
+        "flag": "-Column",
+        "meaning": "Nombre de colonnes"
+      },
+      {
+        "flag": "-AutoSize",
+        "meaning": "Ajuster la largeur"
+      },
+      {
+        "flag": "-GroupBy",
+        "meaning": "Regrouper"
+      },
+      {
+        "flag": "-View",
+        "meaning": "Vue prédéfinie"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Format-Wide -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-export-csv",
+    "name": "Export-Csv",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Exporter des objets en CSV",
+    "syntax": "Export-Csv [paramètres]",
+    "examples": [
+      "Get-Service | Export-Csv -Path services.csv -NoTypeInformation"
+    ],
+    "options": [
+      {
+        "flag": "-Path",
+        "meaning": "Fichier cible"
+      },
+      {
+        "flag": "-LiteralPath",
+        "meaning": "Chemin littéral"
+      },
+      {
+        "flag": "-Delimiter",
+        "meaning": "Séparateur"
+      },
+      {
+        "flag": "-UseCulture",
+        "meaning": "Séparateur régional"
+      },
+      {
+        "flag": "-Encoding",
+        "meaning": "Encodage"
+      },
+      {
+        "flag": "-Append",
+        "meaning": "Ajouter au fichier"
+      },
+      {
+        "flag": "-NoTypeInformation",
+        "meaning": "Omettre le type"
+      },
+      {
+        "flag": "-NoClobber",
+        "meaning": "Ne pas écraser"
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Autoriser certains écrasements"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Export-Csv -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-out-file",
+    "name": "Out-File",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Écrire la sortie dans un fichier",
+    "syntax": "Out-File [paramètres]",
+    "examples": [
+      "Get-Service | Out-File -FilePath services.txt"
+    ],
+    "options": [
+      {
+        "flag": "-FilePath",
+        "meaning": "Fichier cible"
+      },
+      {
+        "flag": "-LiteralPath",
+        "meaning": "Chemin littéral"
+      },
+      {
+        "flag": "-Encoding",
+        "meaning": "Encodage"
+      },
+      {
+        "flag": "-Append",
+        "meaning": "Ajouter"
+      },
+      {
+        "flag": "-NoClobber",
+        "meaning": "Ne pas écraser"
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Forcer l’écriture si autorisée"
+      },
+      {
+        "flag": "-Width",
+        "meaning": "Largeur de sortie"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Out-File -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-read-host",
+    "name": "Read-Host",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lire une saisie",
+    "syntax": "Read-Host [paramètres]",
+    "examples": [
+      "Read-Host -Prompt Nom"
+    ],
+    "options": [
+      {
+        "flag": "-Prompt",
+        "meaning": "Message affiché"
+      },
+      {
+        "flag": "-AsSecureString",
+        "meaning": "Saisie masquée sous forme SecureString"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Read-Host -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-start-process",
+    "name": "Start-Process",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Démarrer un processus",
+    "syntax": "Start-Process [paramètres]",
+    "examples": [
+      "Start-Process -FilePath notepad.exe"
+    ],
+    "options": [
+      {
+        "flag": "-FilePath",
+        "meaning": "Exécutable"
+      },
+      {
+        "flag": "-ArgumentList",
+        "meaning": "Arguments"
+      },
+      {
+        "flag": "-WorkingDirectory",
+        "meaning": "Répertoire de travail"
+      },
+      {
+        "flag": "-Wait",
+        "meaning": "Attendre la fin"
+      },
+      {
+        "flag": "-PassThru",
+        "meaning": "Renvoyer le processus"
+      },
+      {
+        "flag": "-Verb",
+        "meaning": "Action du shell"
+      },
+      {
+        "flag": "-NoNewWindow",
+        "meaning": "Réutiliser la console"
+      },
+      {
+        "flag": "-WindowStyle",
+        "meaning": "Style de fenêtre"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Start-Process -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-stop-service",
+    "name": "Stop-Service",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Arrêter un service",
+    "syntax": "Stop-Service [paramètres]",
+    "examples": [
+      "Stop-Service -Name Spooler -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom du service"
+      },
+      {
+        "flag": "-DisplayName",
+        "meaning": "Nom affiché"
+      },
+      {
+        "flag": "-InputObject",
+        "meaning": "Objet service"
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Autoriser l’arrêt avec dépendances"
+      },
+      {
+        "flag": "-PassThru",
+        "meaning": "Renvoyer le service"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Stop-Service -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-winevent",
+    "name": "Get-WinEvent",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lire les journaux Windows",
+    "syntax": "Get-WinEvent [paramètres]",
+    "examples": [
+      "Get-WinEvent -LogName System -MaxEvents 10"
+    ],
+    "options": [
+      {
+        "flag": "-LogName",
+        "meaning": "Journal"
+      },
+      {
+        "flag": "-ProviderName",
+        "meaning": "Fournisseur"
+      },
+      {
+        "flag": "-FilterHashtable",
+        "meaning": "Filtre structuré"
+      },
+      {
+        "flag": "-FilterXPath",
+        "meaning": "Filtre XPath"
+      },
+      {
+        "flag": "-FilterXml",
+        "meaning": "Filtre XML"
+      },
+      {
+        "flag": "-MaxEvents",
+        "meaning": "Nombre maximal"
+      },
+      {
+        "flag": "-ComputerName",
+        "meaning": "Ordinateur distant"
+      },
+      {
+        "flag": "-ListLog",
+        "meaning": "Lister les journaux"
+      },
+      {
+        "flag": "-ListProvider",
+        "meaning": "Lister les fournisseurs"
+      },
+      {
+        "flag": "-Oldest",
+        "meaning": "Plus anciens d’abord"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-WinEvent -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-new-localuser",
+    "name": "New-LocalUser",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Créer un compte local",
+    "syntax": "New-LocalUser [paramètres]",
+    "examples": [
+      "New-LocalUser -Name Lab -Password (Read-Host -AsSecureString) -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-Password",
+        "meaning": "Mot de passe SecureString"
+      },
+      {
+        "flag": "-NoPassword",
+        "meaning": "Sans mot de passe"
+      },
+      {
+        "flag": "-FullName",
+        "meaning": "Nom complet"
+      },
+      {
+        "flag": "-Description",
+        "meaning": "Description"
+      },
+      {
+        "flag": "-Disabled",
+        "meaning": "Compte désactivé"
+      },
+      {
+        "flag": "-AccountExpires",
+        "meaning": "Expiration"
+      },
+      {
+        "flag": "-AccountNeverExpires",
+        "meaning": "Sans expiration"
+      },
+      {
+        "flag": "-PasswordNeverExpires",
+        "meaning": "Mot de passe sans expiration"
+      },
+      {
+        "flag": "-UserMayNotChangePassword",
+        "meaning": "Interdire le changement"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help New-LocalUser -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-set-localuser",
+    "name": "Set-LocalUser",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Modifier un compte local",
+    "syntax": "Set-LocalUser [paramètres]",
+    "examples": [
+      "Set-LocalUser -Name Lab -Description Test -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant de sécurité"
+      },
+      {
+        "flag": "-InputObject",
+        "meaning": "Objet utilisateur"
+      },
+      {
+        "flag": "-Password",
+        "meaning": "Mot de passe"
+      },
+      {
+        "flag": "-FullName",
+        "meaning": "Nom complet"
+      },
+      {
+        "flag": "-Description",
+        "meaning": "Description"
+      },
+      {
+        "flag": "-AccountExpires",
+        "meaning": "Expiration"
+      },
+      {
+        "flag": "-AccountNeverExpires",
+        "meaning": "Sans expiration"
+      },
+      {
+        "flag": "-PasswordNeverExpires",
+        "meaning": "Mot de passe sans expiration"
+      },
+      {
+        "flag": "-UserMayChangePassword",
+        "meaning": "Autoriser le changement"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Set-LocalUser -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-enable-localuser",
+    "name": "Enable-LocalUser",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Activer un compte local",
+    "syntax": "Enable-LocalUser [paramètres]",
+    "examples": [
+      "Enable-LocalUser -Name Lab -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant de sécurité"
+      },
+      {
+        "flag": "-InputObject",
+        "meaning": "Objet utilisateur"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Enable-LocalUser -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-disable-localuser",
+    "name": "Disable-LocalUser",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Désactiver un compte local",
+    "syntax": "Disable-LocalUser [paramètres]",
+    "examples": [
+      "Disable-LocalUser -Name Lab -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant de sécurité"
+      },
+      {
+        "flag": "-InputObject",
+        "meaning": "Objet utilisateur"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Disable-LocalUser -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-rename-localuser",
+    "name": "Rename-LocalUser",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Renommer un compte local",
+    "syntax": "Rename-LocalUser [paramètres]",
+    "examples": [
+      "Rename-LocalUser -Name Lab -NewName Lab2 -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom actuel"
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant de sécurité"
+      },
+      {
+        "flag": "-InputObject",
+        "meaning": "Objet utilisateur"
+      },
+      {
+        "flag": "-NewName",
+        "meaning": "Nouveau nom"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Rename-LocalUser -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-new-localgroup",
+    "name": "New-LocalGroup",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Créer un groupe local",
+    "syntax": "New-LocalGroup [paramètres]",
+    "examples": [
+      "New-LocalGroup -Name Lab -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-Description",
+        "meaning": "Description"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help New-LocalGroup -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-set-localgroup",
+    "name": "Set-LocalGroup",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Modifier un groupe local",
+    "syntax": "Set-LocalGroup [paramètres]",
+    "examples": [
+      "Set-LocalGroup -Name Lab -Description Test -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant de sécurité"
+      },
+      {
+        "flag": "-InputObject",
+        "meaning": "Objet groupe"
+      },
+      {
+        "flag": "-Description",
+        "meaning": "Description"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Set-LocalGroup -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-remove-localgroup",
+    "name": "Remove-LocalGroup",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Supprimer un groupe local",
+    "syntax": "Remove-LocalGroup [paramètres]",
+    "examples": [
+      "Remove-LocalGroup -Name Lab -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant de sécurité"
+      },
+      {
+        "flag": "-InputObject",
+        "meaning": "Objet groupe"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Remove-LocalGroup -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-localgroupmember",
+    "name": "Get-LocalGroupMember",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les membres d’un groupe local",
+    "syntax": "Get-LocalGroupMember [paramètres]",
+    "examples": [
+      "Get-LocalGroupMember -Group Lab"
+    ],
+    "options": [
+      {
+        "flag": "-Group",
+        "meaning": "Groupe"
+      },
+      {
+        "flag": "-Name",
+        "meaning": "Nom du groupe"
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant du groupe"
+      },
+      {
+        "flag": "-Member",
+        "meaning": "Filtrer un membre"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-LocalGroupMember -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-add-localgroupmember",
+    "name": "Add-LocalGroupMember",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Ajouter des membres",
+    "syntax": "Add-LocalGroupMember [paramètres]",
+    "examples": [
+      "Add-LocalGroupMember -Group Lab -Member Test -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Group",
+        "meaning": "Groupe"
+      },
+      {
+        "flag": "-Name",
+        "meaning": "Nom du groupe"
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant du groupe"
+      },
+      {
+        "flag": "-Member",
+        "meaning": "Membres à ajouter"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Add-LocalGroupMember -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-remove-localgroupmember",
+    "name": "Remove-LocalGroupMember",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Retirer des membres",
+    "syntax": "Remove-LocalGroupMember [paramètres]",
+    "examples": [
+      "Remove-LocalGroupMember -Group Lab -Member Test -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Group",
+        "meaning": "Groupe"
+      },
+      {
+        "flag": "-Name",
+        "meaning": "Nom du groupe"
+      },
+      {
+        "flag": "-SID",
+        "meaning": "Identifiant du groupe"
+      },
+      {
+        "flag": "-Member",
+        "meaning": "Membres à retirer"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Remove-LocalGroupMember -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-disk",
+    "name": "Get-Disk",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les disques",
+    "syntax": "Get-Disk [paramètres]",
+    "examples": [
+      "Get-Disk"
+    ],
+    "options": [
+      {
+        "flag": "-Number",
+        "meaning": "Numéro"
+      },
+      {
+        "flag": "-FriendlyName",
+        "meaning": "Nom convivial"
+      },
+      {
+        "flag": "-SerialNumber",
+        "meaning": "Numéro de série"
+      },
+      {
+        "flag": "-UniqueId",
+        "meaning": "Identifiant unique"
+      },
+      {
+        "flag": "-Path",
+        "meaning": "Chemin"
+      },
+      {
+        "flag": "-CimSession",
+        "meaning": "Session distante"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-Disk -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-initialize-disk",
+    "name": "Initialize-Disk",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Initialiser un disque",
+    "syntax": "Initialize-Disk [paramètres]",
+    "examples": [
+      "Initialize-Disk -Number 2 -PartitionStyle GPT -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Number",
+        "meaning": "Numéro"
+      },
+      {
+        "flag": "-UniqueId",
+        "meaning": "Identifiant"
+      },
+      {
+        "flag": "-PartitionStyle",
+        "meaning": "GPT ou MBR"
+      },
+      {
+        "flag": "-InputObject",
+        "meaning": "Objet disque"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Initialize-Disk -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-partition",
+    "name": "Get-Partition",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les partitions",
+    "syntax": "Get-Partition [paramètres]",
+    "examples": [
+      "Get-Partition -DiskNumber 0"
+    ],
+    "options": [
+      {
+        "flag": "-DiskNumber",
+        "meaning": "Numéro de disque"
+      },
+      {
+        "flag": "-PartitionNumber",
+        "meaning": "Numéro de partition"
+      },
+      {
+        "flag": "-DriveLetter",
+        "meaning": "Lettre"
+      },
+      {
+        "flag": "-DiskId",
+        "meaning": "Identifiant disque"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-Partition -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-new-partition",
+    "name": "New-Partition",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Créer une partition",
+    "syntax": "New-Partition [paramètres]",
+    "examples": [
+      "New-Partition -DiskNumber 2 -UseMaximumSize -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-DiskNumber",
+        "meaning": "Numéro de disque"
+      },
+      {
+        "flag": "-Size",
+        "meaning": "Taille"
+      },
+      {
+        "flag": "-UseMaximumSize",
+        "meaning": "Espace maximal"
+      },
+      {
+        "flag": "-DriveLetter",
+        "meaning": "Lettre"
+      },
+      {
+        "flag": "-AssignDriveLetter",
+        "meaning": "Attribuer une lettre"
+      },
+      {
+        "flag": "-GptType",
+        "meaning": "Type GPT"
+      },
+      {
+        "flag": "-MbrType",
+        "meaning": "Type MBR"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help New-Partition -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-set-partition",
+    "name": "Set-Partition",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Modifier une partition",
+    "syntax": "Set-Partition [paramètres]",
+    "examples": [
+      "Set-Partition -DriveLetter E -NewDriveLetter F -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-DiskNumber",
+        "meaning": "Numéro de disque"
+      },
+      {
+        "flag": "-PartitionNumber",
+        "meaning": "Numéro de partition"
+      },
+      {
+        "flag": "-DriveLetter",
+        "meaning": "Lettre actuelle"
+      },
+      {
+        "flag": "-NewDriveLetter",
+        "meaning": "Nouvelle lettre"
+      },
+      {
+        "flag": "-IsReadOnly",
+        "meaning": "Lecture seule"
+      },
+      {
+        "flag": "-IsHidden",
+        "meaning": "Masquer"
+      },
+      {
+        "flag": "-IsActive",
+        "meaning": "Active MBR"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Set-Partition -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-volume",
+    "name": "Get-Volume",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les volumes",
+    "syntax": "Get-Volume [paramètres]",
+    "examples": [
+      "Get-Volume -DriveLetter C"
+    ],
+    "options": [
+      {
+        "flag": "-DriveLetter",
+        "meaning": "Lettre"
+      },
+      {
+        "flag": "-FileSystemLabel",
+        "meaning": "Étiquette"
+      },
+      {
+        "flag": "-UniqueId",
+        "meaning": "Identifiant"
+      },
+      {
+        "flag": "-Path",
+        "meaning": "Chemin"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-Volume -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-format-volume",
+    "name": "Format-Volume",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Formater un volume",
+    "syntax": "Format-Volume [paramètres]",
+    "examples": [
+      "Format-Volume -DriveLetter E -FileSystem NTFS -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-DriveLetter",
+        "meaning": "Lettre"
+      },
+      {
+        "flag": "-FileSystem",
+        "meaning": "Système de fichiers"
+      },
+      {
+        "flag": "-NewFileSystemLabel",
+        "meaning": "Étiquette"
+      },
+      {
+        "flag": "-AllocationUnitSize",
+        "meaning": "Taille d’unité"
+      },
+      {
+        "flag": "-Full",
+        "meaning": "Formatage complet"
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Forcer"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Format-Volume -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-netadapter",
+    "name": "Get-NetAdapter",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les interfaces réseau",
+    "syntax": "Get-NetAdapter [paramètres]",
+    "examples": [
+      "Get-NetAdapter -Physical"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-InterfaceDescription",
+        "meaning": "Description"
+      },
+      {
+        "flag": "-Physical",
+        "meaning": "Interfaces physiques"
+      },
+      {
+        "flag": "-IncludeHidden",
+        "meaning": "Inclure les interfaces masquées"
+      },
+      {
+        "flag": "-CimSession",
+        "meaning": "Session distante"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-NetAdapter -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-netconnectionprofile",
+    "name": "Get-NetConnectionProfile",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Afficher les profils réseau",
+    "syntax": "Get-NetConnectionProfile [paramètres]",
+    "examples": [
+      "Get-NetConnectionProfile"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-InterfaceAlias",
+        "meaning": "Alias interface"
+      },
+      {
+        "flag": "-InterfaceIndex",
+        "meaning": "Index interface"
+      },
+      {
+        "flag": "-NetworkCategory",
+        "meaning": "Catégorie réseau"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-NetConnectionProfile -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-netfirewallprofile",
+    "name": "Get-NetFirewallProfile",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Afficher les profils du pare-feu",
+    "syntax": "Get-NetFirewallProfile [paramètres]",
+    "examples": [
+      "Get-NetFirewallProfile -Name Private"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Profil Domain Private ou Public"
+      },
+      {
+        "flag": "-PolicyStore",
+        "meaning": "Magasin de stratégie"
+      },
+      {
+        "flag": "-CimSession",
+        "meaning": "Session distante"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-NetFirewallProfile -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-netfirewallrule",
+    "name": "Get-NetFirewallRule",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les règles du pare-feu",
+    "syntax": "Get-NetFirewallRule [paramètres]",
+    "examples": [
+      "Get-NetFirewallRule -Enabled True"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom interne"
+      },
+      {
+        "flag": "-DisplayName",
+        "meaning": "Nom affiché"
+      },
+      {
+        "flag": "-Enabled",
+        "meaning": "État"
+      },
+      {
+        "flag": "-Direction",
+        "meaning": "Direction"
+      },
+      {
+        "flag": "-Action",
+        "meaning": "Action"
+      },
+      {
+        "flag": "-Profile",
+        "meaning": "Profil"
+      },
+      {
+        "flag": "-PolicyStore",
+        "meaning": "Magasin"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-NetFirewallRule -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-new-netfirewallrule",
+    "name": "New-NetFirewallRule",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Créer une règle du pare-feu",
+    "syntax": "New-NetFirewallRule [paramètres]",
+    "examples": [
+      "New-NetFirewallRule -DisplayName Lab -Direction Inbound -Action Allow -Protocol TCP -LocalPort 8080 -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-DisplayName",
+        "meaning": "Nom affiché"
+      },
+      {
+        "flag": "-Name",
+        "meaning": "Nom interne"
+      },
+      {
+        "flag": "-Direction",
+        "meaning": "Direction"
+      },
+      {
+        "flag": "-Action",
+        "meaning": "Autoriser ou bloquer"
+      },
+      {
+        "flag": "-Protocol",
+        "meaning": "Protocole"
+      },
+      {
+        "flag": "-LocalPort",
+        "meaning": "Port local"
+      },
+      {
+        "flag": "-RemotePort",
+        "meaning": "Port distant"
+      },
+      {
+        "flag": "-RemoteAddress",
+        "meaning": "Adresse distante"
+      },
+      {
+        "flag": "-Profile",
+        "meaning": "Profil"
+      },
+      {
+        "flag": "-Program",
+        "meaning": "Programme"
+      },
+      {
+        "flag": "-Enabled",
+        "meaning": "État"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help New-NetFirewallRule -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-disable-netfirewallrule",
+    "name": "Disable-NetFirewallRule",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Désactiver une règle",
+    "syntax": "Disable-NetFirewallRule [paramètres]",
+    "examples": [
+      "Disable-NetFirewallRule -DisplayName Lab -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom interne"
+      },
+      {
+        "flag": "-DisplayName",
+        "meaning": "Nom affiché"
+      },
+      {
+        "flag": "-Group",
+        "meaning": "Groupe"
+      },
+      {
+        "flag": "-DisplayGroup",
+        "meaning": "Groupe affiché"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Disable-NetFirewallRule -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-resolve-dnsname",
+    "name": "Resolve-DnsName",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Interroger DNS",
+    "syntax": "Resolve-DnsName [paramètres]",
+    "examples": [
+      "Resolve-DnsName -Name example.com -Type A"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom à résoudre"
+      },
+      {
+        "flag": "-Type",
+        "meaning": "Type d’enregistrement"
+      },
+      {
+        "flag": "-Server",
+        "meaning": "Serveur DNS"
+      },
+      {
+        "flag": "-DnsOnly",
+        "meaning": "DNS uniquement"
+      },
+      {
+        "flag": "-TcpOnly",
+        "meaning": "TCP uniquement"
+      },
+      {
+        "flag": "-NoHostsFile",
+        "meaning": "Ignorer hosts"
+      },
+      {
+        "flag": "-CacheOnly",
+        "meaning": "Cache uniquement"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Resolve-DnsName -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-acl",
+    "name": "Get-Acl",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lire les permissions",
+    "syntax": "Get-Acl [paramètres]",
+    "examples": [
+      "Get-Acl -Path C:\\Windows"
+    ],
+    "options": [
+      {
+        "flag": "-Path",
+        "meaning": "Chemin"
+      },
+      {
+        "flag": "-LiteralPath",
+        "meaning": "Chemin littéral"
+      },
+      {
+        "flag": "-Audit",
+        "meaning": "Lire les règles d’audit"
+      },
+      {
+        "flag": "-AllCentralAccessPolicies",
+        "meaning": "Stratégies centrales"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-Acl -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-smbshare",
+    "name": "Get-SmbShare",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les partages SMB",
+    "syntax": "Get-SmbShare [paramètres]",
+    "examples": [
+      "Get-SmbShare"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-ScopeName",
+        "meaning": "Portée"
+      },
+      {
+        "flag": "-Special",
+        "meaning": "Partages spéciaux"
+      },
+      {
+        "flag": "-CimSession",
+        "meaning": "Session distante"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-SmbShare -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-new-smbshare",
+    "name": "New-SmbShare",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Créer un partage SMB",
+    "syntax": "New-SmbShare [paramètres]",
+    "examples": [
+      "New-SmbShare -Name Lab -Path C:\\Lab -ReadAccess Utilisateurs"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-Path",
+        "meaning": "Chemin"
+      },
+      {
+        "flag": "-Description",
+        "meaning": "Description"
+      },
+      {
+        "flag": "-FullAccess",
+        "meaning": "Contrôle total"
+      },
+      {
+        "flag": "-ChangeAccess",
+        "meaning": "Modification"
+      },
+      {
+        "flag": "-ReadAccess",
+        "meaning": "Lecture"
+      },
+      {
+        "flag": "-NoAccess",
+        "meaning": "Refus"
+      },
+      {
+        "flag": "-EncryptData",
+        "meaning": "Chiffrement"
+      },
+      {
+        "flag": "-CachingMode",
+        "meaning": "Cache"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help New-SmbShare -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-remove-smbshare",
+    "name": "Remove-SmbShare",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Supprimer un partage",
+    "syntax": "Remove-SmbShare [paramètres]",
+    "examples": [
+      "Remove-SmbShare -Name Lab -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-ScopeName",
+        "meaning": "Portée"
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Sans confirmation supplémentaire"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Remove-SmbShare -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-smbshareaccess",
+    "name": "Get-SmbShareAccess",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lire les droits de partage",
+    "syntax": "Get-SmbShareAccess [paramètres]",
+    "examples": [
+      "Get-SmbShareAccess -Name Lab"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-ScopeName",
+        "meaning": "Portée"
+      },
+      {
+        "flag": "-CimSession",
+        "meaning": "Session distante"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-SmbShareAccess -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-smbmapping",
+    "name": "Get-SmbMapping",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les connexions SMB",
+    "syntax": "Get-SmbMapping [paramètres]",
+    "examples": [
+      "Get-SmbMapping"
+    ],
+    "options": [
+      {
+        "flag": "-LocalPath",
+        "meaning": "Lettre locale"
+      },
+      {
+        "flag": "-RemotePath",
+        "meaning": "Chemin UNC"
+      },
+      {
+        "flag": "-CimSession",
+        "meaning": "Session distante"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-SmbMapping -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-new-smbmapping",
+    "name": "New-SmbMapping",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Connecter un partage",
+    "syntax": "New-SmbMapping [paramètres]",
+    "examples": [
+      "New-SmbMapping -LocalPath Z: -RemotePath \\\\serveur\\partage"
+    ],
+    "options": [
+      {
+        "flag": "-LocalPath",
+        "meaning": "Lettre locale"
+      },
+      {
+        "flag": "-RemotePath",
+        "meaning": "Chemin UNC"
+      },
+      {
+        "flag": "-UserName",
+        "meaning": "Utilisateur"
+      },
+      {
+        "flag": "-Password",
+        "meaning": "Mot de passe"
+      },
+      {
+        "flag": "-Persistent",
+        "meaning": "Connexion persistante"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help New-SmbMapping -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-remove-smbmapping",
+    "name": "Remove-SmbMapping",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Déconnecter un partage",
+    "syntax": "Remove-SmbMapping [paramètres]",
+    "examples": [
+      "Remove-SmbMapping -LocalPath Z: -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-LocalPath",
+        "meaning": "Lettre locale"
+      },
+      {
+        "flag": "-RemotePath",
+        "meaning": "Chemin UNC"
+      },
+      {
+        "flag": "-Force",
+        "meaning": "Forcer"
+      },
+      {
+        "flag": "-UpdateProfile",
+        "meaning": "Mettre à jour le profil"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Remove-SmbMapping -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-add-printer",
+    "name": "Add-Printer",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Ajouter une imprimante",
+    "syntax": "Add-Printer [paramètres]",
+    "examples": [
+      "Add-Printer -ConnectionName \\\\serveur\\imprimante"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-DriverName",
+        "meaning": "Pilote"
+      },
+      {
+        "flag": "-PortName",
+        "meaning": "Port"
+      },
+      {
+        "flag": "-ConnectionName",
+        "meaning": "Chemin de connexion"
+      },
+      {
+        "flag": "-Shared",
+        "meaning": "Partager"
+      },
+      {
+        "flag": "-ShareName",
+        "meaning": "Nom du partage"
+      },
+      {
+        "flag": "-Comment",
+        "meaning": "Commentaire"
+      },
+      {
+        "flag": "-Location",
+        "meaning": "Emplacement"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Add-Printer -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-aduser",
+    "name": "Get-ADUser",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Consulter un utilisateur AD",
+    "syntax": "Get-ADUser [paramètres]",
+    "examples": [
+      "Get-ADUser -Filter * -Properties Department"
+    ],
+    "options": [
+      {
+        "flag": "-Identity",
+        "meaning": "Identité"
+      },
+      {
+        "flag": "-Filter",
+        "meaning": "Filtre AD"
+      },
+      {
+        "flag": "-LDAPFilter",
+        "meaning": "Filtre LDAP"
+      },
+      {
+        "flag": "-Properties",
+        "meaning": "Attributs supplémentaires"
+      },
+      {
+        "flag": "-SearchBase",
+        "meaning": "Base de recherche"
+      },
+      {
+        "flag": "-SearchScope",
+        "meaning": "Portée"
+      },
+      {
+        "flag": "-Server",
+        "meaning": "Contrôleur de domaine"
+      },
+      {
+        "flag": "-Credential",
+        "meaning": "Identifiants"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-ADUser -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-adgroupmember",
+    "name": "Get-ADGroupMember",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les membres AD",
+    "syntax": "Get-ADGroupMember [paramètres]",
+    "examples": [
+      "Get-ADGroupMember -Identity Lab -Recursive"
+    ],
+    "options": [
+      {
+        "flag": "-Identity",
+        "meaning": "Groupe"
+      },
+      {
+        "flag": "-Recursive",
+        "meaning": "Inclure les membres imbriqués"
+      },
+      {
+        "flag": "-Server",
+        "meaning": "Contrôleur de domaine"
+      },
+      {
+        "flag": "-Credential",
+        "meaning": "Identifiants"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-ADGroupMember -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-add-adgroupmember",
+    "name": "Add-ADGroupMember",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Ajouter des membres AD",
+    "syntax": "Add-ADGroupMember [paramètres]",
+    "examples": [
+      "Add-ADGroupMember -Identity Lab -Members Test -WhatIf"
+    ],
+    "options": [
+      {
+        "flag": "-Identity",
+        "meaning": "Groupe"
+      },
+      {
+        "flag": "-Members",
+        "meaning": "Membres"
+      },
+      {
+        "flag": "-Server",
+        "meaning": "Contrôleur de domaine"
+      },
+      {
+        "flag": "-Credential",
+        "meaning": "Identifiants"
+      },
+      {
+        "flag": "-WhatIf",
+        "meaning": "Simuler"
+      },
+      {
+        "flag": "-Confirm",
+        "meaning": "Confirmer"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Add-ADGroupMember -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-get-dhcpserverv4scope",
+    "name": "Get-DhcpServerv4Scope",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Lister les étendues DHCP",
+    "syntax": "Get-DhcpServerv4Scope [paramètres]",
+    "examples": [
+      "Get-DhcpServerv4Scope"
+    ],
+    "options": [
+      {
+        "flag": "-ScopeId",
+        "meaning": "Identifiant d’étendue"
+      },
+      {
+        "flag": "-ComputerName",
+        "meaning": "Serveur DHCP"
+      },
+      {
+        "flag": "-CimSession",
+        "meaning": "Session distante"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Get-DhcpServerv4Scope -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-ps-backup-gpo",
+    "name": "Backup-GPO",
+    "environment": "PowerShell",
+    "category": "PowerShell",
+    "description": "Sauvegarder une GPO",
+    "syntax": "Backup-GPO [paramètres]",
+    "examples": [
+      "Backup-GPO -Name Lab -Path C:\\Backup"
+    ],
+    "options": [
+      {
+        "flag": "-Name",
+        "meaning": "Nom"
+      },
+      {
+        "flag": "-Guid",
+        "meaning": "Identifiant"
+      },
+      {
+        "flag": "-All",
+        "meaning": "Toutes les GPO"
+      },
+      {
+        "flag": "-Path",
+        "meaning": "Dossier de sauvegarde"
+      },
+      {
+        "flag": "-Comment",
+        "meaning": "Commentaire"
+      },
+      {
+        "flag": "-Domain",
+        "meaning": "Domaine"
+      },
+      {
+        "flag": "-Server",
+        "meaning": "Contrôleur de domaine"
+      }
+    ],
+    "notes": "Sélection de paramètres usuels, non exhaustive. Vérifier la version et les jeux de paramètres avec Get-Help Backup-GPO -Full. Les opérations de modification nécessitent un environnement de test et les droits adaptés."
+  },
+  {
+    "id": "audit-sudo",
+    "name": "sudo",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Exécuter avec une identité autorisée",
+    "syntax": "sudo [options] [arguments]",
+    "examples": [
+      "sudo -l"
+    ],
+    "options": [
+      {
+        "flag": "-u",
+        "meaning": "Utilisateur cible"
+      },
+      {
+        "flag": "-g",
+        "meaning": "Groupe cible"
+      },
+      {
+        "flag": "-i",
+        "meaning": "Shell de connexion"
+      },
+      {
+        "flag": "-s",
+        "meaning": "Shell"
+      },
+      {
+        "flag": "-l",
+        "meaning": "Lister les droits"
+      },
+      {
+        "flag": "-k",
+        "meaning": "Invalider le cache"
+      },
+      {
+        "flag": "-v",
+        "meaning": "Renouveler le cache"
+      },
+      {
+        "flag": "-n",
+        "meaning": "Sans interaction"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-logger",
+    "name": "logger",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Écrire dans le journal",
+    "syntax": "logger [options] [arguments]",
+    "examples": [
+      "logger -t lab test"
+    ],
+    "options": [
+      {
+        "flag": "-t",
+        "meaning": "Étiquette"
+      },
+      {
+        "flag": "-p",
+        "meaning": "Priorité"
+      },
+      {
+        "flag": "-i",
+        "meaning": "Inclure le PID"
+      },
+      {
+        "flag": "-s",
+        "meaning": "Écrire aussi sur stderr"
+      },
+      {
+        "flag": "-f",
+        "meaning": "Lire un fichier"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-logrotate",
+    "name": "logrotate",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Gérer la rotation des journaux",
+    "syntax": "logrotate [options] [arguments]",
+    "examples": [
+      "logrotate -d /etc/logrotate.conf"
+    ],
+    "options": [
+      {
+        "flag": "-d",
+        "meaning": "Mode diagnostic sans rotation"
+      },
+      {
+        "flag": "-f",
+        "meaning": "Forcer la rotation"
+      },
+      {
+        "flag": "-v",
+        "meaning": "Mode détaillé"
+      },
+      {
+        "flag": "-s",
+        "meaning": "Fichier d’état"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-run-parts",
+    "name": "run-parts",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Exécuter les scripts d’un dossier",
+    "syntax": "run-parts [options] [arguments]",
+    "examples": [
+      "run-parts --test /etc/cron.daily"
+    ],
+    "options": [
+      {
+        "flag": "--test",
+        "meaning": "Lister sans exécuter"
+      },
+      {
+        "flag": "--verbose",
+        "meaning": "Afficher les scripts exécutés"
+      },
+      {
+        "flag": "--reverse",
+        "meaning": "Ordre inverse"
+      },
+      {
+        "flag": "--arg",
+        "meaning": "Argument transmis"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-groupdel",
+    "name": "groupdel",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Supprimer un groupe",
+    "syntax": "groupdel [options] [arguments]",
+    "examples": [
+      "groupdel groupe_test"
+    ],
+    "options": [
+      {
+        "flag": "-f",
+        "meaning": "Forcer si pris en charge"
+      },
+      {
+        "flag": "-R",
+        "meaning": "Racine alternative"
+      },
+      {
+        "flag": "-P",
+        "meaning": "Préfixe alternatif"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-groupmod",
+    "name": "groupmod",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Modifier un groupe",
+    "syntax": "groupmod [options] [arguments]",
+    "examples": [
+      "groupmod -n nouveau ancien"
+    ],
+    "options": [
+      {
+        "flag": "-g",
+        "meaning": "Nouveau GID"
+      },
+      {
+        "flag": "-n",
+        "meaning": "Nouveau nom"
+      },
+      {
+        "flag": "-o",
+        "meaning": "Autoriser un GID non unique"
+      },
+      {
+        "flag": "-R",
+        "meaning": "Racine alternative"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-chsh",
+    "name": "chsh",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Modifier le shell de connexion",
+    "syntax": "chsh [options] [arguments]",
+    "examples": [
+      "chsh -s /bin/bash"
+    ],
+    "options": [
+      {
+        "flag": "-s",
+        "meaning": "Shell cible"
+      },
+      {
+        "flag": "-l",
+        "meaning": "Lister les shells si pris en charge"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-lspci",
+    "name": "lspci",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Lister les périphériques PCI",
+    "syntax": "lspci [options] [arguments]",
+    "examples": [
+      "lspci -nnk"
+    ],
+    "options": [
+      {
+        "flag": "-v",
+        "meaning": "Détails"
+      },
+      {
+        "flag": "-nn",
+        "meaning": "Noms et identifiants numériques"
+      },
+      {
+        "flag": "-k",
+        "meaning": "Pilotes noyau"
+      },
+      {
+        "flag": "-s",
+        "meaning": "Sélection par adresse"
+      },
+      {
+        "flag": "-t",
+        "meaning": "Arborescence"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-lsusb",
+    "name": "lsusb",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Lister les périphériques USB",
+    "syntax": "lsusb [options] [arguments]",
+    "examples": [
+      "lsusb -t"
+    ],
+    "options": [
+      {
+        "flag": "-v",
+        "meaning": "Détails"
+      },
+      {
+        "flag": "-t",
+        "meaning": "Arborescence"
+      },
+      {
+        "flag": "-s",
+        "meaning": "Bus et périphérique"
+      },
+      {
+        "flag": "-d",
+        "meaning": "Identifiants vendeur et produit"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-fsck",
+    "name": "fsck",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Vérifier un système de fichiers",
+    "syntax": "fsck [options] [arguments]",
+    "examples": [
+      "fsck -N /dev/sdb1"
+    ],
+    "options": [
+      {
+        "flag": "-A",
+        "meaning": "Vérifier selon fstab"
+      },
+      {
+        "flag": "-N",
+        "meaning": "Afficher sans exécuter"
+      },
+      {
+        "flag": "-t",
+        "meaning": "Type de système de fichiers"
+      },
+      {
+        "flag": "-V",
+        "meaning": "Mode détaillé"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-mkfs",
+    "name": "mkfs",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Créer un système de fichiers",
+    "syntax": "mkfs [options] [arguments]",
+    "examples": [
+      "mkfs -t ext4 /dev/sdb1"
+    ],
+    "options": [
+      {
+        "flag": "-t",
+        "meaning": "Type"
+      },
+      {
+        "flag": "-V",
+        "meaning": "Mode détaillé"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-mke2fs",
+    "name": "mke2fs",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Créer un système ext",
+    "syntax": "mke2fs [options] [arguments]",
+    "examples": [
+      "mke2fs -n -t ext4 /dev/sdb1"
+    ],
+    "options": [
+      {
+        "flag": "-t",
+        "meaning": "Type ext2 ext3 ext4"
+      },
+      {
+        "flag": "-L",
+        "meaning": "Étiquette"
+      },
+      {
+        "flag": "-b",
+        "meaning": "Taille de bloc"
+      },
+      {
+        "flag": "-n",
+        "meaning": "Simulation"
+      },
+      {
+        "flag": "-m",
+        "meaning": "Pourcentage réservé"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-nginx",
+    "name": "nginx",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Administrer Nginx",
+    "syntax": "nginx [options] [arguments]",
+    "examples": [
+      "nginx -t"
+    ],
+    "options": [
+      {
+        "flag": "-t",
+        "meaning": "Tester la configuration"
+      },
+      {
+        "flag": "-T",
+        "meaning": "Tester et afficher la configuration"
+      },
+      {
+        "flag": "-s",
+        "meaning": "Envoyer un signal"
+      },
+      {
+        "flag": "-c",
+        "meaning": "Fichier de configuration"
+      },
+      {
+        "flag": "-v",
+        "meaning": "Version"
+      },
+      {
+        "flag": "-V",
+        "meaning": "Version et options de compilation"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-sshd",
+    "name": "sshd",
+    "environment": "Linux — Administration",
+    "category": "Linux — Administration",
+    "description": "Serveur SSH",
+    "syntax": "sshd [options] [arguments]",
+    "examples": [
+      "sshd -t"
+    ],
+    "options": [
+      {
+        "flag": "-t",
+        "meaning": "Tester la configuration"
+      },
+      {
+        "flag": "-T",
+        "meaning": "Afficher la configuration effective"
+      },
+      {
+        "flag": "-f",
+        "meaning": "Fichier de configuration"
+      },
+      {
+        "flag": "-p",
+        "meaning": "Port"
+      },
+      {
+        "flag": "-D",
+        "meaning": "Rester au premier plan"
+      },
+      {
+        "flag": "-d",
+        "meaning": "Diagnostic"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-tee",
+    "name": "tee",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Copier un flux vers la sortie et un fichier",
+    "syntax": "tee [options] [arguments]",
+    "examples": [
+      "echo test | tee -a journal.txt"
+    ],
+    "options": [
+      {
+        "flag": "-a",
+        "meaning": "Ajouter au fichier"
+      },
+      {
+        "flag": "-i",
+        "meaning": "Ignorer les interruptions"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-bash",
+    "name": "bash",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Démarrer Bash",
+    "syntax": "bash [options] [arguments]",
+    "examples": [
+      "bash -n script.sh"
+    ],
+    "options": [
+      {
+        "flag": "-c",
+        "meaning": "Exécuter une chaîne"
+      },
+      {
+        "flag": "-i",
+        "meaning": "Mode interactif"
+      },
+      {
+        "flag": "-l",
+        "meaning": "Shell de connexion"
+      },
+      {
+        "flag": "-x",
+        "meaning": "Tracer les commandes"
+      },
+      {
+        "flag": "-n",
+        "meaning": "Vérifier la syntaxe sans exécuter"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-sh",
+    "name": "sh",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Démarrer un shell compatible sh",
+    "syntax": "sh [options] [arguments]",
+    "examples": [
+      "sh -n script.sh"
+    ],
+    "options": [
+      {
+        "flag": "-c",
+        "meaning": "Exécuter une chaîne"
+      },
+      {
+        "flag": "-i",
+        "meaning": "Interactif"
+      },
+      {
+        "flag": "-x",
+        "meaning": "Tracer"
+      },
+      {
+        "flag": "-n",
+        "meaning": "Vérifier la syntaxe"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-exec",
+    "name": "exec",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Remplacer le processus du shell",
+    "syntax": "exec [options] [arguments]",
+    "examples": [
+      "exec bash"
+    ],
+    "options": [
+      {
+        "flag": "-a",
+        "meaning": "Nom argv zéro"
+      },
+      {
+        "flag": "-c",
+        "meaning": "Environnement vide"
+      },
+      {
+        "flag": "-l",
+        "meaning": "Nom de connexion"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-bc",
+    "name": "bc",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Calculatrice en ligne de commande",
+    "syntax": "bc [options] [arguments]",
+    "examples": [
+      "echo 2+3 | bc"
+    ],
+    "options": [
+      {
+        "flag": "-l",
+        "meaning": "Bibliothèque mathématique"
+      },
+      {
+        "flag": "-q",
+        "meaning": "Mode silencieux"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-compress",
+    "name": "compress",
+    "environment": "Bash",
+    "category": "Bash",
+    "description": "Compresser des fichiers",
+    "syntax": "compress [options] [arguments]",
+    "examples": [
+      "compress -c fichier.txt"
+    ],
+    "options": [
+      {
+        "flag": "-c",
+        "meaning": "Sortie standard"
+      },
+      {
+        "flag": "-f",
+        "meaning": "Forcer"
+      },
+      {
+        "flag": "-v",
+        "meaning": "Mode détaillé"
+      },
+      {
+        "flag": "-b",
+        "meaning": "Nombre maximal de bits"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-dism",
+    "name": "DISM",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Administrer les images Windows",
+    "syntax": "DISM [options] [arguments]",
+    "examples": [
+      "DISM /Online /Cleanup-Image /ScanHealth"
+    ],
+    "options": [
+      {
+        "flag": "/Online",
+        "meaning": "Système actif"
+      },
+      {
+        "flag": "/Image",
+        "meaning": "Image hors ligne"
+      },
+      {
+        "flag": "/Cleanup-Image",
+        "meaning": "Maintenance"
+      },
+      {
+        "flag": "/CheckHealth",
+        "meaning": "Vérification rapide"
+      },
+      {
+        "flag": "/ScanHealth",
+        "meaning": "Analyse approfondie"
+      },
+      {
+        "flag": "/RestoreHealth",
+        "meaning": "Réparation"
+      },
+      {
+        "flag": "/Source",
+        "meaning": "Source de réparation"
+      },
+      {
+        "flag": "/LimitAccess",
+        "meaning": "Ne pas utiliser Windows Update"
+      },
+      {
+        "flag": "/Capture-Image",
+        "meaning": "Capturer une image"
+      },
+      {
+        "flag": "/Get-WimInfo",
+        "meaning": "Informations WIM"
+      },
+      {
+        "flag": "/Mount-Image",
+        "meaning": "Monter une image"
+      },
+      {
+        "flag": "/Add-Package",
+        "meaning": "Ajouter un paquet"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-diskpart",
+    "name": "diskpart",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Administrer disques et partitions",
+    "syntax": "diskpart [options] [arguments]",
+    "examples": [
+      "diskpart"
+    ],
+    "options": [
+      {
+        "flag": "list disk",
+        "meaning": "Lister les disques"
+      },
+      {
+        "flag": "list volume",
+        "meaning": "Lister les volumes"
+      },
+      {
+        "flag": "select disk",
+        "meaning": "Sélectionner un disque"
+      },
+      {
+        "flag": "detail disk",
+        "meaning": "Détails"
+      },
+      {
+        "flag": "convert gpt",
+        "meaning": "Convertir en GPT"
+      },
+      {
+        "flag": "create partition primary",
+        "meaning": "Créer une partition"
+      },
+      {
+        "flag": "format fs=ntfs quick",
+        "meaning": "Formater rapidement"
+      },
+      {
+        "flag": "assign",
+        "meaning": "Attribuer une lettre"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-bcdboot",
+    "name": "bcdboot",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Créer les fichiers de démarrage",
+    "syntax": "bcdboot [options] [arguments]",
+    "examples": [
+      "bcdboot C:\\Windows /s S: /f UEFI"
+    ],
+    "options": [
+      {
+        "flag": "/s",
+        "meaning": "Partition système"
+      },
+      {
+        "flag": "/f",
+        "meaning": "Type de firmware"
+      },
+      {
+        "flag": "/l",
+        "meaning": "Langue"
+      },
+      {
+        "flag": "/v",
+        "meaning": "Mode détaillé"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-bcdedit",
+    "name": "bcdedit",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Administrer la configuration de démarrage",
+    "syntax": "bcdedit [options] [arguments]",
+    "examples": [
+      "bcdedit /enum"
+    ],
+    "options": [
+      {
+        "flag": "/enum",
+        "meaning": "Lister les entrées"
+      },
+      {
+        "flag": "/export",
+        "meaning": "Exporter le magasin"
+      },
+      {
+        "flag": "/import",
+        "meaning": "Importer le magasin"
+      },
+      {
+        "flag": "/set",
+        "meaning": "Modifier une valeur"
+      },
+      {
+        "flag": "/deletevalue",
+        "meaning": "Supprimer une valeur"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-pnputil",
+    "name": "pnputil",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Administrer les pilotes",
+    "syntax": "pnputil [options] [arguments]",
+    "examples": [
+      "pnputil /enum-drivers"
+    ],
+    "options": [
+      {
+        "flag": "/enum-drivers",
+        "meaning": "Lister les pilotes tiers"
+      },
+      {
+        "flag": "/add-driver",
+        "meaning": "Ajouter un pilote"
+      },
+      {
+        "flag": "/install",
+        "meaning": "Installer sur les périphériques compatibles"
+      },
+      {
+        "flag": "/delete-driver",
+        "meaning": "Supprimer un pilote"
+      },
+      {
+        "flag": "/export-driver",
+        "meaning": "Exporter un pilote"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-reagentc",
+    "name": "reagentc",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Administrer Windows RE",
+    "syntax": "reagentc [options] [arguments]",
+    "examples": [
+      "reagentc /info"
+    ],
+    "options": [
+      {
+        "flag": "/info",
+        "meaning": "Afficher l’état"
+      },
+      {
+        "flag": "/enable",
+        "meaning": "Activer"
+      },
+      {
+        "flag": "/disable",
+        "meaning": "Désactiver"
+      },
+      {
+        "flag": "/setreimage",
+        "meaning": "Définir le chemin"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-reg",
+    "name": "reg",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Administrer le registre",
+    "syntax": "reg [options] [arguments]",
+    "examples": [
+      "reg query HKLM\\SOFTWARE"
+    ],
+    "options": [
+      {
+        "flag": "query",
+        "meaning": "Interroger"
+      },
+      {
+        "flag": "add",
+        "meaning": "Ajouter"
+      },
+      {
+        "flag": "delete",
+        "meaning": "Supprimer"
+      },
+      {
+        "flag": "export",
+        "meaning": "Exporter"
+      },
+      {
+        "flag": "import",
+        "meaning": "Importer"
+      },
+      {
+        "flag": "copy",
+        "meaning": "Copier"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-icacls",
+    "name": "icacls",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Administrer les ACL NTFS",
+    "syntax": "icacls [options] [arguments]",
+    "examples": [
+      "icacls C:\\Lab"
+    ],
+    "options": [
+      {
+        "flag": "/grant",
+        "meaning": "Accorder des droits"
+      },
+      {
+        "flag": "/deny",
+        "meaning": "Refuser des droits"
+      },
+      {
+        "flag": "/remove",
+        "meaning": "Retirer une entrée"
+      },
+      {
+        "flag": "/T",
+        "meaning": "Récursif"
+      },
+      {
+        "flag": "/C",
+        "meaning": "Continuer malgré les erreurs"
+      },
+      {
+        "flag": "/save",
+        "meaning": "Sauvegarder les ACL"
+      },
+      {
+        "flag": "/restore",
+        "meaning": "Restaurer les ACL"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-mstsc",
+    "name": "mstsc",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Ouvrir le Bureau à distance",
+    "syntax": "mstsc [options] [arguments]",
+    "examples": [
+      "mstsc /v:serveur"
+    ],
+    "options": [
+      {
+        "flag": "/v",
+        "meaning": "Serveur cible"
+      },
+      {
+        "flag": "/admin",
+        "meaning": "Session administrative"
+      },
+      {
+        "flag": "/f",
+        "meaning": "Plein écran"
+      },
+      {
+        "flag": "/w",
+        "meaning": "Largeur"
+      },
+      {
+        "flag": "/h",
+        "meaning": "Hauteur"
+      },
+      {
+        "flag": "/multimon",
+        "meaning": "Plusieurs écrans"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
+  },
+  {
+    "id": "audit-klist",
+    "name": "klist",
+    "environment": "CMD",
+    "category": "CMD",
+    "description": "Consulter les tickets Kerberos",
+    "syntax": "klist [options] [arguments]",
+    "examples": [
+      "klist tickets"
+    ],
+    "options": [
+      {
+        "flag": "tickets",
+        "meaning": "Lister les tickets"
+      },
+      {
+        "flag": "tgt",
+        "meaning": "Afficher le TGT"
+      },
+      {
+        "flag": "purge",
+        "meaning": "Supprimer les tickets du cache"
+      },
+      {
+        "flag": "sessions",
+        "meaning": "Lister les sessions"
+      }
+    ],
+    "notes": "Options usuelles non exhaustives. Vérifier la documentation de la version installée. Les modifications de disques, comptes et configuration doivent être testées en laboratoire."
   }
 ];
